@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 124<br />Office Hours:</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1797,13 +1797,29 @@ Preparing for Second Session
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introduction-to-the-Module">Introduction to the Module<a class="anchor-link" href="#Introduction-to-the-Module">&#182;</a></h2>
 </div>
-</section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The Approach</li>
+<li>The Syllabus</li>
+<li>The Learning Outcomes</li>
+<li>The Reading List</li>
+<li>The Assessment</li>
+</ul>
+</div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Activities-in-Week-1">Activities in Week 1<a class="anchor-link" href="#Activities-in-Week-1">&#182;</a></h2>
 </div>
-</section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><em>Session 1</em>: This Introduction based on Chapter 1 of Signals and Systems for Dummies (SS4D) by Mark Wickert <a href="http://www.dummies.com/store/product/Signals-and-Systems-For-Dummies.productCd-111847581X.html">available as a free sample</a></li>
+<li><em>Session 2</em>: Elementary Signals (this afternoon) based on Chapter 1 of Required Text <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems with Matlab Computing and Simulink Modeling</a> by Stephen Karris (available as an e-Book)</li>
+<li><em>Lab 1</em>: Matlab for Signals and Systems (Monday)</li>
+</ul>
+</div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1817,12 +1833,12 @@ Preparing for Second Session
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Continuous signals are representated mathematically by functions which vary continuously with time. Sinusoidal signals (e.g. AC) are pretty fundamental in Electrical Engineering. The mathematical model of a sinusoidal signal is <span class="math">\(x(t) = A \cos (2\pi f_0 t = \phi)\)</span>.</p>
+<p>Continuous signals are representated mathematically by functions which vary continuously with time. Sinusoidal signals (e.g. AC) are pretty fundamental in Electrical Engineering. The mathematical model of a sinusoidal signal is \(x(t) = A \cos (2\pi f_0 t - \phi)\).</p>
 <ul>
-<li>What is <span class="math">\(A\)</span>?</li>
-<li>What is <span class="math">\(f_0\)</span>?</li>
-<li>What is <span class="math">\(\phi\)</span>?</li>
-<li>What is the period <span class="math">\(T_0\)</span> of this signal?</li>
+<li>What is \(A\)?</li>
+<li>What is \(f_0\)?</li>
+<li>What is \(\phi\)?</li>
+<li>What is the period \(T_0\) of this signal?</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1830,15 +1846,15 @@ Preparing for Second Session
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To help us answer these questions, let's use our Mathematical tools to plot a signal like this and explore it. The example we will use is from <em>Signals and Systems for Dummies</em> (SS4D: pp 50-51):</p>
-<p><span class="math">\[3\cos(2\pi\cdot 2t - 3\pi/4)\]</span></p>
+<p>To help us answer these questions, let's use our Mathematical tools to plot a signal like this and explore it. The example we will use is from <em>Signals and Systems for Dummies</em> (SS4D: page 12):</p>
+<p>\[3\cos(2\pi\cdot 2t - 3\pi/4)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Wolfram|Alpha">Wolfram|Alpha<a class="anchor-link" href="#Wolfram|Alpha">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here's the link: <a href="http://www.wolframalpha.com">http://www.wolframalpha.com</a></p>
+<p>Here's the link: <a href="http://www.wolframalpha.com"><code class="url">http://www.wolframalpha.com</code></a></p>
 <p>Paste this into the search box</p>
 <pre><code>plot 3 cos(2 pi 2 t - 3 pi/4) </code></pre>
 </div></section><section>
@@ -1848,13 +1864,7 @@ Preparing for Second Session
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In Matlab we would need to tackle this slightly differently. Here's the code:</p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab">t = linspace(<span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">100</span>);
-x = <span class="fl">3</span> * cos(<span class="fl">2</span>*pi*<span class="fl">2</span>*t - <span class="fl">3</span>*pi/<span class="fl">4</span>);
-plot(t,x)
-title(<span class="st">&#39;A Sinusoidal Signal&#39;</span>)
-xlabel(<span class="st">&#39;Time t (s)&#39;</span>)
-ylabel(<span class="st">&#39;Amplitude&#39;</span>)
-grid</code></pre>
+<code>matlab t = linspace(0, 1, 100); x = 3 * cos(2*pi*2*t - 3*pi/4); plot(t,x) title('A Sinusoidal Signal') xlabel('Time t (s)') ylabel('Amplitude') grid</code>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="ipython-and-pylab">IPython and PyLab</h3>
@@ -2222,14 +2232,14 @@ YII=
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For the mathematical model of a sinusoidal signal <span class="math">\(x(t) = A \cos (2\pi f_0 t - \phi)\)</span> use your insight to answer these questions again:</p>
+<p>For the mathematical model of a sinusoidal signal \(x(t) = A \cos (2\pi f_0 t - \phi)\) use your insight to answer these questions again:</p>
 <ul>
-<li>What is <span class="math">\(A\)</span>?</li>
-<li>What is <span class="math">\(f_0\)</span>?</li>
-<li>What is <span class="math">\(\phi\)</span>?</li>
-<li>What is the period <span class="math">\(T_0\)</span> of this signal?</li>
+<li>What is \(A\)?</li>
+<li>What is \(f_0\)?</li>
+<li>What is \(\phi\)?</li>
+<li>What is the period \(T_0\) of this signal?</li>
 </ul>
-<p>Also, give the actual values, with units, for the variables used in the example <span class="math">\(3\cos(2\pi\cdot 2t - 3\pi/4)\)</span>.</p>
+<p>Also, give the actual values, with units, for the variables used in the example \(3\cos(2\pi\cdot 2t - 3\pi/4)\).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Notes">Notes<a class="anchor-link" href="#Notes">&#182;</a></h3>
@@ -2239,7 +2249,7 @@ YII=
 <ul>
 <li>In communications and electronic signal processing, the frequency of sinusoidal signals us usually given in <em>cycles per second</em> or Hz.</li>
 <li>In mathematics, the frequency is always expressed in <em>radians per second</em>.</li>
-<li>In some courses, including later in this one and in EG-243 Control Systems, the frequency <span class="math">\(2\pi f_0\)</span> is often called the <em>natural frequency</em> and is usually written <span class="math">\(\omega_n\)</span>.</li>
+<li>In some courses, including later in this one and in EG-243 Control Systems, the frequency \(2\pi f_0\) is often called the <em>natural frequency</em> and is usually written \(\omega_n\).</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2256,16 +2266,16 @@ YII=
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Systems operate on signals. In mathematical terms, a <em>system</em> is a function or an <em>operator</em>, <span class="math">\(H\{\}\)</span> that maps the input signal <span class="math">\(x(t)\)</span> to an output signal <span class="math">\(y(t)\)</span>.</p>
+<p>Systems operate on signals. In mathematical terms, a <em>system</em> is a function or an <em>operator</em>, \(H\{\}\) that maps the input signal \(x(t)\) to an output signal \(y(t)\).</p>
 <p>Mathematically we would write this:</p>
-<p><span class="math">\[y(t) = H\{x(t)\}.\]</span></p>
+<p>\[y(t) = H\{x(t)\}.\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An example of a continuous-time system is an electronic amplifier with a gain of 5 and level shift of 2: <span class="math">\(y(t) = H\{x(t)\} = 5x(t) + 2\)</span>.</p>
+<p>An example of a continuous-time system is an electronic amplifier with a gain of 5 and level shift of 2: \(y(t) = H\{x(t)\} = 5x(t) + 2\).</p>
 <p>In this course, we will model such systems as block diagram models in Simulink.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2273,7 +2283,7 @@ YII=
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/css.png"></p>
+<img src="pictures/css.png">
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The Similink code can be downloaded from this file <a href="matlab/gain_level_shift.slx">gain_level_shift.slx</a>.</p>
@@ -2285,20 +2295,20 @@ YII=
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Disrete-time signals are a function of a time index <span class="math">\(n\)</span>. A discrete-time signal <span class="math">\(x[n]\)</span>, unlike a continuous-time signal <span class="math">\(x(t)\)</span>, is only defined at integer values of the independent variable <span class="math">\(n\)</span>. This means that the signal is only active at specific periods of time. Discrete-time signals can be stored in computer memory.</p>
+<p>Disrete-time signals are a function of a time index \(n\). A discrete-time signal \(x[n]\), unlike a continuous-time signal \(x(t)\), is only defined at integer values of the independent variable \(n\). This means that the signal is only active at specific periods of time. Discrete-time signals can be stored in computer memory.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the following simple signal, a pulse sequence:<span class="math">\[x[n] = \left\{ {\begin{array}{*{20}{c}}
+<p>Consider the following simple signal, a pulse sequence:\[x[n] = \left\{ {\begin{array}{*{20}{c}}
 {5,\;0 \le n &lt; 10}\\
 {0,\;{\rm{otherwise}}\quad \;}
-\end{array}} \right.\]</span> We can plot this in IPython and Matlab as a <em>stem plot</em></p>
+\end{array}} \right.\] We can plot this in IPython and Matlab as a <em>stem plot</em></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>First define the function <span class="math">\(x[n]\)</span></p>
+<p>First define the function \(x[n]\)</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2318,7 +2328,7 @@ In&nbsp;[3]:
 
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Then set up <span class="math">\(n\)</span> and reserve some space for storing <span class="math">\(x[n]\)</span></p>
+<p>Then set up \(n\) and reserve some space for storing \(x[n]\)</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2583,7 +2593,7 @@ SYRDnYhIIhzqREQS+X/Jrl+MyHzjsgAAAABJRU5ErkJggg==
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Create and plot a digital signal that represents your student number in some way. For example if your number was 765443, then you could generate a signal for which <span class="math">\(x[n] = 0\)</span> when <span class="math">\(n &lt; 7\)</span>, then <span class="math">\(x[n] = 7\)</span> for <span class="math">\(7\)</span> periods, then <span class="math">\(x[n] = 6\)</span> for the next 6 periods, <span class="math">\(x[n] = 5\)</span> for 5 periods, and so on. The signal should return to 0 when the last digit has been transmitted.</p>
+<p>Create and plot a digital signal that represents your student number in some way. For example if your number was 765443, then you could generate a signal for which \(x[n] = 0\) when \(n &lt; 7\), then \(x[n] = 7\) for \(7\) periods, then \(x[n] = 6\) for the next 6 periods, \(x[n] = 5\) for 5 periods, and so on. The signal should return to 0 when the last digit has been transmitted.</p>
 <p>You can just create the array by hand if you like or use a function if you feel more daring.</p>
 </div></section>
     </section><section>
@@ -2593,17 +2603,17 @@ SYRDnYhIIhzqREQS+X/Jrl+MyHzjsgAAAABJRU5ErkJggg==
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A discrete-time system, like its continuous-time counterpart, is a function, <span class="math">\(H\{\}\)</span>, that maps the input <span class="math">\(x[n]\)</span>￼ ￼to the output <span class="math">\(y[n] = H\{x[n]\}\)</span>. An example of a discrete-time system is the two-tap filter:</p>
-<p><span class="math">\[y[n] = H\{x[n]\} = \frac{3}{4}x[n] + \frac{1}{4}x[n-1]\]</span></p>
-<p>The term <em>tap</em> denotes that output at time instant <span class="math">\(n\)</span> is formed from two time instants of the input, <span class="math">\(n\)</span> and <span class="math">\(n – 1\)</span>. Check out a block diagram of a two-tap filter system:</p>
-<p><img src="pictures/ds.png" width="50%" /></p>
+<p>A discrete-time system, like its continuous-time counterpart, is a function, \(H\{\}\), that maps the input \(x[n]\)￼ ￼to the output \(y[n] = H\{x[n]\}\). An example of a discrete-time system is the two-tap filter:</p>
+<p>\[y[n] = H\{x[n]\} = \frac{3}{4}x[n] + \frac{1}{4}x[n-1]\]</p>
+<p>The term <em>tap</em> denotes that output at time instant \(n\) is formed from two time instants of the input, \(n\) and \(n – 1\). Check out a block diagram of a two-tap filter system:</p>
+<img src="pictures/ds.png" width="50%" />
 <p>This system is available as a Simulink model <a href="matlab/discrete_system.slx">discrete_system.slx</a></p>
-</div><aside class="notes">
+</div><div style=display:none>
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In words, this system scales the present input by 3/4 and adds it to the past value of the input scaled by 1/4. The notion of the past input comes about because ￼<span class="math">\(x[n - 1]\)</span> is lagging one sample value behind ￼<span class="math">\(x[n]\)</span>. The term <em>filter</em> describes the output as an <em>averaging</em> of the present input and the previous input. <em>Averaging</em> is a form of filtering.</p>
+<p>In words, this system scales the present input by 3/4 and adds it to the past value of the input scaled by 1/4. The notion of the past input comes about because ￼\(x[n - 1]\) is lagging one sample value behind ￼\(x[n]\). The term <em>filter</em> describes the output as an <em>averaging</em> of the present input and the previous input. <em>Averaging</em> is a form of filtering.</p>
 </div>
-    </aside></section>
+    </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2617,25 +2627,17 @@ SYRDnYhIIhzqREQS+X/Jrl+MyHzjsgAAAABJRU5ErkJggg==
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Signals that repeat over and over are said to be <em>periodic</em>. In mathematical terms, a signal is periodic if:</p>
 <ul>
-<li><em>Continuous signal</em> <span class="math">\(x(t + T) = x(t)\)</span></li>
-<li><em>Discrete signal</em> <span class="math">\(x[n + N] = x[n]\)</span></li>
+<li><em>Continuous signal</em> \(x(t + T) = x(t)\)</li>
+<li><em>Discrete signal</em> \(x[n + N] = x[n]\)</li>
 </ul>
-<p>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼The smallest <span class="math">\(T\)</span> or <span class="math">\(N\)</span> for which the equality holds is the <em>signal period</em>. The sinusoidal signal we saw earlier is periodic because of the ￼<span class="math">\(\mod 2\pi\)</span> ￼ property of cosines. The signal of the sinusoid has period 0.5 seconds (s), which turns out to be the reciprocal of the frequency ￼ <span class="math">\(1/f_0\)</span>￼ ￼ Hz.</p>
+<p>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼The smallest \(T\) or \(N\) for which the equality holds is the <em>signal period</em>. The sinusoidal signal we saw earlier is periodic because of the ￼\(\mod 2\pi\) ￼ property of cosines. The signal of the sinusoid has period 0.5 seconds (s), which turns out to be the reciprocal of the frequency ￼ \(1/f_0\)￼ ￼ Hz.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This Square wave is a 5 Hz waveform sampled at 500 Hz for 1 second</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><em>Matlab</em></p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab"><span class="co">%% A Periodic signal (square wave)</span>
-t = linspace(<span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">500</span>);
-plot(t, square(<span class="fl">2</span> * pi * <span class="fl">5</span> * t));
-ylim([-<span class="fl">2</span>, <span class="fl">2</span>]);
-grid
-title(<span class="st">&#39;A Periodic Signal&#39;</span>)
-xlabel(<span class="st">&#39;Time t (s)&#39;</span>)
-ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
-<p><img src="pictures/squarew.png"></p>
+<p><code>matlab %% A Periodic signal (square wave) t = linspace(0, 1, 500); plot(t, square(2 * pi * 5 * t)); ylim([-2, 2]); grid title('A Periodic Signal') xlabel('Time t (s)') ylabel('Amplitude')</code> <img src="pictures/squarew.png"></p>
 <p>See: <a href="matlab/periodic.m">periodic.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2643,19 +2645,9 @@ ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Signals that are <em>deterministic</em> (completely determined functions of time) but not periodic are known as <em>aperiodic</em>. Point of view matters. If a signal occurs infrequently, you may view it as aperiodic. This is how we generate an aperiodic rectangular pulse of duration <span class="math">\(\tau\)</span> in Matlab:</p>
-<p><em>Matlab</em></p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab"><span class="co">%% An aperiodic function</span>
-tau = <span class="fl">1</span>
-x = linspace(-<span class="fl">1</span>,<span class="fl">5</span>,<span class="fl">1000</span>);
-y = rectangularPulse(<span class="fl">0</span>,tau,x);
-plot(x,y)
-ylim([-<span class="fl">0.2</span>,<span class="fl">1.2</span>])
-grid
-title(<span class="st">&#39;An Aperiodic Signal&#39;</span>)
-xlabel(<span class="st">&#39;Time t (s)&#39;</span>)
-ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
-<p><img src="pictures/pulse.png" /></p>
+<p>Signals that are <em>deterministic</em> (completely determined functions of time) but not periodic are known as <em>aperiodic</em>. Point of view matters. If a signal occurs infrequently, you may view it as aperiodic. This is how we generate an aperiodic rectangular pulse of duration \(\tau\) in Matlab:</p>
+<p><em>Matlab</em> <code>matlab %% An aperiodic function tau = 1 x = linspace(-1,5,1000); y = rectangularPulse(0,tau,x); plot(x,y) ylim([-0.2,1.2]) grid title('An Aperiodic Signal') xlabel('Time t (s)') ylabel('Amplitude')</code></p>
+<img src="pictures/pulse.png" />
 <p>See <a href="matlab/aperiodic.m">aperiodic.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2672,7 +2664,7 @@ grid
 title(<span class="st">&#39;Random Signal&#39;</span>)
 xlabel(<span class="st">&#39;Time t (s)&#39;</span>)
 ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
-<p><img src="pictures/random.png"></p>
+<img src="pictures/random.png">
 <p>See: <a href="matlab/random.m">random.m</a></p>
 </div></section>
     </section><section>
@@ -2680,19 +2672,43 @@ ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Domains-for-Signals-and-Systems">Domains for Signals and Systems<a class="anchor-link" href="#Domains-for-Signals-and-Systems">&#182;</a></h2>
 </div>
-</section><section>
+
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-Domain">Time Domain<a class="anchor-link" href="#Time-Domain">&#182;</a></h3>
-</div>
-</section><section>
+<p>Most of the signals we encounter on a daily basis reside in the time domain. They’re functions of independent variable \(t\) or \(n\). But sometimes when you’re working with continuous-time signals, you may need to transform away from the time domain (\(t\)) to either the frequency domain (\(f\) or \(\omega\)) or the [Laplace] \(s\)-domain (\(s\)). Similarly, for discrete-time signals, you may need to transform from the discrete-time domain (\(n\)) to the frequency domain (\(\hat{\omega}\)￼) or the z-domain (\(z\)).</p>
+<p>Systems, continuous and discrete, can also be transformed to the frequency and s- and z-domains, respectively. Signals can, in fact, be passed through systems in these alternative domains. When a signal is passed through a system in the frequency domain, for example, the frequency domain output signal can later be returned to the time domain and appear just as if the time- domain version of the system operated on the signal in the time domain.</p>
+<p>This section briefly introduces the world of signals and systems in the frequency, s-, and z-domains. More on these domains will follow.</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Frequency-Domain">Frequency Domain<a class="anchor-link" href="#Frequency-Domain">&#182;</a></h3>
+<h3 id="Viewing-Signals-in-the-Frequency-Domain">Viewing Signals in the Frequency Domain<a class="anchor-link" href="#Viewing-Signals-in-the-Frequency-Domain">&#182;</a></h3>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider the sum of a two-sinusoids signal \[x(t) = \underbrace {A_1\cos(2\pi f_1 t)}_{s_1} + \underbrace {A_2\cos(2\pi f_2 t)}_{s_2}\]</p>
+<img src="pictures/twosines.png">
+<p>Matlab code: <a href="matlab/two_sines.m">two_sines.m</a></p>
+<p>(This example relies on <a href="http://www.mathworks.com/matlabcentral/fileexchange/278-arrow-m">arrow.m</a> by Erik Johnson available from the Matlab File Exchange.)</p>
+</div><aside class="notes">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The top waveform plot, denoted \(s_1\), is a single sinusoid at frequency \(f_1\) and peak amplitude \(A_1\). The waveform repeats every period \(T_1 = 1/f_1\). The second waveform plot, denoted \(s_2\), is a single sinusoid at frequency \(f_2 &gt; f_1\) and peak amplitude \(A_2 &lt; A_1\). The sum signal, \(s_1 + s_2\), in the time domain is a squiggly line (third waveform plot), but the amplitudes and frequencies (periods) of the sinusoids aren’t clear here as they are in the first two plots. The frequency spectrum (bottom plot) reveals that \(x(t)\) is composed of just two sinusoids, with both the frequencies and amplitudes discernible.</p>
+<p>Think about tuning in a radio station. Stations are located at different center frequencies. The stations don’t interfere with one another because they’re separated from each other in the frequency domain. In the frequency spectrum plot, imagine that \(f_1\) and \(f_2\) are the signals from two radio stations, viewed in the frequency domain. You can design a receiving system to filter \(s_1\) from \(s_1 + s_2\). The filter is designed to pass \(s_1\) and block \(s_2\).</p>
+</div>
+    </aside></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Fourier-Transform">Fourier Transform<a class="anchor-link" href="#Fourier-Transform">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use the <em>Fourier transform</em> to move away from the time domain and into the frequency domain. To get back to the time domain, use the <em>inverse Fourier transform</em>. We will found out more about these transforms in this module.</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Laplace-and-Z-Transform-Domains">Laplace and Z-Transform Domains<a class="anchor-link" href="#Laplace-and-Z-Transform-Domains">&#182;</a></h3>
 </div>
-</section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From the time domain to the frequency domain, only one independent variable, \(t \to f\), exists. When a signal is transformed to the <em>s</em>-domain, it becomes a function of a complex variable ￼\(s=\sigma + j\omega\). The two variables (real and imaginary parts) describe a location in the <em>s</em>-plane.</p>
+<p>In addition to visualization properties, the <em>s</em>-domain reduces differential equation solving to algebraic manipulation. For discrete-time signals, the <em>z</em>-transform accomplishes the same thing, except differential equations are replaced by difference equations.</p>
+</div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2700,42 +2716,44 @@ ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The tools of the trade</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Behavioural-Modelling">Behavioural Modelling<a class="anchor-link" href="#Behavioural-Modelling">&#182;</a></h3>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Abstraction">Abstraction<a class="anchor-link" href="#Abstraction">&#182;</a></h3>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Top-Down">Top-Down<a class="anchor-link" href="#Top-Down">&#182;</a></h3>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Mathematics">Mathematics<a class="anchor-link" href="#Mathematics">&#182;</a></h3>
-</div>
-</section>
+<p>See section <strong>Testing Product Concepts with Behavioral Level Modeling</strong> from Chapter 1 of SS4D (pages 18--20) and summarize this for yourself.</p>
+<ul>
+<li>We will use <em>behavioural modelling</em></li>
+<li>We will rely on <em>abstraction</em></li>
+<li>We work <em>top-down</em></li>
+<li>We make use of <em>mathematics</em> and <em>mathematical software</em>.</li>
+</ul>
+</div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Familiar-Signals-and-Systems">Familiar Signals and Systems<a class="anchor-link" href="#Familiar-Signals-and-Systems">&#182;</a></h2>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See Chapter 1 of SS4D for notes and details.</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="MP3-Player">MP3 Player<a class="anchor-link" href="#MP3-Player">&#182;</a></h3>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/mp3.png">
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Smart-Phone">Smart Phone<a class="anchor-link" href="#Smart-Phone">&#182;</a></h3>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/smartphone.png">
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cruise-Control-(a-Control-System)">Cruise Control (a Control System)<a class="anchor-link" href="#Cruise-Control-(a-Control-System)">&#182;</a></h3>
 </div>
-</section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/cruisecontrol.png">
+</div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2743,18 +2761,24 @@ ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider a signal <span class="math">\(x = f(t) = ...\)</span>. Sketch this signal and plot the effect on this signal of applying the following basic signal operations</p>
+<p>Consider a signal</p>
+<p>\[x = f(t) = \left\{ {\begin{array}{*{20}{c}}
+{0\;:\;t &lt;  - 1}\\
+{t + 1\;:\; - 1 \le t \le 1}\\
+{0\;:\;t &gt; 1}
+\end{array}} \right.\]</p>
+<p>Sketch this signal and plot the effect on this signal of applying the following basic signal operations</p>
 <ul>
-<li><span class="math">\(2 f(t)\)</span></li>
-<li><span class="math">\(0.5 f(t)\)</span></li>
-<li><span class="math">\(f(2t)\)</span></li>
-<li><span class="math">\(f(0.5 t)\)</span></li>
-<li><span class="math">\(-f(t)\)</span></li>
-<li><span class="math">\(f(-t)\)</span></li>
-<li><span class="math">\(-f(-t)\)</span></li>
-<li><span class="math">\(f(t - 1)\)</span></li>
-<li><span class="math">\(f(t + 1)\)</span></li>
-<li><span class="math">\(-2f(-t+2)\)</span></li>
+<li>\(2 f(t)\)</li>
+<li>\(0.5 f(t)\)</li>
+<li>\(f(2t)\)</li>
+<li>\(f(0.5 t)\)</li>
+<li>\(-f(t)\)</li>
+<li>\(f(-t)\)</li>
+<li>\(-f(-t)\)</li>
+<li>\(f(t - 1)\)</li>
+<li>\(f(t + 1)\)</li>
+<li>\(-2f(-t+2)\)</li>
 </ul>
 </div></section>
     </section><section>
@@ -2762,13 +2786,16 @@ ylabel(<span class="st">&#39;Amplitude&#39;</span>)</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Preparing-for-Second-Session">Preparing for Second Session<a class="anchor-link" href="#Preparing-for-Second-Session">&#182;</a></h2>
 </div>
-<aside class="notes">
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the second session we will review the concluding exercise then study Chapter 1 of Karris.</p>
+</div><div style=display:none>
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Running-Matlab-in-IPython-Notebook">Running Matlab in IPython Notebook<a class="anchor-link" href="#Running-Matlab-in-IPython-Notebook">&#182;</a></h2>
 </div>
 
-    </aside>
+    </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>This may not work on Windows!</strong></p>
 <p>You need to istall the <a href="http://arokem.github.io/python-matlab-bridge/">Python-Matlab-Bridge</a> as per the installation instructions.</p>
@@ -3235,19 +3262,6 @@ ans =
 
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[10]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre>
-</pre></div>
 
 </div>
 </div>
