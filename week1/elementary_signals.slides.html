@@ -1835,7 +1835,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p><code>syms t ezplot(heaviside(t),[-1,1])</code></p>
 <img src="pictures/heaviside.png">
 <p>See: <a href="matlab/heaviside_function.m">heaviside_function.m</a></p>
-<p>Note that, so it can be plotted, Matlab defines the <em>heaviside function</em> slightly differently from the mathematica ideal usint step:</p>
+<p>Note that, so it can be plotted, Matlab defines the <em>heaviside function</em> slightly differently from the mathematically ideal unit step:</p>
 <p>\[\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t &lt; 0}\\
 {1/2\quad t = 0}\\
@@ -1843,7 +1843,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 \end{array}} \right.\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2>
+<h2 id="Circuit-Revisited">Circuit Revisited<a class="anchor-link" href="#Circuit-Revisited">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1883,11 +1883,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
+</div>
+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Which of these signals represents \(-Au_0(t+T)\)?</p>
 <img src="pictures/stepf1.png" width="50%">
-</div></section><section>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
+</div>
+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What is represented by</p>
 <img src="pictures/stepf2.png" width="50%">
@@ -1944,7 +1952,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <img src="pictures/example1.png">
 <p>can be represented by the function</p>
 <p>\[v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)\]</p>
-</div>
+</div></section>
+    </section><section>
+    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Ramp-Function">The Ramp Function<a class="anchor-link" href="#The-Ramp-Function">&#182;</a></h2>
 </div>
@@ -2032,35 +2042,30 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Also, derivation of the sifting property can be extended to show that</p>
 <p>\[\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( - 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}\]</p>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre>
-</pre></div>
-
-</div>
-</div>
-
-</div>
+</div></section>
+    </section><section>
+    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
 </div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
+</div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="example-1">Example 1</h3>
 <p>Evaluate the following expressions</p>
 <ol style="list-style-type: decimal">
 <li>\[3t^4\delta(t-1) \]</li>
 <li>\[\int_{-\infty}^{\infty}t\delta(t-2)dt\]</li>
 <li>\[t^2\delta&#39;(t-3)\]</li>
 </ol>
-</div>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="example-2">Example 2</h3>
+<h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/example2.png">
 <ol style="list-style-type: decimal">
 <li><p>Express the voltage waveform \(v(t)\) shown above aa sum of unit step functions for the time interval \(-1 &lt; t &lt; 7\) s</p></li>
