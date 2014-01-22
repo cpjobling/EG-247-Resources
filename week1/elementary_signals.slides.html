@@ -1741,10 +1741,297 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 124<br />Office Hours: Thursdays 15:00-16:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider this circuit:</p>
+<img src="pictures/circuit1.png">
+<p>What happens before \(t=0\)?</p>
+<ol style="list-style-type: decimal">
+<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
+<li>\(v_{\mathrm{out}} = 0\)</li>
+<li>\(v_{\mathrm{out}} = V_s\)</li>
+<li>\(v_{\mathrm{out}} = 1/2\)</li>
+<li>\(v_{\mathrm{out}} = \infty\)</li>
+</ol>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/circuit1.png">
+<p>What happens after \(t=0\)?</p>
+<ol style="list-style-type: decimal">
+<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
+<li>\(v_{\mathrm{out}} = 0\)</li>
+<li>\(v_{\mathrm{out}} = V_s\)</li>
+<li>\(v_{\mathrm{out}} = 1/2\)</li>
+<li>\(v_{\mathrm{out}} = \infty\)</li>
+</ol>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/circuit1.png">
+<p>What happens at \(t=0\)?</p>
+<ol style="list-style-type: decimal">
+<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
+<li>\(v_{\mathrm{out}} = 0\)</li>
+<li>\(v_{\mathrm{out}} = V_s\)</li>
+<li>\(v_{\mathrm{out}} = 1/2\)</li>
+<li>\(v_{\mathrm{out}} = \infty\)</li>
+</ol>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What does the response of \(V_{\mathrm{out}}\) look like?</p>
+<p>1: <img src="pictures/impulse.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What does the response of \(V_{\mathrm{out}}\) look like</p>
+<p>2: <img src="pictures/ramp.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What does the response of \(V_{\mathrm{out}}\) look like</p>
+<p>3: <img src="pictures/step1.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What does the response of \(V_{\mathrm{out}}\) look like?</p>
+<p>4: <img src="pictures/curve.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Answers">Answers<a class="anchor-link" href="#Answers">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Mathematically</p>
+<ol style="list-style-type: decimal">
+<li>\(v_{\mathrm{out}} = 0\) when \(-\infty &lt; t &lt; 0\) (answer 2)</li>
+<li>\(v_{\mathrm{out}} = V_s\) when \(0 &lt; t &lt; \infty\) (answer 3)</li>
+<li>\(v_{\mathrm{out}} = \mathrm{undefined}\) when \(t=0\) (answer 1)</li>
+</ol>
+<p>\(V_{\mathrm{out}}\) jumps from \(0\) to \(V_s\) instantanously when the switch is closed. We call this a discontinuous signal!</p>
+<p>The correct image is:</p>
+<p>3: <img src="pictures/step2.png"></p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Unit-Step-Function">Unit Step Function<a class="anchor-link" href="#Unit-Step-Function">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[{u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
+{0\quad t &lt; 0}\\
+{1\quad t &gt; 0}
+\end{array}} \right.\]</p>
+<img src="pictures/unitstep.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="In-Matlab">In Matlab<a class="anchor-link" href="#In-Matlab">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In Matlab, we use the <code>heaviside</code> function (Named after <a href="http://en.wikipedia.org/wiki/Oliver_Heaviside">Oliver Heaviside</a>).</p>
+<p><code>syms t ezplot(heaviside(t),[-1,1])</code></p>
+<img src="pictures/heaviside.png">
+<p>See: <a href="matlab/heaviside_function.m">heaviside_function.m</a></p>
+<p>Note that, so it can be plotted, Matlab defines the <em>heaviside function</em> slightly differently from the mathematica ideal usint step:</p>
+<p>\[\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
+{0\quad t &lt; 0}\\
+{1/2\quad t = 0}\\
+{1\quad t &gt; 0}
+\end{array}} \right.\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consider the network shown below, where the switch is closed at time \(t=T\).</p>
+<img src="pictures/circuit2.png">
+<p>Express the output voltage \(v_{\mathrm{out}}\) as a function of the unit step function, and sketch the appropriate waveform.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Simple-Signal-Operations">Simple Signal Operations<a class="anchor-link" href="#Simple-Signal-Operations">&#182;</a></h2>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Amplitude-Scaling">Amplitude Scaling<a class="anchor-link" href="#Amplitude-Scaling">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sketch \(Au_0(t)\) and \(-Au_0(t)\)</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-Reversal">Time Reversal<a class="anchor-link" href="#Time-Reversal">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sketch \(u_0(-t)\)</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Time-Delay-and-Advance">Time Delay and Advance<a class="anchor-link" href="#Time-Delay-and-Advance">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sketch \(u_0(t-T)\) and \(u_0(t+T)\)</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Which of these signals represents \(-Au_0(t+T)\)?</p>
+<img src="pictures/stepf1.png" width="50%">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is represented by</p>
+<img src="pictures/stepf2.png" width="50%">
+<ol style="list-style-type: decimal">
+<li>\(-Au_0(t - T)\)</li>
+<li>\(-Au_0(-t + T)\)</li>
+<li>\(-Au_0(-t - T)\)</li>
+<li>\(-Au_0(t-T)\)</li>
+</ol>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Synthesis-of-Signals-from-Unit-Step">Synthesis of Signals from Unit Step<a class="anchor-link" href="#Synthesis-of-Signals-from-Unit-Step">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unit step functions can be used to represent other time-varying functions such as rectangular pulses, square waves and triangular pulses.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Synthesize-Rectangular-Pulse">Synthesize Rectangular Pulse<a class="anchor-link" href="#Synthesize-Rectangular-Pulse">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/rect.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Synthesize-Square-Wave">Synthesize Square Wave<a class="anchor-link" href="#Synthesize-Square-Wave">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/square_wave.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Synthesize-Symmetric-Rectangular-Pulse">Synthesize Symmetric Rectangular Pulse<a class="anchor-link" href="#Synthesize-Symmetric-Rectangular-Pulse">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/symm_rect.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Synthesize-Symmetric-Triangular-Pulse">Synthesize Symmetric Triangular Pulse<a class="anchor-link" href="#Synthesize-Symmetric-Triangular-Pulse">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/symm_tri.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Show that the waveform shown below</p>
+<img src="pictures/example1.png">
+<p>can be represented by the function</p>
+<p>\[v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)\]</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Ramp-Function">The Ramp Function<a class="anchor-link" href="#The-Ramp-Function">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/rc.png">
+<p>In the circuit shown above \(i_s\) is a constant current source and the switch is closed at time \(t=0\). Show that the voltage across the capacitor can be represented as</p>
+<p>\[v_C(t)=\frac{i_s}{C}t u_0(t)\]</p>
+<p>and sketch the wave form.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The unit ramp function is defined as</p>
+<p>\[u_1(t) = \int_{-\infty}^{t}u_0(\tau)d\tau\]</p>
+<p>so</p>
+<p>\[{u_1}(t) = \left\{ {\begin{array}{*{20}{c}}
+{0\quad t &lt; 0}\\
+{t\quad t \ge 0}
+\end{array}} \right.\]</p>
+<p>and</p>
+<p>\[u_0(t) = \frac{d }{dt}u_1(t)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Higher order functions of \(t\) can be generated by the repeated integration of the unit step function.</p>
+<p>For future reference, you should determine \(u_2(t)\), \(u_3(t)\) and \(u_n(t)\) for yourself and make a note of the general rule:</p>
+<p>\[u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)\]</p>
+<p>Details are given in equations 1.26—1.29 in the textbook.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-Dirac-Delta-Function">The Dirac Delta Function<a class="anchor-link" href="#The-Dirac-Delta-Function">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<img src="pictures/lr.png">
+<p>In the circuit shown above, the switch is closed at time \(t=0\) and \(i_L(t)=0\) for \(t&lt;0\). Express the inductor current \(i_L(t)\) in terms of the unit step function.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To solve this problem we need to invent a function that represents the derivative of the unit step function. This function is called \(\delta(t)\) or the <em>dirac delta</em> function (named after <a href="http://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>).</p>
+<p>This function is tricky because \(u_0(t)\) is discontinuous at \(t=0\) but it must have the properties</p>
+<p>\[\int_{-\infty}^{t}\delta(\tau)d\tau = u_0(t)\]</p>
+<p>and</p>
+<p>\(\delta(t) = 0\) for all \(t\ne 0\).</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sampling-Property">Sampling Property<a class="anchor-link" href="#Sampling-Property">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <em>sampling property</em> of the delta function states that</p>
+<p>\[f(t)\delta(t-a) = f(a)\delta(t-a)\]</p>
+<p>or, when \(a = 0\),</p>
+<p>\[f(t)\delta(t) = f(0)\delta(t)\]</p>
+<p>Multiplication of any function \(f(t)\) by the delta function \(\delta(t)\) results in sampling the function at the time instants for which the delta function is not zero.</p>
+<p>The study of descrete-time (sampled) systems is based on this property.</p>
+<p><em>You should work through the proof</em> for youself.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sifting-Property">Sifting Property<a class="anchor-link" href="#Sifting-Property">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <em>sifting property</em> of the delta function states that</p>
+<p>\[\int_{-\infty}^{\infty}f(t)\delta(t-\alpha)dt=f(\alpha)\]</p>
+<p>That is, if multiply any function \(f(t)\) by \(\delta(t-\alpha)\), and integrate from \(-\infty\) to \(+\infty\), we will get the value of \(f(t)\) evaluated at \(t=\alpha.\)</p>
+<p><em>You should also work through the proof</em> for yourself.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Higher-Order-Delta-Fuctions">Higher Order Delta Fuctions<a class="anchor-link" href="#Higher-Order-Delta-Fuctions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>the n<em>th</em>-order <em>delta function</em> is defined as the n<em>th</em> derivative of \(u_0(t)\), that is</p>
+<p>\[\delta^n(t)=\frac{d^n}{dt^n}[u_0(t)]\]</p>
+<p>The function \(\delta&#39;(t)\) is called the <em>doublet</em>, \(\delta&#39;&#39;(t)\) is called the <em>triplet</em> and so on.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By a procedure similar to the derivation of the sampling property we can show that</p>
+<p>\[f(t)\delta&#39;(t-a)=f(a)\delta&#39;(t-a)-f&#39;(t)\delta(t-a)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Also, derivation of the sifting property can be extended to show that</p>
+<p>\[\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( - 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}\]</p>
 </div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -1758,6 +2045,45 @@ In&nbsp;[]:
 </div>
 </div>
 
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="example-1">Example 1</h3>
+<p>Evaluate the following expressions</p>
+<ol style="list-style-type: decimal">
+<li>\[3t^4\delta(t-1) \]</li>
+<li>\[\int_{-\infty}^{\infty}t\delta(t-2)dt\]</li>
+<li>\[t^2\delta&#39;(t-3)\]</li>
+</ol>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="example-2">Example 2</h3>
+<img src="pictures/example2.png">
+<ol style="list-style-type: decimal">
+<li><p>Express the voltage waveform \(v(t)\) shown above aa sum of unit step functions for the time interval \(-1 &lt; t &lt; 7\) s</p></li>
+<li><p>Using the result of part (1), compute the derivative of \(v(t)\) and sketch it's waveform.</p></li>
+</ol>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Do the end of the chapter exercises (Section 1.7) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Lab-Work">Lab Work<a class="anchor-link" href="#Lab-Work">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the lab, on Monday, we will solve Example 2 using Matlab/Simulink following the procedure given in Pages between pages 1-17 and 1-22 of the textbook. We will also explore the <code>heaviside</code> and <code>dirac</code> functions.</p>
 </div></section>
     </section>
 </div>
