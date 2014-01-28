@@ -1734,7 +1734,7 @@ text-align: inherit;
 <section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Elementary-Signals">Elementary Signals<a class="anchor-link" href="#Elementary-Signals">&#182;</a></h1>
+<h1 id="The-Laplace-Transformation">The Laplace Transformation<a class="anchor-link" href="#The-Laplace-Transformation">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1744,424 +1744,457 @@ h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;'
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 15:00-16:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Review-of-Final-Example-from-Previous">Review of Final Example from Previous<a class="anchor-link" href="#Review-of-Final-Example-from-Previous">&#182;</a></h2>
+<h2 id="About-the-Laplace-Transformation">About the Laplace Transformation<a class="anchor-link" href="#About-the-Laplace-Transformation">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider a signal</p>
-<p>\[x = f(t) = \left\{ {\begin{array}{*{20}{c}}
-{0\;:\;t &lt;  - 1}\\
-{t + 1\;:\; - 1 \le t \le 1}\\
-{0\;:\;t &gt; 1}
-\end{array}} \right.\]</p>
-<p>Sketch this signal and plot the effect on this signal of applying the following basic signal operations</p>
+<p>The Laplace Transformation (named after <a href="http://en.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Laplace</a>) is a useful mathematical tool that is used in many branches of engineering including signals and systems theory, control theory, communications, mechanical engineering, etc.</p>
+<p>Its principle benefits are:</p>
+<ol style="list-style-type: decimal">
+<li>it enables us to represent differential equations that model the behaviour of systems in the time domain as polynomials in \(s\) which facilitates their solution</li>
+<li>it converts time convolution (which is how we determine the time-response of a system to a given signal) into a simple multiplication in the \(s\) domain.</li>
+</ol>
+<p>The only downside is that time \(t\) is a real value whereas the Laplace transformation operator \(s\) is a complex exponential \(s = \sigma + j\omega\).</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="About-this-Session">About this Session<a class="anchor-link" href="#About-this-Session">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The prepatory reading for this session is Chapter 2 of Karris which</p>
 <ul>
-<li>\(2 f(t)\)</li>
-<li>\(0.5 f(t)\)</li>
-<li>\(f(2t)\)</li>
-<li>\(f(0.5 t)\)</li>
-<li>\(-f(t)\)</li>
-<li>\(f(-t)\)</li>
-<li>\(-f(-t)\)</li>
-<li>\(f(t - 1)\)</li>
-<li>\(f(t + 1)\)</li>
-<li>\(-2f(-t+2)\)</li>
+<li>defines the Laplace transformation</li>
+<li>gives the most useful properties of the Laplace transform with proofs</li>
+<li>presents the Laplace transforms of the elementary signals discussed in the last session</li>
+<li>presents the transforms of the more common system response types that are found in basic signals and systems.</li>
 </ul>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Sketch-of-signal">Sketch of signal<a class="anchor-link" href="#Sketch-of-signal">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sig1.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Amplitude-scaling">Amplitude scaling<a class="anchor-link" href="#Amplitude-scaling">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sigs2.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-scaling">Time scaling<a class="anchor-link" href="#Time-scaling">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sigs3.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Mirroring">Mirroring<a class="anchor-link" href="#Mirroring">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sigs4.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-shifting---delay-and-advance">Time shifting - delay and advance<a class="anchor-link" href="#Time-shifting---delay-and-advance">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sigs5.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We leave the solution of \(-2f(-t+2)\) as an exercise for the reader but note that it involves <em>amplitude scaling</em>, <em>amplitude mirroring</em>, <em>time mirroring</em>, and a <em>time shift</em>. Each operation can be performed in sequence in any order.</p>
+<p>There is some intellectual benefit to being aware of the properties of the Laplace transformation and their proofs but being a pragmatic breed, we engineers typically prefer to make use of quick references of these properties and transforms, relying on Mathematics only when facing a problem not before encountered.</p>
+<p>In our practice, we want to encourage you to use of the properties and transform tables to solve problems so I will present only the properties and not the proofs.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Elementary-Signals">Elementary Signals<a class="anchor-link" href="#Elementary-Signals">&#182;</a></h2>
+<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Definition of the Laplace Transform</li>
+</ul>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Some Selected Properties</li>
+</ul>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Transforms of Elementary Signals</li>
+</ul>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Common system responses</li>
+</ul>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Transform tables</li>
+</ul>
+</div>
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Examples</li>
+</ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Definition-of-the-Laplace-Transform">Definition of the Laplace Transform<a class="anchor-link" href="#Definition-of-the-Laplace-Transform">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider this circuit:</p>
-<img src="pictures/circuit1.png">
-<p>What happens <strong>before</strong> \(t=0\)?</p>
-<ol style="list-style-type: decimal">
-<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
-<li>\(v_{\mathrm{out}} = 0\)</li>
-<li>\(v_{\mathrm{out}} = V_s\)</li>
-<li>\(v_{\mathrm{out}} = 1/2\)</li>
-<li>\(v_{\mathrm{out}} = \infty\)</li>
-</ol>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/circuit1.png">
-<p>What happens <strong>after</strong> \(t=0\)?</p>
-<ol style="list-style-type: decimal">
-<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
-<li>\(v_{\mathrm{out}} = 0\)</li>
-<li>\(v_{\mathrm{out}} = V_s\)</li>
-<li>\(v_{\mathrm{out}} = 1/2\)</li>
-<li>\(v_{\mathrm{out}} = \infty\)</li>
-</ol>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/circuit1.png">
-<p>What happens <strong>at</strong> \(t=0\)?</p>
-<ol style="list-style-type: decimal">
-<li>\(v_{\mathrm{out}} = \mathrm{undefined}\)</li>
-<li>\(v_{\mathrm{out}} = 0\)</li>
-<li>\(v_{\mathrm{out}} = V_s\)</li>
-<li>\(v_{\mathrm{out}} = 1/2\)</li>
-<li>\(v_{\mathrm{out}} = \infty\)</li>
-</ol>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What does the response of \(V_{\mathrm{out}}\) look like?</p>
-<p>1: <img src="pictures/impulse.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What does the response of \(V_{\mathrm{out}}\) look like</p>
-<p>2: <img src="pictures/ramp.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What does the response of \(V_{\mathrm{out}}\) look like</p>
-<p>3: <img src="pictures/step1.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What does the response of \(V_{\mathrm{out}}\) look like?</p>
-<p>4: <img src="pictures/curve.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Answers">Answers<a class="anchor-link" href="#Answers">&#182;</a></h2>
+<h3 id="Laplace-transform">Laplace transform<a class="anchor-link" href="#Laplace-transform">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Mathematically</p>
-<ol style="list-style-type: decimal">
-<li>\(v_{\mathrm{out}} = 0\) when \(-\infty &lt; t &lt; 0\) (answer 2)</li>
-<li>\(v_{\mathrm{out}} = V_s\) when \(0 &lt; t &lt; \infty\) (answer 3)</li>
-<li>\(v_{\mathrm{out}} = \mathrm{undefined}\) when \(t=0\) (answer 1)</li>
-</ol>
-<p>\(V_{\mathrm{out}}\) jumps from \(0\) to \(V_s\) instantanously when the switch is closed. We call this a discontinuous signal!</p>
-<p>The correct image is:</p>
-<p>3: <img src="pictures/step2.png"></p>
-</div></section>
-    </section><section>
-    <section>
+<p>\[\mathcal{L}\{f(t)\}=F(s) = \int_{0}^{\infty}f(t)e^{-st}dt\]</p>
+</div><div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Unit-Step-Function">Unit Step Function<a class="anchor-link" href="#Unit-Step-Function">&#182;</a></h2>
+<h3 id="Inverse-Laplace-Transform">Inverse Laplace Transform<a class="anchor-link" href="#Inverse-Laplace-Transform">&#182;</a></h3>
 </div>
 
+    </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
-{0\quad t &lt; 0}\\
-{1\quad t &gt; 0}
-\end{array}} \right.\]</p>
-<img src="pictures/unitstep.png">
+<p>\[\mathcal{L}^{-1}\{F(s)\}=f(t)=\frac{1}{2\pi j}\int_{\sigma-j\omega}^{\sigma+j\omega}F(s)e^{st} ds\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="In-Matlab">In Matlab<a class="anchor-link" href="#In-Matlab">&#182;</a></h3>
+<h3 id="Region-of-convergence">Region of convergence<a class="anchor-link" href="#Region-of-convergence">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In Matlab, we use the <code>heaviside</code> function (Named after <a href="http://en.wikipedia.org/wiki/Oliver_Heaviside">Oliver Heaviside</a>).</p>
-<p><code>syms t ezplot(heaviside(t),[-1,1])</code></p>
-<img src="pictures/heaviside.png">
-<p>See: <a href="matlab/heaviside_function.m">heaviside_function.m</a></p>
-<p>Note that, so it can be plotted, Matlab defines the <em>heaviside function</em> slightly differently from the mathematically ideal unit step:</p>
-<p>\[\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
-{0\quad t &lt; 0}\\
-{1/2\quad t = 0}\\
-{1\quad t &gt; 0}
-\end{array}} \right.\]</p>
+<p>For a Laplace transfomation to exist, the integral must be bounded. That is \[\left| {\int_0^\infty  {f(t){e^{ - st}}dt} } \right| &lt; \infty \]</p>
+<p>For most signals and systems of interest in this module it will be.</p>
+<p>(See discussion of exponential order on Page 2-2 of Karris).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Circuit-Revisited">Circuit Revisited<a class="anchor-link" href="#Circuit-Revisited">&#182;</a></h2>
+<h3 id="Informal-transform-notation">Informal transform notation<a class="anchor-link" href="#Informal-transform-notation">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the network shown below, where the switch is closed at time \(t=T\).</p>
-<img src="pictures/circuit2.png">
-<p>Express the output voltage \(v_{\mathrm{out}}\) as a function of the unit step function, and sketch the appropriate waveform.</p>
-</div></section>
-    </section><section>
-    <section>
+<p>The Laplace transform and its inverse are come in pairs which are tabulated for ease of reference. For any given function of time \(f(t)\) we only need to know the transform \[f(t)\Leftrightarrow F(s)\] to be able to get to the Laplace transform and <em>vice versa</em>.</p>
+</div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Simple-Signal-Operations">Simple Signal Operations<a class="anchor-link" href="#Simple-Signal-Operations">&#182;</a></h2>
+<h2 id="Some-Selected-Properties">Some Selected Properties<a class="anchor-link" href="#Some-Selected-Properties">&#182;</a></h2>
 </div>
 </section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Amplitude-Scaling">Amplitude Scaling<a class="anchor-link" href="#Amplitude-Scaling">&#182;</a></h3>
+<h3 id="Linearity">Linearity<a class="anchor-link" href="#Linearity">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sketch \(Au_0(t)\) and \(-Au_0(t)\)</p>
+<p>\[c_1f_1(t) + c_2f_2(t) + \ldots + c_nf_n(t) \Leftrightarrow c_1F_1(s) + c_2F_2(s) + \ldots + c_nF_n(s)\]</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time-shift">Time shift<a class="anchor-link" href="#Time-shift">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[f(t-a)u_0(t-a)\Leftrightarrow e^{-as}F(s)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-Reversal">Time Reversal<a class="anchor-link" href="#Time-Reversal">&#182;</a></h3>
+<h3 id="Frequency-shift">Frequency shift<a class="anchor-link" href="#Frequency-shift">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sketch \(u_0(-t)\)</p>
+<p>\[e^{-at}f(t)\Leftrightarrow F(s+a)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Time-Delay-and-Advance">Time Delay and Advance<a class="anchor-link" href="#Time-Delay-and-Advance">&#182;</a></h3>
+<h3 id="Scaling">Scaling<a class="anchor-link" href="#Scaling">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Sketch \(u_0(t-T)\) and \(u_0(t+T)\)</p>
+<p>\[f(at)\Leftrightarrow \frac{1}{a}F\left(\frac{s}{a}\right)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Differentiation-in-the-time-domain">Differentiation in the time domain<a class="anchor-link" href="#Differentiation-in-the-time-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[f&#39;(t) = \frac{d}{dt} f(t) \Leftrightarrow sF(s) - f(0^-)\]</p>
+<p>This property facilitates the solution of differential equations</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The differentiation property can be extended to higher-orders as follows \[f&#39;&#39;(t) = \frac{d^2}{dt^2}f(t) \Leftrightarrow s^2F(s) - sf(0^-) - f&#39;(0^-)\] \[f&#39;&#39;(t) = \frac{d^3}{dt^3}f(t) \Leftrightarrow s^3F(s) - s^2f(0) - sf&#39;(0^-) - f&#39;&#39;(0^-)\] and in general \[f^{(n)}(t) = \frac{d^n}{dt^n}f(t) \Leftrightarrow s^nF(s) - s^{n-1}f(0^-) - s^{n-2}f&#39;(0^-) - \cdots - f^{(n-1)}(0^-)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Differentiation-in-the-complex-frequency-domain">Differentiation in the complex frequency domain<a class="anchor-link" href="#Differentiation-in-the-complex-frequency-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[tf(t) \Leftrightarrow -\frac{d}{ds}F(s)\] and in general \[t^nf(t) \Leftrightarrow (-1)^n\frac{d^n}{ds^n}F(s)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Integration-in-the-time-domain">Integration in the time domain<a class="anchor-link" href="#Integration-in-the-time-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[\int_{-\infty}^tf(\tau)d\tau \Leftrightarrow \frac{F(s)}{s}+\frac{f(0^-)}{s}\]</p>
+<p>This property is important because it provides a way to model the solution of a differential equation using op-amp integrators in so-called <a href="http://en.wikipedia.org/wiki/Analog_computer">Analogue Computers</a> and is now the basis for numerical integration systems like Simulink.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Integration-in-the-complex-frequency-domain">Integration in the complex frequency domain<a class="anchor-link" href="#Integration-in-the-complex-frequency-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Providing that</p>
+<p>\[\lim_{t\to 0} \frac{f(t)}{t}\]</p>
+<p>exists</p>
+<p>\[\frac{f(t)}{t}\Leftrightarrow \int_s^\infty F(s)ds\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time-periodicity-property">Time periodicity property<a class="anchor-link" href="#Time-periodicity-property">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If \(f(t)\) is a periodic function with period \(T\) such that \(f(t) = f(t+nT)\) for \(n=1,2,3,\ldots\) then</p>
+<p>\[f(t+nT) \Leftrightarrow \frac{\int_0^T f(t)e^{-st}dt}{1-e^{-sT}}\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Initial-value-theorem">Initial value theorem<a class="anchor-link" href="#Initial-value-theorem">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[\lim_{t\to 0}f(t) \Leftrightarrow \lim_{s\to \infty} sF(s) = f(0^-)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Final-value-theorem">Final value theorem<a class="anchor-link" href="#Final-value-theorem">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[\lim_{t\to \infty}f(t) \Leftrightarrow \lim_{s\to 0} sF(s) = f(\infty)\]</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Convolution-in-the-time-domain">Convolution in the time domain<a class="anchor-link" href="#Convolution-in-the-time-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>\[f_1(t)*f_2(t) = \int_{0}^{t}f_1(\tau)f_2(t-\tau) d\tau \Leftrightarrow F_1(s) F_2(s)\]</p>
+<p>This is another important result as it allows us to compute the response of a system by simply multiplying the Laplace transforms of the system and the signal and then inverse Laplace transforming the result.</p>
+<p>This is usually much simpler than computing the convolution integral in the time domain – an operation we we see later!</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Convolution-in-the-complex-frequency-domain">Convolution in the complex frequency domain<a class="anchor-link" href="#Convolution-in-the-complex-frequency-domain">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Multiplying two signals together in the time domain is the same as performing convolution in the complex frequency domain.</p>
+<p>\[f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi j}F_1(s) * F_2(s) = \frac{1}{2\pi j}\lim_{T\to \infty}\int_{c-jT}^{c+jT}F_1(\sigma)F_2(s-\sigma)d\sigma\]</p>
+<p>Convolution in the complex frequency domain is nasty – multiplication in the time domain is relatively painless.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
+<h2 id="Transform-tables">Transform tables<a class="anchor-link" href="#Transform-tables">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
+<p>Every textbook that covers Laplace transforms will provide a tables of properties and the most commonly encountered transforms. Karris is no exception and you will find a table of tansforms in Tables 2.1 and 2.2.</p>
+<p>Here are a couple that are on the net for your reference</p>
+</div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">IFrame</span>
+<span class="n">IFrame</span><span class="p">(</span><span class="s">&#39;http://en.wikipedia.org/wiki/Laplace_transform&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[9]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+
+        <iframe
+            width="100%"
+            height=500"
+            src="http://en.wikipedia.org/wiki/Laplace_transform"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[10]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="n">IFrame</span><span class="p">(</span><span class="s">&#39;http://mathworld.wolfram.com/LaplaceTransform.html&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="s">&quot;100%&quot;</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="s">&quot;500&quot;</span> <span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt output_prompt">
+    Out[10]:</div>
+<div class="box-flex1 output_subarea output_pyout">
+
+<div class="output_html rendered_html">
+
+        <iframe
+            width="100%"
+            height=500"
+            src="http://mathworld.wolfram.com/LaplaceTransform.html"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Don't-panic">Don't panic<a class="anchor-link" href="#Don't-panic">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Which of these signals represents \(-Au_0(t+T)\)?</p>
-<img src="pictures/stepf1.png" width="50%">
-</div>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What is represented by</p>
-<img src="pictures/stepf2.png" width="50%">
-<ol style="list-style-type: decimal">
-<li>\(-Au_0(t - T)\)</li>
-<li>\(-Au_0(-t + T)\)</li>
-<li>\(-Au_0(-t - T)\)</li>
-<li>\(-Au_0(t-T)\)</li>
-</ol>
+<p>Tables of Laplace transform properties and transforms will be included with the exam paper.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Synthesis-of-Signals-from-Unit-Step">Synthesis of Signals from Unit Step<a class="anchor-link" href="#Synthesis-of-Signals-from-Unit-Step">&#182;</a></h2>
+<h2 id="Transforms-of-Elementary-Signals">Transforms of Elementary Signals<a class="anchor-link" href="#Transforms-of-Elementary-Signals">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unit step functions can be used to represent other time-varying functions such as rectangular pulses, square waves and triangular pulses.</p>
-</div></section><section>
+<table>
+<thead>
+<tr><td>
+ 
+</td><th>
+f(t)
+</th><th>
+F(s)
+</th></tr></thead>
+<tbody>
+<tr><td>
+1
+</td><td>
+\[\delta(t)\]
+</td><td>
+\[1\]
+</td></tr>
+<tr><td>
+2
+</td><td>
+\[\delta(t-a)\]
+</td><td>
+\[e^{-as}\]
+</td></tr>
+<tr><td>
+3
+</td><td>
+\[u_0(t)\]
+</td><td>
+\[\frac{1}{s}\]
+</td></tr>
+<tr><td>
+4
+</td><td>
+\[t u_0(t)\]
+</td><td>
+\[\frac{1}{s^2}\]
+</td></tr>
+<tr><td>
+5
+</td><td>
+\[t^n u_0(t)\]
+</td><td>
+\[\frac{n!}{s^{n+1}}\]
+</td></tr>
+<tr><td>
+6
+</td><td>
+\[e^{-at}u_0(t)\]
+</td><td>
+\[\frac{1}{s+a}\]
+</td></tr>
+<tr><td>
+7
+</td><td>
+\[t^n e^{-at} u_0(t)\]
+</td><td>
+\[\frac{n!}{(s+a)^{n+1}}\]
+</td></tr>
+<tr><td>
+8
+</td><td>
+\[\sin (\omega t) u_0(t)\]
+</td><td>
+\[\frac{\omega}{s^2 + \omega^2}\]
+</td></tr>
+<tr><td>
+9
+</td><td>
+\[\cos (\omega t) u_0(t)\]
+</td><td>
+\[\frac{s}{s^2 + \omega^2}\]
+</td></tr>
+<tr><td>
+10
+</td><td>
+\[e^{-at} \sin (\omega t) u_0(t)\]
+</td><td>
+\[\frac{\omega}{(s + a)^2 + \omega^2}\]
+</td></tr>
+<tr><td>
+11
+</td><td>
+\[e^{-at}\cos (\omega t) u_0(t)\]
+</td><td>
+\[\frac{s+a}{(s+a)^2 + \omega^2}\]
+</td></tr>
+</tbody>
+</table>
+
+<p>Refer to the textbook if you want to see the proof of these transforms.</p>
+</div></section>
+    </section><section>
+    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Synthesize-Rectangular-Pulse">Synthesize Rectangular Pulse<a class="anchor-link" href="#Synthesize-Rectangular-Pulse">&#182;</a></h3>
+<h2 id="Laplace-transforms-of-common-waveforms">Laplace transforms of common waveforms<a class="anchor-link" href="#Laplace-transforms-of-common-waveforms">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/rect.png">
-</div></section><section>
+<p>We will work through a few of the following on the board in class</p>
+<ul>
+<li>Pulse</li>
+<li>Linear segment</li>
+<li>Triangular waveform</li>
+<li>Rectangular periodic waveform (square wave)</li>
+<li>Half rectified sine wave</li>
+</ul>
+</div></section>
+    </section><section>
+    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Synthesize-Square-Wave">Synthesize Square Wave<a class="anchor-link" href="#Synthesize-Square-Wave">&#182;</a></h3>
+<h2 id="Using-Matlab-to-Find-Laplace-Transforms">Using Matlab to Find Laplace Transforms<a class="anchor-link" href="#Using-Matlab-to-Find-Laplace-Transforms">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/square_wave.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Synthesize-Symmetric-Rectangular-Pulse">Synthesize Symmetric Rectangular Pulse<a class="anchor-link" href="#Synthesize-Symmetric-Rectangular-Pulse">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/symm_rect.png">
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Synthesize-Symmetric-Triangular-Pulse">Synthesize Symmetric Triangular Pulse<a class="anchor-link" href="#Synthesize-Symmetric-Triangular-Pulse">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/symm_tri.png">
-</div></section><section>
+<p>The Matlab function <code>laplace</code> can be used to find laplace transforms of time functions. The lab exercises will illustrate this.</p>
+</div></section>
+    </section><section>
+    <section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Show that the waveform shown below</p>
-<img src="pictures/example1.png">
-<p>can be represented by the function</p>
-<p>\[v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)\]</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Ramp-Function">The Ramp Function<a class="anchor-link" href="#The-Ramp-Function">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/rc.png">
-<p>In the circuit shown above \(i_s\) is a constant current source and the switch is closed at time \(t=0\). Show that the voltage across the capacitor can be represented as</p>
-<p>\[v_C(t)=\frac{i_s}{C}t u_0(t)\]</p>
-<p>and sketch the wave form.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The unit ramp function is defined as</p>
-<p>\[u_1(t) = \int_{-\infty}^{t}u_0(\tau)d\tau\]</p>
-<p>so</p>
-<p>\[{u_1}(t) = \left\{ {\begin{array}{*{20}{c}}
-{0\quad t &lt; 0}\\
-{t\quad t \ge 0}
-\end{array}} \right.\]</p>
-<p>and</p>
-<p>\[u_0(t) = \frac{d }{dt}u_1(t)\]</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Higher order functions of \(t\) can be generated by the repeated integration of the unit step function.</p>
-<p>For future reference, you should determine \(u_2(t)\), \(u_3(t)\) and \(u_n(t)\) for yourself and make a note of the general rule:</p>
-<p>\[u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)\]</p>
-<p>Details are given in equations 1.26—1.29 in the textbook.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Dirac-Delta-Function">The Dirac Delta Function<a class="anchor-link" href="#The-Dirac-Delta-Function">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/lr.png">
-<p>In the circuit shown above, the switch is closed at time \(t=0\) and \(i_L(t)=0\) for \(t&lt;0\). Express the inductor current \(i_L(t)\) in terms of the unit step function.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To solve this problem we need to invent a function that represents the derivative of the unit step function. This function is called \(\delta(t)\) or the <em>dirac delta</em> function (named after <a href="http://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>).</p>
-<p>This function is tricky because \(u_0(t)\) is discontinuous at \(t=0\) but it must have the properties</p>
-<p>\[\int_{-\infty}^{t}\delta(\tau)d\tau = u_0(t)\]</p>
-<p>and</p>
-<p>\(\delta(t) = 0\) for all \(t\ne 0\).</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Sampling-Property">Sampling Property<a class="anchor-link" href="#Sampling-Property">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>sampling property</em> of the delta function states that</p>
-<p>\[f(t)\delta(t-a) = f(a)\delta(t-a)\]</p>
-<p>or, when \(a = 0\),</p>
-<p>\[f(t)\delta(t) = f(0)\delta(t)\]</p>
-<p>Multiplication of any function \(f(t)\) by the delta function \(\delta(t)\) results in sampling the function at the time instants for which the delta function is not zero.</p>
-<p>The study of descrete-time (sampled) systems is based on this property.</p>
-<p><em>You should work through the proof</em> for youself.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Sifting-Property">Sifting Property<a class="anchor-link" href="#Sifting-Property">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>sifting property</em> of the delta function states that</p>
-<p>\[\int_{-\infty}^{\infty}f(t)\delta(t-\alpha)dt=f(\alpha)\]</p>
-<p>That is, if multiply any function \(f(t)\) by \(\delta(t-\alpha)\), and integrate from \(-\infty\) to \(+\infty\), we will get the value of \(f(t)\) evaluated at \(t=\alpha.\)</p>
-<p><em>You should also work through the proof</em> for yourself.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Higher-Order-Delta-Fuctions">Higher Order Delta Fuctions<a class="anchor-link" href="#Higher-Order-Delta-Fuctions">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>the n<em>th</em>-order <em>delta function</em> is defined as the n<em>th</em> derivative of \(u_0(t)\), that is</p>
-<p>\[\delta^n(t)=\frac{d^n}{dt^n}[u_0(t)]\]</p>
-<p>The function \(\delta&#39;(t)\) is called the <em>doublet</em>, \(\delta&#39;&#39;(t)\) is called the <em>triplet</em> and so on.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>By a procedure similar to the derivation of the sampling property we can show that</p>
-<p>\[f(t)\delta&#39;(t-a)=f(a)\delta&#39;(t-a)-f&#39;(t)\delta(t-a)\]</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Also, derivation of the sifting property can be extended to show that</p>
-<p>\[\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( - 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}\]</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Evaluate the following expressions</p>
-<ol style="list-style-type: decimal">
-<li>\[3t^4\delta(t-1) \]</li>
-<li>\[\int_{-\infty}^{\infty}t\delta(t-2)dt\]</li>
-<li>\[t^2\delta&#39;(t-3)\]</li>
-</ol>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example2.png">
-<ol style="list-style-type: decimal">
-<li><p>Express the voltage waveform \(v(t)\) shown above aa sum of unit step functions for the time interval \(-1 &lt; t &lt; 7\) s</p></li>
-<li><p>Using the result of part (1), compute the derivative of \(v(t)\) and sketch it's waveform.</p></li>
-</ol>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Do the end of the chapter exercises (Section 1.7) from the textbook. Don't look at the answers until you have attempted the problems.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lab-Work">Lab Work<a class="anchor-link" href="#Lab-Work">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the lab, on Monday, we will solve Example 2 using Matlab/Simulink following the procedure given in Pages between pages 1-17 and 1-22 of the textbook. We will also explore the <code>heaviside</code> and <code>dirac</code> functions.</p>
+<p>Attempt at least one of the end-of-chapter exercises from each question 1-7 of Section 2.7 from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<p>If we have time, I will work through one or two of these in class.</p>
 </div></section>
     </section>
 </div>
