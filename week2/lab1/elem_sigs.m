@@ -81,7 +81,7 @@ ezplot(t*heaviside(t),[-1,5]),grid
 diff(heaviside(t),t)
 %% 
 % It's not easy to plot the dirac delta function. We have to cheat a little
-t = [-1,0,1]; delta = [0,1,0];
-stem(t,delta)
+td = [-1,0,1]; delta = [0,1,0];
+stem(td,delta)
 %% Exercise 5
 % Use Matlab to solve Examples 1.8 and 1.9 from the textbook.
