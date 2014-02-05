@@ -22,7 +22,10 @@ denG = [a, b, 5];
 numG = -1;
 %% Plot
 w = 1:10:10000;
-Gs = -1./(a*w.^2 - 5.*j.*b.*w + 5);
+%
+% $$G(j\omega) = \frac{-1}{a\omega^2 - jb\omega + 5}$$
+%
+Gs = -1./(a*w.^2 - j.*b.*w + 5);
 %
 semilogx(w, abs(Gs))
 xlabel('Radian frequency w (rad/s')
