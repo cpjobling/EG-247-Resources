@@ -18,12 +18,12 @@
 % We can find the step response by letting $v_\mathrm{in}(t) = u_0(t)$ so that
 % $V_\mathrm{in}(s)=1/s$ then 
 %
-% $$V_\mathrm{out}(s) = \frac{-1}{s^2 + 3s + 1}\frac{1}{s}$$
+% $$V_\mathrm{out}(s) = \frac{-1}{s^2 + 3s + 1}.\frac{1}{s}$$
 % 
 % We can solve this by partial fraction expansion and inverse Laplace transform
 % as is done in the text book with the help of Matlab's `residue` function.
 %
-% Here, howver we'll use the LTI block that was introduced in the lecture.
+% Here, however we'll use the LTI block that was introduced in the lecture.
 %%
 % Define the circuit as a transfer function
 G = tf([-1],[1 3 1])
