@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1754,7 +1754,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The formal definition of the Inverse Laplace Transform is</p>
-<p>\[\mathcal{L}^{-1}\left\{ F(s) \right\} = \frac{1}{2\pi j}\int_{\sigma-j\omega}^{\sigma+j\omega} f(t)e^{st}ds\]</p>
+<p><span class="math">\[\mathcal{L}^{-1}\left\{ F(s) \right\} = \frac{1}{2\pi j}\int_{\sigma-j\omega}^{\sigma+j\omega} f(t)e^{st}ds\]</span></p>
 <p>but this is difficult to use in practice because it requires contour integration using complex variable theory.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1770,9 +1770,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Quite often the Laplace Transform we start off with is a <em>rational polynomial</em> in \(s\).</p>
-<p>\[F(s) = \frac{N(s)}{D(s)} = \frac{b_ms^m + b_{m-1}s^{m-1}+b_{m-2}s^{m-2}+ \cdots +b_{1}s+b_{0}}{a_ns^n + a_{n-1}s^{n-1}+a_{n-2}s^{n-2}+ \cdots +a_{1}s+a_{0}}\]</p>
-<p>The coefficients \(a_k\) and \(b_k\) are real for \(k = 1, 2, 3, \ldots\)</p>
+<p>Quite often the Laplace Transform we start off with is a <em>rational polynomial</em> in <span class="math">\(s\)</span>.</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{D(s)} = \frac{b_ms^m + b_{m-1}s^{m-1}+b_{m-2}s^{m-2}+ \cdots +b_{1}s+b_{0}}{a_ns^n + a_{n-1}s^{n-1}+a_{n-2}s^{n-2}+ \cdots +a_{1}s+a_{0}}\]</span></p>
+<p>The coefficients <span class="math">\(a_k\)</span> and <span class="math">\(b_k\)</span> are real for <span class="math">\(k = 1, 2, 3, \ldots\)</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Proper-and-Improper-Rational-Functions">Proper and Improper Rational Functions<a class="anchor-link" href="#Proper-and-Improper-Rational-Functions">&#182;</a></h3>
@@ -1780,8 +1780,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>If \(m &lt;n\) \(F(s)\) is said to be a <em>proper rational function</em>.</li>
-<li>If \(m \ge n\) \(F(s)\) is said to be an <em>improper rational function</em></li>
+<li>If <span class="math">\(m &lt;n\)</span> <span class="math">\(F(s)\)</span> is said to be a <em>proper rational function</em>.</li>
+<li>If <span class="math">\(m \ge n\)</span> <span class="math">\(F(s)\)</span> is said to be an <em>improper rational function</em></li>
 </ul>
 <p>(Think <a href="http://www.mathsisfun.com/proper-fractions.html">proper fractions</a> and <a href="http://www.mathsisfun.com/improper-fractions.html">improper fractions</a>.)</p>
 </div></section><section>
@@ -1791,9 +1791,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The <em>roots</em> of the numerator polymonial \(N(s)\) are found by setting \(N(s)=0\)</li>
-<li>When \(s\) equals one of the \(m\) roots of \(N(s)\) then \(F(s)\) will be zero.</li>
-<li>Thus the roots of \(N(s)\) are the <strong>zeros</strong> of \(F(s)\).</li>
+<li>The <em>roots</em> of the numerator polymonial <span class="math">\(N(s)\)</span> are found by setting <span class="math">\(N(s)=0\)</span></li>
+<li>When <span class="math">\(s\)</span> equals one of the <span class="math">\(m\)</span> roots of <span class="math">\(N(s)\)</span> then <span class="math">\(F(s)\)</span> will be zero.</li>
+<li>Thus the roots of <span class="math">\(N(s)\)</span> are the <strong>zeros</strong> of <span class="math">\(F(s)\)</span>.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1802,20 +1802,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The <em>roots</em> (<em>zeros</em>) of the denominator polynomial are found by setting \(D(s) = 0\).</li>
-<li>When \(s\) equals one of the \(n\) roots of \(D(s)\) then \(F(s)\) will be infinite \(F(s_r) = N(s_r)/0=\infty\)).</li>
-<li>These are called the <strong>poles</strong> of \(F(s)\).</li>
+<li>The <em>roots</em> (<em>zeros</em>) of the denominator polynomial are found by setting <span class="math">\(D(s) = 0\)</span>.</li>
+<li>When <span class="math">\(s\)</span> equals one of the <span class="math">\(n\)</span> roots of <span class="math">\(D(s)\)</span> then <span class="math">\(F(s)\)</span> will be infinite <span class="math">\(F(s_r) = N(s_r)/0=\infty\)</span>).</li>
+<li>These are called the <strong>poles</strong> of <span class="math">\(F(s)\)</span>.</li>
 </ul>
-<p>(Imagine telegraph poles planted at the points on the \(s\)-plane where \(D(s)\) is zero.)</p>
+<p>(Imagine telegraph poles planted at the points on the <span class="math">\(s\)</span>-plane where <span class="math">\(D(s)\)</span> is zero.)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-Further-Simplifying-Assumption">A Further Simplifying Assumption<a class="anchor-link" href="#A-Further-Simplifying-Assumption">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(s)\) is proper then it is conventional to make the coefficient \(s_n\) unity thus:</p>
-<p>\[F(s) = \frac{{N(s)}}{{D(s)}} = \frac{{1/{a_n}\left( {{b_m}{s^m} + {b_{m - 1}}{s^{m - 1}} + {b_{m - 2}}{s^{m - 2}} +  \cdots  + {b_1}s + {b_0}} \right)}}{{{s^n} + \frac{{{a_{n - 1}}}}{{{a_n}}}{s^{n - 1}} + \frac{{{a_{n - 2}}}}{{{a_n}}}{s^{n - 2}} +  \cdots  + \frac{{{a_1}}}{{{a_n}}}s + \frac{{{a_0}}}{{{a_n}}}}}\]</p>
-<p>(I know it doesn't look simpler, but remember that the \(a\)s and \(b\)s are numbers in practice!)</p>
+<p>If <span class="math">\(F(s)\)</span> is proper then it is conventional to make the coefficient <span class="math">\(s_n\)</span> unity thus:</p>
+<p><span class="math">\[F(s) = \frac{{N(s)}}{{D(s)}} = \frac{{1/{a_n}\left( {{b_m}{s^m} + {b_{m - 1}}{s^{m - 1}} + {b_{m - 2}}{s^{m - 2}} +  \cdots  + {b_1}s + {b_0}} \right)}}{{{s^n} + \frac{{{a_{n - 1}}}}{{{a_n}}}{s^{n - 1}} + \frac{{{a_{n - 2}}}}{{{a_n}}}{s^{n - 2}} +  \cdots  + \frac{{{a_1}}}{{{a_n}}}s + \frac{{{a_0}}}{{{a_n}}}}}\]</span></p>
+<p>(I know it doesn't look simpler, but remember that the <span class="math">\(a\)</span>s and <span class="math">\(b\)</span>s are numbers in practice!)</p>
 </div></section>
     </section><section>
     <section>
@@ -1824,7 +1824,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The poles of \(F(s)\) can be real and distinct, real and repeated, complex conjugate pairs, or a combination.</p>
+<p>The poles of <span class="math">\(F(s)\)</span> can be real and distinct, real and repeated, complex conjugate pairs, or a combination.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Defining-the-problem">Defining the problem<a class="anchor-link" href="#Defining-the-problem">&#182;</a></h3>
@@ -1833,10 +1833,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The nature of the poles governs the best way to tackle the PFE that leads to the solution of the Inverse Laplace Transform. Thus, we need to structure our presentation to cover one of the following cases:</p>
 <ul>
-<li>The case where \(F(s)\) has distinct poles</li>
-<li>The case where \(F(s)\) has complex poles</li>
-<li>The case where \(F(s)\) has repeated poles</li>
-<li>The case where \(F(s)\) is an improper rational polynomial</li>
+<li>The case where <span class="math">\(F(s)\)</span> has distinct poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> has complex poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> has repeated poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> is an improper rational polynomial</li>
 </ul>
 <p>We will examine each case by means of a worked example. Please refer to Chapter 3 of Karris for full details.</p>
 </div></section>
@@ -1848,20 +1848,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If the poles \(p_1,\,p_2,\,p_3,\,\ldots,\, p_n\) are <em>distinct</em> we can factor the denominator of F(s) in the form</p>
-<p>\[F(s) = \frac{N(s)}{(s-p_1)(s-p_2)(s-p_3)\ldots(s-p_n)}\]</p>
+<p>If the poles <span class="math">\(p_1,\,p_2,\,p_3,\,\ldots,\, p_n\)</span> are <em>distinct</em> we can factor the denominator of F(s) in the form</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{(s-p_1)(s-p_2)(s-p_3)\ldots(s-p_n)}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Next, using <em>partial fraction expansion</em></p>
-<p>\[F(s)=\frac{r_1}{s-p_1}+\frac{r_2}{s-p_2}+\frac{r_3}{s-p_3}+\cdots + \frac{r_n}{s-p_n}\]</p>
+<p><span class="math">\[F(s)=\frac{r_1}{s-p_1}+\frac{r_2}{s-p_2}+\frac{r_3}{s-p_3}+\cdots + \frac{r_n}{s-p_n}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To evaluate the <em>residue</em> \(r_k\), we multiply both sides by \((s-p_k)\) then let \(s \to p_k\)</p>
-<p>\[r_k = \lim_{s\to p_k}(s-p_k)F(s) = \left.(s-p_k)F(s)\right|_{s=p_k}\]</p>
+<p>To evaluate the <em>residue</em> <span class="math">\(r_k\)</span>, we multiply both sides by <span class="math">\((s-p_k)\)</span> then let <span class="math">\(s \to p_k\)</span></p>
+<p><span class="math">\[r_k = \lim_{s\to p_k}(s-p_k)F(s) = \left.(s-p_k)F(s)\right|_{s=p_k}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1869,8 +1869,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the PFE method to simplify \(F_1(s)\) below and find the time domain function \(f_1(t)\) corresponding to \(F_1(s)\)</p>
-<p>\[F_1(s) = \frac{2s+5}{s^2 + 5s + 6}\]</p>
+<p>Use the PFE method to simplify <span class="math">\(F_1(s)\)</span> below and find the time domain function <span class="math">\(f_1(t)\)</span> corresponding to <span class="math">\(F_1(s)\)</span></p>
+<p><span class="math">\[F_1(s) = \frac{2s+5}{s^2 + 5s + 6}\]</span></p>
 <p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29">Wolfram|Alpha</a>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1968,9 +1968,9 @@ k =
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Interpreted as:</p>
-<p>\[F_1(s) = \frac{1}{s + 3} + \frac{1}{s + 2}\]</p>
+<p><span class="math">\[F_1(s) = \frac{1}{s + 3} + \frac{1}{s + 2}\]</span></p>
 <p>which because of the linearity property of the Laplace Transform and using tables results in the <em>Inverse Laplace Transform</em></p>
-<p>\[f_1(t) = e^{-3t} + e^{-2t}\]</p>
+<p><span class="math">\[f_1(t) = e^{-3t} + e^{-2t}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-solution---symbolic">Matlab solution - symbolic<a class="anchor-link" href="#Matlab-solution---symbolic">&#182;</a></h3>
@@ -2019,7 +2019,7 @@ In&nbsp;[34]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Determine the Inverse Laplace Transform of</p>
-<p>\[F_2(s) = \frac{3s^2+2s+5}{s^3 + 9s^s + 23s + 15}\]</p>
+<p><span class="math">\[F_2(s) = \frac{3s^2+2s+5}{s^3 + 9s^s + 23s + 15}\]</span></p>
 <p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%283s%5E2+%2B+2s+%2B+5%29%2F%28s%5E3+%2B+9s%5E2+%2B+23s+%2B+15%29">Wolfram|Alpha</a>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2028,7 +2028,7 @@ In&nbsp;[34]:
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Because the denominator of \(F_2(s)\) is a cubic, it will be difficult to factorise without computer assistance so we use Matlab to factorise \(D(s)\)</p>
+<p>Because the denominator of <span class="math">\(F_2(s)\)</span> is a cubic, it will be difficult to factorise without computer assistance so we use Matlab to factorise <span class="math">\(D(s)\)</span></p>
 </div>
     </div><div class="fragment">
     
@@ -2078,7 +2078,7 @@ ans =
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can now use the previous technique to find the solution which according to Matlab should be</p>
-<p>\[f_1(t) = \frac{3}{4}e^{-t} - \frac{13}{2}e^{-3t} + \frac{35}{4}e^{-5t}\]</p>
+<p><span class="math">\[f_1(t) = \frac{3}{4}e^{-t} - \frac{13}{2}e^{-3t} + \frac{35}{4}e^{-5t}\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -2087,10 +2087,10 @@ ans =
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Quite often the poles of \(F(s)\) are complex and because the complex poles occur as complex conjugate pairs, the number of complex poles is even. Thus if \(p_k\) is a complex root of \(D(s)\) then its complex conjugate \(p_k^*\) is also a root of \(D(s)\).</p>
-<p>You can still use the PFE with complex poles, as demonstrated in Pages 3-5—3-7 in the textbook. However it is easier to use the fact that complex poles will appear as quadratic factors of the form \(s^2 + as + b\) and then call on the two transforms in the PFE</p>
-<p>\[\frac{s}{(s - a)^2 + \omega^2} \Leftrightarrow e^{-at}\sin\;\omega t\]</p>
-<p>\[\frac{s + a}{(s - a)^2 + \omega^2} \Leftrightarrow e^{-at}\cos\;\omega t\]</p>
+<p>Quite often the poles of <span class="math">\(F(s)\)</span> are complex and because the complex poles occur as complex conjugate pairs, the number of complex poles is even. Thus if <span class="math">\(p_k\)</span> is a complex root of <span class="math">\(D(s)\)</span> then its complex conjugate <span class="math">\(p_k^*\)</span> is also a root of <span class="math">\(D(s)\)</span>.</p>
+<p>You can still use the PFE with complex poles, as demonstrated in Pages 3-5—3-7 in the textbook. However it is easier to use the fact that complex poles will appear as quadratic factors of the form <span class="math">\(s^2 + as + b\)</span> and then call on the two transforms in the PFE</p>
+<p><span class="math">\[\frac{s}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\sin\;\omega t\]</span></p>
+<p><span class="math">\[\frac{s + a}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\cos\;\omega t\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
@@ -2099,7 +2099,7 @@ ans =
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Rework Example 3-2 from the text book using quadratic factors.</p>
 <p>Find the Inverse Laplace Transform of</p>
-<p>\[F_3(s) = \frac{s + 3}{(s+1)(s^2 + 4s + 8)}\]</p>
+<p><span class="math">\[F_3(s) = \frac{s + 3}{(s+1)(s^2 + 4s + 8)}\]</span></p>
 <p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s+%2B+1%29%28s%5E2+%2B+4s+%2B+8%29%29">Wolfram|Alpha</a> – Shows that the computer is not always best!)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2108,12 +2108,12 @@ ans =
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We complete the square</p>
-<p>\[s^2 + 4s + 8 = (s + 2)^2 + 4\]</p>
-<p>Then comparing this with the desired form \((s - a)^2 + \omega^2\), we have \(a = -2\) and \(\omega^2 = 4 \to \omega = \sqrt{4} = 2\).</p>
+<p><span class="math">\[s^2 + 4s + 8 = (s + 2)^2 + 4\]</span></p>
+<p>Then comparing this with the desired form <span class="math">\((s - a)^2 + \omega^2\)</span>, we have <span class="math">\(a = -2\)</span> and <span class="math">\(\omega^2 = 4 \to \omega = \sqrt{4} = 2\)</span>.</p>
 <p>To solve this, we need to find the PFE for the assumed solution:</p>
-<p>\[F_3(s) = \frac{r_1}{s+1} + \frac{r_2s}{(s + 2)^2 + 4} + \frac{r_3(s+2)}{(s + 2)^2 + 4}\]</p>
+<p><span class="math">\[F_3(s) = \frac{r_1}{s+1} + \frac{r_2s}{(s + 2)^2 + 4} + \frac{r_3(s+2)}{(s + 2)^2 + 4}\]</span></p>
 <p>expecting the solution</p>
-<p>\[f_3(t) = \frac{2}{5}e^{-t} + \frac{3}{10}\sin 2t - \frac{2}{5}\cos 2t\]</p>
+<p><span class="math">\[f_3(t) = \frac{2}{5}e^{-t} + \frac{3}{10}\sin 2t - \frac{2}{5}\cos 2t\]</span></p>
 <p>You can use trig. identities to simplify this further if you wish.</p>
 </div></section>
     </section><section>
@@ -2124,17 +2124,17 @@ ans =
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>When a rational polynomial has repeated poles</p>
-<p>\[F(s) = \frac{N(s)}{(s - p_1)^m(s - p_2)\cdots(s - p_{n-1})(s-p_0)}\]</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{(s - p_1)^m(s - p_2)\cdots(s - p_{n-1})(s-p_0)}\]</span></p>
 <p>and the PFE will have the form:</p>
-<p>\[\begin{array}{c}
+<p><span class="math">\[\begin{array}{c}
 F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s - {p_1})}^{m - 1}}}} + \frac{{{r_{13}}}}{{{{(s - {p_1})}^{m - 2}}}} +  \cdots  + \frac{{{r_{1m}}}}{{(s - {p_1})}}\\
  + \frac{{{r_2}}}{{(s - {p_2})}} + \frac{{{r_3}}}{{(s - {p_3})}} +  \cdots  + \frac{{{r_n}}}{{(s - {p_n})}}
-\end{array}\]</p>
+\end{array}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The ordinary residues \(r_k\) can be found using the rule used for distinct roots.</p>
-<p>To find the residuals for the repeated term \(r_{1k}\) we need to multiply both sides of the expression by \((s+p_1)^m\) and take repeated derivatives as described in detail in Pages 3-7—3-9 of the text book. This yields the general formula</p>
-<p>\[r_{1k}=\lim_{s\to p_1}\frac{1}{(k-1)!}\frac{d^{k-1}}{ds^{k-1}}\left[(s-p_1)^mF(s)\right]\]</p>
+<p>The ordinary residues <span class="math">\(r_k\)</span> can be found using the rule used for distinct roots.</p>
+<p>To find the residuals for the repeated term <span class="math">\(r_{1k}\)</span> we need to multiply both sides of the expression by <span class="math">\((s+p_1)^m\)</span> and take repeated derivatives as described in detail in Pages 3-7—3-9 of the text book. This yields the general formula</p>
+<p><span class="math">\[r_{1k}=\lim_{s\to p_1}\frac{1}{(k-1)!}\frac{d^{k-1}}{ds^{k-1}}\left[(s-p_1)^mF(s)\right]\]</span></p>
 <p>which in the age of computers is rarely needed.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2143,9 +2143,9 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s - {p_1})
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Find the inverse Laplace Transform of</p>
-<p>\[F_4(s) = \frac{s+3}{(s+2)(s+1)^2}\]</p>
+<p><span class="math">\[F_4(s) = \frac{s+3}{(s+2)(s+1)^2}\]</span></p>
 <p>Note that the transform</p>
-<p>\[te^{at} \Leftrightarrow \frac{1}{(s - a)^2}\]</p>
+<p><span class="math">\[te^{at} \Leftrightarrow \frac{1}{(s - a)^2}\]</span></p>
 <p>will be useful.</p>
 <p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s%2B2%29%28s+%2B+1%29%5E2%29">Wolfram|Alpha</a>)</p>
 </div></section><section>
@@ -2162,35 +2162,35 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s - {p_1})
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(s)\) is an improper rational polynomial, that is \(m \ge n\), we must first divide the numerator \(N(s)\) by the denomonator \(D(s)\) to derive an expression of the form</p>
-<p>\[F(s) = k_0 + k_1s + k_2s^2 + \cdots + k_{m-n}s^{m-n} + \frac{N(s)}{D(s)}\]</p>
-<p>and then \(N(s)/D(s)\) will be a proper rational polynomial.</p>
+<p>If <span class="math">\(F(s)\)</span> is an improper rational polynomial, that is <span class="math">\(m \ge n\)</span>, we must first divide the numerator <span class="math">\(N(s)\)</span> by the denomonator <span class="math">\(D(s)\)</span> to derive an expression of the form</p>
+<p><span class="math">\[F(s) = k_0 + k_1s + k_2s^2 + \cdots + k_{m-n}s^{m-n} + \frac{N(s)}{D(s)}\]</span></p>
+<p>and then <span class="math">\(N(s)/D(s)\)</span> will be a proper rational polynomial.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-5---and-some-new-transform-pairs.">Example 5 - and some new transform pairs.<a class="anchor-link" href="#Example-5---and-some-new-transform-pairs.">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[F_6(s)= \frac{s^2 + 2s + 2}{s+1}\]</p>
+<p><span class="math">\[F_6(s)= \frac{s^2 + 2s + 2}{s+1}\]</span></p>
 <p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%5E2+%2B+2s+%2B+2%29%2F%28s+%2B+1%29">Wolfram|Alpha</a>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Dividing \(s^2 + 2s + 2\) by \(s + 1\) gives</p>
-<p>\[F_6(s) = s + 1 + \frac{1}{s+1}\]</p>
+<p>Dividing <span class="math">\(s^2 + 2s + 2\)</span> by <span class="math">\(s + 1\)</span> gives</p>
+<p><span class="math">\[F_6(s) = s + 1 + \frac{1}{s+1}\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\frac{1}{s+1} \Leftrightarrow e^{-t}\]</p>
+<p><span class="math">\[\frac{1}{s+1} \Leftrightarrow e^{-t}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[1 \Leftrightarrow \delta(t)\]</p>
+<p><span class="math">\[1 \Leftrightarrow \delta(t)\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[s \Leftrightarrow ?\]</p>
+<p><span class="math">\[s \Leftrightarrow ?\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2199,18 +2199,18 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s - {p_1})
 </section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Recall from Session 2:</p>
-<p>\[\frac{d}{dt}u_0(t)=u_0&#39;(t)=\delta(t)\]</p>
+<p><span class="math">\[\frac{d}{dt}u_0(t)=u_0&#39;(t)=\delta(t)\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>and</p>
-<p>\[\frac{d^2}{dt^2}u_0(t)=u_0&#39;&#39;(t)=\delta&#39;(t)\]</p>
+<p><span class="math">\[\frac{d^2}{dt^2}u_0(t)=u_0&#39;&#39;(t)=\delta&#39;(t)\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Also, by the time differentiation property</p>
-<p>\[u_0&#39;&#39;(t)=\delta&#39;(t)\Leftrightarrow s^2\mathcal{L}u_0(t) - su_0(0) - \left.\frac{d}{dt}u_0(t)\right|_{t=0} =  s^2\frac{1}{s} = s\]</p>
+<p><span class="math">\[u_0&#39;&#39;(t)=\delta&#39;(t)\Leftrightarrow s^2\mathcal{L}u_0(t) - su_0(0) - \left.\frac{d}{dt}u_0(t)\right|_{t=0} =  s^2\frac{1}{s} = s\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2219,16 +2219,16 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s - {p_1})
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[s\Leftrightarrow \delta&#39;(t)\]</p>
+<p><span class="math">\[s\Leftrightarrow \delta&#39;(t)\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\frac{d^n}{dt^n}\delta(t)\Leftrightarrow s^n\]</p>
+<p><span class="math">\[\frac{d^n}{dt^n}\delta(t)\Leftrightarrow s^n\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f_6(t) = e^{-t}+\delta(t)+\delta&#39;(t)\]</p>
+<p><span class="math">\[f_6(t) = e^{-t}+\delta(t)+\delta&#39;(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-verification">Matlab verification<a class="anchor-link" href="#Matlab-verification">&#182;</a></h3>
