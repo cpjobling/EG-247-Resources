@@ -82,7 +82,7 @@ laplace(delta(t-a))
 %
 % Use MATLAB to plot a fully rectified sinusoidal signal abs(sin wt) over
 % 3 full cycles. Find the Laplace Transform of this Signal.
-%% Example 8
+%% Homework
 %
 % Chose one example from each of the End of Chapter Exercises 2.8 Q1-Q7
 % and validate the solution using MATLAB.
