@@ -71,7 +71,7 @@ laplace(delta(t-a))
 % that starts at t = 1 seconds and ends at t = 3 seconds. Plot the pulse.
 %% Example 5
 %
-% Plot a signal that starts at 0
+% Plot a piecewise-linear signal that starts at 0
 % when t=0, goes to -1 at t = 1, +1 at t = 2, and returns to 0 at t = 3.
 % Calculate the Laplace Transform of the waveform.
 %% Example 6
