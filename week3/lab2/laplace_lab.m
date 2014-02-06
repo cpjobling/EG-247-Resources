@@ -13,7 +13,7 @@ doc laplace
 %% Tranform Tables
 % Let's start our exploration by verifying some simple transforms from the
 % tables
-syms s t f(t) a n;
+syms s t f(t) a b n;
 %% 
 % Dirac Delta
 % $$\delta(t)$$
@@ -43,3 +43,46 @@ laplace(un(t))
 factorial(5) == gamma(5 + 1) % In MATLAB 1 == TRUE
 %%
 laplace((t^5)*u0(t))
+%% Delayed delta
+% $$\delta(t - a)$$
+laplace(delta(t-a))
+%% Example 1
+% 
+% Use MATLAB to find the laplace transforms of exp(-a*t)*u0(t), t*exp(a*t),
+% t^3*exp(b*t)*u0(t), cos(b*t)*u0(t), sin(b*t)*u0(t)
+%% Example 2
+%
+% Find the Laplace Transform of (t^n)*exp(-b*t)*u0(t)
+%% Example 3
+%
+% Use matlab to compute the Laplace Transfrom of
+% exp(-a*t)*sin(omega*t)*u0(t) and exp(-a*t)*cos(omega*t)*u0(t)
+%% Laplace Transform Properties
+% Give examples to prove each of the following:
+% # The Linearity Property
+% # The Time Shifting Property
+% # The Frequency Shifting Property
+% # The Scaling Property
+% # The Transform of First, Second and nth-Order Time Derviatives
+% # The Integration in Time Domain Property
+%% Example 4
+%
+% Calculate the Laplace Transform of a rectangular pulse with a height 2
+% that starts at t = 1 seconds and ends at t = 3 seconds. Plot the pulse.
+%% Example 5
+%
+% Plot a signal that starts at 0
+% when t=0, goes to -1 at t = 1, +1 at t = 2, and returns to 0 at t = 3.
+% Calculate the Laplace Transform of the waveform.
+%% Example 6
+%
+% Give the laplace transform of the waveform in Example 5 assuming that it
+% repeats every 3 seconds.
+%% Example 7
+%
+% Use MATLAB to plot a fully rectified sinusoidal signal abs(sin wt) over
+% 3 full cycles. Find the Laplace Transform of this Signal.
+%% Example 8
+%
+% Chose one example from each of the End of Chapter Exercises 2.8 Q1-Q7
+% and validate the solution using MATLAB.
