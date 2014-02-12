@@ -10,6 +10,7 @@
 p = [1, 8, 10, 4];
 roots(p)
 %% Find quadratic form
+syms s t
 y = expand((s + 0.7146 - 0.3132j)*(s + 0.7146 + 0.3132j))
 %% Simplify coefficient of s
 3573/2500
