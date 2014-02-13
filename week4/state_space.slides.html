@@ -1734,7 +1734,7 @@ text-align: inherit;
 <section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-Laplace-Transforms-for-Circuit-Analysis">Using Laplace Transforms for Circuit Analysis<a class="anchor-link" href="#Using-Laplace-Transforms-for-Circuit-Analysis">&#182;</a></h1>
+<h1 id="Modelling-Systems-in-State-Space">Modelling Systems in State Space<a class="anchor-link" href="#Modelling-Systems-in-State-Space">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1744,201 +1744,1093 @@ h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;'
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+</div><div style=display:none>
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[*]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">pymatbridge</span> <span class="kn">import</span> <span class="n">Matlab</span>
+<span class="n">mlab</span> <span class="o">=</span> <span class="n">Matlab</span><span class="p">()</span>
+<span class="n">mlab</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="kn">import</span> <span class="nn">pymatbridge</span> <span class="kn">as</span> <span class="nn">pymat</span>
+<span class="n">ip</span> <span class="o">=</span> <span class="n">get_ipython</span><span class="p">()</span>
+<span class="n">pymat</span><span class="o">.</span><span class="n">load_ipython_extension</span><span class="p">(</span><span class="n">ip</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This session is an introduction to state variables and state equations as they apply to circuit analysis. The state transition matrix is defined and the state-space to transfer function equivalence is presented. Several examples are given to illustrate their application.</p>
+<p>Matlab has particularly strong support for both numeric and symbolic computation of models based on the state-space model and transfer functions so we will not present the detailed mathematical proofs nor bother with the hand-solution of state-space problems. (Nor will we expect you to!)</p>
+<p>You will however gain some insight into the power of the state-space model for modelling and simulation in the lab to follow.</p>
+<p>If you are interested in the hand calculations, Chapter 5 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> gives full details.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="This-Week">This Week<a class="anchor-link" href="#This-Week">&#182;</a></h2>
+<h3 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This week's sessions are based on Chapter 4 <strong>Circuit Analysis with Laplace Transforms</strong> from Steven T. Karris <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems: with MATLAB Computing and Simulink Modelling (5th Edition)</a> [You need University Login to access]</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Today's-Agenda">Today's Agenda<a class="anchor-link" href="#Today's-Agenda">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We look at applications of the Laplace Transform for</p>
 <ul>
-<li>Circuit transformation from Time to Complex Frequency</li>
-<li>Complex impedance</li>
-<li>Complex admittance</li>
+<li>The Idea of a State Space Model</li>
+<li>Solving the First-Order Case</li>
+<li>Outline of the General Solution</li>
+<li>Circuit Analysis with State-Space Models</li>
+<li>Transfer Function from State-Space Model</li>
+</ul>
+<p>Lab</p>
+<ul>
+<li>Using the Computer for Analysis</li>
+<li>Modelling and Simulation with Simulink</li>
+<li>The LTI Model in Matlab</li>
 </ul>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Circuit-Transformation-from-Time-to-Complex-Frequency">Circuit Transformation from Time to Complex Frequency<a class="anchor-link" href="#Circuit-Transformation-from-Time-to-Complex-Frequency">&#182;</a></h2>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resistive-Network---Time-Domain">Resistive Network - Time Domain<a class="anchor-link" href="#Resistive-Network---Time-Domain">&#182;</a></h3>
+<h2 id="The-Idea-of-a-State-Space-Model">The Idea of a State-Space Model<a class="anchor-link" href="#The-Idea-of-a-State-Space-Model">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/resistive_time.png" width="50%"></p>
+<ul>
+<li>In circuits KCL and KVL we obtain integro-differential equations as a resul of the energy-storing devices (inductors and capacitors)</li>
+<li>When a circuit comtains one such device, it is said to be a <em>first-order circuit</em></li>
+<li>When a circuit comtains two such devices, it is said to be a <em>second-order circuit</em>, and so on.</li>
+</ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resistive-Network---Complex-Frequency-Domain">Resistive Network - Complex Frequency Domain<a class="anchor-link" href="#Resistive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="First-order-linear-time-invariant-system">First-order linear time invariant system<a class="anchor-link" href="#First-order-linear-time-invariant-system">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/resistive_freq.png" width="50%"></p>
+<p>A first-order linear, time-invariant (LTI) circuit (or in general terms <em>any</em> physical system) can be represented by a differential equation of the form</p>
+<p><span class="math">\[a_1\frac{d}{dt}y(t)+a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inductive-Network---Time-Domain">Inductive Network - Time Domain<a class="anchor-link" href="#Inductive-Network---Time-Domain">&#182;</a></h3>
+<h3 id="Second-order-LTI-system">Second-order LTI system<a class="anchor-link" href="#Second-order-LTI-system">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/inductive_time.png" width="50%"></p>
+<p>A second-order LTI system can be represented by a differential equation of the form</p>
+<p><span class="math">\[a_2\frac{d^2}{dt^2}y(t)+a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inductive-Network---Complex-Frequency-Domain">Inductive Network - Complex Frequency Domain<a class="anchor-link" href="#Inductive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="nth-order-LTI-system">nth-order LTI system<a class="anchor-link" href="#nth-order-LTI-system">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/inductive_freq.png" width="50%"></p>
+<p>By extension, an <em>n</em><sup>th</sup> LTI system can be represented by a differential equation of the form</p>
+<p><span class="math">\[a_n\frac{d^n}{dt^n}y(t)+a_{n-1}\frac{d^{n-1}}{dt^{n-1}}y(t)+\cdots +a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Capacitive-Network---Time-Domain">Capacitive Network - Time Domain<a class="anchor-link" href="#Capacitive-Network---Time-Domain">&#182;</a></h3>
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/capacitive_time.png" width="50%"></p>
+<p>A series RLC circuit with excitation</p>
+<p><span class="math">\[v_s(t) = e^{j\omega t}\]</span></p>
+<p>is described the the integro-differential equation</p>
+<p><span class="math">\[Ri(t) + L\frac{d}{dt}i(t)+\frac{1}{C}\int_{-\infty}^{t}i(t) dt = e^{j\omega t}\]</span></p>
+<p>Convert the equation into a second-order differential form and from this derive a state-space model.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Capacitive-Network---Complex-Frequency-Domain">Capacitive Network - Complex Frequency Domain<a class="anchor-link" href="#Capacitive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="Solution-1">Solution 1<a class="anchor-link" href="#Solution-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/capacitive_freq.png" width="50%"></p>
+<p>Differentiating both sides of the equation and dividing by <span class="math">\(L\)</span> we get</p>
+<p><span class="math">\[\frac{d^2}{dt^2}i(t) + \frac{R}{L}\frac{d}{dt}i(t) + \frac{1}{LC} i(t) = \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
+<p>or</p>
+<p><span class="math">\[\frac{d^2}{dt^2}i(t) = - \frac{R}{L}\frac{d}{dt}i(t) - \frac{1}{LC} i(t) + \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h3>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h4>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the Laplace transform method and apply Kichoff's Current Law (KCL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
-<p><img src="pictures/example1_2.png" width="40%"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h4>
+<h3 id="Define-state-variables">Define state variables<a class="anchor-link" href="#Define-state-variables">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the Laplace transform method and apply Kichoff's Voltage Law (KVL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
-<p><img src="pictures/example1_2.png" width="40%"></p>
+<p>Let us define <span class="math">\(x_1\)</span> and <span class="math">\(x_2\)</span> to be two <em>state variables</em> such that</p>
+<p><span class="math">\[x_1 = i\]</span></p>
+<p>and</p>
+<p><span class="math">\[x_2 = \frac{di}{dt} = \frac{dx_1}{dt} = \dot{x}_1\]</span></p>
+<p>then</p>
+<p><span class="math">\[\dot{x}_2 = \frac{dx_1}{dt} = \frac{d^2i}{dt^2}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h4>
+<h3 id="Recast-Differential-Equation-in-Terms-of-the-State-Variables">Recast Differential Equation in Terms of the State Variables<a class="anchor-link" href="#Recast-Differential-Equation-in-Terms-of-the-State-Variables">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the circuit below, switch <span class="math">\(S_1\)</span> closes at <span class="math">\(t=0\)</span>, while at the same time, switch <span class="math">\(S_2\)</span> opens. Use the Laplace transform method to find <span class="math">\(v_{\mathrm{out}}(t)\)</span> for <span class="math">\(t &gt; 0\)</span>.</p>
-<p><img src="pictures/example3.png" width="100%"></p>
-<p>Show with the assistance of MATLAB (See <a href="matlab/solution3.m">solution3.m</a>) that the solution is</p>
-<p><span class="math">\[V_{\mathrm{out}}=\left(1.36e^{-6.57t}+0.64e^{-0.715t}\cos 0.316t - 1.84e^{-0.715t}\sin 0.316t\right)u_0(t)\]</span></p>
-<p>and plot the result.</p>
+<p><span class="math">\[\dot{x}_1 = x_2\]</span></p>
+<p><span class="math">\[\dot{x}^2 = - \frac{R}{L} x_2 - \frac{1}{LC} x_1 + \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Plot-of-time-response">Plot of time response<a class="anchor-link" href="#Plot-of-time-response">&#182;</a></h3>
+<h3 id="Put-into-Matrix-Vector-Form">Put into Matrix-Vector Form<a class="anchor-link" href="#Put-into-Matrix-Vector-Form">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/response.png"></p>
-</div></section>
-    </section><section>
-    <section>
+<p><span class="math">\[\left[ {\begin{array}{*{20}{c}}
+{{{\dot x}_1}}\\
+{{{\dot x}_2}}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+0&amp;1\\
+{ - \frac{1}{{LC}}}&amp;{ - \frac{R}{L}}
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+{{x_1}}\\
+{{x_2}}
+\end{array}} \right] + \left[ {\begin{array}{*{20}{c}}
+0\\
+{\frac{1}{L}}
+\end{array}} \right]j\omega {e^{j\omega t}}\]</span></p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Complex-Impedance-Z(s)">Complex Impedance Z(s)<a class="anchor-link" href="#Complex-Impedance-Z(s)">&#182;</a></h2>
+<h3 id="State-Space-Form">State-Space Form<a class="anchor-link" href="#State-Space-Form">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the <span class="math">\(s\)</span>-domain RLC series circuit, wehere the initial conditions are assumed to be zero.</p>
-<p><img src="pictures/impedence.png" width="50%"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>For this circuit, the sum</p>
-<p><span class="math">\[R + sL + \frac{1}{sC}\]</span></p>
-<p>respresents that total opposition to current flow. Then,</p>
-<p><span class="math">\[I(s) = \frac{V_s(s)}{R + sL + 1/(sC)}\]</span></p>
-<p>and defining the ratio <span class="math">\(V_s(s)/I(s)\)</span> as <span class="math">\(Z(s)\)</span>, we obtain</p>
-<p><span class="math">\[Z(s) = \frac{V_s(s)}{I(s)} = R + sL + \frac{1}{sC}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <span class="math">\(s\)</span>-domain current <span class="math">\(I(s)\)</span> can be found from</p>
-<p><span class="math">\[I(s) = \frac{V_s(s)}{Z(s)}\]</span></p>
+<p><span class="math">\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</span></p>
 <p>where</p>
-<p><span class="math">\[Z(s) = R + sL + \frac{1}{sC}.\]</span></p>
-<p>Since <span class="math">\(s = \sigma + j\omega\)</span> is a complex number, <span class="math">\(Z(s)\)</span> is also complex and is known as the <em>complex input impedance</em> of this RLC series circuit.</p>
+<p><span class="math">\({\bf{\dot x}} = \left[ {\begin{array}{*{20}{c}} {{\dot{x}_1}}\\ {{\dot{x}_2}} \end{array}} \right]\)</span>,<span class="math">\({\bf{A}} = \left[ {\begin{array}{*{20}{c}} 0&amp;1\\ { - \frac{1}{{LC}}}&amp;{ - \frac{R}{L}} \end{array}} \right]\)</span>,<span class="math">\({\bf{x}} = \left[ {\begin{array}{*{20}{c}} {{x_1}}\\ {{x_2}} \end{array}} \right]\)</span>,<span class="math">\({\bf{B}} = \left[ {\begin{array}{*{20}{c}} 0\\ {\frac{1}{L}} \end{array}} \right]\)</span>, and<span class="math">\(u=j\omega e^{j\omega t}\)</span>.</p>
+<p>The output <span class="math">\(y(t)\)</span> is expressed by the state-equation</p>
+<p><span class="math">\[y = \bf{C}\bf{x} + d u\]</span></p>
+<p>where <span class="math">\(\bf{C}\)</span> is another matrix, and <span class="math">\(d\)</span> is a scalar.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="General-State-Space-Form">General State-Space Form<a class="anchor-link" href="#General-State-Space-Form">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For a single-input single-output (SISO) system:</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
+{\bf{y}} = {\bf{Cx}} + d u
+\end{array}\]</span></p>
+<p><img src="pictures/state_space_model.png" width="50%"></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A fourth-order network is decsribed by the differential equation</p>
+<p><span class="math">\[\frac{d^4 y}{dt^4} + a_3\frac{d^3 y}{dt^3} + a_2 \frac{d^2 y}{dt^2} + a_1 \frac{d y}{dt} + a_0 y(t) = u(t)\]</span></p>
+<p>where <span class="math">\(y(t)\)</span> represents the circuit output as a current or voltage, and <span class="math">\(u(t)\)</span> is an arbitrary input.</p>
+<p>Express this system in state-space form.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Write the state equations for the circuit below, given that <span class="math">\(V_c(0^-)=0\)</span>, and <span class="math">\(u_0(t)\)</span> is the unit step.</p>
+<p><img src="pictures/example2.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For the network shown below, all the complex impedence values are given in <span class="math">\(\Omega\)</span> (ohms).</p>
-<p><img src="pictures/example4.png" width="50%"></p>
-<p>Find <span class="math">\(Z(s)\)</span> using:</p>
-<ol style="list-style-type: decimal">
-<li>nodal analysis</li>
-<li>successive combinations of series and parallel impendences</li>
-</ol>
+<p>See Example 5.4 on Pages 5-5—5-6 in the textbook.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Complex-Admittance-Y(s)">Complex Admittance Y(s)<a class="anchor-link" href="#Complex-Admittance-Y(s)">&#182;</a></h2>
+<h2 id="Solving-the-First-Order-Case">Solving the First-Order Case<a class="anchor-link" href="#Solving-the-First-Order-Case">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the <span class="math">\(s\)</span>-domain GLC parallel circuit shown below where the initial conditions are zero.</p>
-<p><img src="pictures/admittance.png" width="50%"></p>
-<p>For this circuit</p>
-<p><span class="math">\[GV(s)+ \frac{1}{sL}V(s) + sCV(s) = I_s(s)\]</span></p>
-<p><span class="math">\[\left(G+ \frac{1}{sL} + sC\right)V(s) = I_s(s)\]</span></p>
-<p>Defining the ratio <span class="math">\(I_s(s)/V(s)\)</span> as <span class="math">\(Y(s)\)</span> we obtain</p>
-<p><span class="math">\[Y(s)=\frac{I_s(s)}{V(s)} = G+ \frac{1}{sL} + sC = \frac{1}{Z(s)}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <span class="math">\(s\)</span>-domain voltage <span class="math">\(V(s)\)</span> can be found from</p>
-<p><span class="math">\[V(s) = \frac{I_s(s)}{Y(s)}\]</span></p>
-<p>where</p>
-<p><span class="math">\[Y(s) = G + \frac{1}{sL} + sC.\]</span></p>
-<p><span class="math">\(Y(s)\)</span> is complex and is known as the <em>complex input admittance</em> of this GLC parallel circuit.</p>
+<p>If a circuit contains only one energy-storing device, the state equations are written as:</p>
+<p><span class="math">\[\begin{array}{c}
+\dot x = ax + bu\\
+y = cx + du
+\end{array}\]</span></p>
+<p>where <span class="math">\(a\)</span>, <span class="math">\(b\)</span>, <span class="math">\(c\)</span> and <span class="math">\(d\)</span> are scalar constants.</p>
+<p>The solution will be of the form</p>
+<p><span class="math">\[x(t) = e^{a(t-t_0)}x(t_0)+\int_{t_0}^{t}e^{a(t-\tau)}bu(\tau) d\tau\]</span></p>
+<p>(For proof see text-book)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-5">Example 5<a class="anchor-link" href="#Example-5">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute <span class="math">\(Z(s)\)</span> and <span class="math">\(Y(s)\)</span> for the circuit shown below. All impedence values are in <span class="math">\(\Omega\)</span> (ohms). Verify your answers with MATLAB.</p>
-<p><img src="pictures/example5.png" width="50%"></p>
+<p>Use the previous result to find the capacitor voltage <span class="math">\(v_c(t)\)</span> of the circuit below for <span class="math">\(t &gt; 0\)</span>, given that the initial condition is <span class="math">\(v_c(0^-) = 1\;\mathrm{V}\)</span>, <span class="math">\(R=2\;\Omega\)</span>, <span class="math">\(C=0.5\;\mathrm{F}\)</span> and <span class="math">\(v_s(t) = 2u_0(t)\)</span>.</p>
+<p><img src="pictures/example2.png" width="50%"></p>
+<p>(<em>Solution</em>: <span class="math">\(y(t) = x(t) = v_c(t) = (2 - e^{-t})u_0(t)\)</span>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-5">Answer 5<a class="anchor-link" href="#Answer-5">&#182;</a></h3>
+<h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
 </div>
 
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Z(s) = \frac{65s^4 + 490s^3 + 528s^2 + 400s + 128}{s(5s^2 + 30s + 16)}\]</span></p>
-<p>Matlab verification: <a href="matlab/solution5.m">solution5.m</a></p>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[60]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
+<span class="n">vc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">);</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">vc</span><span class="p">),</span><span class="n">axis</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span><span class="n">grid</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAOFCAIAAAD1U4wIAAAACXBIWXMAABcSAAAXEgFnn9JSAAAA
+B3RJTUUH3gILFSIJjaKcgQAAACR0RVh0U29mdHdhcmUATUFUTEFCLCBUaGUgTWF0aFdvcmtzLCBJ
+bmMuPFjdGAAAACJ0RVh0Q3JlYXRpb24gVGltZQAxMS1GZWItMjAxNCAyMTozNDowOZAaYskAACAA
+SURBVHic7d3RUitJkgRQtNb//8vsA9ssXXKgAEVUpuIc2xfd2R5jsiV3uarQvb2+vr4AAAAwz/9c
+/QMAAABwDYMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQ
+AABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABg
+KIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQ
+AABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABg
+KIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQ
+AABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABgKIMQAABg
+KIMQAABgKIMQAABgqH+u/gH43u12+/jw9fX1qp8EAAB4Jq4Qru6wBuOfAAAA/IJBuIfXf709tAkB
+AIC/MwiX9jb8Pt4j6n5RAADgUQxCAACAoXypzNLurwe6WRQAAHgUg3AbH6egG0cBAIC/c8vollwn
+BAAA/u7mWtN23tfgZ//uzEUAAJ6S8fJwbhndz+vr67eTz0vl3u3m44/AsUSOJXIskWOJHEvkWCLH
+EjmWyGWPCm4ZXdrtdvO8BwAAihiEAAAAQxmES3u7VeBwkfD+b6sHAAD4Bb9DuAc3jgIAAA/nCuHq
+7q8Evr6+ujwIAAD8nSuEGzD/AACACq4QAgAADGUQAgAADGUQMoU7byPHEjkWzvNsiRxL5FgixwLX
+MggBjnyvb+RNG1BB5EYilzYGIYymhiM1DFQQuZHIhWsZhEyhhiM1DFQQuZHIBRZkEDKFGgYqWD6R
+yAXYhUEIwCmWT2T5ABVELm0MQoAjNRxZPkAFkRuJXNoYhDCaGo7UMFBB5EYiF65lEDKFGo7UMFBB
+5EYiF1iQQcgUahioYPlEIhdgFwYhAKdYPpHlA1QQubQxCAGO1HBk+QAVRG4kcmljEMJoajhSw0AF
+kRuJXLiWQcgUajhSw0AFkRuJXGBBBiFTqGGgguUTiVyAXRiEAJxi+USWD1BB5NLGIAQ4UsOR5QNU
+ELmRyKWNQQijqeFIDQMVRG4kcuFaBiFTqOFIDQMVRG4kcoEFGYRMoYaBCpZPJHIBdmEQAnCK5RNZ
+PkAFkUsbgxDgSA1Hlg9QQeRGIpc2BiGMpoYjNQxUELmRyIVrGYRMoYYjNQxUELmRyAUWZBAyhRoG
+Klg+kcgF2IVBCMAplk9k+QAVRC5tDEKAIzUcWT5ABZEbiVzaGIQwmhqO1DBQQeRGIheuZRAyhRqO
+1DBQQeRGIhdYkEHIFGoYqGD5RCIXYBcGIQCnWD6R5QNUELm0MQgBjtRwZPkAFURuJHJpYxDCaGo4
+UsNABZEbiVy4lkHIFGo4UsNABZEbiVxgQQYhU6hhoILlE4lcgF0YhACcYvlElg9QQeTSxiAEOFLD
+keUDVBC5kciljUEIo6nhSA0DFURuJHLhWgYhU6jhSA0DFURuJHKBBRmETKGGgQqWTyRyAXZhEAJw
+iuUTWT5ABZFLG4MQ4EgNR5YPUEHkRiKXNgYhjKaGIzUMVBC5kciFaxmETKGGIzUMVBC5kcgFFmQQ
+MoUaBipYPpHIBdiFQQjAKZZPZPkAFUQubQxCgCM1HFk+QAWRG4lc2hiEMJoajtQwUEHkRiIXrmUQ
+MoUajtQwUEHkRiIXWJBByBRqGKhg+UQiF2AXBiEAp1g+keUDVBC5tDEIAY7UcGT5ABVEbiRyaWMQ
+wmhqOFLDQAWRG4lcuJZByBRqOFLDQAWRG4lcYEEGIVOoYaCC5ROJXIBdGIQAnGL5RJYPUEHk0sYg
+BDhSw5HlA1QQuZHIpY1BCKOp4UgNAxVEbiRy4VoGIVOo4UgNAxVEbiRygQUZhEyhhoEKlk8kcgF2
+YRACcIrlE1k+QAWRSxuDEOBIDUeWD1BB5EYilzYGIYymhiM1DFQQuZHIhWsZhEyhhiM1DFQQuZHI
+BRZkEDKFGgYqWD6RyAXYhUEIwCmWT2T5ABVELm0MQoAjNRxZPkAFkRuJXNoYhDCaGo7UMFBB5EYi
+F65lEDKFGo7UMFBB5EYiF1iQQcgUahioYPlEIhdgFwYhAKdYPpHlA1QQubQxCAGO1HBk+QAVRG4k
+cmljEMJoajhSw0AFkRuJXLiWQcgUajhSw0AFkRuJXGBBBiFTqGGgguUTiVyAXRiEAJxi+USWD1BB
+5NLGIAQ4UsOR5QNUELmRyKWNQQijqeFIDQMVRG4kcuFaBiFTqOFIDQMVRG4kcoEFGYRMoYaBCpZP
+JHIBdmEQAnCK5RNZPkAFkUsbgxDgSA1Hlg9QQeRGIpc2BiGMpoYjNQxUELmRyIVrGYRMoYYjNQxU
+ELmRyAUWZBAyhRoGKlg+kcgF2IVBCMAplk9k+QAVRC5tDEKAIzUcWT5ABZEbiVzaGIQwmhqO1DBQ
+QeRGIheuZRAyhRqO1DBQQeRGIhdYkEHIFGoYqGD5RCIXYBcGIQCnWD6R5QNUELm0MQgBjtRwZPkA
+FURuJHJpYxDCaGo4UsNABZEbiVy4lkHIFGo4UsNABZEbiVxgQQYhU6hhoILlE4lcgF0YhACcYvlE
+lg9QQeTSxiAEOFLDkeUDVBC5kciljUEIo6nhSA0DFURuJHLhWgYhU6jhSA0DFURuJHKBBRmETKGG
+gQqWTyRyAXZhEAJwiuUTWT5ABZFLG4MQ4EgNR5YPUEHkRiKXNgYhjKaGIzUMVBC5kciFaxmETKGG
+IzUMVBC5kcgFFvTP1T/ALPcF+W03fNapSuWnnBhQ4Xa7iZd7zgRgF64Q9onTzmeowC7kVWT5ABVE
+Lm1cIWzy/qr++Nbh7Q/PfLrsDQd0cs0nciZABZEbORPauELY6vDa9lLncj6AjLw2gQoiNxK5cC2D
+kCnUcKSGgQoiNxK5wILcMtrkjx3wsVnVye84N6CCu90iZwKwC1cIr/Q2875ozc++h8Ynr0A/yRNZ
+PkAFkUsbVwiv8dMX+f1X0QB1XPOJnAlQQeRGzoQ2rhBe4OM3jn79an/91+EPX76bhbfP3f+zHnro
+4eFhfJV56KGHHnoocj2sfnj70gsFfCTT6pB9f/zv+ey/5OaTtsSxALQRuUAF2VLBFcI+j1qD/I5j
+Byr4xDoSuQC7MAi7/agjXRwH1iGOIssHqCByaWMQNvn6Js8z/+xD/quAM9RwJHaACiI3Erm08S2j
+rT6LvPfX/GHsvb6+vv2JrKSIe/EjZwJUELmRM4FruUK4uvuU/Pa7SYmM6shzCaggciORCyzIJ1VP
+yAeQAG1ELkAbkVvBFUIATnHNJ/LWBKggcmljEAIcqeHI8gEqiNxI5NLGIITR1HCkhoEKIjcSuXAt
+g5Ap1HCkhoEKIjcSucCCDEKmUMNABcsnErkAuzAIATjF8oksH6CCyKWNQQhwpIYjyweoIHIjkUsb
+gxBGU8ORGgYqiNxI5MK1DEKmUMORGgYqiNxI5AILMgiZQg0DFSyfSOQC7MIgBOAUyyeyfIAKIpc2
+BiHAkRqOLB+ggsiNRC5tDEIYTQ1HahioIHIjkQvXMgiZQg1HahioIHIjkQssyCBkCjUMVLB8IpEL
+sAuDEIBTLJ/I8gEqiFzaGIQAR2o4snyACiI3Erm0MQhhNDUcqWGggsiNRC5cyyBkCjUcqWGggsiN
+RC6wIIOQKdQwUMHyiUQuwC4MQgBOsXwiyweoIHJpYxACHKnhyPIBKojcSOTSxiCE0dRwpIaBCiI3
+ErlwLYOQKdRwpIaBCiI3ErnAggxCplDDQAXLJxK5ALswCAE4xfKJLB+ggsiljUEIcKSGI8sHqCBy
+I5FLG4MQRlPDkRoGKojcSOTCtQxCplDDkRoGKojcSOQCCzIImUINAxUsn0jkAuzCIATgFMsnsnyA
+CiKXNgYhwJEajiwfoILIjUQubQxCGE0NR2oYqCByI5EL1zIImUINR2oYqCByI5ELLMggZAo1DFSw
+fCKRC7ALgxCAUyyfyPIBKohc2hiEAEdqOLJ8gAoiNxK5tDEIYTQ1HKlhoILIjUQuXMsgZAo1HKlh
+oILIjUQusCCDkCnUMFDB8olELsAuDEIATrF8IssHqCByaWMQAhyp4cjyASqI3Ejk0sYghNHUcKSG
+gQoiNxK5cC2DkCnUcKSGgQoiNxK5wIIMQqZQw0AFyycSuQC7MAgBOMXyiSwfoILIpY1BCHCkhiPL
+B6ggciORSxuDEEZTw5EaBiqI3EjkwrUMQqZQw5EaBiqI3EjkAgsyCJlCDQMVLJ9I5ALswiAE4BTL
+J7J8gAoilzYGIcCRGo4sH6CCyI1ELm0MQhhNDUdqGKggciORC9cyCJlCDUdqGKggciORCyzIIGQK
+NQxUsHwikQuwC4MQgFMsn8jyASqIXNoYhABHajiyfIAKIjcSubQxCGE0NRypYaCCyI1ELlzLIGQK
+NRypYaCCyI1ELrAgg5Ap1DBQwfKJRC7ALgxCAE6xfCLLB6ggcmljEAIcqeHI8gEqiNxI5NLGIITR
+1HCkhoEKIjcSuXAtg5Ap1HCkhoEKIjcSucCCDEKmUMNABcsnErkAuzAIATjF8oksH6CCyKWNQQhw
+pIYjyweoIHIjkUsbgxBGU8ORGgYqiNxI5MK1DEKmUMORGgYqiNxI5AILMgiZQg0DFSyfSOQC7MIg
+BOAUyyeyfIAKIpc2BiHAkRqOLB+ggsiNRC5tDEIYTQ1HahioIHIjkQvXMgiZQg1HahioIHIjkQss
+yCBkCjUMVLB8IpELsAuDEIBTLJ/I8gEqiFzaGIQAR2o4snyACiI3Erm0MQhhNDUcqWGggsiNRC5c
+yyBkCjUcqWGggsiNRC6wIIOQKdQwUMHyiUQuwC4MQgBOsXwiyweoIHJpYxACHKnhyPIBKojcSOTS
+xiCE0dRwpIaBCiI3ErlwLYOQKdRwpIaBCiI3ErnAggxCplDDQAXLJxK5ALswCAE4xfKJLB+ggsil
+jUEIcKSGI8sHqCByI5FLG4MQRlPDkRoGKojcSOTCtQxCplDDkRoGKojcSOQCCzIImUINAxUsn0jk
+AuzCIATgFMsnsnyACiKXNgYhwJEajiwfoILIjUQubQxCGE0NR2oYqCByI5EL1zIImUINR2oYqCBy
+I5ELLMggZAo1DFSwfCKRC7ALgxCAUyyfyPIBKohc2hiEAEdqOLJ8gAoiNxK5tDEIYTQ1HKlhoILI
+jUQuXMsgZAo1HKlhoILIjUQusCCDkCnUMFDB8olELsAuDEIATrF8IssHqCByaWMQAhyp4cjyASqI
+3Ejk0sYghNHUcKSGgQoiNxK5cC2DkCnUcKSGgQoiNxK5wIIMQqZQw0AFyycSuQC7MAgBOMXyiSwf
+oILIpc0/V/8AfO8+Ebz/gFK3282r7J4zASqI3MiZ0MYVwtXFz4d8aMSjeC5FahioIHIjkQvXMgiX
+9t4crx8c/iNOcmKRGgYqiNxI5AILMgg3cOgPdfI7zg2oYPlEIhdgFwYhAKdYPpHlA1QQubQxCJf2
+8R5RoI0ajsQRUEHkRiKXNgbhft5yU0zwEGo48voCKojcSOTCtQzCndxuN13ya44uUsNABZEbiVxg
+Qf4ewm18/MbR8//P915fXw9/4c+Qhx+/oHWdn8pDDz3c/eH9XRsr/FSXP9wlcu1WAH8T6AZ+NAVf
+7moP4CFky8NZI5fzjGZZIjdyLBVcIVzdT9cg8Hf6JtrxTBZfXBueKDyeyI2cCW0Mwj0IBYqo4ciZ
+tKkebP5NshSRGzkTuJZBuLT7X03h19Rw5Ez4hQeuOE/AZyVyI2cCLMgg3MDtkzdfeuVHHBcc/HrX
+eTF9ZPlEzgRgFwYhwJP46cD76Tt2yydyJkAFkUsbg3BpggAusVQNn5951T/yOmcCPJOlIncdzoQ2
+BiGMpoajtjM5M/b8+4GnIXIjZwLXMgiZQg1HzqTa15PP8fOsRG7kTIAFGYRMoYap88Xq87x7epZP
+5EwAdmEQAnzPhb4Xy+cTzgSoIHJpYxAC/Efcfkr5xfIBalg+kTOhjUEIo02u4c8u+k09D6Dc5Mj9
+gjOBaxmETKGGozlncj//xvxPhwuI3MiZAAsyCJlCDc/hnk86WT6RMwHYhUEIbO+wAL0RLWL5RM4E
+qCByaWMQAptpuPlTDUfOBKggciNnQhuDEEbboob7LwCufybAjraI3H7OBK5lEDKFGo7WPBO3gMLu
+RG7kTIAFGYRMoYZXZgGyL8snciYAuzAIgWt8HIHeOm7B8omcCVBB5NLGIAT67DIC1XDkTIAKIjdy
+JrQxCGG06hre9F5QNQxUsHwiZwLXMgiZQg1HRWfyvgMdOcwkciNnAizIIGQKNVxtl9tB4bEsn8iZ
+AOzCIAR+zwgcxfKJnAlQQeTSxiAEfmbCCFTDkTMBKojcyJnQxiCE0X5Uw29TcEJDqWGgguUTORO4
+lkHIFGo4+vZMJlwPBB5O5EbOBFiQQcgUavhHfE0onGT5RM4EYBcGIfD/7EC+YPlEzgSoIHJpYxAC
+duCRGo6cCVBB5EbOhDYGIYw253tifkQNAxUsn8iZwLX+5+ofAJrcPn47yni32//93+urNQg8nsiN
+LB9gQa4QMoUafnFrKBRwzSdyJgC7MAjh+dmBPITlEzkToILIpY1bRuGZfbwvVK2c5263yFsToILI
+jUQubQxCeE4nf0VQDUdqGKggciORC9cyCJliSA3/9Nti1DBQYUjk/pTIBRbkdwiZ4ulr2F8gAZfw
+ez6RMwHYhSuEsDd/gQRtXPOJLB+ggsiljUEIu/KFMXXUcGT5ABVEbiRyaWMQwn4eeElQDUdqGKgg
+ciORC9cyCJniOWr44XeHqmGgwnNE7sOJXGBBvlSGKXavYd8ZA2vypTKRMwHYhSuEsDrfGcMiXPOJ
+LB+ggsiljUEI6zIFr6KGI8sHqCByI5FLG4MQVtQ2BdVwpIaBCiI3ErlwLYOQKbao4f6/VFANAxW2
+iNx+IhdYkC+VYYr1a/htBwJ78aUykTMB2IUrhHC996uCsDLXfCLLB6ggcmljEMLFfG3MgtRwZPkA
+FURuJHJpYxDCZVa4MKiGIzUMVBC5kciFaxmETLFUDa/z90moYaDCUpG7DpELLMiXyjDFIjX89h5p
+jZ8FeABfKhM5E4BduEIITda5Kgi/45pPZPkAFUQubQxCKGcKbkcNR5YPUEHkRiKXNgYhdFg21dVw
+pIaBCiI3ErlwLYOQKS6p4RW+R/RrahioYPlEIhdYkC+VYYrmGvblMTCEL5WJnAnALlwhhMfzG4M8
+Jdd8IssHqCByaWMQwiOtf48oZ6jhyPIBKojcSOTSxiCEh9nxwqAajtQwUEHkRiIXrmUQMkVpDe97
+YVANAxUsn0jkAgvypTJMUVTDvjwGhvOlMpEzAdiFK4TwezveIwq/5ppPZPkAFUQubQxC+KVN7xHl
+DDUcWT5ABZEbiVzaGITwG0+zBtVwpIaBCiI3ErlwLYOQKR5Vw/t+f0ykhoEKlk8kcoEFGYRM8ZAa
+9kuDwIHlE1k+ALswCOGsZ7owCL9g+USWD1BB5NLGIITvPdltonxLDUeWD1BB5EYilzYGIXzjuW8T
+VcORGgYqiNxI5MK1DEKm+F0NP/2FQTUMVLB8IpELLMggZIqf1rDbRIEzLJ/I8gHYhUEIwXPfJgq/
+Y/lElg9QQeTSxiCEIxcGUcOR5QNUELmRyKWNQQj/MW0NquFIDQMVRG4kcuFaBiFTnKnhaWvwRQ0D
+NSyfSOQCCzIImeLbGh64BoG/s3wiywdgFwYhvLxYg3CC5RNZPkAFkUsbg5Dp/PUS3FPDkeUDVBC5
+kciljUHIaP56CTUcqWGggsiNRC5cyyBkivsadmHwRQ0DNSyfSOQCCzIImeJQw9Yg8BCWT2T5AOzC
+IGQiaxB+wfKJLB+ggsiljUHILL5ChjPUcGT5ABVEbiRyaWMQMoivkLmnhiM1DFQQuZHIhWsZhEyh
+hiM1DFQQuZHIBRZkEDKHIgYez/KJBC7ALgxCRvB7g/B3lk9k+QAVRC5tDEKenzXIT6nhyPIBKojc
+SOTSxiDkyVmDX1PDkRoGKojcSOTCtQxCntnHNaiGIzUMVBC5kcgFFmQQ8rQO1wbVMFDB8olELsAu
+DEKekztF4eEsn8jyASqIXNoYhDwha5A/UsOR5QNUELmRyKWNQcizsQZ/RA1HahioIHIjkQvXMgh5
+Kl+sQTUcqWGggsiNRC6wIIOQ5/H1tUE1DFSwfCKRC7ALg5An4U5RqGb5RJYPUEHk0sYg5BlYgzyW
+Go4sH6CCyI1ELm0MQrZnDf6FGo7UMFBB5EYiF65lEDKFGo7UMFBB5EYiF1iQQcjezl8eVMNABcsn
+ErkAuzAI2ZibRaGT5RNZPkAFkUsbg5BdWYPUUcOR5QNUELmRyKWNQciWrMFHUcORGgYqiNxI5MK1
+DEL287s1qIYjNQxUELmRyAUWZBCymV9fG1TDQAXLJxK5ALswCNmJO0XhQpZPZPkAFUQubQxCtmEN
+0kYNR5YPUEHkRiKXNgYhe7AGi6jhSA0DFURuJHLhWgYhU6jhSA0DFURuJHKBBf1z9Q8w0VtNnmyF
+zzp1VKk85PLgqBMD2txuN/Fyz5kA7MIVQlbnZlFYhGs+keUDVBC5tHGFsNvvXt5j33BYg1zCNZ/I
+mQAVRG7kTGjjCmGf2+3mw54fsQYbeE5GahioIHIjkQvXMgj7vP7r6h9kKDUceUICFURuJHKBBbll
+dA8fm3VInTz88uCQcwOaudstciYAu3CFcGnxE1a3ngKXkDyR5QNUELm0MQj38PrB1T9LB789yLXU
+cDQkf4BmIjcSubQxCJcWR+Dbw6/T8/a5+392tYdva/DyH8PDyQ/jq8xDDz300EOR62H1w9uXXijg
+Nx8u8PZs/svJf/3fcNv5F1puZdcGtz4WgL2IXKCCbKngCiELqVuDL269AGr4xDoSuQC7MAiX5uI4
+sA5xFFk+QAWRSxuDcAPxNuvnewtSenkQfkQNR88XO8AKRG4kcmljEK7lcEnwPQue/rdprcGrPOsz
+6o/UMFBB5EYiF65lEK7uPiWf7y+f6FmDajh6sucSsAiRG4lcYEG+qOcJ7fX9S64NAlvbK3IBtiZy
+K7hCCMAprvlE3poAFUQubQxCruTyIGtSw5HlA1QQuZHIpY1ByGWswRWo4UgNAxVEbiRy4VoGIdfo
+X4NqOFLDQAWRG4lcYEEGIVOoYaCC5ROJXIBdGIRcwM2isCPLJ7J8gAoilzYGId2sQdanhiPLB6gg
+ciORSxuDEEZTw5EaBiqI3EjkwrUMQqZQw5EaBiqI3EjkAgsyCGl14f2iahioYPlEIhdgFwYhffz2
+IGzN8oksH6CCyKWNQQhwpIYjyweoIHIjkUsbg5AmLg+uSQ1HahioIHIjkQvXMgjpsMIaVMORGgYq
+iNxI5AILMgiZQg0DFSyfSOQC7MIgpNwKlweBv7N8IssHqCByaWMQUssaZEdqOLJ8gAoiNxK5tDEI
+KWQNrk8NR2oYqCByI5EL1zIImUINR2oYqCByI5ELLMggpMpqlwfVMFDB8olELsAuDEJKrLYGgb+z
+fCLLB6ggcmljEAIcqeHI8gEqiNxI5NLGIOTxXB7ciBqO1DBQQeRGIheuZRAyhRqO1DBQQeRGIhdY
+kEHIgy17eVANAxUsn0jkAuzCIOSRll2DwN9ZPpHlA1QQubQxCAGO1HBk+QAVRG4kcmljEPIwLg/u
+SA1HahioIHIjkQvXMgiZQg1HahioIHIjkQssyCBkCjUMVLB8IpELsAuDkMdwvyg8PcsnsnyACiKX
+NgYhD2AN8mTUcGT5ABVEbiRyaWMQwmhqOFLDQAWRG4lcuJZByF/tcnlQDUdqGKggciORCyzIIGQK
+NQxUsHwikQuwC4OQP9nl8iDwd5ZPZPkAFUQubQxCfs8a5Fmp4cjyASqI3Ejk0sYghNHUcKSGgQoi
+NxK5cC2DkF/a7vKgGo7UMFBB5EYiF1iQQcgUahioYPlEIhdgFwYhv7Hd5UHg7yyfyPIBKohc2hiE
+AEdqOLJ8gAoiNxK5tDEI+TGXB5+JGo7UMFBB5EYiF65lEPIz+65BNRypYaCCyI1ELrAgg5Ap1DBQ
+wfKJRC7ALgxCfmDfy4PA31k+keUDVBC5tDEIAY7UcGT5ABVEbiRyaWMQcpbLg09JDUdqGKggciOR
+C9cyCJlCDUdqGKggciORCyzIIOSUJ7g8qIaBCpZPJHIBdmEQ8r0nWIPA31k+keUDVBC5tDEIAY7U
+cGT5ABVEbiRyaWMQ8g2XB5+bGo7UMFBB5EYiF65lEDKFGo7UMFBB5EYiF1iQQcgUahioYPlEIhdg
+FwYhAKdYPpHlA1QQubQxCPmKXyBkJjUcWT5ABZEbiVzaGIQwmhqO1DBQQeRGIheuZRDyqSe7PKiG
+IzUMVBC5kcgFFmQQMoUaBipYPpHIBdiFQUj2ZJcHgb+zfCLLB6ggcmljEAIcqeHI8gEqiNxI5NLG
+ICRweXAONRypYaCCyI1ELlzLIGQKNRypYaCCyI1ELrAgg5CjZ708qIaBCpZPJHIBdmEQ8h/PugaB
+v7N8IssHqCByaWMQAhyp4cjyASqI3Ejk0sYg5P+5PDiQGo7UMFBB5EYiF65lEDKFGo7UMFBB5EYi
+F1iQQcj/efrLg2oYqGD5RCIXYBcGIQCnWD6R5QNUELm0MQh5eRlweRB+RA1Hlg9QQeRGIpc2BiGM
+poYjNQxUELmRyIVrGYRMuTyohiM1DFQQuZHIBRZkEDKFGgYqWD6RyAXYhUE43ZDLg8DfWT6R5QNU
+ELm0MQgBjtRwZPkAFURuJHJpYxDCaGo4UsNABZEbiVy4lkE42qj7RdVwpIaB3QwxGAAAFWtJREFU
+CiI3ErnAggxCplDDQAXLJxK5ALswCOcadXkQ+DvLJ7J8gAoilzYGIcCRGo4sH6CCyI1ELm0MQhhN
+DUdqGKggciORC9cyCJlCDUdqGKggciORCyzIIBxq4C8QqmGgguUTiVyAXRiEAJxi+USWD1BB5NLG
+IJxo4OVB+BE1HFk+QAWRG4lc2hiEMJoajtQwUEHkRiIXrmUQjjP28qAajtQwUEHkRiIXWJBByBRq
+GKhg+UQiF2AXBuEsYy8PAn9n+USWD1BB5NLGIAQ4UsOR5QNUELmRyKWNQQijqeFIDQMVRG4kcuFa
+BuEgw+8XVcORGgYqiNxI5AILMgiZQg0DFSyfSOQC7MIgnGL45UHg7yyfyPIBKohc2hiEAEdqOLJ8
+gAoiNxK5tDEIR3B5kM+o4UgNAxVEbiRy4VoGIVOo4UgNAxVEbiRygQUZhM/P5cE3ahioYPlEIhdg
+FwYhAKdYPpHlA1QQubQxCAGO1HBk+QAVRG4kcmljED4594vyNTUcqWGggsiNRC5cyyBkCjUcqWGg
+gsiNRC6wIIPwmbk8+JEaBipYPpHIBdiFQQjAKZZPZPkAFUQubQzCbdxutx9Fg8uD8GtqOLJ8gAoi
+NxK5tDEIYTQ1HKlhoILIjUQuXMsg3IMK+TtnGKlhoILIjUQusCCDcHU/vVP033/K/aJHahioYPlE
+IhdgFwbh6l7/dfUPAkxn+UTyGaggcmljED4n70/gL9RwZPkAFURuJHJpYxDCaGo4UsNABZEbiVy4
+lkHIFGo4UsNABZEbiVxgQQbhc7p97uWup4c8fK/hpX4qDz30cPeH79G61E91+UOR66GHHv7u4e1L
+LxS4+bBqF4eK/fr/079W4OFkC0AbkRs5lgquEAIc+Qwy0sFABZEbiVzaGIQwmhqO1DBQQeRGIheu
+ZRAyhRqO1DBQQeRGIhdYkEHIFGoYqGD5RCIXYBcGIQCnWD6R5QNUELm0MQi38fr66m0H9FDDkQgC
+KojcSOTSxiCE0dRwpIaBCiI3ErlwLYOQKdRwpIaBCiI3ErnAggxCplDDQAXLJxK5ALswCAE4xfKJ
+LB+ggsiljUEIcKSGI8sHqCByI5FLG4MQRlPDkRoGKojcSOTCtQxCplDDkRoGKojcSOQCCzIImUIN
+AxUsn0jkAuzCIATgFMsnsnyACiKXNgYhwJEajiwfoILIjUQubQxCGE0NR2oYqCByI5EL1zIImUIN
+R2oYqCByI5ELLMggZAo1DFSwfCKRC7ALgxCAUyyfyPIBKohc2hiEAEdqOLJ8gAoiNxK5tDEIYTQ1
+HKlhoILIjUQuXMsgZAo1HKlhoILIjUQusCCDkCnUMFDB8olELsAuDEIATrF8IssHqCByaWMQAhyp
+4cjyASqI3Ejk0sYghNHUcKSGgQoiNxK5cC2DkCnUcKSGgQoiNxK5wIIMQqZQw0AFyycSuQC7MAgB
+OMXyiSwfoILIpY1BCHCkhiPLB6ggciORSxuDEEZTw5EaBiqI3EjkwrUMQqZQw5EaBiqI3EjkAgsy
+CJlCDQMVLJ9I5ALswiAE4BTLJ7J8gAoilzYGIcCRGo4sH6CCyI1ELm0MQhhNDUdqGKggciORC9cy
+CJlCDUdqGKggciORCyzIIGQKNQxUsHwikQuwC4MQgFMsn8jyASqIXNoYhABHajiyfIAKIjcSubQx
+CGE0NRypYaCCyI1ELlzLIGQKNRypYaCCyI1ELrAgg5Ap1DBQwfKJRC7ALgxCAE6xfCLLB6ggcmlj
+EAIcqeHI8gEqiNxI5NLGIITR1HCkhoEKIjcSuXAtg5Ap1HCkhoEKIjcSucCCDEKmUMNABcsnErkA
+uzAIATjF8oksH6CCyKWNQQhwpIYjyweoIHIjkUsbgxBGU8ORGgYqiNxI5MK1DEKmUMORGgYqiNxI
+5AILMgiZQg0DFSyfSOQC7MIgBOAUyyeyfIAKIpc2BiHAkRqOLB+ggsiNRC5tDEIYTQ1HahioIHIj
+kQvXMgiZQg1HahioIHIjkQssyCBkCjUMVLB8IpELsAuDEIBTLJ/I8gEqiFzaGIQAR2o4snyACiI3
+Erm0MQhhNDUcqWGggsiNRC5cyyBkCjUcqWGggsiNRC6wIIOQKdQwUMHyiUQuwC4MQgBOsXwiyweo
+IHJpYxACHKnhyPIBKojcSOTSxiCE0dRwpIaBCiI3ErlwLYOQKdRwpIaBCiI3ErnAggxCplDDQAXL
+JxK5ALswCAE4xfKJLB+ggsiljUEIcKSGI8sHqCByI5FLG4MQRlPDkRoGKojcSOTCtQxCplDDkRoG
+KojcSOQCCzIImUINAxUsn0jkAuzCIATgFMsnsnyACiKXNgYhwJEajiwfoILIjUQubQxCGE0NR2oY
+qCByI5EL1zIImUINR2oYqCByI5ELLMggZAo1DFSwfCKRC7ALgxCAUyyfyPIBKohc2hiEAEdqOLJ8
+gAoiNxK5tDEIYTQ1HKlhoILIjUQuXMsgZAo1HKlhoILIjUQusCCDkCnUMFDB8olELsAuDEIATrF8
+IssHqCByaWMQAhyp4cjyASqI3Ejk0sYghNHUcKSGgQoiNxK5cC2DkCnUcKSGgQoiNxK5wIIMQqZQ
+w0AFyycSuQC7MAgBOMXyiSwfoILIpY1BCHCkhiPLB6ggciORSxuDEEZTw5EaBiqI3EjkwrUMQqZQ
+w5EaBiqI3EjkAgsyCJlCDQMVLJ9I5ALswiAE4BTLJ7J8gAoilzYGIcCRGo4sH6CCyI1ELm0MQhhN
+DUdqGKggciORC9cyCJlCDUdqGKggciORCyzIIGQKNQxUsHwikQuwC4MQgFMsn8jyASqIXNoYhABH
+ajiyfIAKIjcSubQxCGE0NRypYaCCyI1ELlzLIGQKNRypYaCCyI1ELrAgg5Ap1DBQwfKJRC7ALgxC
+AE6xfCLLB6ggcmljEAIcqeHI8gEqiNxI5NLGIITR1HCkhoEKIjcSuXAtg5Ap1HCkhoEKIjcSucCC
+DEKmUMNABcsnErkAuzAIATjF8oksH6CCyKWNQQhwpIYjyweoIHIjkUsbgxBGU8ORGgYqiNxI5MK1
+/rn6BxjnYxmcScDPykN6/tTtdnNo95wJUEHkRs4EWJArhK0O684nhZ3UMFBBkkciF2AXrhD2eX/T
+8F6Tt9vt5GeomhW4nGs+kTMBKohc2rhC2O3+te3TZViNV2XkrQlQQeRGIpc2BmGTt7A7vLa91Lmc
+Go68NoEKIjcSuXAtg3APtw+u/ll25egiNQxUELmRyAUWZBAuLRaqWfg7ahioIJAjkQuwC4NwD68f
+XP2zAENZPpFYBiqIXNoYhEuLI/Dt4dcxcfvc/T/roYceHh56pcSHH7NonZ/KQw893P2hyI0Px0bu
+7UsvFPCFtk3ensGffcXoT/8tfP1P3XxPMad5tgC0EbnwR15EFVwhZAqfKkVSFaggciORCyzIIGwS
+7/P89vKgi+MPpIaBClI6ErkAuzAIL3P+PcRPZyRABcsnksZABZFLG7fhtrp/bR/O/37sfRYHX19X
+9K8V/sKLCKCNyOU8z5YKrhC2it8X+qN/5OXfrx595I/FYD6AjLzEgAoiNxK5cC0j+wn57CRyLABt
+RC5QQbZUcIWQKcQHUME1n0jkAuzCIATgFMsnsnyACiKXNgYhwJEajiwfoILIjUQubQxCGE0NR2oY
+qCByI5EL1zIImUINR2oYqCByI5ELLMggZAo1DFSwfCKRC7ALgxCAUyyfyPIBKohc2hiEAEdqOLJ8
+gAoiNxK5tDEIYTQ1HKlhoILIjUQuXMsgZAo1HKlhoILIjUQusCCDkCnUMFDB8olELsAuDEIATrF8
+IssHqCByaWMQAhyp4cjyASqI3Ejk0sYghNHUcKSGgQoiNxK5cC2DkCnUcKSGgQoiNxK5wIIMQqZQ
+w0AFyycSuQC7MAgBOMXyiSwfoILIpY1BCHCkhiPLB6ggciORSxuDEEZTw5EaBiqI3EjkwrUMQqZQ
+w5EaBiqI3EjkAgsyCJlCDQMVLJ9I5ALswiAE4BTLJ7J8gAoilzYGIcCRGo4sH6CCyI1ELm0MQhhN
+DUdqGKggciORC9cyCJlCDUdqGKggciORCyzIIGQKNQxUsHwikQuwC4MQgFMsn8jyASqIXNoYhABH
+ajiyfIAKIjcSubQxCGE0NRypYaCCyI1ELlzLIGQKNRypYaCCyI1ELrAgg5Ap1DBQwfKJRC7ALgxC
+AE6xfCLLB6ggcmljEAIcqeHI8gEqiNxI5NLGIITR1HCkhoEKIjcSuXAtg5Ap1HCkhoEKIjcSucCC
+DEKmUMNABcsnErkAuzAIATjF8oksH6CCyKWNQQhwpIYjyweoIHIjkUsbgxBGU8ORGgYqiNxI5MK1
+DEKmUMORGgYqiNxI5AILMgiZQg0DFSyfSOQC7MIgBOAUyyeyfIAKIpc2BiHAkRqOLB+ggsiNRC5t
+DEIYTQ1HahioIHIjkQvXMgiZQg1HahioIHIjkQssyCBkCjUMVLB8IpELsAuDEIBTLJ/I8gEqiFza
+GIQAR2o4snyACiI3Erm0MQhhNDUcqWGggsiNRC5cyyBkCjUcqWGggsiNRC6wIIOQKdQwUMHyiUQu
+wC4MQgBOsXwiyweoIHJpYxACHKnhyPIBKojcSOTSxiCE0dRwpIaBCiI3ErlwLYOQKdRwpIaBCiI3
+ErnAggxCplDDQAXLJxK5ALswCAE4xfKJLB+ggsiljUEIcKSGI8sHqCByI5FLG4MQRlPDkRoGKojc
+SOTCtQxCplDDkRoGKojcSOQCCzIImUINAxUsn0jkAuzCIATgFMsnsnyACiKXNgYhwJEajiwfoILI
+jUQubQxCGE0NR2oYqCByI5EL1zIImUINR2oYqCByI5ELLMggZAo1DFSwfCKRC7ALgxCAUyyfyPIB
+Kohc2hiEAEdqOLJ8gAoiNxK5tDEIYTQ1HKlhoILIjUQuXMsgZAo1HKlhoILIjUQusCCDkCnUMFDB
+8olELsAuDEIATrF8IssHqCByaWMQAhyp4cjyASqI3Ejk0sYghNHUcKSGgQoiNxK5cC2DkCnUcKSG
+gQoiNxK5wIIMQqZQw0AFyycSuQC7MAgBOMXyiSwfoILIpY1BCHCkhiPLB6ggciORSxuDEEZTw5Ea
+BiqI3EjkwrUMQqZQw5EaBiqI3EjkAgsyCJlCDQMVLJ9I5ALswiAE4BTLJ7J8gAoilzYGIcCRGo4s
+H6CCyI1ELm0MQhhNDUdqGKggciORC9cyCJlCDUdqGKggciORCyzIIGQKNQxUsHwikQuwC4MQgFMs
+n8jyASqIXNoYhABHajiyfIAKIjcSubQxCGE0NRypYaCCyI1ELlzLIGQKNRypYaCCyI1ELrAgg5Ap
+1DBQwfKJRC7ALgxCAE6xfCLLB6ggcmljEAIcqeHI8gEqiNxI5NLGIITR1HCkhoEKIjcSuXAtg5Ap
+1HCkhoEKIjcSucCCDEKmUMNABcsnErkAuzAIATjF8oksH6CCyKWNQQhwpIYjyweoIHIjkUsbgxBG
+U8ORGgYqiNxI5MK1DEKmUMORGgYqiNxI5AILMgiZQg0DFSyfSOQC7MIgBOAUyyeyfIAKIpc2BiHA
+kRqOLB+ggsiNRC5tDEIYTQ1HahioIHIjkQvXMgiZQg1HahioIHIjkQssyCCE0bxpixxL5Fgix8J5
+ni2RY4kcC20MQgAAgKH+ufoH4JSPnxK54QQAAHgIVwg3cLhnwC0EAADAQxiEq3uff6//erEJAQCA
+RzAI93B/m6hNCAAA/JFBuLS31XdYg36HEAAAeAiDEAAAYCiDEAAAYCiDEAAAYKibX0hbWfwdwi/+
+/ON/CgAAT8Z4eTh/Mf0T8joBAADOcMsoAADAUAbh0uJfQ//1/aIAAAAnGYSb8fuBAADAo/hSmQ3c
+j0D/1gAAgL9zhXADh/lnDQIAAA/hCiEAAMBQrhACAAAMZRACAAAMZRACAAAM9c/VPwCP9PH7SP12
+6Ef+8sYDX10bHY7FmdzzUnrz2d8A5GTevJ+PA/n6L4tyPt63RF5Bb75tHM+fR3GF8HnEv78e7sXn
+hifM/Qk4kwMHwrdut9vH58nhIXzkfcs9r6DzPH8eyBXCJ3H/YdJbiPi85EVG/Ff83PHtDz1hXv77
+CnpxJnzJc+Pg/uN88RufJK60v9yVkcj9SBO9fJce3vc+liuET+X+ZTC8jH209hl/ueXB/fszZ3Lg
+pcQveB3xtfdniKfKiyb61/k3b973PopB+AziZ40zQ+Tg9V9X/yCwNxc0+NZnTxJPmwOvJvjat2/e
+vO99OLeMwiwSM/Ip4xccxWd8nwE/ZQ0evN/jJ2e+5mZIShmEgPco/+FdfuQo3n3xtUxO6cW39XLO
+6+vr+y/IffzD634imMsghNF8KPs1H8raOV/w7Sn3Pj5hJn8fRuTVBKzJIIS5/E1Hka93e+f9axQP
+5O1yx+Rny5vD92F4EfGZ+J20w58q7zFy9Q/COL5UBiZ6rxxfuvMFJ/Pm9sHHP7n2p2ILXkTvfLzy
+0RdfCjI8Wz77WibPHEq5QgjjuDB4z3s1AFZwaKLhC5keBuEziLcqeYPL1zw3+NZnX746/MnjEIAK
+suUk73sfzi2jz8nnSXxGYkbxViVnxRc8WyLHwnnx2QK/4MnzR6N/effJ3L8Y/Mt9503Ju69Dc/IR
+fXYyk8/knpfSG8+W6HA7urvT33nh3PMiunf/khn+zPn6f773vQ/kCuHziL+cDZwUf5Xf64jIsyX6
++C7WGuRr8SUz/NlyeAUNX4Pf8r73gVwhBAAAGMoVQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAA
+gKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEM
+QgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAA
+gKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEM
+QgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAA
+gKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEM
+QgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAA
+gKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEMQgAAgKEM
+QgAAgKH+F9qoAxc9xTIYAAAAAElFTkSuQmCC
+">
+
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tomorrow">Tomorrow<a class="anchor-link" href="#Tomorrow">&#182;</a></h2>
+<h2 id="Outline-of-the-General-Solution">Outline of the General Solution<a class="anchor-link" href="#Outline-of-the-General-Solution">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Transfer Functions of Circuits</li>
-</ul>
+<p>If</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
+{\bf{y}} = {\bf{Cx}} + d u
+\end{array}\]</span></p>
+<p>the the solution of</p>
+<p><span class="math">\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</span></p>
+<p>with initial condtions <span class="math">\(\bf{x}(t_0) = \bf{x}_0\)</span></p>
+<p>is the matrix generalization of the previous result:</p>
+<p><span class="math">\[{\bf{x}} = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_{{t_0}}^t {{e^{{\bf{A}}(t - \tau )}}u(\tau )d\tau } \]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Transition-Matrix">Transition Matrix<a class="anchor-link" href="#Transition-Matrix">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The term</p>
+<p><span class="math">\[\bf{\phi}=e^{\bf{A}t}\]</span></p>
+<p>is called the <em>state transition matrix</em> and it can be computed by hand (at least for the 2x2 case) if you have knowledge of the <em>eigenvalues</em> and <em>eigenvectors</em> of the state-matrix <span class="math">\(\bf A\)</span>.</p>
+<p>If you want to study the proof, see Section 5.4 <strong>Computation of the State Transition Matrix</strong> in the text book.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Computation-of-the-State-Transition-Matrix-in-Matlab">Computation of the State Transition Matrix in Matlab<a class="anchor-link" href="#Computation-of-the-State-Transition-Matrix-in-Matlab">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Matlab provides the function <code>expm</code> which computes the matrix exponential</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-6">Example 6<a class="anchor-link" href="#Example-6">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compute the state transition matrix <span class="math">\(\bf \phi = e^{\bf{A}t}\)</span> for the state matrix</p>
+<p><span class="math">\[{\bf{A}} = \left[ {\begin{array}{*{20}{c}}
+{ - 2}&amp;1\\
+0&amp;{ - 1}
+\end{array}} \right]\]</span></p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[61]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">t</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+phi =
+ 
+[ exp(-2*t), exp(-t) - exp(-2*t)]
+[         0,             exp(-t)]
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
+{{e^{ - 2t}}}&amp;{{e^{ - t}} - {e^{ - 2t}}}\\
+0&amp;{{e^{ - t}}}
+\end{array}} \right]\]</span></p>
+</div>
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Circuit-Analysis-with-State-Space-Models">Circuit Analysis with State-Space Models<a class="anchor-link" href="#Circuit-Analysis-with-State-Space-Models">&#182;</a></h2>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-6">Example 6<a class="anchor-link" href="#Example-6">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For the RLC circuit shown below, the initial conditions ar <span class="math">\(i_L(0^-)\)</span>=0, and <span class="math">\(v_c(0^-)=0.5\)</span> V. Use the state variable method to compute <span class="math">\(i_L(t)\)</span> and <span class="math">\(v_c(t)\)</span>.</p>
+<p><img src="pictures/example6.png" width="50%"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sketch-of-solution">Sketch of solution<a class="anchor-link" href="#Sketch-of-solution">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See Example 5.10 for full solution.</p>
+<p>We chose <span class="math">\(x_1 = i_L\)</span> and <span class="math">\(x_2 = v_c\)</span> as our state variables which yields state equations</p>
+<p><span class="math">\[\left[ {\begin{array}{*{20}{c}}
+{{{\dot x}_1}}\\
+{{{\dot x}_2}}
+\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
+{ - 4}&amp;{ - 4}\\
+{3/4}&amp;0
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+{{x_1}}\\
+{{x_2}}
+\end{array}} \right] + \left[ {\begin{array}{*{20}{c}}
+1\\
+0
+\end{array}} \right]{u_0}(t)\]</span></p>
+</div></section><section>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[62]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">t</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="n">pretty</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+
+  +-                                                  -+
+  |   3 exp(-3 t)   exp(-t)                            |
+  |   ----------- - -------,  2 exp(-3 t) - 2 exp(-t)  |
+  |        2           2                               |
+  |                                                    |
+  |  3 exp(-t)   3 exp(-3 t)   3 exp(-t)   exp(-3 t)   |
+  |  --------- - -----------,  --------- - ---------   |
+  |      8            8            2           2       |
+  +-                                                  -+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The state transition matrix is</p>
+<p><span class="math">\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
+{ - \frac{3}{8}{e^{ - t}} + \frac{8}{8}{e^{ - 3t}}}&amp;{ - \frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We multiply this by the initial condition matrix, to get the <em>unforced response</em></p>
+<p><span class="math">\[{{\bf{x}}_u}(t) = {e^{{\bf{A}}t}}\left[ {\begin{array}{*{20}{c}}
+0\\
+{\frac{1}{2}}
+\end{array}} \right]\]</span></p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[63]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">xu</span> <span class="o">=</span> <span class="n">phi</span><span class="o">*</span><span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">pretty</span><span class="p">(</span><span class="n">xu</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+
+  +-                       -+
+  |   exp(-3 t) - exp(-t)   |
+  |                         |
+  |  3 exp(-t)   exp(-3 t)  |
+  |  --------- - ---------  |
+  |      4           4      |
+  +-                       -+
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[{{\bf{x}}_u}(t) = \left[ {\begin{array}{*{20}{c}}
+{ - {e^{ - t}} + {e^{ - 3t}}}\\
+{\frac{3}{4}{e^{ - t}} - \frac{3}{4}{e^{ - 3t}}}
+\end{array}} \right]\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The forced response is trickier to compute by hand</p>
+<p><span class="math">\[{{\bf{x}}_f}(t) = \int_0^t {{e^{\bf{A}(t-\tau) }}B{u_0}(\tau )} d\tau \]</span></p>
+<p>but is easy with Matlab</p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[66]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">t</span> <span class="n">tau</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">;</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">xf</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">tau</span><span class="p">))</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">heaviside</span><span class="p">(</span><span class="n">tau</span><span class="p">),</span><span class="n">tau</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+xf =
+ 
+         2*exp(-t) - 2*exp(-3*t)
+ exp(-3*t)/2 - (3*exp(-t))/2 + 1
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[{{\bf{x}}_f}(t) = \left[ {\begin{array}{*{20}{c}}
+{2{e^{ - t}} - 2{e^{ - 3t}}}\\
+{1 - \frac{3}{2}{e^{ - t}} + \frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The overall response is</p>
+<p><span class="math">\[{\bf{x}}(t) = {{\bf{x}}_u}(t) + {{\bf{x}}_f}(t)\]</span></p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[65]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">xu</span> <span class="o">+</span> <span class="n">xf</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+x =
+ 
+             exp(-t) - exp(-3*t)
+ exp(-3*t)/4 - (3*exp(-t))/4 + 1
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[{\bf{x}}(t) = \left[ {\begin{array}{*{20}{c}}
+{{e^{ - t}} - {e^{ - 3t}}}\\
+{1 - \frac{3}{4}{e^{ - t}} + \frac{1}{4}{e^{ - 3t}}}
+\end{array}} \right]\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So</p>
+<p><span class="math">\[x_1 = i_L = e^{-t}+e^{-3t}\]</span></p>
+<p>and</p>
+<p><span class="math">\[x_2 = v_c = 1 - 0.75e^{-t} + 0.25e^{-3t}\]</span></p>
+<p>Which agrees with the text book.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a four-liner</p>
+</div>
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[77]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">t</span> <span class="n">tau</span><span class="p">;</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span> <span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">;</span> <span class="mi">0</span><span class="p">];</span> <span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="n">x0</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">expm</span><span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="n">tau</span><span class="p">))</span><span class="o">*</span><span class="n">B</span><span class="o">*</span><span class="n">heaviside</span><span class="p">(</span><span class="n">tau</span><span class="p">),</span><span class="n">tau</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
+<span class="n">il</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">vc</span> <span class="o">=</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+il =
+ 
+exp(-t) - exp(-3*t)
+ 
+ 
+vc =
+ 
+exp(-3*t)/4 - (3*exp(-t))/4 + 1
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Transfer-Function-from-State-Space-Model">Transfer Function from State-Space Model<a class="anchor-link" href="#Transfer-Function-from-State-Space-Model">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We state, without proof, that the laplace transform of the state equations are:</p>
+<p><span class="math">\[Y(s) = {\rm{ }}\left[ {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}} \right]{\rm{ }}U(s)\]</span></p>
+<p>where <span class="math">\(\bf{I}\)</span> is the <em>identity matrix</em> (Matlab <code>eye(n)</code>)</p>
+<p>So the transfer fuction of a state-space model with input <span class="math">\(U(s)\)</span> and output <span class="math">\(Y(s)\)</span> is</p>
+<p><span class="math">\[G(s) = \frac{Y(s)}{U(s)} = {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}}\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-7">Example 7<a class="anchor-link" href="#Example-7">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Give the transfer function for Example 6 assuming that the output <span class="math">\(y(t) = v_c(t)\)</span> and find the step response of the circuit.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>if <span class="math">\(y(t) = v_c(t)\)</span></p>
+<p><span class="math">\[{\bf{C}} = [\begin{array}{*{20}{c}}
+0&amp;1
+\end{array}]\]</span></p>
+<p>and</p>
+<p><span class="math">\[d = 0\]</span></p>
+</div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[80]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">t</span> <span class="n">s</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">];</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">inv</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">B</span> <span class="o">+</span> <span class="n">d</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+G =
+ 
+3/(s^2 + 4*s + 3)
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div><div class="fragment">
+    
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[82]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">U</span> <span class="o">=</span> <span class="n">laplace</span><span class="p">(</span><span class="n">heaviside</span><span class="p">(</span><span class="n">t</span><span class="p">));</span>
+<span class="n">vc</span> <span class="o">=</span> <span class="n">ilaplace</span><span class="p">(</span><span class="n">G</span><span class="o">*</span><span class="n">U</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+vc =
+ 
+exp(-3*t)/2 - (3*exp(-t))/2 + 1
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Another-way-of-Looking-at-the-State-Transition-Matrix">Another way of Looking at the State Transition Matrix<a class="anchor-link" href="#Another-way-of-Looking-at-the-State-Transition-Matrix">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It can be shown that</p>
+<p><span class="math">\[\mathcal{L}e^{\bf{A}t} = \left(s\bf{I}-A\right)^{-1}\]</span></p>
+<p>and this gives us another way to find <span class="math">\(e^{\bf{A}t}\)</span>.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-8">Example 8<a class="anchor-link" href="#Example-8">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use Laplace transforms to find the state transition matrix for Example 6.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
+</div>
+
+<div class="cell border-box-sizing code_cell vbox">
+<div class="input hbox">
+<div class="prompt input_prompt">
+In&nbsp;[87]:
+</div>
+<div class="input_area box-flex1">
+<div class="highlight"><pre><span class="o">%%</span><span class="k">matlab</span>
+<span class="n">syms</span> <span class="n">s</span> <span class="n">t</span>
+<span class="n">A</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">;</span> <span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+<span class="n">phi_s</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="n">eye</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="n">A</span><span class="p">)</span>
+<span class="n">phi_t</span> <span class="o">=</span> <span class="n">ilaplace</span><span class="p">(</span><span class="n">phi_s</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+
+<div class="vbox output_wrapper">
+<div class="output vbox">
+
+
+<div class="hbox output_area"><div class="prompt"></div>
+<div class="box-flex1 output_subarea output_display_data">
+
+
+<pre>
+ 
+phi_s =
+ 
+[     s/(s^2 + 4*s + 3),      -4/(s^2 + 4*s + 3)]
+[ 3/(4*(s^2 + 4*s + 3)), (s + 4)/(s^2 + 4*s + 3)]
+ 
+ 
+phi_t =
+ 
+[     (3*exp(-3*t))/2 - exp(-t)/2,     2*exp(-3*t) - 2*exp(-t)]
+[ (3*exp(-t))/8 - (3*exp(-3*t))/8, (3*exp(-t))/2 - exp(-3*t)/2]
+ 
+
+</pre>
+
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section>
     </section><section>
     <section>
@@ -1947,7 +2839,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do the end of the chapter exercises (Section 4.7 - questions 1 to 4) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<p>Try the end of the chapter exercises (Section 5.9) from the textbook. You can omit Question 6 and may solve Questions 7, 8, and 9 using Matlab. Don't look at the answers until you have attempted the problems.</p>
 </div></section>
     </section><section>
     <section>
@@ -1956,7 +2848,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the lab, on Monday, we will see the use of Matlab and Simulink in the solution of circuit problems.</p>
+<p>In the lab, on Monday, we will give further examples of computing the state-transition matrix, and its use in the solution of systems defined by state-space models and transfer functions.</p>
+<p>We will also introduce the Linear Time Invariant model which can be used to model and analyse state-space and transfer functions.</p>
+<p>We will also demonstrate the use of Simulink to model and simulate circuits</p>
 </div></section>
     </section>
 </div>

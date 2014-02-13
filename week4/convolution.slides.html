@@ -1734,7 +1734,7 @@ text-align: inherit;
 <section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Using-Laplace-Transforms-for-Circuit-Analysis">Using Laplace Transforms for Circuit Analysis<a class="anchor-link" href="#Using-Laplace-Transforms-for-Circuit-Analysis">&#182;</a></h1>
+<h1 id="The-Impulse-Response-and-Convolution-(Part-1)">The Impulse Response and Convolution (Part 1)<a class="anchor-link" href="#The-Impulse-Response-and-Convolution-(Part-1)">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1744,200 +1744,289 @@ h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;'
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="This-Week">This Week<a class="anchor-link" href="#This-Week">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This week's sessions are based on Chapter 4 <strong>Circuit Analysis with Laplace Transforms</strong> from Steven T. Karris <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems: with MATLAB Computing and Simulink Modelling (5th Edition)</a> [You need University Login to access]</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Today's-Agenda">Today's Agenda<a class="anchor-link" href="#Today's-Agenda">&#182;</a></h2>
+<h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We look at applications of the Laplace Transform for</p>
+<p>This session is an introduction to the impulse response of a system and time convolution. Together, these can be used to determine a Linear Time Invariant (LTI) system's time response to any signal.</p>
+<p>As we shall see, in the determination of a system's response to a signal input, time convolution involves integration by parts and is a tricky operation. But time convolution becomes multiplication in the Laplace Transform domain, and is much easier to apply.</p>
+<p>The material in this presentation and notes is based on Chapter 6 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> and builds on the time response of a state-space model that was developed in the <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">previous session</a>.</p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The material to be presented will need two sessions.</p>
+<p><em>Today</em></p>
 <ul>
-<li>Circuit transformation from Time to Complex Frequency</li>
-<li>Complex impedance</li>
-<li>Complex admittance</li>
+<li>The Impulse Response of a System in Time Domain</li>
+<li>Even and Odd Functions of Time</li>
+<li>Time Convolution</li>
+</ul>
+<p><em>Next Session</em></p>
+<ul>
+<li>Graphical Evaluation of the Convolution Integral</li>
+<li>System Response by Convolution</li>
+<li>System Response by Laplace</li>
 </ul>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Circuit-Transformation-from-Time-to-Complex-Frequency">Circuit Transformation from Time to Complex Frequency<a class="anchor-link" href="#Circuit-Transformation-from-Time-to-Complex-Frequency">&#182;</a></h2>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resistive-Network---Time-Domain">Resistive Network - Time Domain<a class="anchor-link" href="#Resistive-Network---Time-Domain">&#182;</a></h3>
+<h2 id="The-Impulse-Response-of-a-System-in-Time-Domain">The Impulse Response of a System in Time Domain<a class="anchor-link" href="#The-Impulse-Response-of-a-System-in-Time-Domain">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/resistive_time.png" width="50%"></p>
+<p>In the last session we showed that if the state-space model of a SISO system was:</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
+y = {\bf{Cx}} + du
+\end{array}\]</span></p>
+<p>the state response would be</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_0^t {{e^{{\bf{A}}(t - \tau )}}{\bf{B}}u(\tau )d\tau } \]</span></p>
+<p>which for our later convenience can be rewritten</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Resistive-Network---Complex-Frequency-Domain">Resistive Network - Complex Frequency Domain<a class="anchor-link" href="#Resistive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/resistive_freq.png" width="50%"></p>
+<p>If we assume zero initial conditions <span class="math">\(\bf{x}_0 = \bf{0}\)</span> and <span class="math">\(u(t) = \delta(t)\)</span> (Matlab <code>dirac</code>), then the state-reponse to an impulse input is:</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}\delta(\tau )d\tau } \]</span></p>
+<p>Using the <em>sifting property</em> of the delta function</p>
+<p><span class="math">\[\int_{-\infty}^{\infty}f(t)\delta(\tau)d\tau = f(0)\]</span></p>
+<p>then</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}{\bf{B}}\]</span></p>
+<p>so, the impulse response is:</p>
+<p><span class="math">\[y(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}} + d\delta (t)\]</span></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In most systems that you will encounter on this course the scalar quantity <span class="math">\(d = 0\)</span> so the impulse response, which we donate as <span class="math">\(h(t)\)</span>, is</p>
+<p><span class="math">\[h(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}}u_0(t)\]</span></p>
+<p>where the unit step function <span class="math">\(u_0(t)\)</span> has been included to indicate that the impulse response is only defined for <span class="math">\(t&gt;0\)</span>.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Note">Note<a class="anchor-link" href="#Note">&#182;</a></h3>
+</div>
+
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the text book, Karris presents the impulse response as</p>
+<p><span class="math">\[{\mathbf{x}}(t) = {\mathbf{h}}(t) = {e^{{\mathbf{A}}t}}{\mathbf{B}}{u_0}(t)\]</span></p>
+<p>but this is the impulse response of the state variables and is a vector quantity.</p>
+<p>You need to introduce the output equation to find the actual scalar impulse response <span class="math">\(h(t)\)</span> which for a SISO system.</p>
+<p>Karris gets away with this in his book because he uses voltages and currents as <em>physical state variables</em> and the coefficient of the corresponding <span class="math">\(\bf{C}\)</span> matrix will be unity.</p>
+<p>In general, we cannot assume that this will be true so I prefer to be a little more careful in my presentation.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inductive-Network---Time-Domain">Inductive Network - Time Domain<a class="anchor-link" href="#Inductive-Network---Time-Domain">&#182;</a></h3>
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/inductive_time.png" width="50%"></p>
+<p>Compute the impulse response of the series RC circuit shown below in terms of the constants <span class="math">\(R\)</span> and <span class="math">\(C\)</span>, where the response is considered to be the voltage across the capicitor, and <span class="math">\(v_c(0^-)=0\)</span>. Then, compute the current through the capacitor.</p>
+<p><img src="pictures/c_example1.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inductive-Network---Complex-Frequency-Domain">Inductive Network - Complex Frequency Domain<a class="anchor-link" href="#Inductive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/inductive_freq.png" width="50%"></p>
+<p>In the RLC circuit shown below, compute the impulse response <span class="math">\(h(t)=v_c(t)\)</span> given that the initial conditions are zero, that is <span class="math">\(i_L(0^-)=0\)</span> and <span class="math">\(V_c(0^-)=0\)</span>.</p>
+<p><img src="pictures/c_example2.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Capacitive-Network---Time-Domain">Capacitive Network - Time Domain<a class="anchor-link" href="#Capacitive-Network---Time-Domain">&#182;</a></h3>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/capacitive_time.png" width="50%"></p>
+<p>We tackled this problem as Example 6 in the previous session and found that:</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{B}} = \left[ {\begin{array}{*{20}{c}}
+4\\
+0
+\end{array}} \right]\\
+{e^{{\bf{A}}t}} = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
+{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]
+\end{array}\]</span></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>so the impulse response of the state variables is:</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
+{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+4\\
+0
+\end{array}} \right]{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+{ - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
+{\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
+\end{array}} \right]{u_0}(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Capacitive-Network---Complex-Frequency-Domain">Capacitive Network - Complex Frequency Domain<a class="anchor-link" href="#Capacitive-Network---Complex-Frequency-Domain">&#182;</a></h3>
+<h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/capacitive_freq.png" width="50%"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h3>
-</div>
-</section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h4>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the Laplace transform method and apply Kichoff's Current Law (KCL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
-<p><img src="pictures/example1_2.png" width="40%"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h4>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the Laplace transform method and apply Kichoff's Voltage Law (KVL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
-<p><img src="pictures/example1_2.png" width="40%"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h4>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the circuit below, switch <span class="math">\(S_1\)</span> closes at <span class="math">\(t=0\)</span>, while at the same time, switch <span class="math">\(S_2\)</span> opens. Use the Laplace transform method to find <span class="math">\(v_{\mathrm{out}}(t)\)</span> for <span class="math">\(t &gt; 0\)</span>.</p>
-<p><img src="pictures/example3.png" width="100%"></p>
-<p>Show with the assistance of MATLAB (See <a href="matlab/solution3.m">solution3.m</a>) that the solution is</p>
-<p><span class="math">\[V_{\mathrm{out}}=\left(1.36e^{-6.57t}+0.64e^{-0.715t}\cos 0.316t - 1.84e^{-0.715t}\sin 0.316t\right)u_0(t)\]</span></p>
-<p>and plot the result.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Plot-of-time-response">Plot of time response<a class="anchor-link" href="#Plot-of-time-response">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/response.png"></p>
+<p>In Example 6 in the previous session, we defined <span class="math">\(x_1 = i_L\)</span> and <span class="math">\(x_2 = v_c\)</span> so if we want the capacitor voltage to be the circuit output, the output vector <span class="math">\(\bf{C}\)</span> will be</p>
+<p><span class="math">\[{\bf{C}} = {\rm{ }}\left[ {\begin{array}{*{20}{c}}
+0&amp;1
+\end{array}} \right]\]</span></p>
+<p>so</p>
+<p><span class="math">\[\begin{array}{l}
+h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
+ &amp; = &amp; \left[ {\begin{array}{*{20}{c}}
+0&amp;1
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+{ - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
+{\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
+\end{array}} \right]{u_0}(t)\\
+ &amp; = &amp; \left( {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}} \right){u_0}(t) = \frac{3}{2}\left( {{e^{ - t}} + {e^{ - 3t}}} \right){u_0}(t)
+\end{array}\]</span></p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Complex-Impedance-Z(s)">Complex Impedance Z(s)<a class="anchor-link" href="#Complex-Impedance-Z(s)">&#182;</a></h2>
+<h2 id="Even-and-Odd-Functions-of-Time">Even and Odd Functions of Time<a class="anchor-link" href="#Even-and-Odd-Functions-of-Time">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the <span class="math">\(s\)</span>-domain RLC series circuit, wehere the initial conditions are assumed to be zero.</p>
-<p><img src="pictures/impedence.png" width="50%"></p>
+<p>(<strong>This should be revision!</strong>)</p>
+<p>We need to be reminded of <em>even</em> and <em>odd</em> functions so that we can develop the idea of time convolution which is a means of determining the time response of any system for which we know its <em>impulse response</em> to any signal.</p>
+<p>The development requires us to find out if the Dirac delta function (<span class="math">\(\delta(t)\)</span>) is an <em>even</em> or an <em>odd</em> function of time.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For this circuit, the sum</p>
-<p><span class="math">\[R + sL + \frac{1}{sC}\]</span></p>
-<p>respresents that total opposition to current flow. Then,</p>
-<p><span class="math">\[I(s) = \frac{V_s(s)}{R + sL + 1/(sC)}\]</span></p>
-<p>and defining the ratio <span class="math">\(V_s(s)/I(s)\)</span> as <span class="math">\(Z(s)\)</span>, we obtain</p>
-<p><span class="math">\[Z(s) = \frac{V_s(s)}{I(s)} = R + sL + \frac{1}{sC}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <span class="math">\(s\)</span>-domain current <span class="math">\(I(s)\)</span> can be found from</p>
-<p><span class="math">\[I(s) = \frac{V_s(s)}{Z(s)}\]</span></p>
-<p>where</p>
-<p><span class="math">\[Z(s) = R + sL + \frac{1}{sC}.\]</span></p>
-<p>Since <span class="math">\(s = \sigma + j\omega\)</span> is a complex number, <span class="math">\(Z(s)\)</span> is also complex and is known as the <em>complex input impedance</em> of this RLC series circuit.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
+<h3 id="Even-Functions-of-Time">Even Functions of Time<a class="anchor-link" href="#Even-Functions-of-Time">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For the network shown below, all the complex impedence values are given in <span class="math">\(\Omega\)</span> (ohms).</p>
-<p><img src="pictures/example4.png" width="50%"></p>
-<p>Find <span class="math">\(Z(s)\)</span> using:</p>
-<ol style="list-style-type: decimal">
-<li>nodal analysis</li>
-<li>successive combinations of series and parallel impendences</li>
-</ol>
-</div></section>
-    </section><section>
-    <section>
+<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>even function</em> of time if the following relation holds</p>
+<p><span class="math">\[f(-t) = f(t)\]</span></p>
+<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span> the function <span class="math">\(f(t)\)</span> does not change.</p>
+<p>Polynomials with even exponents only, and with or without constants, are even functions. For example:</p>
+<p><span class="math">\[\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \ldots\]</span></p>
+<p>is even.</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Complex-Admittance-Y(s)">Complex Admittance Y(s)<a class="anchor-link" href="#Complex-Admittance-Y(s)">&#182;</a></h2>
+<h3 id="Other-Examples-of-Even-Functions">Other Examples of Even Functions<a class="anchor-link" href="#Other-Examples-of-Even-Functions">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the <span class="math">\(s\)</span>-domain GLC parallel circuit shown below where the initial conditions are zero.</p>
-<p><img src="pictures/admittance.png" width="50%"></p>
-<p>For this circuit</p>
-<p><span class="math">\[GV(s)+ \frac{1}{sL}V(s) + sCV(s) = I_s(s)\]</span></p>
-<p><span class="math">\[\left(G+ \frac{1}{sL} + sC\right)V(s) = I_s(s)\]</span></p>
-<p>Defining the ratio <span class="math">\(I_s(s)/V(s)\)</span> as <span class="math">\(Y(s)\)</span> we obtain</p>
-<p><span class="math">\[Y(s)=\frac{I_s(s)}{V(s)} = G+ \frac{1}{sL} + sC = \frac{1}{Z(s)}\]</span></p>
+<p><img src="pictures/even_funcs.png" width="75%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <span class="math">\(s\)</span>-domain voltage <span class="math">\(V(s)\)</span> can be found from</p>
-<p><span class="math">\[V(s) = \frac{I_s(s)}{Y(s)}\]</span></p>
-<p>where</p>
-<p><span class="math">\[Y(s) = G + \frac{1}{sL} + sC.\]</span></p>
-<p><span class="math">\(Y(s)\)</span> is complex and is known as the <em>complex input admittance</em> of this GLC parallel circuit.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-5">Example 5<a class="anchor-link" href="#Example-5">&#182;</a></h3>
+<h3 id="Odd-Functions-of-Time">Odd Functions of Time<a class="anchor-link" href="#Odd-Functions-of-Time">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute <span class="math">\(Z(s)\)</span> and <span class="math">\(Y(s)\)</span> for the circuit shown below. All impedence values are in <span class="math">\(\Omega\)</span> (ohms). Verify your answers with MATLAB.</p>
-<p><img src="pictures/example5.png" width="50%"></p>
+<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>odd function</em> of time if the following relation holds</p>
+<p><span class="math">\[-f(-t) = f(t)\]</span></p>
+<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span>, we obtain the negative of the function <span class="math">\(f(t)\)</span>.</p>
+<p>Polynomials with odd exponents only, and no constants, are even functions. For example:</p>
+<p><span class="math">\[\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \ldots\]</span></p>
+<p>is odd.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-5">Answer 5<a class="anchor-link" href="#Answer-5">&#182;</a></h3>
+<h3 id="Other-Examples-of-Odd-Functions">Other Examples of Odd Functions<a class="anchor-link" href="#Other-Examples-of-Odd-Functions">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Z(s) = \frac{65s^4 + 490s^3 + 528s^2 + 400s + 128}{s(5s^2 + 30s + 16)}\]</span></p>
-<p>Matlab verification: <a href="matlab/solution5.m">solution5.m</a></p>
-</div></section>
-    </section><section>
-    <section>
+<p><img src="pictures/odd_funcs.png" width="75%"></p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Tomorrow">Tomorrow<a class="anchor-link" href="#Tomorrow">&#182;</a></h2>
+<h3 id="Observations">Observations<a class="anchor-link" href="#Observations">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Transfer Functions of Circuits</li>
+<li>For odd functions <span class="math">\(f(0) = 0\)</span>.</li>
+<li>If <span class="math">\(f(0) = 0\)</span> we should not conclude that <span class="math">\(f(t)\)</span> is an odd function. <em>c.f.</em> <span class="math">\(f(t) = t^2\)</span> is even, not odd.</li>
+<li>The product of <em>two even</em> or <em>two odd</em> functions is an even function.</li>
+<li>The product of an even and an odd function, is an odd function.</li>
+</ul>
+<p>In the following <span class="math">\(f_e(t)\)</span> will donate an even function and <span class="math">\(f_o(t)\)</span> an odd function.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Time-integrals-of-even-and-odd-functions">Time integrals of even and odd functions<a class="anchor-link" href="#Time-integrals-of-even-and-odd-functions">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For an even function <span class="math">\(f_e(t)\)</span></p>
+<p><span class="math">\[\int_{-T}^{T}f_e(t) dt = 2 \int_{0}^{T}f_e(t) dt\]</span></p>
+<p>For an odd function <span class="math">\(f_o(t)\)</span></p>
+<p><span class="math">\[\int_{-T}^{T}f_o(t) dt = 0\]</span></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Even/Odd-Representation-of-an-Arbitrary-Function">Even/Odd Representation of an Arbitrary Function<a class="anchor-link" href="#Even/Odd-Representation-of-an-Arbitrary-Function">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A function <span class="math">\(f(t)\)</span> that is neither even nor odd can be represented as an even function by use of:</p>
+<p><span class="math">\[f_e(t) = \frac{1}{2}\left[f(t)+f(-t)\right]\]</span></p>
+<p>or as an odd function by use of:</p>
+<p><span class="math">\[f_o(t) = \frac{1}{2}\left[f(t)-f(-t)\right]\]</span></p>
+<p>Adding these together, an abitrary signal can be represented as</p>
+<p><span class="math">\[f(t) = f_e(t) + f_o(t)\]</span></p>
+<p>That is, any function of time can be expressed as the sum of an even and an odd function.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Is the Dirac delta <span class="math">\(\delta(t)\)</span> an even or an odd function of time?</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Let <span class="math">\(f(t)\)</span> be an arbitrary function of time that is continous at <span class="math">\(t=t_0\)</span>. Then by the sifting property of the delta function</p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t-t_0) dt = f(t_0)\]</span></p>
+<p>and for <span class="math">\(t_0 = 0\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t) dt = f(0)\]</span></p>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Also for an even function <span class="math">\(f_e(t)\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_e(t)\delta(t) dt = f_e(0)\]</span></p>
+<p>and for an odd function <span class="math">\(f_o(t)\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0)\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Even-or-odd?">Even or odd?<a class="anchor-link" href="#Even-or-odd?">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An odd function <span class="math">\(f_o(t)\)</span> evaluated at <span class="math">\(t=0\)</span> is zero, that is <span class="math">\(f_o(0) = 0\)</span>.</p>
+<p>Hence</p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0) = 0\]</span></p>
+<p>Hence the product <span class="math">\(f_o(t)\delta(t)\)</span> is odd function of <span class="math">\(t\)</span>.</p>
+<p>Since <span class="math">\(f_o(t)\)</span> is odd, <span class="math">\(\delta(t)\)</span> must be even because only an <em>even</em> function multiplied by an <em>odd</em> function can result in an <em>odd</em> function.</p>
+<p>(Even times even or odd times odd produces an even function. See earlier slide)</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Next-Time">Next Time<a class="anchor-link" href="#Next-Time">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will conclude our discussion of <em>Time Convolution</em> by presenting:</p>
+<ul>
+<li>Graphical Evaluation of the Convolution Integral</li>
+<li>System Response by Convolution</li>
+<li>System Response by Laplace</li>
 </ul>
 </div></section>
     </section><section>
@@ -1947,7 +2036,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do the end of the chapter exercises (Section 4.7 - questions 1 to 4) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<p>You should be able to do Question 1 from Section 6.7 of the textbook.</p>
+<p>If you want to refresh your knowledge of even and odd functions, Chapter 1 of <a href="https://www.dawsonera.com/abstract/9780071634731">Schaum's Outline on Signals and Systems (Hsu, 2nd Ed.)</a> has some examples. For example see Solved Problems 1.5–1.8 and Supplementary Problems 1.48–1.50</p>
 </div></section>
     </section><section>
     <section>
@@ -1956,7 +2046,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the lab, on Monday, we will see the use of Matlab and Simulink in the solution of circuit problems.</p>
+<p>In the lab, on Monday, we will show the solution of Examples 1 and 2 in Matlab.</p>
 </div></section>
     </section>
 </div>

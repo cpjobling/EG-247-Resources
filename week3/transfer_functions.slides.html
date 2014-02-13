@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_function.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_function.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1784,20 +1784,20 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage \(V_{\mathrm{out}}(s)\) ro the input voltage \(V_{\mathrm{in}}(s)\) <em>under zero initial conditions</em> is of great interest in network analysis. This ratio is known as the <em>voltage transfer function</em> denoted \(G_v(s)\):</p>
-<p>\[G_v(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</p>
-<p>Similarly, the ratio of the output current \(I_{\mathrm{out}}(s)\) to the input current \(I_{\mathrm{in}}(s)\) <em>under zero initial conditions</em>, is called the <em>cuurent transfer function</em> denoted \(G_i(s)\):</p>
-<p>\[G_v(s) = \frac{I_{\mathrm{out}}(s)}{I_{\mathrm{in}}(s)}\]</p>
+<p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage <span class="math">\(V_{\mathrm{out}}(s)\)</span> ro the input voltage <span class="math">\(V_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em> is of great interest in network analysis. This ratio is known as the <em>voltage transfer function</em> denoted <span class="math">\(G_v(s)\)</span>:</p>
+<p><span class="math">\[G_v(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</span></p>
+<p>Similarly, the ratio of the output current <span class="math">\(I_{\mathrm{out}}(s)\)</span> to the input current <span class="math">\(I_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em>, is called the <em>cuurent transfer function</em> denoted <span class="math">\(G_i(s)\)</span>:</p>
+<p><span class="math">\[G_v(s) = \frac{I_{\mathrm{out}}(s)}{I_{\mathrm{in}}(s)}\]</span></p>
 <p>In practice, the current transfer function is rarely used, so we will use the voltage transfer function denoted:</p>
-<p>\[G(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</p>
+<p><span class="math">\[G(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-6">Example 6<a class="anchor-link" href="#Example-6">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Derive an expression for the transfer function \(G(s)\) for the circuit below. In this circuit \(R_g\) represents the internal resisteance of the applied (voltage) source \(v_s\), and \(R_L\) represents the resistance of the load that cosnsists of \(R_L\), \(L\) and \(C\).</p>
-<img src="pictures/example6.png" width="30%">
+<p>Derive an expression for the transfer function <span class="math">\(G(s)\)</span> for the circuit below. In this circuit <span class="math">\(R_g\)</span> represents the internal resisteance of the applied (voltage) source <span class="math">\(v_s\)</span>, and <span class="math">\(R_L\)</span> represents the resistance of the load that cosnsists of <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span>.</p>
+<p><img src="pictures/example6.png" width="30%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sketch-of-Solution">Sketch of Solution<a class="anchor-link" href="#Sketch-of-Solution">&#182;</a></h3>
@@ -1805,9 +1805,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Replace \(v_s(t)\), \(R_g\), \(R_L\), \(L\) and \(C\) by their transformed (<em>complex frequency</em>) equivalents: \(V_s(s)\), \(R_g\), \(R_L\), \(sL\) and \(1/(sC)\)</li>
-<li>Use the <em>Voltage Divider Rule</em> to determine \(V_\mathrm{out}(s)\) as a function of \(V_s(s)\)</li>
-<li>Form \(G(s)\) by writing down the ratio \(V_\mathrm{out}(s)/V_s(s)\)</li>
+<li>Replace <span class="math">\(v_s(t)\)</span>, <span class="math">\(R_g\)</span>, <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span> by their transformed (<em>complex frequency</em>) equivalents: <span class="math">\(V_s(s)\)</span>, <span class="math">\(R_g\)</span>, <span class="math">\(R_L\)</span>, <span class="math">\(sL\)</span> and <span class="math">\(1/(sC)\)</span></li>
+<li>Use the <em>Voltage Divider Rule</em> to determine <span class="math">\(V_\mathrm{out}(s)\)</span> as a function of <span class="math">\(V_s(s)\)</span></li>
+<li>Form <span class="math">\(G(s)\)</span> by writing down the ratio <span class="math">\(V_\mathrm{out}(s)/V_s(s)\)</span></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1815,8 +1815,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants \(R_1\), \(R_2\), \(R_3\), \(C_1\) and \(C_2\). Then replace the complex variable \(s\) with \(j\omega\), and the circuit constants with their numerical values and plot the magnitude \(\left|G(s)\right| = V_\mathrm{out}(s)/V_\mathrm{in}(s)\) versus radian frequency \(\omega\).</p>
-<img src="pictures/example7.png" width="50%">
+<p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants <span class="math">\(R_1\)</span>, <span class="math">\(R_2\)</span>, <span class="math">\(R_3\)</span>, <span class="math">\(C_1\)</span> and <span class="math">\(C_2\)</span>. Then replace the complex variable <span class="math">\(s\)</span> with <span class="math">\(j\omega\)</span>, and the circuit constants with their numerical values and plot the magnitude <span class="math">\(\left|G(s)\right| = V_\mathrm{out}(s)/V_\mathrm{in}(s)\)</span> versus radian frequency <span class="math">\(\omega\)</span>.</p>
+<p><img src="pictures/example7.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sketch-of-Solution">Sketch of Solution<a class="anchor-link" href="#Sketch-of-Solution">&#182;</a></h3>
@@ -1825,12 +1825,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Replace the components and voltages in the circuit diagram with their complex frequency equivalents</li>
-<li>Use nodal analysis to determine the voltages at the nodes either side of the 50K resistor \(R_3\)</li>
+<li>Use nodal analysis to determine the voltages at the nodes either side of the 50K resistor <span class="math">\(R_3\)</span></li>
 <li>Note that the voltage at the input to the op-amp is a virtual ground</li>
-<li>Solve for \(V_\mathrm{out}(s)\) as a function of \(V_\mathrm{in}(s)\)</li>
-<li>Form the reciprocal \(G(s) = V_\mathrm{out}(s)/V_\mathrm{in}(s)\)</li>
-<li>Use MATLAB to calculate the component values, then replace \(s\) by \(j\omega\).</li>
-<li>Plot \(\left|G(j\omega)\right|\) on log-linear &quot;paper&quot;</li>
+<li>Solve for <span class="math">\(V_\mathrm{out}(s)\)</span> as a function of <span class="math">\(V_\mathrm{in}(s)\)</span></li>
+<li>Form the reciprocal <span class="math">\(G(s) = V_\mathrm{out}(s)/V_\mathrm{in}(s)\)</span></li>
+<li>Use MATLAB to calculate the component values, then replace <span class="math">\(s\)</span> by <span class="math">\(j\omega\)</span>.</li>
+<li>Plot <span class="math">\(\left|G(j\omega)\right|\)</span> on log-linear &quot;paper&quot;</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1839,7 +1839,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See attached script: <a href="matlab/solution7.m">solution7.m</a>.</p>
-<img src="pictures/solution7.png">
+<p><img src="pictures/solution7.png"></p>
 </div></section>
     </section><section>
     <section>
@@ -1857,9 +1857,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sim_tf.png">
+<p><img src="pictures/sim_tf.png"></p>
 <p>The Simulink transfer function (<strong><code>Transfer Fcn</code></strong>) block shown above implements a transfer function representing a general input output function</p>
-<p>\[G(s) = \frac{N(s)}{D(s)}\]</p>
+<p><span class="math">\[G(s) = \frac{N(s)}{D(s)}\]</span></p>
 <p>that it is not specific nor restricted to circuit analysis. It can, however be used in modelling and simulation studies.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1867,7 +1867,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Recast Example 7 as a Simulink problem, but for simplicity use parameters \(R_1 = R_2 = R_3 = 1\; \Omega\), and \(C_1 = C_2 = 1\;\mathrm{F}\). Calculate the step response using transfer functions and check with Simulink.</p>
+<p>Recast Example 7 as a Simulink problem, but for simplicity use parameters <span class="math">\(R_1 = R_2 = R_3 = 1\; \Omega\)</span>, and <span class="math">\(C_1 = C_2 = 1\;\mathrm{F}\)</span>. Calculate the step response using transfer functions and check with Simulink.</p>
 <p>The Matlab solution: <a href="matlab/example8.m">example8.m</a></p>
 </div></section>
     </section><section>
