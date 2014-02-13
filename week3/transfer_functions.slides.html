@@ -1754,7 +1754,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This week's sessions are based on Chapter 4 <strong>Circuit Analysis with Laplace Transforms</strong> from Steven T. Karris <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems: with MATLAB Computing and Simulink Modelling (5th Edition)</a> [You need University Login to access]</p>
-<p>Last time we showed how Laplace and Inverse-Laplace Transforms could be used to model circuits and to analyse their responses to simple signals. We also introduced the idea of <em>complex impedence</em> and <em>complex addmittance</em>.</p>
+<p>Last time we showed how Laplace and Inverse-Laplace Transforms could be used to model circuits and to analyse their responses to simple signals. We also introduced the idea of <em>complex impedence</em> and <em>complex admittance</em>.</p>
 <p>This time we will examine the idea of a <em>Transfer Function</em> which opens up signals and systems analysis to a whole range of additional possibilities including</p>
 <ul>
 <li>block diagram modelling</li>
@@ -1784,7 +1784,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage <span class="math">\(V_{\mathrm{out}}(s)\)</span> ro the input voltage <span class="math">\(V_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em> is of great interest in network analysis. This ratio is known as the <em>voltage transfer function</em> denoted <span class="math">\(G_v(s)\)</span>:</p>
+<p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage <span class="math">\(V_{\mathrm{out}}(s)\)</span> ro the input voltage <span class="math">\(V_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em> is of great interest. This ratio is known as the <em>voltage transfer function</em> denoted <span class="math">\(G_v(s)\)</span>:</p>
 <p><span class="math">\[G_v(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</span></p>
 <p>Similarly, the ratio of the output current <span class="math">\(I_{\mathrm{out}}(s)\)</span> to the input current <span class="math">\(I_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em>, is called the <em>cuurent transfer function</em> denoted <span class="math">\(G_i(s)\)</span>:</p>
 <p><span class="math">\[G_v(s) = \frac{I_{\mathrm{out}}(s)}{I_{\mathrm{in}}(s)}\]</span></p>
@@ -1796,7 +1796,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Derive an expression for the transfer function <span class="math">\(G(s)\)</span> for the circuit below. In this circuit <span class="math">\(R_g\)</span> represents the internal resisteance of the applied (voltage) source <span class="math">\(v_s\)</span>, and <span class="math">\(R_L\)</span> represents the resistance of the load that cosnsists of <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span>.</p>
+<p>Derive an expression for the transfer function <span class="math">\(G(s)\)</span> for the circuit below. In this circuit <span class="math">\(R_g\)</span> represents the internal resisteance of the applied (voltage) source <span class="math">\(v_s\)</span>, and <span class="math">\(R_L\)</span> represents the resistance of the load that consists of <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span>.</p>
 <p><img src="pictures/example6.png" width="30%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1815,7 +1815,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants <span class="math">\(R_1\)</span>, <span class="math">\(R_2\)</span>, <span class="math">\(R_3\)</span>, <span class="math">\(C_1\)</span> and <span class="math">\(C_2\)</span>. Then replace the complex variable <span class="math">\(s\)</span> with <span class="math">\(j\omega\)</span>, and the circuit constants with their numerical values and plot the magnitude <span class="math">\(\left|G(s)\right| = V_\mathrm{out}(s)/V_\mathrm{in}(s)\)</span> versus radian frequency <span class="math">\(\omega\)</span>.</p>
+<p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants <span class="math">\(R_1\)</span>, <span class="math">\(R_2\)</span>, <span class="math">\(R_3\)</span>, <span class="math">\(C_1\)</span> and <span class="math">\(C_2\)</span>. Then replace the complex variable <span class="math">\(s\)</span> with <span class="math">\(j\omega\)</span>, and the circuit constants with their numerical values and plot the magnitude <span class="math">\(\left|G(s)\right| = \left|V_\mathrm{out}(s)/V_\mathrm{in}(s)\right|\)</span> versus radian frequency <span class="math">\(\omega\)</span>.</p>
 <p><img src="pictures/example7.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1867,8 +1867,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Recast Example 7 as a Simulink problem, but for simplicity use parameters <span class="math">\(R_1 = R_2 = R_3 = 1\; \Omega\)</span>, and <span class="math">\(C_1 = C_2 = 1\;\mathrm{F}\)</span>. Calculate the step response using transfer functions and check with Simulink.</p>
+<p>Recast Example 7 as a Matlab problem using the LTI Transfer Function block. For simplicity use parameters <span class="math">\(R_1 = R_2 = R_3 = 1\; \Omega\)</span>, and <span class="math">\(C_1 = C_2 = 1\;\mathrm{F}\)</span>. Calculate the step response using the LTI functions.</p>
 <p>The Matlab solution: <a href="matlab/example8.m">example8.m</a></p>
+<p>Verify the result with Simulink.</p>
 </div></section>
     </section><section>
     <section>
