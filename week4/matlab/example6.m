@@ -14,7 +14,7 @@
 %
 % <html><img
 % src="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/pictures/example6.png"
-% title="RLC Circuit of Example 6" /></html>
+% width="50%" title="RLC Circuit of Example 6" /></html>
 % 
 %
 %% Sketch of solution
