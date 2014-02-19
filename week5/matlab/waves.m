@@ -1,7 +1,12 @@
+%% Waves and Symmetry
+%
+% Prepared for EG-247 Signals and Systems
+% by Chris Jobling
+%
 %% Square wave
 %
 t = [-3*pi,-2*pi,-2*pi,-2*pi,-pi,-pi,-pi,0,0,0,pi,pi,pi,2*pi,2*pi,2*pi,3*pi];
-f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1]
+f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1];
 plot(t,f)
 axis([-10,10,-1.5,1.5])
 grid
@@ -9,7 +14,7 @@ title('Square waveform')
 
 %% Shifted square wave
 t = [-3*pi,-2*pi,-2*pi,-2*pi,-pi,-pi,-pi,0,0,0,pi,pi,pi,2*pi,2*pi,2*pi,3*pi];
-f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1]
+f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1];
 plot(t-pi/2,f)
 axis([-10,10,-1.5,1.5])
 grid
@@ -18,7 +23,7 @@ title('Shifted square waveform')
 %% Sawtooth waveform
 %
 t = [-3*pi,-2*pi,-2*pi,-2*pi,-pi,0,0,0,pi,2*pi,2*pi,2*pi,3*pi];
-f = [0,1,0,-1,0,1,0,-1,0,1,0,-1,0]
+f = [0,1,0,-1,0,1,0,-1,0,1,0,-1,0];
 plot(t,f)
 axis([-10,10,-1.5,1.5])
 grid
