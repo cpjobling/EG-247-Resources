@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div><div style=display:none>
     
 <div class="cell border-box-sizing code_cell vbox">
@@ -1818,7 +1818,7 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A first-order linear, time-invariant (LTI) system can be represented by a differential equation of the form</p>
-<p>\[a_1\frac{d}{dt}y(t)+a_0 y(t)=u(t)\]</p>
+<p><span class="math">\[a_1\frac{d}{dt}y(t)+a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Second-order-LTI-system">Second-order LTI system<a class="anchor-link" href="#Second-order-LTI-system">&#182;</a></h3>
@@ -1826,7 +1826,7 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A second-order LTI system can be represented by a differential equation of the form</p>
-<p>\[a_2\frac{d^2}{dt^2}y(t)+a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</p>
+<p><span class="math">\[a_2\frac{d^2}{dt^2}y(t)+a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="nth-order-LTI-system">nth-order LTI system<a class="anchor-link" href="#nth-order-LTI-system">&#182;</a></h3>
@@ -1834,7 +1834,7 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By extension, an <em>n</em><sup>th</sup>-order LTI system can be represented by a differential equation of the form</p>
-<p>\[a_n\frac{d^n}{dt^n}y(t)+a_{n-1}\frac{d^{n-1}}{dt^{n-1}}y(t)+\cdots +a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</p>
+<p><span class="math">\[a_n\frac{d^n}{dt^n}y(t)+a_{n-1}\frac{d^{n-1}}{dt^{n-1}}y(t)+\cdots +a_1\frac{d}{dt}y(t) + a_0 y(t)=u(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
@@ -1842,9 +1842,9 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A series RLC circuit with excitation</p>
-<p>\[v_s(t) = e^{j\omega t}\]</p>
+<p><span class="math">\[v_s(t) = e^{j\omega t}\]</span></p>
 <p>is described the the integro-differential equation</p>
-<p>\[Ri(t) + L\frac{d}{dt}i(t)+\frac{1}{C}\int_{-\infty}^{t}i(t) dt = e^{j\omega t}\]</p>
+<p><span class="math">\[Ri(t) + L\frac{d}{dt}i(t)+\frac{1}{C}\int_{-\infty}^{t}i(t) dt = e^{j\omega t}\]</span></p>
 <p>Convert the equation into a second-order differential form and from this derive a state-space model.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1852,37 +1852,37 @@ In&nbsp;[*]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Differentiating both sides of the equation and dividing by \(L\) we get</p>
-<p>\[\frac{d^2}{dt^2}i(t) + \frac{R}{L}\frac{d}{dt}i(t) + \frac{1}{LC} i(t) = \frac{1}{L}j\omega e^{j\omega t}\]</p>
+<p>Differentiating both sides of the equation and dividing by <span class="math">\(L\)</span> we get</p>
+<p><span class="math">\[\frac{d^2}{dt^2}i(t) + \frac{R}{L}\frac{d}{dt}i(t) + \frac{1}{LC} i(t) = \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
 <p>or</p>
-<p>\[\frac{d^2}{dt^2}i(t) = - \frac{R}{L}\frac{d}{dt}i(t) - \frac{1}{LC} i(t) + \frac{1}{L}j\omega e^{j\omega t}\]</p>
+<p><span class="math">\[\frac{d^2}{dt^2}i(t) = - \frac{R}{L}\frac{d}{dt}i(t) - \frac{1}{LC} i(t) + \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-2:-Define-state-variables">Step 2: Define state variables<a class="anchor-link" href="#Step-2:-Define-state-variables">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us define \(x_1\) and \(x_2\) to be two <em>state variables</em> such that</p>
-<p>\[x_1 = i\]</p>
+<p>Let us define <span class="math">\(x_1\)</span> and <span class="math">\(x_2\)</span> to be two <em>state variables</em> such that</p>
+<p><span class="math">\[x_1 = i\]</span></p>
 <p>and</p>
-<p>\[x_2 = \frac{di}{dt} = \frac{dx_1}{dt} = \dot{x}_1\]</p>
+<p><span class="math">\[x_2 = \frac{di}{dt} = \frac{dx_1}{dt} = \dot{x}_1\]</span></p>
 <p>then</p>
-<p>\[\dot{x}_2 = \frac{dx_1}{dt} = \frac{d^2i}{dt^2}\]</p>
+<p><span class="math">\[\dot{x}_2 = \frac{dx_1}{dt} = \frac{d^2i}{dt^2}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-3:-Recast-differential-equation-in-terms-of-the-state-variables">Step 3: Recast differential equation in terms of the state variables<a class="anchor-link" href="#Step-3:-Recast-differential-equation-in-terms-of-the-state-variables">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\dot{x}_1 = x_2\]</p>
-<p>\[\dot{x}_2 = - \frac{R}{L} x_2 - \frac{1}{LC} x_1 + \frac{1}{L}j\omega e^{j\omega t}\]</p>
+<p><span class="math">\[\dot{x}_1 = x_2\]</span></p>
+<p><span class="math">\[\dot{x}_2 = - \frac{R}{L} x_2 - \frac{1}{LC} x_1 + \frac{1}{L}j\omega e^{j\omega t}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-4:-Put-into-matrix-vector-form">Step 4: Put into matrix-vector form<a class="anchor-link" href="#Step-4:-Put-into-matrix-vector-form">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[\left[ {\begin{array}{*{20}{c}}
 {{{\dot x}_1}}\\
 {{{\dot x}_2}}
 \end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
@@ -1894,19 +1894,19 @@ In&nbsp;[*]:
 \end{array}} \right] + \left[ {\begin{array}{*{20}{c}}
 0\\
 {\frac{1}{L}}
-\end{array}} \right]j\omega {e^{j\omega t}}\]</p>
+\end{array}} \right]j\omega {e^{j\omega t}}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-5:-State-space-form">Step 5: State-space form<a class="anchor-link" href="#Step-5:-State-space-form">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</p>
+<p><span class="math">\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</span></p>
 <p>where</p>
-<p>\({\bf{\dot x}} = \left[ {\begin{array}{*{20}{c}} {{\dot{x}_1}}\\ {{\dot{x}_2}} \end{array}} \right]\)\({\bf{A}} = \left[ {\begin{array}{*{20}{c}} 0&amp;1\\ { - \frac{1}{{LC}}}&amp;{ - \frac{R}{L}} \end{array}} \right]\)\({\bf{x}} = \left[ {\begin{array}{*{20}{c}} {{x_1}}\\ {{x_2}} \end{array}} \right]\)\({\bf{B}} = \left[ {\begin{array}{*{20}{c}} 0\\ {\frac{1}{L}} \end{array}} \right]\)and\(u=j\omega e^{j\omega t}\).</p>
-<p>The output \(y(t)\) is expressed by the state-equation</p>
-<p>\[y = {\bf{C}}{\bf{x}} + d u\]</p>
-<p>where \(\bf{C}\) is another matrix, and \(d\) is a scalar.</p>
+<p><span class="math">\({\bf{\dot x}} = \left[ {\begin{array}{*{20}{c}} {{\dot{x}_1}}\\ {{\dot{x}_2}} \end{array}} \right]\)</span><span class="math">\({\bf{A}} = \left[ {\begin{array}{*{20}{c}} 0&amp;1\\ { - \frac{1}{{LC}}}&amp;{ - \frac{R}{L}} \end{array}} \right]\)</span><span class="math">\({\bf{x}} = \left[ {\begin{array}{*{20}{c}} {{x_1}}\\ {{x_2}} \end{array}} \right]\)</span><span class="math">\({\bf{B}} = \left[ {\begin{array}{*{20}{c}} 0\\ {\frac{1}{L}} \end{array}} \right]\)</span>and<span class="math">\(u=j\omega e^{j\omega t}\)</span>.</p>
+<p>The output <span class="math">\(y(t)\)</span> is expressed by the state-equation</p>
+<p><span class="math">\[y = {\bf{C}}{\bf{x}} + d u\]</span></p>
+<p>where <span class="math">\(\bf{C}\)</span> is another matrix, and <span class="math">\(d\)</span> is a scalar.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="General-State-Space-Form">General State-Space Form<a class="anchor-link" href="#General-State-Space-Form">&#182;</a></h3>
@@ -1914,11 +1914,11 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>For a single-input single-output (SISO) system:</p>
-<p>\[\begin{array}{l}
+<p><span class="math">\[\begin{array}{l}
 {\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
 {\bf{y}} = {\bf{Cx}} + d u
-\end{array}\]</p>
-<img src="pictures/state_space_model.png">
+\end{array}\]</span></p>
+<p><img src="pictures/state_space_model.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
@@ -1926,8 +1926,8 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A fourth-order network is decsribed by the differential equation</p>
-<p>\[\frac{d^4 y}{dt^4} + a_3\frac{d^3 y}{dt^3} + a_2 \frac{d^2 y}{dt^2} + a_1 \frac{d y}{dt} + a_0 y(t) = u(t)\]</p>
-<p>where \(y(t)\) represents the circuit output as a current or voltage, and \(u(t)\) is an arbitrary input.</p>
+<p><span class="math">\[\frac{d^4 y}{dt^4} + a_3\frac{d^3 y}{dt^3} + a_2 \frac{d^2 y}{dt^2} + a_1 \frac{d y}{dt} + a_0 y(t) = u(t)\]</span></p>
+<p>where <span class="math">\(y(t)\)</span> represents the circuit output as a current or voltage, and <span class="math">\(u(t)\)</span> is an arbitrary input.</p>
 <p>Express this system in state-space form.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1935,8 +1935,8 @@ In&nbsp;[*]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Write the state equations for the circuit below, given that \(V_c(0^-)=0\), and \(u_0(t)\) is the unit step.</p>
-<img src="pictures/example2.png">
+<p>Write the state equations for the circuit below, given that <span class="math">\(V_c(0^-)=0\)</span>, and <span class="math">\(u_0(t)\)</span> is the unit step.</p>
+<p><img src="pictures/example2.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
@@ -1953,13 +1953,13 @@ In&nbsp;[*]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If a circuit contains only one energy-storing device, the state equations are written as:</p>
-<p>\[\begin{array}{c}
+<p><span class="math">\[\begin{array}{c}
 \dot x = ax + bu\\
 y = cx + du
-\end{array}\]</p>
-<p>where \(a\), \(b\), \(c\) and \(d\) are scalar constants.</p>
+\end{array}\]</span></p>
+<p>where <span class="math">\(a\)</span>, <span class="math">\(b\)</span>, <span class="math">\(c\)</span> and <span class="math">\(d\)</span> are scalar constants.</p>
 <p>The solution will be of the form</p>
-<p>\[x(t) = e^{a(t-t_0)}x(t_0)+\int_{t_0}^{t}e^{a(t-\tau)}bu(\tau) d\tau\]</p>
+<p><span class="math">\[x(t) = e^{a(t-t_0)}x(t_0)+\int_{t_0}^{t}e^{a(t-\tau)}bu(\tau) d\tau\]</span></p>
 <p>(For proof see text-book)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1967,9 +1967,9 @@ y = cx + du
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the previous result to find the capacitor voltage \(v_c(t)\) of the circuit below for \(t &gt; 0\), given that the initial condition is \(v_c(0^-) = 1\;\mathrm{V}\), \(R=2\;\Omega\), \(C=0.5\;\mathrm{F}\) and \(v_s(t) = 2u_0(t)\).</p>
-<img src="pictures/example2.png">
-<p>(<em>Solution</em>: \(y(t) = x(t) = v_c(t) = (2 - e^{-t})u_0(t)\))</p>
+<p>Use the previous result to find the capacitor voltage <span class="math">\(v_c(t)\)</span> of the circuit below for <span class="math">\(t &gt; 0\)</span>, given that the initial condition is <span class="math">\(v_c(0^-) = 1\;\mathrm{V}\)</span>, <span class="math">\(R=2\;\Omega\)</span>, <span class="math">\(C=0.5\;\mathrm{F}\)</span> and <span class="math">\(v_s(t) = 2u_0(t)\)</span>.</p>
+<p><img src="pictures/example2.png"></p>
+<p>(<em>Solution</em>: <span class="math">\(y(t) = x(t) = v_c(t) = (2 - e^{-t})u_0(t)\)</span>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
@@ -2259,15 +2259,15 @@ QgAAgKH+F9qoAxc9xTIYAAAAAElFTkSuQmCC
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If</p>
-<p>\[\begin{array}{l}
+<p><span class="math">\[\begin{array}{l}
 {\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
 {\bf{y}} = {\bf{Cx}} + d u
-\end{array}\]</p>
+\end{array}\]</span></p>
 <p>the the solution of</p>
-<p>\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</p>
-<p>with initial condtions \({\bf{x}}(t_0) = \bf{x}_0\)</p>
+<p><span class="math">\[{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\]</span></p>
+<p>with initial condtions <span class="math">\({\bf{x}}(t_0) = \bf{x}_0\)</span></p>
 <p>is the matrix generalization of the previous result:</p>
-<p>\[{\bf{x}} = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_{{t_0}}^t {{e^{{\bf{A}}(t - \tau )}}u(\tau )d\tau } \]</p>
+<p><span class="math">\[{\bf{x}} = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_{{t_0}}^t {{e^{{\bf{A}}(t - \tau )}}u(\tau )d\tau } \]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Transition-Matrix">Transition Matrix<a class="anchor-link" href="#Transition-Matrix">&#182;</a></h3>
@@ -2275,8 +2275,8 @@ QgAAgKH+F9qoAxc9xTIYAAAAAElFTkSuQmCC
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The term</p>
-<p>\[{\bf{\phi}}(t)=e^{{\bf{A}}t}\]</p>
-<p>is called the <em>state transition matrix</em> and it can be computed by hand (at least for the 2x2 case) if you have knowledge of the <em>eigenvalues</em> and <em>eigenvectors</em> of the state-matrix \(\bf A\).</p>
+<p><span class="math">\[{\bf{\phi}}(t)=e^{{\bf{A}}t}\]</span></p>
+<p>is called the <em>state transition matrix</em> and it can be computed by hand (at least for the 2x2 case) if you have knowledge of the <em>eigenvalues</em> and <em>eigenvectors</em> of the state-matrix <span class="math">\(\bf A\)</span>.</p>
 <p>If you want to study the proof, see Section 5.4 <strong>Computation of the State Transition Matrix</strong> in the text book.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2291,11 +2291,11 @@ QgAAgKH+F9qoAxc9xTIYAAAAAElFTkSuQmCC
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute the state transition matrix \(\bf \phi = e^{{\bf{A}}t}\) for the state matrix</p>
-<p>\[{\bf{A}} = \left[ {\begin{array}{*{20}{c}}
+<p>Compute the state transition matrix <span class="math">\(\bf \phi = e^{{\bf{A}}t}\)</span> for the state matrix</p>
+<p><span class="math">\[{\bf{A}} = \left[ {\begin{array}{*{20}{c}}
 { - 2}&amp;1\\
 0&amp;{ - 1}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell vbox">
@@ -2341,10 +2341,10 @@ phi =
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
 {{e^{ - 2t}}}&amp;{{e^{ - t}} - {e^{ - 2t}}}\\
 0&amp;{{e^{ - t}}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2356,8 +2356,8 @@ phi =
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For the RLC circuit shown below, the initial conditions ar \(i_L(0^-)\)=0, and \(v_c(0^-)=0.5\) V. Use the state variable method to compute \(i_L(t)\) and \(v_c(t)\).</p>
-<img src="pictures/example6.png">
+<p>For the RLC circuit shown below, the initial conditions ar <span class="math">\(i_L(0^-)\)</span>=0, and <span class="math">\(v_c(0^-)=0.5\)</span> V. Use the state variable method to compute <span class="math">\(i_L(t)\)</span> and <span class="math">\(v_c(t)\)</span>.</p>
+<p><img src="pictures/example6.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sketch-of-solution">Sketch of solution<a class="anchor-link" href="#Sketch-of-solution">&#182;</a></h3>
@@ -2365,8 +2365,8 @@ phi =
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See Example 5.10 for full solution.</p>
-<p>We chose \(x_1 = i_L\) and \(x_2 = v_c\) as our state variables which yields state equations</p>
-<p>\[\left[ {\begin{array}{*{20}{c}}
+<p>We chose <span class="math">\(x_1 = i_L\)</span> and <span class="math">\(x_2 = v_c\)</span> as our state variables which yields state equations</p>
+<p><span class="math">\[\left[ {\begin{array}{*{20}{c}}
 {{{\dot x}_1}}\\
 {{{\dot x}_2}}
 \end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
@@ -2378,21 +2378,12 @@ phi =
 \end{array}} \right] + \left[ {\begin{array}{*{20}{c}}
 1\\
 0
-\end{array}} \right]{u_0}(t)\]</p>
+\end{array}} \right]{u_0}(t)\]</span></p>
 </div></section><section>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">State</span><span class="o">-</span><span class="n">transition</span> <span class="n">matrix</span>
-</pre></div>
-
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="State-transition-matrix">State-transition matrix<a class="anchor-link" href="#State-transition-matrix">&#182;</a></h3>
 </div>
 
-</div>
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
 <div class="prompt input_prompt">
@@ -2444,10 +2435,10 @@ In&nbsp;[62]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The state transition matrix is</p>
-<p>\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[\phi (t) = \left[ {\begin{array}{*{20}{c}}
 { - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
 { - \frac{3}{8}{e^{ - t}} + \frac{8}{8}{e^{ - 3t}}}&amp;{ - \frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Unforced-response">Unforced response<a class="anchor-link" href="#Unforced-response">&#182;</a></h3>
@@ -2456,10 +2447,10 @@ In&nbsp;[62]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The <em>unforced response</em> is the response of the state variables to the initial conditions only.</p>
 <p>We multiply this by the initial condition matrix, to get the <em>unforced response</em></p>
-<p>\[{{\bf{x}}_u}(t) = {e^{{\bf{A}}t}}\left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{{\bf{x}}_u}(t) = {e^{{\bf{A}}t}}\left[ {\begin{array}{*{20}{c}}
 0\\
 {\frac{1}{2}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell vbox">
@@ -2506,10 +2497,10 @@ In&nbsp;[63]:
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{{\bf{x}}_u}(t) = \left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{{\bf{x}}_u}(t) = \left[ {\begin{array}{*{20}{c}}
 { - {e^{ - t}} + {e^{ - 3t}}}\\
 {\frac{3}{4}{e^{ - t}} - \frac{3}{4}{e^{ - 3t}}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2517,10 +2508,9 @@ In&nbsp;[63]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>forced response</em> (the response to the input only) is trickier to compute by hand</p>
-<p>\[{{\bf{x}}_f}(t) = \int_0^t {{e^{\bf{A}(t-\tau) }}B{u_0}(\tau )} d\tau \]</p>
-<p>but is easy with Matlab</p>
-</div><div class="fragment">
+<h2 id="The-forced-response-(the-response-to-the-input-only)-is-trickier-to-compute-by-hand-\[{{\bf{x}}_f}(t)-=-\int_0^t-{{e^{\bf{A}(t-\tau)-}}B{u_0}(\tau-)}-d\tau-\]-but-is-easy-with-Matlab">The <em>forced response</em> (the response to the input only) is trickier to compute by hand <span class="math">\[{{\bf{x}}_f}(t) = \int_0^t {{e^{\bf{A}(t-\tau) }}B{u_0}(\tau )} d\tau \]</span> but is easy with Matlab<a class="anchor-link" href="#The-forced-response-(the-response-to-the-input-only)-is-trickier-to-compute-by-hand-\[{{\bf{x}}_f}(t)-=-\int_0^t-{{e^{\bf{A}(t-\tau)-}}B{u_0}(\tau-)}-d\tau-\]-but-is-easy-with-Matlab">&#182;</a></h2>
+</div>
+<div class="fragment">
     
 <div class="cell border-box-sizing code_cell vbox">
 <div class="input hbox">
@@ -2565,19 +2555,19 @@ xf =
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{{\bf{x}}_f}(t) = \left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{{\bf{x}}_f}(t) = \left[ {\begin{array}{*{20}{c}}
 {2{e^{ - t}} - 2{e^{ - 3t}}}\\
 {1 - \frac{3}{2}{e^{ - t}} + \frac{1}{2}{e^{ - 3t}}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div>
-    </div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overall-response">Overall response<a class="anchor-link" href="#Overall-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The overall response is</p>
-<p>\[{\bf{x}}(t) = {{\bf{x}}_u}(t) + {{\bf{x}}_f}(t)\]</p>
+<p><span class="math">\[{\bf{x}}(t) = {{\bf{x}}_u}(t) + {{\bf{x}}_f}(t)\]</span></p>
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell vbox">
@@ -2621,10 +2611,10 @@ x =
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{\bf{x}}(t) = \left[ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{\bf{x}}(t) = \left[ {\begin{array}{*{20}{c}}
 {{e^{ - t}} - {e^{ - 3t}}}\\
 {1 - \frac{3}{4}{e^{ - t}} + \frac{1}{4}{e^{ - 3t}}}
-\end{array}} \right]\]</p>
+\end{array}} \right]\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2633,9 +2623,9 @@ x =
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>So</p>
-<p>\[x_1 = i_L = e^{-t}+e^{-3t}\]</p>
+<p><span class="math">\[x_1 = i_L = e^{-t}+e^{-3t}\]</span></p>
 <p>and</p>
-<p>\[x_2 = v_c = 1 - 0.75e^{-t} + 0.25e^{-3t}\]</p>
+<p><span class="math">\[x_2 = v_c = 1 - 0.75e^{-t} + 0.25e^{-3t}\]</span></p>
 <p>Which agrees with the text book.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2698,29 +2688,29 @@ exp(-3*t)/4 - (3*exp(-t))/4 + 1
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We state, without proof, that the laplace transform of the state equations are:</p>
-<p>\[Y(s) = {\rm{ }}\left[ {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}} \right]{\rm{ }}U(s)\]</p>
-<p>where \(\bf{I}\) is the <em>identity matrix</em> (Matlab <code>eye(n)</code>)</p>
-<p>So the transfer fuction of a state-space model with input \(U(s)\) and output \(Y(s)\) is</p>
-<p>\[G(s) = \frac{Y(s)}{U(s)} = {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}}\]</p>
+<p><span class="math">\[Y(s) = {\rm{ }}\left[ {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}} \right]{\rm{ }}U(s)\]</span></p>
+<p>where <span class="math">\(\bf{I}\)</span> is the <em>identity matrix</em> (Matlab <code>eye(n)</code>)</p>
+<p>So the transfer fuction of a state-space model with input <span class="math">\(U(s)\)</span> and output <span class="math">\(Y(s)\)</span> is</p>
+<p><span class="math">\[G(s) = \frac{Y(s)}{U(s)} = {{\bf{C}}{{({\bf{sI}} - {\bf{A}})}^{ - {\bf{1}}}}{\bf{B}} + {\bf{d}}}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-7">Example 7<a class="anchor-link" href="#Example-7">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Give the transfer function for Example 6 assuming that the output \(y(t) = v_c(t)\) and find the step response of the circuit.</p>
+<p>Give the transfer function for Example 6 assuming that the output <span class="math">\(y(t) = v_c(t)\)</span> and find the step response of the circuit.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>if \(y(t) = v_c(t)\)</p>
-<p>\[{\bf{C}} = [\begin{array}{*{20}{c}}
+<p>if <span class="math">\(y(t) = v_c(t)\)</span></p>
+<p><span class="math">\[{\bf{C}} = [\begin{array}{*{20}{c}}
 0&amp;1
-\end{array}]\]</p>
+\end{array}]\]</span></p>
 <p>and</p>
-<p>\[d = 0\]</p>
+<p><span class="math">\[d = 0\]</span></p>
 </div><div class="fragment">
     
 <div class="cell border-box-sizing code_cell vbox">
@@ -2809,8 +2799,8 @@ exp(-3*t)/2 - (3*exp(-t))/2 + 1
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It can be shown that</p>
-<p>\[\mathcal{L}e^{\bf{A}t} = \left(s\bf{I}-A\right)^{-1}\]</p>
-<p>and this gives us another way to find \(e^{\bf{A}t}\).</p>
+<p><span class="math">\[\mathcal{L}e^{\bf{A}t} = \left(s\bf{I}-A\right)^{-1}\]</span></p>
+<p>and this gives us another way to find <span class="math">\(e^{\bf{A}t}\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-8">Example 8<a class="anchor-link" href="#Example-8">&#182;</a></h3>
@@ -2889,6 +2879,17 @@ phi_t =
 <p>In the lab, on Monday, we will give further examples of computing the state-transition matrix, and its use in the solution of systems defined by state-space models and transfer functions.</p>
 <p>We will also introduce the Linear Time Invariant model which can be used to model and analyse state-space and transfer functions.</p>
 <p>We will also demonstrate the use of Simulink to model and simulate circuits</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Next-Session">Next Session<a class="anchor-link" href="#Next-Session">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb">Time Convolution (Part 1)</a> (<a href="http://cpjobling.github.io/EG-247-Resources/week4/convolution.slides.html">Slides</a>)</li>
+</ul>
 </div></section>
     </section>
 </div>
