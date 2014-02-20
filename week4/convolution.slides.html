@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb">HTML format</a> and print using your brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
@@ -1784,37 +1784,37 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the last session we showed that if the state-space model of a SISO system was:</p>
-<p><span class="math">\[\begin{array}{l}
+<p>\[\begin{array}{l}
 {\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
 y = {\bf{Cx}} + du
-\end{array}\]</span></p>
+\end{array}\]</p>
 <p>the state response would be</p>
-<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_0^t {{e^{{\bf{A}}(t - \tau )}}{\bf{B}}u(\tau )d\tau } \]</span></p>
+<p>\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_0^t {{e^{{\bf{A}}(t - \tau )}}{\bf{B}}u(\tau )d\tau } \]</p>
 <p>which for our later convenience can be rewritten</p>
-<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</span></p>
+<p>\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Impulse-response-(1)">Impulse response (1)<a class="anchor-link" href="#Impulse-response-(1)">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If we assume zero initial conditions <span class="math">\(\bf{x}_0 = \bf{0}\)</span> and <span class="math">\(u(t) = \delta(t)\)</span> (Matlab <code>dirac</code>), then the state-reponse to an impulse input is:</p>
-<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}\delta(\tau )d\tau } \]</span></p>
+<p>If we assume zero initial conditions \(\bf{x}_0 = \bf{0}\) and \(u(t) = \delta(t)\) (Matlab <code>dirac</code>), then the state-reponse to an impulse input is:</p>
+<p>\[{\bf{x}}(t) = {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}\delta(\tau )d\tau } \]</p>
 <p>Using the <em>sifting property</em> of the delta function</p>
-<p><span class="math">\[\int_{-\infty}^{\infty}f(t)\delta(\tau)d\tau = f(0)\]</span></p>
+<p>\[\int_{-\infty}^{\infty}f(t)\delta(\tau)d\tau = f(0)\]</p>
 <p>then</p>
-<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}{\bf{B}}\]</span></p>
+<p>\[{\bf{x}}(t) = {e^{{\bf{At}}}}{\bf{B}}\]</p>
 <p>so, the impulse response is:</p>
-<p><span class="math">\[y(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}} + d\delta (t)\]</span></p>
+<p>\[y(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}} + d\delta (t)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Impulse-response-(2)">Impulse response (2)<a class="anchor-link" href="#Impulse-response-(2)">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In most systems that you will encounter on this course the scalar quantity <span class="math">\(d = 0\)</span> so the impulse response, which we donate as <span class="math">\(h(t)\)</span>, is</p>
-<p><span class="math">\[h(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}}u_0(t)\]</span></p>
-<p>where the unit step function <span class="math">\(u_0(t)\)</span> has been included to indicate that the impulse response is only defined for <span class="math">\(t&gt;0\)</span>.</p>
+<p>In most systems that you will encounter on this course the scalar quantity \(d = 0\) so the impulse response, which we donate as \(h(t)\), is</p>
+<p>\[h(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}}u_0(t)\]</p>
+<p>where the unit step function \(u_0(t)\) has been included to indicate that the impulse response is only defined for \(t&gt;0\).</p>
 </div><div style=display:none>
     
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1824,10 +1824,10 @@ y = {\bf{Cx}} + du
     </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the text book, Karris presents the impulse response as</p>
-<p><span class="math">\[{\mathbf{x}}(t) = {\mathbf{h}}(t) = {e^{{\mathbf{A}}t}}{\mathbf{B}}{u_0}(t)\]</span></p>
+<p>\[{\mathbf{x}}(t) = {\mathbf{h}}(t) = {e^{{\mathbf{A}}t}}{\mathbf{B}}{u_0}(t)\]</p>
 <p>but this is the impulse response of the state variables and is a vector quantity.</p>
-<p>You need to introduce the output equation to find the actual scalar impulse response <span class="math">\(h(t)\)</span> which for a SISO system.</p>
-<p>Karris gets away with this in his book because he uses voltages and currents as <em>physical state variables</em> and the coefficient of the corresponding <span class="math">\(\bf{C}\)</span> matrix will be unity.</p>
+<p>You need to introduce the output equation to find the actual scalar impulse response \(h(t)\) which for a SISO system.</p>
+<p>Karris gets away with this in his book because he uses voltages and currents as <em>physical state variables</em> and the coefficient of the corresponding \(\bf{C}\) matrix will be unity.</p>
 <p>In general, we cannot assume that this will be true so I prefer to be a little more careful in my presentation.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1835,16 +1835,16 @@ y = {\bf{Cx}} + du
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute the impulse response of the series RC circuit shown below in terms of the constants <span class="math">\(R\)</span> and <span class="math">\(C\)</span>, where the response is considered to be the voltage across the capicitor, and <span class="math">\(v_c(0^-)=0\)</span>. Then, compute the current through the capacitor.</p>
-<p><img src="pictures/c_example1.png"></p>
+<p>Compute the impulse response of the series RC circuit shown below in terms of the constants \(R\) and \(C\), where the response is considered to be the voltage across the capicitor, and \(v_c(0^-)=0\). Then, compute the current through the capacitor.</p>
+<img src="pictures/c_example1.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the RLC circuit shown below, compute the impulse response <span class="math">\(h(t)=v_c(t)\)</span> given that the initial conditions are zero, that is <span class="math">\(i_L(0^-)=0\)</span> and <span class="math">\(V_c(0^-)=0\)</span>.</p>
-<p><img src="pictures/c_example2.png"></p>
+<p>In the RLC circuit shown below, compute the impulse response \(h(t)=v_c(t)\) given that the initial conditions are zero, that is \(i_L(0^-)=0\) and \(V_c(0^-)=0\).</p>
+<img src="pictures/c_example2.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
@@ -1852,7 +1852,7 @@ y = {\bf{Cx}} + du
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We tackled this problem as Example 6 in the previous session and found that:</p>
-<p><span class="math">\[\begin{array}{l}
+<p>\[\begin{array}{l}
 {\bf{B}} = \left[ {\begin{array}{*{20}{c}}
 4\\
 0
@@ -1861,11 +1861,11 @@ y = {\bf{Cx}} + du
 { - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
 {\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
 \end{array}} \right]
-\end{array}\]</span></p>
+\end{array}\]</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>so the impulse response of the state variables is:</p>
-<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+<p>\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
 { - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
 {\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
 \end{array}} \right]\left[ {\begin{array}{*{20}{c}}
@@ -1874,19 +1874,19 @@ y = {\bf{Cx}} + du
 \end{array}} \right]{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
 { - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
 {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
-\end{array}} \right]{u_0}(t)\]</span></p>
+\end{array}} \right]{u_0}(t)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In Example 6 in the previous session, we defined <span class="math">\(x_1 = i_L\)</span> and <span class="math">\(x_2 = v_c\)</span> so if we want the capacitor voltage to be the circuit output, the output vector <span class="math">\(\bf{C}\)</span> will be</p>
-<p><span class="math">\[{\bf{C}} = {\rm{ }}\left[ {\begin{array}{*{20}{c}}
+<p>In Example 6 in the previous session, we defined \(x_1 = i_L\) and \(x_2 = v_c\) so if we want the capacitor voltage to be the circuit output, the output vector \(\bf{C}\) will be</p>
+<p>\[{\bf{C}} = {\rm{ }}\left[ {\begin{array}{*{20}{c}}
 0&amp;1
-\end{array}} \right]\]</span></p>
+\end{array}} \right]\]</p>
 <p>so</p>
-<p><span class="math">\[\begin{array}{l}
+<p>\[\begin{array}{l}
 h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
  &amp; = &amp; \left[ {\begin{array}{*{20}{c}}
 0&amp;1
@@ -1895,7 +1895,7 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
 \end{array}} \right]{u_0}(t)\\
  &amp; = &amp; \left( {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}} \right){u_0}(t) = \frac{3}{2}\left( {{e^{ - t}} + {e^{ - 3t}}} \right){u_0}(t)
-\end{array}\]</span></p>
+\end{array}\]</p>
 </div></section>
     </section><section>
     <section>
@@ -1906,18 +1906,18 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(<strong>This should be revision!</strong>)</p>
 <p>We need to be reminded of <em>even</em> and <em>odd</em> functions so that we can develop the idea of time convolution which is a means of determining the time response of any system for which we know its <em>impulse response</em> to any signal.</p>
-<p>The development requires us to find out if the Dirac delta function (<span class="math">\(\delta(t)\)</span>) is an <em>even</em> or an <em>odd</em> function of time.</p>
+<p>The development requires us to find out if the Dirac delta function (\(\delta(t)\)) is an <em>even</em> or an <em>odd</em> function of time.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Even-Functions-of-Time">Even Functions of Time<a class="anchor-link" href="#Even-Functions-of-Time">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>even function</em> of time if the following relation holds</p>
-<p><span class="math">\[f(-t) = f(t)\]</span></p>
-<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span> the function <span class="math">\(f(t)\)</span> does not change.</p>
+<p>A function \(f(t)\) is said to be an <em>even function</em> of time if the following relation holds</p>
+<p>\[f(-t) = f(t)\]</p>
+<p>that is, if we relace \(t\) with \(-t\) the function \(f(t)\) does not change.</p>
 <p>Polynomials with even exponents only, and with or without constants, are even functions. For example:</p>
-<p><span class="math">\[\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \ldots\]</span></p>
+<p>\[\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \ldots\]</p>
 <p>is even.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1925,18 +1925,18 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/even_funcs.png" width="75%"></p>
+<img src="pictures/even_funcs.png" width="75%">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Odd-Functions-of-Time">Odd Functions of Time<a class="anchor-link" href="#Odd-Functions-of-Time">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>odd function</em> of time if the following relation holds</p>
-<p><span class="math">\[-f(-t) = f(t)\]</span></p>
-<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span>, we obtain the negative of the function <span class="math">\(f(t)\)</span>.</p>
+<p>A function \(f(t)\) is said to be an <em>odd function</em> of time if the following relation holds</p>
+<p>\[-f(-t) = f(t)\]</p>
+<p>that is, if we relace \(t\) with \(-t\), we obtain the negative of the function \(f(t)\).</p>
 <p>Polynomials with odd exponents only, and no constants, are odd functions. For example:</p>
-<p><span class="math">\[\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \ldots\]</span></p>
+<p>\[\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \ldots\]</p>
 <p>is odd.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1944,7 +1944,7 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/odd_funcs.png" width="75%"></p>
+<img src="pictures/odd_funcs.png" width="75%">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Observations">Observations<a class="anchor-link" href="#Observations">&#182;</a></h3>
@@ -1952,34 +1952,34 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>For odd functions <span class="math">\(f(0) = 0\)</span>.</li>
-<li>If <span class="math">\(f(0) = 0\)</span> we should not conclude that <span class="math">\(f(t)\)</span> is an odd function. <em>c.f.</em> <span class="math">\(f(t) = t^2\)</span> is even, not odd.</li>
+<li>For odd functions \(f(0) = 0\).</li>
+<li>If \(f(0) = 0\) we should not conclude that \(f(t)\) is an odd function. <em>c.f.</em> \(f(t) = t^2\) is even, not odd.</li>
 <li>The product of <em>two even</em> or <em>two odd</em> functions is an even function.</li>
 <li>The product of an even and an odd function, is an odd function.</li>
 </ul>
-<p>In the following <span class="math">\(f_e(t)\)</span> will donate an even function and <span class="math">\(f_o(t)\)</span> an odd function.</p>
+<p>In the following \(f_e(t)\) will donate an even function and \(f_o(t)\) an odd function.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-integrals-of-even-and-odd-functions">Time integrals of even and odd functions<a class="anchor-link" href="#Time-integrals-of-even-and-odd-functions">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For an even function <span class="math">\(f_e(t)\)</span></p>
-<p><span class="math">\[\int_{-T}^{T}f_e(t) dt = 2 \int_{0}^{T}f_e(t) dt\]</span></p>
-<p>For an odd function <span class="math">\(f_o(t)\)</span></p>
-<p><span class="math">\[\int_{-T}^{T}f_o(t) dt = 0\]</span></p>
+<p>For an even function \(f_e(t)\)</p>
+<p>\[\int_{-T}^{T}f_e(t) dt = 2 \int_{0}^{T}f_e(t) dt\]</p>
+<p>For an odd function \(f_o(t)\)</p>
+<p>\[\int_{-T}^{T}f_o(t) dt = 0\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Even/Odd-Representation-of-an-Arbitrary-Function">Even/Odd Representation of an Arbitrary Function<a class="anchor-link" href="#Even/Odd-Representation-of-an-Arbitrary-Function">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A function <span class="math">\(f(t)\)</span> that is neither even nor odd can be represented as an even function by use of:</p>
-<p><span class="math">\[f_e(t) = \frac{1}{2}\left[f(t)+f(-t)\right]\]</span></p>
+<p>A function \(f(t)\) that is neither even nor odd can be represented as an even function by use of:</p>
+<p>\[f_e(t) = \frac{1}{2}\left[f(t)+f(-t)\right]\]</p>
 <p>or as an odd function by use of:</p>
-<p><span class="math">\[f_o(t) = \frac{1}{2}\left[f(t)-f(-t)\right]\]</span></p>
+<p>\[f_o(t) = \frac{1}{2}\left[f(t)-f(-t)\right]\]</p>
 <p>Adding these together, an abitrary signal can be represented as</p>
-<p><span class="math">\[f(t) = f_e(t) + f_o(t)\]</span></p>
+<p>\[f(t) = f_e(t) + f_o(t)\]</p>
 <p>That is, any function of time can be expressed as the sum of an even and an odd function.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1987,34 +1987,34 @@ h(t) = y(t) = {v_c}(t) &amp; = &amp; {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Is the Dirac delta <span class="math">\(\delta(t)\)</span> an even or an odd function of time?</p>
+<p>Is the Dirac delta \(\delta(t)\) an even or an odd function of time?</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let <span class="math">\(f(t)\)</span> be an arbitrary function of time that is continous at <span class="math">\(t=t_0\)</span>. Then by the sifting property of the delta function</p>
-<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t-t_0) dt = f(t_0)\]</span></p>
-<p>and for <span class="math">\(t_0 = 0\)</span></p>
-<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t) dt = f(0)\]</span></p>
+<p>Let \(f(t)\) be an arbitrary function of time that is continous at \(t=t_0\). Then by the sifting property of the delta function</p>
+<p>\[\int_{-\infty}^{\infty} f(t)\delta(t-t_0) dt = f(t_0)\]</p>
+<p>and for \(t_0 = 0\)</p>
+<p>\[\int_{-\infty}^{\infty} f(t)\delta(t) dt = f(0)\]</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Also for an even function <span class="math">\(f_e(t)\)</span></p>
-<p><span class="math">\[\int_{-\infty}^{\infty} f_e(t)\delta(t) dt = f_e(0)\]</span></p>
-<p>and for an odd function <span class="math">\(f_o(t)\)</span></p>
-<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0)\]</span></p>
+<p>Also for an even function \(f_e(t)\)</p>
+<p>\[\int_{-\infty}^{\infty} f_e(t)\delta(t) dt = f_e(0)\]</p>
+<p>and for an odd function \(f_o(t)\)</p>
+<p>\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Even-or-odd?">Even or odd?<a class="anchor-link" href="#Even-or-odd?">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An odd function <span class="math">\(f_o(t)\)</span> evaluated at <span class="math">\(t=0\)</span> is zero, that is <span class="math">\(f_o(0) = 0\)</span>.</p>
+<p>An odd function \(f_o(t)\) evaluated at \(t=0\) is zero, that is \(f_o(0) = 0\).</p>
 <p>Hence</p>
-<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0) = 0\]</span></p>
-<p>Hence the product <span class="math">\(f_o(t)\delta(t)\)</span> is odd function of <span class="math">\(t\)</span>.</p>
-<p>Since <span class="math">\(f_o(t)\)</span> is odd, <span class="math">\(\delta(t)\)</span> must be even because only an <em>even</em> function multiplied by an <em>odd</em> function can result in an <em>odd</em> function.</p>
+<p>\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0) = 0\]</p>
+<p>Hence the product \(f_o(t)\delta(t)\) is odd function of \(t\).</p>
+<p>Since \(f_o(t)\) is odd, \(\delta(t)\) must be even because only an <em>even</em> function multiplied by an <em>odd</em> function can result in an <em>odd</em> function.</p>
 <p>(Even times even or odd times odd produces an even function. See earlier slide)</p>
 </div></section>
     </section><section>
