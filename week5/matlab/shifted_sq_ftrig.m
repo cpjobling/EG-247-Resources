@@ -26,14 +26,15 @@ ft_num = subs(ft,A,1.0)
 ft_num = vpa(ft_num, 4)
 %%
 % plot result
-ezplot(ft)
+ezplot(ft_num)
 hold on
 %% plot original signal
 % (we could use |heaviside| for this as well)
 %
 t = [-3*pi,-2*pi,-2*pi,-2*pi,-pi,-pi,-pi,0,0,0,pi,pi,pi,2*pi,2*pi,2*pi,3*pi];
 f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1];
-plot(t,f,'r-')
+plot(t-pi/2,f,'r-')
+axis([-10,10,-1.5,1.5])
 grid
-title('Square Wave Reconstructed from Sinewaves')
-
+title('Shifted Square Waveform Reconstructed from Cosines')
+hold off

@@ -25,7 +25,7 @@ ft_num = subs(ft,A,1.0)
 ft_num = vpa(ft_num, 4)
 %%
 % plot result
-ezplot(ft)
+ezplot(ft_num)
 hold on
 %% plot original signal
 % (we could use |heaviside| for this as well)
@@ -35,4 +35,5 @@ f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1];
 plot(t,f,'r-')
 grid
 title('Square Wave Reconstructed from Sinewaves')
+hold off
 
