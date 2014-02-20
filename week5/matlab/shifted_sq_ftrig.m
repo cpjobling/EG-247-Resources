@@ -1,5 +1,6 @@
-%% Calculation of Fourier coefficients for Square Wave
+%% Calculation of Fourier coefficients for Shifted Square Wave
 %
+% Exploiting half-wave symmetry
 %
 % Prepared for EG-247 Signals and Systems
 % by Chris Jobling
@@ -7,10 +8,10 @@ syms t n A pi
 
 n = [1:11];
 %% DC component
-half_a0 = 1/(2*pi)*(int(A,t,0,pi)+int(-A,t,pi,2*pi))
-%% Compute harmonics
-ai = 1/pi*(int(A*cos(n*t),t,0,pi)+int(-A*cos(n*t),t,pi,2*pi))
-bi = 1/pi*(int(A*sin(n*t),t,0,pi)+int(-A*sin(n*t),t,pi,2*pi))
+half_a0 = 0
+%% Compute harmonics - use half-wave symmetry
+ai = 4/pi*int(A*cos(n*t),t,0,(pi/2))
+bi = zeros(size(n))
 %%
 % Reconstruct f(t) from harmonic sine functions
 ft = half_a0;
