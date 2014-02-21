@@ -5,9 +5,9 @@
 % Prepared for EG-247 by 
 % C.P. Jobling
 %% The decaying exponentail
-t=linspace(-1,2,1000);
+t=linspace(0,4*pi,1000);
 figure
-plot(t,exp(t),t,exp(-t))
+plot(t,cos(t),t,sin(t))
 hold on
 % Real
 plot([3*pi/4,2*pi+3*pi/4],[cos(3*pi/4),cos(2*pi+3*pi/4)],'o')
