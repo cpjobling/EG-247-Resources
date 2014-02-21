@@ -33,7 +33,7 @@ xf = simplify(xf)
 x = xu + xf
 
 %% Output response
-y = C*x
+y = C*x + D*heaviside(t)
 
 %% Plot
 ezplot(y,[0,5]),grid
