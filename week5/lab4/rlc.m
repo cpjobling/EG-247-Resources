@@ -4,12 +4,13 @@
 % Prepared for EG-247 by C.P. Jobling
 %
 %% RLC Model Parameters
-C = 4/3;   % F
+% Note: I use Cap to avoid conflict with Output matrix C defined later
+Cap = 4/3;   % F 
 R = 1;   % Ohm
 L = 1/4; % H
 
 %% State equations
-A = [-R/L, -1/L; 1/C, 0]
+A = [-R/L, -1/L; 1/Cap, 0]
 B = [1/L; 0]
 C = [0, 1]
 D = 0
