@@ -1741,10 +1741,21 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/fourier1.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/fourier1.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This session launches our Introduction to Fourier Transforms with a look at Wave Analsysis and Trigonometric Fourier Series.</p>
+<p>As we shall see, any periodic waveform can be approximated by a DC component (which may be 0) and the sum of a fundamental and harmomic sinusoidal waveforms. This has important applications in many applications of electronics but is particularly important for signal processing and communications.</p>
+<p>The material in this presentation and notes is based on Chapter 7 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a>.</p>
 </div></section>
     </section><section>
     <section>
@@ -1798,13 +1809,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Any periodic waveform <span class="math">\(f(t)\)</span> can be represented as</p>
-<p><span class="math">\[\begin{gathered}
+<p>Any periodic waveform \(f(t)\) can be represented as</p>
+<p>\[\begin{gathered}
   f(t) = \frac{1}{2}{a_0} + {a_l}\cos \omega t + {a_2}\cos 2\omega t + {a_3}\cos 3\omega t +  \cdots  + {a_n}\cos n\omega t +  \cdots  \\ 
    + {b_l}\sin \omega t + {b_2}\sin 2\omega t + {b_3}\sin 3\omega t +  \cdots  + {b_n}\sin n\omega t +  \cdots  \\ 
-\end{gathered} \]</span></p>
+\end{gathered} \]</p>
 <p>or equivalently (if more confusingly)</p>
-<p><span class="math">\[f(t) = \frac{1}{2}{a_0} + \sum\limits_{n = 1}^\infty  {({a_n}\cos n\omega t + {b_n}\sin n\omega t)} \]</span></p>
+<p>\[f(t) = \frac{1}{2}{a_0} + \sum\limits_{n = 1}^\infty  {({a_n}\cos n\omega t + {b_n}\sin n\omega t)} \]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Notation">Notation<a class="anchor-link" href="#Notation">&#182;</a></h3>
@@ -1812,12 +1823,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The first term <span class="math">\(a_o/2\)</span> is a constant and represents the DC (average) component of the signal <span class="math">\(f(t)\)</span></li>
-<li>The terms with coefficients <span class="math">\(a_1\)</span> and <span class="math">\(b_1\)</span> together represent the fundamental frequency component of <span class="math">\(f(t)\)</span> at frequency <span class="math">\(\omega\)</span>.</li>
-<li>The terms with coefficients <span class="math">\(a_2\)</span> and <span class="math">\(b_2\)</span> together represent the second harmonic frequency component of <span class="math">\(f(t)\)</span> at frequency <span class="math">\(2\omega\)</span>.</li>
+<li>The first term \(a_o/2\) is a constant and represents the DC (average) component of the signal \(f(t)\)</li>
+<li>The terms with coefficients \(a_1\) and \(b_1\) together represent the fundamental frequency component of \(f(t)\) at frequency \(\omega\).</li>
+<li>The terms with coefficients \(a_2\) and \(b_2\) together represent the second harmonic frequency component of \(f(t)\) at frequency \(2\omega\).</li>
 </ul>
 <p>And so on.</p>
-<p>Since any periodic function <span class="math">\(f(t)\)</span> can be expressed as a Fourier series, it follows that the sum of the DC, fundamental, second harmonic and so on must produced the waveform <span class="math">\(f(t)\)</span>.</p>
+<p>Since any periodic function \(f(t)\) can be expressed as a Fourier series, it follows that the sum of the DC, fundamental, second harmonic and so on must produced the waveform \(f(t)\).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sums-of-sinusoids">Sums of sinusoids<a class="anchor-link" href="#Sums-of-sinusoids">&#182;</a></h3>
@@ -1825,7 +1836,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In general, the sum of two or more sinusoids does not produce a sinusoid as shown below.</p>
-<p><img src="pictures/7_1.png"></p>
+<img src="pictures/7_1.png">
 <p>To generate this picture use <a href="matlab/fourier_series1.m">fourier_series1.m</a>.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1833,10 +1844,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The coefficients are obtained from the following expressions (valid for any periodic waveform with fundamental frequency <span class="math">\(\omega_0\)</span> so long as we integrate over one period <span class="math">\(0\to T_0\)</span> where <span class="math">\(T_0 = 2\pi/\omega_0\)</span>):</p>
-<p><span class="math">\[\frac{1}{2}a_0 = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)dt\]</span></p>
-<p><span class="math">\[a_n = \frac{1}{\pi}\int_{0}^{2\pi}f(t)\cos nt\,dt\]</span></p>
-<p><span class="math">\[b_n = \frac{1}{\pi}\int_{0}^{2\pi}f(t)\sin nt\,dt\]</span></p>
+<p>The coefficients are obtained from the following expressions (valid for any periodic waveform with fundamental frequency \(\omega_0\) so long as we integrate over one period \(0\to T_0\) where \(T_0 = 2\pi/\omega_0\)):</p>
+<p>\[\frac{1}{2}a_0 = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)dt\]</p>
+<p>\[a_n = \frac{1}{\pi}\int_{0}^{2\pi}f(t)\cos nt\,dt\]</p>
+<p>\[b_n = \frac{1}{\pi}\int_{0}^{2\pi}f(t)\sin nt\,dt\]</p>
 </div></section>
     </section><section>
     <section>
@@ -1847,9 +1858,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>There are simplifications we can make if the original periodic properties has certain properties:</p>
 <ul>
-<li>If <span class="math">\(f(t)\)</span> is odd, <span class="math">\(a_0=0\)</span> and there will be no cosine terms so <span class="math">\({a_n} = 0\; \forall n &gt; 0\)</span></li>
-<li>If <span class="math">\(f(t)\)</span> is even, there will be no sine terms and <span class="math">\({b_n} = 0\; \forall n &gt; 0\)</span>. The DC may or may not be zero.</li>
-<li>If <span class="math">\(f(t)\)</span> has <em>half-wave symmetry</em> only the odd harmonics will be present. That is <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> is zero for all even values of <span class="math">\(n\)</span> (0, 2, 4, ...)</li>
+<li>If \(f(t)\) is odd, \(a_0=0\) and there will be no cosine terms so \({a_n} = 0\; \forall n &gt; 0\)</li>
+<li>If \(f(t)\) is even, there will be no sine terms and \({b_n} = 0\; \forall n &gt; 0\). The DC may or may not be zero.</li>
+<li>If \(f(t)\) has <em>half-wave symmetry</em> only the odd harmonics will be present. That is \(a_n\) and \(b_n\) is zero for all even values of \(n\) (0, 2, 4, ...)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1859,13 +1870,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Recall</strong></p>
 <ul>
-<li>An <em>odd</em> function is one for which <span class="math">\(f(t) = -f(-t)\)</span>. The function <span class="math">\(\sin t\)</span> is an <em>odd</em> function.</li>
-<li>An <em>even</em> function is one for which <span class="math">\(f(t) = f(-t)\)</span>. The function <span class="math">\(\cos t\)</span> is an <em>even</em> function.</li>
+<li>An <em>odd</em> function is one for which \(f(t) = -f(-t)\). The function \(\sin t\) is an <em>odd</em> function.</li>
+<li>An <em>even</em> function is one for which \(f(t) = f(-t)\). The function \(\cos t\) is an <em>even</em> function.</li>
 </ul>
 <p><strong>Half-wave symmetry</strong></p>
 <ul>
-<li>A periodic function with period <span class="math">\(T\)</span> is a function for which <span class="math">\(f(t) = f(t + T)\)</span></li>
-<li>A periodic function with period <span class="math">\(T\)</span>, has <em>half-wave symmetry</em> if <span class="math">\(f(t) = -f(t + T/2)\)</span></li>
+<li>A periodic function with period \(T\) is a function for which \(f(t) = f(t + T)\)</li>
+<li>A periodic function with period \(T\), has <em>half-wave symmetry</em> if \(f(t) = -f(t + T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1880,11 +1891,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/square.png"></p>
+<img src="pictures/square.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It has half-wave symmetry \(f(t)=-f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1892,11 +1903,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/shifted_sq.png"></p>
+<img src="pictures/shifted_sq.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>even</em> function <span class="math">\(f(t) = f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t)=-f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>even</em> function \(f(t) = f(-t)\)</li>
+<li>It has <em>half-wave symmetry</em> \(f(t)=-f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1904,11 +1915,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/sawtooth.png"></p>
+<img src="pictures/sawtooth.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It doesn't have <em>half-wave symmetry</em> <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It doesn't have <em>half-wave symmetry</em> \(f(t) \ne -f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1916,11 +1927,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/triangle.png"></p>
+<img src="pictures/triangle.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It has <em>half-wave symmetry</em> \(f(t) = -f(t+T/2)\)</li>
 </ul>
 </div></section>
     </section><section>
@@ -1930,18 +1941,18 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the following, <span class="math">\(T/2\)</span> is taken to be the half-period of the fundamental sinewave.</p>
+<p>In the following, \(T/2\) is taken to be the half-period of the fundamental sinewave.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h4 id="Fundamental">Fundamental<a class="anchor-link" href="#Fundamental">&#182;</a></h4>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/fundamental.png"></p>
+<img src="pictures/fundamental.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It has <em>half-wave symmetry</em> \(f(t) = -f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1949,11 +1960,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/2nd_harm.png"></p>
+<img src="pictures/2nd_harm.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It doesn't have <em>half-wave symmetry</em> <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It doesn't have <em>half-wave symmetry</em> \(f(t) \ne -f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1961,11 +1972,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/3rd_harm.png"></p>
+<img src="pictures/3rd_harm.png">
 <ul>
-<li>Average value over period <span class="math">\(T\)</span> is zero.</li>
-<li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>Average value over period \(T\) is zero.</li>
+<li>It is an <em>odd</em> function \(f(t) = - f(-t)\)</li>
+<li>It has <em>half-wave symmetry</em> \(f(t) = -f(t+T/2)\)</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1974,10 +1985,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The limits of the integrals used to compute the coefficents <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> of the Fourier series are given as <span class="math">\(0\to 2\pi\)</span> which is one period <span class="math">\(T\)</span></li>
-<li>We could also choose to integrate from <span class="math">\(-\pi \to \pi\)</span></li>
-<li>If the function is <em>odd</em>, or <em>even</em> or has <em>half-wave symmetry</em> we can compute <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> by integrating from <span class="math">\(0\to \pi\)</span> and multiplying by 2.</li>
-<li>If we have <em>half-wave symmetry</em> we can compute <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> by integrating from <span class="math">\(0\to \pi/2\)</span> and multiplying by 4.</li>
+<li>The limits of the integrals used to compute the coefficents \(a_n\) and \(b_n\) of the Fourier series are given as \(0\to 2\pi\) which is one period \(T\)</li>
+<li>We could also choose to integrate from \(-\pi \to \pi\)</li>
+<li>If the function is <em>odd</em>, or <em>even</em> or has <em>half-wave symmetry</em> we can compute \(a_n\) and \(b_n\) by integrating from \(0\to \pi\) and multiplying by 2.</li>
+<li>If we have <em>half-wave symmetry</em> we can compute \(a_n\) and \(b_n\) by integrating from \(0\to \pi/2\) and multiplying by 4.</li>
 </ul>
 <p>(For more details see page 7-10 of the textbook)</p>
 </div></section><section>
@@ -1986,8 +1997,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As an example let's take a square wave with amplitude <span class="math">\(\pm A\)</span> and period <span class="math">\(T\)</span>.</p>
-<p><img src="pictures/square_wave.png"></p>
+<p>As an example let's take a square wave with amplitude \(\pm A\) and period \(T\).</p>
+<img src="pictures/square_wave.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
@@ -1996,42 +2007,40 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Solution: See <a href="matlab/square_ftrig.m">square_ftrig.m</a>. Script confirms that:</p>
 <ul>
-<li><span class="math">\(a_0 = 0\)</span></li>
-<li><span class="math">\(a_i = 0\)</span>: function is odd</li>
-<li><span class="math">\(b_i = 0\)</span>: for <span class="math">\(i\)</span> even - half-wave symmetry</li>
+<li>\(a_0 = 0\)</li>
+<li>\(a_i = 0\): function is odd</li>
+<li>\(b_i = 0\): for \(i\) even - half-wave symmetry</li>
 </ul>
-<pre><code>ft =
- 
-(4*A*sin(t))/pi + (4*A*sin(3*t))/(3*pi) + (4*A*sin(5*t))/(5*pi) + (4*A*sin(7*t))/(7*pi) + (4*A*sin(9*t))/(9*pi) + (4*A*sin(11*t))/(11*pi)</code></pre>
+<p>``` ft =</p>
+(4<em>A</em>sin(t))/pi + (4<em>A</em>sin(3<em>t))/(3</em>pi) + (4<em>A</em>sin(5<em>t))/(5</em>pi) + (4<em>A</em>sin(7<em>t))/(7</em>pi) + (4<em>A</em>sin(9<em>t))/(9</em>pi) + (4<em>A</em>sin(11<em>t))/(11</em>pi) ```
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/fsq_trig.png"></p>
+<img src="pictures/fsq_trig.png">
 <p>Note that the coefficients match those given in the textbook (Section 7.4.1).</p>
-<p><span class="math">\[f(t) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \frac{1}{5}\sin 5\omega t + \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}\frac{1}{n}\sin n\omega t\]</span></p>
+<p>\[f(t) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \frac{1}{5}\sin 5\omega t + \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}\frac{1}{n}\sin n\omega t\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Using-symmetry---computing-the-Fourier-series-coefficients-of-the-shifted-square-wave">Using symmetry - computing the Fourier series coefficients of the shifted square wave<a class="anchor-link" href="#Using-symmetry---computing-the-Fourier-series-coefficients-of-the-shifted-square-wave">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/shifted_square_wave.png"></p>
+<img src="pictures/shifted_square_wave.png">
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>As before <span class="math">\(a_0=0\)</span></li>
-<li>We observe that this function is even, so all <span class="math">\(b_k\)</span> coefficents will be zero</li>
+<li>As before \(a_0=0\)</li>
+<li>We observe that this function is even, so all \(b_k\) coefficents will be zero</li>
 <li>The waveform has half-wave symmetry, so only odd indexed coeeficents will be present.</li>
-<li>Further more, because it has half-wave symmetry we can just integrate from <span class="math">\(0 \to \pi/2\)</span> and multiply the result by 4.</li>
+<li>Further more, because it has half-wave symmetry we can just integrate from \(0 \to \pi/2\) and multiply the result by 4.</li>
 </ul>
 <p>See <a href="matlab/shifted_sq_ftrig.m">shifted_sq_ftrig.m</a>.</p>
-<pre><code>ft =
- 
-(4*A*cos(t))/pi - (4*A*cos(3*t))/(3*pi) + (4*A*cos(5*t))/(5*pi) - (4*A*cos(7*t))/(7*pi) + (4*A*cos(9*t))/(9*pi) - (4*A*cos(11*t))/(11*pi)</code></pre>
+<p>``` ft =</p>
+(4<em>A</em>cos(t))/pi - (4<em>A</em>cos(3<em>t))/(3</em>pi) + (4<em>A</em>cos(5<em>t))/(5</em>pi) - (4<em>A</em>cos(7<em>t))/(7</em>pi) + (4<em>A</em>cos(9<em>t))/(9</em>pi) - (4<em>A</em>cos(11<em>t))/(11</em>pi) ```
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/fssq_trig.png"></p>
+<img src="pictures/fssq_trig.png">
 <p>Note that the coefficients match those given in the textbook (Section 7.4.2).</p>
-<p><span class="math">\[f(t) = \frac{4A}{\pi}\left(\cos \omega t - \frac{1}{3}\cos 3\omega t + \frac{1}{5}\cos 5\omega t - \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}(-1)^{\frac{n-1}{2}} \frac{1}{n}\cos n\omega t\]</span></p>
+<p>\[f(t) = \frac{4A}{\pi}\left(\cos \omega t - \frac{1}{3}\cos 3\omega t + \frac{1}{5}\cos 5\omega t - \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}(-1)^{\frac{n-1}{2}} \frac{1}{n}\cos n\omega t\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="More-Examples">More Examples<a class="anchor-link" href="#More-Examples">&#182;</a></h3>
@@ -2048,10 +2057,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In an earlier slide we found that the trigonometric for of the Fourier series of the square waveform is</p>
-<p><span class="math">\[f(t) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \frac{1}{5}\sin 5\omega t + \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}\frac{1}{n}\sin n\omega t\]</span></p>
+<p>\[f(t) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \frac{1}{5}\sin 5\omega t + \cdots\right) = \frac{4A}{\pi}\sum_{n=\mathrm{odd}}\frac{1}{n}\sin n\omega t\]</p>
 <p>This figure shows the approximation for the first 11 harmonics:</p>
-<p><img src="pictures/fsq_trig.png"></p>
-<p>As we add more harmonics, the sum looks more and more like a square wave. However the crests do not become flattened; this is known as <em>Gibbs Phenomenon</em> and it occurs because of the discontinuity of the perfect sqare waveform as it changes from <span class="math">\(+A\)</span> to <span class="math">\(-A\)</span> and <em>vice versa</em>.</p>
+<img src="pictures/fsq_trig.png">
+<p>As we add more harmonics, the sum looks more and more like a square wave. However the crests do not become flattened; this is known as <em>Gibbs Phenomenon</em> and it occurs because of the discontinuity of the perfect sqare waveform as it changes from \(+A\) to \(-A\) and <em>vice versa</em>.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="End-of-Part-1">End of Part 1<a class="anchor-link" href="#End-of-Part-1">&#182;</a></h2>
