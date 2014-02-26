@@ -1817,7 +1817,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The second integral on the ledt side reduces to \(u(t)\)</p>
+<p>The second integral on the left side reduces to \(u(t)\)</p>
 <img src="pictures/conv5.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1852,7 +1852,7 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The convolution integral is most conveniently evaluated by a graphical evaluation. The text book gives three examples (6.4-6.6) which we will demonstrate using a graphical visualization tool developed by Teja Muppirala of the Mathworks.</p>
+<p>The convolution integral is most conveniently evaluated by a graphical evaluation. The text book gives three examples (6.4-6.6) which we will demonstrate using a <a href="http://www.mathworks.co.uk/matlabcentral/fileexchange/25199-graphical-demonstration-of-convolution">graphical visualization tool</a> developed by Teja Muppirala of the Mathworks.</p>
 <p>The tool: <a href="matlab/convolutiondemo.m">convolutiondemo.m</a> (see <a href="matlab/license.txt">license.txt</a>).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1890,10 +1890,10 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The signal \(h(t)\) is the straight line \(f(t)=-t+1\) but this is defined only between \(t = 0\) and \(t = 1\). We thus need to gate the function by multiplying it by \(u_0(t)-u_0(t-1)\) and illustrated below:</p>
+<p>The signal \(h(t)\) is the straight line \(f(t)=-t+1\) but this is defined only between \(t = 0\) and \(t = 1\). We thus need to gate the function by multiplying it by \(u_0(t)-u_0(t-1)\) as illustrated below:</p>
 <img src="pictures/gate_h.png">
 <p>Thus</p>
-<p>\[h(t) = (-t + 1)(u_0(t)-u_0(t-1)) = (-t + 1)u_0(t) - (-(t - 1)u_0(t - 1)) \Leftrightarrow H(s) - \frac{1}{s^2} + \frac{1}{s} +\frac{e^{-s}}{s^2}\]</p>
+<p>\[h(t) = (-t + 1)(u_0(t)-u_0(t-1)) = (-t + 1)u_0(t) - (-(t - 1)u_0(t - 1)) = -t u_0(t) + u_0(t) + (t - 1)u_0(t - 1)\Leftrightarrow H(s) - \frac{1}{s^2} + \frac{1}{s} +\frac{e^{-s}}{s^2}\]</p>
 <p>\[H(s) = \frac{s^2 + e^{-s} - 1}{s^2}\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1926,7 +1926,7 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 <li>For \(t &lt; 0\): \(u(t-\tau)h(\tau) = 0\)</li>
 <li>For \(t = 0\): \(u(t-\tau) = u(-\tau)\) and \(u(-\tau)h(\tau) = 0\)</li>
 <li>For \(0 &lt; t \le 1\): \(h*u = \int_0^t (1)(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_0^t = t-t^2/2\)</li>
-<li>For \(1 &lt; t \le 2\): \(h*u = \int_0^t (1)(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_{t-1}^{1} = t^2/2-2t+2\)</li>
+<li>For \(1 &lt; t \le 2\): \(h*u = \int_{t-1}^1(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_{t-1}^{1} = t^2/2-2t+2\)</li>
 <li>For \(2 \le t\): \(u(t-\tau)h(\tau) = 0\)</li>
 </ol>
 </div></section><section>
