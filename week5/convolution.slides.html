@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/convolution.ipynb">HTML format</a> and print using your brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/convolution.ipynb">HTML format</a> and print using your brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
@@ -1783,42 +1783,42 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider a system whose input is the Dirac delta (\(\delta(t)\)), and its output is the impulse response \(h(t)\). We can represent the inpt-output relationship as a block diagram</p>
-<img src="pictures/conv1.png" width="50%">
+<p>Consider a system whose input is the Dirac delta (<span class="math">\(\delta(t)\)</span>), and its output is the impulse response <span class="math">\(h(t)\)</span>. We can represent the inpt-output relationship as a block diagram</p>
+<p><img src="pictures/conv1.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="In-general">In general<a class="anchor-link" href="#In-general">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/conv2.png" width="50%">
+<p><img src="pictures/conv2.png" width="50%"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Add-an-arbitrary-input">Add an arbitrary input<a class="anchor-link" href="#Add-an-arbitrary-input">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let \(u(t)\) be any input whose value at \(t=\tau\) is \(u(\tau)\), Then because of the sampling property of the delta function</p>
-<img src="pictures/conv3.png" width="50%">
-<p>(output is \(u(\tau)h(t-\tau)\))</p>
+<p>Let <span class="math">\(u(t)\)</span> be any input whose value at <span class="math">\(t=\tau\)</span> is <span class="math">\(u(\tau)\)</span>, Then because of the sampling property of the delta function</p>
+<p><img src="pictures/conv3.png" width="50%"></p>
+<p>(output is <span class="math">\(u(\tau)h(t-\tau)\)</span>)</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Integrate-both-sides">Integrate both sides<a class="anchor-link" href="#Integrate-both-sides">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Integrating both sides over all values of \(\tau\) (\(-\infty &lt; \tau &lt; \infty\)) and making use of the fact that the delta function is even, i.e.</p>
-<p>\[\delta(t-\tau)=\delta(\tau-t)\]</p>
+<p>Integrating both sides over all values of <span class="math">\(\tau\)</span> (<span class="math">\(-\infty &lt; \tau &lt; \infty\)</span>) and making use of the fact that the delta function is even, i.e.</p>
+<p><span class="math">\[\delta(t-\tau)=\delta(\tau-t)\]</span></p>
 <p>we have:</p>
-<img src="pictures/conv4.png">
+<p><img src="pictures/conv4.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Use-the-sifting-property-of-delta">Use the sifting property of delta<a class="anchor-link" href="#Use-the-sifting-property-of-delta">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The second integral on the left side reduces to \(u(t)\)</p>
-<img src="pictures/conv5.png">
+<p>The second integral on the left side reduces to <span class="math">\(u(t)\)</span></p>
+<p><img src="pictures/conv5.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Convolution-Integral">The Convolution Integral<a class="anchor-link" href="#The-Convolution-Integral">&#182;</a></h3>
@@ -1826,24 +1826,24 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The integral</p>
-<p>\[{\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau}\]</p>
+<p><span class="math">\[{\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau}\]</span></p>
 <p>or</p>
-<p>\[{\int_{-\infty}^{\infty} u(t-\tau)h(\tau)d\tau}\]</p>
+<p><span class="math">\[{\int_{-\infty}^{\infty} u(t-\tau)h(\tau)d\tau}\]</span></p>
 <p>is known as the <em>convolution integral</em>; it states that if we know the impulse response of a system, we can compute its time response to any input by using either of the integrals.</p>
-<p>The convolution integral is usually written \(u(t)*h(t)\) or \(h(t)*u(t)\) where the asterisk (\(*\)) denotes convolution.</p>
+<p>The convolution integral is usually written <span class="math">\(u(t)*h(t)\)</span> or <span class="math">\(h(t)*u(t)\)</span> where the asterisk (<span class="math">\(*\)</span>) denotes convolution.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Convolution-and-State-Space-Models">Convolution and State-Space Models<a class="anchor-link" href="#Convolution-and-State-Space-Models">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the previous session, we found that the impulse response of a SISO system (with \(d=0\)) was</p>
-<p>\[h(t) = {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}\]</p>
-<p>Therefore, if we know \(h(t)\), we can use the convolution integral to compute the response \(y(t)\) to any input \(u(t)\) using the relation</p>
-<p>\[\begin{array}{l}
+<p>In the previous session, we found that the impulse response of a SISO system (with <span class="math">\(d=0\)</span>) was</p>
+<p><span class="math">\[h(t) = {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}\]</span></p>
+<p>Therefore, if we know <span class="math">\(h(t)\)</span>, we can use the convolution integral to compute the response <span class="math">\(y(t)\)</span> to any input <span class="math">\(u(t)\)</span> using the relation</p>
+<p><span class="math">\[\begin{array}{l}
 h(t) = \int_{ - \infty }^\infty  {{\bf{C}}{e^{{\bf{A}}(t - \tau )}}{\bf{B}}u(\tau )d\tau } \\
 h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } 
-\end{array}\]</p>
+\end{array}\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -1860,13 +1860,13 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For simplicity, we give the rules for \(u(t)\), but the procedure is the same if we reflect and slide \(h(t)\)</p>
+<p>For simplicity, we give the rules for <span class="math">\(u(t)\)</span>, but the procedure is the same if we reflect and slide <span class="math">\(h(t)\)</span></p>
 <ol style="list-style-type: decimal">
-<li>Substitute \(u(t)\) with \(u(\tau)\) – this is a simple change of variable. It doesn't change the definition of \(u(t)\).</li>
-<li>Reflect \(u(\tau)\) about the vertical axis to form \(u(-\tau)\)</li>
-<li>Slide \(u(-\tau)\) to the right a distance \(t\) to obtain \(u(t-\tau)\)</li>
-<li>Multiply the two signals to obtain the product \(u(t-\tau)h(\tau)\)</li>
-<li>Integrate the product over all \(t\) from \(-\infty\) to \(\infty\).</li>
+<li>Substitute <span class="math">\(u(t)\)</span> with <span class="math">\(u(\tau)\)</span> – this is a simple change of variable. It doesn't change the definition of <span class="math">\(u(t)\)</span>.</li>
+<li>Reflect <span class="math">\(u(\tau)\)</span> about the vertical axis to form <span class="math">\(u(-\tau)\)</span></li>
+<li>Slide <span class="math">\(u(-\tau)\)</span> to the right a distance <span class="math">\(t\)</span> to obtain <span class="math">\(u(t-\tau)\)</span></li>
+<li>Multiply the two signals to obtain the product <span class="math">\(u(t-\tau)h(\tau)\)</span></li>
+<li>Integrate the product over all <span class="math">\(t\)</span> from <span class="math">\(-\infty\)</span> to <span class="math">\(\infty\)</span>.</li>
 </ol>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1875,36 +1875,36 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>(This is example 6.4 in the textbook)</p>
-<p>The signals \(h(t)\) and \(u(t)\) are shown below. Compute \(h(t)*u(t)\) using the graphical technique.</p>
-<img src="pictures/conv_ex1.png">
+<p>The signals <span class="math">\(h(t)\)</span> and <span class="math">\(u(t)\)</span> are shown below. Compute <span class="math">\(h(t)*u(t)\)</span> using the graphical technique.</p>
+<p><img src="pictures/conv_ex1.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Prepare-for-convolutiondemo">Prepare for convolutiondemo<a class="anchor-link" href="#Prepare-for-convolutiondemo">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To prepare this problem for evaluation in the <code>convolutiondemo</code> tool, we need to determine the Laplace Transforms of \(h(t)\) and \(u(t)\).</p>
+<p>To prepare this problem for evaluation in the <code>convolutiondemo</code> tool, we need to determine the Laplace Transforms of <span class="math">\(h(t)\)</span> and <span class="math">\(u(t)\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="h(t)">h(t)<a class="anchor-link" href="#h(t)">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The signal \(h(t)\) is the straight line \(f(t)=-t+1\) but this is defined only between \(t = 0\) and \(t = 1\). We thus need to gate the function by multiplying it by \(u_0(t)-u_0(t-1)\) as illustrated below:</p>
-<img src="pictures/gate_h.png">
+<p>The signal <span class="math">\(h(t)\)</span> is the straight line <span class="math">\(f(t)=-t+1\)</span> but this is defined only between <span class="math">\(t = 0\)</span> and <span class="math">\(t = 1\)</span>. We thus need to gate the function by multiplying it by <span class="math">\(u_0(t)-u_0(t-1)\)</span> as illustrated below:</p>
+<p><img src="pictures/gate_h.png"></p>
 <p>Thus</p>
-<p>\[h(t) = (-t + 1)(u_0(t)-u_0(t-1)) = (-t + 1)u_0(t) - (-(t - 1)u_0(t - 1)) = -t u_0(t) + u_0(t) + (t - 1)u_0(t - 1)\Leftrightarrow H(s) - \frac{1}{s^2} + \frac{1}{s} +\frac{e^{-s}}{s^2}\]</p>
-<p>\[H(s) = \frac{s^2 + e^{-s} - 1}{s^2}\]</p>
+<p><span class="math">\[h(t) = (-t + 1)(u_0(t)-u_0(t-1)) = (-t + 1)u_0(t) - (-(t - 1)u_0(t - 1)) = -t u_0(t) + u_0(t) + (t - 1)u_0(t - 1)\Leftrightarrow H(s) - \frac{1}{s^2} + \frac{1}{s} +\frac{e^{-s}}{s^2}\]</span></p>
+<p><span class="math">\[H(s) = \frac{s^2 + e^{-s} - 1}{s^2}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="u(t)">u(t)<a class="anchor-link" href="#u(t)">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The input \(u(t)\) is the gating function:</p>
-<p>\[u(t) = u_0(t)-u_0(t-1)\]</p>
+<p>The input <span class="math">\(u(t)\)</span> is the gating function:</p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-1)\]</span></p>
 <p>so</p>
-<p>\[U(s) = \frac{1}{s}-\frac{e^{-s}}{s} = \frac{1 - e^{-s}}{s}\]</p>
+<p><span class="math">\[U(s) = \frac{1}{s}-\frac{e^{-s}}{s} = \frac{1 - e^{-s}}{s}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="convolutiondemo-settings">convolutiondemo settings<a class="anchor-link" href="#convolutiondemo-settings">&#182;</a></h3>
@@ -1914,7 +1914,7 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 <ul>
 <li>Let <code>g = (1 - exp(-s))/s</code></li>
 <li>Let <code>h = (s + exp(-s) - 1)/s^2</code></li>
-<li>Set range \(-2 &lt; \tau &lt; -2\)</li>
+<li>Set range <span class="math">\(-2 &lt; \tau &lt; -2\)</span></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1923,11 +1923,11 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol style="list-style-type: decimal">
-<li>For \(t &lt; 0\): \(u(t-\tau)h(\tau) = 0\)</li>
-<li>For \(t = 0\): \(u(t-\tau) = u(-\tau)\) and \(u(-\tau)h(\tau) = 0\)</li>
-<li>For \(0 &lt; t \le 1\): \(h*u = \int_0^t (1)(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_0^t = t-t^2/2\)</li>
-<li>For \(1 &lt; t \le 2\): \(h*u = \int_{t-1}^1(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_{t-1}^{1} = t^2/2-2t+2\)</li>
-<li>For \(2 \le t\): \(u(t-\tau)h(\tau) = 0\)</li>
+<li>For <span class="math">\(t &lt; 0\)</span>: <span class="math">\(u(t-\tau)h(\tau) = 0\)</span></li>
+<li>For <span class="math">\(t = 0\)</span>: <span class="math">\(u(t-\tau) = u(-\tau)\)</span> and <span class="math">\(u(-\tau)h(\tau) = 0\)</span></li>
+<li>For <span class="math">\(0 &lt; t \le 1\)</span>: <span class="math">\(h*u = \int_0^t (1)(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_0^t = t-t^2/2\)</span></li>
+<li>For <span class="math">\(1 &lt; t \le 2\)</span>: <span class="math">\(h*u = \int_{t-1}^1(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_{t-1}^{1} = t^2/2-2t+2\)</span></li>
+<li>For <span class="math">\(2 \le t\)</span>: <span class="math">\(u(t-\tau)h(\tau) = 0\)</span></li>
 </ol>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1936,14 +1936,14 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is example 6.5 from the text book.</p>
-<p>\[h(t) = e^{-t}\]</p>
-<p>\[u(t) = u_0(t)-u_0(t-1)\]</p>
-<p>\[y(t) = \left\{ {\begin{array}{*{20}{l}}
+<p><span class="math">\[h(t) = e^{-t}\]</span></p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-1)\]</span></p>
+<p><span class="math">\[y(t) = \left\{ {\begin{array}{*{20}{l}}
 {0:t \le 0}\\
 {1 - {e^{ - t}}:\;0 &lt; t \le 1}\\
 {{e^{ - t}}\left( {e - 1} \right):\;1 &lt; t \le 2}\\
 {0:\;2 \le t}
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
@@ -1951,15 +1951,15 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is example 6.6 from the text book.</p>
-<p>\[h(t) = 2(u_0(t)-u_0(t-1))\]</p>
-<p>\[u(t) = u_0(t)-u_0(t-2)\]</p>
-<p>\[y(t) = \left\{ {\begin{array}{*{20}{l}}
+<p><span class="math">\[h(t) = 2(u_0(t)-u_0(t-1))\]</span></p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-2)\]</span></p>
+<p><span class="math">\[y(t) = \left\{ {\begin{array}{*{20}{l}}
 {0:t \le 0}\\
 {2t:\;0 &lt; t \le 1}\\
 {2:\;1 &lt; t \le 2}\\
 {-2t+6:\;2 &lt; t \le 3}\\
 {0:\;3 \le t}\\
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -1973,19 +1973,19 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is example 6.7 from the textbook.</p>
-<p>For the circuit shown below, use the convolution integral to find the capacitor voltage when the input is the unit step function \(u_0(t)\) and \(v_c(0^-)=0\)</p>
-<img src="pictures/example4.jpg">
+<p>For the circuit shown below, use the convolution integral to find the capacitor voltage when the input is the unit step function <span class="math">\(u_0(t)\)</span> and <span class="math">\(v_c(0^-)=0\)</span></p>
+<p><img src="pictures/example4.jpg"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[h(t)=\frac{1}{RC}e^{-t/RC}u_0(t)\]</p>
-<p>which when \(C=1\; \mathrm{F}\) and \(R=1\;\Omega\) reduces to</p>
-<p>\[h(t)=e^{-t}u_0(t)\]</p>
+<p><span class="math">\[h(t)=\frac{1}{RC}e^{-t/RC}u_0(t)\]</span></p>
+<p>which when <span class="math">\(C=1\; \mathrm{F}\)</span> and <span class="math">\(R=1\;\Omega\)</span> reduces to</p>
+<p><span class="math">\[h(t)=e^{-t}u_0(t)\]</span></p>
 <p>It is relatively straight forward to show that</p>
-<p>\[y(t)=\left(1-e^{-t}\right)u_0(t)\]</p>
+<p><span class="math">\[y(t)=\left(1-e^{-t}\right)u_0(t)\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -1995,7 +1995,7 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the discussion of Laplace, we stated that</p>
-<p>\[\mathcal{L} \left\{ f(t)*g(t)\right\} = F(s)G(s)\]</p>
+<p><span class="math">\[\mathcal{L} \left\{ f(t)*g(t)\right\} = F(s)G(s)\]</span></p>
 <p>We can use this property to make the solution of convolution problems even simpler.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2010,13 +2010,13 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[h(t) = e^{−t}u_0(t) \Leftrightarrow H(s) = \frac{1}{s+1}\]</p>
-<p>\[u(t) = u_0(t) \Leftrightarrow U(s) = \frac{1}{s}\]</p>
-<p>\[y(t) = h(t)*u(t) \Leftrightarrow Y(s) = H(s)U(s) = \left(\frac{1}{s}\right)\times\left(\frac{1}{s+1}\right)\]</p>
+<p><span class="math">\[h(t) = e^{−t}u_0(t) \Leftrightarrow H(s) = \frac{1}{s+1}\]</span></p>
+<p><span class="math">\[u(t) = u_0(t) \Leftrightarrow U(s) = \frac{1}{s}\]</span></p>
+<p><span class="math">\[y(t) = h(t)*u(t) \Leftrightarrow Y(s) = H(s)U(s) = \left(\frac{1}{s}\right)\times\left(\frac{1}{s+1}\right)\]</span></p>
 <p>By PFE</p>
-<p>\[Y(s) = \frac{r_1}{s} + \frac{r_2}{s+1}\]</p>
-<p>The residues are \(r_1=1\), \(r_2=-1\), so</p>
-<p>\[Y(s) = \frac{1}{s} - \frac{1}{s+1} \Leftrightarrow y(t) = \left(1-e^{-t}\right)u_0(t)\]</p>
+<p><span class="math">\[Y(s) = \frac{r_1}{s} + \frac{r_2}{s+1}\]</span></p>
+<p>The residues are <span class="math">\(r_1=1\)</span>, <span class="math">\(r_2=-1\)</span>, so</p>
+<p><span class="math">\[Y(s) = \frac{1}{s} - \frac{1}{s+1} \Leftrightarrow y(t) = \left(1-e^{-t}\right)u_0(t)\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -2025,14 +2025,14 @@ h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau }}{
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>A consequence of Laplace is that the transform of the impulse response of a transfer function \(G(s)\) is given by the transfer function itself.</p>
-<p>\[y(t) = g(t)*\delta(t) \Leftrightarrow Y(s) = G(s).1 = G(s)\]</p>
-<p>Thus the Laplace transform of any system subject to an input \(u(t)\) is simply</p>
-<p>\[Y(s) = G(s)U(s)\]</p>
+<p>A consequence of Laplace is that the transform of the impulse response of a transfer function <span class="math">\(G(s)\)</span> is given by the transfer function itself.</p>
+<p><span class="math">\[y(t) = g(t)*\delta(t) \Leftrightarrow Y(s) = G(s).1 = G(s)\]</span></p>
+<p>Thus the Laplace transform of any system subject to an input <span class="math">\(u(t)\)</span> is simply</p>
+<p><span class="math">\[Y(s) = G(s)U(s)\]</span></p>
 <p>and</p>
-<p>\[y(t) = \mathcal{L}^{-1} \left\{ G(s) U(s) \right\}\]</p>
+<p><span class="math">\[y(t) = \mathcal{L}^{-1} \left\{ G(s) U(s) \right\}\]</span></p>
 <p>Using tables, solution of a convolution problem by Laplace is usually simpler than using convolution directly. And if the system is particularly complex we can always fall back on the State-Space solution:</p>
-<p>\[y(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</p>
+<p><span class="math">\[y(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</span></p>
 </div></section>
     </section><section>
     <section>
