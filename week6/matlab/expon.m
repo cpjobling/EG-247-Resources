@@ -7,11 +7,11 @@
 %% The decaying exponentail
 t=linspace(-1,2,1000);
 figure
-plot(t,exp(t),exp(0.*t),t,exp(-t))
+plot(t,exp(t),t,exp(0.*t),t,exp(-t))
 axis([-1,2,-1,8])
-title('exp(t)')
+title('exp(at) -- a real')
 xlabel('t (s)')
 ylabel('exp(t) and exp(-t)')
-legend('exp(t)','exp(-t)')
+legend('exp(t)','exp(0)','exp(-t)')
 grid
 hold off
