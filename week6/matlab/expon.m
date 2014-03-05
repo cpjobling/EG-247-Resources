@@ -7,7 +7,7 @@
 %% The decaying exponentail
 t=linspace(-1,2,1000);
 figure
-plot(t,exp(t),t,exp(-t))
+plot(t,exp(t),exp(0.*t),t,exp(-t))
 axis([-1,2,-1,8])
 title('exp(t)')
 xlabel('t (s)')
