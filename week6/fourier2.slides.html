@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/fourier2.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/fourier2.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1768,6 +1768,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ul>
 <li>Line spectra</li>
 <li>Power in periodic signals</li>
+<li>Steady-State Response of an LTI System to a Periodic Signals</li>
 </ul>
 </div></section>
     </section><section>
@@ -1779,19 +1780,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This session continues our introduction to Fourier Series.</p>
 <p>Trigonometric Fourier series uses integration of a periodic signal multiplied by sines and cosines at the fundamental and harmonic frequencies. If performed by hand, this can a painstaking process. Even with the simplifications made possible by exploiting waveform symmetries, there is still a need to integrate cosine and sine terms, be aware of and able to exploit the tigonometrc identities, and the properties of <em>orthogonal functions</em> before we can arrive at the simplified solutions. This is why I concentrated on the properties and left the computation to a computer.</p>
-<p>However, by exploiting the exponential function \(e^{at}\), we can derive a method for calculating the coefficients of the harmonics that is much easier to calculate by hand and convert into an algorithm that can be executed by computer.</p>
+<p>However, by exploiting the exponential function <span class="math">\(e^{at}\)</span>, we can derive a method for calculating the coefficients of the harmonics that is much easier to calculate by hand and convert into an algorithm that can be executed by computer.</p>
 <p>The result is called the <em>Exponential Fourier Series</em> and we will develop it in this session.</p>
 <p>The material in this presentation and notes is based on Chapter 7 (Starting at Section 7.8) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the Required Reading List. Some clarificattion was needed and I used Chapter 4 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the Recommended Reading List for this.</p>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Exonential-Function-eat">The Exonential Function e<sup>at</sup><a class="anchor-link" href="#The-Exonential-Function-eat">&#182;</a></h2>
+<h2 id="The-Exponential-Function-eat">The Exponential Function e<sup>at</sup><a class="anchor-link" href="#The-Exponential-Function-eat">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>You should already be familiar with \(e^{at}\) because it appears in the solution of differential equations, the transition matrix \(\phi(t)\) used in the solution of state-space models and the definition of the impulse response of a system.</li>
+<li>You should already be familiar with <span class="math">\(e^{at}\)</span> because it appears in the solution of differential equations, the transition matrix <span class="math">\(\phi(t)\)</span> used in the solution of state-space models and the definition of the impulse response of a system.</li>
 <li>It's also a function that appears in the definition of the Laplace and Inverse Laplace Transform</li>
 <li>It's pops up again and again in tables and properies of the Laplace Transform.</li>
 </ul>
@@ -1801,12 +1802,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When \(a\) is real the function \(e^{at}\) will take one of the two forms illustrated below:</p>
-<img src="pictures/expon.png">
+<p>When <span class="math">\(a\)</span> is real the function <span class="math">\(e^{at}\)</span> will take one of the two forms illustrated below:</p>
+<p><img src="pictures/expon.png"></p>
 <ul>
-<li>When \(a &lt; 0\) the response is a decaying exponential (green line in plot)</li>
-<li>When \(a = 0\) \(e^{at} = 1\) -- essentially a model of DC</li>
-<li>When \(a &gt; 0\) the response is an <em>unbounded</em> increasing exponential (blue line in plot)</li>
+<li>When <span class="math">\(a &lt; 0\)</span> the response is a decaying exponential (green line in plot)</li>
+<li>When <span class="math">\(a = 0\)</span> <span class="math">\(e^{at} = 1\)</span> -- essentially a model of DC</li>
+<li>When <span class="math">\(a &gt; 0\)</span> the response is an <em>unbounded</em> increasing exponential (blue line in plot)</li>
 </ul>
 <p>(Image generated with this Matlab script: <a href="matlab/expon.m">expon.m</a></p>
 </div></section><section>
@@ -1817,7 +1818,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the case that helps us simplify the computation of sinusoidal Fourier series.</p>
 <p>It was <a href="http://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who discovered the <a href="http://en.wikipedia.org/wiki/Euler%27s_formula">formula</a> visualized below:</p>
-<img src="pictures/euler.png" title="exp(j*omega*t) = cos(omega*t) + j*sin(omega*t)">
+<p><img src="pictures/euler.png" title="exp(j*omega*t) = cos(omega*t) + j*sin(omega*t)"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Some-important-values-of-omega*t">Some important values of omega*t<a class="anchor-link" href="#Some-important-values-of-omega*t">&#182;</a></h3>
@@ -1827,11 +1828,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>These are useful when simplifying expressions that result from integrating functions that involve the imaginary exponential</p>
 <p>Give the following:</p>
 <ul>
-<li>\(e^{j\omega t}\) when \(\omega t = 0\)</li>
-<li>\(e^{j\omega t}\) when \(\omega t = \pi/2\)</li>
-<li>\(e^{j\omega t}\) when \(\omega t = \pi\)</li>
-<li>\(e^{j\omega t}\) when \(\omega t = 3\pi/2\)</li>
-<li>\(e^{j\omega t}\) when \(\omega t = 2\pi\)</li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 0\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = \pi/2\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = \pi\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 3\pi/2\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 2\pi\)</span></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1840,23 +1841,23 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>When \(\omega t = 0\): \(e^{j\omega t} = e^{j0} = 1\)</li>
-<li>When \(\omega t = \pi/2\): \(e^{j\omega t} = e^{j\pi/2} = j\)</li>
-<li>When \(\omega t = \pi\): \(e^{j\omega t} = e^{j\pi} = -1\)</li>
-<li>When \(\omega t = 3\pi/2\): \(e^{j\omega t} = e^{j3\pi/2} = -j\)</li>
-<li>When \(\omega t = 2\pi\): \(e^{j\omega t} = e^{j2\pi} e^{j0}= 1\)</li>
+<li>When <span class="math">\(\omega t = 0\)</span>: <span class="math">\(e^{j\omega t} = e^{j0} = 1\)</span></li>
+<li>When <span class="math">\(\omega t = \pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi/2} = j\)</span></li>
+<li>When <span class="math">\(\omega t = \pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi} = -1\)</span></li>
+<li>When <span class="math">\(\omega t = 3\pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j3\pi/2} = -j\)</span></li>
+<li>When <span class="math">\(\omega t = 2\pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j2\pi} e^{j0}= 1\)</span></li>
 </ul>
-<p>It is also worth being aware that \(n\omega t\), when \(n\) is an integer, produces rotations that often map back to the simpler cases given above. For example see \(e^{j2\pi}\) above.</p>
+<p>It is also worth being aware that <span class="math">\(n\omega t\)</span>, when <span class="math">\(n\)</span> is an integer, produces rotations that often map back to the simpler cases given above. For example see <span class="math">\(e^{j2\pi}\)</span> above.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Case-where-a-is-complex">Case where a is complex<a class="anchor-link" href="#Case-where-a-is-complex">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We shall not say much about this case except to note that the Laplace transform equation includes such a number. The variable \(s\) in the Laplace Transform</p>
-<p>\[\int_{0}^{\infty} f(t)e^{-st} dt\]</p>
+<p>We shall not say much about this case except to note that the Laplace transform equation includes such a number. The variable <span class="math">\(s\)</span> in the Laplace Transform</p>
+<p><span class="math">\[\int_{0}^{\infty} f(t)e^{-st} dt\]</span></p>
 <p>is a <em>complex exponential</em>.</p>
-<p>The consequences of a complex \(s\) have particular significance in the development of system stabilty theories and in control systems analysis and design. Look out for them in EG-243.</p>
+<p>The consequences of a complex <span class="math">\(s\)</span> have particular significance in the development of system stabilty theories and in control systems analysis and design. Look out for them in EG-243.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Two-Other-Important-Properties">Two Other Important Properties<a class="anchor-link" href="#Two-Other-Important-Properties">&#182;</a></h3>
@@ -1864,9 +1865,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>By use of trig. identities, it is relatively straight forward to show that:</p>
-<p>\[\cos \omega t = \frac{e^{j\omega t} + e^{-j\omega t}}{2}\]</p>
+<p><span class="math">\[\cos \omega t = \frac{e^{j\omega t} + e^{-j\omega t}}{2}\]</span></p>
 <p>and</p>
-<p>\[\sin \omega t = \frac{e^{j\omega t} - e^{-j\omega t}}{j2}\]</p>
+<p><span class="math">\[\sin \omega t = \frac{e^{j\omega t} - e^{-j\omega t}}{j2}\]</span></p>
 <p>We can use this result to convert the <em>Trigonometric Fourier Series</em> into an <em>Exponential Fourier Series</em> which has only one integral term to solve per harmonic.</p>
 </div></section>
     </section><section>
@@ -1876,23 +1877,23 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As we saw last time any periodic waveform \(f(t)\) can be represented as</p>
-<p>\[\begin{gathered}
+<p>As we saw last time any periodic waveform <span class="math">\(f(t)\)</span> can be represented as</p>
+<p><span class="math">\[\begin{gathered}
   f(t) = \frac{1}{2}{a_0} + {a_1}\cos \omega t + {a_2}\cos 2\omega t +  \cdots  \\ 
    + {b_1}\sin \omega t + {b_2}\sin 2\omega t +  \cdots  \\ 
-\end{gathered} \]</p>
+\end{gathered} \]</span></p>
 <p>If we replace the cos and sin terms with their imaginary expontial equivalents:</p>
-<p>\[\begin{gathered}
+<p><span class="math">\[\begin{gathered}
   f(t) = \frac{1}{2}{a_0} + {a_1}\left(\frac{e^{j\omega t} + e^{-j\omega t}}{2}\right) + {a_2}\left(\frac{e^{j2\omega t} + e^{-j2\omega t}}{2}\right) +  \cdots  \\ 
    + {b_1}\left(\frac{e^{j\omega t} - e^{-j\omega t}}{j2}\right) + {b_2}\left(\frac{e^{j2\omega t} - e^{-j2\omega t}}{j2}\right) +  \cdots  \\ 
-\end{gathered} \]</p>
+\end{gathered} \]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Gouping-terms-with-same-exponents">Gouping terms with same exponents<a class="anchor-link" href="#Gouping-terms-with-same-exponents">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f(t) = \cdots + \left(\frac{a_2}{2}-\frac{b_2}{j2}\right)e^{-j\omega 2 t} + \left(\frac{a_1}{2}-\frac{b_1}{j2}\right)e^{-j\omega t} + \frac{1}{2}{a_0} + \left(\frac{a_1}{2}+\frac{b_1}{j2}\right)e^{j\omega t} + \left(\frac{a_2}{2}+\frac{b_2}{j2}\right)e^{j\omega 2 t} +\cdots \]</p>
+<p><span class="math">\[f(t) = \cdots + \left(\frac{a_2}{2}-\frac{b_2}{j2}\right)e^{-j2\omega t} + \left(\frac{a_1}{2}-\frac{b_1}{j2}\right)e^{-j\omega t} + \frac{1}{2}{a_0} + \left(\frac{a_1}{2}+\frac{b_1}{j2}\right)e^{j\omega t} + \left(\frac{a_2}{2}+\frac{b_2}{j2}\right)e^{j2\omega t} +\cdots \]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="New-coefficents">New coefficents<a class="anchor-link" href="#New-coefficents">&#182;</a></h3>
@@ -1900,21 +1901,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The terms in parentheses are usually denoted as</p>
-<p>\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k+j b_k\right)\]</p>
-<p>\[C_{k} = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-j b_k\right)\]</p>
-<p>\[C_0 = \frac{1}{2}a_0\]</p>
+<p><span class="math">\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k+j b_k\right)\]</span></p>
+<p><span class="math">\[C_{k} = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-j b_k\right)\]</span></p>
+<p><span class="math">\[C_0 = \frac{1}{2}a_0\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Exponential-Fourier-Series">The Exponential Fourier Series<a class="anchor-link" href="#The-Exponential-Fourier-Series">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f(t) = \cdots + C_{-2}e^{-j\omega 2 t} + C_{-1}e^{-j\omega t} + C_0 + C_{1}e^{j\omega t} + C_{2}e^{j\omega 2 t} +\cdots \]</p>
+<p><span class="math">\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_0 + C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} +\cdots \]</span></p>
 <p>or more compactly</p>
-<p>\[f(t) = \sum_{k=-n}^{n}C_{k}e^{-jk \omega  t}\]</p>
+<p><span class="math">\[f(t) = \sum_{k=-n}^{n}C_{k}e^{-jk \omega  t}\]</span></p>
 <p><strong>Inportant</strong></p>
-<p>The \(C_k\) coefficents, except for \(C_0\) are <em>complex</em> and appear in conjugate pairs so</p>
-<p>\[C_{-k} = C_k^*\]</p>
+<p>The <span class="math">\(C_k\)</span> coefficents, except for <span class="math">\(C_0\)</span> are <em>complex</em> and appear in conjugate pairs so</p>
+<p><span class="math">\[C_{-k} = C_k^*\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Evaluation-of-the-complex-coefficients">Evaluation of the complex coefficients<a class="anchor-link" href="#Evaluation-of-the-complex-coefficients">&#182;</a></h3>
@@ -1922,9 +1923,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The coefficients are obtained from the following expressions<sup>*</sup>:</p>
-<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)e^{-jk\omega t}\,d(\omega t)\]</p>
+<p><span class="math">\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)e^{-jk(\omega t)}\,d(\omega t)\]</span></p>
 <p>or</p>
-<p>\[C_k = \frac{1}{T}\int_{0}^{T}f(t)e^{-jk\omega t}\,dt\]</p>
+<p><span class="math">\[C_k = \frac{1}{T}\int_{0}^{T}f(t)e^{-jk\omega t}\,dt\]</span></p>
 <p>These are much easier to derive and compute than the equivalent Trigonemetric Fourier Series coefficients.</p>
 <hr />
 <p><sup>*</sup> The analysis that leads to this result is provided between pages 7-31 and 7-32 of the text book. It is not a difficult proof, but we are more interested in the result.</p>
@@ -1934,14 +1935,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By substituting \(C_{-k}\) and \(C_{k}\) back into the original expansion</p>
-<p>\[C_k+C_{-k} = \frac{1}{2}\left(a_k-jb_k + a_k+jb_k\right)\]</p>
+<p>By substituting <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_{k}\)</span> back into the original expansion</p>
+<p><span class="math">\[C_k+C_{-k} = \frac{1}{2}\left(a_k-jb_k + a_k+jb_k\right)\]</span></p>
 <p>so</p>
-<p>\[a_k = C_k + C_{-k}\]</p>
+<p><span class="math">\[a_k = C_k + C_{-k}\]</span></p>
 <p>Similarly</p>
-<p>\[C_k-C_{-k} = \frac{1}{2}\left(a_k-jb_k - a_k-jb_k\right)\]</p>
+<p><span class="math">\[C_k-C_{-k} = \frac{1}{2}\left(a_k-jb_k - a_k-jb_k\right)\]</span></p>
 <p>so</p>
-<p>\[b_k = j\left(C_k - C_{-k}\right)\]</p>
+<p><span class="math">\[b_k = j\left(C_k - C_{-k}\right)\]</span></p>
 <p>Thus we can easily go back to the Trig. Fourier series if we want to.</p>
 </div></section>
     </section><section>
@@ -1958,52 +1959,52 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For even functions, all coefficients \(C_k\) are real.</p>
+<p>For even functions, all coefficients <span class="math">\(C_k\)</span> are real.</p>
 <p><strong>Proof</strong></p>
 <p>Recall</p>
-<p>\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k+jb_k\right)\]</p>
+<p><span class="math">\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k+jb_k\right)\]</span></p>
 <p>and</p>
-<p>\[C_k = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-jb_k\right)\]</p>
-<p>From last session, even functions have no sine terms so the \(b_k\) coefficients are 0. Therefore both \(C_{-k}\) and \(C_k\) are real.</p>
+<p><span class="math">\[C_k = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-jb_k\right)\]</span></p>
+<p>From last session, even functions have no sine terms so the <span class="math">\(b_k\)</span> coefficients are 0. Therefore both <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are real.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Odd-Functions">Odd Functions<a class="anchor-link" href="#Odd-Functions">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>For odd functions, all coefficients \(C_k\) are imaginary.</p>
-<p>By a similar argument, all odd functions have no cosine terms so the \(a_k\) coefficients are 0. Therefore both \(C_{-k}\) and \(C_k\) are imaginary.</p>
+<p>For odd functions, all coefficients <span class="math">\(C_k\)</span> are imaginary.</p>
+<p>By a similar argument, all odd functions have no cosine terms so the <span class="math">\(a_k\)</span> coefficients are 0. Therefore both <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are imaginary.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Half-wave-symmetry">Half-wave symmetry<a class="anchor-link" href="#Half-wave-symmetry">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If there is <em>half-wave symmetry</em>, \(C_k = 0\) for \(n\) even.</p>
+<p>If there is <em>half-wave symmetry</em>, <span class="math">\(C_k = 0\)</span> for <span class="math">\(n\)</span> even.</p>
 <p><strong>Proof</strong></p>
-<p>From trigonometric Fourier Series, if there is half-wave symmetry, all even harnonics are zero, thus both \(a_k\) and \(b_k\) are zero for \(k\) even. Hence \(C_{-k}\) and \(C_k\) are also zero when \(k\) is even.</p>
+<p>From trigonometric Fourier Series, if there is half-wave symmetry, all even harnonics are zero, thus both <span class="math">\(a_k\)</span> and <span class="math">\(b_k\)</span> are zero for <span class="math">\(k\)</span> even. Hence <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are also zero when <span class="math">\(k\)</span> is even.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="No-symmetry">No symmetry<a class="anchor-link" href="#No-symmetry">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If there is no symmetry the Exponential Fourier Series of \(f(t)\) is complex.</p>
+<p>If there is no symmetry the Exponential Fourier Series of <span class="math">\(f(t)\)</span> is complex.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Relation-of-C-k-to-Ck">Relation of C<sub>-k</sub> to C<sub>k</sub><a class="anchor-link" href="#Relation-of-C-k-to-Ck">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\(C_{-k} = C_{k}^*\) <strong>always</strong></p>
+<p><span class="math">\(C_{-k} = C_{k}^*\)</span> <strong>always</strong></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Compute the Exponential Fourier Series for the square wave shown below assuming that \(\omega = 1\)</p>
-<img src="pictures/sqw.png">
+<p>Compute the Exponential Fourier Series for the square wave shown below assuming that <span class="math">\(\omega = 1\)</span></p>
+<p><img src="pictures/sqw.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Some-questions-for-you">Some questions for you<a class="anchor-link" href="#Some-questions-for-you">&#182;</a></h3>
@@ -2017,10 +2018,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </ul>
 <p>Hence</p>
 <ul>
-<li>\(C_0 =\)[<strong>?</strong>]</li>
-<li>Coefficients \(C_k\) are [<strong>real/imaginary/complex</strong>]?</li>
-<li>Subscripts \(k\) are [<strong>odd only/even only/both odd and even</strong>]?</li>
-<li>What is the integral that needs to be solved for \(C_k\)?</li>
+<li><span class="math">\(C_0 =\)</span>[<strong>?</strong>]</li>
+<li>Coefficients <span class="math">\(C_k\)</span> are [<strong>real/imaginary/complex</strong>]?</li>
+<li>Subscripts <span class="math">\(k\)</span> are [<strong>odd only/even only/both odd and even</strong>]?</li>
+<li>What is the integral that needs to be solved for <span class="math">\(C_k\)</span>?</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2035,27 +2036,27 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </ul>
 <p>Hence</p>
 <ul>
-<li>\(C_0 = 0\)</li>
-<li>Coefficients \(C_k\) are <strong>imaginary</strong>!</li>
-<li>Subscripts \(k\) are <strong>odd only</strong>!</li>
-<li>What is the integral that needs to be solved for \(C_k\)?</li>
+<li><span class="math">\(C_0 = 0\)</span></li>
+<li>Coefficients <span class="math">\(C_k\)</span> are <strong>imaginary</strong>!</li>
+<li>Subscripts <span class="math">\(k\)</span> are <strong>odd only</strong>!</li>
+<li>What is the integral that needs to be solved for <span class="math">\(C_k\)</span>?</li>
 </ul>
-<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi} f(t)e^{-jkt}\, d(\omega t) = \frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, d(\omega t)\right]\]</p>
+<p><span class="math">\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi} f(t)e^{-jk(\omega t)}\, d(\omega t) = \frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jk(\omega t)}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jk(\omega t)}\, d(\omega t)\right]\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, d(\omega t)\right] = \frac{1}{2\pi}\left[\left.\frac{A}{-jk}e^{-jkt}\right|_0^\pi+\left.\frac{-A}{-jk}e^{-jkt}\right|_\pi^{2\pi}\right]\]</p>
-<p>\[ = \frac{1}{2\pi}\left[\frac{A}{-jk}\left(e^{-jk\pi} - 1\right)+\frac{A}{jk}\left(e^{-j2k \pi}-e^{-jk\pi}\right)\right] =
-\frac{A}{2j\pi k}\left(1 - e^{-jk\pi}+ e^{-j2k \pi}-e^{-jk\pi}\right)\]</p>
-<p>\[\frac{A}{2j\pi k}\left(e^{-j2k \pi} - 2e^{-jk\pi} -1 \right) = \frac{A}{2j\pi k}\left(e^{-jk\pi}-1\right)^2\]</p>
-<p>For \(n\) odd*, \(e^{-jk\pi} = -1\). Therefore</p>
-<p>\[{C_n \atop {n=\mathrm{odd}}} = \frac{A}{2j\pi k}\left(e^{-jk\pi}-1\right)^2 = \frac{A}{2j\pi k}\left(-1-1\right)^2 = \frac{A}{2j\pi k}\left(-2\right)^2 = \frac{2A}{j\pi k}\]</p>
+<p><span class="math">\[\frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jk(\omega t)}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jk(\omega t)}\, d(\omega t)\right] = \frac{1}{2\pi}\left[\left.\frac{A}{-jk}e^{-jk(\omega t)}\right|_0^\pi+\left.\frac{-A}{-jk}e^{-jk(\omega t)}\right|_\pi^{2\pi}\right]\]</span></p>
+<p><span class="math">\[ = \frac{1}{2\pi}\left[\frac{A}{-jk}\left(e^{-jk\pi} - 1\right)+\frac{A}{jk}\left(e^{-j2k \pi}-e^{-jk\pi}\right)\right] =
+\frac{A}{2j\pi k}\left(1 - e^{-jk\pi}+ e^{-j2k \pi}-e^{-jk\pi}\right)\]</span></p>
+<p><span class="math">\[\frac{A}{2j\pi k}\left(e^{-j2k \pi} - 2e^{-jk\pi} -1 \right) = \frac{A}{2j\pi k}\left(e^{-jk\pi}-1\right)^2\]</span></p>
+<p>For <span class="math">\(n\)</span> odd*, <span class="math">\(e^{-jk\pi} = -1\)</span>. Therefore</p>
+<p><span class="math">\[{C_n \atop {n=\mathrm{odd}}} = \frac{A}{2j\pi k}\left(e^{-jk\pi}-1\right)^2 = \frac{A}{2j\pi k}\left(-1-1\right)^2 = \frac{A}{2j\pi k}\left(-2\right)^2 = \frac{2A}{j\pi k}\]</span></p>
 <hr />
-<p><sup>*</sup> You may want to verify that \(C_0 = 0\) and</p>
-<p>\[{C_n \atop {n=\mathrm{even}}} = 0.\]</p>
+<p><sup>*</sup> You may want to verify that <span class="math">\(C_0 = 0\)</span> and</p>
+<p><span class="math">\[{C_n \atop {n=\mathrm{even}}} = 0.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="exponential-Fourier-series-for-the-square-wave-with-odd-symmetry">exponential Fourier series for the square wave with odd symmetry<a class="anchor-link" href="#exponential-Fourier-series-for-the-square-wave-with-odd-symmetry">&#182;</a></h3>
@@ -2063,11 +2064,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the definition of the exponential Fourier series</p>
-<p>\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_{0} + C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} + \cdots\]</p>
+<p><span class="math">\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_{0} + C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} + \cdots\]</span></p>
 <p>the <em>exponential Fourier series for the square wave with odd symmetry</em> is</p>
-<p>\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right) = \frac{2A}{j\pi}\sum_{n = \mathrm{odd}} \frac{1}{n}e^{jk\omega t}\]</p>
-<p>Note sign change in first two terms. This is due to the fact that \(C_{-k} = C_k^*\).</p>
-<p>E.g. since \(C_3 = 2A/j3\pi\), \(C_{-3} = C_3^* = -2A/j3\pi\)</p>
+<p><span class="math">\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right) = \frac{2A}{j\pi}\sum_{n = \mathrm{odd}} \frac{1}{n}e^{jk\omega t}\]</span></p>
+<p>Note sign change in first two terms. This is due to the fact that <span class="math">\(C_{-k} = C_k^*\)</span>.</p>
+<p>E.g. since <span class="math">\(C_3 = 2A/j3\pi\)</span>, <span class="math">\(C_{-3} = C_3^* = -2A/j3\pi\)</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Trig.-Fourier-Series-from-Exponential-Fourier-Series">Trig. Fourier Series from Exponential Fourier Series<a class="anchor-link" href="#Trig.-Fourier-Series-from-Exponential-Fourier-Series">&#182;</a></h3>
@@ -2075,9 +2076,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since</p>
-<p>\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right) \]</p>
+<p><span class="math">\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right) \]</span></p>
 <p>gathering terms at each harmonic frequency gives</p>
-<p>\[f(t) = \frac{4A}{\pi}\left(\cdots + \left(\frac{e^{j\omega t} - e^{-j\omega t}}{2j}\right)  + \frac{1}{3}\left(\frac{e^{j3\omega t} - e^{-j3\omega t}}{2j}\right)  +  \cdots\right) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \cdots\right) = \frac{4A}{\pi} \sum_{n=\mathrm{odd}} \frac{1}{k}\sin k\omega t\]</p>
+<p><span class="math">\[f(t) = \frac{4A}{\pi}\left(\cdots + \left(\frac{e^{j\omega t} - e^{-j\omega t}}{2j}\right)  + \frac{1}{3}\left(\frac{e^{j3\omega t} - e^{-j3\omega t}}{2j}\right)  +  \cdots\right) = \frac{4A}{\pi}\left(\sin \omega t + \frac{1}{3}\sin 3\omega t + \cdots\right) = \frac{4A}{\pi} \sum_{n=\mathrm{odd}} \frac{1}{k}\sin k\omega t\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Computing-coefficients-of-Exponential-Fourier-Series-in-Matlab">Computing coefficients of Exponential Fourier Series in Matlab<a class="anchor-link" href="#Computing-coefficients-of-Exponential-Fourier-Series-in-Matlab">&#182;</a></h2>
@@ -2098,22 +2099,25 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>Solution: See <a href="matlab/efs_sqw.m">efs_sqw.m</a>.</p>
 <p>Script confirms that:</p>
 <ul>
-<li>\(C_0 = 0\)</li>
-<li>\(C_k\) is imaginary: function is odd</li>
-<li>\(C_k = 0\): for \(i\) even - half-wave symmetry</li>
+<li><span class="math">\(C_0 = 0\)</span></li>
+<li><span class="math">\(C_k\)</span> is imaginary: function is odd</li>
+<li><span class="math">\(C_k = 0\)</span>: for <span class="math">\(i\)</span> even - half-wave symmetry</li>
 </ul>
-<p>``` X =</p>
-<p>[ (A<em>2</em>i)/(5<em>pi), 0, (A</em>2<em>i)/(3</em>pi), 0, (A<em>2</em>i)/pi, 0, -(A<em>2</em>i)/pi, 0, -(A<em>2</em>i)/(3<em>pi), 0, -(A</em>2<em>i)/(5</em>pi)]</p>
-<p>w =</p>
-<pre><code>-5    -4    -3    -2    -1     0     1     2     3     4     5</code></pre>
-```
+<pre><code>X =
+ 
+[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0, -(A*2*i)/pi, 0, -(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
+ 
+
+w =
+
+    -5    -4    -3    -2    -1     0     1     2     3     4     5</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Plot-of-Result">Plot of Result<a class="anchor-link" href="#Plot-of-Result">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/efs_sqw.png">
+<p><img src="pictures/efs_sqw.png"></p>
 </div></section>
     </section><section>
     <section>
@@ -2133,7 +2137,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ul>
 <li>Line spectra</li>
 <li>Power in periodic signals</li>
-<li>Steady-State Response of an LTI System to a Periodic SignalS</li>
+<li>Steady-State Response of an LTI System to a Periodic Signals</li>
 </ul>
 </div></section>
     </section><section>
