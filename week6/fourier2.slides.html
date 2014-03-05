@@ -1791,7 +1791,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>You should already be familiar with \(e^{at}\) because it appears in the solution of differential equations, the transition matrix \(\pi(t)\) used in the solution of state-space models and the definition of the impulse response of a system.</li>
+<li>You should already be familiar with \(e^{at}\) because it appears in the solution of differential equations, the transition matrix \(\phi(t)\) used in the solution of state-space models and the definition of the impulse response of a system.</li>
 <li>It's also a function that appears in the definition of the Laplace and Inverse Laplace Transform</li>
 <li>It's pops up again and again in tables and properies of the Laplace Transform.</li>
 </ul>
@@ -1801,7 +1801,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When \(a\) is real the function \(e^{-at}\) will take one of the two forms illustrated below:</p>
+<p>When \(a\) is real the function \(e^{at}\) will take one of the two forms illustrated below:</p>
 <img src="pictures/expon.png">
 <ul>
 <li>When \(a &lt; 0\) the response is a decaying exponential (green line in plot)</li>
@@ -1846,7 +1846,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <li>When \(\omega t = 3\pi/2\): \(e^{j\omega t} = e^{j3\pi/2} = -j\)</li>
 <li>When \(\omega t = 2\pi\): \(e^{j\omega t} = e^{j2\pi} e^{j0}= 1\)</li>
 </ul>
-<p>It is also worth being aware that \(n\omega t\) produces rotations that often map back to the simpler cases given above. For example see \(e^{j2\pi}\) above.</p>
+<p>It is also worth being aware that \(n\omega t\), when \(n\) is an integer, produces rotations that often map back to the simpler cases given above. For example see \(e^{j2\pi}\) above.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Case-where-a-is-complex">Case where a is complex<a class="anchor-link" href="#Case-where-a-is-complex">&#182;</a></h3>
@@ -1856,7 +1856,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>We shall not say much about this case except to note that the Laplace transform equation includes such a number. The variable \(s\) in the Laplace Transform</p>
 <p>\[\int_{0}^{\infty} f(t)e^{-st} dt\]</p>
 <p>is a <em>complex exponential</em>.</p>
-<p>The consequences of a complex \(s\) have particular significance in the development of system stabilty theories and in comtrol systems analysis and design. Look out for them in EG-243.</p>
+<p>The consequences of a complex \(s\) have particular significance in the development of system stabilty theories and in control systems analysis and design. Look out for them in EG-243.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Two-Other-Important-Properties">Two Other Important Properties<a class="anchor-link" href="#Two-Other-Important-Properties">&#182;</a></h3>
@@ -1867,7 +1867,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>\[\cos \omega t = \frac{e^{j\omega t} + e^{-j\omega t}}{2}\]</p>
 <p>and</p>
 <p>\[\sin \omega t = \frac{e^{j\omega t} - e^{-j\omega t}}{j2}\]</p>
-<p>We can use this result to convert the <em>Trigonometric Fourier Series</em> into an <em>Expomential Fourier Series</em> which has only one integral term to solve per harmonic.</p>
+<p>We can use this result to convert the <em>Trigonometric Fourier Series</em> into an <em>Exponential Fourier Series</em> which has only one integral term to solve per harmonic.</p>
 </div></section>
     </section><section>
     <section>
@@ -1878,13 +1878,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As we saw last time any periodic waveform \(f(t)\) can be represented as</p>
 <p>\[\begin{gathered}
-  f(t) = \frac{1}{2}{a_0} + {a_l}\cos \omega t + {a_2}\cos 2\omega t +  \cdots  \\ 
-   + {b_l}\sin \omega t + {b_2}\sin 2\omega t +  \cdots  \\ 
+  f(t) = \frac{1}{2}{a_0} + {a_1}\cos \omega t + {a_2}\cos 2\omega t +  \cdots  \\ 
+   + {b_1}\sin \omega t + {b_2}\sin 2\omega t +  \cdots  \\ 
 \end{gathered} \]</p>
 <p>If we replace the cos and sin terms with their imaginary expontial equivalents:</p>
 <p>\[\begin{gathered}
-  f(t) = \frac{1}{2}{a_0} + {a_l}\left(\frac{e^{j\omega t} + e^{-j\omega t}}{2}\right) + {a_2}\left(\frac{e^{j2\omega t} + e^{-j2\omega t}}{2}\right) +  \cdots  \\ 
-   + {b_l}\left(\frac{e^{j\omega t} - e^{-j\omega t}}{j2}\right) + {b_2}\left(\frac{e^{j2\omega t} - e^{-j2\omega t}}{j2}\right) +  \cdots  \\ 
+  f(t) = \frac{1}{2}{a_0} + {a_1}\left(\frac{e^{j\omega t} + e^{-j\omega t}}{2}\right) + {a_2}\left(\frac{e^{j2\omega t} + e^{-j2\omega t}}{2}\right) +  \cdots  \\ 
+   + {b_1}\left(\frac{e^{j\omega t} - e^{-j\omega t}}{j2}\right) + {b_2}\left(\frac{e^{j2\omega t} - e^{-j2\omega t}}{j2}\right) +  \cdots  \\ 
 \end{gathered} \]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1922,7 +1922,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The coefficients are obtained from the following expressions<sup>*</sup>:</p>
-<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)e^{-jk\omega t}\,dt\]</p>
+<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)e^{-jk\omega t}\,d(\omega t)\]</p>
 <p>or</p>
 <p>\[C_k = \frac{1}{T}\int_{0}^{T}f(t)e^{-jk\omega t}\,dt\]</p>
 <p>These are much easier to derive and compute than the equivalent Trigonemetric Fourier Series coefficients.</p>
@@ -2020,7 +2020,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <li>\(C_0 =\)[<strong>?</strong>]</li>
 <li>Coefficients \(C_k\) are [<strong>real/imaginary/complex</strong>]?</li>
 <li>Subscripts \(k\) are [<strong>odd only/even only/both odd and even</strong>]?</li>
-<li>What is the inegral that needs to be solved for \(C_k\)?</li>
+<li>What is the integral that needs to be solved for \(C_k\)?</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2038,16 +2038,16 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <li>\(C_0 = 0\)</li>
 <li>Coefficients \(C_k\) are <strong>imaginary</strong>!</li>
 <li>Subscripts \(k\) are <strong>odd only</strong>!</li>
-<li>What is the inegral that needs to be solved for \(C_k\)?</li>
+<li>What is the integral that needs to be solved for \(C_k\)?</li>
 </ul>
-<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi} f(t)e^{-jkt}\, dt = \frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, dt + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, dt\right]\]</p>
+<p>\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi} f(t)e^{-jkt}\, d(\omega t) = \frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, d(\omega t)\right]\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, dt + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, dt\right] = \frac{1}{2\pi}\left[\left.\frac{A}{-jk}e^{-jkt}\right|_0^\pi+\left.\frac{-A}{-jk}e^{-jkt}\right|_\pi^{2\pi}\right]\]</p>
+<p>\[\frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jkt}\, d(\omega t) + \int_{\pi}^{2\pi} (-A)e^{-jkt}\, d(\omega t)\right] = \frac{1}{2\pi}\left[\left.\frac{A}{-jk}e^{-jkt}\right|_0^\pi+\left.\frac{-A}{-jk}e^{-jkt}\right|_\pi^{2\pi}\right]\]</p>
 <p>\[ = \frac{1}{2\pi}\left[\frac{A}{-jk}\left(e^{-jk\pi} - 1\right)+\frac{A}{jk}\left(e^{-j2k \pi}-e^{-jk\pi}\right)\right] =
 \frac{A}{2j\pi k}\left(1 - e^{-jk\pi}+ e^{-j2k \pi}-e^{-jk\pi}\right)\]</p>
 <p>\[\frac{A}{2j\pi k}\left(e^{-j2k \pi} - 2e^{-jk\pi} -1 \right) = \frac{A}{2j\pi k}\left(e^{-jk\pi}-1\right)^2\]</p>
