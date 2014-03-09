@@ -10,7 +10,7 @@ f = 1000;         % Hz
 T0 = 1/f;          % s
 omega_0 = 2*pi/T0; % rad/s
 %% Specify which harmonics we want
-k_max = 5; 
+k_max = 11; 
 %% Define f(t)
 %
 % !!!IMPORTANT!!!: the signal definition must cover [0 to T0] 
