@@ -1,8 +1,11 @@
-function [a0, ai, bi, w] = TrigFourierSeries(ft, T0, k_max) 
+function [a0, ak, bk, w] = TrigFourierSeries(ft, T0, k_max) 
 % function [a0, ai, bi, w] = TrigFourierSeries(ft, T0, k_max) 
 % 
-% symbolically calculate the Trigonometric Fourier Series, and return the 
-% numerical results 
+% symbolically calculate the Trigonometric Fourier Series, and
+% return the coeffients a0, ak, and bk.
+%
+% Note for speed we use the Exponential Fourier series
+% and then reconstruct the ak and bk terms from Ck.
 % 
 % ft: the time domain signal within one period; 
 % it must have definition over [0, T0] 
@@ -12,18 +15,14 @@ function [a0, ai, bi, w] = TrigFourierSeries(ft, T0, k_max)
  
 syms t 
  
-% zero'th coefficent (DC component)
-A0 = (1/pi)*int(ft,t,0,T0);
-for k = 1:k_max
+[Ck, w] = FourierSeries(ft, T0, k_max)
+zero_index = floor(length(Ck)/2)+1;
 
- % Fourier series 
- Ai(k) = (1/pi)*int(ft*cos(2*pi*k*t/T0),t,0,T0);
- Bi(k) = (1/pi)*int(ft*sin(2*pi*k*t/T0),t,0,T0);
- % change the symbolic value to numerical value 
- ai(k) = subs(Ai(k)); 
- bi(k) = subs(Bi(k));
- % angular frequency 
- w(k) = k*2*pi/T0; 
-end 
-a0 = subs(A0);
+a0 = Ck(zero_index)/2
+for k = 1:k_max
+  ak(k) = Ck(zero_index + k) + Ck(zero_index - k)
+  bk(k) = j*(Ck(zero_index + k) - Ck(zero_index - k))
+  % angular frequency 
+  w(k) = k*2*pi/T0;
+end
  
