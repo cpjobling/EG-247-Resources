@@ -29,7 +29,7 @@ hold on
 %% plot original signal
 % (we could use |heaviside| for this as well)
 %
-t = [-3*pi,-2*pi,-2*pi,-2*pi,-pi,-pi,-pi,0,0,0,pi,pi,pi,2*pi,2*pi,2*pi,3*pi];
+t = [-3,-2,-2,-2,-1,-1,-1,0,0,0,1,1,1,2,2,2,3]*pi;
 f = [-1,-1,0,1,1,0,-1,-1,0,1,1,0,-1,-1,0,1,1];
 plot(t-pi/2,f,'r-')
 axis([-10,10,-1.5,1.5])
