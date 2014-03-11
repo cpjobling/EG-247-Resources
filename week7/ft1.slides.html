@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft1.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft1.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1770,10 +1770,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This session continues our coverage of <strong>Fourier Analysis</strong> with an introduction to the <strong>Fourier Transform</strong>.</p>
 <ul>
-<li><p><strong>Fourier Series</strong> is used when we are dealing with signals that are <em>periodic</em> in time. It is based on harmonics of the fundamental frequency \(\omega_0\) of the periodic signal where the period \(T = 2\pi/\omega_0\).</p></li>
-<li><p>The line spectrum occur at integer multiples of the fundamental frequency \(k\omega_0\) and is a <em>discrete</em> (or sampled) function of frequency.</p></li>
-<li><p>As the period \(T\) is increased, the distance between harmonics decreases because \(\omega_0\) reduces.</p></li>
-<li><p>In the limit \(T\to \infty\), the signal becomes <strong>aperiodic</strong> and \(k\omega_0 \to \omega\) which is a <em>continuous</em> function of frequency.</p></li>
+<li><p><strong>Fourier Series</strong> is used when we are dealing with signals that are <em>periodic</em> in time. It is based on harmonics of the fundamental frequency <span class="math">\(\omega_0\)</span> of the periodic signal where the period <span class="math">\(T = 2\pi/\omega_0\)</span>.</p></li>
+<li><p>The line spectrum occur at integer multiples of the fundamental frequency <span class="math">\(k\omega_0\)</span> and is a <em>discrete</em> (or sampled) function of frequency.</p></li>
+<li><p>As the period <span class="math">\(T\)</span> is increased, the distance between harmonics decreases because <span class="math">\(\omega_0\)</span> reduces.</p></li>
+<li><p>In the limit <span class="math">\(T\to \infty\)</span>, the signal becomes <strong>aperiodic</strong> and <span class="math">\(k\omega_0 \to \omega\)</span> which is a <em>continuous</em> function of frequency.</p></li>
 </ul>
 <p>This is the basis of the <strong>Fourier Transform</strong> which is very important as the basis for data transmission, signal filtering, and the determination of system frequency reponse.</p>
 <p>The material in this presentation and notes is based on Chapter 8 (Starting at Section 8.1) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>. I also used Chapter 5 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the <strong>Recommended Reading List</strong>.</p>
@@ -1787,8 +1787,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We start by considering the pulse train that we used in the last lecture and demonstrate that the discrete line spectra for the Fourier Series becomes a continuous spectrum as the signal becomes aperiodic.</p>
 <p>This analysis is from Boulet pp 142—144 and 176—180.</p>
-<p>Let \(\tilde x(t)\) be the Fourier series of the rectangular pulse train shown below:</p>
-<img src="pictures/pulse_train.png">
+<p>Let <span class="math">\(\tilde x(t)\)</span> be the Fourier series of the rectangular pulse train shown below:</p>
+<p><img src="pictures/pulse_train.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Fourier-Series">Fourier Series<a class="anchor-link" href="#Fourier-Series">&#182;</a></h2>
@@ -1796,26 +1796,39 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the previous lecture we used</p>
-<p>\[C_k = \frac{1}{2\pi}\int_{-\pi/w}^{\pi/w} Ae^{-jk(\omega t)}\,d(\omega t) = \frac{A}{2\pi}\int_{-\pi/w}^{\pi/w} e^{-jk(\omega t)}\,d(\omega t) \]</p>
-<p>to compute the line spectra. If we instead take a time point-of-view and let \(A = 1\)</p>
-<p>\[C_k = \frac{1}{T}\int_{-t_0}^{t_0} e^{-jk\omega_0 t}\,dt = -\frac{1}{jk\omega_0 T}\left[e^{-jk\omega_0 t}\right]_{-t_0}^{t_0} = -\frac{1}{jk\omega_0 T}\left(e^{-jk\omega_0 t_0}-e^{jk\omega_0 t_0}\right)\]</p>
-<p>\[C_k = \frac{2}{k\omega_0 T}\left(\frac{e^{jk\omega_0 t_0}-e^{-jk\omega_0 t_0}}{2j}\right) = 2\frac{\sin(k\omega_0 t_0)}{k\omega_0 T}\]</p>
-<p>and since \(\omega_0 = 2\pi/T\)</p>
-<p>\[C_k = \frac{\sin\left(\pi k\frac{2t_0}{T}\right)}{k\pi } = \frac{T}{2t_0}{\mathop{\rm sinc}}\left(\pi k\frac{2t_0}{T}\right)\]</p>
+<p><span class="math">\[C_k = \frac{1}{2\pi}\int_{-\pi/w}^{\pi/w} Ae^{-jk(\omega t)}\,d(\omega t) = \frac{A}{2\pi}\int_{-\pi/w}^{\pi/w} e^{-jk(\omega t)}\,d(\omega t) \]</span></p>
+<p>to compute the line spectra.</p>
 </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="From-the-Time-Point-of-View">From the Time Point of View<a class="anchor-link" href="#From-the-Time-Point-of-View">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we instead take a time point-of-view and let <span class="math">\(A = 1\)</span></p>
+<p><span class="math">\[C_k = \frac{1}{T}\int_{-t_0}^{t_0} e^{-jk\omega_0 t}\,dt.\]</span></p>
+<p>Let's complete the analysis on the board.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[C_k = \frac{1}{T}\int_{-t_0}^{t_0} e^{-jk\omega_0 t}\,dt = -\frac{1}{jk\omega_0 T}\left[e^{-jk\omega_0 t}\right]_{-t_0}^{t_0} = -\frac{1}{jk\omega_0 T}\left(e^{-jk\omega_0 t_0}-e^{jk\omega_0 t_0}\right)\]</span></p>
+<p><span class="math">\[C_k = \frac{2}{k\omega_0 T}\left(\frac{e^{jk\omega_0 t_0}-e^{-jk\omega_0 t_0}}{2j}\right) = 2\frac{\sin(k\omega_0 t_0)}{k\omega_0 T}\]</span></p>
+<p>and since <span class="math">\(\omega_0 = 2\pi/T\)</span></p>
+<p><span class="math">\[C_k = \frac{\sin\left(\pi k\frac{2t_0}{T}\right)}{k\pi } = \frac{T}{2t_0}{\mathop{\rm sinc}}\left(\pi k\frac{2t_0}{T}\right)\]</span></p>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Sinc-Function">The Sinc Function<a class="anchor-link" href="#The-Sinc-Function">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The function, \(\sin(x)/x\) crops up again and again in Fourier analysis. The Fourier coefficients \(C_k\) are scaled <em>samples</em> of the real continuous <em>normalized sinc</em> function defined as follows:</p>
-<p>\[\operatorname{sinc} u: = \frac{{\sin \pi u}}{{\pi u}},\;u \in \mathbb{R}.\]</p>
-<p>The function is equal to 1 at \(u=0\)<sup>*</sup> and has zero crossings at \(u=\pm n,\; n=1,2,3,\ldots\) as shown below</p>
-<img src="pictures/sinc.png">
+<p>The function, <span class="math">\(\sin(x)/x\)</span> crops up again and again in Fourier analysis. The Fourier coefficients <span class="math">\(C_k\)</span> are scaled <em>samples</em> of the real continuous <em>normalized sinc</em> function defined as follows:</p>
+<p><span class="math">\[\operatorname{sinc} u: = \frac{{\sin \pi u}}{{\pi u}},\;u \in \mathbb{R}.\]</span></p>
+<p>The function is equal to 1 at <span class="math">\(u=0\)</span><sup>*</sup> and has zero crossings at <span class="math">\(u=\pm n,\; n=1,2,3,\ldots\)</span> as shown below</p>
+<p><img src="pictures/sinc.png"></p>
 <p>Matlab code to reproduce this plot: <a href="matlab/sinc_plot.m">sinc_plot.m</a>.</p>
 <hr />
-<p>Note \(sin(\pi u)/(\pi u)\) is undefined at \(u = 0\). To compute its value we need to take the limit</p>
-<p>\[\lim_{u\to 0} \frac{\sin(\pi u)}{u}\]</p>
+<p>Note <span class="math">\(sin(\pi u)/(\pi u)\)</span> is undefined at <span class="math">\(u = 0\)</span>. To compute its value we need to take the limit</p>
+<p><span class="math">\[\lim_{u\to 0} \frac{\sin(\pi u)}{u}\]</span></p>
 <p>which can be shown to be 1. I leave the discovery of the proof to you and the internet.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1824,21 +1837,21 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>We define the duty cycle \(\eta = 2t_0/T\) of the rectangular pulse train as the fraction of the time the signal is &quot;on&quot; (equal to 1) over one period.</li>
+<li>We define the duty cycle <span class="math">\(\eta = 2t_0/T\)</span> of the rectangular pulse train as the fraction of the time the signal is &quot;on&quot; (equal to 1) over one period.</li>
 <li>The duty cycle is often given as a percentage.</li>
 </ul>
-<p>The spectra coefficients expressed using the normalized sinc function and the duty cycle can be written as</p>
-<p>\[C_k = \frac{2t_0}{T}\frac{\sin\left(\frac{\pi k2t_0}{T}\right)}{\frac{\pi k2t_0}{T}}=\frac{2t_0}{T}\operatorname{sinc}\left(\frac{k2t_0}{T}\right)\]</p>
-<p>\[C_k = \eta \operatorname{sinc}\left(k\eta\right)\]</p>
+<p>The spectral coefficients expressed using the normalized sinc function and the duty cycle can be written as</p>
+<p><span class="math">\[C_k = \frac{2t_0}{T}\frac{\sin\left(\frac{\pi k2t_0}{T}\right)}{\frac{\pi k2t_0}{T}}=\frac{2t_0}{T}\operatorname{sinc}\left(\frac{k2t_0}{T}\right)\]</span></p>
+<p><span class="math">\[C_k = \eta \operatorname{sinc}\left(k\eta\right)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Normalize-the-spectral-coefficients">Normalize the spectral coefficients<a class="anchor-link" href="#Normalize-the-spectral-coefficients">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let us normalize the spectral coefficients of \(\tilde x(t)\) by mutiplying them by \(T\), and assume \(t_0\) is fixed so that the duty cycle \(\eta = 2t_0/T\) will decrease as we increase \(T\):</p>
-<p>\[T C_k = T\eta \operatorname{sinc}\left(k\eta\right)=2t_0\operatorname{sinc}\left(k\frac{2t_0}{T}\right)\]</p>
-<p>Then the normalized coefficents \(T C_k\) of the rectangular wave a sinc envelope with constant amplitude at the origin equal to \(2t_0\), and a zero crossing at fixed frequency \(\pi/t_0\) rad/s, both independent of T.</p>
+<p>Let us normalize the spectral coefficients of <span class="math">\(\tilde x(t)\)</span> by mutiplying them by <span class="math">\(T\)</span>, and assume <span class="math">\(t_0\)</span> is fixed so that the duty cycle <span class="math">\(\eta = 2t_0/T\)</span> will decrease as we increase <span class="math">\(T\)</span>:</p>
+<p><span class="math">\[T C_k = T\eta \operatorname{sinc}\left(k\eta\right)=2t_0\operatorname{sinc}\left(k\frac{2t_0}{T}\right)\]</span></p>
+<p>Then the normalized coefficents <span class="math">\(T C_k\)</span> of the rectangular wave a sinc envelope with constant amplitude at the origin equal to <span class="math">\(2t_0\)</span>, and a zero crossing at fixed frequency <span class="math">\(\pi/t_0\)</span> rad/s, both independent of T.</p>
 <p>Plots follow (use <a href="matlab/duty_cycle.m">duty_cycle.m</a> to reproduce).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1846,14 +1859,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/dc_point5.png">
+<p><img src="pictures/dc_point5.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Duty-cycle-12.5%">Duty cycle 12.5%<a class="anchor-link" href="#Duty-cycle-12.5%">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/dc_12point5.png">
+<p><img src="pictures/dc_12point5.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Comments">Comments<a class="anchor-link" href="#Comments">&#182;</a></h3>
@@ -1861,11 +1874,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>As fundamental period increases, we get more spectral lines packed into the lobes of the sinc envelope.</li>
-<li>These normalized spectral coefficients turn out to be samples of the continuous sinc function on the spectrum of \(\tilde{x}(t)\)</li>
-<li>The two spectra are plotted against the frequency variable \(k\omega_0\) with units of rad/s rather than index of harmonic component</li>
-<li>The first zeros of each side of the main lobe are at frequencies \(\omega = \pm \pi/t_0\) rad/s</li>
-<li>Zero-crossing points of sinc envelope are independent of the period T. They only depend on \(t_0\).</li>
+<li>As the fundamental period increases, we get more spectral lines packed into the lobes of the sinc envelope.</li>
+<li>These normalized spectral coefficients turn out to be samples of the continuous sinc function on the spectrum of <span class="math">\(\tilde{x}(t)\)</span></li>
+<li>The two spectra are plotted against the frequency variable <span class="math">\(k\omega_0\)</span> with units of rad/s rather than index of harmonic component</li>
+<li>The first zeros of each side of the main lobe are at frequencies <span class="math">\(\omega = \pm \pi/t_0\)</span> rad/s</li>
+<li>The zero-crossing points of sinc envelope are independent of the period T. They only depend on <span class="math">\(t_0\)</span>.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1874,9 +1887,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>An aperiodic signal that has been made periodic by &quot;repeating&quot; its graph every \(T\) seconds will have a line spectrum that becomes more and more dense as the fundamental period is made longer and longer.</li>
+<li>An aperiodic signal that has been made periodic by &quot;repeating&quot; its graph every <span class="math">\(T\)</span> seconds will have a line spectrum that becomes more and more dense as the fundamental period is made longer and longer.</li>
 <li>The line spectrum has the same continuous envelope.</li>
-<li>As \(T\) goes to infinity, the line spectrum will become a continuous function of \(\omega\).</li>
+<li>As <span class="math">\(T\)</span> goes to infinity, the line spectrum will become a continuous function of <span class="math">\(\omega\)</span>.</li>
 <li>The <em>envelope</em> is this function.</li>
 </ul>
 </div></section>
@@ -1888,47 +1901,47 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Fourier series coefficients for the rectangular wave are computed using:</p>
-<p>\[C_k = \frac{1}{T}\int_{-t_0}^{t_0} \tilde{x}(t) e^{-jk(\omega_0 t)}\,dt \]</p>
-<p>where \(\omega_0 = 2\pi/T\) as usual.</p>
-<p>Now define a signal \(x(t)\) as a signal equal to \(\tilde{x}(t)\) over one period and zero elsewhere.</p>
-<img src="pictures/pulse.png">
+<p><span class="math">\[C_k = \frac{1}{T}\int_{-t_0}^{t_0} \tilde{x}(t) e^{-jk(\omega_0 t)}\,dt \]</span></p>
+<p>where <span class="math">\(\omega_0 = 2\pi/T\)</span> as usual.</p>
+<p>Now define a signal <span class="math">\(x(t)\)</span> as a signal equal to <span class="math">\(\tilde{x}(t)\)</span> over one period and zero elsewhere.</p>
+<p><img src="pictures/pulse.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="A-rectangular-pulse">A rectangular pulse<a class="anchor-link" href="#A-rectangular-pulse">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The aperiodic signal, a single rectangular pulse, can be thought of as being periodic with an infinite fundamental period (we will let \(T\to +\infty\) later).</p>
-<p>Since \(\tilde{x}(t)=x(t)\) over \(t \in [-T/2,T/2]\), the spectral coefficients \(C_k\) of the periodic signal \(\tilde{x}(t)\) can be written in terms of the aperiodic signal \(x(t)\) as follows:</p>
-<p>\[C_k = \frac{1}{T}\int_{-\infty}^{+\infty}x(t)e^{-jk\omega_0 t} dt.\]</p>
-<p>Let us define the envelope \(X(j\omega)\) of \(T C_k\) (we already know this to be the sinc function):</p>
-<p>\[X(j\omega):= \int_{-\infty}^{+\infty}x(t)e^{-j\omega t} dt = \int_{-t_0}^{+t_0}e^{-j\omega t} dt = 2t_0\operatorname{sinc}\left(\frac{t_0}{\pi}\omega\right).\]</p>
-<p>The coefficients \(C_k\) are therefore samples of the continuous envelope \(X(j\omega)\):</p>
-<p>\[C_k = \frac{1}{T}X(jk\omega_0).\]</p>
+<p>The aperiodic signal, a single rectangular pulse, can be thought of as being periodic with an infinite fundamental period (we will let <span class="math">\(T\to +\infty\)</span> later).</p>
+<p>Since <span class="math">\(\tilde{x}(t)=x(t)\)</span> over <span class="math">\(t \in [-T/2,T/2]\)</span>, the spectral coefficients <span class="math">\(C_k\)</span> of the periodic signal <span class="math">\(\tilde{x}(t)\)</span> can be written in terms of the aperiodic signal <span class="math">\(x(t)\)</span> as follows:</p>
+<p><span class="math">\[C_k = \frac{1}{T}\int_{-\infty}^{+\infty}x(t)e^{-jk\omega_0 t} dt.\]</span></p>
+<p>Let us define the envelope <span class="math">\(X(j\omega)\)</span> of <span class="math">\(T C_k\)</span> (we already know this to be the sinc function):</p>
+<p><span class="math">\[X(j\omega):= \int_{-\infty}^{+\infty}x(t)e^{-j\omega t} dt = \int_{-t_0}^{+t_0}e^{-j\omega t} dt = 2t_0\operatorname{sinc}\left(\frac{t_0}{\pi}\omega\right).\]</span></p>
+<p>The coefficients <span class="math">\(C_k\)</span> are therefore samples of the continuous envelope <span class="math">\(X(j\omega)\)</span>:</p>
+<p><span class="math">\[C_k = \frac{1}{T}X(jk\omega_0).\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Back-to-the-periodic-signal">Back to the periodic signal<a class="anchor-link" href="#Back-to-the-periodic-signal">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\(\tilde{x}(t)\) has the Fourier series representation</p>
-<p>\[\tilde{x}(t) = \sum_{k=-\infty}^{\infty}\frac{1}{T}X(jk\omega_0)e^{jk\omega_0 t}.\]</p>
-<p>or equivalently, since \(\omega_0 = 2\pi/T\):</p>
-<p>\[\tilde{x}(t) = \frac{1}{2\pi} \sum_{k=-\infty}^{\infty}X(jk\omega_0)e^{jk\omega_0 t}\omega_0.\]</p>
+<p><span class="math">\(\tilde{x}(t)\)</span> has the Fourier series representation</p>
+<p><span class="math">\[\tilde{x}(t) = \sum_{k=-\infty}^{\infty}\frac{1}{T}X(jk\omega_0)e^{jk\omega_0 t}.\]</span></p>
+<p>or equivalently, since <span class="math">\(\omega_0 = 2\pi/T\)</span>:</p>
+<p><span class="math">\[\tilde{x}(t) = \frac{1}{2\pi} \sum_{k=-\infty}^{\infty}X(jk\omega_0)e^{jk\omega_0 t}\omega_0.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Now-take-the-limits">Now take the limits<a class="anchor-link" href="#Now-take-the-limits">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>At the limit, as \(T\to \infty\), in</p>
-<p>\[\tilde{x}(t) = \frac{1}{2\pi} \sum_{k=-\infty}^{\infty} X(jk\omega_0)e^{jk\omega_0 t}\omega_0.\]</p>
+<p>At the limit, as <span class="math">\(T\to \infty\)</span>, in</p>
+<p><span class="math">\[\tilde{x}(t) = \frac{1}{2\pi} \sum_{k=-\infty}^{\infty} X(jk\omega_0)e^{jk\omega_0 t}\omega_0.\]</span></p>
 <p>we get</p>
 <ul>
-<li>\(\omega_0 \to d\omega\) – the fundamental frequency becomes infinitesimally small.</li>
-<li>\(k\omega_0 \to \omega\) – harmonic frequencies get so close together they become a continuum.</li>
+<li><span class="math">\(\omega_0 \to d\omega\)</span> – the fundamental frequency becomes infinitesimally small.</li>
+<li><span class="math">\(k\omega_0 \to \omega\)</span> – harmonic frequencies get so close together they become a continuum.</li>
 <li>The summation becomes an integral.</li>
-<li>\(\tilde{x}(t) \to x(t)\) – the periodic signal tends to the aperiodic signal.</li>
+<li><span class="math">\(\tilde{x}(t) \to x(t)\)</span> – the periodic signal tends to the aperiodic signal.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1938,10 +1951,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Putting these elements together we have an expression for the aperiodic signal in terms of its Fourier transform:</p>
 <p><strong>Inverse Fourier Transform</strong>:</p>
-<p>\[x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(j\omega)e^{j\omega t}\,d\omega.\]</p>
-<p>Similarly, given the expression we have already seen for an arbitrary \(x(t)\):</p>
+<p><span class="math">\[x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(j\omega)e^{j\omega t}\,d\omega := \mathcal{F}^{-1} \left\{X(j\omega)\right\}\]</span></p>
+<p>Similarly, given the expression we have already seen for an arbitrary <span class="math">\(x(t)\)</span>:</p>
 <p><strong>Fourier Transform</strong>:</p>
-<p>\[X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt.\]</p>
+<p><span class="math">\[X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt := \mathcal{F}\left\{x(t)\right\}.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Fourier-Transform-Pair">Fourier Transform Pair<a class="anchor-link" href="#Fourier-Transform-Pair">&#182;</a></h3>
@@ -1951,8 +1964,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ul>
 <li>The two equations on the previous slide are called the <em>Fourier transform pair</em>.</li>
 <li>They are analogous to the <em>Laplace transform pair</em> we have already seen and we can develop tables of properties and transform pairs in the same way.</li>
-<li>Equation \(X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt.\) gives the <em>Fourier transform</em> or the <em>frequency spectrum</em> of the signal \(x(t)\).</li>
-<li>Equation \(x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(j\omega)e^{j\omega t}\,d\omega.\) is the <em>inverse Fourier transform</em>. It gives the function of time that has a given spectrum in the frequency domain.</li>
+<li>Equation <span class="math">\(X(j\omega) = \int_{-\infty}^{\infty}x(t)e^{-j\omega t}\,dt.\)</span> gives the <em>Fourier transform</em> or the <em>frequency spectrum</em> of the signal <span class="math">\(x(t)\)</span>.</li>
+<li>Equation <span class="math">\(x(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} X(j\omega)e^{j\omega t}\,d\omega.\)</span> is the <em>inverse Fourier transform</em>. It gives the function of time that has a given spectrum in the frequency domain.</li>
 </ul>
 </div></section>
     </section><section>
@@ -1962,15 +1975,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The table on the next slide is developed in Section 8.2 of Karris by assuming that in general both \(f(t)\) and \(F(j\omega)\) are complex. So that:</p>
-<p>\[f(t) = \Re\left\{f(t)\right\} + j\Im\left\{f(t)\right\} = f_{\mathrm{Re}}(t) + j\, f_{\mathrm{Im}}(t)\]</p>
+<p>The table on the next slide is developed in Section 8.2 of Karris by assuming that in general both <span class="math">\(f(t)\)</span> and <span class="math">\(F(j\omega)\)</span> are complex. So that:</p>
+<p><span class="math">\[f(t) = \Re\left\{f(t)\right\} + j\Im\left\{f(t)\right\} = f_{\mathrm{Re}}(t) + j\, f_{\mathrm{Im}}(t)\]</span></p>
 <p>The Fourier transform can therefore be rewritten</p>
-<p>\[F(j\omega) = \int_{-\infty}^{\infty}f_{\mathrm{Re}}(t)e^{j\omega t}\,dt + j\int_{-\infty}^{\infty}\, f_{\mathrm{Im}}(t)e^{j\omega t}\,dt\]</p>
+<p><span class="math">\[F(j\omega) = \int_{-\infty}^{\infty}f_{\mathrm{Re}}(t)e^{j\omega t}\,dt + j\int_{-\infty}^{\infty}\, f_{\mathrm{Im}}(t)e^{j\omega t}\,dt\]</span></p>
 <p>which by Euler's identity becomes</p>
-<p>\[F(j\omega) = \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\cos\omega t + f_{\mathrm{Im}}(t)\sin\omega t\right]\,dt - j\int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\sin\omega t - f_{\mathrm{Im}}(t)\cos\omega t\right]\,dt\]</p>
-<p>So the Real and Imaginary parts of \(F(j\omega)\) are</p>
-<p>\[F_\mathrm{Re}(j\omega) = \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\cos\omega t + f_{\mathrm{Im}}(t)\sin\omega t\right]\,dt\]</p>
-<p>\[F_\mathrm{Im}(j\omega) = - \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\sin\omega t - f_{\mathrm{Im}}(t)\cos\omega t\right]\,dt\]</p>
+<p><span class="math">\[F(j\omega) = \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\cos\omega t + f_{\mathrm{Im}}(t)\sin\omega t\right]\,dt - j\int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\sin\omega t - f_{\mathrm{Im}}(t)\cos\omega t\right]\,dt\]</span></p>
+<p>So the Real and Imaginary parts of <span class="math">\(F(j\omega)\)</span> are</p>
+<p><span class="math">\[F_\mathrm{Re}(j\omega) = \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\cos\omega t + f_{\mathrm{Im}}(t)\sin\omega t\right]\,dt\]</span></p>
+<p><span class="math">\[F_\mathrm{Im}(j\omega) = - \int_{-\infty}^{\infty}\left[f_{\mathrm{Re}}(t)\sin\omega t - f_{\mathrm{Im}}(t)\cos\omega t\right]\,dt\]</span></p>
 <p>We can do a similar analysis for the inverse Fourier transform.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1978,16 +1991,16 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By consideration of the Real and Imaginary parts of \(f(t)\) and \(F(j\omega)\) we can construct the following table. See Sections <strong>8.2.1 Real-Time Functions</strong> and <strong>8.2.2 Imaginary Time Functions</strong></p>
+<p>By consideration of the Real and Imaginary parts of <span class="math">\(f(t)\)</span> and <span class="math">\(F(j\omega)\)</span> we can construct the following table. See Sections <strong>8.2.1 Real-Time Functions</strong> and <strong>8.2.2 Imaginary Time Functions</strong> which shows the summarizes the <em>nature</em> of the Fourier transform for particular types of the signal.</p>
 <html>
 <table>
 <thead>
 <tr>
 <thead>
     <tr><td rowspan="2" style="text-align: center;">
-\(f(t)\)
+<span class="math">\(f(t)\)</span>
 </td><td colspan="5" style="text-align: center;">
-\(F(j\omega)\)
+<span class="math">\(F(j\omega)\)</span>
 </td></tr>
     <tr><td>
 Real
@@ -2090,17 +2103,17 @@ Imaginary and Odd
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(f(t)\) is real (even or odd), the real part of \(F(j\omega)\) is even, and the imaginary part is odd.</p>
-<p>Then, for \(f(t)\) real:</p>
-<p>\[F_\mathrm{Re}(-j\omega)=F_\mathrm{Re}(j\omega)\]</p>
+<p>If <span class="math">\(f(t)\)</span> is real (even or odd), the real part of <span class="math">\(F(j\omega)\)</span> is even, and the imaginary part is odd.</p>
+<p>Then, for <span class="math">\(f(t)\)</span> real:</p>
+<p><span class="math">\[F_\mathrm{Re}(-j\omega)=F_\mathrm{Re}(j\omega)\]</span></p>
 <p>and</p>
-<p>\[F_\mathrm{Im}(-j\omega)=-F_\mathrm{Im}(j\omega)\]</p>
+<p><span class="math">\[F_\mathrm{Im}(-j\omega)=-F_\mathrm{Im}(j\omega)\]</span></p>
 <p>Since</p>
-<p>\[F(j\omega) = F_\mathrm{Re}(j\omega)+jF_\mathrm{Im}(j\omega)\]</p>
+<p><span class="math">\[F(j\omega) = F_\mathrm{Re}(j\omega)+jF_\mathrm{Im}(j\omega)\]</span></p>
 <p>it follows that</p>
-<p>\[F(-j\omega) = F_\mathrm{Re}(-j\omega)+jF_\mathrm{Im}(-j\omega) = F_\mathrm{Re}(j\omega)-jF_\mathrm{Im}(j\omega)\]</p>
+<p><span class="math">\[F(-j\omega) = F_\mathrm{Re}(-j\omega)+jF_\mathrm{Im}(-j\omega) = F_\mathrm{Re}(j\omega)-jF_\mathrm{Im}(j\omega)\]</span></p>
 <p>or</p>
-<p>\[F(-j\omega) = F^*(j\omega)\]</p>
+<p><span class="math">\[F(-j\omega) = F^*(j\omega)\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -2109,164 +2122,467 @@ Imaginary and Odd
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As was the case of the Laplace Transform, the following properties are usually summarized in Tables of Fourier Transform properties.</p>
-<p>For example this one: <a href="http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform">Properties of the Fourier Transform (Wikpedia)</a> and Table 8.8 in Karris (page 8-17).</p>
+<p>As was the case of the Laplace Transform, properties of Fourier transforms are usually summarized in Tables of Fourier Transform properties. For example this one: <a href="http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform">Properties of the Fourier Transform (Wikpedia)</a> and Table 8.8 in Karris (page 8-17).</p>
+<p>More detail and some commentry is given in the printable version of these notes.</p>
+<html>
+<table>
+<thead> 
+<tr><td></td><td>
+<strong>Name</strong>
+</td><td>
+<span class="math">\(f(t)\)</span>
+</td><td>
+<span class="math">\(F(j\omega)\)</span>
+</td><td>
+<strong>Remarks</strong>
+</td></tr>
+<thead>
+<tbody>
+<tr><td>
+1
+</td><td>
+Linearity
+</td><td>
+<span class="math">\(a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\)</span>
+</td><td>
+<span class="math">\(a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\)</span>
+</td><td>
+Fourier transform is a linear operator.
+</td></tr>
+<tr><td>
+2
+</td><td>
+Symmetry
+</td><td>
+<span class="math">\(2\pi f(-j\omega)\)</span>
+</td><td>
+<span class="math">\(F(t)\)</span>
+</td><td></td></tr>
+<tr><td>
+3.
+</td><td>
+Time and frequency scaling
+</td><td>
+<span class="math">\(f(\alpha t)\)</span>
+</td><td>
+<span class="math">\[\frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</span>
+</td><td>
+time compression is frequency expansion and <em>vice versa</em>
+</td></tr>
+<tr><td>
+4.
+</td><td>
+Time shifting
+</td><td>
+<span class="math">\[f(t-t_0)\]</span>
+</td><td>
+<span class="math">\[e^{-j\omega t_0}F(j\omega)\]</span>
+</td><td>
+A time shift corresponds to a phase shift in frequency domain
+</td></tr>
+<tr><td>
+5.
+</td><td>
+Frequency shifting
+</td><td>
+<span class="math">\[e^{j\omega_0 t}f(t)\]</span>
+</td><td>
+<span class="math">\[F(j\omega-j\omega_0)\]</span>
+</td><td>
+Multiplying a signal by a complex exponential results in a frequency shift.
+</td></tr>
+<tr><td>
+6.
+</td><td>
+Time differentiation
+</td><td>
+<span class="math">\[\frac{d^n}{dt^n}\,f(t)\]</span>
+</td><td>
+<span class="math">\[(j\omega)^nF(j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+7.
+</td><td>
+Frequency differentiation
+</td><td>
+<span class="math">\[(-jt)^n f(t)\]</span>
+</td><td>
+<span class="math">\[\frac{d^n}{d\omega^n}F(j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+8.
+</td><td>
+Time integration
+</td><td>
+<span class="math">\[\int_{-\infty}^{t}f(\tau)d\tau\]</span>
+</td><td>
+<span class="math">\[\frac{F(j\omega)}{j\omega}+\pi F(0)\delta(\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+9.
+</td><td>
+Conjugation
+</td><td>
+<span class="math">\[f^*(t)\]</span>
+</td><td>
+<span class="math">\[F^*(-j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+10.
+</td><td>
+Time convolution
+</td><td>
+<span class="math">\[f_1(t)*f_2(t)\]</span>
+</td><td>
+<span class="math">\[F_1(j\omega) F_2(j\omega)\]</span>
+</td><td>
+Compare with Laplace Transform
+</td></tr>
+<tr><td>
+11.
+</td><td>
+Frequency convolution
+</td><td>
+<span class="math">\[f_1(t)f_2(t)\]</span>
+</td><td>
+<span class="math">\[\frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</span>
+</td><td>
+This has application to amplitude modulation as shown in Boulet pp 182—183.
+</td></tr>
+<tr><td>
+12.
+</td><td>
+Area under <span class="math">\(f(t)\)</span>
+</td><td>
+<span class="math">\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</span>
+</td><td></td><td>
+Way to calculate DC (or average) value of a signal
+</td></tr>
+<tr><td>
+13.
+</td><td>
+Area under <span class="math">\(F(j\omega)\)</span>
+</td><td>
+<span class="math">\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</span>
+</td><td></td><td></td></tr>
+<tr><td>
+14.
+</td><td>
+Energy-Density Spectrum
+</td><td>
+<span class="math">\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|F(j\omega)|^2\,d\omega.\]</span>
+</td><td></td><td></td></tr>
+<tr><td>
+15.
+</td><td>
+Parseval's theorem
+</td><td>
+<span class="math">\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\omega)|^2\,d\omega.\]</span>
+</td><td></td><td>
+Definition RMS follows from this
+</td></tr>
+</tbody>
+<table>
+<html>
+
+<p>See also: <a href="http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Properties">Wikibooks: Engineering Tables/Fourier Transform Properties</a> and <a href="http://mathworld.wolfram.com/FourierTransform.html">Fourier Transfom—WolframMathworld</a> for more complete references.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, we will provide any properties that you might need in the examination.</p>
-<p>For fun, you may like to do the proofs for the following of the most useful properties guided by the text books Karris (Section 8.3) or Boulet pp 180—185.</p>
-</div></section><section>
+<p>For fun, you may like to read and even complete the proofs for these properties guided by the text books Karris (Section 8.3) or Boulet pp 180—185.</p>
+<p>We are more interested in your ability to exploit the properties in problem solving.</p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linearity">Linearity<a class="anchor-link" href="#Linearity">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The Fourier transform is a linear operation:</p>
-<p>\[a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\Leftrightarrow a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\]</p>
-</div></section><section>
+<p><span class="math">\[a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\Leftrightarrow a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\]</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Symmetry">Symmetry<a class="anchor-link" href="#Symmetry">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(j\omega)\) is the Fourier transform of \(f(t)\), the <em>symmetry property of the Fourier transform</em> states that</p>
-<p>\[F(t)\Leftrightarrow2\pi f(-j\omega)\]</p>
-<p>That is if in \(F(j\omega)\) we replace \(j\omega\) with \(t\), we obtain this pair.</p>
-</div></section><section>
+<p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span>, the <em>symmetry property of the Fourier transform</em> states that</p>
+<p><span class="math">\[F(t)\Leftrightarrow2\pi f(-j\omega)\]</span></p>
+<p>That is if in <span class="math">\(F(j\omega)\)</span> we replace <span class="math">\(j\omega\)</span> with <span class="math">\(t\)</span>, we obtain this pair.</p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time/Frequency-Scaling">Time/Frequency Scaling<a class="anchor-link" href="#Time/Frequency-Scaling">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Scaling the time variable with \(\alpha \in \mathbb{R}\) either expands or compresses the Fourier transform:</p>
-<p>\[f(\alpha t)\Leftrightarrow \frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</p>
+<p>Scaling the time variable with <span class="math">\(\alpha  \in \mathbb{R}\)</span> either expands or compresses the Fourier transform:</p>
+<p><span class="math">\[f(\alpha t)\Leftrightarrow \frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</span></p>
 <ul>
-<li>For \(\alpha &gt; 0\), the signal \(f(\alpha t)\) is sped up (or compressed in time), so its frequency components will be expanded to higher frequencies.</li>
-<li>For \(\alpha &lt; 0\), the signal \(f(\alpha t)\) is slowed down (or expanded in time), so its frequency components will be compressed to lower frequencies.</li>
+<li>For <span class="math">\(\alpha &gt; 0\)</span>, the signal <span class="math">\(f(\alpha t)\)</span> is sped up (or compressed in time), so its frequency components will be expanded to higher frequencies.</li>
+<li>For <span class="math">\(\alpha &lt; 0\)</span>, the signal <span class="math">\(f(\alpha t)\)</span> is slowed down (or expanded in time), so its frequency components will be compressed to lower frequencies.</li>
 </ul>
-</div></section><section>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-Shifting">Time Shifting<a class="anchor-link" href="#Time-Shifting">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>A time shift results in a phase shift in the Fourier transform</p>
-<p>\[f(t-t_0) \Leftrightarrow e^{-j\omega_0}F(j\omega)\]</p>
-<p>where \(\omega_0 = 2\pi/t_0\)</p>
-</div></section><section>
+<p><span class="math">\[f(t-t_0) \Leftrightarrow e^{-j\omega_0}F(j\omega)\]</span></p>
+<p>where <span class="math">\(\omega_0 = 2\pi/t_0\)</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-Shifting">Frequency Shifting<a class="anchor-link" href="#Frequency-Shifting">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Multiplying a time function by a complex exponential resuls in a frequency shift</p>
-<p>\[e^{j\omega 0}f(t) \Leftrightarrow X(j\omega-j\omega_0)\]</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Application:-Modulation">Application: Modulation<a class="anchor-link" href="#Application:-Modulation">&#182;</a></h3>
+<p><span class="math">\[e^{j\omega 0}f(t) \Leftrightarrow X(j\omega-j\omega_0)\]</span></p>
 </div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The previous property is used in <strong>amplitude modulation</strong>:</p>
-<p>For example, since</p>
-<p>\[\cos\omega_0 t = \frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}\]</p>
-<p>it follows from the <em>frequency shifting</em> property that</p>
-<p>\[f(t)\cos\omega_0 t \Leftrightarrow \frac{F(j\omega-j\omega_0)+F(j\omega + j\omega_0)}{2}.\]</p>
-<p>Similarly</p>
-<p>\[f(t)\sin\omega_0 t \Leftrightarrow \frac{F(j\omega-j\omega_0)-F(j\omega + j\omega_0)}{j2}.\]</p>
-</div></section><section>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-Differentiation">Time Differentiation<a class="anchor-link" href="#Time-Differentiation">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(j\omega)\) is the Fourier transform of \(f(t)\)</p>
-<p>\[\frac{d^n}{dt^n}\,f(t)\Leftrightarrow (j\omega)^nF(j\omega)\]</p>
-</div></section><section>
+<p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
+<p><span class="math">\[\frac{d^n}{dt^n}\,f(t)\Leftrightarrow (j\omega)^nF(j\omega)\]</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-Differentiation">Frequency Differentiation<a class="anchor-link" href="#Frequency-Differentiation">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(j\omega)\) is the Fourier transform of \(f(t)\)</p>
-<p>\[(-jt)^n f(t)\Leftrightarrow \frac{d^n}{d\omega^n}F(j\omega)\]</p>
-</div></section><section>
+<p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
+<p><span class="math">\[(-jt)^n f(t)\Leftrightarrow \frac{d^n}{d\omega^n}F(j\omega)\]</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-Integration">Time Integration<a class="anchor-link" href="#Time-Integration">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(j\omega)\) is the Fourier transform of \(f(t)\)</p>
-<p>\[\int_{-\infty}^{t}f(\tau)d\tau \Leftrightarrow \frac{F(j\omega)}{j\omega}+\pi F(0)\delta(\omega)\]</p>
-</div></section><section>
+<p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{t}f(\tau)d\tau \Leftrightarrow \frac{F(j\omega)}{j\omega}+\pi F(0)\delta(\omega)\]</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Conjugate-Time-and-Frequency-Functions">Conjugate Time and Frequency Functions<a class="anchor-link" href="#Conjugate-Time-and-Frequency-Functions">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If \(F(j\omega)\) is the Fourier transform of the complex function \(f(t)\)</p>
-<p>\[f^*(t)\Leftrightarrow F^*(-j\omega)\]</p>
-</div></section><section>
+<p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of the complex function <span class="math">\(f(t)\)</span></p>
+<p><span class="math">\[f^*(t)\Leftrightarrow F^*(-j\omega)\]</span></p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-Convolution">Time Convolution<a class="anchor-link" href="#Time-Convolution">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f_1(t)*f_2(t) \Leftrightarrow F_1(j\omega) F_2(j\omega)\]</p>
+<p><span class="math">\[f_1(t)*f_2(t) \Leftrightarrow F_1(j\omega) F_2(j\omega)\]</span></p>
 <p>That is convolution in the time domain corresponds to multiplication in the frequency domain.</p>
 <p>(Compare with Laplace Transform)</p>
-</div></section><section>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-Convolution">Frequency Convolution<a class="anchor-link" href="#Frequency-Convolution">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</p>
+<p><span class="math">\[f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</span></p>
 <p>That is, multiplication in the time domain corresponds to convolution in the frequency domain.</p>
 <p>This also has application to amplitude modulation as shown in Boulet pp 182—183.</p>
-</div></section><section>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Area-under-f(t)">Area under f(t)<a class="anchor-link" href="#Area-under-f(t)">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</p>
-<p>That is, the area under a time function \(f(t)\) is equal to the value of the Fourier transform of \(f(t)\) evaluated at \(\omega = 0\) rad/s.</p>
-</div></section><section>
+<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</span></p>
+<p>That is, the area under a time function <span class="math">\(f(t)\)</span> is equal to the value of the Fourier transform of <span class="math">\(f(t)\)</span> evaluated at <span class="math">\(\omega = 0\)</span> rad/s.</p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Area-under-F(jomega)">Area under F(jomega)<a class="anchor-link" href="#Area-under-F(jomega)">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</p>
-<p>That is, the value of a time function, \(f(t)\), evaluated at \(t=0\) is equal to the area under its Fourier transform \(F(j\omega)\) times \(1/2\pi\).</p>
-</div></section><section>
+<p><span class="math">\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</span></p>
+<p>That is, the value of a time function, <span class="math">\(f(t)\)</span>, evaluated at <span class="math">\(t=0\)</span> is equal to the area under its Fourier transform <span class="math">\(F(j\omega)\)</span> times <span class="math">\(1/2\pi\)</span>.</p>
+</div>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Energy-Density-Spectrum">Energy-Density Spectrum<a class="anchor-link" href="#Energy-Density-Spectrum">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Recalling that the power spectrum of a periodic signal is defined as the squared magnitudes of its Fourier series coefficients. A plot of the power spectrum of a signal gives us an idea of the power at different frequencies (harmonics).</p>
-<p>By analogy, the <em>energy-density spectrum</em> of an aperiodic signal is defined as the magnitude squared of its spectrum; that is \(|F(j\omega)|^2\) is the energy-density spectrum of \(f(t)\).</p>
+<p>By analogy, the <em>energy-density spectrum</em> of an aperiodic signal is defined as the magnitude squared of its spectrum; that is <span class="math">\(|F(j\omega)|^2\)</span> is the energy-density spectrum of <span class="math">\(f(t)\)</span>.</p>
 <p>For example</p>
-<p>\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|X(j\omega)|^2\,d\omega.\]</p>
+<p><span class="math">\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|F(j\omega)|^2\,d\omega.\]</span></p>
 <p>Note that for real signals, it is customary to include the negative frequency band as well.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
 </div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If we wanted to compute the energy contained is a real signal between 5kHz and 10kHz, we would compute</p>
-<p>\[E_{[10,000\pi,20,000\pi]}^r=\frac{1}{2\pi}\left[\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega + \frac{1}{2\pi}\int_{-20,000\pi}^{-10,000\pi}|X(j\omega)|^2\,d\omega\right] = \frac{1}{\pi}\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega.\]</p>
-</div></section><section>
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Parseval's-Theorem">Parseval's Theorem<a class="anchor-link" href="#Parseval's-Theorem">&#182;</a></h3>
 </div>
 
+    </div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Just like the total average power of a periodic signal is equal to the sume of the powers of all the harmonics, the total energy in an aperidic signal is equal to the total energy in its sepctrum.</p>
-<p>This is the Parseval equuality for Fourier transforms:</p>
-<p>\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\omega)|^2\,d\omega.\]</p>
-</div></section>
+<p>This is the Parseval equality for Fourier transforms:</p>
+<p><span class="math">\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\omega)|^2\,d\omega.\]</span></p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol style="list-style-type: decimal">
+<li>Amplitude Modulation</li>
+<li>Impulse response</li>
+<li>Energy computation</li>
+</ol>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1:-Amplitude-Modulation">Example 1: Amplitude Modulation<a class="anchor-link" href="#Example-1:-Amplitude-Modulation">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Compute the result of multiplying a signal <span class="math">\(f(t)\)</span> by a carrier waveform <span class="math">\(\cos \omega_c t\)</span>.</p>
+<p><em>Hint</em> use Euler's identity and the frequency shift property</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution-1">Solution 1<a class="anchor-link" href="#Solution-1">&#182;</a></h3>
+</div>
+
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\cos\omega_0 t = \frac{e^{j\omega_0 t}+e^{-j\omega_0 t}}{2}\]</span></p>
+<p>it follows from the <em>frequency shifting</em> property that</p>
+<p><span class="math">\[f(t)\cos\omega_0 t \Leftrightarrow \frac{F(j\omega-j\omega_0)+F(j\omega + j\omega_0)}{2}.\]</span></p>
+</div>
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly</p>
+<p><span class="math">\[f(t)\sin\omega_0 t \Leftrightarrow \frac{F(j\omega-j\omega_0)-F(j\omega + j\omega_0)}{j2}.\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Remarks">Remarks<a class="anchor-link" href="#Remarks">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also tackle this using the Frequency Convolution property. See Boulet pp 182—183.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2:-Impulse-response">Example 2: Impulse response<a class="anchor-link" href="#Example-2:-Impulse-response">&#182;</a></h3>
+</div>
+
+    </div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A system has impulse response <span class="math">\(f(t) = e^{-t}u_0(t)\)</span>. Compute the frequency sprectrum of this system.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution-2">Solution 2<a class="anchor-link" href="#Solution-2">&#182;</a></h3>
+</div>
+
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\begin{gathered}
+  \mathcal{F}\left\{ {{e^{ - t}}{u_0}(t)} \right\} &amp;=&amp; \int_0^\infty  {{e^{ - t}}} {e^{ - j\omega t}}\;dt \\ 
+   &amp;=&amp; \int_0^\infty  {{e^{ - (1 + j\omega )t}}} \;dt \\ 
+   &amp;=&amp;  - \frac{1}{{j\omega  + 1}}\left[ {{e^{ - (1 + j\omega )t}}} \right]_0^\infty  =  - \frac{1}{{j\omega  + 1}}\left[ {0 - 1} \right] \\ 
+  F(j\omega ) &amp;=&amp; \frac{1}{{j\omega  + 1}} \\ 
+\end{gathered} \]</span></p>
+<p>Thus</p>
+<p><span class="math">\[e^{ - t}{u_0}(t)\Leftrightarrow \frac{1}{{j\omega  + 1}}\]</span></p>
+</div>
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3:-Energy-computation">Example 3: Energy computation<a class="anchor-link" href="#Example-3:-Energy-computation">&#182;</a></h3>
+</div>
+
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>An aperiodic real signal <span class="math">\(f(t)\)</span> has Fourier transform <span class="math">\(F(j\omega)\)</span>. Compute the energy contained the signal between 5kHz and 10kHz.</p>
+</div>
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Solution-3">Solution 3<a class="anchor-link" href="#Solution-3">&#182;</a></h3>
+</div>
+
+    </div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Use the Energy-Density function.</p>
+<p><span class="math">\[E_{[10,000\pi,20,000\pi]}^r=\frac{1}{2\pi}\left[\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega + \frac{1}{2\pi}\int_{-20,000\pi}^{-10,000\pi}|X(j\omega)|^2\,d\omega\right] = \frac{1}{\pi}\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega.\]</span></p>
+</div>
+    </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2283,7 +2599,7 @@ Imaginary and Odd
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Use Matlab to confirm the Fourier transform pair:</p>
-<p>\[e^{-\frac{1}{2}t^2}\Leftrightarrow \sqrt{2\pi}e^{-\frac{1}{2}\omega^2}\]</p>
+<p><span class="math">\[e^{-\frac{1}{2}t^2}\Leftrightarrow \sqrt{2\pi}e^{-\frac{1}{2}\omega^2}\]</span></p>
 <p>See script: <a href="matlab/ftex1.m">ftex1.m</a>.</p>
 </div></section>
     </section><section>

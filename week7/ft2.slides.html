@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft2.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft2.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1755,14 +1755,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>If you have been reading both Karris and Boulet you may have noticed a difference in the notation used in the definition of Fourier Transform:</p>
 <ul>
-<li>Karris uses \(F(\omega)\)</li>
-<li>Boulet uses \(F(j\omega)\)</li>
+<li>Karris uses <span class="math">\(F(\omega)\)</span></li>
+<li>Boulet uses <span class="math">\(F(j\omega)\)</span></li>
 </ul>
-<p>I checked other sources and <a href="https://www.dawsonera.com/abstract/9780071634731">Hsu (Schaum's Signals and Systems)</a> and Morrell (The <a href="http://www.youtube.com/watch?v=bqYxhYGA2qU&amp;list=PL51707156C4956932&amp;feature=share&amp;index=10">Fourier Analysis Video Series on YouTube</a>) both use the \(F(\omega)\) notation.</p>
+<p>I checked other sources and <a href="https://www.dawsonera.com/abstract/9780071634731">Hsu (Schaum's Signals and Systems)</a> and Morrell (The <a href="http://www.youtube.com/watch?v=bqYxhYGA2qU&amp;list=PL51707156C4956932&amp;feature=share&amp;index=10">Fourier Analysis Video Series on YouTube</a>) both use the <span class="math">\(F(\omega)\)</span> notation.</p>
 <p>According to Wikipedia <a href="http://en.wikipedia.org/wiki/Fourier_transform#Other_notations">Fourier Transform: Other Notations</a> both are used only by electronic engineers anyway and either would be acceptible.</p>
-<p>There is some advantage in using Boulet's notation \(F(j\omega)\) in that it helps to reinforce the idea that Fourier Transform is a special case of the Laplace Transform and it was the notation that I used in the last session.</p>
+<p>There is some advantage in using Boulet's notation <span class="math">\(F(j\omega)\)</span> in that it helps to reinforce the idea that Fourier Transform is a special case of the Laplace Transform and it was the notation that I used in the last session.</p>
 <p>In these notes, I've used the other convention on the basis that its the more likely to be seen in your support materials.</p>
-<p>However, I am happy to change back if you find the addition of \(j\) useful.</p>
+<p>However, I am happy to change back if you find the addition of <span class="math">\(j\)</span> useful.</p>
 <p>You should be aware that Fourier Transforms are in general complex so whatever the notation used to <em>represent</em> the transform, we are still dealing with real and imaginary parts or magnitudes and phases when we use the <em>actual transforms</em> in analysis.</p>
 </div></section>
     </section><section>
@@ -1812,17 +1812,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the signals and systems context, the Fourier Transform is used to convert a function of time \(f(t)\) to a function of radian frequency \(F(\omega)\):</p>
-<p>\[\mathcal{F}\left\{f(t)\right\} = \int_{-\infty}^{\infty} f(e)e^{-j\omega t}\,dt = F(\omega).\]</p>
+<p>In the signals and systems context, the Fourier Transform is used to convert a function of time <span class="math">\(f(t)\)</span> to a function of radian frequency <span class="math">\(F(\omega)\)</span>:</p>
+<p><span class="math">\[\mathcal{F}\left\{f(t)\right\} = \int_{-\infty}^{\infty} f(e)e^{-j\omega t}\,dt = F(\omega).\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Inverse-Fourier-Transform">The Inverse Fourier Transform<a class="anchor-link" href="#The-Inverse-Fourier-Transform">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In the signals and systems context, the <em>Inverse Fourier Transform</em> is used to convert a function of frequency \(F(\omega)\) to a function of time \(f(t)\):</p>
-<p>\[\mathcal{F}^{-1}\left\{F(\omega)\right\} = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(\omega)e^{j\omega t}\,d\omega = f(t) .\]</p>
-<p>Note, the factor \(2\pi\) is introduced because we are changing units from radians/second to seconds.</p>
+<p>In the signals and systems context, the <em>Inverse Fourier Transform</em> is used to convert a function of frequency <span class="math">\(F(\omega)\)</span> to a function of time <span class="math">\(f(t)\)</span>:</p>
+<p><span class="math">\[\mathcal{F}^{-1}\left\{F(\omega)\right\} = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(\omega)e^{j\omega t}\,d\omega = f(t) .\]</span></p>
+<p>Note, the factor <span class="math">\(2\pi\)</span> is introduced because we are changing units from radians/second to seconds.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Duality-of-the-transform">Duality of the transform<a class="anchor-link" href="#Duality-of-the-transform">&#182;</a></h3>
@@ -1845,9 +1845,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <tr><td></td><td>
 <strong>Name</strong>
 </td><td>
-\(f(t)\)
+<span class="math">\(f(t)\)</span>
 </td><td>
-\(F(\omega)\)
+<span class="math">\(F(\omega)\)</span>
 </td><td>
 <strong>Remarks</strong>
 </td></tr>
@@ -1858,7 +1858,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </td><td>
 Dirac delta
 </td><td>
-\(\delta(t)\)
+<span class="math">\(\delta(t)\)</span>
 </td><td>
 1
 </td><td>
@@ -1869,27 +1869,27 @@ Constant energy at <em>all</em> frequencies.
 </td><td>
 Time sample
 </td><td>
-\(\delta(t-t_0)\)
+<span class="math">\(\delta(t-t_0)\)</span>
 </td><td>
-\(e^{j\omega t_0}\)
+<span class="math">\(e^{j\omega t_0}\)</span>
 </td><td></td></tr>
 <tr><td>
 3.
 </td><td>
 Phase shift
 </td><td>
-\(e^{j\omega t_0}\)
+<span class="math">\(e^{j\omega t_0}\)</span>
 </td><td>
-\(2\pi\delta(\omega - \omega_0)\)
+<span class="math">\(2\pi\delta(\omega - \omega_0)\)</span>
 </td><td></td></tr>
 <tr><td>
 4.
 </td><td>
 <em>Signum</em>
 </td><td>
-\(\operatorname{sgn} (x)\)
+<span class="math">\(\operatorname{sgn} (x)\)</span>
 </td><td>
-\[\frac{2}{j\omega}\]
+<span class="math">\[\frac{2}{j\omega}\]</span>
 </td><td>
 also known as sign function
 </td></tr>
@@ -1898,80 +1898,80 @@ also known as sign function
 </td><td>
 Unit step
 </td><td>
-\(u_0(t)\)
+<span class="math">\(u_0(t)\)</span>
 </td><td>
-\[\frac{1}{j\omega}+\pi\delta(\omega)\]
+<span class="math">\[\frac{1}{j\omega}+\pi\delta(\omega)\]</span>
 </td><td></td></tr>
 <tr><td>
 6.
 </td><td>
 Cosine
 </td><td>
-\(\cos \omega_0 t\)
+<span class="math">\(\cos \omega_0 t\)</span>
 </td><td>
-\(\pi\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right]\)
+<span class="math">\(\pi\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right]\)</span>
 </td><td></td></tr>
 <tr><td>
 7.
 </td><td>
 Sine
 </td><td>
-\(\sin \omega_0 t\)
+<span class="math">\(\sin \omega_0 t\)</span>
 </td><td>
-\(j\pi\left[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\right]\)
+<span class="math">\(j\pi\left[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\right]\)</span>
 </td><td></td></tr>
 <tr><td>
 8.
 </td><td>
 Single pole
 </td><td>
-\(e^{-at}u_0(t)\)
+<span class="math">\(e^{-at}u_0(t)\)</span>
 </td><td>
-\[\frac{1}{j\omega + a}\]
+<span class="math">\[\frac{1}{j\omega + a}\]</span>
 </td><td>
-\(a \gt 0\)
+<span class="math">\(a \gt 0\)</span>
 </td></tr>
 <tr><td>
 9.
 </td><td>
 Double pole
 </td><td>
-\(te^{-at}u_0(t)\)
+<span class="math">\(te^{-at}u_0(t)\)</span>
 </td><td>
-\[\frac{1}{(j\omega + a)^2}\]
+<span class="math">\[\frac{1}{(j\omega + a)^2}\]</span>
 </td><td>
-\(a \gt 0\)
+<span class="math">\(a \gt 0\)</span>
 </td></tr>
 <tr><td>
 10.
 </td><td>
 Complex pole (cosine component)
 </td><td>
-\(e^{-at}\cos \omega_0 t\;u_0(t)\)
+<span class="math">\(e^{-at}\cos \omega_0 t\;u_0(t)\)</span>
 </td><td>
-\[\frac{j\omega + a}{((j\omega + a)^2+\omega^2}\]
+<span class="math">\[\frac{j\omega + a}{((j\omega + a)^2+\omega^2}\]</span>
 </td><td>
-\(a\gt 0\)
+<span class="math">\(a\gt 0\)</span>
 </td></tr>
 <tr><td>
 11.
 </td><td>
 Complex pole (sine component)
 </td><td>
-\(e^{-at}\sin \omega_0 t\;u_0(t)\)
+<span class="math">\(e^{-at}\sin \omega_0 t\;u_0(t)\)</span>
 </td><td>
-\[\frac{\omega}{((j\omega + a)^2+\omega^2}\]
+<span class="math">\[\frac{\omega}{((j\omega + a)^2+\omega^2}\]</span>
 </td><td>
-\(a\gt 0\)
+<span class="math">\(a\gt 0\)</span>
 </td></tr>
 <tr><td>
 12.
 </td><td>
-Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
+Gating function (<em>aka</em> <span class="math">\(\operatorname{rect} (T)\)</span>)
 </td><td>
-\(A\left[u_0(t + T)-u_0(t - T)\right]\)
+<span class="math">\(A\left[u_0(t + T)-u_0(t - T)\right]\)</span>
 </td><td>
-\[2AT\frac{\sin\omega T}{\omega T}\]
+<span class="math">\[2AT\frac{\sin\omega T}{\omega T}\]</span>
 </td><td></td></tr>
 </tbody>
 <table>
@@ -1987,10 +1987,10 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>In most of the work we will do in this course, and in practice, the <em>signals</em> that we use with the Fourier transform will be a real continuous aperiodic functions of time that are zero when \(t = 0\).</p>
-<p>The Fourier transforms of such a signals will be complex continous function of frequency which have real and imaginary parts and will exist at both positive and negative values of \(\omega\).</p>
-<p>It is often most convenient to deal with the transformed &quot;spectrum&quot; by considering the magnitude and phase and we will therefore often plot \(F(\omega)\) on two separate graphs as <em>magnitude</em> \(|F(\omega)|\) and <em>phase</em> \(\angle F(\omega)\) (where phase is measured in radians) plotted against frequency \(\omega \in [-\infty,\infty]\) (in radians/second).</p>
-<p>We most often represent the <em>system</em> by its so-called <em>frequency response</em> and we will be interested on what effect the system has on the signal \(f(t)\).</p>
+<p>In most of the work we will do in this course, and in practice, the <em>signals</em> that we use with the Fourier transform will be a real continuous aperiodic functions of time that are zero when <span class="math">\(t = 0\)</span>.</p>
+<p>The Fourier transforms of such a signals will be complex continous function of frequency which have real and imaginary parts and will exist at both positive and negative values of <span class="math">\(\omega\)</span>.</p>
+<p>It is often most convenient to deal with the transformed &quot;spectrum&quot; by considering the magnitude and phase and we will therefore often plot <span class="math">\(F(\omega)\)</span> on two separate graphs as <em>magnitude</em> <span class="math">\(|F(\omega)|\)</span> and <em>phase</em> <span class="math">\(\angle F(\omega)\)</span> (where phase is measured in radians) plotted against frequency <span class="math">\(\omega \in [-\infty,\infty]\)</span> (in radians/second).</p>
+<p>We most often represent the <em>system</em> by its so-called <em>frequency response</em> and we will be interested on what effect the system has on the signal <span class="math">\(f(t)\)</span>.</p>
 <p>As for the Laplace transform, this is more conveniently determined by exploiting the <em>time convolution property</em>. That is by performing a Fourier transform of the signal, multiplying it by the system's frequency response and then inverse Fourier transforming the result.</p>
 <p>Have these ideas in mind as we go through the examples in the rest of this session.</p>
 </div></section><section>
@@ -1999,43 +1999,43 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\delta(t) \Leftrightarrow 1\]</p>
-<img src="pictures/ft_delta.png">
-<p><em>Proof</em>: uses sampling and sifting properties of \(\delta(t)\).</p>
+<p><span class="math">\[\delta(t) \Leftrightarrow 1\]</span></p>
+<p><img src="pictures/ft_delta.png"></p>
+<p><em>Proof</em>: uses sampling and sifting properties of <span class="math">\(\delta(t)\)</span>.</p>
 <p><em>Matlab</em>:</p>
 <p>`<code>matlab syms t; fourier(dirac(t))</code></p>
 <p>Related:</p>
-<p>\[\delta(t-t_0) \Leftrightarrow e^{-j\omega t_0}\]</p>
+<p><span class="math">\[\delta(t-t_0) \Leftrightarrow e^{-j\omega t_0}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="DC">DC<a class="anchor-link" href="#DC">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[1 \Leftrightarrow 2\pi\delta(\omega)\]</p>
-<img src="pictures/ft_dc.png">
+<p><span class="math">\[1 \Leftrightarrow 2\pi\delta(\omega)\]</span></p>
+<p><img src="pictures/ft_dc.png"></p>
 <p><em>Matlab</em>:</p>
 <p>`<code>matlab syms A t; fourier(1)</code></p>
 <p>Related by frequency shifting property:</p>
-<p>\[e^{j\omega_0 t} \Leftrightarrow 2\pi\delta(\omega-\omega_0)\]</p>
+<p><span class="math">\[e^{j\omega_0 t} \Leftrightarrow 2\pi\delta(\omega-\omega_0)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Cosine-(Sinewave-with-even-symmetry)">Cosine (Sinewave with even symmetry)<a class="anchor-link" href="#Cosine-(Sinewave-with-even-symmetry)">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\cos(t) = \frac{1}{2}\left(e^{j\omega_0 t}+e^{-j\omega_0 t}\right) \Leftrightarrow \pi\delta(\omega - \omega_0) + \pi\delta(\omega + \omega_0)\]</p>
-<img src="pictures/ft_cos.png">
-<p>Note: \(f(t)\) is real and even. \(F(\omega)\) is also real and even.</p>
+<p><span class="math">\[\cos(t) = \frac{1}{2}\left(e^{j\omega_0 t}+e^{-j\omega_0 t}\right) \Leftrightarrow \pi\delta(\omega - \omega_0) + \pi\delta(\omega + \omega_0)\]</span></p>
+<p><img src="pictures/ft_cos.png"></p>
+<p>Note: <span class="math">\(f(t)\)</span> is real and even. <span class="math">\(F(\omega)\)</span> is also real and even.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Sinewave">Sinewave<a class="anchor-link" href="#Sinewave">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\sin(t) = \frac{1}{j2}\left(e^{j\omega_0 t}-e^{-j\omega_0 t}\right) \Leftrightarrow j\pi\delta(\omega - \omega_0) - j\pi\delta(\omega + \omega_0)\]</p>
-<img src="pictures/ft_sin.png">
-<p>Note: \(f(t)\) is real and odd. \(F(\omega)\) is imaginary and odd.</p>
+<p><span class="math">\[\sin(t) = \frac{1}{j2}\left(e^{j\omega_0 t}-e^{-j\omega_0 t}\right) \Leftrightarrow j\pi\delta(\omega - \omega_0) - j\pi\delta(\omega + \omega_0)\]</span></p>
+<p><img src="pictures/ft_sin.png"></p>
+<p>Note: <span class="math">\(f(t)\)</span> is real and odd. <span class="math">\(F(\omega)\)</span> is imaginary and odd.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Signum-(Sign)">Signum (Sign)<a class="anchor-link" href="#Signum-(Sign)">&#182;</a></h3>
@@ -2043,14 +2043,14 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The signum function is a function whose value is equal to</p>
-<p>\[\operatorname{sgn} x = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[\operatorname{sgn} x = \left\{ {\begin{array}{*{20}{c}}
   { - 1\;x &lt; 1} \\ 
   {0\;x = 0} \\ 
   { + 1\;x &gt; 0} 
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 <p>The transform is:</p>
-<p>\[\operatorname{sgn} x = u_0(t) - u_0(-t) = \frac{2}{j\omega}\]</p>
-<img src="pictures/ft_sgn.png">
+<p><span class="math">\[\operatorname{sgn} x = u_0(t) - u_0(-t) = \frac{2}{j\omega}\]</span></p>
+<p><img src="pictures/ft_sgn.png"></p>
 <p>This function is often used to model a <em>voltage comparitor</em> in circuits.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2058,7 +2058,7 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the signum function to show that \[\mathcal{F}\left\{u_0(t))\right\} = \pi\delta(\omega)+\frac{1}{j\omega}\]</p>
+<p>Use the signum function to show that <span class="math">\[\mathcal{F}\left\{u_0(t))\right\} = \pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Clue">Clue<a class="anchor-link" href="#Clue">&#182;</a></h3>
@@ -2066,8 +2066,8 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Define</p>
-<p>\[u_0(t) = 2\operatorname{sgn} x - 1\]</p>
-<img src="pictures/u_as_sign.png">
+<p><span class="math">\[u_0(t) = 2\operatorname{sgn} x - 1\]</span></p>
+<p><img src="pictures/u_as_sign.png"></p>
 <p><em>Does that help?</em></p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2075,11 +2075,11 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\operatorname{sgn} x = 2u_0(t) - 1\]</p>
+<p><span class="math">\[\operatorname{sgn} x = 2u_0(t) - 1\]</span></p>
 <p>so</p>
-<p>\[u_0(t) = \frac{1}{2}\left[1 + \operatorname{sgn} x\right]\]</p>
-<p>From previous results \(1\Leftrightarrow 2\pi\delta(\omega)\) and \(\operatorname{sgn} x = 2/(j\omega)\) so by linearity</p>
-<p>\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</p>
+<p><span class="math">\[u_0(t) = \frac{1}{2}\left[1 + \operatorname{sgn} x\right]\]</span></p>
+<p>From previous results <span class="math">\(1\Leftrightarrow 2\pi\delta(\omega)\)</span> and <span class="math">\(\operatorname{sgn} x = 2/(j\omega)\)</span> so by linearity</p>
+<p><span class="math">\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
 <p><em>QED</em></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2087,9 +2087,9 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</p>
-<img src="pictures/ft_step.png">
-<p>Unit step is neither even nor odd so the Fourier transform is complex with real part \(F_\mathrm{Re}(\omega) = \pi\delta(\omega)\) and imaginary part \(F_\mathrm{Im}(\omega) = 1/(j\omega)\). The real part is even, and the imaginary part is odd.</p>
+<p><span class="math">\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
+<p><img src="pictures/ft_step.png"></p>
+<p>Unit step is neither even nor odd so the Fourier transform is complex with real part <span class="math">\(F_\mathrm{Re}(\omega) = \pi\delta(\omega)\)</span> and imaginary part <span class="math">\(F_\mathrm{Im}(\omega) = 1/(j\omega)\)</span>. The real part is even, and the imaginary part is odd.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
@@ -2097,7 +2097,7 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Use the results derived so far to show that</p>
-<p>\[e^{j\omega_0 t}u_0(t)\Leftrightarrow \pi\delta(\omega - \omega_0) + \frac{1}{j(\omega-\omega_0)}\]</p>
+<p><span class="math">\[e^{j\omega_0 t}u_0(t)\Leftrightarrow \pi\delta(\omega - \omega_0) + \frac{1}{j(\omega-\omega_0)}\]</span></p>
 <p>Hint: linearity plus frequency shift property.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2106,7 +2106,7 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Use the results derived so far to show that</p>
-<p>\[\sin \omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{j2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] + \frac{\omega^2}{\omega_0^2 - \omega^2}\]</p>
+<p><span class="math">\[\sin \omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{j2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] + \frac{\omega^2}{\omega_0^2 - \omega^2}\]</span></p>
 <p>Hint: Euler's formula plus solution to example 2.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2114,14 +2114,14 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 </section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Use the result of Example 3 to determine the Fourier transform of \(\cos\omega_0 t\; u_0(t)\).</p>
+<p>Use the result of Example 3 to determine the Fourier transform of <span class="math">\(\cos\omega_0 t\; u_0(t)\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\cos\omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] + \frac{j\omega}{\omega_0^2 - \omega^2}\]</p>
+<p><span class="math">\[\cos\omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] + \frac{j\omega}{\omega_0^2 - \omega^2}\]</span></p>
 </div></section>
     </section><section>
     <section>
@@ -2130,7 +2130,7 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If a signal is a function of time \(f(t)\) which is zero for \(t\le 0\), we can obtain the Fourier transform from the Lpalace transform by substituting \(s\) by \(j\omega\).</p>
+<p>If a signal is a function of time <span class="math">\(f(t)\)</span> which is zero for <span class="math">\(t\le 0\)</span>, we can obtain the Fourier transform from the Lpalace transform by substituting <span class="math">\(s\)</span> by <span class="math">\(j\omega\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-5:-Single-Pole-Filter">Example 5: Single Pole Filter<a class="anchor-link" href="#Example-5:-Single-Pole-Filter">&#182;</a></h3>
@@ -2138,9 +2138,9 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Given that</p>
-<p>\[\mathcal{L}\left\{e^{-at}u_0(t)\right\} = \frac{1}{s + a}\]</p>
+<p><span class="math">\[\mathcal{L}\left\{e^{-at}u_0(t)\right\} = \frac{1}{s + a}\]</span></p>
 <p>Compute</p>
-<p>\[\mathcal{F}\left\{e^{-at}u_0(t)\right\}\]</p>
+<p><span class="math">\[\mathcal{F}\left\{e^{-at}u_0(t)\right\}\]</span></p>
 <p>Boulet gives the graph of this function.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2149,9 +2149,9 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Given that</p>
-<p>\[\mathcal{L}\left\{e^{-at}\cos\omega_0 t\;u_0(t)\right\} = \frac{s+a}{(s + a)^2+\omega_0^2}\]</p>
+<p><span class="math">\[\mathcal{L}\left\{e^{-at}\cos\omega_0 t\;u_0(t)\right\} = \frac{s+a}{(s + a)^2+\omega_0^2}\]</span></p>
 <p>Compute</p>
-<p>\[\mathcal{F}\left\{e^{-at}\cos\omega_0 t\;u_0(t)\right\}\]</p>
+<p><span class="math">\[\mathcal{F}\left\{e^{-at}\cos\omega_0 t\;u_0(t)\right\}\]</span></p>
 <p>Boulet gives the graph of this function.</p>
 </div></section>
     </section><section>
@@ -2180,9 +2180,8 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 <p>Boulet has several interesting amplifications of the material presented by Karris. You would be well advised to read these. Particular highlights which we will not have time to cover:</p>
 <ul>
 <li>Time multiplication and its relation to amplitude modulation (pp 182—183).</li>
-<li>Energy density spectrum and Parseval's Equality (pp 183—184).</li>
-<li>Fourier transform of the complex exponential signal \(e^{(\alpha +j\beta)t}\) with graphs (pp 184—187).</li>
-<li>Use of inverse Fourier series to determine \(f(t)\) from a given \(F(j\omega)\) and the &quot;ideal&quot; low-pass filter (pp 188—191).</li>
+<li>Fourier transform of the complex exponential signal <span class="math">\(e^{(\alpha +j\beta)t}\)</span> with graphs (pp 184—187).</li>
+<li>Use of inverse Fourier series to determine <span class="math">\(f(t)\)</span> from a given <span class="math">\(F(j\omega)\)</span> and the &quot;ideal&quot; low-pass filter (pp 188—191).</li>
 <li>The Duality of the Fourier transform (pp 191—192).</li>
 </ul>
 </div></section>
