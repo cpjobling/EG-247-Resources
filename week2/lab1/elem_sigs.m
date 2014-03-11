@@ -33,7 +33,7 @@ ezplot(ans,[-1,1]),grid
 A = 2; T = 2;
 v1 = A*heaviside(t - T);
 ezplot(v1,[-1, 4]),grid
-%% Exercise 1
+%% Part 1
 % To validate Figure 1.8 in the textbook Karris (page 1-4) use the |heaviside|
 % and |ezplot| functions to plot each of the following:
 %
@@ -46,11 +46,11 @@ ezplot(v1,[-1, 4]),grid
 % # $-Au_0(-t)$ 
 % # $-Au_0(-t+T)$ 
 % # $-Au_0(-t-T)$
-%% Exercise 2
+%% Part 2
 % Use the |heaviside| and |ezplot| functionshow that $u_0(t) - u_0(t - 1)$ 
 % represents the rectangular pulse shown in
 % Figure 1.9 of the textbook.
-%% Exercise 3
+%% Part 3
 % Use the |heaviside| and |ezplot| functions to validate equations
 % 1.13, 1.14, 1.17 and 1.18.
 %% The Ramp Function
@@ -72,7 +72,7 @@ int(heaviside(tau),-inf, t)
 % Plot the ramp function
 ezplot(t*heaviside(t),[-1,5]),grid
 %
-%% Exercise 4
+%% Part 4
 % Use |ezplot| to plot $u_2(t)$ and $u_3(t)$ as defined on Page 1-10 of the
 % textbook.
 % Don't Forget to Save Your Work!
@@ -83,5 +83,5 @@ diff(heaviside(t),t)
 % It's not easy to plot the dirac delta function. We have to cheat a little
 td = [-1,0,1]; delta = [0,1,0];
 stem(td,delta)
-%% Exercise 5
+%% Part 5
 % Use Matlab to solve Examples 1.8 and 1.9 from the textbook.
