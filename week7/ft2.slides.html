@@ -2066,7 +2066,7 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Define</p>
-<p>\[u_0(t) = 2\operatorname{sgn} x - 1\]</p>
+<p>\[\operatorname{sgn} t = 2u_0(t) - 1\]</p>
 <img src="pictures/u_as_sign.png">
 <p><em>Does that help?</em></p>
 </div>
@@ -2075,10 +2075,10 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\operatorname{sgn} x = 2u_0(t) - 1\]</p>
+<p>\[\operatorname{sgn} t = 2u_0(t) - 1\]</p>
 <p>so</p>
-<p>\[u_0(t) = \frac{1}{2}\left[1 + \operatorname{sgn} x\right]\]</p>
-<p>From previous results \(1\Leftrightarrow 2\pi\delta(\omega)\) and \(\operatorname{sgn} x = 2/(j\omega)\) so by linearity</p>
+<p>\[u_0(t) = \frac{1}{2}\left[1 + \operatorname{sgn} t\right]\]</p>
+<p>From previous results \(1\Leftrightarrow 2\pi\delta(\omega)\) and \(\operatorname{sgn} t = 2/(j\omega)\) so by linearity</p>
 <p>\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</p>
 <p><em>QED</em></p>
 </div></section><section>
@@ -2106,8 +2106,9 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Use the results derived so far to show that</p>
-<p>\[\sin \omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{j2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] + \frac{\omega^2}{\omega_0^2 - \omega^2}\]</p>
+<p>\[\sin \omega_0 t\; u_0(t)\Leftrightarrow \frac{\pi}{j2}\left[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\right] + \frac{\omega}{\omega_0^2 - \omega^2}\]</p>
 <p>Hint: Euler's formula plus solution to example 2.</p>
+<p><strong>Note</strong>: this result differs from what is presented in Section 8.4.9 of Karris as equation 8.75 (on Page 8.25) and in several tables of transforms that I have found on the internet. However, I have checked it and I think that it is correct.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
@@ -2212,15 +2213,6 @@ Gating function (<em>aka</em> \(\operatorname{rect} (T)\))
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Attempt Questions 1—6 of the End of Chapter Problems (Section 8.10) in Karris.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Lab-Work">Lab Work<a class="anchor-link" href="#Lab-Work">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In the lab, on Monday, we will continue to explore Fourier Series and their applications</p>
 </div></section>
     </section>
 </div>
