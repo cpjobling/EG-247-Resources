@@ -2122,176 +2122,11 @@ Imaginary and Odd
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As was the case of the Laplace Transform, properties of Fourier transforms are usually summarized in Tables of Fourier Transform properties. For example this one: <a href="http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform">Properties of the Fourier Transform (Wikpedia)</a> and Table 8.8 in Karris (page 8-17).</p>
-<p>More detail and some commentry is given in the printable version of these notes.</p>
-<table>
-<thead> 
-<tr><td></td><td>
-<strong>Name</strong>
-</td><td>
-<span class="math">\(f(t)\)</span>
-</td><td>
-<span class="math">\(F(j\omega)\)</span>
-</td><td>
-<strong>Remarks</strong>
-</td></tr>
-<thead>
-<tbody>
-<tr><td>
-1
-</td><td>
-Linearity
-</td><td>
-<span class="math">\(a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\)</span>
-</td><td>
-<span class="math">\(a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\)</span>
-</td><td>
-Fourier transform is a linear operator.
-</td></tr>
-<tr><td>
-2
-</td><td>
-Symmetry
-</td><td>
-<span class="math">\(2\pi f(-j\omega)\)</span>
-</td><td>
-<span class="math">\(F(t)\)</span>
-</td><td></td></tr>
-<tr><td>
-3.
-</td><td>
-Time and frequency scaling
-</td><td>
-<span class="math">\(f(\alpha t)\)</span>
-</td><td>
-<span class="math">\[\frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</span>
-</td><td>
-time compression is frequency expansion and <em>vice versa</em>
-</td></tr>
-<tr><td>
-4.
-</td><td>
-Time shifting
-</td><td>
-<span class="math">\[f(t-t_0)\]</span>
-</td><td>
-<span class="math">\[e^{-j\omega t_0}F(j\omega)\]</span>
-</td><td>
-A time shift corresponds to a phase shift in frequency domain
-</td></tr>
-<tr><td>
-5.
-</td><td>
-Frequency shifting
-</td><td>
-<span class="math">\[e^{j\omega_0 t}f(t)\]</span>
-</td><td>
-<span class="math">\[F(j\omega-j\omega_0)\]</span>
-</td><td>
-Multiplying a signal by a complex exponential results in a frequency shift.
-</td></tr>
-<tr><td>
-6.
-</td><td>
-Time differentiation
-</td><td>
-<span class="math">\[\frac{d^n}{dt^n}\,f(t)\]</span>
-</td><td>
-<span class="math">\[(j\omega)^nF(j\omega)\]</span>
-</td><td></td></tr>
-<tr><td>
-7.
-</td><td>
-Frequency differentiation
-</td><td>
-<span class="math">\[(-jt)^n f(t)\]</span>
-</td><td>
-<span class="math">\[\frac{d^n}{d\omega^n}F(j\omega)\]</span>
-</td><td></td></tr>
-<tr><td>
-8.
-</td><td>
-Time integration
-</td><td>
-<span class="math">\[\int_{-\infty}^{t}f(\tau)d\tau\]</span>
-</td><td>
-<span class="math">\[\frac{F(j\omega)}{j\omega}+\pi F(0)\delta(\omega)\]</span>
-</td><td></td></tr>
-<tr><td>
-9.
-</td><td>
-Conjugation
-</td><td>
-<span class="math">\[f^*(t)\]</span>
-</td><td>
-<span class="math">\[F^*(-j\omega)\]</span>
-</td><td></td></tr>
-<tr><td>
-10.
-</td><td>
-Time convolution
-</td><td>
-<span class="math">\[f_1(t)*f_2(t)\]</span>
-</td><td>
-<span class="math">\[F_1(j\omega) F_2(j\omega)\]</span>
-</td><td>
-Compare with Laplace Transform
-</td></tr>
-<tr><td>
-11.
-</td><td>
-Frequency convolution
-</td><td>
-<span class="math">\[f_1(t)f_2(t)\]</span>
-</td><td>
-<span class="math">\[\frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</span>
-</td><td>
-This has application to amplitude modulation as shown in Boulet pp 182—183.
-</td></tr>
-<tr><td>
-12.
-</td><td>
-Area under <span class="math">\(f(t)\)</span>
-</td><td>
-<span class="math">\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</span>
-</td><td></td><td>
-Way to calculate DC (or average) value of a signal
-</td></tr>
-<tr><td>
-13.
-</td><td>
-Area under <span class="math">\(F(j\omega)\)</span>
-</td><td>
-<span class="math">\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</span>
-</td><td></td><td></td></tr>
-<tr><td>
-14.
-</td><td>
-Energy-Density Spectrum
-</td><td>
-<span class="math">\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|F(j\omega)|^2\,d\omega.\]</span>
-</td><td></td><td></td></tr>
-<tr><td>
-15.
-</td><td>
-Parseval's theorem
-</td><td>
-<span class="math">\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\omega)|^2\,d\omega.\]</span>
-</td><td></td><td>
-Definition RMS follows from this
-</td></tr>
-</tbody>
-</table>
-
-<p>See also: <a href="http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Properties">Wikibooks: Engineering Tables/Fourier Transform Properties</a> and <a href="http://mathworld.wolfram.com/FourierTransform.html">Fourier Transfom—WolframMathworld</a> for more complete references.</p>
-</div><div style=display:none>
-    
-<div class="text_cell_render border-box-sizing rendered_html">
 <p>Again, we will provide any properties that you might need in the examination.</p>
 <p>For fun, you may like to read and even complete the proofs for these properties guided by the text books Karris (Section 8.3) or Boulet pp 180—185.</p>
 <p>We are more interested in your ability to exploit the properties in problem solving.</p>
-</div>
-    </div><div style=display:none>
+<p>A little more detail is given in the notes available on Blackboard.</p>
+</div><div style=display:none>
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Linearity">Linearity<a class="anchor-link" href="#Linearity">&#182;</a></h3>
@@ -2487,6 +2322,176 @@ Definition RMS follows from this
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Table-of-Properites-of-the-Fourier-Transform">Table of Properites of the Fourier Transform<a class="anchor-link" href="#Table-of-Properites-of-the-Fourier-Transform">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As was the case of the Laplace Transform, properties of Fourier transforms are usually summarized in Tables of Fourier Transform properties. For example this one: <a href="http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform">Properties of the Fourier Transform (Wikpedia)</a> and Table 8.8 in Karris (page 8-17).</p>
+<p>More detail and some commentry is given in the printable version of these notes.</p>
+<table>
+<thead> 
+<tr><td></td><td>
+<strong>Name</strong>
+</td><td>
+<span class="math">\(f(t)\)</span>
+</td><td>
+<span class="math">\(F(j\omega)\)</span>
+</td><td>
+<strong>Remarks</strong>
+</td></tr>
+<thead>
+<tbody>
+<tr><td>
+1
+</td><td>
+Linearity
+</td><td>
+<span class="math">\(a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\)</span>
+</td><td>
+<span class="math">\(a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\)</span>
+</td><td>
+Fourier transform is a linear operator.
+</td></tr>
+<tr><td>
+2
+</td><td>
+Symmetry
+</td><td>
+<span class="math">\(2\pi f(-j\omega)\)</span>
+</td><td>
+<span class="math">\(F(t)\)</span>
+</td><td></td></tr>
+<tr><td>
+3.
+</td><td>
+Time and frequency scaling
+</td><td>
+<span class="math">\(f(\alpha t)\)</span>
+</td><td>
+<span class="math">\[\frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</span>
+</td><td>
+time compression is frequency expansion and <em>vice versa</em>
+</td></tr>
+<tr><td>
+4.
+</td><td>
+Time shifting
+</td><td>
+<span class="math">\[f(t-t_0)\]</span>
+</td><td>
+<span class="math">\[e^{-j\omega t_0}F(j\omega)\]</span>
+</td><td>
+A time shift corresponds to a phase shift in frequency domain
+</td></tr>
+<tr><td>
+5.
+</td><td>
+Frequency shifting
+</td><td>
+<span class="math">\[e^{j\omega_0 t}f(t)\]</span>
+</td><td>
+<span class="math">\[F(j\omega-j\omega_0)\]</span>
+</td><td>
+Multiplying a signal by a complex exponential results in a frequency shift.
+</td></tr>
+<tr><td>
+6.
+</td><td>
+Time differentiation
+</td><td>
+<span class="math">\[\frac{d^n}{dt^n}\,f(t)\]</span>
+</td><td>
+<span class="math">\[(j\omega)^nF(j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+7.
+</td><td>
+Frequency differentiation
+</td><td>
+<span class="math">\[(-jt)^n f(t)\]</span>
+</td><td>
+<span class="math">\[\frac{d^n}{d\omega^n}F(j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+8.
+</td><td>
+Time integration
+</td><td>
+<span class="math">\[\int_{-\infty}^{t}f(\tau)d\tau\]</span>
+</td><td>
+<span class="math">\[\frac{F(j\omega)}{j\omega}+\pi F(0)\delta(\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+9.
+</td><td>
+Conjugation
+</td><td>
+<span class="math">\[f^*(t)\]</span>
+</td><td>
+<span class="math">\[F^*(-j\omega)\]</span>
+</td><td></td></tr>
+<tr><td>
+10.
+</td><td>
+Time convolution
+</td><td>
+<span class="math">\[f_1(t)*f_2(t)\]</span>
+</td><td>
+<span class="math">\[F_1(j\omega) F_2(j\omega)\]</span>
+</td><td>
+Compare with Laplace Transform
+</td></tr>
+<tr><td>
+11.
+</td><td>
+Frequency convolution
+</td><td>
+<span class="math">\[f_1(t)f_2(t)\]</span>
+</td><td>
+<span class="math">\[\frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</span>
+</td><td>
+This has application to amplitude modulation as shown in Boulet pp 182—183.
+</td></tr>
+<tr><td>
+12.
+</td><td>
+Area under <span class="math">\(f(t)\)</span>
+</td><td>
+<span class="math">\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</span>
+</td><td></td><td>
+Way to calculate DC (or average) value of a signal
+</td></tr>
+<tr><td>
+13.
+</td><td>
+Area under <span class="math">\(F(j\omega)\)</span>
+</td><td>
+<span class="math">\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</span>
+</td><td></td><td></td></tr>
+<tr><td>
+14.
+</td><td>
+Energy-Density Spectrum
+</td><td>
+<span class="math">\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|F(j\omega)|^2\,d\omega.\]</span>
+</td><td></td><td></td></tr>
+<tr><td>
+15.
+</td><td>
+Parseval's theorem
+</td><td>
+<span class="math">\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\omega)|^2\,d\omega.\]</span>
+</td><td></td><td>
+Definition RMS follows from this
+</td></tr>
+</tbody>
+</table>
+
+<p>See also: <a href="http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Properties">Wikibooks: Engineering Tables/Fourier Transform Properties</a> and <a href="http://mathworld.wolfram.com/FourierTransform.html">Fourier Transfom—WolframMathworld</a> for more complete references.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h2>
 </div>
 
@@ -2515,7 +2520,7 @@ Definition RMS follows from this
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span class="math">\[\cos\omega_c t = \frac{e^{j\omega_c t}+e^{-j\omega_c t}}{2}\]</span></p>
 <p>it follows from the <em>frequency shifting</em> property that</p>
-<p><span class="math">\[f(t)\cos\omega_0 t \Leftrightarrow \frac{F(j\omega-j\omega_c)+F(j\omega + j\omega_c)}{2}.\]</span></p>
+<p><span class="math">\[f(t)\cos\omega_c t \Leftrightarrow \frac{F(j\omega-j\omega_c)+F(j\omega + j\omega_c)}{2}.\]</span></p>
 </div>
     </div><div style=display:none>
     
@@ -2619,19 +2624,6 @@ Definition RMS follows from this
 <ul>
 <li><a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft1.ipynb">Fourier transform of commonly occuring signals</a> (<a href="http://cpjobling.github.io/EG-247-Resources/week7/ft1.slides.html">Slides</a>)</li>
 </ul>
-</div>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre>
-</pre></div>
-
-</div>
-</div>
-
 </div></section>
     </section>
 </div>
