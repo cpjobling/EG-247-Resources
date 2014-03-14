@@ -1741,10 +1741,20 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This session we will apply what we have learned about Fourier transforms to some typical cicuit problems. After a short introduction, this session will be an examples class.</p>
+<p>The material in this presentation and notes is based on Chapter X (Starting at Section X.Y) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>. I also used Chapter Z of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the <strong>Recommended Reading List</strong>.</p>
 </div></section>
     </section><section>
     <section>
@@ -1761,16 +1771,6 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Scope-and-Background-Reading">Scope and Background Reading<a class="anchor-link" href="#Scope-and-Background-Reading">&#182;</a></h2>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This session ....</p>
-<p>The material in this presentation and notes is based on Chapter X (Starting at Section X.Y) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>. I also used Chapter Z of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the <strong>Recommended Reading List</strong>.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-System-Function">The System Function<a class="anchor-link" href="#The-System-Function">&#182;</a></h2>
 </div>
 
@@ -1779,33 +1779,33 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Recall that the convolution integral of a system with impulse response <span class="math">\(h(t)\)</span> and input <span class="math">\(u(t)\)</span> is</p>
-<p><span class="math">\[h(t)*u(t)=\int_{-\infty}^{\infty}h(t-\tau)u(\tau)\,d\tau.\]</span></p>
+<p>Recall that the convolution integral of a system with impulse response \(h(t)\) and input \(u(t)\) is</p>
+<p>\[h(t)*u(t)=\int_{-\infty}^{\infty}h(t-\tau)u(\tau)\,d\tau.\]</p>
 <p>We let</p>
-<p><span class="math">\[g(t) = h(t)*u(t)\]</span></p>
+<p>\[g(t) = h(t)*u(t)\]</p>
 <p>Then by the time convolution property</p>
-<p><span class="math">\[h(t)*u(t) = g(t) \Leftrightarrow G(\omega) = H(\omega).U(\omega)\]</span></p>
+<p>\[h(t)*u(t) = g(t) \Leftrightarrow G(\omega) = H(\omega).U(\omega)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-System-Function">The System Function<a class="anchor-link" href="#The-System-Function">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We call <span class="math">\(H(\omega)\)</span> the <em>system function</em>.</p>
-<p>We note that the system function <span class="math">\(H(\omega)\)</span> and the impulse response $h(t) form the Fourier transform pair</p>
-<p><span class="math">\[h(t) \Leftrightarrow H(\omega)\]</span></p>
+<p>We call \(H(\omega)\) the <em>system function</em>.</p>
+<p>We note that the system function \(H(\omega)\) and the impulse response $h(t) form the Fourier transform pair</p>
+<p>\[h(t) \Leftrightarrow H(\omega)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Obtaining-system-response">Obtaining system response<a class="anchor-link" href="#Obtaining-system-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If we know the impulse resonse <span class="math">\(h(t)\)</span>, we can compute the system response <span class="math">\(g(t)\)</span> of any input <span class="math">\(u(t)\)</span> by multiplying the Fourier transforms of <span class="math">\(H(\omega)\)</span> and <span class="math">\(U(\omega)\)</span> to obtain <span class="math">\(G(\omega)\)</span>. Then we take the inverse Fourier transform of <span class="math">\(G(\omega)\)</span> to obtain the response <span class="math">\(g(t)\)</span>.</p>
+<p>If we know the impulse resonse \(h(t)\), we can compute the system response \(g(t)\) of any input \(u(t)\) by multiplying the Fourier transforms of \(H(\omega)\) and \(U(\omega)\) to obtain \(G(\omega)\). Then we take the inverse Fourier transform of \(G(\omega)\) to obtain the response \(g(t)\).</p>
 <ol style="list-style-type: decimal">
-<li>Transform <span class="math">\(h(t) \to H(\omega)\)</span></li>
-<li>Transform <span class="math">\(u(t) \to U(\omega)\)</span></li>
-<li>Compute <span class="math">\(G(\omega) = H(\omega).U(\omega)\)</span></li>
-<li>Find <span class="math">\(\mathcal{F}^{-1}\left\{G(\omega)\right\} \to g(t)\)</span></li>
+<li>Transform \(h(t) \to H(\omega)\)</li>
+<li>Transform \(u(t) \to U(\omega)\)</li>
+<li>Compute \(G(\omega) = H(\omega).U(\omega)\)</li>
+<li>Find \(\mathcal{F}^{-1}\left\{G(\omega)\right\} \to g(t)\)</li>
 </ol>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1813,8 +1813,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 8.8: for the linear network shown below, the impulse response is <span class="math">\(h(t)=3e^{-t}\)</span>. Use the Fourier transform to compute the response <span class="math">\(y(t)\)</span> when the input <span class="math">\(u(t)=2[u_0(t)-u_0(t-3)]\)</span>. Verify the result with Matlab.</p>
-<p><img src="pictures/example1.png"></p>
+<p>Karris example 8.8: for the linear network shown below, the impulse response is \(h(t)=3e^{-t}\). Use the Fourier transform to compute the response \(y(t)\) when the input \(u(t)=2[u_0(t)-u_0(t-3)]\). Verify the result with Matlab.</p>
+<img src="pictures/example1.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-verification">Matlab verification<a class="anchor-link" href="#Matlab-verification">&#182;</a></h3>
@@ -1825,17 +1825,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <p>Result:</p>
 <pre><code>y = 3*heaviside(t) - 3*heaviside(t - 3) + 3*heaviside(t - 3)*exp(6 - 2*t) - 3*exp(-2*t)*heaviside(t)</code></pre>
 <p>Which after gathering terms gives</p>
-<p><span class="math">\[y(t) = 3(1 - 3e^{-2t})u_0(t) - 3(1 - 3e^{-2(t-3)})u_0(t-3)\]</span></p>
+<p>\[y(t) = 3(1 - 3e^{-2t})u_0(t) - 3(1 - 3e^{-2(t-3)})u_0(t-3)\]</p>
 <p>And here's a plot:</p>
-<p><img src="pictures/ft3_ex1.png"></p>
+<img src="pictures/ft3_ex1.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 8.9: for the circuit shown below, use the Fourier transfrom method, and the system function <span class="math">\(H(\omega)\)</span> to compute <span class="math">\(V_L(t)\)</span>. Assume <span class="math">\(i_L(0^-)=0\)</span>. Verify the result with Matlab.</p>
-<p><img src="pictures/example2.png" width="50%"></p>
+<p>Karris example 8.9: for the circuit shown below, use the Fourier transfrom method, and the system function \(H(\omega)\) to compute \(V_L(t)\). Assume \(i_L(0^-)=0\). Verify the result with Matlab.</p>
+<img src="pictures/example2.png" width="50%">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-verification">Matlab verification<a class="anchor-link" href="#Matlab-verification">&#182;</a></h3>
@@ -1846,9 +1846,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <p>Result:</p>
 <pre><code>vout = -5*exp(-3*t)*heaviside(t)*(2*exp(t) - 3)</code></pre>
 <p>Which after gathering terms gives</p>
-<p><span class="math">\[v_{\mathrm{out}} = 5\left(3e^{-3t} - 2e^{-2t}\right)u_0(t)\]</span></p>
+<p>\[v_{\mathrm{out}} = 5\left(3e^{-3t} - 2e^{-2t}\right)u_0(t)\]</p>
 <p>And here's a plot:</p>
-<p><img src="pictures/ft3_ex2.png"></p>
+<img src="pictures/ft3_ex2.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
@@ -1856,9 +1856,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Karris example 8.10: for the linear network shown below, the input-output relationship is:</p>
-<p><span class="math">\[\frac{d}{dt}v_{\mathrm{out}}+4v_{\mathrm{out}}=10v_{\mathrm{in}}\]</span></p>
-<p>where <span class="math">\(v_{\mathrm{in}}=3e^{-2t}\)</span>. Use the Fourier transform method, and the system function <span class="math">\(H(\omega)\)</span> to compute the output <span class="math">\(v_{\mathrm{out}}\)</span>. Verify the result with Matlab.</p>
-<p><img src="pictures/example3.jpg" width="75%"></p>
+<p>\[\frac{d}{dt}v_{\mathrm{out}}+4v_{\mathrm{out}}=10v_{\mathrm{in}}\]</p>
+<p>where \(v_{\mathrm{in}}=3e^{-2t}\). Use the Fourier transform method, and the system function \(H(\omega)\) to compute the output \(v_{\mathrm{out}}\). Verify the result with Matlab.</p>
+<img src="pictures/example3.jpg" width="75%">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-verification">Matlab verification<a class="anchor-link" href="#Matlab-verification">&#182;</a></h3>
@@ -1869,19 +1869,19 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 <p>Result:</p>
 <pre><code>15*exp(-4*t)*heaviside(t)*(exp(2*t) - 1)</code></pre>
 <p>Which after gathering terms gives</p>
-<p><span class="math">\[v_{\mathrm{out}}(t) = 15\left(e^{-2t}) - e^{-4t}\right)u_0(t)\]</span></p>
+<p>\[v_{\mathrm{out}}(t) = 15\left(e^{-2t}) - e^{-4t}\right)u_0(t)\]</p>
 <p>And here's a plot:</p>
-<p><img src="pictures/ft3_ex3.png"></p>
+<img src="pictures/ft3_ex3.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 8.11: the voltage across a 1 <span class="math">\(\Omega\)</span> resistor is known to be <span class="math">\(V_{R}(t)=3e^{-2t} u_0(t)\)</span>. Compute the energy dissipated in the resistor for <span class="math">\(0\lt t\lt\infty\)</span>, and verify the result using Parseval's theorem. Verify the result with Matlab.</p>
+<p>Karris example 8.11: the voltage across a 1 \(\Omega\) resistor is known to be \(V_{R}(t)=3e^{-2t} u_0(t)\). Compute the energy dissipated in the resistor for \(0\lt t\lt\infty\), and verify the result using Parseval's theorem. Verify the result with Matlab.</p>
 <p>Note from <a href="http://en.wikipedia.org/wiki/Lists_of_integrals">tables of integrals</a></p>
-<p><span class="math">\[\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.\]</span></p>
-<p><img src="pictures/example4.png" width="25%"></p>
+<p>\[\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.\]</p>
+<img src="pictures/example4.png" width="25%">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-verification">Matlab verification<a class="anchor-link" href="#Matlab-verification">&#182;</a></h3>
