@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft4.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft4.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1797,7 +1797,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ul>
 <li>The range of frequencies which are let through belong to the <strong>pass Band</strong></li>
 <li>The range of frequencies which are cut-off by the filter are called the <strong>stopband</strong></li>
-<li>A typical scenario where filtering is needed is when noise \(n(t)\) is added to a signal \(x(t)\) but that signal has most of its energy outside the bandwidth of a signal.</li>
+<li>A typical scenario where filtering is needed is when noise <span class="math">\(n(t)\)</span> is added to a signal <span class="math">\(x(t)\)</span> but that signal has most of its energy outside the bandwidth of a signal.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1805,35 +1805,35 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/filter1.png">
+<p><img src="pictures/filter1.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Signal">Signal<a class="anchor-link" href="#Signal">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/filter2.png">
+<p><img src="pictures/filter2.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Out-of-Bandwidth-Noise">Out-of Bandwidth Noise<a class="anchor-link" href="#Out-of-Bandwidth-Noise">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/filter3.png">
+<p><img src="pictures/filter3.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Signal-plus-Noise">Signal plus Noise<a class="anchor-link" href="#Signal-plus-Noise">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/filter4.png">
+<p><img src="pictures/filter4.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Filtering">Filtering<a class="anchor-link" href="#Filtering">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/filter5.png">
+<p><img src="pictures/filter5.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Motivating-example">Motivating example<a class="anchor-link" href="#Motivating-example">&#182;</a></h3>
@@ -1894,28 +1894,28 @@ In&nbsp;[2]:
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An ideal low pass filter cuts-off frequencies higher than its <em>cutoff frequency</em>, \(\omega_c\).</p>
-<p>\[{H_{{\rm{lp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
+<p>An ideal low pass filter cuts-off frequencies higher than its <em>cutoff frequency</em>, <span class="math">\(\omega_c\)</span>.</p>
+<p><span class="math">\[{H_{{\rm{lp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
 {1,}&amp;{|\omega |{\kern 1pt} \, &lt; {\omega _c}}\\
 {0,}&amp;{|\omega |{\kern 1pt} \, \ge {\omega _c}}
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-response">Frequency response<a class="anchor-link" href="#Frequency-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/ideal_lpf.png">
+<p><img src="pictures/ideal_lpf.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{h_{{\rm{lp}}}}(t) = \frac{{{\omega _c}}}{\pi }{\mathop{\rm sinc}\nolimits} \left( {\frac{{{\omega _c}}}{\pi }t} \right)\]</p>
+<p><span class="math">\[{h_{{\rm{lp}}}}(t) = \frac{{{\omega _c}}}{\pi }{\mathop{\rm sinc}\nolimits} \left( {\frac{{{\omega _c}}}{\pi }t} \right)\]</span></p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/sinc.png">
+<p><img src="pictures/sinc.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Filtering-is-Convolution">Filtering is Convolution<a class="anchor-link" href="#Filtering-is-Convolution">&#182;</a></h3>
@@ -1923,11 +1923,11 @@ In&nbsp;[2]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The output of an LTI system with impulse response</p>
-<p>\[h(t) \Leftrightarrow H(\omega)\]</p>
+<p><span class="math">\[h(t) \Leftrightarrow H(\omega)\]</span></p>
 <p>subject to an input signal</p>
-<p>\[x(t) \Leftrightarrow X(\omega)\]</p>
+<p><span class="math">\[x(t) \Leftrightarrow X(\omega)\]</span></p>
 <p>is given by</p>
-<p>\[y(t) = h(t)*x(t) \Leftrightarrow Y(\omega) = H(\omega)X(\omega)\]</p>
+<p><span class="math">\[y(t) = h(t)*x(t) \Leftrightarrow Y(\omega) = H(\omega)X(\omega)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Issues-with-the-&quot;ideal&quot;-filter">Issues with the "ideal" filter<a class="anchor-link" href="#Issues-with-the-&quot;ideal&quot;-filter">&#182;</a></h3>
@@ -1935,7 +1935,7 @@ In&nbsp;[2]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is the step response:</p>
-<img src="pictures/step_r.png">
+<p><img src="pictures/step_r.png"></p>
 <p>(reproduced from Boulet Fig. 5.23 p. 205)</p>
 <p>Ripples in the impulse resonse would be undesireable, and because the impulse response is non-causal it cannot actually be implemented.</p>
 </div></section>
@@ -1947,12 +1947,13 @@ In&nbsp;[2]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>N-th Order Butterworth Filter</p>
-<p>\[\left| {{H_B}(\omega )} \right| = \frac{1}{{{{\left( {1 + {{\left( {\frac{\omega }{{{\omega _c}}}} \right)}^{2N}}} \right)}^{\frac{1}{2}}}}}\]</p>
+<p><span class="math">\[\left| {{H_B}(\omega )} \right| = \frac{1}{{{{\left( {1 + {{\left( {\frac{\omega }{{{\omega _c}}}} \right)}^{2N}}} \right)}^{\frac{1}{2}}}}}\]</span></p>
 <p><strong>Remarks</strong></p>
 <ul>
-<li>DC gain is \(|H_B(j0)|=1\)</li>
-<li>Attenuation at the cut-off frequency is \(|H_B(j\omega_c)|=1/\sqrt{2}\) for any \(N\)</li>
+<li>DC gain is <span class="math">\(|H_B(j0)|=1\)</span></li>
+<li>Attenuation at the cut-off frequency is <span class="math">\(|H_B(j\omega_c)|=1/\sqrt{2}\)</span> for any <span class="math">\(N\)</span></li>
 </ul>
+<p>More about the Butterworth filter: <a href="http://en.wikipedia.org/wiki/Butterworth_filter">Wikipedia Article</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1:-Second-order-BW-Filter">Example 1: Second-order BW Filter<a class="anchor-link" href="#Example-1:-Second-order-BW-Filter">&#182;</a></h3>
@@ -1960,31 +1961,31 @@ In&nbsp;[2]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The second-order butterworth Filter is defined by is Charecteristic Equation (CE):</p>
-<p>\[p(s) = s^2 + \omega_c\sqrt{2}s+\omega^2 = 0^*\]</p>
-<p>Calculate the roots of \(p(s)\) (the poles of the filter transfer function) in both Cartesian and polar form.</p>
+<p><span class="math">\[p(s) = s^2 + \omega_c\sqrt{2}s+\omega^2 = 0^*\]</span></p>
+<p>Calculate the roots of <span class="math">\(p(s)\)</span> (the poles of the filter transfer function) in both Cartesian and polar form.</p>
 <hr />
-<p><strong>Note</strong>: This has the same characteristic as a control system with damping ratio \(\zeta = 1/\sqrt{2}\) and \(\omega_n = \omega_c\)!</p>
+<p><strong>Note</strong>: This has the same characteristic as a control system with damping ratio <span class="math">\(\zeta = 1/\sqrt{2}\)</span> and <span class="math">\(\omega_n = \omega_c\)</span>!</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Derive the differential equation relating the input \(x(t)\) to output \(y(t)\) of the 2nd-Order Butterworth Low-Pass Filter with cutoff frequency \(\omega_c\).</p>
+<p>Derive the differential equation relating the input <span class="math">\(x(t)\)</span> to output <span class="math">\(y(t)\)</span> of the 2nd-Order Butterworth Low-Pass Filter with cutoff frequency <span class="math">\(\omega_c\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Determine the frequency response \(H_B(\omega)=Y(\omega)/X(\omega)\)</p>
+<p>Determine the frequency response <span class="math">\(H_B(\omega)=Y(\omega)/X(\omega)\)</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Magnitude-of-frequency-response-of-a-2nd-order-Butterworth-Filter">Magnitude of frequency response of a 2nd-order Butterworth Filter<a class="anchor-link" href="#Magnitude-of-frequency-response-of-a-2nd-order-Butterworth-Filter">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/blpmfr.png">
+<p><img src="pictures/blpmfr.png"></p>
 <p>Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1992,8 +1993,11 @@ In&nbsp;[2]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/butter_bode.png">
-<p>Matlab:<br /><code>matlab wc = 100; H = tf(wc^2,[1, wc*sqrt(2), wc^2]) bode(H)</code></p>
+<p><img src="pictures/butter_bode.png"></p>
+<p>Matlab:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">100</span>;
+H = tf(wc^<span class="fl">2</span>,[<span class="fl">1</span>, wc*sqrt(<span class="fl">2</span>), wc^<span class="fl">2</span>])
+bode(H)</code></pre>
 <p>Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2003,15 +2007,16 @@ In&nbsp;[2]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Determine the impulse response of the butterworth filter.</p>
 <p>You will find this Fourier transform pair useful:</p>
-<p>\[e^{-at}\sin\omega_0 t\;u_0(t) \Leftrightarrow \frac{\omega_0}{(j\omega + a)^2+\omega_0^2}\]</p>
+<p><span class="math">\[e^{-at}\sin\omega_0 t\;u_0(t) \Leftrightarrow \frac{\omega_0}{(j\omega + a)^2+\omega_0^2}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Impulse-response">Impulse response<a class="anchor-link" href="#Impulse-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/butter_imp.png">
-<p>Matlab:<br /><code>matlab impulse(H)</code></p>
+<p><img src="pictures/butter_imp.png"></p>
+<p>Matlab:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">impulse(H)</code></pre>
 <p>Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2019,8 +2024,10 @@ In&nbsp;[2]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/butter_step.png">
-<p>Matlab:<br /><code>matlab step(H)</code> Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
+<p><img src="pictures/butter_step.png"></p>
+<p>Matlab:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">step(H)</code></pre>
+<p>Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
 </div></section>
     </section><section>
     <section>
@@ -2031,18 +2038,18 @@ In&nbsp;[2]:
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An ideal highpass filter cuts-off frequencies lower than its <em>cutoff frequency</em>, \(\omega_c\).</p>
-<p>\[{H_{{\rm{hp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
+<p>An ideal highpass filter cuts-off frequencies lower than its <em>cutoff frequency</em>, <span class="math">\(\omega_c\)</span>.</p>
+<p><span class="math">\[{H_{{\rm{hp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
 {0,}&amp;{|\omega |{\kern 1pt} \, \le {\omega _c}}\\
 {1,}&amp;{|\omega |{\kern 1pt} \, &gt; {\omega _c}}
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-response">Frequency response<a class="anchor-link" href="#Frequency-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/ideal_hpf.png">
+<p><img src="pictures/ideal_hpf.png"></p>
 </div></section>
     </section><section>
     <section>
@@ -2052,9 +2059,9 @@ In&nbsp;[2]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Frequency response</strong></p>
-<p>\[H_{\mathrm{hp}}(\omega)=1-H_{\mathrm{lp}}(\omega)\]</p>
+<p><span class="math">\[H_{\mathrm{hp}}(\omega)=1-H_{\mathrm{lp}}(\omega)\]</span></p>
 <p><strong>Impulse response</strong></p>
-<p>\[h_{\mathrm{hp}}(t)=\delta(t)-h_{\mathrm{lp}}(t)\]</p>
+<p><span class="math">\[h_{\mathrm{hp}}(t)=\delta(t)-h_{\mathrm{lp}}(t)\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-5">Example 5<a class="anchor-link" href="#Example-5">&#182;</a></h3>
@@ -2068,7 +2075,7 @@ In&nbsp;[2]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/bhpmfr.png">
+<p><img src="pictures/bhpmfr.png"></p>
 <p>Generated with <a href="matlab/butter2_ex.m">butter2_ex.m</a></p>
 </div></section>
     </section><section>
@@ -2078,15 +2085,15 @@ In&nbsp;[2]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An ideal bandpass filter cuts-off frequencies lower than its first <em>cutoff frequency</em> \(\omega_{c1}\), and higher than its second <em>cutoff frequency</em> \(\omega_{c2}\).</p>
-<p>\[{H_{{\rm{bp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
+<p>An ideal bandpass filter cuts-off frequencies lower than its first <em>cutoff frequency</em> <span class="math">\(\omega_{c1}\)</span>, and higher than its second <em>cutoff frequency</em> <span class="math">\(\omega_{c2}\)</span>.</p>
+<p><span class="math">\[{H_{{\rm{bp}}}}(\omega ) = \left\{ {\begin{array}{*{20}{c}}
 {1,}&amp;{{\omega _{c1}} &lt; \,|\omega |\, &lt; {\omega _{c2}}}\\
 {0,}&amp;{{\rm{otherwise}}}
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/bbpmfr.png">
+<p><img src="pictures/bbpmfr.png"></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2097,19 +2104,19 @@ In&nbsp;[2]:
 <p>A bandpass filter can be obtained by multiplying the frequency responses of a lowpass filter by a highpass filter.</p>
 </div>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[H_{\mathrm{bp}}(\omega) = H_{\mathrm{hp}}(\omega)H_{\mathrm{lp}}(\omega)\]</p>
+<p><span class="math">\[H_{\mathrm{bp}}(\omega) = H_{\mathrm{hp}}(\omega)H_{\mathrm{lp}}(\omega)\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The highpass filter should have cut-off frequency of \(\omega_{c1}\)</li>
+<li>The highpass filter should have cut-off frequency of <span class="math">\(\omega_{c1}\)</span></li>
 </ul>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The lowpass filter should have cut-off frequency of \(\omega_{c2}\)</li>
+<li>The lowpass filter should have cut-off frequency of <span class="math">\(\omega_{c2}\)</span></li>
 </ul>
 </div>
     </div></section>
