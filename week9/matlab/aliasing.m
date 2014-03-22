@@ -27,4 +27,4 @@ plot(t,A*cos(w0*t/2),'g-.')
 hold off
 title('An Example of Aliasing')
 xlabel('Time t [s]')
-ylable('x(t)')
+ylabel('x(t)')
