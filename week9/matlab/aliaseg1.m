@@ -1,16 +1,16 @@
-% aliaseg2 - Illustrate aliasing
-%Matlab file used for class demo conducted during session on sampling
-%to illustrate the effects of aliasing AND the relationship
-%between the DTFT and CTFT when the DT signal is obtained
-%by sampling an analog CT signal.
+%% Aliasing Example 2
+% aliaseg1 - Illustrate aliasing.
 %
-%A short recorded sample is effectively sampled at four different
-%rates and played back to hear the effects of aliasing.
+% Matlab file used for class demo conducted during session on sampling
+% to illustrate the effects of aliasing AND the relationship
+% between the DTFT and CTFT when the DT signal is obtained
+% by sampling an analog CT signal.
 %
-% Prepared for EG-247 Signals and Systems
-% by Chris P. Jobling.
-% 
-% Based on an example by Prof. Charles A. Bouman, 
+% A short recorded sample is effectively sampled at four different
+% rates and played back to hear the effects of aliasing.
+%
+% Adapted for EG-247 Signals and Systems
+% by Dr Chris P. Jobling from an example by Prof. Charles A. Bouman, 
 % School of Electrical and Computer Engineering, 
 % Purdue University, West Lafayette.
 %
@@ -40,18 +40,18 @@ ylabel('Spectral Magnitude')
 domega=2*pi/8192;
 omega=-pi:domega:pi-domega;
 pause
-input(['Playback speech at original sampling rate of 8000 Hz.']);
+input('Playback speech at original sampling rate of 8000 Hz.');
 soundsc(datar,Fs)
 disp('Reduce sampling rate by a factor of 2 thru decimation');
-input([' and playback speech at sampling rate of 4000 Hz.']);
+input(' and playback speech at sampling rate of 4000 Hz.');
 datar2=datar(1:2:dsize);
 soundsc(datar2,Fs/2)
 disp('Reduce sampling rate by a factor of 3 thru decimation');
-input([' and playback speech at sampling rate of 2667 Hz.'])
+input(' and playback speech at sampling rate of 2667 Hz.')
 datar3=datar(1:3:dsize);
 soundsc(datar3,round(Fs/3))
 disp('Reduce sampling rate by a factor of 4 thru decimation');
-input([' and playback speech at sampling rate of 2000 Hz.']);
+input(' and playback speech at sampling rate of 2000 Hz.');
 datar4=datar(1:4:dsize);
 soundsc(datar4,Fs/4)
 

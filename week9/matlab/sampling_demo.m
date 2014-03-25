@@ -7,7 +7,7 @@
 %
 %% Set up audio recorder
 recObj = audiorecorder;
-%% Record some sound with prompts for user
+%% Record so
 disp('Start speaking: say "EG-247 Signals and Systems"')
 disp('Press any key when your are ready...')
 pause
@@ -16,7 +16,7 @@ disp('End of Recording.');
 % Display meta data
 recObj
 %% Play back the recording.
-disp('Press any key when your are ready to hear the playback')
+disp('Press any key when your are ready...')
 pause
 play(recObj);
 %% Store data in double-precision array.
@@ -26,7 +26,8 @@ plot(myRecording);
 title('Time plot of sampled sound - zoom to see details')
 xlabel('Sample number [n]')
 ylabel('Sampled sound value')
-%% Plot the samples
+%%
+% Plot the samples
 stem([1000:1049],myRecording(1000:1049))
 title('Stem plot of small sample of waveform: n = 1000 to 1049')
 xlabel('Sample number [n]')
