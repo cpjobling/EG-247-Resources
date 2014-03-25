@@ -9,13 +9,13 @@ function Hd = testfda
 % Butterworth Lowpass filter designed using FDESIGN.LOWPASS.
 
 % All frequency values are in Hz.
-Fs = 741586;  % Sampling Frequency
+Fs = [fill-this-in];  % Sampling Frequency
 
-Fpass = 74158;       % Passband Frequency
-Fstop = 148317;      % Stopband Frequency
-Apass = 3;           % Passband Ripple (dB)
-Astop = 60;          % Stopband Attenuation (dB)
-match = 'stopband';  % Band to match exactly
+Fpass = [fill-this-in];       % Passband Frequency
+Fstop = [fill-this-in];      % Stopband Frequency
+Apass = [fill-this-in];           % Passband Ripple (dB)
+Astop = [fill-this-in];          % Stopband Attenuation (dB)
+match = [fill-this-in];  % Band to match exactly
 
 % Construct an FDESIGN object and call its BUTTER method.
 h  = fdesign.lowpass(Fpass, Fstop, Apass, Astop, Fs);
@@ -26,21 +26,25 @@ Hd = design(h, 'butter', 'MatchExactly', match);
 % and stop band
 %
 % Note we are doing this in advance of presenting sampling theory!
-fs = sampling frequency;
-Ts = 1/fs;   % sampling time
 % sampling frequency in Hz
-ws = 2*pi*fs; % sampling frequency in rad/s
+fs = Fpass;
+% sampling time
+Ts = 1/fs;   
+% sampling frequency in rad/s
+ws = 2*pi*fs; 
 %% Signal
-% generate the noisy signal which will be filtered
-f0 = Fpass;
+% generate the signals which will be filtered
+f0 = 74158;
 t0 = 1/f0; % Hz
-t = 0:Ts:10*t0; 
-x = cos(2*pi*f0*t)
+t = [0:200].*Ts; 
+x = cos(2*pi*f0*t);
 x(end) = []; % removes last element
+% filter signal
 x_filtered = filter(Hd,x);
-%%
 %plot the filtered signal
+%%
 plot(x_filtered,'r')
 title('Filtered Signal')
 xlabel('Samples');
 ylabel('Amplitude')
+%% Repeat for a frequency well inside the pass-band and one in the stop band
