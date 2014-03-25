@@ -1773,6 +1773,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will be using an adaptation of a pair of demo scripts to illustrate <em>alialising</em>. These scripts were published by Prof. Charles A. Bouman, School of Electrical and Computer Engineering, Purdue University as part of the course materials for <a href="https://engineering.purdue.edu/VISE/ee438/demos/">ECE438: Digital Signal Processing</a>.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2>
 </div>
 
@@ -1787,9 +1796,64 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-Real-Example">A Real Example<a class="anchor-link" href="#A-Real-Example">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I need a volunteer to provide a sound sample ....</p>
+<ol style="list-style-type: decimal">
+<li>I will use this script <a href="matlab/sampling_demo.m">sampling_demo.m</a> to sample your voice.</li>
+<li>I will then playback the recording.</li>
+<li>I will the plot the data.</li>
+</ol>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Technical-Details">Technical Details<a class="anchor-link" href="#Technical-Details">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Sampling rate</strong>: 8000 samples per second (fs = 8 kHz)</li>
+<li><strong>Resolution</strong>: 8 bits per sample</li>
+<li><strong>Channels</strong>: 1 channel.</li>
+<li><strong>Reconstruction</strong>: Matlab plays the audio back at 8192 samples per second.</li>
+</ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Question">Question<a class="anchor-link" href="#Question">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What will the bit-rate be for playback?</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = [number of samples per second] x [number of bits per sample] x [number of channels]</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = \(8192 \times 8 \times 1\) bits/second [baud]</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = \(65,536\) bits/second</p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Sampling-CT-Signals">Sampling CT Signals<a class="anchor-link" href="#Sampling-CT-Signals">&#182;</a></h2>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is going on here?</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-domain">Time domain<a class="anchor-link" href="#Time-domain">&#182;</a></h3>
 </div>
@@ -1805,15 +1869,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Multiplication in time domain is <em>convolution</em> in the Frequency domain</p>
+<p>Multiplication in time domain is <em>convolution</em> in the frequency domain</p>
 <img src="pictures/sampling_fr.png">
 <p>\(\omega_s\) is the frequency of the periodic sampling function = \(2\pi/T_s\).</p>
-</div><div class="fragment">
-    
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Frequency convolution</strong>: \[{X_s}(\omega ) = \frac{1}{{{T_s}}}\int_{ - \infty }^{ + \infty } {X(\upsilon )} \sum\limits_{n =  - \infty }^{ + \infty } {\delta (t - \upsilon  - k{\omega _s})} \,d\upsilon \]</p>
-</div>
-    </div></section><section>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Mathematics">The Mathematics<a class="anchor-link" href="#The-Mathematics">&#182;</a></h3>
 </div>
@@ -1838,13 +1897,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p><strong>Sifting property</strong>:</p>
 <p>\[{X_s}(\omega ) = \frac{1}{{{T_s}}}\sum\limits_{n =  - \infty }^{ + \infty } {X(\omega  - k{\omega _s})}\]</p>
 </div>
-    </div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Nyquist-Shannon-Sampling-Theorem">Nyquist-Shannon Sampling Theorem<a class="anchor-link" href="#Nyquist-Shannon-Sampling-Theorem">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Gives a sufficient condition to recover a continuous time signal from its samples \(x(nT_s),\)n</p>
+<p>Gives a sufficient condition to recover a continuous time signal from its samples \(x(nT_s)\), \(n\) is an integer.</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1929,7 +1988,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p><strong>Problem</strong></p>
 <ul>
 <li>We have a bandlimited signal that is sampled at the Nyquist-Shannon sampling frequency \(\omega_s = 2\pi/T_s\).</li>
-<li>We therefore have a discrete-time (DT) signal</li>
+<li>We therefore have a discrete-time (DT) signal \(x(nT_s)\) from which we want to reconstruct the original signal.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1949,7 +2008,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/sampling_06.png">
 <p>This image was generated by the Matlab script: <a href="matlab/sampling.m">sampling.m</a></p>
-</div>
+</div><div style=display:none>
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Each impulse in \(x_s(t)\) triggers the impulse reponse of the lowpass filter (the sinc signal), the the resulting signal \(x(t)\) at the output of the filter is the sum of all thse time-shifted sinc signals with amplitudes equal to the samples \(x(nT_s)\).</p>
 <p>\[x(t) = \sum\limits_{k =  - \infty }^{ + \infty } {x(n{T_s}){\rm{sinc}}} \left( {\frac{{t - n{T_s}}}{{{T_s}}}} \right)\]</p>
@@ -1957,31 +2017,23 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>This is clearly unfeasible, at least in real-time, so we have to resort to approximations of the ideal low-pass filter.</p>
 <p>A couple of examples are given below. Boulet gives more information including an evaluation of the quality of the approximation.</p>
 <p>In practice, the zero-order-hold is often used in practice and a low-pass filter with a flat passband (such as the Butterworth filter discussed in the last lecture) would be used. In audio applications, for example, the low-pass nature of speakers and the human ear add additional smoothing and for non HiFi applications (e.g. an MP3 player) may be all that is actually used!</p>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Zero-Order-Hold">Zero-Order-Hold<a class="anchor-link" href="#Zero-Order-Hold">&#182;</a></h3>
 </div>
-</section><section>
+
 <div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/sampling_03.png">
 </div></section><section>
-<div class="cell border-box-sizing code_cell vbox">
-<div class="input hbox">
-<div class="prompt input_prompt">
-In&nbsp;[]:
-</div>
-<div class="input_area box-flex1">
-<div class="highlight"><pre><span class="n">First</span><span class="o">-</span><span class="n">order</span> <span class="n">Hold</span>
-</pre></div>
-
-</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="First-order-Hold">First-order Hold<a class="anchor-link" href="#First-order-Hold">&#182;</a></h3>
 </div>
 
-</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/sampling_04.png">
 <p>This image was generated by the Matlab script: <a href="matlab/sampling.m">sampling.m</a></p>
-</div>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Aliasing">Aliasing<a class="anchor-link" href="#Aliasing">&#182;</a></h3>
 </div>
@@ -1992,7 +2044,7 @@ In&nbsp;[]:
 <li><p>When aliasing oucus, we have violated the sampling theorem that is \(\omega_s &lt; 2\omega_m\).</p></li>
 <li><p>When aliasing occurs, the original signal cannot be recovered by lowpass filtering.</p></li>
 </ul>
-</div>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="An-Aliased-Signal">An Aliased Signal<a class="anchor-link" href="#An-Aliased-Signal">&#182;</a></h3>
 </div>
@@ -2001,7 +2053,15 @@ In&nbsp;[]:
 <img src="pictures/aliasing.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use the recording made at the start and run it through a script that effectively aliases the original signal be reducing the sampling frequency to less than half the original sampling frequency.</p>
+<p>Here's the script: <a href="matlab/aliaseg1.m">aliaseg1.m</a> that I'll be using.</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2014,7 +2074,7 @@ In&nbsp;[]:
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>You should confirm for yourself that after lowpass filtering the spectrum with a filter with cutofff frequency \(\omega_c = \omega_s/2\) that the signal returned is the spectrum of \(x(t)=\cos(\omega_0 t/2)\)</p>
 </div>
-    </div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Antialising-Filters">Antialising Filters<a class="anchor-link" href="#Antialising-Filters">&#182;</a></h3>
 </div>
@@ -2026,6 +2086,14 @@ In&nbsp;[]:
 <li><p>This can produce some distortion at high-frequencies but this is often better than the distortion that would occus at low frequencies if aliasing was allowed to happen.</p></li>
 <li><p>For more on this topic see Pages 551—552 of Boulet.</p></li>
 </ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This example uses anti-aliasing to downsample the audio. You should hear that the sound is less distorted as we sample below the sampling frequency of 8 kHz.</p>
+<p>Script: <a href="matlab/aliaseg2.m">aliaseg2.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Practical-application---digital-audio">Practical application - digital audio<a class="anchor-link" href="#Practical-application---digital-audio">&#182;</a></h3>
@@ -2085,11 +2153,43 @@ In&nbsp;[]:
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matlab-Functions-used">Matlab Functions used<a class="anchor-link" href="#Matlab-Functions-used">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The matlab recorder command is: <code>recorder = audiorecorder(Fs,nBits,nChannels);</code></li>
+<li>Sound is recorded using: <code>recordblocking(recObj, time);</code></li>
+<li>Recorded sound is played back: <code>play(recorder);</code></li>
+<li>Sound is extracted as Matlab data using: <code>x = getaudiodata(recorder);</code></li>
+<li>Sound is plotted against sample number using: <code>plot(x)</code></li>
+<li>I extracted 50 points for the stem plot using <code>stem([1000:1049],myRecording(1000:1049))</code></li>
+<li>Sound is saved as an audio file using: <code>audiowrite(audioFile,myRecording,Fs);</code> where <code>audiofile</code> is a filename in form <code>name.extension</code>. Supported extensions are <code>'.wav'</code>, <code>'.ogg'</code>, and <code>'.flac'</code> on all platforms. Windows and Mac support <code>'.m4m'</code> and '<code>.mp4</code>'.</li>
+<li>Sound is loaded using <code>[x,Fs]=audioread(audioFile);</code>. Additional file formats are supported for reading including <code>'.mp3'</code>.</li>
+<li>Frequency response spectra were generated using the fast Fourier transform (<code>fft</code>) function.</li>
+<li>Multiple graphs in one figure window is achieved using <code>subplot</code>.</li>
+</ul>
+<p>For more information use <code>doc</code> <em>command</em> from the command-line.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You should take the scripts home and play with them.</p>
+<p>Try increasing the sampling frequency: 8000 Hz, 11025 Hz, 22050 Hz, 44100 Hz, 48000 Hz, and 96000 Hz are supported by most PC sound cards.</p>
+<p>Try increasing the bits per sample: 8, 16, 24 are available.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Lab-Work">Lab Work<a class="anchor-link" href="#Lab-Work">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will explore some issues around sampling in the final lab session.</p>
+<p>We explore sound generation and maniupulation in the final lab session.</p>
 </div></section>
     </section>
 </div>

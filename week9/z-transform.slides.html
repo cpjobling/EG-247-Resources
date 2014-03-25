@@ -1812,7 +1812,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>The input to a discrete time system is a squences of values \(x[n]\)</li>
-<li>The output is also a sequence \(y[t]\)</li>
+<li>The output is also a sequence \(y[n]\)</li>
 <li>The block represents the operations that convert \(x[n]\) into \(y[n]\).</li>
 <li>This processing takes the form of a <em>difference equation</em></li>
 <li>This is analogous to the representation of continuous-time operations by differential equations.</li>
@@ -1825,9 +1825,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>In CT systems we use the Laplace transform to simplify the analysis of the differential equations</li>
-<li>In DT systems the z-Transform allows us to simlify the analysis of difference equations</li>
+<li>In DT systems the z-Transform allows us to simplify the analysis of difference equations</li>
 <li>In CT systems application of the Laplace transform allows us to represent systems as transfer functions and solve convolution problems by multiplication</li>
-<li>The z-transform provides similar tools for the analysis of DT systems.</li>
+<li>The z-transform provides analogous tools for the analysis of DT systems.</li>
 </ul>
 </div></section>
     </section><section>
@@ -2302,7 +2302,7 @@ F(z)
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>And by definition, te z-transform of such a sequence is:</p>
+<p>And by definition, the z-transform of such a sequence is:</p>
 <p>\[F(z) = \sum_{n=0}^{\infty}f[n]z^{-n}\]</p>
 </div>
     </div><div class="fragment">
@@ -2418,7 +2418,7 @@ F(z)
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li><p>As a consequence of the result for <strong>Case III</strong> above, we can explore how frequencies (that is is values of \(s=\pm j\omega\)) map onto the \(z\)-plane.</p></li>
-<li><p>We already know that these frequencies will map onto the unit circle and by \(\theta = 2\pi\omega/omega_s\) the angles are related to the sampling frequency.</p></li>
+<li><p>We already know that these frequencies will map onto the unit circle and by \(\theta = 2\pi\omega/\omega_s\) the angles are related to the sampling frequency.</p></li>
 <li><p>Let's see how</p></li>
 </ul>
 </div></section><section>
@@ -2445,60 +2445,60 @@ F(z)
 0
 </td></tr>
 <tr><td>
-\(\pm \omega_s/8\)
+\(\omega_s/8\)
 </td><td>
 1
 </td><td>
-\(\\pm pi/4\)
+\(\pi/4\)
 </td></tr>
 <tr><td>
-\(\pm \omega_s/4\)
+\(\omega_s/4\)
 </td><td>
 1
 </td><td>
-\(\pm \pi/2\)
+\(\pi/2\)
 </td></tr>
 <tr><td>
-\(\pm 3\omega_s/8\)
+\(3\omega_s/8\)
 </td><td>
 1
 </td><td>
-\(\pm 3\pi/4\)
+\(3\pi/4\)
 </td></tr>
 <tr><td>
-\(\pm \omega_s/2\)
+\(\omega_s/2\)
 </td><td>
 1
 </td><td>
-\(\pm \pi\)
+\(\pi\)
 </td></tr>
 <tr><td>
-\(\pm 5\omega_s/8\)
+\(5\omega_s/8\)
 </td><td>
 1
 </td><td>
-\(\pm 5\pi/4\)
+\(5\pi/4\)
 </td></tr>
 <tr><td>
-\(\pm 3\omega_s/4\)
+\(3\omega_s/4\)
 </td><td>
 1
 </td><td>
-\(\pm 3\pi/2\)
+\(3\pi/2\)
 </td></tr>
 <tr><td>
-\(\pm 7\omega_s/8\)
+\(7\omega_s/8\)
 </td><td>
 1
 </td><td>
-\(\pm 7\pi/4\)
+\(7\pi/4\)
 </td></tr>
 <tr><td>
-\(\pm \omega_s\)
+\(\omega_s\)
 </td><td>
 1
 </td><td>
-\(\pm 2\pi\)
+\(2\pi\)
 </td></tr>
 </tbody>
 </table>
@@ -2510,6 +2510,33 @@ F(z)
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/s-to-z-mapping.png">
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mapping-z-plane-to-s-plane">Mapping z-plane to s-plane<a class="anchor-link" href="#Mapping-z-plane-to-s-plane">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is no unique mapping of \(z\) to \(s\) since</p>
+<p>\[s = \frac{1}{T_s} \ln z\]</p>
+<p>but for a complex variable</p>
+<p>\[\ln z = \ln z + j2n\pi\]</p>
+<p>This is in agreement with the theoretical idea that in the frequency domain, sampling creates an infinite number of spectra, each of which is centred around \(n\omega_s\).</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Frequency-aliasing">Frequency aliasing<a class="anchor-link" href="#Frequency-aliasing">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>It's worth observing that any stable complex pole in the \(s\)-plane \(s=-\sigma + j\omega\) will have complex conjugate pair \(s = -\sigma - j\omega\).</li>
+<li>Providing \(\omega &lt; \omega_s/2\) these poles will be mapped to the upper and lower half-plane of the \(z\)-plane.</li>
+<li>If \(\omega &gt; \omega_s/2\), an upper-half plane pole will be mapped to the lower-half plane and will have an effective frequency of \(omega_s/2 - \omega\).</li>
+<li>Similarly, its conjugate pair will move into the upper-half plane.</li>
+</ul>
+<p>This is another way of looking at <em>aliasing</em>.</p>
+<ul>
+<li>Also, any poles with frequency \(\omega &gt; \omega_s\) will also be aliased back into into the unit circle.</li>
+</ul>
 </div></section>
     </section><section>
     <section>
