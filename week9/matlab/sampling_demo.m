@@ -1,14 +1,38 @@
-% Record your voice for 5 seconds.
+%% Simple Voice Recorder
+%
+% Records your voice for 5 seconds using your PC's audio input device.
+%
+% Prepared for EG-247 Signals and Systems
+% by Dr Chris P. Jobling
+%
+%% Set up audio recorder
 recObj = audiorecorder;
-disp('Start speaking.')
+%% Record some sound with prompts for user
+disp('Start speaking: say "EG-247 Signals and Systems"')
+disp('Press any key when your are ready...')
+pause
 recordblocking(recObj, 5);
 disp('End of Recording.');
-
-% Play back the recording.
+% Display meta data
+recObj
+%% Play back the recording.
+disp('Press any key when your are ready to hear the playback')
+pause
 play(recObj);
-
-% Store data in double-precision array.
+%% Store data in double-precision array.
 myRecording = getaudiodata(recObj);
-
-% Plot the waveform.
+%% Plot the waveform.
 plot(myRecording);
+title('Time plot of sampled sound - zoom to see details')
+xlabel('Sample number [n]')
+ylabel('Sampled sound value')
+%% Plot the samples
+stem([1000:1049],myRecording(1000:1049))
+title('Stem plot of small sample of waveform: n = 1000 to 1049')
+xlabel('Sample number [n]')
+ylabel('Sampled sound value')
+%% Save the result
+Fs = recObj.SampleRate;
+audioFile = 'eg-247-message.wav';
+audiowrite(audioFile,myRecording,Fs);
+disp(['Audiofile Written as: ',audioFile]);
