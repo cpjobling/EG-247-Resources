@@ -1769,6 +1769,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <li>Discrete-time Processing of Continuous-Time Signals</li>
 <li>Sampling of Discrete-Time Systems</li>
 </ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We will be using an adaptation of a pair of demo scripts to illustrate <em>alialising</em>. These scripts were published by Prof. Charles A. Bouman, School of Electrical and Computer Engineering, Purdue University as part of the course materials for <a href="https://engineering.purdue.edu/VISE/ee438/demos/">ECE438: Digital Signal Processing</a>.</p>
 </div></section>
     </section><section>
     <section>
@@ -1787,9 +1794,47 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-Real-Example">A Real Example<a class="anchor-link" href="#A-Real-Example">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I need a volunteer to provide a sound sample ....</p>
+<ol style="list-style-type: decimal">
+<li>I will use this script <a href="matlab/sampling_demo.m">sampling_demo.m</a> to sample your voice.</li>
+<li>I will then playback the recording.</li>
+<li>I will the plot the data.</li>
+</ol>
+<p><strong>Technical details</strong>: sampling rate 8000 samples per second (fs = 8 kHz), 8 bits per sample, 1 channel. Matlab plays the audio back at 8192 samples per second presumably.</p>
+<p><strong>Question:</strong> what will the bit-rate be for playback?</p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = [number of samples per second] x [number of bits per sample] x [number of channels]</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = \(8192 \times 8 \times 1\) bits/second [baud]</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>bit rate = \(65,536\) bits/second</p>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Sampling-CT-Signals">Sampling CT Signals<a class="anchor-link" href="#Sampling-CT-Signals">&#182;</a></h2>
 </div>
-</section><section>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>What is going on here?</p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Time-domain">Time domain<a class="anchor-link" href="#Time-domain">&#182;</a></h3>
 </div>
@@ -1844,7 +1889,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Gives a sufficient condition to recover a continuous time signal from its samples \(x(nT_s),\)n</p>
+<p>Gives a sufficient condition to recover a continuous time signal from its samples \(x(nT_s)\), \(n\) is an integer.</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1929,7 +1974,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p><strong>Problem</strong></p>
 <ul>
 <li>We have a bandlimited signal that is sampled at the Nyquist-Shannon sampling frequency \(\omega_s = 2\pi/T_s\).</li>
-<li>We therefore have a discrete-time (DT) signal</li>
+<li>We therefore have a discrete-time (DT) signal \(x(nT_s)\) from which we want to reconstruct the original signal.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1999,9 +2044,17 @@ In&nbsp;[]:
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <img src="pictures/aliasing.png">
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We use the recording made at the start and run it through a script that effectively aliases the original signal be reducing the sampling frequency to less than half the original sampling frequency.</p>
+<p>Here's the script: <a href="matlab/aliaseg1.m">aliaseg1.m</a> that I'll be using.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3>
+<h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2026,6 +2079,14 @@ In&nbsp;[]:
 <li><p>This can produce some distortion at high-frequencies but this is often better than the distortion that would occus at low frequencies if aliasing was allowed to happen.</p></li>
 <li><p>For more on this topic see Pages 551—552 of Boulet.</p></li>
 </ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This example uses anti-aliasing to downsample the audio. You should hear that the sound is less distorted as we sample below the sampling frequency of 8 kHz.</p>
+<p>Script: <a href="matlab/aliaseg2.m">aliaseg2.m</a></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Practical-application---digital-audio">Practical application - digital audio<a class="anchor-link" href="#Practical-application---digital-audio">&#182;</a></h3>
@@ -2081,6 +2142,36 @@ In&nbsp;[]:
 <ul>
 <li>The Z-Transform</li>
 </ul>
+</div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Matlab-Functions-used">Matlab Functions used<a class="anchor-link" href="#Matlab-Functions-used">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The matlab recorder command is: <code>recorder = audiorecorder(Fs,nBits,nChannels);</code></li>
+<li>Sound is recorded using: <code>recordblocking(recObj, time);</code></li>
+<li>Recorded sound is played back: <code>play(recorder);</code></li>
+<li>Sound is extracted as Matlab data using: <code>x = getaudiodata(recorder);</code></li>
+<li>Sound is plotted against sample number using: <code>plot(x)</code></li>
+<li>I extracted 50 points for the stem plot using <code>stem([1000:1049],myRecording(1000:1049))</code></li>
+<li>Sound is saved as an audio file using: <code>audiowrite(audioFile,myRecording,Fs);</code> where <code>audiofile</code> is a filename in form <code>name.extension</code>. Supported extensions are <code>'.wav'</code>, <code>'.ogg'</code>, and <code>'.flac'</code> on all platforms. Windows and Mac support <code>'.m4m'</code> and '<code>.mp4</code>'.</li>
+<li>Sound is loaded using <code>[x,Fs]=audioread(audioFile);</code>. Additional file formats are supported for reading including <code>'.mp3'</code>.</li>
+<li>Frequency response spectra were generated using the fast Fourier transform (<code>fft</code>) function.</li>
+<li>Multiple graphs in one figure window is achieved using <code>subplot</code>.</li>
+</ul>
+<p>For more information use <code>doc</code> <em>command</em> from the command-line.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Homework">Homework<a class="anchor-link" href="#Homework">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You should take the scripts home and play with them.</p>
+<p>Try increasing the sampling frequency: 8000 Hz, 11025 Hz, 22050 Hz, 44100 Hz, 48000 Hz, and 96000 Hz are supported by most PC sound cards.</p>
+<p>Try increasing the bits per sample: 8, 16, 24 are available.</p>
 </div></section>
     </section><section>
     <section>
@@ -2089,7 +2180,7 @@ In&nbsp;[]:
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We will explore some issues around sampling in the final lab session.</p>
+<p>We explore sound generation and maniupulation in the final lab session.</p>
 </div></section>
     </section>
 </div>
