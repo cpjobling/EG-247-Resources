@@ -1768,7 +1768,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <li>The Z-Transform</li>
 <li>Properties of the Z-Transform</li>
 <li>Some Selected Z-Transforms</li>
-<li>Relationship Between Laplace and Z-Transform</li>
+<li>Relationship between Laplace and Z-Transform</li>
 <li>Stability Regions</li>
 </ul>
 </div></section>
@@ -2038,7 +2038,7 @@ Final value theorem
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Notes</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>See Karris pp 9-12—9-13 forn the details</p></li>
+<li><p>See Karris pp 9-12—9-13 for the details</p></li>
 <li><p>This function converges only if \(|z| &lt; |a|\) and the region of convergence is outside the cicle centred at \(z=0\) with radius \(r=|a|\)</p></li>
 </ol>
 </div>
@@ -2121,7 +2121,7 @@ Final value theorem
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a geometric sequence with \(a = e^{-aT_s}\), s0</p>
+<p>This is a geometric sequence with \(a = e^{-aT_s}\), so</p>
 <p>\[\mathcal{Z}\left\{e^{naT_s}{u_0}[n]\right\} = \frac{1}{1-e^{-aT_s}z^{-1}} = \frac{z}{z-e^{-aT_s}}\]</p>
 </div>
     </div><div class="fragment">
@@ -2296,7 +2296,7 @@ F(z)
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Given that we can represent sampled signal in complex frequency domain as the infinite some of each sequence value delayed by an integer multiple of the sampling time:</p>
+<p>Given that we can represent sampled signal in complex frequency domain as the infinite sum of each sequence value delayed by an integer multiple of the sampling time:</p>
 <p>\[F(s) = \sum_{n=0}^{\infty}f[n]e^{-nsT_s}\]</p>
 </div>
     </div><div class="fragment">
@@ -2324,13 +2324,15 @@ F(z)
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Since \(s\) and \(z\) are both complex variables, \(z=e^{sT_s}\) is a mapping from the \(s\)-domain to the \(z\)-domain and \(z = \ln z/T_s\) is a mapping from the \(z\) to \(s\)-domain.</p>
-</div>
+</div><div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, since</p>
 <p>\[s = \sigma + j\omega\]</p>
-<p>\[z = e^{\sigma T_s + j\omega T_s} = e^{\sigma T_s}s^{j\omega T_s} \]</p>
+<p>\[z = e^{\sigma T_s + j\omega T_s} = e^{\sigma T_s}e^{j\omega T_s} = |z|e^{j\theta}\]</p>
 <p>where \(|z| = e^{\sigma Ts}\) and \(\theta = \omega T_s\).</p>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Introduction-of-sampling-frequency">Introduction of sampling frequency<a class="anchor-link" href="#Introduction-of-sampling-frequency">&#182;</a></h3>
 </div>
@@ -2368,35 +2370,41 @@ F(z)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Case-I:-\(\sigma-&lt;-0\)">Case I: \(\sigma &lt; 0\)<a class="anchor-link" href="#Case-I:-\(\sigma-&lt;-0\)">&#182;</a></h3>
 </div>
-
+<div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>When \(\sigma &lt; 0\) we see that from \(|z| = e^{\sigma T_s}\) that \(|z| &lt; 1\)</li>
 <li>The left-half plane of the \(s\)-domain maps into the unit circle in the \(z\)-plane.</li>
 <li>Different negative values of \(\sigma\) map onto concentric circles with radius less than unity.</li>
 </ul>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Case-II:-\(\sigma-&gt;-0\)">Case II: \(\sigma &gt; 0\)<a class="anchor-link" href="#Case-II:-\(\sigma-&gt;-0\)">&#182;</a></h3>
 </div>
-
+<div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>When \(\sigma &gt; 0\) we see that from \(|z| = e^{\sigma T_s}\) that \(|z| &gt; 1\)</li>
 <li>The right-half plane of the \(s\)-domain maps outside the unit circle in the \(z\)-plane.</li>
 <li>Different positive values of \(\sigma\) map onto concentric circles with radius greater than unity.</li>
 </ul>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Case-III:-\(\sigma-=-0\)">Case III: \(\sigma = 0\)<a class="anchor-link" href="#Case-III:-\(\sigma-=-0\)">&#182;</a></h3>
 </div>
-
+<div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>When \(\sigma = 0\), \(|z| = 1\) and \(\theta = 2\pi\omega/\omega_s\)</li>
 <li>All values of \(\omega\) lie on the circumference of the unit circle.</li>
 </ul>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Stability-Region---s-Plane">Stability Region - s-Plane<a class="anchor-link" href="#Stability-Region---s-Plane">&#182;</a></h3>
 </div>
@@ -2425,7 +2433,8 @@ F(z)
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Mapping-of-multiples-of-sampling-frequency">Mapping of multiples of sampling frequency<a class="anchor-link" href="#Mapping-of-multiples-of-sampling-frequency">&#182;</a></h3>
 </div>
-
+<div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr><td>
@@ -2503,7 +2512,8 @@ F(z)
 </tbody>
 </table>
 
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Mapping-of-s-plane-to-z-plane">Mapping of s-plane to z-plane<a class="anchor-link" href="#Mapping-of-s-plane-to-z-plane">&#182;</a></h3>
 </div>
@@ -2519,8 +2529,8 @@ F(z)
 <p>There is no unique mapping of \(z\) to \(s\) since</p>
 <p>\[s = \frac{1}{T_s} \ln z\]</p>
 <p>but for a complex variable</p>
-<p>\[\ln z = \ln z + j2n\pi\]</p>
-<p>This is in agreement with the theoretical idea that in the frequency domain, sampling creates an infinite number of spectra, each of which is centred around \(n\omega_s\).</p>
+<p>\[\ln z = \ln z \pm j2n\pi\]</p>
+<p>This is in agreement with the theoretical idea that in the frequency domain, sampling creates an infinite number of spectra, each of which is centred around \(\pm n\omega_s\).</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-aliasing">Frequency aliasing<a class="anchor-link" href="#Frequency-aliasing">&#182;</a></h3>
@@ -2529,15 +2539,19 @@ F(z)
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>It's worth observing that any stable complex pole in the \(s\)-plane \(s=-\sigma + j\omega\) will have complex conjugate pair \(s = -\sigma - j\omega\).</li>
-<li>Providing \(\omega &lt; \omega_s/2\) these poles will be mapped to the upper and lower half-plane of the \(z\)-plane.</li>
+<li>Providing \(\omega &lt; \omega_s/2\) these poles will be mapped to the upper and lower half-plane of the \(z\)-plane respectively.</li>
 <li>If \(\omega &gt; \omega_s/2\), an upper-half plane pole will be mapped to the lower-half plane and will have an effective frequency of \(omega_s/2 - \omega\).</li>
 <li>Similarly, its conjugate pair will move into the upper-half plane.</li>
 </ul>
 <p>This is another way of looking at <em>aliasing</em>.</p>
+</div><div style=display:none>
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Also, any poles with frequency \(\omega &gt; \omega_s\) will also be aliased back into into the unit circle.</li>
 </ul>
-</div></section>
+</div>
+    </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2555,7 +2569,7 @@ F(z)
 </ul>
 <p><em>Next session</em></p>
 <ul>
-<li>The Inverse Z-Transform and examples</li>
+<li>The Inverse Z-Transform – an examples class</li>
 </ul>
 </div></section>
     </section><section>
