@@ -1,6 +1,6 @@
-%% Example 2 from Session on Inverse Z-Transform
+%% Example 3 from Session on Inverse Z-Transform
 %
-% PFE for a z-transfer function when there are repeated poles.
+% PFE for a z-transfer function when there are complex poles.
 % 
 % Prepared for EG-247 Signals and Systems
 % by Dr Chris P. Jobling
