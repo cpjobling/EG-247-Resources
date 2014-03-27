@@ -9,32 +9,29 @@ function Hd = testfda
 % Butterworth Lowpass filter designed using FDESIGN.LOWPASS.
 
 % All frequency values are in Hz.
-Fs = [fill-this-in];  % Sampling Frequency
+Fs = fill-this-in;  % Sampling Frequency
 
-Fpass = [fill-this-in];       % Passband Frequency
-Fstop = [fill-this-in];      % Stopband Frequency
-Apass = [fill-this-in];           % Passband Ripple (dB)
-Astop = [fill-this-in];          % Stopband Attenuation (dB)
-match = [fill-this-in];  % Band to match exactly
+Fpass = fill-this-in;       % Passband Frequency
+Fstop = fill-this-in;      % Stopband Frequency
+Apass = fill-this-in;           % Passband Ripple (dB)
+Astop = fill-this-in;          % Stopband Attenuation (dB)
+match = fill-this-in;  % Band to match exactly
 
 % Construct an FDESIGN object and call its BUTTER method.
 h  = fdesign.lowpass(Fpass, Fstop, Apass, Astop, Fs);
 Hd = design(h, 'butter', 'MatchExactly', match);
 
-%% Basic parameters
-% Change this code to generate a sinewane in pass-band, cutof frequency
-% and stop band
-%
-% Note we are doing this in advance of presenting sampling theory!
-% sampling frequency in Hz
-fs = Fpass;
-% sampling time
-Ts = 1/fs;   
+%% Parameters needed to test filter: fs, ws and Ts
+Ts = 1/Fs;   
 % sampling frequency in rad/s
-ws = 2*pi*fs; 
+ws = 2*pi*Fs; 
 %% Signal
 % generate the signals which will be filtered
-f0 = 74158;
+
+%% Basic parameters
+% Change this code to generate a sinewane in pass-band, cutof frequency
+% and stop band -- initial setting has f0 = Fpass.
+f0 = Fpass;
 t0 = 1/f0; % Hz
 t = [0:200].*Ts; 
 x = cos(2*pi*f0*t);
