@@ -22,17 +22,17 @@ iztrans(fn)
 Fz = simple(Fz)
 % inverse z-transform
 %% Plot Sequence
-den = sym2poly(collect((z + 1)*(z - 1)^2));
-num = [12, 0];
+den = sym2poly(collect((z - 1)*(z^2 + 2*z + 2)));
+num = [1, 1];
 n = 1:15;
 fn = dimpulse(num,den,20);
 %% Plot
 stem(fn),grid
-title('Discrete Time Sequence f[n] = 6*n + 3*(-1)^n - 3');
+title('Discrete Time Sequence for Example 3');
 ylabel('f[n]')
 xlabel('Sequence number n')
 %% Also plots impulse response
 dimpulse(num,den,20), grid
-title('Discrete Time Step (ZOH Output) Plot: f[n] = 6*n + 3*(-1)^n - 3');
+title('Discrete Time Step Plot for Example 3');
 ylabel('f[n]')
 xlabel('Sequence number n')
