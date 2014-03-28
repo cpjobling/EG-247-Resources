@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1777,7 +1777,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The inverse Z-Transform enables us to extract a sequence \(f[n]\) from \(F(z)\). It can be found by any of the following methods:</p>
+<p>The inverse Z-Transform enables us to extract a sequence <span class="math">\(f[n]\)</span> from <span class="math">\(F(z)\)</span>. It can be found by any of the following methods:</p>
 <ul>
 <li>Partial fraction expansion</li>
 <li>The inversion integral</li>
@@ -1789,9 +1789,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We expand \(F(z)\) into a summation of terms whose inverse is know. These terms have the form:</p>
-<p>\[k,\;\frac{r_1 z}{z - p_1},\;\frac{r_1 z}{(z - p_1)^2},\;\frac{r_3 z}{z - p_2},\ldots\]</p>
-<p>where \(k\) is a constant, and \(r_i\) and \(p_i\) represent the residues and poles respectively, and can be real or complex<sup>1</sup></p>
+<p>We expand <span class="math">\(F(z)\)</span> into a summation of terms whose inverse is know. These terms have the form:</p>
+<p><span class="math">\[k,\;\frac{r_1 z}{z - p_1},\;\frac{r_1 z}{(z - p_1)^2},\;\frac{r_3 z}{z - p_2},\ldots\]</span></p>
+<p>where <span class="math">\(k\)</span> is a constant, and <span class="math">\(r_i\)</span> and <span class="math">\(p_i\)</span> represent the residues and poles respectively, and can be real or complex<sup>1</sup></p>
 </div><div style=display:none>
     
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1799,7 +1799,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ol style="list-style-type: decimal">
 <li>If complex, the poles and residues will be in complex conjugate pairs</li>
 </ol>
-<p>\[\frac{r_{i} z}{z - p_i} + \frac{r_{i}^* z}{z - p_i^*}\]</p>
+<p><span class="math">\[\frac{r_{i} z}{z - p_i} + \frac{r_{i}^* z}{z - p_i^*}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1808,11 +1808,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Before we expand \(F(z)\) into partial fraction expansions, we must first express it as a <em>proper</em> rational function.</li>
-<li>This is done by expanding \(F(z)/z\) instead of \(F(z)\)</li>
+<li>Before we expand <span class="math">\(F(z)\)</span> into partial fraction expansions, we must first express it as a <em>proper</em> rational function.</li>
+<li>This is done by expanding <span class="math">\(F(z)/z\)</span> instead of <span class="math">\(F(z)\)</span></li>
 <li>That is we expand</li>
 </ul>
-<p>\[\frac{F(z)}{z} = \frac{k}{z} + \frac{r_1}{s-p_1} + \frac{r_2}{s-p_2} + \cdots\]</p>
+<p><span class="math">\[\frac{F(z)}{z} = \frac{k}{z} + \frac{r_1}{s-p_1} + \frac{r_2}{s-p_2} + \cdots\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-2:-Find-residues">Step 2: Find residues<a class="anchor-link" href="#Step-2:-Find-residues">&#182;</a></h3>
@@ -1822,7 +1822,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <ul>
 <li>Find residues from</li>
 </ul>
-<p>\[r_k = \lim_{z\to p_k}(z - p_k)\frac{F(z)}{z} = (z - p_k)\left.\frac{F(z)}{z}\right|_{z=p_k}\]</p>
+<p><span class="math">\[r_k = \lim_{z\to p_k}(z - p_k)\frac{F(z)}{z} = (z - p_k)\left.\frac{F(z)}{z}\right|_{z=p_k}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-3:-Map-back-to-transform-tables-form">Step 3: Map back to transform tables form<a class="anchor-link" href="#Step-3:-Map-back-to-transform-tables-form">&#182;</a></h3>
@@ -1830,9 +1830,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Rewrite \(F(z)/z\):</li>
+<li>Rewrite <span class="math">\(F(z)/z\)</span>:</li>
 </ul>
-<p>\[z\frac{F(z)}{z} = F(z) = k + \frac{r_1z}{s-p_1} + \frac{r_2z}{s-p_2} + \cdots\]</p>
+<p><span class="math">\[z\frac{F(z)}{z} = F(z) = k + \frac{r_1z}{s-p_1} + \frac{r_2z}{s-p_2} + \cdots\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
@@ -1840,14 +1840,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Karris Example 9.4: use the partial fraction expansion to compute the inverse z-transform of</p>
-<p>\[F(z) = \frac{1}{(1 - 0.5z^{-1})(1 - 0.75z^{-1})(1 - z^{-1})}\]</p>
+<p><span class="math">\[F(z) = \frac{1}{(1 - 0.5z^{-1})(1 - 0.75z^{-1})(1 - z^{-1})}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Answer-to-Example-1">Answer to Example 1<a class="anchor-link" href="#Answer-to-Example-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = 2\left(\frac{1}{2}\right)^n - 9\left(\frac{3}{4}\right)^n + 8\]</p>
+<p><span class="math">\[f[n] = 2\left(\frac{1}{2}\right)^n - 9\left(\frac{3}{4}\right)^n + 8\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
@@ -1870,7 +1870,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example1.png">
+<p><img src="pictures/example1.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
@@ -1878,14 +1878,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Karris example 9.5: use the partial fraction expansion method to to compute the inverse z-transform of</p>
-<p>\[F(z) = \frac{12z}{(z+1)(z - 1)^2}\]</p>
+<p><span class="math">\[F(z) = \frac{12z}{(z+1)(z - 1)^2}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Answer-to-Example-2">Answer to Example 2<a class="anchor-link" href="#Answer-to-Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = 3(-1)^n + 6n - 3\]</p>
+<p><span class="math">\[f[n] = 3(-1)^n + 6n - 3\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
@@ -1895,7 +1895,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 <p>See <a href="matlab/example2.m">example2.m</a></p>
 <p>Uses additional Matlab functions:</p>
 <ul>
-<li><code>dimpulse</code> – computes and plots a sequence \(f[n]\) for any range of values of \(n\)</li>
+<li><code>dimpulse</code> – computes and plots a sequence <span class="math">\(f[n]\)</span> for any range of values of <span class="math">\(n\)</span></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1903,7 +1903,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example2a.png">
+<p><img src="pictures/example2a.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Staircase-Plot">Staircase Plot<a class="anchor-link" href="#Staircase-Plot">&#182;</a></h3>
@@ -1911,7 +1911,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Simulates output of Zero-Order-Hold (ZOH) or Digital Analogue Converter (DAC)</p>
-<img src="pictures/example2b.png">
+<p><img src="pictures/example2b.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
@@ -1919,14 +1919,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Karris example 9.6: use the partial fraction expansion method to to compute the inverse z-transform of</p>
-<p>\[F(z) = \frac{z + 1}{(z-1)(z^2 + 2z + 2)}\]</p>
+<p><span class="math">\[F(z) = \frac{z + 1}{(z-1)(z^2 + 2z + 2)}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Answer-to-Example-3">Answer to Example 3<a class="anchor-link" href="#Answer-to-Example-3">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = -0.5\delta[n] + 0.4 + \frac{(\sqrt{2})^n}{10}\cos \frac{3n\pi}{4} - \frac{3(\sqrt{2})^n}{10}\sin \frac{3n\pi}{4}\]</p>
+<p><span class="math">\[f[n] = -0.5\delta[n] + 0.4 + \frac{(\sqrt{2})^n}{10}\cos \frac{3n\pi}{4} - \frac{3(\sqrt{2})^n}{10}\sin \frac{3n\pi}{4}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
@@ -1940,14 +1940,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example3a.png">
+<p><img src="pictures/example3a.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Staircase-Plot">Staircase Plot<a class="anchor-link" href="#Staircase-Plot">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example3b.png">
+<p><img src="pictures/example3b.png"></p>
 </div></section>
     </section><section>
     <section>
@@ -1957,8 +1957,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The inversion integral states that:</p>
-<p>\[f[n] = \frac{1}{{j2\pi }}\oint_C {F(z){z^{n - 1}}\,dz} \]</p>
-<p>where \(C\) is a closed curve that encloses all poles of the integrant.</p>
+<p><span class="math">\[f[n] = \frac{1}{{j2\pi }}\oint_C {F(z){z^{n - 1}}\,dz} \]</span></p>
+<p>where <span class="math">\(C\)</span> is a closed curve that encloses all poles of the integrant.</p>
 <p>This can (<em>apparently</em>) be solved by Cauchy's residue theorem!!</p>
 <p>Fortunately (:-), this is beyond the scope of this module!</p>
 <p>See Karris Section 9.6.2 (pp 9-29—9-33) if you want to find out more.</p>
@@ -1970,22 +1970,22 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>To apply this method, \(F(z)\) must be a rational polynomial functuon, and the numerator and denominator must be polynomials arranged in descending powers of \(z\).</p>
+<p>To apply this method, <span class="math">\(F(z)\)</span> must be a rational polynomial functuon, and the numerator and denominator must be polynomials arranged in descending powers of <span class="math">\(z\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 9.9: use the long division method to determinf \(f[n]\) for \(n = 0,\,1,\,\mathrm{and}\,2\), given that</p>
-<p>\[F(z) = \frac{1 + z^{-1} + 2z^{-2} + 3z^{-3}}{(1 - 0.25z^{-1})(1 - 0.5z^{-1})(1 - 0.75z^{-1})}\]</p>
+<p>Karris example 9.9: use the long division method to determinf <span class="math">\(f[n]\)</span> for <span class="math">\(n = 0,\,1,\,\mathrm{and}\,2\)</span>, given that</p>
+<p><span class="math">\[F(z) = \frac{1 + z^{-1} + 2z^{-2} + 3z^{-3}}{(1 - 0.25z^{-1})(1 - 0.5z^{-1})(1 - 0.75z^{-1})}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Answer-4">Answer 4<a class="anchor-link" href="#Answer-4">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\(f[0] = 1\), \(f[1] = 5/2\), \(f[2] = 81/16\).</p>
+<p><span class="math">\(f[0] = 1\)</span>, <span class="math">\(f[1] = 5/2\)</span>, <span class="math">\(f[2] = 81/16\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab">Matlab<a class="anchor-link" href="#Matlab">&#182;</a></h3>
@@ -1993,21 +1993,24 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See <a href="matlab/example4.m">example4.m</a></p>
-<p>```` sym_den =</p>
-<p>z^3 - (3<em>z^2)/2 + (11</em>z)/16 - 3/32</p>
-<p>fn =</p>
-<pre><code>1.0000
-2.5000
-5.0625
-....</code></pre>
-````
+<pre><code>sym_den =
+ 
+z^3 - (3*z^2)/2 + (11*z)/16 - 3/32
+ 
+
+fn =
+
+    1.0000
+    2.5000
+    5.0625
+    ....</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Combined-Staircase/Lollipop-Plot">Combined Staircase/Lollipop Plot<a class="anchor-link" href="#Combined-Staircase/Lollipop-Plot">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/example4.png">
+<p><img src="pictures/example4.png"></p>
 </div></section>
     </section><section>
     <section>
@@ -2034,12 +2037,12 @@ Most familiar.
 </li><li>
 Can use Matlab <code>residue</code> function.
 </li></ul></td><td><ul><li>
-Requires that \(F(z)\) is a proper rational function.
+Requires that <span class="math">\(F(z)\)</span> is a proper rational function.
 </li></ul></td></tr>
 <tr><td>
 Invsersion Integral
 </td><td><ul><li>
-Can be used whether \(F(z)\) is rational or not
+Can be used whether <span class="math">\(F(z)\)</span> is rational or not
 </li></ul></td><td><ul><li>
 Requires familiarity with the <em>Residues theorem</em> of complex variable analaysis.
 </li></ul></td></tr>
@@ -2052,7 +2055,7 @@ Useful when z-transform has no closed-form solution.
 </li><li>
 Can use Matlab <code>dimpulse</code> function to compute a large sequence of numbers.
 </ul></td><td><ul><li>
-Requires that \(F(z)\) is a proper rational function.
+Requires that <span class="math">\(F(z)\)</span> is a proper rational function.
 </li><li>
 Division may be endless.
 </li></ul></td></tr>
