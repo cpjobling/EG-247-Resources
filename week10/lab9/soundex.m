@@ -38,7 +38,7 @@ specgram(x,1024,Fs);
 % Design a quick high-pass filter at 1000 Hz (relative to nyquist rate Fs/2)
 [b,a] = ellip(8,1,50,1000/(Fs/2),'high');
 % Pass it through the filter
-df = filter(b,a,d);
+df = filter(b,a,x);
 %% See how spectrum has changed
 figure
 plot(freq,abs(fftshift(fft(df,22050))),'linewidth',1)
