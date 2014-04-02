@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1779,7 +1779,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/ct-to-dt.png">
+<p><img src="pictures/ct-to-dt.png"></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1791,12 +1791,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/ct-to-dt-to-sequence.png">
+<p><img src="pictures/ct-to-dt-to-sequence.png"></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The signals we process in discrete time systems are <em>sequences</em> of values \(x[n]\) where \(n\) is an index.</li>
+<li>The signals we process in discrete time systems are <em>sequences</em> of values <span class="math">\(x[n]\)</span> where <span class="math">\(n\)</span> is an index.</li>
 </ul>
 </div>
     </div><div style=display:none>
@@ -1811,9 +1811,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The input to a discrete time system is a squences of values \(x[n]\)</li>
-<li>The output is also a sequence \(y[n]\)</li>
-<li>The block represents the operations that convert \(x[n]\) into \(y[n]\).</li>
+<li>The input to a discrete time system is a squences of values <span class="math">\(x[n]\)</span></li>
+<li>The output is also a sequence <span class="math">\(y[n]\)</span></li>
+<li>The block represents the operations that convert <span class="math">\(x[n]\)</span> into <span class="math">\(y[n]\)</span>.</li>
 <li>This processing takes the form of a <em>difference equation</em></li>
 <li>This is analogous to the representation of continuous-time operations by differential equations.</li>
 </ul>
@@ -1837,11 +1837,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\mathcal{Z}\left\{f[n]\right\} = F(z) = \sum_{n=0}^{\infty} f[n]z^{-n}\]</p>
+<p><span class="math">\[\mathcal{Z}\left\{f[n]\right\} = F(z) = \sum_{n=0}^{\infty} f[n]z^{-n}\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{{\cal Z}^{ - 1}}\left\{ {F(z)} \right\} = f[z] = \frac{1}{{2\pi j}}\oint\limits_{} {F(z){z^{k - 1}}\,dz}\]</p>
+<p><span class="math">\[{{\cal Z}^{ - 1}}\left\{ {F(z)} \right\} = f[z] = \frac{1}{{2\pi j}}\oint\limits_{} {F(z){z^{k - 1}}\,dz}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1850,24 +1850,24 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the last lecture we showed that sampling could be represented as the multiplication of a CT signal by a periodic train of impulses:</p>
-<p>\[x_s(t) = x(t)\sum_{n=0}^{\infty}\delta(t-nT_s)\]</p>
+<p><span class="math">\[x_s(t) = x(t)\sum_{n=0}^{\infty}\delta(t-nT_s)\]</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By the sampling property of \(\delta(t)\)</p>
-<p>\[x_s(t) = \sum_{n=0}^{\infty}x(nT_s)\delta(t-nT_s)\]</p>
+<p>By the sampling property of <span class="math">\(\delta(t)\)</span></p>
+<p><span class="math">\[x_s(t) = \sum_{n=0}^{\infty}x(nT_s)\delta(t-nT_s)\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Using the Laplace transform pairs \(\delta(t) \Leftrightarrow 1\) and \(\delta(t-T) \Leftrightarrow e^{-sT}\) we obtain:</p>
-<p>\[X_s(t) = \mathcal{L}\left\{\sum_{n=0}^{\infty}x(nT_s)\delta(t-nT_s)\right\} = \sum_{n=0}^{\infty}x(nT_s)e^{-nsT_s}\]</p>
+<p>Using the Laplace transform pairs <span class="math">\(\delta(t) \Leftrightarrow 1\)</span> and <span class="math">\(\delta(t-T) \Leftrightarrow e^{-sT}\)</span> we obtain:</p>
+<p><span class="math">\[X_s(t) = \mathcal{L}\left\{\sum_{n=0}^{\infty}x(nT_s)\delta(t-nT_s)\right\} = \sum_{n=0}^{\infty}x(nT_s)e^{-nsT_s}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By substitution of \(z = e^{sT_s}\) and representing samples \(x(nT_s)\) as sequence \(x[n]\):</p>
-<p>\[X(z) = \sum_{n=0}^{\infty}x[n]z^{-1}\]</p>
+<p>By substitution of <span class="math">\(z = e^{sT_s}\)</span> and representing samples <span class="math">\(x(nT_s)\)</span> as sequence <span class="math">\(x[n]\)</span>:</p>
+<p><span class="math">\[X(z) = \sum_{n=0}^{\infty}x[n]z^{-1}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1884,7 +1884,7 @@ Property
 </th><th>
 Discrete Time Domain
 </th><th>
-\(\mathcal{Z}\) Transform
+<span class="math">\(\mathcal{Z}\)</span> Transform
 </th></tr></thead>
 <tbody>
 <tr><td>
@@ -1892,113 +1892,113 @@ Discrete Time Domain
 </td><td>
 Linearity
 </td><td>
-\(af_1[n]+bf_2[n]+\cdots\)
+<span class="math">\(af_1[n]+bf_2[n]+\cdots\)</span>
 </td><td>
-\(aF_1(z)+bF_2(z)+\cdots\)
+<span class="math">\(aF_1(z)+bF_2(z)+\cdots\)</span>
 </td></tr>
 <tr><td>
 2
 </td><td>
-Shift of \(x[n]u_0[n]\)
+Shift of <span class="math">\(x[n]u_0[n]\)</span>
 </td><td>
-\(f[n-m]u_0[n-m]\)
+<span class="math">\(f[n-m]u_0[n-m]\)</span>
 </td><td>
-\(z^{-m}F(z)\)
+<span class="math">\(z^{-m}F(z)\)</span>
 </td></tr>
 <tr><td>
 3
 </td><td>
 Left shift
 </td><td>
-\(f[n-m]\)
+<span class="math">\(f[n-m]\)</span>
 </td><td>
-\[z^{-m}F(z)+\sum_{n=0}^{m-1}f[n-m]z^{-n}\]
+<span class="math">\[z^{-m}F(z)+\sum_{n=0}^{m-1}f[n-m]z^{-n}\]</span>
 </td></tr>
 <tr><td>
 4
 </td><td>
 Right shift
 </td><td>
-\(f[n+m]\)
+<span class="math">\(f[n+m]\)</span>
 </td><td>
-\[z^{m}F(z)+\sum_{n=-m}^{-1}f[n+m]z^{-n}\]
+<span class="math">\[z^{m}F(z)+\sum_{n=-m}^{-1}f[n+m]z^{-n}\]</span>
 </td></tr>
 <tr><td>
 5
 </td><td>
-Multiplication by \(a^n\)
+Multiplication by <span class="math">\(a^n\)</span>
 </td><td>
-\(a^nf[n]\)
+<span class="math">\(a^nf[n]\)</span>
 </td><td>
-\[F\left(\frac{z}{a}\right)\]
+<span class="math">\[F\left(\frac{z}{a}\right)\]</span>
 </td></tr>
 <tr><td>
 6
 </td><td>
-Multiplication by \(e^{-nsT_s}\)
+Multiplication by <span class="math">\(e^{-nsT_s}\)</span>
 </td><td>
-\(e^{-nsT_s}f[n]\)
+<span class="math">\(e^{-nsT_s}f[n]\)</span>
 </td><td>
-\[F\left(e^{sT_s}z\right)\]
+<span class="math">\[F\left(e^{sT_s}z\right)\]</span>
 </td></tr>
 <tr><td>
 7
 </td><td>
-Multiplication by \(n\)
+Multiplication by <span class="math">\(n\)</span>
 </td><td>
-\(nf[n]\)
+<span class="math">\(nf[n]\)</span>
 </td><td>
-\[-z\frac{d}{dz}F(z)\]
+<span class="math">\[-z\frac{d}{dz}F(z)\]</span>
 </td></tr>
 <tr><td>
 8
 </td><td>
-Multiplication by \(n^2\)
+Multiplication by <span class="math">\(n^2\)</span>
 </td><td>
-\(n^2f[n]\)
+<span class="math">\(n^2f[n]\)</span>
 </td><td>
-\[-z\frac{d}{dz}F(z)+z^2\frac{d^2}{dz^2}F(z)\]
+<span class="math">\[-z\frac{d}{dz}F(z)+z^2\frac{d^2}{dz^2}F(z)\]</span>
 </td></tr>
 <tr><td>
 9
 </td><td>
 Summation in time
 </td><td>
-\[\sum_{m=0}{n}f[m]\]
+<span class="math">\[\sum_{m=0}^{n}f[m]\]</span>
 </td><td>
-\[\frac{z}{z-1}F(z)\]
+<span class="math">\[\frac{z}{z-1}F(z)\]</span>
 </td></tr>
 <tr><td>
 10
 </td><td>
 Time convolution
 </td><td>
-\(f_1[n]*f_2[n]\)
+<span class="math">\(f_1[n]*f_2[n]\)</span>
 </td><td>
-\(F_1(z)F_2(z)\)
+<span class="math">\(F_1(z)F_2(z)\)</span>
 </td></tr>
 <tr><td>
 11
 </td><td>
 Frequency convolution
 </td><td>
-\(f_1[n]f_2[n]\)
+<span class="math">\(f_1[n]f_2[n]\)</span>
 </td><td>
-\[\frac{1}{{j2\pi }}\oint {x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv\]
+<span class="math">\[\frac{1}{{j2\pi }}\oint {x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv\]</span>
 </td></tr>
 <tr><td>
 12
 </td><td>
 Initial value theorem
 </td><td colspan="2">
-\[f[0]=\lim_{z\to\infty}F(z)\]
+<span class="math">\[f[0]=\lim_{z\to\infty}F(z)\]</span>
 </td></tr>
 <tr><td>
 13
 </td><td>
 Final value theorem
 </td><td colspan="2">
-\[\lim_{n\to\infty}f[n]=\lim_{z\to 1}(z-1)F(z)\]
+<span class="math">\[\lim_{n\to\infty}f[n]=\lim_{z\to 1}(z-1)F(z)\]</span>
 </td></tr>
 </tbody>
 </table>
@@ -2017,21 +2017,21 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[f[n] = \left\{ {\begin{array}{*{20}{c}}
 0&amp;{n =  - 1, - 2, - 3, \ldots }\\
 {{a^n}}&amp;{n = 0,1,2,3, \ldots }
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[F(z) = \sum_{n=0}^{\infty}f[n]z^{-n} = \sum_{n=0}^{\infty}a^n z^{-n} = \sum_{n=0}^{\infty}\left(az^{-1}\right)^n\]</p>
+<p><span class="math">\[F(z) = \sum_{n=0}^{\infty}f[n]z^{-n} = \sum_{n=0}^{\infty}a^n z^{-n} = \sum_{n=0}^{\infty}\left(az^{-1}\right)^n\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After some analysis<sup>1</sup>, this can be shown to have a <em>closed-form</em> expression<sup>2</sup></p>
-<p>\[F(z) = \frac{1}{1-az^{-1}}=\frac{z}{z -a}\]</p>
+<p><span class="math">\[F(z) = \frac{1}{1-az^{-1}}=\frac{z}{z -a}\]</span></p>
 </div>
     </div><div style=display:none>
     
@@ -2039,7 +2039,7 @@ Final value theorem
 <p><strong>Notes</strong></p>
 <ol style="list-style-type: decimal">
 <li><p>See Karris pp 9-12—9-13 for the details</p></li>
-<li><p>This function converges only if \(|z| &lt; |a|\) and the region of convergence is outside the cicle centred at \(z=0\) with radius \(r=|a|\)</p></li>
+<li><p>This function converges only if <span class="math">\(|z| &lt; |a|\)</span> and the region of convergence is outside the cicle centred at <span class="math">\(z=0\)</span> with radius <span class="math">\(r=|a|\)</span></p></li>
 </ol>
 </div>
     </div></section><section>
@@ -2048,7 +2048,7 @@ Final value theorem
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/roc.png">
+<p><img src="pictures/roc.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="The-Delta-Sequence">The Delta Sequence<a class="anchor-link" href="#The-Delta-Sequence">&#182;</a></h3>
@@ -2056,20 +2056,20 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\delta [n] = \left\{ {\begin{array}{*{20}{c}}
-1&amp;{n = 1}\\
+<p><span class="math">\[\delta [n] = \left\{ {\begin{array}{*{20}{c}}
+1&amp;{n = 0}\\
 0&amp;{{\rm{otherwise}}}
-\end{array}} \right.\]</p>
+\end{array}} \right.\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\mathcal{Z}\left\{\delta [n]\right\} = \Delta[z] = \sum_{n=0}^{\infty}\delta[n]z^{-n} = 1 + \sum_{n=1}^{\infty}0z^{-n} =1\]</p>
+<p><span class="math">\[\mathcal{Z}\left\{\delta [n]\right\} = \Delta[z] = \sum_{n=0}^{\infty}\delta[n]z^{-n} = 1 + \sum_{n=1}^{\infty}0z^{-n} =1\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\delta [n] \Leftrightarrow 1\]</p>
+<p><span class="math">\[\delta [n] \Leftrightarrow 1\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2078,11 +2078,11 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[{u_0}[n] = {\rm{ }}\left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{u_0}[n] = {\rm{ }}\left\{ {\begin{array}{*{20}{c}}
 0&amp;{n &lt; 0}\\
 1&amp;{n \ge 0}
-\end{array}} \right.\]</p>
-<img src="pictures/unitstep.png">
+\end{array}} \right.\]</span></p>
+<p><img src="pictures/unitstep.png"></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2091,18 +2091,18 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\mathcal{Z}\left\{u_0 [n]\right\} U_0(z) = \sum_{n=0}^{\infty}u_0[n]z^{-n} =\sum_{n=0}^{\infty}z^{-n}\]</p>
+<p><span class="math">\[\mathcal{Z}\left\{u_0 [n]\right\} U_0(z) = \sum_{n=0}^{\infty}u_0[n]z^{-n} =\sum_{n=0}^{\infty}z^{-n}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a special case of the geometric sequence with \(a = 1\) so</p>
-<p>\[U_0(z) = \frac{1}{1-z^{-1}} = \frac{z}{z - 1}\]</p>
+<p>This is a special case of the geometric sequence with <span class="math">\(a = 1\)</span> so</p>
+<p><span class="math">\[U_0(z) = \frac{1}{1-z^{-1}} = \frac{z}{z - 1}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Region of convergence is \(|z| &gt; 1\)</p>
+<p>Region of convergence is <span class="math">\(|z| &gt; 1\)</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2111,23 +2111,23 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = e^{naT_s}{u_0}[n]\]</p>
+<p><span class="math">\[f[n] = e^{naT_s}{u_0}[n]\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[F(z) = \sum_{n=0}^{\infty}e^{-nasT_s}z^{-n} =1+e^{-aT_s}z^{-1}+e^{-2aT_s}z^{-2}+e^{-a3T_s}z^{-3}+\cdots\]</p>
+<p><span class="math">\[F(z) = \sum_{n=0}^{\infty}e^{-nasT_s}z^{-n} =1+e^{-aT_s}z^{-1}+e^{-2aT_s}z^{-2}+e^{-a3T_s}z^{-3}+\cdots\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is a geometric sequence with \(a = e^{-aT_s}\), so</p>
-<p>\[\mathcal{Z}\left\{e^{naT_s}{u_0}[n]\right\} = \frac{1}{1-e^{-aT_s}z^{-1}} = \frac{z}{z-e^{-aT_s}}\]</p>
+<p>This is a geometric sequence with <span class="math">\(a = e^{-aT_s}\)</span>, so</p>
+<p><span class="math">\[\mathcal{Z}\left\{e^{naT_s}{u_0}[n]\right\} = \frac{1}{1-e^{-aT_s}z^{-1}} = \frac{z}{z-e^{-aT_s}}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Region of convergence is \(|e^{-aT_s}z^{-1}| &lt; 1\)</p>
+<p>Region of convergence is <span class="math">\(|e^{-aT_s}z^{-1}| &lt; 1\)</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2136,23 +2136,23 @@ Final value theorem
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[f[n] = nu_0[n]\]</p>
+<p><span class="math">\[f[n] = nu_0[n]\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>\[\mathcal{Z}\left\{nu_0[n]\right\}=\sum_{n=0}^{\infty} nz^{-n} = 0 + z^{-1}+2z^{-2}+3z^{-3}+\cdots\]</p>
+<p><span class="math">\[\mathcal{Z}\left\{nu_0[n]\right\}=\sum_{n=0}^{\infty} nz^{-n} = 0 + z^{-1}+2z^{-2}+3z^{-3}+\cdots\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We recognize this as a signal \(u_0[n]\) multiplied by \(n\) for which we have the property \[nf[n] \Leftrightarrow -z\frac{d}{dz}F(z)\]</p>
+<p>We recognize this as a signal <span class="math">\(u_0[n]\)</span> multiplied by <span class="math">\(n\)</span> for which we have the property <span class="math">\[nf[n] \Leftrightarrow -z\frac{d}{dz}F(z)\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After applying the property and some manipulation, we arrive at:</p>
-<p>\[nu_0[n] \Leftrightarrow \frac{z}{(z-1)^2}\]</p>
+<p><span class="math">\[nu_0[n] \Leftrightarrow \frac{z}{(z-1)^2}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2174,114 +2174,114 @@ F(z)
 <tr><td>
 1
 </td><td>
-\[\delta[n]\]
+<span class="math">\[\delta[n]\]</span>
 </td><td>
-\[1\]
+<span class="math">\[1\]</span>
 </td></tr>
 <tr><td>
 2
 </td><td>
-\[\delta[n-m]\]
+<span class="math">\[\delta[n-m]\]</span>
 </td><td>
-\[z^{-m}\]
+<span class="math">\[z^{-m}\]</span>
 </td></tr>
 <tr><td>
 3
 </td><td>
-\[a^nu_0[n]\]
+<span class="math">\[a^nu_0[n]\]</span>
 </td><td>
-\[\frac{z}{z-a}\;|z| &gt; a\]
+<span class="math">\[\frac{z}{z-a}\;|z| &gt; a\]</span>
 </td></tr>
 <tr><td>
 4
 </td><td>
-\[u_0[n]\]
+<span class="math">\[u_0[n]\]</span>
 </td><td>
-\[\frac{z}{z-1}\;|z| &gt; 1\]
+<span class="math">\[\frac{z}{z-1}\;|z| &gt; 1\]</span>
 </td></tr>
 <tr><td>
 5
 </td><td>
-\[(e^{-anT_s})u_0[n]\]
+<span class="math">\[(e^{-anT_s})u_0[n]\]</span>
 </td><td>
-\[\frac{z}{z-e^{-aT_s}}\;|e^{-aT_s}z^{-1}| &lt; 1\]
+<span class="math">\[\frac{z}{z-e^{-aT_s}}\;|e^{-aT_s}z^{-1}| &lt; 1\]</span>
 </td></tr>
 <tr><td>
 6
 </td><td>
-\[(\cos naT_s)u_0[n]\]
+<span class="math">\[(\cos naT_s)u_0[n]\]</span>
 </td><td>
-\[\frac{z^2 - z\cos aT_s}{z^2 -2z\cos aT_s + 1}\;|z| &gt; 1\]
+<span class="math">\[\frac{z^2 - z\cos aT_s}{z^2 -2z\cos aT_s + 1}\;|z| &gt; 1\]</span>
 </td></tr>
 <tr><td>
 7
 </td><td>
-\[(\sin naT_s)u_0[n]\]
+<span class="math">\[(\sin naT_s)u_0[n]\]</span>
 </td><td>
-\[\frac{z\sin aT_s}{z^2 -2z\cos aT_s + 1}\;|z| &gt; 1\]
+<span class="math">\[\frac{z\sin aT_s}{z^2 -2z\cos aT_s + 1}\;|z| &gt; 1\]</span>
 </td></tr>
 <tr><td>
 8
 </td><td>
-\[(a^n\cos naT_s)u_0[n]\]
+<span class="math">\[(a^n\cos naT_s)u_0[n]\]</span>
 </td><td>
-\[\frac{z^2 - az\cos aT_s}{z^2 -2az\cos aT_s + a^2}\;|z| &gt; 1\]
+<span class="math">\[\frac{z^2 - az\cos aT_s}{z^2 -2az\cos aT_s + a^2}\;|z| &gt; 1\]</span>
 </td></tr>
 <tr><td>
 9
 </td><td>
-\[(a^n\sin naT_s)u_0[n]\]
+<span class="math">\[(a^n\sin naT_s)u_0[n]\]</span>
 </td><td>
-\[\frac{az\sin aT_s}{z^2 -2az\cos aT_s + a^2}\;|z| &gt; 1\]
+<span class="math">\[\frac{az\sin aT_s}{z^2 -2az\cos aT_s + a^2}\;|z| &gt; 1\]</span>
 </td></tr>
 <tr><td>
 10
 </td><td>
-\[u_0[n]-u_0[n-m]\]
+<span class="math">\[u_0[n]-u_0[n-m]\]</span>
 </td><td>
-\[\frac{z^m-1}{z^{m-1}(z-1)}\]
+<span class="math">\[\frac{z^m-1}{z^{m-1}(z-1)}\]</span>
 </td></tr>
 <tr><td>
 11
 </td><td>
-\[nu_0[n]\]
+<span class="math">\[nu_0[n]\]</span>
 </td><td>
-\[\frac{z}{(z-1)^2}\]
+<span class="math">\[\frac{z}{(z-1)^2}\]</span>
 </td></tr>
 <tr><td>
 12
 </td><td>
-\[n^2u_0[n]\]
+<span class="math">\[n^2u_0[n]\]</span>
 </td><td>
-\[\frac{z(z+1)}{(z-1)^3}\]
+<span class="math">\[\frac{z(z+1)}{(z-1)^3}\]</span>
 </td></tr>
 <tr><td>
 13
 </td><td>
-\[[n+1]u_0[n]\]
+<span class="math">\[[n+1]u_0[n]\]</span>
 </td><td>
-\[\frac{z^2}{(z-1)^2}\]
+<span class="math">\[\frac{z^2}{(z-1)^2}\]</span>
 </td></tr>
 <tr><td>
 14
 </td><td>
-\[a^n n u_0[n]\]
+<span class="math">\[a^n n u_0[n]\]</span>
 </td><td>
-\[\frac{az}{(z-a)^2}\]
+<span class="math">\[\frac{az}{(z-a)^2}\]</span>
 </td></tr>
 <tr><td>
 15
 </td><td>
-\[a^n n^2 u_0[n]\]
+<span class="math">\[a^n n^2 u_0[n]\]</span>
 </td><td>
-\[\frac{az(z+a)}{(z-a)^3}\]
+<span class="math">\[\frac{az(z+a)}{(z-a)^3}\]</span>
 </td></tr>
 <tr><td>
 16
 </td><td>
-\[a^n n[n+1] u_0[n]\]
+<span class="math">\[a^n n[n+1] u_0[n]\]</span>
 </td><td>
-\[\frac{2az^2}{(z-a)^3}\]
+<span class="math">\[\frac{2az^2}{(z-a)^3}\]</span>
 </td></tr>
 
 </tbody>
@@ -2296,26 +2296,26 @@ F(z)
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Given that we can represent sampled signal in complex frequency domain as the infinite sum of each sequence value delayed by an integer multiple of the sampling time:</p>
-<p>\[F(s) = \sum_{n=0}^{\infty}f[n]e^{-nsT_s}\]</p>
+<p>Given that we can represent a sampled signal in the complex frequency domain as the infinite sum of each sequence value delayed by an integer multiple of the sampling time:</p>
+<p><span class="math">\[F(s) = \sum_{n=0}^{\infty}f[n]e^{-nsT_s}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And by definition, the z-transform of such a sequence is:</p>
-<p>\[F(z) = \sum_{n=0}^{\infty}f[n]z^{-n}\]</p>
+<p><span class="math">\[F(z) = \sum_{n=0}^{\infty}f[n]z^{-n}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>It follows that</p>
-<p>\[z = e^{sT_s}\]</p>
+<p><span class="math">\[z = e^{sT_s}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>And</p>
-<p>\[s = \frac{1}{T_s}\ln z\]</p>
+<p><span class="math">\[s = \frac{1}{T_s}\ln z\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2323,14 +2323,31 @@ F(z)
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Since \(s\) and \(z\) are both complex variables, \(z=e^{sT_s}\) is a mapping from the \(s\)-domain to the \(z\)-domain and \(z = \ln z/T_s\) is a mapping from the \(z\) to \(s\)-domain.</p>
+<p>Since <span class="math">\(s\)</span> and <span class="math">\(z\)</span> are both complex variables, <span class="math">\(z=e^{sT_s}\)</span> is a mapping from the <span class="math">\(s\)</span>-domain to the <span class="math">\(z\)</span>-domain and <span class="math">\(z = \ln z/T_s\)</span> is a mapping from the <span class="math">\(z\)</span> to <span class="math">\(s\)</span>-domain.</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="pictures/mapping-s-to-z.png"></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mapping-of-s-to-z">Mapping of s to z<a class="anchor-link" href="#Mapping-of-s-to-z">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now, since</p>
-<p>\[s = \sigma + j\omega\]</p>
-<p>\[z = e^{\sigma T_s + j\omega T_s} = e^{\sigma T_s}e^{j\omega T_s} = |z|e^{j\theta}\]</p>
-<p>where \(|z| = e^{\sigma Ts}\) and \(\theta = \omega T_s\).</p>
+<p><span class="math">\[s = \sigma + j\omega\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[z = e^{\sigma T_s + j\omega T_s} = e^{\sigma T_s}e^{j\omega T_s} = |z|e^{j\theta}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>where <span class="math">\(|z| = e^{\sigma Ts}\)</span> and <span class="math">\(\theta = \omega T_s\)</span>.</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2338,22 +2355,18 @@ F(z)
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, since</p>
-<p>\[T_s = 1/f_s\]</p>
-<p>then</p>
-<p>\(\omega_s = 2\pi/f_s\) or \(f_s = \omega_s/(2\pi)\) and</p>
-<p>\[T_s = \frac{2\pi}{\omega_s}\]</p>
+<p>Now, since <span class="math">\(T_s = 1/f_s\)</span> then <span class="math">\(\omega_s = 2\pi/f_s\)</span> or <span class="math">\(f_s = \omega_s/(2\pi)\)</span> and <span class="math">\(T_s = 2\pi/\omega_s\)</span></p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We let</p>
-<p>\[\theta = \omega T_s = \omega\frac{2\pi}{\omega_s} = 2\pi\frac{\omega}{\omega_s}\]</p>
+<p><span class="math">\[\theta = \omega T_s = \omega\frac{2\pi}{\omega_s} = 2\pi\frac{\omega}{\omega_s}\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Hence by substitution:</p>
-<p>\[z = e^{\sigma t}e^{j2\pi\omega/\omega_s}\]</p>
+<p><span class="math">\[z = e^{\sigma t}e^{j2\pi\omega/\omega_s}\]</span></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2362,46 +2375,46 @@ F(z)
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>The quantity \(e^{j2\pi\omega/\omega_s}\) defines a unit-circle in the \(z\)-plane centred at the origin.</p></li>
-<li><p>And of course the term \(\sigma\) represents the (stability) boundary between the left- and right-half planes of the \(s\)-plane.</p></li>
+<li><p>The quantity <span class="math">\(e^{j2\pi\omega/\omega_s}\)</span> defines a unit-circle in the <span class="math">\(z\)</span>-plane centred at the origin.</p></li>
+<li><p>And of course the term <span class="math">\(\sigma\)</span> represents the (stability) boundary between the left- and right-half planes of the <span class="math">\(s\)</span>-plane.</p></li>
 <li><p>What are the consequences of this?</p></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case-I:-\(\sigma-&lt;-0\)">Case I: \(\sigma &lt; 0\)<a class="anchor-link" href="#Case-I:-\(\sigma-&lt;-0\)">&#182;</a></h3>
+<h3 id="Case-I:-\(\sigma-&lt;-0\)">Case I: <span class="math">\(\sigma &lt; 0\)</span><a class="anchor-link" href="#Case-I:-\(\sigma-&lt;-0\)">&#182;</a></h3>
 </div>
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>When \(\sigma &lt; 0\) we see that from \(|z| = e^{\sigma T_s}\) that \(|z| &lt; 1\)</li>
-<li>The left-half plane of the \(s\)-domain maps into the unit circle in the \(z\)-plane.</li>
-<li>Different negative values of \(\sigma\) map onto concentric circles with radius less than unity.</li>
+<li>When <span class="math">\(\sigma &lt; 0\)</span> we see that from <span class="math">\(|z| = e^{\sigma T_s}\)</span> that <span class="math">\(|z| &lt; 1\)</span></li>
+<li>The left-half plane of the <span class="math">\(s\)</span>-domain maps into the unit circle in the <span class="math">\(z\)</span>-plane.</li>
+<li>Different negative values of <span class="math">\(\sigma\)</span> map onto concentric circles with radius less than unity.</li>
 </ul>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case-II:-\(\sigma-&gt;-0\)">Case II: \(\sigma &gt; 0\)<a class="anchor-link" href="#Case-II:-\(\sigma-&gt;-0\)">&#182;</a></h3>
+<h3 id="Case-II:-\(\sigma-&gt;-0\)">Case II: <span class="math">\(\sigma &gt; 0\)</span><a class="anchor-link" href="#Case-II:-\(\sigma-&gt;-0\)">&#182;</a></h3>
 </div>
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>When \(\sigma &gt; 0\) we see that from \(|z| = e^{\sigma T_s}\) that \(|z| &gt; 1\)</li>
-<li>The right-half plane of the \(s\)-domain maps outside the unit circle in the \(z\)-plane.</li>
-<li>Different positive values of \(\sigma\) map onto concentric circles with radius greater than unity.</li>
+<li>When <span class="math">\(\sigma &gt; 0\)</span> we see that from <span class="math">\(|z| = e^{\sigma T_s}\)</span> that <span class="math">\(|z| &gt; 1\)</span></li>
+<li>The right-half plane of the <span class="math">\(s\)</span>-domain maps outside the unit circle in the <span class="math">\(z\)</span>-plane.</li>
+<li>Different positive values of <span class="math">\(\sigma\)</span> map onto concentric circles with radius greater than unity.</li>
 </ul>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case-III:-\(\sigma-=-0\)">Case III: \(\sigma = 0\)<a class="anchor-link" href="#Case-III:-\(\sigma-=-0\)">&#182;</a></h3>
+<h3 id="Case-III:-\(\sigma-=-0\)">Case III: <span class="math">\(\sigma = 0\)</span><a class="anchor-link" href="#Case-III:-\(\sigma-=-0\)">&#182;</a></h3>
 </div>
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>When \(\sigma = 0\), \(|z| = 1\) and \(\theta = 2\pi\omega/\omega_s\)</li>
-<li>All values of \(\omega\) lie on the circumference of the unit circle.</li>
+<li>When <span class="math">\(\sigma = 0\)</span>, <span class="math">\(|z| = 1\)</span> and <span class="math">\(\theta = 2\pi\omega/\omega_s\)</span></li>
+<li>All values of <span class="math">\(\omega\)</span> lie on the circumference of the unit circle.</li>
 </ul>
 </div>
     </div></section><section>
@@ -2410,14 +2423,14 @@ F(z)
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/s-plane.png">
+<p><img src="pictures/s-plane.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Stability-Region---z-Plane">Stability Region - z-Plane<a class="anchor-link" href="#Stability-Region---z-Plane">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/z-plane.png">
+<p><img src="pictures/z-plane.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequencies-in-the-z-Domain">Frequencies in the z-Domain<a class="anchor-link" href="#Frequencies-in-the-z-Domain">&#182;</a></h3>
@@ -2425,8 +2438,8 @@ F(z)
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><p>As a consequence of the result for <strong>Case III</strong> above, we can explore how frequencies (that is is values of \(s=\pm j\omega\)) map onto the \(z\)-plane.</p></li>
-<li><p>We already know that these frequencies will map onto the unit circle and by \(\theta = 2\pi\omega/\omega_s\) the angles are related to the sampling frequency.</p></li>
+<li><p>As a consequence of the result for <strong>Case III</strong> above, we can explore how frequencies (that is is values of <span class="math">\(s=\pm j\omega\)</span>) map onto the <span class="math">\(z\)</span>-plane.</p></li>
+<li><p>We already know that these frequencies will map onto the unit circle and by <span class="math">\(\theta = 2\pi\omega/\omega_s\)</span> the angles are related to the sampling frequency.</p></li>
 <li><p>Let's see how</p></li>
 </ul>
 </div></section><section>
@@ -2438,11 +2451,11 @@ F(z)
 <div class="text_cell_render border-box-sizing rendered_html">
 <table>
 <thead><tr><td>
-\(\omega\) [radians/sec]
+<span class="math">\(\omega\)</span> [radians/sec]
 </td><td>
-\(|z|\)
+<span class="math">\(|z|\)</span>
 </td><td>
-\(\theta\) [radians]
+<span class="math">\(\theta\)</span> [radians]
 </td></tr>
 </thead>
 <tbody>
@@ -2454,60 +2467,60 @@ F(z)
 0
 </td></tr>
 <tr><td>
-\(\omega_s/8\)
+<span class="math">\(\omega_s/8\)</span>
 </td><td>
 1
 </td><td>
-\(\pi/4\)
+<span class="math">\(\pi/4\)</span>
 </td></tr>
 <tr><td>
-\(\omega_s/4\)
+<span class="math">\(\omega_s/4\)</span>
 </td><td>
 1
 </td><td>
-\(\pi/2\)
+<span class="math">\(\pi/2\)</span>
 </td></tr>
 <tr><td>
-\(3\omega_s/8\)
+<span class="math">\(3\omega_s/8\)</span>
 </td><td>
 1
 </td><td>
-\(3\pi/4\)
+<span class="math">\(3\pi/4\)</span>
 </td></tr>
 <tr><td>
-\(\omega_s/2\)
+<span class="math">\(\omega_s/2\)</span>
 </td><td>
 1
 </td><td>
-\(\pi\)
+<span class="math">\(\pi\)</span>
 </td></tr>
 <tr><td>
-\(5\omega_s/8\)
+<span class="math">\(5\omega_s/8\)</span>
 </td><td>
 1
 </td><td>
-\(5\pi/4\)
+<span class="math">\(5\pi/4\)</span>
 </td></tr>
 <tr><td>
-\(3\omega_s/4\)
+<span class="math">\(3\omega_s/4\)</span>
 </td><td>
 1
 </td><td>
-\(3\pi/2\)
+<span class="math">\(3\pi/2\)</span>
 </td></tr>
 <tr><td>
-\(7\omega_s/8\)
+<span class="math">\(7\omega_s/8\)</span>
 </td><td>
 1
 </td><td>
-\(7\pi/4\)
+<span class="math">\(7\pi/4\)</span>
 </td></tr>
 <tr><td>
-\(\omega_s\)
+<span class="math">\(\omega_s\)</span>
 </td><td>
 1
 </td><td>
-\(2\pi\)
+<span class="math">\(2\pi\)</span>
 </td></tr>
 </tbody>
 </table>
@@ -2519,18 +2532,18 @@ F(z)
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<img src="pictures/s-to-z-mapping.png">
+<p><img src="pictures/s-to-z-mapping.png"></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Mapping-z-plane-to-s-plane">Mapping z-plane to s-plane<a class="anchor-link" href="#Mapping-z-plane-to-s-plane">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>There is no unique mapping of \(z\) to \(s\) since</p>
-<p>\[s = \frac{1}{T_s} \ln z\]</p>
+<p>There is no unique mapping of <span class="math">\(z\)</span> to <span class="math">\(s\)</span> since</p>
+<p><span class="math">\[s = \frac{1}{T_s} \ln z\]</span></p>
 <p>but for a complex variable</p>
-<p>\[\ln z = \ln z \pm j2n\pi\]</p>
-<p>This is in agreement with the theoretical idea that in the frequency domain, sampling creates an infinite number of spectra, each of which is centred around \(\pm n\omega_s\).</p>
+<p><span class="math">\[\ln z = \ln z \pm j2n\pi\]</span></p>
+<p>This is in agreement with the theoretical idea that in the frequency domain, sampling creates an infinite number of spectra, each of which is centred around <span class="math">\(\pm n\omega_s\)</span>.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Frequency-aliasing">Frequency aliasing<a class="anchor-link" href="#Frequency-aliasing">&#182;</a></h3>
@@ -2538,9 +2551,9 @@ F(z)
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>It's worth observing that any stable complex pole in the \(s\)-plane \(s=-\sigma + j\omega\) will have complex conjugate pair \(s = -\sigma - j\omega\).</li>
-<li>Providing \(\omega &lt; \omega_s/2\) these poles will be mapped to the upper and lower half-plane of the \(z\)-plane respectively.</li>
-<li>If \(\omega &gt; \omega_s/2\), an upper-half plane pole will be mapped to the lower-half plane and will have an effective frequency of \(omega_s/2 - \omega\).</li>
+<li>It's worth observing that any stable complex pole in the <span class="math">\(s\)</span>-plane <span class="math">\(s=-\sigma + j\omega\)</span> will have complex conjugate pair <span class="math">\(s = -\sigma - j\omega\)</span>.</li>
+<li>Providing <span class="math">\(\omega &lt; \omega_s/2\)</span> these poles will be mapped to the upper and lower half-plane of the <span class="math">\(z\)</span>-plane respectively.</li>
+<li>If <span class="math">\(\omega &gt; \omega_s/2\)</span>, an upper-half plane pole will be mapped to the lower-half plane and will have an effective frequency of <span class="math">\(omega_s/2 - \omega\)</span>.</li>
 <li>Similarly, its conjugate pair will move into the upper-half plane.</li>
 </ul>
 <p>This is another way of looking at <em>aliasing</em>.</p>
@@ -2548,7 +2561,7 @@ F(z)
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Also, any poles with frequency \(\omega &gt; \omega_s\) will also be aliased back into into the unit circle.</li>
+<li>Also, any poles with frequency <span class="math">\(\omega &gt; \omega_s\)</span> will also be aliased back into into the unit circle.</li>
 </ul>
 </div>
     </div></section>
