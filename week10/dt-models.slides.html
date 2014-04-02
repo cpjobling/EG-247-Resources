@@ -1734,7 +1734,7 @@ text-align: inherit;
 <section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="The-Inverse-Z-Transform">The Inverse Z-Transform<a class="anchor-link" href="#The-Inverse-Z-Transform">&#182;</a></h1>
+<h1 id="Discrete-Time-System-Models">Discrete-Time System Models<a class="anchor-link" href="#Discrete-Time-System-Models">&#182;</a></h1>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1744,7 +1744,7 @@ h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;'
 document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1753,8 +1753,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This session we will talk about the Inverse Z-Transform and illustrate its use through an examples class.</p>
-<p>The material in this presentation and notes is based on Chapter 9 (Starting at Section 9.6) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>.</p>
+<p>This we will explore digital systems and learn more about the z-transfer function model.</p>
+<p>The material in this presentation and notes is based on Chapter 9 (Starting at Section 9.7) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>. I have skipped the section on digital state-space models.</p>
 </div></section>
     </section><section>
     <section>
@@ -1764,304 +1764,500 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Inverse Z-Transform</li>
-<li>Examples using PFE</li>
-<li>Examples using Long Division</li>
-<li>Analysis in Matlab</li>
+<li>Discrete Time Systems</li>
+<li>Transfer Functions in the Z-Domain</li>
+<li>Modelling digital systems in Matlab/Simulink</li>
+<li>Continuous System Equivalents</li>
+<li>Example: Digital Butterworth Filter</li>
 </ul>
 </div></section>
     </section><section>
     <section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="The-Inverse-Z-Transform">The Inverse Z-Transform<a class="anchor-link" href="#The-Inverse-Z-Transform">&#182;</a></h2>
+<h2 id="Discrete-Time-Systems">Discrete Time Systems<a class="anchor-link" href="#Discrete-Time-Systems">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The inverse Z-Transform enables us to extract a sequence <span class="math">\(f[n]\)</span> from <span class="math">\(F(z)\)</span>. It can be found by any of the following methods:</p>
-<ul>
-<li>Partial fraction expansion</li>
-<li>The inversion integral</li>
-<li>Long division of polynomials</li>
-</ul>
+<p>In the lecture that introduced the z-transform we talked about the representation of a discrete-time (DT) system by the model shown below:</p>
+<p><img src="pictures/ct-to-dt.png"></p>
+<p>In this session, we want to explore the contents of the central block.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Partial-fraction-expansion">Partial fraction expansion<a class="anchor-link" href="#Partial-fraction-expansion">&#182;</a></h3>
+<h3 id="DT-System-as-a-Sequence-Processor">DT System as a Sequence Processor<a class="anchor-link" href="#DT-System-as-a-Sequence-Processor">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We expand <span class="math">\(F(z)\)</span> into a summation of terms whose inverse is know. These terms have the form:</p>
-<p><span class="math">\[k,\;\frac{r_1 z}{z - p_1},\;\frac{r_1 z}{(z - p_1)^2},\;\frac{r_3 z}{z - p_2},\ldots\]</span></p>
-<p>where <span class="math">\(k\)</span> is a constant, and <span class="math">\(r_i\)</span> and <span class="math">\(p_i\)</span> represent the residues and poles respectively, and can be real or complex<sup>1</sup></p>
-</div><div style=display:none>
+<ul>
+<li>As noted in the previous slide, the discrete time system takes as an input the sequence <span class="math">\(x_d[n]\)</span><sup>1</sup>.</li>
+<li>It produces another sequence <span class="math">\(y_d[n]\)</span> by <em>processing</em> the input sequence in some way.</li>
+<li>The output sequence is converted into an analogue signal <span class="math">\(y(t)\)</span> by a digital to analogue converter.</li>
+</ul>
+</div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Notes</strong></p>
-<ol style="list-style-type: decimal">
-<li>If complex, the poles and residues will be in complex conjugate pairs</li>
-</ol>
-<p><span class="math">\[\frac{r_{i} z}{z - p_i} + \frac{r_{i}^* z}{z - p_i^*}\]</span></p>
+<p><img src="pictures/sigs.png"></p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-1:-Make-Fractions-Proper">Step 1: Make Fractions Proper<a class="anchor-link" href="#Step-1:-Make-Fractions-Proper">&#182;</a></h3>
+<h3 id="What-is-the-nature-of-the-DTS?">What is the nature of the DTS?<a class="anchor-link" href="#What-is-the-nature-of-the-DTS?">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Before we expand <span class="math">\(F(z)\)</span> into partial fraction expansions, we must first express it as a <em>proper</em> rational function.</li>
-<li>This is done by expanding <span class="math">\(F(z)/z\)</span> instead of <span class="math">\(F(z)\)</span></li>
-<li>That is we expand</li>
+<li>The discrete time system (DTS) is a block that converts a sequence <span class="math">\(x_d[n]\)</span> into another sequence <span class="math">\(y_d[n]\)</span></li>
+<li>The transformation will be a <em>difference equation</em> <span class="math">\(h[n]\)</span></li>
 </ul>
-<p><span class="math">\[\frac{F(z)}{z} = \frac{k}{z} + \frac{r_1}{z-p_1} + \frac{r_2}{z-p_2} + \cdots\]</span></p>
-</div></section><section>
+</div><div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-2:-Find-residues">Step 2: Find residues<a class="anchor-link" href="#Step-2:-Find-residues">&#182;</a></h3>
+<ul>
+<li>By analogy with CT systems, <span class="math">\(h[n]\)</span> is the impulse response of the DTS, and <span class="math">\(y[n]\)</span> can be obtained by <em>convolving</em> <span class="math">\(h[n]\)</span> with <span class="math">\(x_d[n]\)</span> so:</li>
+</ul>
+<p><span class="math">\[y_d[n] = h[n] * x_d[n]\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Taking the z-transform of <span class="math">\(h[n]\)</span> we get <span class="math">\(H(z)\)</span>, and from the transform properties, convolution of the signal <span class="math">\(x_d[n]\)</span> by system <span class="math">\(h[n]\)</span> will be <em>multiplication</em> of the z-transforms:</li>
+</ul>
+<p><span class="math">\[Y_d(z) = H(z) X_d(z)\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>So, what does <span class="math">\(h[n]\)</span> and therefore <span class="math">\(H(z)\)</span> look like?</li>
+</ul>
+</div>
+    </div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Transfer-Functions-in-the-z-Domain">Transfer Functions in the z-Domain<a class="anchor-link" href="#Transfer-Functions-in-the-z-Domain">&#182;</a></h2>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Find residues from</li>
-</ul>
-<p><span class="math">\[r_k = \lim_{z\to p_k}(z - p_k)\frac{F(z)}{z} = (z - p_k)\left.\frac{F(z)}{z}\right|_{z=p_k}\]</span></p>
+<p>Let us assume that the sequence transformation is a <em>difference equation</em> of the form<sup>2</sup>:</p>
+<p><span class="math">\[\begin{array}{l}
+y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
+\quad  = {b_0}x[n] + {b_1}y[n - 1] + {b_2}y[n - 2] +  \cdots  + {b_k}y[n - k]
+\end{array}\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Step-3:-Map-back-to-transform-tables-form">Step 3: Map back to transform tables form<a class="anchor-link" href="#Step-3:-Map-back-to-transform-tables-form">&#182;</a></h3>
+<h3 id="Take-Z-Transform-of-both-sides">Take Z-Transform of both sides<a class="anchor-link" href="#Take-Z-Transform-of-both-sides">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Rewrite <span class="math">\(F(z)/z\)</span>:</li>
-</ul>
-<p><span class="math">\[z\frac{F(z)}{z} = F(z) = k + \frac{r_1z}{s-p_1} + \frac{r_2z}{s-p_2} + \cdots\]</span></p>
-</div></section><section>
+<p>From the z-transform properties</p>
+<p><span class="math">\[f[n-m] \Leftrightarrow z^{-m}F(z)\]</span></p>
+<p>so....</p>
+</div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Gather-terms">Gather terms<a class="anchor-link" href="#Gather-terms">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\left(1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}\right)Y(z) = \left(b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}\right) U(z)\]</span></p>
+<p>from which ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\right) U(z)\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Define-transfer-function">Define transfer function<a class="anchor-link" href="#Define-transfer-function">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We define the <em>discrete time transfer function</em> <span class="math">\(H(z) := Y(z)/U(z)\)</span> so...</p>
+</div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>... or more conventionally<sup>3</sup>:</p>
+<p><span class="math">\[H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z + b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="DT-impulse-response">DT impulse response<a class="anchor-link" href="#DT-impulse-response">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <em>discrete-time impulse reponse</em> <span class="math">\(h[n]\)</span> is the response of the DT system to the input <span class="math">\(x[n] = \delta[n]\)</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\delta[n] \Leftrightarrow 1\]</span></p>
+<p>so</p>
+<p><span class="math">\[h[n] = ...\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[h[n] = \mathcal{Z}^{-1}\left\{H(z).1\right\} = \mathcal{Z}^{-1}\left\{H(z)\right\}\]</span></p>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris Example 9.4: use the partial fraction expansion to compute the inverse z-transform of</p>
-<p><span class="math">\[F(z) = \frac{1}{(1 - 0.5z^{-1})(1 - 0.75z^{-1})(1 - z^{-1})}\]</span></p>
+<p>Karris Example 9.10:</p>
+<p>The difference equation describing the input-output relationship of a DT system with zero initial conditions, is:</p>
+<p><span class="math">\[y[n] - 0.5 y[n-1] + 0.125 y[n-2] = x[n] + x[n -1]\]</span></p>
+<p>Compute:</p>
+<ol style="list-style-type: decimal">
+<li>The transfer function <span class="math">\(H(z)\)</span></li>
+<li>The DT impulse response <span class="math">\(h[n]\)</span></li>
+<li>The response <span class="math">\(y[n]\)</span> when the input <span class="math">\(x[n]\)</span> is the DT unit step <span class="math">\(u_0[n]\)</span></li>
+</ol>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-to-Example-1">Answer to Example 1<a class="anchor-link" href="#Answer-to-Example-1">&#182;</a></h3>
+<h3 id="1.-The-transfer-function">1. The transfer function<a class="anchor-link" href="#1.-The-transfer-function">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[f[n] = 2\left(\frac{1}{2}\right)^n - 9\left(\frac{3}{4}\right)^n + 8\]</span></p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = ...?\]</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
+<h3 id="1.-Solution">1. Solution<a class="anchor-link" href="#1.-Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/example1.m">example1.m</a></p>
-<p>Uses Matlab functions:</p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{X(z)} = \frac{z^2 + z}{z^2 - 0.5z + 0.125}\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-The-DT-impulse-response">2. The DT impulse response<a class="anchor-link" href="#2.-The-DT-impulse-response">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Start with:</p>
+<p><span class="math">\[\frac{H(z)}{z} = \frac{z - 1}{z^2 + 0.5 z + 0.125}\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="2.-Solution">2. Solution<a class="anchor-link" href="#2.-Solution">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left( {\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <a href="matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
+<p><img src="pictures/dtm_ex1_2_1.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="pictures/dtm_ex1_2_2.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-The-DT-step-response">3. The DT step response<a class="anchor-link" href="#3.-The-DT-step-response">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[Y(z) = H(z)X(z)\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[u_0[n] \Leftrightarrow \frac{z}{z - 1}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[Y(z) = H(z)U_0(z) = \frac{z^2 + z}{z^2 + 0.5 z + 0.125}.\frac{z}{z - 1} = \frac{z(z^2 + z)}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[\frac{Y(z)}{z} = \frac{z^2 + z}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="3.-Solution">3. Solution<a class="anchor-link" href="#3.-Solution">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos \left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)} \right)\right) u_0[n]\]</span></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <a href="matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<p><img src="pictures/dtm_ex1_3_1.png"></p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Modelling-DT-systems-in-Matlab-and-Simulink">Modelling DT systems in Matlab and Simulink<a class="anchor-link" href="#Modelling-DT-systems-in-Matlab-and-Simulink">&#182;</a></h2>
+</div>
+</section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matlab">Matlab<a class="anchor-link" href="#Matlab">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Code extracted from <a href="matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">Ts = <span class="fl">1</span>;
+z = tf(<span class="st">&#39;z&#39;</span>, Ts)
+Hz = (z^<span class="fl">2</span> + z)/(z^<span class="fl">2</span> - <span class="fl">0.5</span> * z + <span class="fl">0.125</span>)
+step(Hz)
+grid
+title(<span class="st">&#39;Example 1 - Part 3 - As Analogue Signal&#39;</span>)
+xlabel(<span class="st">&#39;nTs [s]&#39;</span>)
+ylabel(<span class="st">&#39;Step response y(t)&#39;</span>)
+axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</span>,<span class="fl">3.5</span>])</code></pre>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="pictures/dtm_ex1_3_2.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Simulink-Model">Simulink Model<a class="anchor-link" href="#Simulink-Model">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>See <a href="matlab/dtm.slx">dtm.slx</a>:</p>
+<p><img src="pictures/simulink_model.png"></p>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="pictures/scope.png"></p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Converting-Continuous-Time-Systems-to-Discrete-Time-Systems">Converting Continuous Time Systems to Discrete Time Systems<a class="anchor-link" href="#Converting-Continuous-Time-Systems-to-Discrete-Time-Systems">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><code>collect</code> – expands a polynomial</li>
-<li><code>sym2poly</code> – converts a polynomial into a numeric polymial (vector of coefficients in descending order of exponents)</li>
-<li><code>residue</code> – calculates poles and zeros of a polynomial</li>
-<li><code>ztrans</code> – symbolic z-transform</li>
-<li><code>iztrans</code> – symbolic inverse ze-transform</li>
-<li><code>stem</code> – plots sequence as a &quot;lollipop&quot; diagram</li>
+<li>In analogue electronics, to implement a filter we would need to resort to op-amp circuits with resistors, capacitors and inductors acting as energy dissipation, storage and release devices.</li>
+<li>In modern digital electronics, it is often more convenient to take the original transfer function <span class="math">\(H(s)\)</span> and produce an equivalent <span class="math">\(H(z)\)</span>.</li>
+<li>We can then determine a <em>difference equation</em> that will respresent <span class="math">\(h[n]\)</span> and implement this as <em>computer algorithm</em>.</li>
+<li>Simple storage of past values becomes the repository of history that integrators and derivative circuits need in the analogue world.</li>
+<li>To achieve this, all we need is to be able to do is to sample and process the signals quickly to avoid violating Nyquist-Shannon's sampling theorem.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Stem-(&quot;Lollipop&quot;)-Plot">Stem ("Lollipop") Plot<a class="anchor-link" href="#Stem-(&quot;Lollipop&quot;)-Plot">&#182;</a></h3>
+<h3 id="Continuous-System-Equivalents">Continuous System Equivalents<a class="anchor-link" href="#Continuous-System-Equivalents">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/example1.png"></p>
+<ul>
+<li>There is no digital system that uniquely represents a continuous system</li>
+<li>This is because as we are sampling, we only have knowedge of signals being processed at the sampling instants, and need to <em>reconstruct</em> the inter-sample behaviour.</li>
+<li>In parctice, only a small number of transormations are used.</li>
+<li>The derivation of these is beyond the scope of this course, but we'll mention the ones that Matlab provides in a function called <code>c2d</code></li>
+</ul>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Matlab-c2d-function">Matlab c2d function<a class="anchor-link" href="#Matlab-c2d-function">&#182;</a></h3>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is what the help function says:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">&gt;&gt; help c2d
+SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with 
+    sampling time TS that approximates the continuous-time model SYSC.
+    The string METHOD selects the discretization method among the following:
+       <span class="st">&#39;zoh&#39;</span>       Zero-order hold on the inputs
+       <span class="st">&#39;foh&#39;</span>       Linear interpolation of inputs
+       <span class="st">&#39;impulse&#39;</span>   Impulse-invariant discretization
+       <span class="st">&#39;tustin&#39;</span>    Bilinear (Tustin) approximation.
+       <span class="st">&#39;matched&#39;</span>   Matched pole-zero method (for SISO systems only).
+    The default is <span class="st">&#39;zoh&#39;</span> when METHOD is omitted. The sampling time TS should 
+    be specified in the time units of SYSC (see &quot;TimeUnit&quot; property).
+...</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 9.5: use the partial fraction expansion method to to compute the inverse z-transform of</p>
-<p><span class="math">\[F(z) = \frac{12z}{(z+1)(z - 1)^2}\]</span></p>
+<p>Design a 2nd-order butterworth anti-aliasing filter with transfer function <span class="math">\(H(s)\)</span> for use in sampling music. The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band. Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-to-Example-2">Answer to Example 2<a class="anchor-link" href="#Answer-to-Example-2">&#182;</a></h3>
+<h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[f[n] = 3(-1)^n + 6n - 3\]</span></p>
-</div></section><section>
+<p>See <a href="matlab/digi_butter.m">digi_butter.m</a>:</p>
+<p><span class="math">\[\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times 10^3\;\mathrm{rad/s}\]</span></p>
+</div><div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
+<p>From the lecture on filters, we know the 2nd-order butterworth filter has transfer function:</p>
+<p><span class="math">\[H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega _c}\sqrt 2 \,s + \omega _c^2}}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Substituting for <span class="math">\(\omega_c = 125.6637\times 10^3\)</span> this is ...?</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79 \times {{10}^9}}}\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Bode-plot">Bode plot<a class="anchor-link" href="#Bode-plot">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/example2.m">example2.m</a></p>
-<p>Uses additional Matlab functions:</p>
-<ul>
-<li><code>dimpulse</code> – computes and plots a sequence <span class="math">\(f[n]\)</span> for any range of values of <span class="math">\(n\)</span></li>
-</ul>
-</div></section><section>
+<p>Matlab:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">2</span>*pi*<span class="fl">20e3</span>;
+Hs = tf(wc^<span class="fl">2</span>,[<span class="fl">1</span> wc*sqrt(<span class="fl">2</span>), wc^<span class="fl">2</span>]);
+bode(Hs,{<span class="fl">1e4</span>,<span class="fl">1e8</span>})
+grid</code></pre>
+</div><div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lollipop-Plot">Lollipop Plot<a class="anchor-link" href="#Lollipop-Plot">&#182;</a></h3>
+<p><img src="pictures/bode.png"></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sampling-Frequency">Sampling Frequency<a class="anchor-link" href="#Sampling-Frequency">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From the bode diagram, the frequency at which <span class="math">\(|H(j\omega)|\)</span> is <span class="math">\(-80\)</span> dB is approx <span class="math">\(12.6\times 10^6\)</span> rad/s.</p>
+<p>To avoid aliasing, we should choose a sampling frequency twice this = ?</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So sampling frequency <span class="math">\(\omega_s = 2\times 12.6\times 10^6 = 25.2\times 10^6\)</span> rad/s.</p>
+<p>Sampling frequency in Hz <span class="math">\(f_s\)</span> = ?</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[f_s = \omega_s/(2\pi) = 25.2\times 10^6/(2\times \pi) = 40.1\;\mathrm{Mhz}\]</span></p>
+<p>Sampling time <span class="math">\(T_s = ?\)</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}\]</span></p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Digital-Butterworth">Digital Butterworth<a class="anchor-link" href="#Digital-Butterworth">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/example2a.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Staircase-Plot">Staircase Plot<a class="anchor-link" href="#Staircase-Plot">&#182;</a></h3>
-</div>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">&gt;&gt; Hz = c2d(Hs, Ts) <span class="co">% zero-order-hold equivalent</span>
 
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Simulates output of Zero-Order-Hold (ZOH) or Digital Analogue Converter (DAC)</p>
-<p><img src="pictures/example2b.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-3">Example 3<a class="anchor-link" href="#Example-3">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 9.6: use the partial fraction expansion method to to compute the inverse z-transform of</p>
-<p><span class="math">\[F(z) = \frac{z + 1}{(z-1)(z^2 + 2z + 2)}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-to-Example-3">Answer to Example 3<a class="anchor-link" href="#Answer-to-Example-3">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[f[n] = -0.5\delta[n] + 0.4 + \frac{(\sqrt{2})^n}{10}\cos \frac{3n\pi}{4} - \frac{3(\sqrt{2})^n}{10}\sin \frac{3n\pi}{4}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matlab-solution">Matlab solution<a class="anchor-link" href="#Matlab-solution">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/example3.m">example3.m</a></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lollipop-Plot">Lollipop Plot<a class="anchor-link" href="#Lollipop-Plot">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/example3a.png"></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Staircase-Plot">Staircase Plot<a class="anchor-link" href="#Staircase-Plot">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/example3b.png"></p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inverse-Z-Transform-by-the-Inversion-Integral">Inverse Z-Transform by the Inversion Integral<a class="anchor-link" href="#Inverse-Z-Transform-by-the-Inversion-Integral">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The inversion integral states that:</p>
-<p><span class="math">\[f[n] = \frac{1}{{j2\pi }}\oint_C {F(z){z^{n - 1}}\,dz} \]</span></p>
-<p>where <span class="math">\(C\)</span> is a closed curve that encloses all poles of the integrant.</p>
-<p>This can (<em>apparently</em>) be solved by Cauchy's residue theorem!!</p>
-<p>Fortunately (:-), this is beyond the scope of this module!</p>
-<p>See Karris Section 9.6.2 (pp 9-29—9-33) if you want to find out more.</p>
-</div></section>
-    </section><section>
-    <section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Inverse-Z-Transform-by-the-Long-Division">Inverse Z-Transform by the Long Division<a class="anchor-link" href="#Inverse-Z-Transform-by-the-Long-Division">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To apply this method, <span class="math">\(F(z)\)</span> must be a rational polynomial functuon, and the numerator and denominator must be polynomials arranged in descending powers of <span class="math">\(z\)</span>.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Karris example 9.9: use the long division method to determine <span class="math">\(f[n]\)</span> for <span class="math">\(n = 0,\,1,\,\mathrm{and}\,2\)</span>, given that</p>
-<p><span class="math">\[F(z) = \frac{1 + z^{-1} + 2z^{-2} + 3z^{-3}}{(1 - 0.25z^{-1})(1 - 0.5z^{-1})(1 - 0.75z^{-1})}\]</span></p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Answer-4">Answer 4<a class="anchor-link" href="#Answer-4">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\(f[0] = 1\)</span>, <span class="math">\(f[1] = 5/2\)</span>, <span class="math">\(f[2] = 81/16\)</span>.</p>
-</div></section><section>
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matlab">Matlab<a class="anchor-link" href="#Matlab">&#182;</a></h3>
-</div>
-
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/example4.m">example4.m</a></p>
-<pre><code>sym_den =
+Hz =
  
-z^3 - (3*z^2)/2 + (11*z)/16 - 3/32
+  <span class="fl">0.0004836</span> z + <span class="fl">0.0004765</span>
+  -----------------------
+  z^<span class="fl">2</span> - <span class="fl">1.956</span> z + <span class="fl">0.9567</span>
  
-
-fn =
-
-    1.0000
-    2.5000
-    5.0625
-    ....</code></pre>
+Sample time: <span class="fl">2.4933e-07</span> seconds
+Discrete-time transfer function.</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Combined-Staircase/Lollipop-Plot">Combined Staircase/Lollipop Plot<a class="anchor-link" href="#Combined-Staircase/Lollipop-Plot">&#182;</a></h3>
+<h3 id="Step-response">Step response<a class="anchor-link" href="#Step-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/example4.png"></p>
-</div></section>
-    </section><section>
-    <section>
+<p><img src="pictures/b_step.png"></p>
+</div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Methods-of-Evaluation-of-the-Inverse-Z-Transform">Methods of Evaluation of the Inverse Z-Transform<a class="anchor-link" href="#Methods-of-Evaluation-of-the-Inverse-Z-Transform">&#182;</a></h2>
+<h3 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">&#182;</a></h3>
+</div>
+<div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>From previous result:</p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z +  476.5\times 10^{-6}}{z^2 - 1.956z + 0.9567}\]</span></p>
+<p>Dividing top and bottom by <span class="math">\(z^2\)</span> ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z^{-1} +  476.5\times 10^{-6}z^{-2}}{1 - 1.956z^{-1} + 0.9567z^{-2}}\]</span></p>
+<p>expanding out ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[Y(z) - 1.956 z^{-1} Y(z) + 0.9567z^{-2} Y(z) = 486.6\times 10^{-6}z^{-1} U(z) + 476.5\times 10^{-6} z^{-2} U(z)\]</span></p>
+<p>Inverse z-transform gives ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[y[n] - 1.956 y[n-1] + 0.9567 y[n - 2] = 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+<p>in algoithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+<p>Now convert to code</p>
+</div>
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<table>
-<thead>
-<tr><th>
-Method
-</th><th>
-Advantages
-</th><th>
-Disadvantages
-</th></tr>
-</thead>
-<tbody>
-<tr><td>
-Partial Fraction Expansion
-</td><td><ul><li>
-Most familiar.
-</li><li>
-Can use Matlab <code>residue</code> function.
-</li></ul></td><td><ul><li>
-Requires that <span class="math">\(F(z)\)</span> is a proper rational function.
-</li></ul></td></tr>
-<tr><td>
-Invsersion Integral
-</td><td><ul><li>
-Can be used whether <span class="math">\(F(z)\)</span> is rational or not
-</li></ul></td><td><ul><li>
-Requires familiarity with the <em>Residues theorem</em> of complex variable analaysis.
-</li></ul></td></tr>
-<tr><td>
-Long Division
-</td><td><ul><li>
-Practical when only a small sequence of numbers is desired.
-</li><li>
-Useful when z-transform has no closed-form solution.
-</li><li>
-Can use Matlab <code>dimpulse</code> function to compute a large sequence of numbers.
-</ul></td><td><ul><li>
-Requires that <span class="math">\(F(z)\)</span> is a proper rational function.
-</li><li>
-Division may be endless.
-</li></ul></td></tr>
-</tbody>
-</table>
+<p>To implement: <span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+<pre class="sourceCode C"><code class="sourceCode c"><span class="co">/* Initialize */</span>
+ynm1 = <span class="dv">0</span>; ynm2 = <span class="dv">0</span>; unm1 = <span class="dv">0</span>; unm2 = <span class="dv">0</span>;
+<span class="kw">while</span> (true) {
+    un = read_adc;
+    yn = <span class="fl">1.956</span>*ynm1 - <span class="fl">0.9567</span>*ynm2 + <span class="fl">486.6e-6</span>*unm1 + <span class="fl">476.5e-6</span>*unm2;
+    write_dac(yn);
+    <span class="co">/* store past values */</span>
+    ynm2 = ynm1; ynm1 = yn;
+    unm2 = unm1; unm1 = un;
+}</code></pre>
+</div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Comments">Comments<a class="anchor-link" href="#Comments">&#182;</a></h3>
+</div>
 
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>PC soundcards can sample audio at 44.1 kHz so this implies that the anti-aliasing filter is much sharper than this one as <span class="math">\(f_s/2 = 22.05\)</span> kHz.</p>
+<p>You might wish to find out what order butterworth filter would be needed to have <span class="math">\(f_c = 20\)</span> kHz and <span class="math">\(f_{\mathrm{stop}}\)</span> of 22.05 kHz.</p>
 </div></section>
     </section><section>
     <section>
@@ -2071,14 +2267,11 @@ Division may be endless.
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Inverse Z-Transform</li>
-<li>Examples using PFE</li>
-<li>Examples using Long Division</li>
-<li>Analysis in Matlab</li>
-</ul>
-<p><em>Next time</em></p>
-<ul>
-<li>DT transfer functions, continuous system equivalents, and modelling DT systems in Matlab and Simulink.</li>
+<li>Discrete Time Systems</li>
+<li>Transfer Functions in the Z-Domain</li>
+<li>Modelling digital systems in Matlab/Simulink</li>
+<li>Continuous System Equivalents</li>
+<li>Example: Digital Butterworth Filter</li>
 </ul>
 </div></section>
     </section><section>
@@ -2088,7 +2281,18 @@ Division may be endless.
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Attempt the end of the chapter exercises 4-7 (Section 9.10) from Karris. Don't look at the answers until you have attempted the problems.</p>
+<p>You should be able to tackle the remaining end of chapter exercises 8-11 (Section 9.10) from Karris. Don't look at the answers until you have attempted the problems.</p>
+</div></section>
+    </section><section>
+    <section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="The-End?">The End?<a class="anchor-link" href="#The-End?">&#182;</a></h2>
+</div>
+
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This concludes this module. There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</p>
+<p>This is covered in Karris Chapter 10 and Boulet. It will not be examined this year!</p>
+<p>There is a significant amount of additional information about Filter Design (including the use of Matlab for this) in Chapter 12 of Karris.</p>
 </div></section>
     </section>
 </div>
