@@ -1869,7 +1869,10 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[\left(1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}\right)Y(z) = \left(b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}\right) U(z)\]</span></p>
+<p><span class="math">\[\begin{array}{l}
+\left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}} \right)Y(z) = \\
+\quad \left( {{b_0} + {b_1}{z^{ - 1}} + {b_2}{z^{ - 2}} +  \cdots {b_k}{z^{ - k}}} \right)U(z)
+\end{array}\]</span></p>
 <p>from which ...</p>
 </div>
     </div><div class="fragment">
@@ -1909,12 +1912,17 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair ...</p>
+<p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair</p>
+<p><span class="math">\[\delta[n] \Leftrightarrow ?\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span class="math">\[\delta[n] \Leftrightarrow 1\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>so</p>
 <p><span class="math">\[h[n] = ...\]</span></p>
 </div>
@@ -1997,7 +2005,10 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Y(z) = H(z)U_0(z) = \frac{z^2 + z}{z^2 + 0.5 z + 0.125}.\frac{z}{z - 1} = \frac{z(z^2 + z)}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</span></p>
+<p><span class="math">\[\begin{array}{lcl}
+Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac{z}{{z - 1}}\\
+ &amp; = &amp; \frac{{z({z^2} + z)}}{{({z^2} + 0.5z + 0.125)(z - 1)}}
+\end{array}\]</span></p>
 </div>
     </div><div class="fragment">
     
@@ -2032,15 +2043,15 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Code extracted from <a href="matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab">Ts = <span class="fl">1</span>;
-z = tf(<span class="st">&#39;z&#39;</span>, Ts)
-Hz = (z^<span class="fl">2</span> + z)/(z^<span class="fl">2</span> - <span class="fl">0.5</span> * z + <span class="fl">0.125</span>)
+<pre><code>Ts = 1;
+z = tf(&#39;z&#39;, Ts)
+Hz = (z^2 + z)/(z^2 - 0.5 * z + 0.125)
 step(Hz)
 grid
-title(<span class="st">&#39;Example 1 - Part 3 - As Analogue Signal&#39;</span>)
-xlabel(<span class="st">&#39;nTs [s]&#39;</span>)
-ylabel(<span class="st">&#39;Step response y(t)&#39;</span>)
-axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</span>,<span class="fl">3.5</span>])</code></pre>
+title(&#39;Example 1 - Part 3 - As Analogue Signal&#39;)
+xlabel(&#39;nTs [s]&#39;)
+ylabel(&#39;Step response y(t)&#39;)
+axis([0,15,0,3.5])</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="pictures/dtm_ex1_3_2.png"></p>
@@ -2067,8 +2078,8 @@ axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</s
 <li>In analogue electronics, to implement a filter we would need to resort to op-amp circuits with resistors, capacitors and inductors acting as energy dissipation, storage and release devices.</li>
 <li>In modern digital electronics, it is often more convenient to take the original transfer function <span class="math">\(H(s)\)</span> and produce an equivalent <span class="math">\(H(z)\)</span>.</li>
 <li>We can then determine a <em>difference equation</em> that will respresent <span class="math">\(h[n]\)</span> and implement this as <em>computer algorithm</em>.</li>
-<li>Simple storage of past values becomes the repository of history that integrators and derivative circuits need in the analogue world.</li>
-<li>To achieve this, all we need is to be able to do is to sample and process the signals quickly to avoid violating Nyquist-Shannon's sampling theorem.</li>
+<li>Simple storage of past values in memory becomes the repository of past state rather than the integrators and derivative circuits that are needed in the analogue world.</li>
+<li>To achieve this, all we need is to be able to do is to <em>sample</em> and <em>process</em> the signals quickly enough to avoid violating Nyquist-Shannon's sampling theorem.</li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2078,9 +2089,9 @@ axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</s
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>There is no digital system that uniquely represents a continuous system</li>
-<li>This is because as we are sampling, we only have knowedge of signals being processed at the sampling instants, and need to <em>reconstruct</em> the inter-sample behaviour.</li>
-<li>In parctice, only a small number of transormations are used.</li>
-<li>The derivation of these is beyond the scope of this course, but we'll mention the ones that Matlab provides in a function called <code>c2d</code></li>
+<li>This is because as we are sampling, we only have knowledge of signals being processed at the sampling instants, and need to <em>reconstruct</em> the inter-sample behaviour.</li>
+<li>In practice, only a small number of transormations are used.</li>
+<li>The derivation of these is beyond the scope of this module, but we'll mention the ones that Matlab provides in a function called <code>c2d</code></li>
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2089,16 +2100,16 @@ axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</s
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is what the help function says:</p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab">&gt;&gt; help c2d
+<pre><code>&gt;&gt; help c2d
 SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with 
     sampling time TS that approximates the continuous-time model SYSC.
     The string METHOD selects the discretization method among the following:
-       <span class="st">&#39;zoh&#39;</span>       Zero-order hold on the inputs
-       <span class="st">&#39;foh&#39;</span>       Linear interpolation of inputs
-       <span class="st">&#39;impulse&#39;</span>   Impulse-invariant discretization
-       <span class="st">&#39;tustin&#39;</span>    Bilinear (Tustin) approximation.
-       <span class="st">&#39;matched&#39;</span>   Matched pole-zero method (for SISO systems only).
-    The default is <span class="st">&#39;zoh&#39;</span> when METHOD is omitted. The sampling time TS should 
+       &#39;zoh&#39;       Zero-order hold on the inputs
+       &#39;foh&#39;       Linear interpolation of inputs
+       &#39;impulse&#39;   Impulse-invariant discretization
+       &#39;tustin&#39;    Bilinear (Tustin) approximation.
+       &#39;matched&#39;   Matched pole-zero method (for SISO systems only).
+    The default is &#39;zoh&#39; when METHOD is omitted. The sampling time TS should 
     be specified in the time units of SYSC (see &quot;TimeUnit&quot; property).
 ...</code></pre>
 </div></section><section>
@@ -2107,7 +2118,11 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Design a 2nd-order butterworth anti-aliasing filter with transfer function <span class="math">\(H(s)\)</span> for use in sampling music. The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band. Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></p>
+<ul>
+<li>Design a 2nd-order butterworth anti-aliasing filter with transfer function <span class="math">\(H(s)\)</span> for use in sampling music.</li>
+<li>The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band.</li>
+<li>Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></li>
+</ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
@@ -2139,9 +2154,9 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Matlab:</p>
-<pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">2</span>*pi*<span class="fl">20e3</span>;
-Hs = tf(wc^<span class="fl">2</span>,[<span class="fl">1</span> wc*sqrt(<span class="fl">2</span>), wc^<span class="fl">2</span>]);
-bode(Hs,{<span class="fl">1e4</span>,<span class="fl">1e8</span>})
+<pre><code>wc = 2*pi*20e3;
+Hs = tf(wc^2,[1 wc*sqrt(2), wc^2]);
+bode(Hs,{1e4,1e8})
 grid</code></pre>
 </div><div class="fragment">
     
@@ -2181,15 +2196,15 @@ grid</code></pre>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<pre class="sourceCode matlab"><code class="sourceCode matlab">&gt;&gt; Hz = c2d(Hs, Ts) <span class="co">% zero-order-hold equivalent</span>
+<pre><code>&gt;&gt; Hz = c2d(Hs, Ts) % zero-order-hold equivalent
 
 Hz =
  
-  <span class="fl">0.0004836</span> z + <span class="fl">0.0004765</span>
+  0.0004836 z + 0.0004765
   -----------------------
-  z^<span class="fl">2</span> - <span class="fl">1.956</span> z + <span class="fl">0.9567</span>
+  z^2 - 1.956 z + 0.9567
  
-Sample time: <span class="fl">2.4933e-07</span> seconds
+Sample time: 2.4933e-07 seconds
 Discrete-time transfer function.</code></pre>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2218,19 +2233,28 @@ Discrete-time transfer function.</code></pre>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Y(z) - 1.956 z^{-1} Y(z) + 0.9567z^{-2} Y(z) = 486.6\times 10^{-6}z^{-1} U(z) + 476.5\times 10^{-6} z^{-2} U(z)\]</span></p>
+<p><span class="math">\[\begin{array}{l}
+Y(z) - 1.956{z^{ - 1}}Y(z) + 0.9567{z^{ - 2}}Y(z) = \\
+\quad 486.6 \times {10^{ - 6}}{z^{ - 1}}U(z) + 476.5 \times {10^{ - 6}}{z^{ - 2}}U(z)
+\end{array}\]</span></p>
 <p>Inverse z-transform gives ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[y[n] - 1.956 y[n-1] + 0.9567 y[n - 2] = 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+<p><span class="math">\[\begin{array}{l}
+y[n] - 1.956y[n - 1] + 0.9567y[n - 2] = \\
+\quad 486.6 \times {10^{ - 6}}u[n - 1] + 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}\]</span></p>
 <p>in algoithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+<p><span class="math">\[\begin{array}{l}
+y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
+\quad 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}\]</span></p>
 <p>Now convert to code</p>
 </div>
     </div></section><section>
@@ -2240,13 +2264,13 @@ Discrete-time transfer function.</code></pre>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To implement: <span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
-<pre class="sourceCode C"><code class="sourceCode c"><span class="co">/* Initialize */</span>
-ynm1 = <span class="dv">0</span>; ynm2 = <span class="dv">0</span>; unm1 = <span class="dv">0</span>; unm2 = <span class="dv">0</span>;
-<span class="kw">while</span> (true) {
+<pre><code>/* Initialize */
+ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0;
+while (true) {
     un = read_adc;
-    yn = <span class="fl">1.956</span>*ynm1 - <span class="fl">0.9567</span>*ynm2 + <span class="fl">486.6e-6</span>*unm1 + <span class="fl">476.5e-6</span>*unm2;
+    yn = 1.956*ynm1 - 0.9567*ynm2 + 486.6e-6*unm1 + 476.5e-6*unm2;
     write_dac(yn);
-    <span class="co">/* store past values */</span>
+    /* store past values */
     ynm2 = ynm1; ynm1 = yn;
     unm2 = unm1; unm1 = un;
 }</code></pre>
@@ -2290,9 +2314,10 @@ ynm1 = <span class="dv">0</span>; ynm2 = <span class="dv">0</span>; unm1 = <span
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This concludes this module. There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</p>
+<p>This concludes this module.</p>
+<p>There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</p>
 <p>This is covered in Karris Chapter 10 and Boulet. It will not be examined this year!</p>
-<p>There is a significant amount of additional information about Filter Design (including the use of Matlab for this) in Chapter 12 of Karris.</p>
+<p>There is a significant amount of additional information about <strong>Filter Design</strong> (including the use of Matlab for this) in Chapter 11 of Karris.</p>
 </div></section>
     </section>
 </div>
