@@ -1741,10 +1741,10 @@ text-align: inherit;
 <p>Dr Chris Jobling (<script type="text/javascript">
 <!--
 h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
-document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'<code>'+e+'</code>'+'<\/'+'a'+'>');
 // -->
 </script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)<br />Digital Technium 123<br />Office Hours: Thursdays 14:00-15:00</p>
-<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources">https://github.com/cpjobling/EG-247-Resources</a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
+<p>You can view the notes for this presentation in <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.ipynb">HTML format</a> and print using your Brower's print function. The source code of this presentation is available as an interactive <a href="http://ipython.org/notebook.html">IPython notebook</a> from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources"><code class="url">https://github.com/cpjobling/EG-247-Resources</code></a>. The GitHub repository also contains the source code for all the Matlab/Simulink examples.</p>
 </div></section>
     </section><section>
     <section>
@@ -1779,7 +1779,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In the lecture that introduced the z-transform we talked about the representation of a discrete-time (DT) system by the model shown below:</p>
-<p><img src="pictures/ct-to-dt.png"></p>
+<img src="pictures/ct-to-dt.png">
 <p>In this session, we want to explore the contents of the central block.</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1788,14 +1788,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>As noted in the previous slide, the discrete time system takes as an input the sequence <span class="math">\(x_d[n]\)</span><sup>1</sup>.</li>
-<li>It produces another sequence <span class="math">\(y_d[n]\)</span> by <em>processing</em> the input sequence in some way.</li>
-<li>The output sequence is converted into an analogue signal <span class="math">\(y(t)\)</span> by a digital to analogue converter.</li>
+<li>As noted in the previous slide, the discrete time system takes as an input the sequence \(x_d[n]\)<sup>1</sup>.</li>
+<li>It produces another sequence \(y_d[n]\) by <em>processing</em> the input sequence in some way.</li>
+<li>The output sequence is converted into an analogue signal \(y(t)\) by a digital to analogue converter.</li>
 </ul>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/sigs.png"></p>
+<img src="pictures/sigs.png">
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1804,30 +1804,30 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>The discrete time system (DTS) is a block that converts a sequence <span class="math">\(x_d[n]\)</span> into another sequence <span class="math">\(y_d[n]\)</span></li>
-<li>The transformation will be a <em>difference equation</em> <span class="math">\(h[n]\)</span></li>
+<li>The discrete time system (DTS) is a block that converts a sequence \(x_d[n]\) into another sequence \(y_d[n]\)</li>
+<li>The transformation will be a <em>difference equation</em> \(h[n]\)</li>
 </ul>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>By analogy with CT systems, <span class="math">\(h[n]\)</span> is the impulse response of the DTS, and <span class="math">\(y[n]\)</span> can be obtained by <em>convolving</em> <span class="math">\(h[n]\)</span> with <span class="math">\(x_d[n]\)</span> so:</li>
+<li>By analogy with CT systems, \(h[n]\) is the impulse response of the DTS, and \(y[n]\) can be obtained by <em>convolving</em> \(h[n]\) with \(x_d[n]\) so:</li>
 </ul>
-<p><span class="math">\[y_d[n] = h[n] * x_d[n]\]</span></p>
+<p>\[y_d[n] = h[n] * x_d[n]\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Taking the z-transform of <span class="math">\(h[n]\)</span> we get <span class="math">\(H(z)\)</span>, and from the transform properties, convolution of the signal <span class="math">\(x_d[n]\)</span> by system <span class="math">\(h[n]\)</span> will be <em>multiplication</em> of the z-transforms:</li>
+<li>Taking the z-transform of \(h[n]\) we get \(H(z)\), and from the transform properties, convolution of the signal \(x_d[n]\) by system \(h[n]\) will be <em>multiplication</em> of the z-transforms:</li>
 </ul>
-<p><span class="math">\[Y_d(z) = H(z) X_d(z)\]</span></p>
+<p>\[Y_d(z) = H(z) X_d(z)\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>So, what does <span class="math">\(h[n]\)</span> and therefore <span class="math">\(H(z)\)</span> look like?</li>
+<li>So, what does \(h[n]\) and therefore \(H(z)\) look like?</li>
 </ul>
 </div>
     </div></section>
@@ -1839,10 +1839,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+e+'<\/'+'a'+'>');
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Let us assume that the sequence transformation is a <em>difference equation</em> of the form<sup>2</sup>:</p>
-<p><span class="math">\[\begin{array}{l}
+<p>\[\begin{array}{l}
 y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 \quad  = {b_0}x[n] + {b_1}y[n - 1] + {b_2}y[n - 2] +  \cdots  + {b_k}y[n - k]
-\end{array}\]</span></p>
+\end{array}\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Take-Z-Transform-of-both-sides">Take Z-Transform of both sides<a class="anchor-link" href="#Take-Z-Transform-of-both-sides">&#182;</a></h3>
@@ -1850,17 +1850,17 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the z-transform properties</p>
-<p><span class="math">\[f[n-m] \Leftrightarrow z^{-m}F(z)\]</span></p>
+<p>\[f[n-m] \Leftrightarrow z^{-m}F(z)\]</p>
 <p>so....</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...\]</span></p>
+<p>\[Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)\]</span></p>
+<p>\[b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1869,17 +1869,21 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\begin{array}{l}
 \left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}} \right)Y(z) = \\
 \quad \left( {{b_0} + {b_1}{z^{ - 1}} + {b_2}{z^{ - 2}} +  \cdots {b_k}{z^{ - k}}} \right)U(z)
 \end{array}\]</span></p>
+=======
+<p>\[\left(1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}\right)Y(z) = \left(b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}\right) U(z)\]</p>
+>>>>>>> FETCH_HEAD
 <p>from which ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
-}\right) U(z)\]</span></p>
+<p>\[Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\right) U(z)\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1887,18 +1891,18 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We define the <em>discrete time transfer function</em> <span class="math">\(H(z) := Y(z)/U(z)\)</span> so...</p>
+<p>We define the <em>discrete time transfer function</em> \(H(z) := Y(z)/U(z)\) so...</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
-}\]</span></p>
+<p>\[H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>... or more conventionally<sup>3</sup>:</p>
-<p><span class="math">\[H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z + b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p>
+<p>\[H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z + b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1907,29 +1911,37 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>discrete-time impulse reponse</em> <span class="math">\(h[n]\)</span> is the response of the DT system to the input <span class="math">\(x[n] = \delta[n]\)</span></p>
+<p>The <em>discrete-time impulse reponse</em> \(h[n]\) is the response of the DT system to the input \(x[n] = \delta[n]\)</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair</p>
 <p><span class="math">\[\delta[n] \Leftrightarrow ?\]</span></p>
+=======
+<p>Last week we showed that \(\mathcal{Z}\left\{\delta[n]\right\}\) was defined by the transform pair ...</p>
+>>>>>>> FETCH_HEAD
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\delta[n] \Leftrightarrow 1\]</span></p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+=======
+<p>\[\delta[n] \Leftrightarrow 1\]</p>
+>>>>>>> FETCH_HEAD
 <p>so</p>
-<p><span class="math">\[h[n] = ...\]</span></p>
+<p>\[h[n] = ...\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[h[n] = \mathcal{Z}^{-1}\left\{H(z).1\right\} = \mathcal{Z}^{-1}\left\{H(z)\right\}\]</span></p>
+<p>\[h[n] = \mathcal{Z}^{-1}\left\{H(z).1\right\} = \mathcal{Z}^{-1}\left\{H(z)\right\}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1939,12 +1951,12 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Karris Example 9.10:</p>
 <p>The difference equation describing the input-output relationship of a DT system with zero initial conditions, is:</p>
-<p><span class="math">\[y[n] - 0.5 y[n-1] + 0.125 y[n-2] = x[n] + x[n -1]\]</span></p>
+<p>\[y[n] - 0.5 y[n-1] + 0.125 y[n-2] = x[n] + x[n -1]\]</p>
 <p>Compute:</p>
 <ol style="list-style-type: decimal">
-<li>The transfer function <span class="math">\(H(z)\)</span></li>
-<li>The DT impulse response <span class="math">\(h[n]\)</span></li>
-<li>The response <span class="math">\(y[n]\)</span> when the input <span class="math">\(x[n]\)</span> is the DT unit step <span class="math">\(u_0[n]\)</span></li>
+<li>The transfer function \(H(z)\)</li>
+<li>The DT impulse response \(h[n]\)</li>
+<li>The response \(y[n]\) when the input \(x[n]\) is the DT unit step \(u_0[n]\)</li>
 </ol>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1952,14 +1964,14 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = ...?\]</span></p>
+<p>\[H(z) = \frac{Y(z)}{U(z)} = ...?\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="1.-Solution">1. Solution<a class="anchor-link" href="#1.-Solution">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[H(z) = \frac{Y(z)}{X(z)} = \frac{z^2 + z}{z^2 - 0.5z + 0.125}\]</span></p>
+<p>\[H(z) = \frac{Y(z)}{X(z)} = \frac{z^2 + z}{z^2 - 0.5z + 0.125}\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="2.-The-DT-impulse-response">2. The DT impulse response<a class="anchor-link" href="#2.-The-DT-impulse-response">&#182;</a></h3>
@@ -1968,7 +1980,7 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Start with:</p>
-<p><span class="math">\[\frac{H(z)}{z} = \frac{z - 1}{z^2 + 0.5 z + 0.125}\]</span></p>
+<p>\[\frac{H(z)}{z} = \frac{z - 1}{z^2 + 0.5 z + 0.125}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -1976,7 +1988,7 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left( {\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)\]</span></p>
+<p>\[h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left( {\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
@@ -1984,10 +1996,10 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 </section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See <a href="matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
-<p><img src="pictures/dtm_ex1_2_1.png"></p>
+<img src="pictures/dtm_ex1_2_1.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/dtm_ex1_2_2.png"></p>
+<img src="pictures/dtm_ex1_2_2.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="3.-The-DT-step-response">3. The DT step response<a class="anchor-link" href="#3.-The-DT-step-response">&#182;</a></h3>
@@ -1995,25 +2007,29 @@ y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[Y(z) = H(z)X(z)\]</span></p>
+<p>\[Y(z) = H(z)X(z)\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[u_0[n] \Leftrightarrow \frac{z}{z - 1}\]</span></p>
+<p>\[u_0[n] \Leftrightarrow \frac{z}{z - 1}\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\begin{array}{lcl}
 Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac{z}{{z - 1}}\\
  &amp; = &amp; \frac{{z({z^2} + z)}}{{({z^2} + 0.5z + 0.125)(z - 1)}}
 \end{array}\]</span></p>
+=======
+<p>\[Y(z) = H(z)U_0(z) = \frac{z^2 + z}{z^2 + 0.5 z + 0.125}.\frac{z}{z - 1} = \frac{z(z^2 + z)}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</p>
+>>>>>>> FETCH_HEAD
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[\frac{Y(z)}{z} = \frac{z^2 + z}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</span></p>
+<p>\[\frac{Y(z)}{z} = \frac{z^2 + z}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2021,7 +2037,7 @@ Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos \left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)} \right)\right) u_0[n]\]</span></p>
+<p>\[y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos \left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)} \right)\right) u_0[n]\]</p>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Matlab-Solution">Matlab Solution<a class="anchor-link" href="#Matlab-Solution">&#182;</a></h3>
@@ -2029,7 +2045,7 @@ Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac
 </section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See <a href="matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
-<p><img src="pictures/dtm_ex1_3_1.png"></p>
+<img src="pictures/dtm_ex1_3_1.png">
 </div></section>
     </section><section>
     <section>
@@ -2043,6 +2059,7 @@ Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Code extracted from <a href="matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<<<<<<< HEAD
 <pre><code>Ts = 1;
 z = tf(&#39;z&#39;, Ts)
 Hz = (z^2 + z)/(z^2 - 0.5 * z + 0.125)
@@ -2052,9 +2069,12 @@ title(&#39;Example 1 - Part 3 - As Analogue Signal&#39;)
 xlabel(&#39;nTs [s]&#39;)
 ylabel(&#39;Step response y(t)&#39;)
 axis([0,15,0,3.5])</code></pre>
+=======
+<code>matlab Ts = 1; z = tf('z', Ts) Hz = (z^2 + z)/(z^2 - 0.5 * z + 0.125) step(Hz) grid title('Example 1 - Part 3 - As Analogue Signal') xlabel('nTs [s]') ylabel('Step response y(t)') axis([0,15,0,3.5])</code>
+>>>>>>> FETCH_HEAD
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/dtm_ex1_3_2.png"></p>
+<img src="pictures/dtm_ex1_3_2.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Simulink-Model">Simulink Model<a class="anchor-link" href="#Simulink-Model">&#182;</a></h3>
@@ -2062,10 +2082,10 @@ axis([0,15,0,3.5])</code></pre>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See <a href="matlab/dtm.slx">dtm.slx</a>:</p>
-<p><img src="pictures/simulink_model.png"></p>
+<img src="pictures/simulink_model.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/scope.png"></p>
+<img src="pictures/scope.png">
 </div></section>
     </section><section>
     <section>
@@ -2076,10 +2096,17 @@ axis([0,15,0,3.5])</code></pre>
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>In analogue electronics, to implement a filter we would need to resort to op-amp circuits with resistors, capacitors and inductors acting as energy dissipation, storage and release devices.</li>
+<<<<<<< HEAD
 <li>In modern digital electronics, it is often more convenient to take the original transfer function <span class="math">\(H(s)\)</span> and produce an equivalent <span class="math">\(H(z)\)</span>.</li>
 <li>We can then determine a <em>difference equation</em> that will respresent <span class="math">\(h[n]\)</span> and implement this as <em>computer algorithm</em>.</li>
 <li>Simple storage of past values in memory becomes the repository of past state rather than the integrators and derivative circuits that are needed in the analogue world.</li>
 <li>To achieve this, all we need is to be able to do is to <em>sample</em> and <em>process</em> the signals quickly enough to avoid violating Nyquist-Shannon's sampling theorem.</li>
+=======
+<li>In modern digital electronics, it is often more convenient to take the original transfer function \(H(s)\) and produce an equivalent \(H(z)\).</li>
+<li>We can then determine a <em>difference equation</em> that will respresent \(h[n]\) and implement this as <em>computer algorithm</em>.</li>
+<li>Simple storage of past values becomes the repository of history that integrators and derivative circuits need in the analogue world.</li>
+<li>To achieve this, all we need is to be able to do is to sample and process the signals quickly to avoid violating Nyquist-Shannon's sampling theorem.</li>
+>>>>>>> FETCH_HEAD
 </ul>
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2100,6 +2127,7 @@ axis([0,15,0,3.5])</code></pre>
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This is what the help function says:</p>
+<<<<<<< HEAD
 <pre><code>&gt;&gt; help c2d
 SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with 
     sampling time TS that approximates the continuous-time model SYSC.
@@ -2112,17 +2140,24 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
     The default is &#39;zoh&#39; when METHOD is omitted. The sampling time TS should 
     be specified in the time units of SYSC (see &quot;TimeUnit&quot; property).
 ...</code></pre>
+=======
+<code>matlab &gt;&gt; help c2d SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with      sampling time TS that approximates the continuous-time model SYSC.     The string METHOD selects the discretization method among the following:        'zoh'       Zero-order hold on the inputs        'foh'       Linear interpolation of inputs        'impulse'   Impulse-invariant discretization        'tustin'    Bilinear (Tustin) approximation.        'matched'   Matched pole-zero method (for SISO systems only).     The default is 'zoh' when METHOD is omitted. The sampling time TS should      be specified in the time units of SYSC (see &quot;TimeUnit&quot; property). ...</code>
+>>>>>>> FETCH_HEAD
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-2">Example 2<a class="anchor-link" href="#Example-2">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <ul>
 <li>Design a 2nd-order butterworth anti-aliasing filter with transfer function <span class="math">\(H(s)\)</span> for use in sampling music.</li>
 <li>The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band.</li>
 <li>Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></li>
 </ul>
+=======
+<p>Design a 2nd-order butterworth anti-aliasing filter with transfer function \(H(s)\) for use in sampling music. The cut-off frequency \(\omega_c = 20\) kHz and the filter should have an attenuation of at least \(-80\) dB in the stop band. Choose a suitable sampling frequency for the audio signal and give the transfer function \(H(z)\) and an algorithm to implement \(h[n]\)</p>
+>>>>>>> FETCH_HEAD
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Solution">Solution<a class="anchor-link" href="#Solution">&#182;</a></h3>
@@ -2130,22 +2165,22 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>See <a href="matlab/digi_butter.m">digi_butter.m</a>:</p>
-<p><span class="math">\[\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times 10^3\;\mathrm{rad/s}\]</span></p>
+<p>\[\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times 10^3\;\mathrm{rad/s}\]</p>
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From the lecture on filters, we know the 2nd-order butterworth filter has transfer function:</p>
-<p><span class="math">\[H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega _c}\sqrt 2 \,s + \omega _c^2}}\]</span></p>
+<p>\[H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega _c}\sqrt 2 \,s + \omega _c^2}}\]</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Substituting for <span class="math">\(\omega_c = 125.6637\times 10^3\)</span> this is ...?</p>
+<p>Substituting for \(\omega_c = 125.6637\times 10^3\) this is ...?</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79 \times {{10}^9}}}\]</span></p>
+<p>\[H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79 \times {{10}^9}}}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2153,15 +2188,19 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p>Matlab:</p>
 <pre><code>wc = 2*pi*20e3;
 Hs = tf(wc^2,[1 wc*sqrt(2), wc^2]);
 bode(Hs,{1e4,1e8})
 grid</code></pre>
+=======
+<p>Matlab: <code>matlab wc = 2*pi*20e3; Hs = tf(wc^2,[1 wc*sqrt(2), wc^2]); bode(Hs,{1e4,1e8}) grid</code></p>
+>>>>>>> FETCH_HEAD
 </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/bode.png"></p>
+<img src="pictures/bode.png">
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2170,25 +2209,25 @@ grid</code></pre>
 <div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>From the bode diagram, the frequency at which <span class="math">\(|H(j\omega)|\)</span> is <span class="math">\(-80\)</span> dB is approx <span class="math">\(12.6\times 10^6\)</span> rad/s.</p>
+<p>From the bode diagram, the frequency at which \(|H(j\omega)|\) is \(-80\) dB is approx \(12.6\times 10^6\) rad/s.</p>
 <p>To avoid aliasing, we should choose a sampling frequency twice this = ?</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>So sampling frequency <span class="math">\(\omega_s = 2\times 12.6\times 10^6 = 25.2\times 10^6\)</span> rad/s.</p>
-<p>Sampling frequency in Hz <span class="math">\(f_s\)</span> = ?</p>
+<p>So sampling frequency \(\omega_s = 2\times 12.6\times 10^6 = 25.2\times 10^6\) rad/s.</p>
+<p>Sampling frequency in Hz \(f_s\) = ?</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[f_s = \omega_s/(2\pi) = 25.2\times 10^6/(2\times \pi) = 40.1\;\mathrm{Mhz}\]</span></p>
-<p>Sampling time <span class="math">\(T_s = ?\)</span></p>
+<p>\[f_s = \omega_s/(2\pi) = 25.2\times 10^6/(2\times \pi) = 40.1\;\mathrm{Mhz}\]</p>
+<p>Sampling time \(T_s = ?\)</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}\]</span></p>
+<p>\[T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}\]</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -2196,6 +2235,7 @@ grid</code></pre>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <pre><code>&gt;&gt; Hz = c2d(Hs, Ts) % zero-order-hold equivalent
 
 Hz =
@@ -2206,13 +2246,30 @@ Hz =
  
 Sample time: 2.4933e-07 seconds
 Discrete-time transfer function.</code></pre>
+=======
+<p>```matlab &gt;&gt; Hz = c2d(Hs, Ts) % zero-order-hold equivalent</p>
+<p>Hz =</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">0.0004836 z + 0.0004765</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">z^2 - 1.956 z + 0.9567</td>
+</tr>
+</tbody>
+</table>
+Sample time: 2.4933e-07 seconds Discrete-time transfer function. ```
+>>>>>>> FETCH_HEAD
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Step-response">Step response<a class="anchor-link" href="#Step-response">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/b_step.png"></p>
+<img src="pictures/b_step.png">
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Algorithm">Algorithm<a class="anchor-link" href="#Algorithm">&#182;</a></h3>
@@ -2221,40 +2278,53 @@ Discrete-time transfer function.</code></pre>
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>From previous result:</p>
-<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z +  476.5\times 10^{-6}}{z^2 - 1.956z + 0.9567}\]</span></p>
-<p>Dividing top and bottom by <span class="math">\(z^2\)</span> ...</p>
+<p>\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z +  476.5\times 10^{-6}}{z^2 - 1.956z + 0.9567}\]</p>
+<p>Dividing top and bottom by \(z^2\) ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z^{-1} +  476.5\times 10^{-6}z^{-2}}{1 - 1.956z^{-1} + 0.9567z^{-2}}\]</span></p>
+<p>\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z^{-1} +  476.5\times 10^{-6}z^{-2}}{1 - 1.956z^{-1} + 0.9567z^{-2}}\]</p>
 <p>expanding out ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\begin{array}{l}
 Y(z) - 1.956{z^{ - 1}}Y(z) + 0.9567{z^{ - 2}}Y(z) = \\
 \quad 486.6 \times {10^{ - 6}}{z^{ - 1}}U(z) + 476.5 \times {10^{ - 6}}{z^{ - 2}}U(z)
 \end{array}\]</span></p>
+=======
+<p>\[Y(z) - 1.956 z^{-1} Y(z) + 0.9567z^{-2} Y(z) = 486.6\times 10^{-6}z^{-1} U(z) + 476.5\times 10^{-6} z^{-2} U(z)\]</p>
+>>>>>>> FETCH_HEAD
 <p>Inverse z-transform gives ...</p>
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\begin{array}{l}
 y[n] - 1.956y[n - 1] + 0.9567y[n - 2] = \\
 \quad 486.6 \times {10^{ - 6}}u[n - 1] + 476.5 \times {10^{ - 6}}u[n - 2]
 \end{array}\]</span></p>
 <p>in algoithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
+=======
+<p>\[y[n] - 1.956 y[n-1] + 0.9567 y[n - 2] = 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</p>
+<p>in algoithmic form (compute \(y[n]\) from past values of \(u\) and \(y\)) ...</p>
+>>>>>>> FETCH_HEAD
 </div>
     </div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p><span class="math">\[\begin{array}{l}
 y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
 \quad 476.5 \times {10^{ - 6}}u[n - 2]
 \end{array}\]</span></p>
+=======
+<p>\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</p>
+>>>>>>> FETCH_HEAD
 <p>Now convert to code</p>
 </div>
     </div></section><section>
@@ -2263,6 +2333,7 @@ y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
+<<<<<<< HEAD
 <p>To implement: <span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
 <pre><code>/* Initialize */
 ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0;
@@ -2274,14 +2345,18 @@ while (true) {
     ynm2 = ynm1; ynm1 = yn;
     unm2 = unm1; unm1 = un;
 }</code></pre>
+=======
+<p>To implement: \[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</p>
+<code>C /* Initialize */ ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0; while (true) {     un = read_adc;     yn = 1.956*ynm1 - 0.9567*ynm2 + 486.6e-6*unm1 + 476.5e-6*unm2;     write_dac(yn);     /* store past values */     ynm2 = ynm1; ynm1 = yn;     unm2 = unm1; unm1 = un; }</code>
+>>>>>>> FETCH_HEAD
 </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Comments">Comments<a class="anchor-link" href="#Comments">&#182;</a></h3>
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>PC soundcards can sample audio at 44.1 kHz so this implies that the anti-aliasing filter is much sharper than this one as <span class="math">\(f_s/2 = 22.05\)</span> kHz.</p>
-<p>You might wish to find out what order butterworth filter would be needed to have <span class="math">\(f_c = 20\)</span> kHz and <span class="math">\(f_{\mathrm{stop}}\)</span> of 22.05 kHz.</p>
+<p>PC soundcards can sample audio at 44.1 kHz so this implies that the anti-aliasing filter is much sharper than this one as \(f_s/2 = 22.05\) kHz.</p>
+<p>You might wish to find out what order butterworth filter would be needed to have \(f_c = 20\) kHz and \(f_{\mathrm{stop}}\) of 22.05 kHz.</p>
 </div></section>
     </section><section>
     <section>

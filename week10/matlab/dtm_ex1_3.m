@@ -26,8 +26,10 @@ Dz = sym2poly(Dz)
 %% Poles and residues
 [r,p,k] = residue(Nz,Dz)
 %% Response
-Hz = tf([1 1 0],[1 -0.5 0.125],1)
-yn = step(Hz, 15)
+Ts = 1 % sampling time
+z = tf('z', Ts); % define z in symbolic form
+Hz = (z^2 + z)/(z^2 - 0.5*z + 0.125)
+yn = impulse(Hz, 15)
 stem([0:15], yn)
 grid
 title('Example 1 - Part 3')
