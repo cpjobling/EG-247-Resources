@@ -2239,31 +2239,42 @@ Y(z) - 1.956{z^{ - 1}}Y(z) + 0.9567{z^{ - 2}}Y(z) = \\
 \end{array}\]</span></p>
 <p>Inverse z-transform gives ...</p>
 </div>
-    </div><div class="fragment">
-    
+    </div></section><section>
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Algorithm-...-continued">Algorithm ... continued<a class="anchor-link" href="#Algorithm-...-continued">&#182;</a></h3>
+</div>
+
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span class="math">\[\begin{array}{l}
 y[n] - 1.956y[n - 1] + 0.9567y[n - 2] = \\
 \quad 486.6 \times {10^{ - 6}}u[n - 1] + 476.5 \times {10^{ - 6}}u[n - 2]
 \end{array}\]</span></p>
-<p>in algoithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
-</div>
-    </div><div class="fragment">
+<p>in algorithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
+</div><div class="fragment">
     
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><span class="math">\[\begin{array}{l}
 y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
 \quad 476.5 \times {10^{ - 6}}u[n - 2]
 \end{array}\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>Now convert to code</p>
 </div>
     </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Implementation">Implementation<a class="anchor-link" href="#Implementation">&#182;</a></h3>
+<h3 id="Convert-to-code">Convert to code<a class="anchor-link" href="#Convert-to-code">&#182;</a></h3>
 </div>
-
+<div class="fragment">
+    
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>To implement: <span class="math">\[y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] + 476.5\times 10^{-6} u[n-2]\]</span></p>
+</div>
+    </div><div class="fragment">
+    
+<div class="text_cell_render border-box-sizing rendered_html">
 <pre><code>/* Initialize */
 ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0;
 while (true) {
@@ -2274,7 +2285,8 @@ while (true) {
     ynm2 = ynm1; ynm1 = yn;
     unm2 = unm1; unm1 = un;
 }</code></pre>
-</div></section><section>
+</div>
+    </div></section><section>
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Comments">Comments<a class="anchor-link" href="#Comments">&#182;</a></h3>
 </div>
@@ -2314,10 +2326,12 @@ while (true) {
 </div>
 
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This concludes this module.</p>
-<p>There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</p>
-<p>This is covered in Karris Chapter 10 and Boulet. It will not be examined this year!</p>
-<p>There is a significant amount of additional information about <strong>Filter Design</strong> (including the use of Matlab for this) in Chapter 11 of Karris.</p>
+<ul>
+<li>This concludes this module.</li>
+<li>There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</li>
+<li>This is covered in Karris Chapter 10 and Boulet. It will not be examined this year!</li>
+<li>There is a significant amount of additional information about <strong>Filter Design</strong> (including the use of Matlab for this) in Chapter 11 of Karris.</li>
+</ul>
 </div></section>
     </section>
 </div>
