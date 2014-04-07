@@ -18,7 +18,7 @@ y = expand((s + 0.7146 - 0.3132j)*(s + 0.7146 + 0.3132j))
 3043737/5000000
 %% Plot result
 t=0:0.01:10;
-Vout = 1.36.*exp(-6.57.*t)+0.64.*exp(-0.715.*t).*cos(0.316.*t)-0.64.*exp(-0.715.*t).*sin(0.316.*t);
+Vout = 1.36.*exp(-6.57.*t)+0.64.*exp(-0.715.*t).*cos(0.316.*t)-1.84.*exp(-0.715.*t).*sin(0.316.*t);
 plot(t, Vout); grid
 title('Plot of Vout(t) for the circuit of Example 3')
 ylabel('Vout(t) V'),xlabel('Time t s')
