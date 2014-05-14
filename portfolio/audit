@@ -1,0 +1,6 @@
+#!/bin/bash
+
+PWD=`pwd`
+echo "Auditing $PWD" > audit.txt
+
+ls -lR >> audit.txt
