@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo 'Removing matlab generated html files'
+find . -name html -exec rm -rf "{}" \;
+for dir in $(ls)
+do
+  if [ -d "$dir" ]
+  then
+    echo "Processing $dir"
+    cd $dir
+    ../audit .
+    cd ..
+  fi
+done
