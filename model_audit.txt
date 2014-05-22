@@ -1,8 +1,10 @@
 Auditing /Users/eechris/dev/EG-247-Resources/portfolio
 .
-├── [ 599]  README.md
-├── [ 154]  audit
+├── [ 660]  README.md
+├── [ 414]  audit
 ├── [  55]  audit.txt
+├── [ 216]  audit_all
+├── [1.1K]  diffs.txt
 ├── [ 102]  lab1
 │   └── [2.4K]  elem_sigs.m
 ├── [ 170]  lab2
@@ -53,17 +55,23 @@ Auditing /Users/eechris/dev/EG-247-Resources/portfolio
 │   ├── [1.4K]  lab9.m
 │   ├── [   0]  lab9.mat
 │   └── [1.4K]  testfda.m
-└── [ 374]  lab9
-    ├── [2.4K]  aliaseg1.m
-    ├── [2.3K]  aliaseg2.m
-    ├── [   0]  ex22.m
-    ├── [2.4K]  ex23_1.m
-    ├── [2.3K]  ex23_2.m
-    ├── [   0]  ex24.m
-    ├── [   0]  ex24.wav
-    ├── [215K]  msmv2.wav
-    └── [1.5K]  soundex.m
+├── [ 374]  lab9
+│   ├── [2.4K]  aliaseg1.m
+│   ├── [2.3K]  aliaseg2.m
+│   ├── [   0]  ex22.m
+│   ├── [2.4K]  ex23_1.m
+│   ├── [2.3K]  ex23_2.m
+│   ├── [   0]  ex24.m
+│   ├── [   0]  ex24.wav
+│   ├── [215K]  msmv2.wav
+│   └── [1.5K]  soundex.m
+└── [2.2K]  model_audit.txt
 
-8 directories, 55 files
+8 directories, 58 files
 # files submitted
-      56
+      59
+Scripts (target 42):
+      42
+Simulink models (target 7):
+       7
+Diffs
