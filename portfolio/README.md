@@ -11,3 +11,5 @@ expected to contribute yourself.
 
 I will use the statistics generated from this structure to help me to
 assess your work without having to audit every file.
+
+The file `model_audit.txt` will form the basis of my check.
