@@ -7,3 +7,6 @@ tree -h  >> audit.txt
 
 echo '# files submitted' >> audit.txt
 find . -type f | wc -l >> audit.txt
+
+echo "Diffs" >> audit.txt
+diff ../model_audit.txt audit.txt > diffs.txt
