@@ -1,0 +1,77 @@
+Auditing /Users/eechris/dev/EG-247-Resources/portfolio
+.
+├── [ 660]  README.md
+├── [ 414]  audit
+├── [  55]  audit.txt
+├── [ 216]  audit_all
+├── [1.1K]  diffs.txt
+├── [ 102]  lab1
+│   └── [2.4K]  elem_sigs.m
+├── [ 170]  lab2
+│   ├── [3.6K]  ilaplace_lab.m
+│   ├── [2.5K]  laplace_lab.m
+│   └── [   0]  signal.slx
+├── [ 340]  lab3
+│   ├── [   0]  ex6.m
+│   ├── [   0]  ex7.m
+│   ├── [   0]  ex8.m
+│   ├── [ 675]  ex9.m
+│   ├── [ 754]  solution3.m
+│   ├── [ 161]  solution5.m
+│   ├── [ 675]  solution7.m
+│   └── [8.3K]  tf_matlab.m
+├── [ 306]  lab4
+│   ├── [ 731]  ex11.m
+│   ├── [ 731]  ex12.m
+│   ├── [ 731]  ex13.m
+│   ├── [   0]  ex13.slx
+│   ├── [ 731]  ex14.m
+│   ├── [ 731]  rlc.m
+│   └── [   0]  rlc.slx
+├── [ 306]  lab5
+│   ├── [ 503]  ex15_1.m
+│   ├── [ 503]  ex15_2.m
+│   ├── [ 503]  ex15_3.m
+│   ├── [ 503]  ex15_4.m
+│   ├── [   0]  ex16.m
+│   ├── [   0]  ex16.slx
+│   └── [ 503]  exercise15.m
+├── [ 510]  lab6
+│   ├── [ 580]  FourierSeries.m
+│   ├── [ 828]  TrigFourierSeries.m
+│   ├── [1.4K]  ex17_1.m
+│   ├── [1.4K]  ex17_2.m
+│   ├── [ 17K]  ex18_1.slx
+│   ├── [ 17K]  ex18_2.slx
+│   ├── [1.1K]  ex19_1.m
+│   ├── [1.1K]  ex19_2.m
+│   ├── [   0]  ex20_1.m
+│   ├── [   0]  ex20_2.m
+│   ├── [1.1K]  exp_fseries.m
+│   ├── [ 17K]  fourier_example.slx
+│   └── [1.4K]  trig_fseries.m
+├── [ 204]  lab8
+│   ├── [6.3K]  filters.m
+│   ├── [1.4K]  lab9.m
+│   ├── [   0]  lab9.mat
+│   └── [1.4K]  testfda.m
+├── [ 374]  lab9
+│   ├── [2.4K]  aliaseg1.m
+│   ├── [2.3K]  aliaseg2.m
+│   ├── [   0]  ex22.m
+│   ├── [2.4K]  ex23_1.m
+│   ├── [2.3K]  ex23_2.m
+│   ├── [   0]  ex24.m
+│   ├── [   0]  ex24.wav
+│   ├── [215K]  msmv2.wav
+│   └── [1.5K]  soundex.m
+└── [2.2K]  model_audit.txt
+
+8 directories, 58 files
+# files submitted
+      59
+Scripts (target 42):
+      42
+Simulink models (target 7):
+       7
+Diffs
