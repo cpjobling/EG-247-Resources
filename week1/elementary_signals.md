@@ -1,6 +1,7 @@
 
-# Lesson 2
-## Elementary Signals
+# Lesson 2: Elementary Signals
+
+## About this presentation
 
 Dr Chris Jobling
 ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
@@ -21,7 +22,7 @@ The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Res
 also contains the source code for all the Matlab/Simulink
 examples.
 
-# Review of Homework Problem from Lesson 1
+## Review of Homework Problem from Lesson 1
 
 Consider a signal
 
@@ -31,19 +32,46 @@ $$x = f(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\;:\;t > 1}
 \end{array}} \right.$$
 
-Sketch this signal and plot the effect on this signal of applying the following
+Sketch this signal
+
+----
+
+Sketch the effect on this signal of applying the following
 basic signal operations
+
+### Amplitude scaling
 
 * $2 f(t)$
 * $0.5 f(t)$
+
+### Time scaling
+
 * $f(2t)$
 * $f(0.5 t)$
+
+### Mirroring
+
 * $-f(t)$
 * $f(-t)$
 * $-f(-t)$
+
+### Time shifting - delay and advance
+
 * $f(t - 1)$
 * $f(t + 1)$
+
+----
+
+## Try this
+
+### A combination of transformations
+
 * $-2f(-t+2)$
+
+Note that this involves *amplitude scaling*, *amplitude mirroring*, *time mirroring*, and a
+*time shift*. Each operation can be performed in sequence in any order.
+
+----
 
 ### Sketch of signal
 
@@ -65,86 +93,15 @@ basic signal operations
 
 <img src="files/pictures/sigs5.png">
 
-### Exercise
-
-We leave the solution of $-2f(-t+2)$ as an exercise for the reader but note that
-it involves *amplitude scaling*, *amplitude mirroring*, *time mirroring*, and a
-*time shift*. Each operation can be performed in sequence in any order.
-
-# Elementary Signals
-
-Quiz: consider this circuit:
+## Quiz: consider this circuit:
 
 ![Circuit for quiz](pictures/circuit1.png)
 
-----
+# Elementary signals
 
-What happens **before** $t=0$?
+## Unit Step Function
 
-1. $v_{\mathrm{out}} = \mathrm{undefined}$
-2. $v_{\mathrm{out}} = 0$
-3. $v_{\mathrm{out}} = V_s$
-4. $v_{\mathrm{out}} = 1/2$
-5. $v_{\mathrm{out}} = \infty$
-
-----
-
-What happens **after** $t=0$?
-
-1. $v_{\mathrm{out}} = \mathrm{undefined}$
-2. $v_{\mathrm{out}} = 0$
-3. $v_{\mathrm{out}} = V_s$
-4. $v_{\mathrm{out}} = 1/2$
-5. $v_{\mathrm{out}} = \infty$
-
-----
-
-What happens **at** $t=0$?
-
-1. $v_{\mathrm{out}} = \mathrm{undefined}$
-2. $v_{\mathrm{out}} = 0$
-3. $v_{\mathrm{out}} = V_s$
-4. $v_{\mathrm{out}} = 1/2$
-5. $v_{\mathrm{out}} = \infty$
-
-----
-
-What does the response of $V_{\mathrm{out}}$ look like?
-
-----
-
-![Answer 1](pictures/impulse.png)
-
-----
-
-![Answer 3](pictures/ramp.png)
-
-----
-
-![Answer 3](pictures/step1.png)
-
-----
-
-![Answer 4](pictures/curve.png)
-
-# Answers
-
-Mathematically
-
-1. $v_{\mathrm{out}} = 0$ when $-\infty < t < 0$ (answer 2)
-2. $v_{\mathrm{out}} = V_s$ when $0 < t < \infty$ (answer 3)
-3. $v_{\mathrm{out}} = \mathrm{undefined}$ when $t=0$ (answer 1)
-
-$V_{\mathrm{out}}$ jumps from $0$ to $V_s$ instantanously when the switch is
-closed. We call this a discontinuous signal!
-
-The correct image is:
-
-3: <img src="files/pictures/step2.png">
-
-# Unit Step Function
-
-## Definition
+### Definition
 
 $${u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t < 0}\\
@@ -157,7 +114,7 @@ $${u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
 
 ![Unit step function](pictures/unitstep.png)
 
-# Computing/Plotting in Matlab
+## Computing/Plotting in Matlab
 
 In Matlab, we use the `heaviside` function (Named after [Oliver
 Heaviside](http://en.wikipedia.org/wiki/Oliver_Heaviside)).
@@ -172,7 +129,7 @@ See: [heaviside_function.m](files/matlab/heaviside_function.m)
 
 ----
 
-Result
+## Result
 
 ![The Heaviside function (unit step)](pictures/heaviside.png)
 
@@ -187,11 +144,13 @@ $$\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
 \end{array}} \right.$$
 </div>
 
-# Circuit Revisited
+## Circuit Revisited
 
 Consider the network shown below, where the switch is closed at time $t=T$.
 
 ![The circuit revisited](pictures/circuit2.png)
+
+----
 
 Express the output voltage $v_{\mathrm{out}}$ as a function of the unit step
 function, and sketch the appropriate waveform.
@@ -210,8 +169,6 @@ Sketch $u_0(-t)$
 
 Sketch $u_0(t-T)$ and $u_0(t+T)$
 
-# Examples
-
 ## Example 1
 
 Which of these signals represents $-Au_0(t+T)$?
@@ -224,12 +181,14 @@ What is represented by
 
 ![Example 2](pictures/stepf2.png)
 
+----
+
 1. $-Au_0(t - T)$
 2. $-Au_0(-t + T)$
 3. $-Au_0(-t - T)$
 4. $-Au_0(t-T)$
 
-# Synthesis of Signals from Unit Step
+## Synthesis of Signals from Unit Step
 
 Unit step functions can be used to represent other time-varying functions such
 as rectangular pulses, square waves and triangular pulses.
@@ -256,11 +215,13 @@ Show that the waveform shown below
 
 ![Homework](pictures/example1.png)
 
+---
+
 can be represented by the function
 
 $$v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)$$
 
-# The Ramp Function
+## The Ramp Function
 
 ![RC circuit](pictures/rc.png)
 
@@ -273,6 +234,10 @@ represented as
 $$v_C(t)=\frac{i_s}{C}t u_0(t)$$
 
 and sketch the wave form.
+
+----
+
+## The unit ramp function
 
 The unit ramp function is defined as
 
@@ -289,7 +254,7 @@ and
 
 $$u_0(t) = \frac{d }{dt}u_1(t)$$
 
-<div class="note">
+<div class="notes">
 <h3>Note</h3>
 
 Higher order functions of $t$ can be generated by the repeated integration of
@@ -303,7 +268,7 @@ $$u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)$$
 Details are given in equations 1.26&mdash;1.29 in the textbook.
 </div>
 
-# The Dirac Delta Function
+## The Dirac Delta Function
 
 ![RL circuit](pictures/lr.png)
 
@@ -313,9 +278,7 @@ In the circuit shown on the previous slide, the switch is closed at time $t=0$ a
 for $t<0$. Express the inductor current $i_L(t)$ in terms of the unit step
 function.
 
-----
-
-<div class="note">
+<div class="notes">
 <h3>Note</h3>
 
 To solve this problem we need to invent a function that represents the
