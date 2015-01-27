@@ -1,19 +1,27 @@
 
-# Elementary Signals
+# Lesson 2
+## Elementary Signals
 
 Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals
-.ipynb) and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
 
-## Review of Final Example from Previous
+Office Hours: ...
+
+You can view the notes for this presentation in
+[HTML](http://cpjobling.github.io/EG-247-Resources/week1/elementary_signals.html)
+and
+[PDF](http://cpjobling.github.io/EG-247-Resources/week1/elementary_signals.pdf).
+
+The source code of this presentation is available in Markdown format from GitHub:
+[Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week1/elementary_signals.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples.
+
+# Review of Homework Problem from Lesson 1
 
 Consider a signal
 
@@ -63,11 +71,13 @@ We leave the solution of $-2f(-t+2)$ as an exercise for the reader but note that
 it involves *amplitude scaling*, *amplitude mirroring*, *time mirroring*, and a
 *time shift*. Each operation can be performed in sequence in any order.
 
-## Elementary Signals
+# Elementary Signals
 
-Consider this circuit:
+Quiz: consider this circuit:
 
-<img src="files/pictures/circuit1.png">
+![Circuit for quiz](pictures/circuit1.png)
+
+----
 
 What happens **before** $t=0$?
 
@@ -77,7 +87,7 @@ What happens **before** $t=0$?
 4. $v_{\mathrm{out}} = 1/2$
 5. $v_{\mathrm{out}} = \infty$
 
-<img src="files/pictures/circuit1.png">
+----
 
 What happens **after** $t=0$?
 
@@ -87,7 +97,7 @@ What happens **after** $t=0$?
 4. $v_{\mathrm{out}} = 1/2$
 5. $v_{\mathrm{out}} = \infty$
 
-<img src="files/pictures/circuit1.png">
+----
 
 What happens **at** $t=0$?
 
@@ -97,23 +107,27 @@ What happens **at** $t=0$?
 4. $v_{\mathrm{out}} = 1/2$
 5. $v_{\mathrm{out}} = \infty$
 
-What does the response of $V_{\mathrm{out}}$ look like?
-
-1: <img src="files/pictures/impulse.png">
-
-What does the response of $V_{\mathrm{out}}$ look like
-
-2: <img src="files/pictures/ramp.png">
-
-What does the response of $V_{\mathrm{out}}$ look like
-
-3: <img src="files/pictures/step1.png">
+----
 
 What does the response of $V_{\mathrm{out}}$ look like?
 
-4: <img src="files/pictures/curve.png">
+----
 
-## Answers
+![Answer 1](pictures/impulse.png)
+
+----
+
+![Answer 3](pictures/ramp.png)
+
+----
+
+![Answer 3](pictures/step1.png)
+
+----
+
+![Answer 4](pictures/curve.png)
+
+# Answers
 
 Mathematically
 
@@ -128,28 +142,41 @@ The correct image is:
 
 3: <img src="files/pictures/step2.png">
 
-## Unit Step Function
+# Unit Step Function
+
+## Definition
 
 $${u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t < 0}\\
 {1\quad t > 0}
 \end{array}} \right.$$
 
-<img src="files/pictures/unitstep.png">
+----
 
-### In Matlab
+## Sketch
+
+![Unit step function](pictures/unitstep.png)
+
+# Computing/Plotting in Matlab
 
 In Matlab, we use the `heaviside` function (Named after [Oliver
 Heaviside](http://en.wikipedia.org/wiki/Oliver_Heaviside)).
 
-```syms t
+```matlab
+syms t
 ezplot(heaviside(t),[-1,1])
 ```
 
-<img src="files/pictures/heaviside.png">
-
 See: [heaviside_function.m](files/matlab/heaviside_function.m)
 
+
+----
+
+Result
+
+![The Heaviside function (unit step)](pictures/heaviside.png)
+
+<div class="notes">
 Note that, so it can be plotted, Matlab defines the *heaviside function*
 slightly differently from the mathematically ideal unit step:
 
@@ -158,86 +185,88 @@ $$\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
 {1/2\quad t = 0}\\
 {1\quad t > 0}
 \end{array}} \right.$$
+</div>
 
-
-## Circuit Revisited
+# Circuit Revisited
 
 Consider the network shown below, where the switch is closed at time $t=T$.
 
-<img src="files/pictures/circuit2.png">
+![The circuit revisited](pictures/circuit2.png)
 
 Express the output voltage $v_{\mathrm{out}}$ as a function of the unit step
 function, and sketch the appropriate waveform.
 
-## Simple Signal Operations
+# Simple Signal Operations
 
-### Amplitude Scaling
+## Amplitude Scaling
 
 Sketch $Au_0(t)$ and $-Au_0(t)$
 
-### Time Reversal
+## Time Reversal
 
 Sketch $u_0(-t)$
 
-### Time Delay and Advance
+## Time Delay and Advance
 
 Sketch $u_0(t-T)$ and $u_0(t+T)$
 
-## Examples
+# Examples
 
-### Example 1
+## Example 1
 
 Which of these signals represents $-Au_0(t+T)$?
 
-<img src="files/pictures/stepf1.png" width="50%">
+![Example 1](pictures/stepf1.png)
 
-### Example 2
+## Example 2
 
 What is represented by
 
-<img src="files/pictures/stepf2.png" width="50%">
+![Example 2](pictures/stepf2.png)
 
 1. $-Au_0(t - T)$
 2. $-Au_0(-t + T)$
 3. $-Au_0(-t - T)$
 4. $-Au_0(t-T)$
 
-## Synthesis of Signals from Unit Step
+# Synthesis of Signals from Unit Step
 
 Unit step functions can be used to represent other time-varying functions such
 as rectangular pulses, square waves and triangular pulses.
 
-### Synthesize Rectangular Pulse
+## Synthesize Rectangular Pulse
 
-<img src="files/pictures/rect.png">
+![Rectangle function](pictures/rect.png)
 
-### Synthesize Square Wave
+## Synthesize Square Wave
 
-<img src="files/pictures/square_wave.png">
+![Square wave](pictures/square_wave.png)
 
-### Synthesize Symmetric Rectangular Pulse
+## Synthesize Symmetric Rectangular Pulse
 
-<img src="files/pictures/symm_rect.png">
+![Symmetric rectangular pulse](pictures/symm_rect.png)
 
-### Synthesize Symmetric Triangular Pulse
+## Synthesize Symmetric Triangular Pulse
 
-<img src="files/pictures/symm_tri.png">
+![Symmetric triangular pulse](pictures/symm_tri.png)
 
 ## Homework
 
 Show that the waveform shown below
 
-<img src="files/pictures/example1.png">
+![Homework](pictures/example1.png)
 
 can be represented by the function
 
 $$v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)$$
 
-## The Ramp Function
+# The Ramp Function
 
-<img src="files/pictures/rc.png">
+![RC circuit](pictures/rc.png)
 
-In the circuit shown above $i_s$ is a constant current source and the switch is
+---
+
+In the circuit shown in the previous slide $i_s$ is a constant current source and the switch is
 closed at time $t=0$. Show that the voltage across the capacitor can be
 represented as
 
@@ -260,7 +289,8 @@ and
 
 $$u_0(t) = \frac{d }{dt}u_1(t)$$
 
-### Note
+<div class="note">
+<h3>Note</h3>
 
 Higher order functions of $t$ can be generated by the repeated integration of
 the unit step function.
@@ -271,19 +301,31 @@ yourself and make a note of the general rule:
 $$u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)$$
 
 Details are given in equations 1.26&mdash;1.29 in the textbook.
+</div>
 
-## The Dirac Delta Function
+# The Dirac Delta Function
 
-<img src="files/pictures/lr.png">
+![RL circuit](pictures/lr.png)
 
-In the circuit shown above, the switch is closed at time $t=0$ and $i_L(t)=0$
+----
+
+In the circuit shown on the previous slide, the switch is closed at time $t=0$ and $i_L(t)=0$
 for $t<0$. Express the inductor current $i_L(t)$ in terms of the unit step
 function.
+
+----
+
+<div class="note">
+<h3>Note</h3>
 
 To solve this problem we need to invent a function that represents the
 derivative of the unit step function. This function is called $\delta(t)$ or the
 *dirac delta* function (named after [Paul
 Dirac](http://en.wikipedia.org/wiki/Paul_Dirac)).
+
+</div>
+
+----
 
 This function is tricky because $u_0(t)$ is discontinuous at $t=0$ but it must
 have the properties
@@ -294,7 +336,8 @@ and
 
 $\delta(t) = 0$ for all $t\ne 0$.
 
-### Sampling Property
+
+## Sampling Property
 
 The *sampling property* of the delta function states that
 
@@ -312,7 +355,7 @@ The study of descrete-time (sampled) systems is based on this property.
 
 *You should work through the proof* for youself.
 
-### Sifting Property
+## Sifting Property
 
 The *sifting property* of the delta function states that
 
@@ -324,7 +367,7 @@ $t=\alpha.$
 
 *You should also work through the proof* for yourself.
 
-### Higher Order Delta Fuctions
+## Higher Order Delta Fuctions
 
 the n*th*-order *delta function* is defined as the n*th* derivative of $u_0(t)$,
 that is
@@ -334,21 +377,25 @@ $$\delta^n(t)=\frac{d^n}{dt^n}[u_0(t)]$$
 The function $\delta'(t)$ is called the *doublet*, $\delta''(t)$ is called the
 *triplet* and so on.
 
+----
+
 By a procedure similar to the derivation of the sampling property we can show
 that
 
 $$f(t)\delta'(t-a)=f(a)\delta'(t-a)-f'(t)\delta(t-a)$$
 
-
+----
 
 Also, derivation of the sifting property can be extended to show that
 
 $$\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}$$
 
-## Examples
+----
 
-### Example 3
+# Examples
+
+## Example 3
 
 Evaluate the following expressions
 
@@ -357,9 +404,9 @@ Evaluate the following expressions
 3. $$t^2\delta'(t-3)$$
 
 
-### Example 4
+## Example 4
 
-<img src="files/pictures/example2.png">
+![Example 4](pictures/example2.png)
 
 1. Express the voltage waveform $v(t)$ shown above aa sum of unit step functions
 for the time interval $-1 < t < 7$ s
@@ -367,13 +414,13 @@ for the time interval $-1 < t < 7$ s
 2. Using the result of part (1), compute the derivative of $v(t)$ and sketch
 it's waveform.
 
-## Homework
+# Self-study
 
 Do the end of the chapter exercises (Section 1.7) from the textbook. Don't look
 at the answers until you have attempted the problems.
 
-## Lab Work
+# Lab Work
 
-In the lab, on Monday, we will solve Example 2 using Matlab/Simulink following
-the procedure given in Pages between pages 1-17 and 1-22 of the textbook. We
+In the lab, a week on Friday, we will solve Example 2 using Matlab/Simulink following
+the procedure given between pages 1-17 and 1-22 of the textbook. We
 will also explore the `heaviside` and `dirac` functions.
