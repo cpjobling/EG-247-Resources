@@ -276,7 +276,7 @@ Details are given in equations 1.26&mdash;1.29 in the textbook.
 
 In the circuit shown on the previous slide, the switch is closed at time $t=0$ and $i_L(t)=0$
 for $t<0$. Express the inductor current $i_L(t)$ in terms of the unit step
-function.
+function and hence derive an expression for $v_L(t)$.
 
 <div class="notes">
 <h3>Note</h3>
@@ -288,7 +288,9 @@ Dirac](http://en.wikipedia.org/wiki/Paul_Dirac)).
 
 </div>
 
-----
+## The delta function
+
+The *unit impulse* or the *delta function*, denoted as $\delta(t)$, is the derivative of the unit step.
 
 This function is tricky because $u_0(t)$ is discontinuous at $t=0$ but it must
 have the properties
@@ -299,6 +301,11 @@ and
 
 $\delta(t) = 0$ for all $t\ne 0$.
 
+## Sketch of the delta function
+
+![The delta function](pictures/impulse.png)
+
+# Important properties of the delta function
 
 ## Sampling Property
 
