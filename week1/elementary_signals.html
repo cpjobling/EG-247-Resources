@@ -25,6 +25,7 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="lesson-2-elementary-signals">Lesson 2: Elementary Signals</h1>
@@ -42,40 +43,40 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples.</p>
 <h2 id="review-of-homework-problem-from-lesson-1">Review of Homework Problem from Lesson 1</h2>
 <p>Consider a signal</p>
-<p><br /><span class="math">$$x = f(t) = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[x = f(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\;:\;t &lt;  - 1}\\
 {t + 1\;:\; - 1 \le t \le 1}\\
 {0\;:\;t &gt; 1}
-\end{array}} \right.$$</span><br /></p>
+\end{array}} \right.\]</span></p>
 <p>Sketch this signal</p>
 <hr />
 <p>Sketch the effect on this signal of applying the following basic signal operations</p>
 <h3 id="amplitude-scaling">Amplitude scaling</h3>
 <ul>
-<li><span class="math">2<em>f</em>(<em>t</em>)</span></li>
-<li><span class="math">0.5<em>f</em>(<em>t</em>)</span></li>
+<li><span class="math">\(2 f(t)\)</span></li>
+<li><span class="math">\(0.5 f(t)\)</span></li>
 </ul>
 <h3 id="time-scaling">Time scaling</h3>
 <ul>
-<li><span class="math"><em>f</em>(2<em>t</em>)</span></li>
-<li><span class="math"><em>f</em>(0.5<em>t</em>)</span></li>
+<li><span class="math">\(f(2t)\)</span></li>
+<li><span class="math">\(f(0.5 t)\)</span></li>
 </ul>
 <h3 id="mirroring">Mirroring</h3>
 <ul>
-<li><span class="math"> − <em>f</em>(<em>t</em>)</span></li>
-<li><span class="math"><em>f</em>( − <em>t</em>)</span></li>
-<li><span class="math"> − <em>f</em>( − <em>t</em>)</span></li>
+<li><span class="math">\(-f(t)\)</span></li>
+<li><span class="math">\(f(-t)\)</span></li>
+<li><span class="math">\(-f(-t)\)</span></li>
 </ul>
 <h3 id="time-shifting---delay-and-advance">Time shifting - delay and advance</h3>
 <ul>
-<li><span class="math"><em>f</em>(<em>t</em> − 1)</span></li>
-<li><span class="math"><em>f</em>(<em>t</em> + 1)</span></li>
+<li><span class="math">\(f(t - 1)\)</span></li>
+<li><span class="math">\(f(t + 1)\)</span></li>
 </ul>
 <hr />
 <h2 id="try-this">Try this</h2>
 <h3 id="a-combination-of-transformations">A combination of transformations</h3>
 <ul>
-<li><span class="math"> − 2<em>f</em>( − <em>t</em> + 2)</span></li>
+<li><span class="math">\(-2f(-t+2)\)</span></li>
 </ul>
 <p>Note that this involves <em>amplitude scaling</em>, <em>amplitude mirroring</em>, <em>time mirroring</em>, and a <em>time shift</em>. Each operation can be performed in sequence in any order.</p>
 <h2 id="quiz-consider-this-circuit">Quiz: consider this circuit:</h2>
@@ -86,10 +87,10 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h1 id="elementary-signals">Elementary signals</h1>
 <h2 id="unit-step-function">Unit Step Function</h2>
 <h3 id="definition">Definition</h3>
-<p><br /><span class="math">$${u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t &lt; 0}\\
 {1\quad t &gt; 0}
-\end{array}} \right.$$</span><br /></p>
+\end{array}} \right.\]</span></p>
 <hr />
 <h2 id="sketch">Sketch</h2>
 <div class="figure">
@@ -109,29 +110,29 @@ ezplot(heaviside(t),[-<span class="fl">1</span>,<span class="fl">1</span>])</cod
 </div>
 <div class="notes">
 <p>Note that, so it can be plotted, Matlab defines the <em>heaviside function</em> slightly differently from the mathematically ideal unit step:</p>
-<p><br /><span class="math">$$\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[\mathrm{heaviside}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t &lt; 0}\\
 {1/2\quad t = 0}\\
 {1\quad t &gt; 0}
-\end{array}} \right.$$</span><br /></p>
+\end{array}} \right.\]</span></p>
 </div>
 <h2 id="circuit-revisited">Circuit Revisited</h2>
-<p>Consider the network shown below, where the switch is closed at time <span class="math"><em>t</em> = <em>T</em></span>.</p>
+<p>Consider the network shown below, where the switch is closed at time <span class="math">\(t=T\)</span>.</p>
 <div class="figure">
 <img src="pictures/circuit2.png" alt="The circuit revisited" />
 <p class="caption">The circuit revisited</p>
 </div>
 <hr />
-<p>Express the output voltage <span class="math"><em>v</em><sub><em>o</em><em>u</em><em>t</em></sub></span> as a function of the unit step function, and sketch the appropriate waveform.</p>
+<p>Express the output voltage <span class="math">\(v_{\mathrm{out}}\)</span> as a function of the unit step function, and sketch the appropriate waveform.</p>
 <h1 id="simple-signal-operations">Simple Signal Operations</h1>
 <h2 id="amplitude-scaling-1">Amplitude Scaling</h2>
-<p>Sketch <span class="math"><em>A</em><em>u</em><sub>0</sub>(<em>t</em>)</span> and <span class="math"> − <em>A</em><em>u</em><sub>0</sub>(<em>t</em>)</span></p>
+<p>Sketch <span class="math">\(Au_0(t)\)</span> and <span class="math">\(-Au_0(t)\)</span></p>
 <h2 id="time-reversal">Time Reversal</h2>
-<p>Sketch <span class="math"><em>u</em><sub>0</sub>( − <em>t</em>)</span></p>
+<p>Sketch <span class="math">\(u_0(-t)\)</span></p>
 <h2 id="time-delay-and-advance">Time Delay and Advance</h2>
-<p>Sketch <span class="math"><em>u</em><sub>0</sub>(<em>t</em> − <em>T</em>)</span> and <span class="math"><em>u</em><sub>0</sub>(<em>t</em> + <em>T</em>)</span></p>
+<p>Sketch <span class="math">\(u_0(t-T)\)</span> and <span class="math">\(u_0(t+T)\)</span></p>
 <h2 id="example-1">Example 1</h2>
-<p>Which of these signals represents <span class="math"> − <em>A</em><em>u</em><sub>0</sub>(<em>t</em> + <em>T</em>)</span>?</p>
+<p>Which of these signals represents <span class="math">\(-Au_0(t+T)\)</span>?</p>
 <div class="figure">
 <img src="pictures/stepf1.png" alt="Example 1" />
 <p class="caption">Example 1</p>
@@ -144,10 +145,10 @@ ezplot(heaviside(t),[-<span class="fl">1</span>,<span class="fl">1</span>])</cod
 </div>
 <hr />
 <ol style="list-style-type: decimal">
-<li><span class="math"> − <em>A</em><em>u</em><sub>0</sub>(<em>t</em> − <em>T</em>)</span></li>
-<li><span class="math"> − <em>A</em><em>u</em><sub>0</sub>( − <em>t</em> + <em>T</em>)</span></li>
-<li><span class="math"> − <em>A</em><em>u</em><sub>0</sub>( − <em>t</em> − <em>T</em>)</span></li>
-<li><span class="math"> − <em>A</em><em>u</em><sub>0</sub>(<em>t</em> − <em>T</em>)</span></li>
+<li><span class="math">\(-Au_0(t - T)\)</span></li>
+<li><span class="math">\(-Au_0(-t + T)\)</span></li>
+<li><span class="math">\(-Au_0(-t - T)\)</span></li>
+<li><span class="math">\(-Au_0(t-T)\)</span></li>
 </ol>
 <h2 id="synthesis-of-signals-from-unit-step">Synthesis of Signals from Unit Step</h2>
 <p>Unit step functions can be used to represent other time-varying functions such as rectangular pulses, square waves and triangular pulses.</p>
@@ -179,34 +180,34 @@ ezplot(heaviside(t),[-<span class="fl">1</span>,<span class="fl">1</span>])</cod
 </div>
 <hr />
 <p>can be represented by the function</p>
-<p><br /><span class="math"><em>v</em>(<em>t</em>) = (2<em>t</em> + 1)<em>u</em><sub>0</sub>(<em>t</em>) − 2(<em>t</em> − 1)<em>u</em><sub>0</sub>(<em>t</em> − 1) − <em>t</em><em>u</em><sub>0</sub>(<em>t</em> − 2) + (<em>t</em> − 3)<em>u</em><sub><em>o</em></sub>(<em>t</em> − 3)</span><br /></p>
+<p><span class="math">\[v(t) = (2t + 1)u_0(t)-2(t-1)u_0(t-1)-tu_0(t-2)+(t-3)u_o(t-3)\]</span></p>
 <h2 id="the-ramp-function">The Ramp Function</h2>
 <div class="figure">
 <img src="pictures/rc.png" alt="RC circuit" />
 <p class="caption">RC circuit</p>
 </div>
 <hr />
-<p>In the circuit shown in the previous slide <span class="math"><em>i</em><sub><em>s</em></sub></span> is a constant current source and the switch is closed at time <span class="math"><em>t</em> = 0</span>. Show that the voltage across the capacitor can be represented as</p>
-<p><br /><span class="math">$$v_C(t)=\frac{i_s}{C}t u_0(t)$$</span><br /></p>
+<p>In the circuit shown in the previous slide <span class="math">\(i_s\)</span> is a constant current source and the switch is closed at time <span class="math">\(t=0\)</span>. Show that the voltage across the capacitor can be represented as</p>
+<p><span class="math">\[v_C(t)=\frac{i_s}{C}t u_0(t)\]</span></p>
 <p>and sketch the wave form.</p>
 <hr />
 <h2 id="the-unit-ramp-function">The unit ramp function</h2>
 <p>The unit ramp function is defined as</p>
-<p><br /><span class="math"><em>u</em><sub>1</sub>(<em>t</em>) = ∫<sub> − ∞</sub><sup><em>t</em></sup><em>u</em><sub>0</sub>(<em>τ</em>)<em>d</em><em>τ</em></span><br /></p>
+<p><span class="math">\[u_1(t) = \int_{-\infty}^{t}u_0(\tau)d\tau\]</span></p>
 <p>so</p>
-<p><br /><span class="math">$${u_1}(t) = \left\{ {\begin{array}{*{20}{c}}
+<p><span class="math">\[{u_1}(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\quad t &lt; 0}\\
 {t\quad t \ge 0}
-\end{array}} \right.$$</span><br /></p>
+\end{array}} \right.\]</span></p>
 <p>and</p>
-<p><br /><span class="math">$$u_0(t) = \frac{d }{dt}u_1(t)$$</span><br /></p>
+<p><span class="math">\[u_0(t) = \frac{d }{dt}u_1(t)\]</span></p>
 <div class="notes">
 <h3>
 Note
 </h3>
-<p>Higher order functions of <span class="math"><em>t</em></span> can be generated by the repeated integration of the unit step function.</p>
-<p>For future reference, you should determine <span class="math"><em>u</em><sub>2</sub>(<em>t</em>)</span>, <span class="math"><em>u</em><sub>3</sub>(<em>t</em>)</span> and <span class="math"><em>u</em><sub><em>n</em></sub>(<em>t</em>)</span> for yourself and make a note of the general rule:</p>
-<p><br /><span class="math">$$u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)$$</span><br /></p>
+<p>Higher order functions of <span class="math">\(t\)</span> can be generated by the repeated integration of the unit step function.</p>
+<p>For future reference, you should determine <span class="math">\(u_2(t)\)</span>, <span class="math">\(u_3(t)\)</span> and <span class="math">\(u_n(t)\)</span> for yourself and make a note of the general rule:</p>
+<p><span class="math">\[u_{n-1} = \frac{1}{n}\frac{d}{dt}u_n(t)\]</span></p>
 <p>Details are given in equations 1.26—1.29 in the textbook.</p>
 </div>
 <h2 id="the-dirac-delta-function">The Dirac Delta Function</h2>
@@ -215,19 +216,19 @@ Note
 <p class="caption">RL circuit</p>
 </div>
 <hr />
-<p>In the circuit shown on the previous slide, the switch is closed at time <span class="math"><em>t</em> = 0</span> and <span class="math"><em>i</em><sub><em>L</em></sub>(<em>t</em>) = 0</span> for <span class="math"><em>t</em> &lt; 0</span>. Express the inductor current <span class="math"><em>i</em><sub><em>L</em></sub>(<em>t</em>)</span> in terms of the unit step function and hence derive an expression for <span class="math"><em>v</em><sub><em>L</em></sub>(<em>t</em>)</span>.</p>
+<p>In the circuit shown on the previous slide, the switch is closed at time <span class="math">\(t=0\)</span> and <span class="math">\(i_L(t)=0\)</span> for <span class="math">\(t&lt;0\)</span>. Express the inductor current <span class="math">\(i_L(t)\)</span> in terms of the unit step function and hence derive an expression for <span class="math">\(v_L(t)\)</span>.</p>
 <div class="notes">
 <h3>
 Note
 </h3>
-<p>To solve this problem we need to invent a function that represents the derivative of the unit step function. This function is called <span class="math"><em>δ</em>(<em>t</em>)</span> or the <em>dirac delta</em> function (named after <a href="http://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>).</p>
+<p>To solve this problem we need to invent a function that represents the derivative of the unit step function. This function is called <span class="math">\(\delta(t)\)</span> or the <em>dirac delta</em> function (named after <a href="http://en.wikipedia.org/wiki/Paul_Dirac">Paul Dirac</a>).</p>
 </div>
 <h2 id="the-delta-function">The delta function</h2>
-<p>The <em>unit impulse</em> or the <em>delta function</em>, denoted as <span class="math"><em>δ</em>(<em>t</em>)</span>, is the derivative of the unit step.</p>
-<p>This function is tricky because <span class="math"><em>u</em><sub>0</sub>(<em>t</em>)</span> is discontinuous at <span class="math"><em>t</em> = 0</span> but it must have the properties</p>
-<p><br /><span class="math">∫<sub> − ∞</sub><sup><em>t</em></sup><em>δ</em>(<em>τ</em>)<em>d</em><em>τ</em> = <em>u</em><sub>0</sub>(<em>t</em>)</span><br /></p>
+<p>The <em>unit impulse</em> or the <em>delta function</em>, denoted as <span class="math">\(\delta(t)\)</span>, is the derivative of the unit step.</p>
+<p>This function is tricky because <span class="math">\(u_0(t)\)</span> is discontinuous at <span class="math">\(t=0\)</span> but it must have the properties</p>
+<p><span class="math">\[\int_{-\infty}^{t}\delta(\tau)d\tau = u_0(t)\]</span></p>
 <p>and</p>
-<p><span class="math"><em>δ</em>(<em>t</em>) = 0</span> for all <span class="math"><em>t</em> ≠ 0</span>.</p>
+<p><span class="math">\(\delta(t) = 0\)</span> for all <span class="math">\(t\ne 0\)</span>.</p>
 <h2 id="sketch-of-the-delta-function">Sketch of the delta function</h2>
 <div class="figure">
 <img src="pictures/impulse.png" alt="The delta function" />
@@ -236,35 +237,35 @@ Note
 <h1 id="important-properties-of-the-delta-function">Important properties of the delta function</h1>
 <h2 id="sampling-property">Sampling Property</h2>
 <p>The <em>sampling property</em> of the delta function states that</p>
-<p><br /><span class="math"><em>f</em>(<em>t</em>)<em>δ</em>(<em>t</em> − <em>a</em>) = <em>f</em>(<em>a</em>)<em>δ</em>(<em>t</em> − <em>a</em>)</span><br /></p>
-<p>or, when <span class="math"><em>a</em> = 0</span>,</p>
-<p><br /><span class="math"><em>f</em>(<em>t</em>)<em>δ</em>(<em>t</em>) = <em>f</em>(0)<em>δ</em>(<em>t</em>)</span><br /></p>
-<p>Multiplication of any function <span class="math"><em>f</em>(<em>t</em>)</span> by the delta function <span class="math"><em>δ</em>(<em>t</em>)</span> results in sampling the function at the time instants for which the delta function is not zero.</p>
+<p><span class="math">\[f(t)\delta(t-a) = f(a)\delta(t-a)\]</span></p>
+<p>or, when <span class="math">\(a = 0\)</span>,</p>
+<p><span class="math">\[f(t)\delta(t) = f(0)\delta(t)\]</span></p>
+<p>Multiplication of any function <span class="math">\(f(t)\)</span> by the delta function <span class="math">\(\delta(t)\)</span> results in sampling the function at the time instants for which the delta function is not zero.</p>
 <p>The study of descrete-time (sampled) systems is based on this property.</p>
 <p><em>You should work through the proof</em> for youself.</p>
 <h2 id="sifting-property">Sifting Property</h2>
 <p>The <em>sifting property</em> of the delta function states that</p>
-<p><br /><span class="math">∫<sub> − ∞</sub><sup>∞</sup><em>f</em>(<em>t</em>)<em>δ</em>(<em>t</em> − <em>α</em>)<em>d</em><em>t</em> = <em>f</em>(<em>α</em>)</span><br /></p>
-<p>That is, if multiply any function <span class="math"><em>f</em>(<em>t</em>)</span> by <span class="math"><em>δ</em>(<em>t</em> − <em>α</em>)</span>, and integrate from <span class="math"> − ∞</span> to <span class="math"> + ∞</span>, we will get the value of <span class="math"><em>f</em>(<em>t</em>)</span> evaluated at <span class="math"><em>t</em> = <em>α</em>.</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty}f(t)\delta(t-\alpha)dt=f(\alpha)\]</span></p>
+<p>That is, if multiply any function <span class="math">\(f(t)\)</span> by <span class="math">\(\delta(t-\alpha)\)</span>, and integrate from <span class="math">\(-\infty\)</span> to <span class="math">\(+\infty\)</span>, we will get the value of <span class="math">\(f(t)\)</span> evaluated at <span class="math">\(t=\alpha.\)</span></p>
 <p><em>You should also work through the proof</em> for yourself.</p>
 <h2 id="higher-order-delta-fuctions">Higher Order Delta Fuctions</h2>
-<p>the n<em>th</em>-order <em>delta function</em> is defined as the n<em>th</em> derivative of <span class="math"><em>u</em><sub>0</sub>(<em>t</em>)</span>, that is</p>
-<p><br /><span class="math">$$\delta^n(t)=\frac{d^n}{dt^n}[u_0(t)]$$</span><br /></p>
-<p>The function <span class="math"><em>δ</em>′(<em>t</em>)</span> is called the <em>doublet</em>, <span class="math"><em>δ</em>″(<em>t</em>)</span> is called the <em>triplet</em> and so on.</p>
+<p>the n<em>th</em>-order <em>delta function</em> is defined as the n<em>th</em> derivative of <span class="math">\(u_0(t)\)</span>, that is</p>
+<p><span class="math">\[\delta^n(t)=\frac{d^n}{dt^n}[u_0(t)]\]</span></p>
+<p>The function <span class="math">\(\delta&#39;(t)\)</span> is called the <em>doublet</em>, <span class="math">\(\delta&#39;&#39;(t)\)</span> is called the <em>triplet</em> and so on.</p>
 <hr />
 <p>By a procedure similar to the derivation of the sampling property we can show that</p>
-<p><br /><span class="math"><em>f</em>(<em>t</em>)<em>δ</em>′(<em>t</em> − <em>a</em>) = <em>f</em>(<em>a</em>)<em>δ</em>′(<em>t</em> − <em>a</em>) − <em>f</em>′(<em>t</em>)<em>δ</em>(<em>t</em> − <em>a</em>)</span><br /></p>
+<p><span class="math">\[f(t)\delta&#39;(t-a)=f(a)\delta&#39;(t-a)-f&#39;(t)\delta(t-a)\]</span></p>
 <hr />
 <p>Also, derivation of the sifting property can be extended to show that</p>
-<p><br /><span class="math">$$\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
-1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}$$</span><br /></p>
+<p><span class="math">\[\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
+1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}\]</span></p>
 <h1 id="examples">Examples</h1>
 <h2 id="example-3">Example 3</h2>
 <p>Evaluate the following expressions</p>
 <ol style="list-style-type: decimal">
-<li><br /><span class="math">3<em>t</em><sup>4</sup><em>δ</em>(<em>t</em> − 1)</span><br /></li>
-<li><br /><span class="math">∫<sub> − ∞</sub><sup>∞</sup><em>t</em><em>δ</em>(<em>t</em> − 2)<em>d</em><em>t</em></span><br /></li>
-<li><br /><span class="math"><em>t</em><sup>2</sup><em>δ</em>′(<em>t</em> − 3)</span><br /></li>
+<li><span class="math">\[3t^4\delta(t-1) \]</span></li>
+<li><span class="math">\[\int_{-\infty}^{\infty}t\delta(t-2)dt\]</span></li>
+<li><span class="math">\[t^2\delta&#39;(t-3)\]</span></li>
 </ol>
 <h2 id="example-4">Example 4</h2>
 <div class="figure">
@@ -273,8 +274,8 @@ Note
 </div>
 <hr />
 <ol style="list-style-type: decimal">
-<li><p>Express the voltage waveform <span class="math"><em>v</em>(<em>t</em>)</span> shown above as sum of unit step functions for the time interval <span class="math"> − 1 &lt; <em>t</em> &lt; 7</span> s</p></li>
-<li><p>Using the result of part (1), compute the derivative of <span class="math"><em>v</em>(<em>t</em>)</span> and sketch it's waveform.</p></li>
+<li><p>Express the voltage waveform <span class="math">\(v(t)\)</span> shown above as sum of unit step functions for the time interval <span class="math">\(-1 &lt; t &lt; 7\)</span> s</p></li>
+<li><p>Using the result of part (1), compute the derivative of <span class="math">\(v(t)\)</span> and sketch it's waveform.</p></li>
 </ol>
 <h2 id="self-study">Self-study</h2>
 <p>Do the end of the chapter exercises (Section 1.7) from the textbook. Don't look at the answers until you have attempted the problems.</p>
