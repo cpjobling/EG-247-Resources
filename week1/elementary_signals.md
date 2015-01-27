@@ -71,28 +71,6 @@ basic signal operations
 Note that this involves *amplitude scaling*, *amplitude mirroring*, *time mirroring*, and a
 *time shift*. Each operation can be performed in sequence in any order.
 
-----
-
-### Sketch of signal
-
-<img src="files/pictures/sig1.png">
-
-### Amplitude scaling
-
-<img src="files/pictures/sigs2.png">
-
-### Time scaling
-
-<img src="files/pictures/sigs3.png">
-
-### Mirroring
-
-<img src="files/pictures/sigs4.png">
-
-### Time shifting - delay and advance
-
-<img src="files/pictures/sigs5.png">
-
 ## Quiz: consider this circuit:
 
 ![Circuit for quiz](pictures/circuit1.png)
