@@ -361,8 +361,6 @@ Also, derivation of the sifting property can be extended to show that
 $$\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}$$
 
-----
-
 # Examples
 
 ## Example 3
@@ -378,18 +376,20 @@ Evaluate the following expressions
 
 ![Example 4](pictures/example2.png)
 
-1. Express the voltage waveform $v(t)$ shown above aa sum of unit step functions
+----
+
+1. Express the voltage waveform $v(t)$ shown above as sum of unit step functions
 for the time interval $-1 < t < 7$ s
 
 2. Using the result of part (1), compute the derivative of $v(t)$ and sketch
 it's waveform.
 
-# Self-study
+## Self-study
 
 Do the end of the chapter exercises (Section 1.7) from the textbook. Don't look
 at the answers until you have attempted the problems.
 
-# Lab Work
+## Lab Work
 
 In the lab, a week on Friday, we will solve Example 2 using Matlab/Simulink following
 the procedure given between pages 1-17 and 1-22 of the textbook. We
