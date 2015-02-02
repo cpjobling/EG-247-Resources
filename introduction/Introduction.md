@@ -9,7 +9,7 @@ Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
 Digital Technium 123
 
-Office Hours: ...
+Office Hours: Digital Technium 123, Mondays at 12:00 (noon)
 
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/introduction/Introduction.html
 ) and [PDF](http://cpjobling.github.io/EG-247-Resources/introduction/Introduction.pdf).
@@ -81,8 +81,7 @@ Take a moment to think about:
 * What is $\phi$?
 * What is the period $T_0$ of this signal?
 
-Write down your answer in the notes pain.
-
+Write down your answer in the notes pane.
 
 ## Gaining insight using computers
 
