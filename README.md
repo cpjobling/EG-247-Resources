@@ -3,7 +3,7 @@
 A collection of resources created and distributed by
 Dr Chris Jobling, College of Engineering, Swansea University.
 
-This is a GitHub hosted source code repository. It contains the IPython notebooks, Matlab scripts and Simulink models used in the module. If you just want to view the slides, or the printable version of the notes you should visit the GitHub hosted Web Site [EG-247 Signals and Systems](http://cpjobling.github.io/EG-247-Resources) instead. Read-only links to the notes and slides are provided on the Blackboard site for EG-247.
+This is a GitHub hosted source code repository. It contains the IPython notebooks and Markdown source code for the notes, slides and web pages, Matlab scripts and Simulink models used in the module. If you just want to view the slides, or the printable version of the notes you should visit the GitHub hosted Web Site [EG-247 Signals and Systems](http://cpjobling.github.io/EG-247-Resources) instead. Read-only links to the notes and slides are provided on the Blackboard site for EG-247.
 
 
 ## Using this Repository
