@@ -8,7 +8,7 @@ Dr Chris Jobling
 
 Digital Technium 123
 
-Office Hours: ...
+Office Hours: Digital Technium 123, Mondays 12:00 pm (noon).
 
 You can view the notes for this presentation in
 [HTML](http://cpjobling.github.io/EG-247-Resources/week1/elementary_signals.html)
