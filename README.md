@@ -21,3 +21,8 @@ When you want to update to my latest changes:
     
 For more on this topic see the GitHub Help Page [Fork a Repo](https://help.github.com/articles/fork-a-repo).
     
+## Accessing the Course Documents
+
+I am using [GitHub pages](https://pages.github.com/) to maintain the course slides and notes. To access the online version please visit <https://cpjobling.github.io/EG-247-Resources>. To directly access or modify the notes, checkout the `gh-pages` branch of this repo. The notes are organized in folders, one per week. The source code for the notes slides and web pages is contained in the [Markdown](http://daringfireball.net/projects/markdown/syntax) files which end in `.md`. 
+
+To rebuild the notes, slides and web pages from source you will need to install [Python](https://www.python.org/) and [Pandoc](http://johnmacfarlane.net/pandoc/). If there is demand, I'll add more details to the `README.md` file in the `gh-pages` branch.
