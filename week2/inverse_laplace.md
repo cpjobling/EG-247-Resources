@@ -1,17 +1,20 @@
 
 # The Inverse Laplace Transform
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ip
-ynb) and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
+
+Office Hours: 12:00-13:00 Mondays
+
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week2/inverse_laplace.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week2/inverse_laplace.pdf).
+
+The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week2/inverse_laplace.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
 
 ## Definition
 
@@ -147,23 +150,23 @@ place+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29))
     [r,p,k] = residue(Ns, Ds)
 
 
-    
+
     r =
-    
+
         1.0000
         1.0000
-    
-    
+
+
     p =
-    
+
        -3.0000
        -2.0000
-    
-    
+
+
     k =
-    
+
          []
-    
+
 
 
 
@@ -186,7 +189,7 @@ $$f_1(t) = e^{-3t} + e^{-2t}$$
     pretty(ft)
 
 
-    
+
       exp(-2 t) + exp(-3 t)
 
 
@@ -212,11 +215,11 @@ factorise without computer assistance so we use Matlab to factorise $D(s)$
     factor(s^3 + 9*s^2 + 23*s + 15)
 
 
-     
+
     ans =
-     
+
     (s + 3)*(s + 5)*(s + 1)
-     
+
 
 
 
@@ -389,21 +392,21 @@ $$f_6(t) = e^{-t}+\delta(t)+\delta'(t)$$
     [r, p, k] = residue(Ns, Ds)
 
 
-    
+
     r =
-    
+
          1
-    
-    
+
+
     p =
-    
+
         -1
-    
-    
+
+
     k =
-    
+
          1     1
-    
+
 
 
 
@@ -414,11 +417,11 @@ $$f_6(t) = e^{-t}+\delta(t)+\delta'(t)$$
     f6 = ilaplace(F6)
 
 
-     
+
     f6 =
-     
+
     exp(-t) + dirac(t) + dirac(t, 1)
-     
+
 
 
 
@@ -429,6 +432,6 @@ at the answers until you have attempted the problems.
 
 ## Lab Work
 
-In the lab, on Monday, we will explore the tools provided by Matlab for taking
+In the lab, a week on Friday, we will explore the tools provided by Matlab for taking
 Laplace transforms, representing polynomials, finding roots and factorizing
 polynomials and solution of inverse laplace transform problems.

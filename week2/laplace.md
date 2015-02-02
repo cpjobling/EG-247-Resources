@@ -1,17 +1,21 @@
 
 # The Laplace Transformation
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb) and
-print using your Brower's print function. The source code of this presentation
-is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
+
+Office Hours: 12:00-13:00 Mondays
+
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week2/laplace.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week2/laplace.pdf).
+
+The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week2/laplace.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
+
 
 ## About the Laplace Transformation
 
@@ -222,7 +226,7 @@ Here are a couple that are on the net for your reference
             frameborder="0"
             allowfullscreen
         ></iframe>
-        
+
 
 
 
@@ -240,7 +244,7 @@ Here are a couple that are on the net for your reference
             frameborder="0"
             allowfullscreen
         ></iframe>
-        
+
 
 
 
