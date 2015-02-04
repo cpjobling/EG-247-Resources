@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="the-laplace-transformation">The Laplace Transformation</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week2/laplace.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week2/laplace.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week2/laplace.md">Introduction.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="about-the-laplace-transformation">About the Laplace Transformation</h2>
+<p>The Laplace Transformation (named after <a href="http://en.wikipedia.org/wiki/Pierre-Simon_Laplace">Pierre-Simon Laplace</a>) is a useful mathematical tool that is used in many branches of engineering including signals and systems theory, control theory, communications, mechanical engineering, etc.</p>
+<p>Its principle benefits are:</p>
+<ol style="list-style-type: decimal">
+<li>it enables us to represent differential equations that model the behaviour of systems in the time domain as polynomials in <span class="math">\(s\)</span> which facilitates their solution</li>
+<li>it converts time convolution (which is how we determine the time-response of a system to a given signal) into a simple multiplication in the <span class="math">\(s\)</span> domain.</li>
+</ol>
+<p>The only downside is that time <span class="math">\(t\)</span> is a real value whereas the Laplace transformation operator <span class="math">\(s\)</span> is a complex exponential <span class="math">\(s = \sigma + j\omega\)</span>.</p>
+<h2 id="about-this-session">About this Session</h2>
+<p>The prepatory reading for this session is Chapter 2 of Karris which</p>
+<ul>
+<li>defines the Laplace transformation</li>
+<li>gives the most useful properties of the Laplace transform with proofs</li>
+<li>presents the Laplace transforms of the elementary signals discussed in the last session</li>
+<li>presents the transforms of the more common system response types that are found in basic signals and systems.</li>
+</ul>
+<div class="notes">
+<p>There is some intellectual benefit to being aware of the properties of the Laplace transformation and their proofs but being a pragmatic breed, we engineers typically prefer to make use of quick references of these properties and transforms, relying on Mathematics only when facing a problem not before encountered.</p>
+</div>
+<p>In our practice, we want to encourage you to use of the properties and transform tables to solve problems so I will present only the properties and not the proofs.</p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li><p>Definition of the Laplace Transform</p></li>
+<li><p>Some Selected Properties</p></li>
+<li><p>Transform tables</p></li>
+<li><p>Transforms of Elementary Signals</p></li>
+<li><p>Examples</p></li>
+</ul>
+<h1 id="definition-of-the-laplace-transform">Definition of the Laplace Transform</h1>
+<h2 id="laplace-transform">Laplace transform</h2>
+<p><span class="math">\[\mathcal{L}\{f(t)\}=F(s) = \int_{0}^{\infty}f(t)e^{-st}dt\]</span></p>
+<h2 id="inverse-laplace-transform">Inverse Laplace Transform</h2>
+<p><span class="math">\[\mathcal{L}^{-1}\{F(s)\}=f(t)=\frac{1}{2\pi
+j}\int_{\sigma-j\omega}^{\sigma+j\omega}F(s)e^{st} ds\]</span></p>
+<h2 id="region-of-convergence">Region of convergence</h2>
+<p>For a Laplace transfomation to exist, the integral must be bounded. That is <span class="math">\[\left| {\int_0^\infty  {f(t){e^{ - st}}dt} } \right| &lt; \infty \]</span></p>
+<p>For most signals and systems of interest in this module it will be.</p>
+<p>(See discussion of exponential order on Page 2-2 of Karris).</p>
+<h2 id="informal-transform-notation">Informal transform notation</h2>
+<p>The Laplace transform and its inverse come in pairs which are tabulated for ease of reference. For any given function of time <span class="math">\(f(t)\)</span> we only need to know the transform</p>
+<p><span class="math">\[f(t)\Leftrightarrow F(s)\]</span></p>
+<p>to be able to get to the Laplace transform and <em>vice versa</em>.</p>
+<h1 id="some-selected-properties">Some Selected Properties</h1>
+<h2 id="linearity">Linearity</h2>
+<p><span class="math">\[c_1f_1(t) + c_2f_2(t) + \ldots + c_nf_n(t) \Leftrightarrow c_1F_1(s) +
+c_2F_2(s) + \ldots + c_nF_n(s)\]</span></p>
+<h2 id="time-shift">Time shift</h2>
+<p><span class="math">\[f(t-a)u_0(t-a)\Leftrightarrow e^{-as}F(s)\]</span></p>
+<h2 id="frequency-shift">Frequency shift</h2>
+<p><span class="math">\[e^{-at}f(t)\Leftrightarrow F(s+a)\]</span></p>
+<h2 id="scaling">Scaling</h2>
+<p><span class="math">\[f(at)\Leftrightarrow \frac{1}{a}F\left(\frac{s}{a}\right)\]</span></p>
+<h2 id="differentiation-in-the-time-domain">Differentiation in the time domain</h2>
+<p><span class="math">\[f&#39;(t) = \frac{d}{dt} f(t) \Leftrightarrow sF(s) - f(0^-)\]</span></p>
+<div class="notes">
+<p>This property facilitates the solution of differential equations</p>
+<p>The differentiation property can be extended to higher-orders as follows <span class="math">\[f&#39;&#39;(t) = \frac{d^2}{dt^2}f(t) \Leftrightarrow s^2F(s) - sf(0^-) - f&#39;(0^-)\]</span></p>
+<p><span class="math">\[f&#39;&#39;(t) = \frac{d^3}{dt^3}f(t) \Leftrightarrow s^3F(s) - s^2f(0) - sf&#39;(0^-) -
+f&#39;&#39;(0^-)\]</span></p>
+</div>
+<p>and in general</p>
+<p><span class="math">\[f^{(n)}(t) = \frac{d^n}{dt^n}f(t) \Leftrightarrow s^nF(s) - s^{n-1}f(0^-) -
+s^{n-2}f&#39;(0^-) - \cdots - f^{(n-1)}(0^-)\]</span></p>
+<h2 id="differentiation-in-the-complex-frequency-domain">Differentiation in the complex frequency domain</h2>
+<p><span class="math">\[tf(t) \Leftrightarrow -\frac{d}{ds}F(s)\]</span></p>
+<p>and in general</p>
+<p><span class="math">\[t^nf(t) \Leftrightarrow (-1)^n\frac{d^n}{ds^n}F(s)\]</span></p>
+<h2 id="integration-in-the-time-domain">Integration in the time domain</h2>
+<p><span class="math">\[\int_{-\infty}^tf(\tau)d\tau \Leftrightarrow \frac{F(s)}{s}+\frac{f(0^-)}{s}\]</span></p>
+<div class="notes">
+<p>This property is important because it provides a way to model the solution of a differential equation using op-amp integrators in so-called <a href="http://en.wikipedia.org/wiki/Analog_computer">Analogue Computers</a> and is now the basis for numerical integration systems like Simulink.</p>
+</div>
+<h2 id="integration-in-the-complex-frequency-domain">Integration in the complex frequency domain</h2>
+<p>Providing that</p>
+<p><span class="math">\[\lim_{t\to 0} \frac{f(t)}{t}\]</span></p>
+<p>exists</p>
+<p><span class="math">\[\frac{f(t)}{t}\Leftrightarrow \int_s^\infty F(s)ds\]</span></p>
+<h2 id="time-periodicity-property">Time periodicity property</h2>
+<p>If <span class="math">\(f(t)\)</span> is a periodic function with period <span class="math">\(T\)</span> such that <span class="math">\(f(t) = f(t+nT)\)</span> for <span class="math">\(n=1,2,3,\ldots\)</span> then</p>
+<p><span class="math">\[f(t+nT) \Leftrightarrow \frac{\int_0^T f(t)e^{-st}dt}{1-e^{-sT}}\]</span></p>
+<h2 id="initial-value-theorem">Initial value theorem</h2>
+<p><span class="math">\[\lim_{t\to 0}f(t) \Leftrightarrow \lim_{s\to \infty} sF(s) = f(0^-)\]</span></p>
+<h2 id="final-value-theorem">Final value theorem</h2>
+<p><span class="math">\[\lim_{t\to \infty}f(t) \Leftrightarrow \lim_{s\to 0} sF(s) = f(\infty)\]</span></p>
+<h2 id="convolution-in-the-time-domain">Convolution in the time domain</h2>
+<p><span class="math">\[f_1(t)*f_2(t) = \int_{0}^{t}f_1(\tau)f_2(t-\tau) d\tau \Leftrightarrow F_1(s)
+F_2(s)\]</span></p>
+<div class="notes&gt; This is another important result as it allows us to compute the response of a system by simply multiplying the Laplace transforms of the system and the signal and then inverse Laplace transforming the result. This is usually much simpler than computing the convolution integral in the time domain – an operation we we see later! &lt;/div&gt; ## Convolution in the complex frequency domain Multiplying two signals together in the time domain is the same as performing convolution in the complex frequency domain. $$f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi j}F_1(s) * F_2(s) = \frac{1}{2\pi j}\lim_{T\to \infty}\int_{c-jT}^{c+jT}F_1(\sigma)F_2(s-\sigma)d\sigma$$ Convolution in the complex frequency domain is nasty – multiplication in the time domain is relatively painless. # Transform tables ## Tables of Laplace Transforms and Properties Every textbook that covers Laplace transforms will provide a tables of properties and the most commonly encountered transforms. Karris is no exception and you will find a table of tansforms in Tables 2.1 and 2.2. Here are a couple that are on the net for your reference * [Laplace Transform (Wikipedia)](http://en.wikipedia.org/wiki/Laplace_transform) * [Laplace transform (Wolfram Mathworld)](http://mathworld.wolfram.com/LaplaceTransform.html) ## Don&#39;t panic Tables of Laplace transform properties and transforms will be included with the exam paper. # Transforms of Elementary Signals ## Table of Transforms for Some Elementary Signals | | $$f(t)$$ | $$F(s)$$ | |:-:|:-------------:|:--------:| | 1 | $$\delta(t)$$ | $$1$$ | | 2 | $$\delta(t-a)$$ | $$e^{-as}$$ | | 3 | $$u_0(t)$$ | $$\frac{1}{s}$$ | | 4 | $$t u_0(t)$$ | $$\frac{1}{s^2}$$ | | 5 | $$t^n u_0(t)$$ | $$\frac{n!}{s^{n+1}}$$ | | 6 | $$e^{-at}u_0(t)$$ | $$\frac{1}{s+a}$$ | | 7 | $$t^n e^{-at} u_0(t)$$ | $$\frac{n!}{(s+a)^{n+1}}$$ | | 8 | $$\sin (\omega t) u_0(t)$$ | $$\frac{\omega}{s^2 + \omega^2}$$ | | 9 | $$\cos (\omega t) u_0(t)$$ | $$\frac{s}{s^2 + \omega^2}$$ | | 10 | $$e^{-at} \sin (\omega t) u_0(t)$$ | $$\frac{\omega}{(s + a)^2 + \omega^2}$$ | | 11 | $$e^{-at}\cos (\omega t) u_0(t)$$ | $$\frac{s+a}{(s+a)^2 + \omega^2}$$ | Refer to the textbook if you want to see the proof of these transforms. ## Laplace transforms of common waveforms We will work through a few of the following in class * Pulse * Linear segment * Triangular waveform * Rectangular periodic waveform (square wave) * Half rectified sine wave ## Using Matlab to Find Laplace Transforms The Matlab function `laplace` can be used to find Laplace transforms of time functions. The lab exercises will illustrate this. ## Homework Attempt at least one of the end-of-chapter exercises from each question 1-7 of Section 2.7 from the textbook. Don&#39;t look at the answers until you have attempted the problems. If we have time, I will work through one or two of these in class.">
+<p>This is another important result as it allows us to compute the response of a system by simply multiplying the Laplace transforms of the system and the signal and then inverse Laplace transforming the result.</p>
+<p>This is usually much simpler than computing the convolution integral in the time domain – an operation we we see later!</p>
+</div>
+<h2 id="convolution-in-the-complex-frequency-domain">Convolution in the complex frequency domain</h2>
+<p>Multiplying two signals together in the time domain is the same as performing convolution in the complex frequency domain.</p>
+<p><span class="math">\[f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi j}F_1(s) * F_2(s) = \frac{1}{2\pi
+j}\lim_{T\to \infty}\int_{c-jT}^{c+jT}F_1(\sigma)F_2(s-\sigma)d\sigma\]</span></p>
+<p>Convolution in the complex frequency domain is nasty – multiplication in the time domain is relatively painless.</p>
+<h1 id="transform-tables">Transform tables</h1>
+<h2 id="tables-of-laplace-transforms-and-properties">Tables of Laplace Transforms and Properties</h2>
+<p>Every textbook that covers Laplace transforms will provide a tables of properties and the most commonly encountered transforms. Karris is no exception and you will find a table of tansforms in Tables 2.1 and 2.2.</p>
+<p>Here are a couple that are on the net for your reference</p>
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Laplace_transform">Laplace Transform (Wikipedia)</a></li>
+<li><a href="http://mathworld.wolfram.com/LaplaceTransform.html">Laplace transform (Wolfram Mathworld)</a></li>
+</ul>
+<h2 id="dont-panic">Don't panic</h2>
+<p>Tables of Laplace transform properties and transforms will be included with the exam paper.</p>
+<h1 id="transforms-of-elementary-signals">Transforms of Elementary Signals</h1>
+<h2 id="table-of-transforms-for-some-elementary-signals">Table of Transforms for Some Elementary Signals</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><span class="math">\[f(t)\]</span></th>
+<th align="center"><span class="math">\[F(s)\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center"><span class="math">\[\delta(t)\]</span></td>
+<td align="center"><span class="math">\[1\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center"><span class="math">\[\delta(t-a)\]</span></td>
+<td align="center"><span class="math">\[e^{-as}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center"><span class="math">\[u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{1}{s}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center"><span class="math">\[t u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{1}{s^2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center"><span class="math">\[t^n u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{n!}{s^{n+1}}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td align="center"><span class="math">\[e^{-at}u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{1}{s+a}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td align="center"><span class="math">\[t^n e^{-at} u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{n!}{(s+a)^{n+1}}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td align="center"><span class="math">\[\sin (\omega t) u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{\omega}{s^2 + \omega^2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td align="center"><span class="math">\[\cos (\omega t) u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{s}{s^2 + \omega^2}\]</span></td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td align="center"><span class="math">\[e^{-at} \sin (\omega t) u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{\omega}{(s + a)^2 + \omega^2}\]</span></td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td align="center"><span class="math">\[e^{-at}\cos (\omega t) u_0(t)\]</span></td>
+<td align="center"><span class="math">\[\frac{s+a}{(s+a)^2 + \omega^2}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>Refer to the textbook if you want to see the proof of these transforms.</p>
+<h2 id="laplace-transforms-of-common-waveforms">Laplace transforms of common waveforms</h2>
+<p>We will work through a few of the following in class</p>
+<ul>
+<li>Pulse</li>
+<li>Linear segment</li>
+<li>Triangular waveform</li>
+<li>Rectangular periodic waveform (square wave)</li>
+<li>Half rectified sine wave</li>
+</ul>
+<h2 id="using-matlab-to-find-laplace-transforms">Using Matlab to Find Laplace Transforms</h2>
+<p>The Matlab function <code>laplace</code> can be used to find Laplace transforms of time functions. The lab exercises will illustrate this.</p>
+<h2 id="homework">Homework</h2>
+<p>Attempt at least one of the end-of-chapter exercises from each question 1-7 of Section 2.7 from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<p>If we have time, I will work through one or two of these in class.</p>
+</body>
+</html>

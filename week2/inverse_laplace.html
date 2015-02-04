@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="the-inverse-laplace-transform">The Inverse Laplace Transform</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week2/inverse_laplace.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week2/inverse_laplace.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week2/inverse_laplace.md">Introduction.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="definition">Definition</h2>
+<p>The formal definition of the Inverse Laplace Transform is</p>
+<p><span class="math">\[\mathcal{L}^{-1}\left\{ F(s) \right\} = \frac{1}{2\pi
+j}\int_{\sigma-j\omega}^{\sigma+j\omega} f(t)e^{st}ds\]</span></p>
+<p>but this is difficult to use in practice because it requires contour integration using complex variable theory.</p>
+<hr />
+<p>For most engineering problems we can instead refer to <strong>Tables of Properties</strong> and <strong>Common Transform Pairs</strong> to look up the <em>Inverse Laplace Transform</em></p>
+<p>(Or, if we are not taking an exam, we can use a computer or mobile device.)</p>
+<h2 id="partial-fraction-expansion">Partial Fraction Expansion</h2>
+<p>Quite often the Laplace Transform we start off with is a <em>rational polynomial</em> in <span class="math">\(s\)</span>.</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{D(s)} = \frac{b_ms^m + b_{m-1}s^{m-1}+b_{m-2}s^{m-2}+
+\cdots +b_{1}s+b_{0}}{a_ns^n + a_{n-1}s^{n-1}+a_{n-2}s^{n-2}+ \cdots
++a_{1}s+a_{0}}\]</span></p>
+<p>The coefficients <span class="math">\(a_k\)</span> and <span class="math">\(b_k\)</span> are real for <span class="math">\(k = 1, 2, 3, \ldots\)</span></p>
+<h2 id="proper-and-improper-rational-functions">Proper and Improper Rational Functions</h2>
+<ul>
+<li>If <span class="math">\(m &lt;n\)</span> <span class="math">\(F(s)\)</span> is said to be a <em>proper rational function</em>.</li>
+<li>If <span class="math">\(m \ge n\)</span> <span class="math">\(F(s)\)</span> is said to be an <em>improper rational function</em></li>
+</ul>
+<p>(Think <a href="http://www.mathsisfun.com/proper-fractions.html">proper fractions</a> and <a href="http://www.mathsisfun.com/improper-fractions.html">improper fractions</a>.)</p>
+<h2 id="zeros">Zeros</h2>
+<ul>
+<li>The <em>roots</em> of the numerator polymonial <span class="math">\(N(s)\)</span> are found by setting <span class="math">\(N(s)=0\)</span></li>
+<li>When <span class="math">\(s\)</span> equals one of the <span class="math">\(m\)</span> roots of <span class="math">\(N(s)\)</span> then <span class="math">\(F(s)\)</span> will be zero.</li>
+<li>Thus the roots of <span class="math">\(N(s)\)</span> are the <strong>zeros</strong> of <span class="math">\(F(s)\)</span>.</li>
+</ul>
+<h2 id="poles">Poles</h2>
+<ul>
+<li>The <em>roots</em> (<em>zeros</em>) of the denominator polynomial are found by setting <span class="math">\(D(s) = 0\)</span>.</li>
+<li>When <span class="math">\(s\)</span> equals one of the <span class="math">\(n\)</span> roots of <span class="math">\(D(s)\)</span> then <span class="math">\(F(s)\)</span> will be infinite <span class="math">\(F(s_r) = N(s_r)/0=\infty\)</span>).</li>
+<li>These are called the <strong>poles</strong> of <span class="math">\(F(s)\)</span>.</li>
+</ul>
+<p>(Imagine telegraph poles planted at the points on the <span class="math">\(s\)</span>-plane where <span class="math">\(D(s)\)</span> is zero.)</p>
+<h2 id="a-further-simplifying-assumption">A Further Simplifying Assumption</h2>
+<p>If <span class="math">\(F(s)\)</span> is <em>proper</em> then it is conventional to make the coefficient <span class="math">\(s_n\)</span> unity thus:</p>
+<p><span class="math">\[F(s) = \frac{{N(s)}}{{D(s)}} = \frac{{1/{a_n}\left( {{b_m}{s^m} + {b_{m -
+1}}{s^{m - 1}} + {b_{m - 2}}{s^{m - 2}} +  \cdots  + {b_1}s + {b_0}}
+\right)}}{{{s^n} + \frac{{{a_{n - 1}}}}{{{a_n}}}{s^{n - 1}} + \frac{{{a_{n -
+2}}}}{{{a_n}}}{s^{n - 2}} +  \cdots  + \frac{{{a_1}}}{{{a_n}}}s +
+\frac{{{a_0}}}{{{a_n}}}}}\]</span></p>
+<p>(I know it doesn't look simpler, but remember that the <span class="math">\(a\)</span>s and <span class="math">\(b\)</span>s are numbers in practice!)</p>
+<h1 id="inverse-laplace-transform-by-partial-fraction-expansion-pfe">Inverse Laplace Transform by Partial Fraction Expansion (PFE)</h1>
+<h2 id="pfe-cases">PFE Cases</h2>
+<p>The poles of <span class="math">\(F(s)\)</span> can be real and distinct, real and repeated, complex conjugate pairs, or a combination.</p>
+<h3 id="defining-the-problem">Defining the problem</h3>
+<p>The nature of the poles governs the best way to tackle the PFE that leads to the solution of the Inverse Laplace Transform. Thus, we need to structure our presentation to cover one of the following cases:</p>
+<ul>
+<li>The case where <span class="math">\(F(s)\)</span> has distinct poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> has complex poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> has repeated poles</li>
+<li>The case where <span class="math">\(F(s)\)</span> is an improper rational polynomial</li>
+</ul>
+<p>We will examine each case by means of a worked example. Please refer to Chapter 3 of Karris for full details.</p>
+<h2 id="the-case-of-the-distinct-poles">The case of the distinct poles</h2>
+<p>If the poles <span class="math">\(p_1,\,p_2,\,p_3,\,\ldots,\, p_n\)</span> are <em>distinct</em> we can factor the denominator of F(s) in the form</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{(s-p_1)(s-p_2)(s-p_3)\ldots(s-p_n)}\]</span></p>
+<p>Next, using <em>partial fraction expansion</em></p>
+<p><span class="math">\[F(s)=\frac{r_1}{s-p_1}+\frac{r_2}{s-p_2}+\frac{r_3}{s-p_3}+\cdots +
+\frac{r_n}{s-p_n}\]</span></p>
+<p>To evaluate the <em>residue</em> <span class="math">\(r_k\)</span>, we multiply both sides by <span class="math">\((s-p_k)\)</span> then let <span class="math">\(s \to p_k\)</span></p>
+<p><span class="math">\[r_k = \lim_{s\to p_k}(s-p_k)F(s) = \left.(s-p_k)F(s)\right|_{s=p_k}\]</span></p>
+<h2 id="example-1">Example 1</h2>
+<p>Use the PFE method to simplify <span class="math">\(F_1(s)\)</span> below and find the time domain function <span class="math">\(f_1(t)\)</span> corresponding to <span class="math">\(F_1(s)\)</span></p>
+<p><span class="math">\[F_1(s) = \frac{2s+5}{s^2 + 5s + 6}\]</span></p>
+<p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+la%20place+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29">Wolfram|Alpha</a>)</p>
+<h2 id="matlab-solution---numerical">Matlab Solution - Numerical</h2>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">Ns = [<span class="fl">2</span>, <span class="fl">5</span>]; Ds = [<span class="fl">1</span>, <span class="fl">5</span>, <span class="fl">6</span>];
+[r,p,k] = residue(Ns, Ds)
+
+r =
+
+    <span class="fl">1.0000</span>
+    <span class="fl">1.0000</span>
+
+p =
+
+    -<span class="fl">3.0000</span>
+    -<span class="fl">2.0000</span>
+
+
+  k =
+
+   []</code></pre>
+<hr />
+<p>Interpreted as:</p>
+<p><span class="math">\[F_1(s) = \frac{1}{s + 3} + \frac{1}{s + 2}\]</span></p>
+<p>which because of the linearity property of the Laplace Transform and using tables results in the <em>Inverse Laplace Transform</em></p>
+<p><span class="math">\[f_1(t) = e^{-3t} + e^{-2t}\]</span></p>
+<h2 id="matlab-solution---symbolic">Matlab solution - symbolic</h2>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">syms s t;
+Fs = (<span class="fl">2</span>*s + <span class="fl">5</span>)/(s^<span class="fl">2</span> + <span class="fl">5</span>*s + <span class="fl">6</span>);
+ft = ilaplace(Fs);
+pretty(ft)
+
+  exp(-<span class="fl">2</span> t) + exp(-<span class="fl">3</span> t)</code></pre>
+<h2 id="example-2">Example 2</h2>
+<p>Determine the Inverse Laplace Transform of</p>
+<p><span class="math">\[F_2(s) = \frac{3s^2+2s+5}{s^3 + 9s^s + 23s + 15}\]</span></p>
+<p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%283s%5E2+%2B+2s+%2B+5%29%2F%28s%5E3+%2B+9s%5E2+%2B+23s+%2B+15%2%209">Wolfram|Alpha</a>)</p>
+<h2 id="solution-2">Solution 2</h2>
+<p>Because the denominator of <span class="math">\(F_2(s)\)</span> is a cubic, it will be difficult to factorise without computer assistance so we use Matlab to factorise <span class="math">\(D(s)\)</span></p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">syms s;
+factor(s^<span class="fl">3</span> + <span class="fl">9</span>*s^<span class="fl">2</span> + <span class="fl">23</span>*s + <span class="fl">15</span>)
+
+ans =
+
+  (s + <span class="fl">3</span>)*(s + <span class="fl">5</span>)*(s + <span class="fl">1</span>)</code></pre>
+<div class="notes">
+<p>In an exam you'd be given the factors</p>
+</div>
+<hr />
+<p>We can now use the previous technique to find the solution which according to Matlab should be</p>
+<p><span class="math">\[f_1(t) = \frac{3}{4}e^{-t} - \frac{13}{2}e^{-3t} + \frac{35}{4}e^{-5t}\]</span></p>
+<h2 id="the-case-of-the-complex-poles">The case of the complex poles</h2>
+<p>Quite often the poles of <span class="math">\(F(s)\)</span> are complex and because the complex poles occur as complex conjugate pairs, the number of complex poles is even. Thus if <span class="math">\(p_k\)</span> is a complex root of <span class="math">\(D(s)\)</span> then its complex conjugate <span class="math">\(p_k^*\)</span> is also a root of <span class="math">\(D(s)\)</span>.</p>
+<p>You can still use the PFE with complex poles, as demonstrated in Pages 3-5—3-7 in the textbook. However it is easier to use the fact that complex poles will appear as quadratic factors of the form <span class="math">\(s^2 + as + b\)</span> and then call on the two transforms in the PFE</p>
+<p><span class="math">\[\frac{s}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\sin\;\omega t\]</span></p>
+<p><span class="math">\[\frac{s + a}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\cos\;\omega t\]</span></p>
+<h2 id="example-3">Example 3</h2>
+<p>Rework Example 3-2 from the text book using quadratic factors.</p>
+<p>Find the Inverse Laplace Transform of</p>
+<p><span class="math">\[F_3(s) = \frac{s + 3}{(s+1)(s^2 + 4s + 8)}\]</span></p>
+<p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s+%2B+1%29%28s%5E2+%2B+4s+%2B+8%29%29">Wolfram|Alpha</a> – Shows that the computer is not always best!)</p>
+<h2 id="solution">Solution</h2>
+<p>We complete the square</p>
+<p><span class="math">\[s^2 + 4s + 8 = (s + 2)^2 + 4\]</span></p>
+<p>Then comparing this with the desired form <span class="math">\((s - a)^2 + \omega^2\)</span>, we have <span class="math">\(a = -2\)</span> and <span class="math">\(\omega^2 = 4 \to \omega = \sqrt{4} = 2\)</span>.</p>
+<hr />
+<p>To solve this, we need to find the PFE for the assumed solution:</p>
+<p><span class="math">\[F_3(s) = \frac{r_1}{s+1} + \frac{r_2s}{(s + 2)^2 + 4} + \frac{r_3(s+2)}{(s +
+2)^2 + 4}\]</span></p>
+<p>expecting the solution</p>
+<p><span class="math">\[f_3(t) = \frac{2}{5}e^{-t} + \frac{3}{10}\sin 2t - \frac{2}{5}\cos 2t\]</span></p>
+<p>You can use trig. identities to simplify this further if you wish.</p>
+<h2 id="the-case-of-the-repeated-poles">The case of the repeated poles</h2>
+<p>When a rational polynomial has repeated poles</p>
+<p><span class="math">\[F(s) = \frac{N(s)}{(s - p_1)^m(s - p_2)\cdots(s - p_{n-1})(s-p_0)}\]</span></p>
+<p>and the PFE will have the form:</p>
+<p><span class="math">\[\begin{array}{c}
+F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s -
+{p_1})}^{m - 1}}}} + \frac{{{r_{13}}}}{{{{(s - {p_1})}^{m - 2}}}} +  \cdots  +
+\frac{{{r_{1m}}}}{{(s - {p_1})}}\\
+ + \frac{{{r_2}}}{{(s - {p_2})}} + \frac{{{r_3}}}{{(s - {p_3})}} +  \cdots  +
+\frac{{{r_n}}}{{(s - {p_n})}}
+\end{array}\]</span></p>
+<p>The ordinary residues <span class="math">\(r_k\)</span> can be found using the rule used for distinct roots.</p>
+<hr />
+<p>To find the residuals for the repeated term <span class="math">\(r_{1k}\)</span> we need to multiply both sides of the expression by <span class="math">\((s+p_1)^m\)</span> and take repeated derivatives as described in detail in Pages 3-7—3-9 of the text book. This yields the general formula</p>
+<p><span class="math">\[r_{1k}=\lim_{s\to
+p_1}\frac{1}{(k-1)!}\frac{d^{k-1}}{ds^{k-1}}\left[(s-p_1)^mF(s)\right]\]</span></p>
+<p>which in the age of computers is rarely needed.</p>
+<h2 id="example-4">Example 4</h2>
+<p>Find the inverse Laplace Transform of</p>
+<p><span class="math">\[F_4(s) = \frac{s+3}{(s+2)(s+1)^2}\]</span></p>
+<p>Note that the transform</p>
+<p><span class="math">\[te^{at} \Leftrightarrow \frac{1}{(s - a)^2}\]</span></p>
+<p>will be useful.</p>
+<p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s%2B2%29%28s+%2B+1%29%5E2%29">Wolfram|Alpha</a>)</p>
+<h2 id="solution-1">Solution</h2>
+<p>We will leave the solution that makes use of the residue of repeated poles formula for you to study from the text book. In class we will illustrate the slightly simpler approach also presented in the text.</p>
+<p>For exam preparation, I would recommend that you use whatever method you find most comfortable.</p>
+<h2 id="the-case-of-the-improper-rational-polynomial">The case of the improper rational polynomial</h2>
+<p>If <span class="math">\(F(s)\)</span> is an improper rational polynomial, that is <span class="math">\(m \ge n\)</span>, we must first divide the numerator <span class="math">\(N(s)\)</span> by the denomonator <span class="math">\(D(s)\)</span> to derive an expression of the form</p>
+<p><span class="math">\[F(s) = k_0 + k_1s + k_2s^2 + \cdots + k_{m-n}s^{m-n} + \frac{N(s)}{D(s)}\]</span></p>
+<p>and then <span class="math">\(N(s)/D(s)\)</span> will be a proper rational polynomial.</p>
+<h2 id="example-5---and-some-new-transform-pairs.">Example 5 - and some new transform pairs.</h2>
+<p><span class="math">\[F_6(s)= \frac{s^2 + 2s + 2}{s+1}\]</span></p>
+<p>(Quick solution: <a href="http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%5E2+%2B+2s+%2B+2%29%2F%28s+%2B+1%29">Wolfram|Alpha</a>)</p>
+<hr />
+<p>Dividing <span class="math">\(s^2 + 2s + 2\)</span> by <span class="math">\(s + 1\)</span> gives</p>
+<p><span class="math">\[F_6(s) = s + 1 + \frac{1}{s+1}\]</span></p>
+<p><span class="math">\[\frac{1}{s+1} \Leftrightarrow e^{-t}\]</span></p>
+<p><span class="math">\[1 \Leftrightarrow \delta(t)\]</span></p>
+<p><span class="math">\[s \Leftrightarrow ?\]</span></p>
+<h2 id="what-function-of-t-has-laplace-transform-s">What function of <em>t</em> has Laplace transform <em>s</em>?</h2>
+<p>Recall from Lesson 2:</p>
+<p><span class="math">\[\frac{d}{dt}u_0(t)=u_0&#39;(t)=\delta(t)\]</span></p>
+<p>and</p>
+<p><span class="math">\[\frac{d^2}{dt^2}u_0(t)=u_0&#39;&#39;(t)=\delta&#39;(t)\]</span></p>
+<p>Also, by the time differentiation property</p>
+<p><span class="math">\[u_0&#39;&#39;(t)=\delta&#39;(t)\Leftrightarrow s^2\mathcal{L}u_0(t) - su_0(0) -
+\left.\frac{d}{dt}u_0(t)\right|_{t=0} =  s^2\frac{1}{s} = s\]</span></p>
+<h2 id="new-transform-pairs">New Transform Pairs</h2>
+<p><span class="math">\[s\Leftrightarrow \delta&#39;(t)\]</span></p>
+<p><span class="math">\[\frac{d^n}{dt^n}\delta(t)\Leftrightarrow s^n\]</span></p>
+<p><span class="math">\[f_6(t) = e^{-t}+\delta(t)+\delta&#39;(t)\]</span></p>
+<h2 id="matlab-verification">Matlab verification</h2>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">Ns = [<span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">2</span>]; Ds = [<span class="fl">1</span> <span class="fl">1</span>];
+[r, p, k] = residue(Ns, Ds)
+
+r =
+
+    <span class="fl">1</span>
+
+
+p =
+
+    -<span class="fl">1</span>
+
+
+k =
+
+    <span class="fl">1</span>     <span class="fl">1</span></code></pre>
+<hr />
+<pre class="sourceCode matlab"><code class="sourceCode matlab">syms s;
+F6 = (s^<span class="fl">2</span> + <span class="fl">2</span>*s + <span class="fl">2</span>)/(s + <span class="fl">1</span>);
+f6 = ilaplace(F6)
+
+f6 =
+
+  exp(-t) + dirac(t) + dirac(t, <span class="fl">1</span>)</code></pre>
+<h2 id="homework">Homework</h2>
+<p>Do the end of the chapter exercises (Section 3.67) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab, a week on Friday, we will explore the tools provided by Matlab for taking Laplace transforms, representing polynomials, finding roots and factorizing polynomials and solution of inverse Laplace transform problems.</p>
+</body>
+</html>
