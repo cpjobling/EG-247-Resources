@@ -2,10 +2,10 @@
 % In the lecture we showed that after simplification for Example 3
 %
 % $$V_{\mathrm{out}}=\frac{2s(s+3)}{s^3 + 8s^2 + 10s + 4}$$
-% 
+%
 % We will use MATLAb to factorize the denominator $D(s)$ of the equation
-% into a linear and a quardatic factor.
-% 
+% into a linear and a quadratic factor.
+%
 %% Find roots of D(s)
 p = [1, 8, 10, 4];
 roots(p)
