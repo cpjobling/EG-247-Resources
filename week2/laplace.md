@@ -46,11 +46,13 @@ last session
 * presents the transforms of the more common system response types that are
 found in basic signals and systems.
 
+<div class="notes">
 There is some intellectual benefit to being aware of the properties of the
 Laplace transformation and their proofs but being a pragmatic breed, we
 engineers typically prefer to make use of quick references of these properties
 and transforms, relying on Mathematics only when facing a problem not before
 encountered.
+</div>
 
 In our practice, we want to encourage you to use of the properties and transform
 tables to solve problems so I will present only the properties and not the
@@ -62,26 +64,24 @@ proofs.
 
 * Some Selected Properties
 
-* Transforms of Elementary Signals
-
-* Common system responses
-
 * Transform tables
+
+* Transforms of Elementary Signals
 
 * Examples
 
-## Definition of the Laplace Transform
+# Definition of the Laplace Transform
 
-### Laplace transform
+## Laplace transform
 
 $$\mathcal{L}\{f(t)\}=F(s) = \int_{0}^{\infty}f(t)e^{-st}dt$$
 
-### Inverse Laplace Transform
+## Inverse Laplace Transform
 
 $$\mathcal{L}^{-1}\{F(s)\}=f(t)=\frac{1}{2\pi
 j}\int_{\sigma-j\omega}^{\sigma+j\omega}F(s)e^{st} ds$$
 
-### Region of convergence
+## Region of convergence
 
 For a Laplace transfomation to exist, the integral must be bounded. That is
 $$\left| {\int_0^\infty  {f(t){e^{ - st}}dt} } \right| < \infty $$
@@ -90,7 +90,7 @@ For most signals and systems of interest in this module it will be.
 
 (See discussion of exponential order on Page 2-2 of Karris).
 
-### Informal transform notation
+## Informal transform notation
 
 The Laplace transform and its inverse come in pairs which are tabulated for ease
 of reference. For any given function of time $f(t)$ we only need to know the
@@ -100,29 +100,30 @@ $$f(t)\Leftrightarrow F(s)$$
 
 to be able to get to the Laplace transform and *vice versa*.
 
-## Some Selected Properties
+# Some Selected Properties
 
-### Linearity
+## Linearity
 
 $$c_1f_1(t) + c_2f_2(t) + \ldots + c_nf_n(t) \Leftrightarrow c_1F_1(s) +
 c_2F_2(s) + \ldots + c_nF_n(s)$$
 
-### Time shift
+## Time shift
 
 $$f(t-a)u_0(t-a)\Leftrightarrow e^{-as}F(s)$$
 
-### Frequency shift
+## Frequency shift
 
 $$e^{-at}f(t)\Leftrightarrow F(s+a)$$
 
-### Scaling
+## Scaling
 
 $$f(at)\Leftrightarrow \frac{1}{a}F\left(\frac{s}{a}\right)$$
 
-### Differentiation in the time domain
+## Differentiation in the time domain
 
 $$f'(t) = \frac{d}{dt} f(t) \Leftrightarrow sF(s) - f(0^-)$$
 
+<div class="notes">
 This property facilitates the solution of differential equations
 
 The differentiation property can be extended to higher-orders as follows
@@ -130,13 +131,14 @@ $$f''(t) = \frac{d^2}{dt^2}f(t) \Leftrightarrow s^2F(s) - sf(0^-) - f'(0^-)$$
 
 $$f''(t) = \frac{d^3}{dt^3}f(t) \Leftrightarrow s^3F(s) - s^2f(0) - sf'(0^-) -
 f''(0^-)$$
+</div>
 
 and in general
 
 $$f^{(n)}(t) = \frac{d^n}{dt^n}f(t) \Leftrightarrow s^nF(s) - s^{n-1}f(0^-) -
 s^{n-2}f'(0^-) - \cdots - f^{(n-1)}(0^-)$$
 
-### Differentiation in the complex frequency domain
+## Differentiation in the complex frequency domain
 
 $$tf(t) \Leftrightarrow -\frac{d}{ds}F(s)$$
 
@@ -144,16 +146,18 @@ and in general
 
 $$t^nf(t) \Leftrightarrow (-1)^n\frac{d^n}{ds^n}F(s)$$
 
-### Integration in the time domain
+## Integration in the time domain
 
 $$\int_{-\infty}^tf(\tau)d\tau \Leftrightarrow \frac{F(s)}{s}+\frac{f(0^-)}{s}$$
 
+<div class="notes">
 This property is important because it provides a way to model the solution of a
 differential equation using op-amp integrators in so-called [Analogue
 Computers](http://en.wikipedia.org/wiki/Analog_computer) and is now the basis
 for numerical integration systems like Simulink.
+</div>
 
-### Integration in the complex frequency domain
+## Integration in the complex frequency domain
 
 Providing that
 
@@ -165,34 +169,36 @@ $$\frac{f(t)}{t}\Leftrightarrow \int_s^\infty F(s)ds$$
 
 
 
-### Time periodicity property
+## Time periodicity property
 
 If $f(t)$ is a periodic function with period $T$ such that $f(t) = f(t+nT)$ for
 $n=1,2,3,\ldots$ then
 
 $$f(t+nT) \Leftrightarrow \frac{\int_0^T f(t)e^{-st}dt}{1-e^{-sT}}$$
 
-### Initial value theorem
+## Initial value theorem
 
 $$\lim_{t\to 0}f(t) \Leftrightarrow \lim_{s\to \infty} sF(s) = f(0^-)$$
 
-### Final value theorem
+## Final value theorem
 
 $$\lim_{t\to \infty}f(t) \Leftrightarrow \lim_{s\to 0} sF(s) = f(\infty)$$
 
-### Convolution in the time domain
+## Convolution in the time domain
 
 $$f_1(t)*f_2(t) = \int_{0}^{t}f_1(\tau)f_2(t-\tau) d\tau \Leftrightarrow F_1(s)
 F_2(s)$$
 
+<div class="notes>
 This is another important result as it allows us to compute the response of a
 system by simply multiplying the Laplace transforms of the system and the signal
 and then inverse Laplace transforming the result.
 
 This is usually much simpler than computing the convolution integral in the time
 domain &ndash; an operation we we see later!
+</div>
 
-### Convolution in the complex frequency domain
+## Convolution in the complex frequency domain
 
 Multiplying two signals together in the time domain is the same as performing
 convolution in the complex frequency domain.
@@ -203,7 +209,9 @@ j}\lim_{T\to \infty}\int_{c-jT}^{c+jT}F_1(\sigma)F_2(s-\sigma)d\sigma$$
 Convolution in the complex frequency domain is nasty &ndash; multiplication in
 the time domain is relatively painless.
 
-## Transform tables
+# Transform tables
+
+## Tables of Laplace Transforms and Properties
 
 Every textbook that covers Laplace transforms will provide a tables of
 properties and the most commonly encountered transforms. Karris is no exception
@@ -211,78 +219,38 @@ and you will find a table of tansforms in Tables 2.1 and 2.2.
 
 Here are a couple that are on the net for your reference
 
-
-    from IPython.display import IFrame
-    IFrame('http://en.wikipedia.org/wiki/Laplace_transform',width="100%",height="500" )
-
+* [Laplace Transform (Wikipedia)](http://en.wikipedia.org/wiki/Laplace_transform)
+* [Laplace transform (Wolfram Mathworld)](http://mathworld.wolfram.com/LaplaceTransform.html)
 
 
 
-
-        <iframe
-            width="100%"
-            height=500"
-            src="http://en.wikipedia.org/wiki/Laplace_transform"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-
-
-
-
-
-    IFrame('http://mathworld.wolfram.com/LaplaceTransform.html',width="100%",height="500" )
-
-
-
-
-
-        <iframe
-            width="100%"
-            height=500"
-            src="http://mathworld.wolfram.com/LaplaceTransform.html"
-            frameborder="0"
-            allowfullscreen
-        ></iframe>
-
-
-
-
-### Don't panic
+## Don't panic
 
 Tables of Laplace transform properties and transforms will be included with the
 exam paper.
 
-## Transforms of Elementary Signals
+# Transforms of Elementary Signals
 
-<table>
-<thead>
-<tr><td>&nbsp;</td><th>f(t)</th><th>F(s)</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>$$\delta(t)$$</td><td>$$1$$</td></tr>
-<tr><td>2</td><td>$$\delta(t-a)$$</td><td>$$e^{-as}$$</td></tr>
-<tr><td>3</td><td>$$u_0(t)$$</td><td>$$\frac{1}{s}$$</td></tr>
-<tr><td>4</td><td>$$t u_0(t)$$</td><td>$$\frac{1}{s^2}$$</td></tr>
-<tr><td>5</td><td>$$t^n u_0(t)$$</td><td>$$\frac{n!}{s^{n+1}}$$</td></tr>
-<tr><td>6</td><td>$$e^{-at}u_0(t)$$</td><td>$$\frac{1}{s+a}$$</td></tr>
-<tr><td>7</td><td>$$t^n e^{-at}
-u_0(t)$$</td><td>$$\frac{n!}{(s+a)^{n+1}}$$</td></tr>
-<tr><td>8</td><td>$$\sin (\omega t) u_0(t)$$</td><td>$$\frac{\omega}{s^2 +
-\omega^2}$$</td></tr>
-<tr><td>9</td><td>$$\cos (\omega t) u_0(t)$$</td><td>$$\frac{s}{s^2 +
-\omega^2}$$</td></tr>
-<tr><td>10</td><td>$$e^{-at} \sin (\omega t) u_0(t)$$</td><td>$$\frac{\omega}{(s
-+ a)^2 + \omega^2}$$</td></tr>
-<tr><td>11</td><td>$$e^{-at}\cos (\omega t)
-u_0(t)$$</td><td>$$\frac{s+a}{(s+a)^2 + \omega^2}$$</td></tr>
-</tbody>
-</table>
+## Table of Transforms for Some Elementary Signals
+|   | $$f(t)$$      | $$F(s)$$ |
+|:-:|:-------------:|:--------:|
+| 1  | $$\delta(t)$$ | $$1$$    |
+| 2  | $$\delta(t-a)$$ | $$e^{-as}$$ |
+| 3  | $$u_0(t)$$ | $$\frac{1}{s}$$ |
+| 4  | $$t u_0(t)$$ | $$\frac{1}{s^2}$$ |
+| 5  | $$t^n u_0(t)$$ | $$\frac{n!}{s^{n+1}}$$ |
+| 6  | $$e^{-at}u_0(t)$$ | $$\frac{1}{s+a}$$ |
+| 7  | $$t^n e^{-at} u_0(t)$$ | $$\frac{n!}{(s+a)^{n+1}}$$ |
+| 8  | $$\sin (\omega t) u_0(t)$$ | $$\frac{\omega}{s^2 + \omega^2}$$ |
+| 9  | $$\cos (\omega t) u_0(t)$$ | $$\frac{s}{s^2 + \omega^2}$$ |
+| 10 | $$e^{-at} \sin (\omega t) u_0(t)$$ | $$\frac{\omega}{(s + a)^2 + \omega^2}$$ |
+| 11 | $$e^{-at}\cos (\omega t) u_0(t)$$ | $$\frac{s+a}{(s+a)^2 + \omega^2}$$ |
 
 Refer to the textbook if you want to see the proof of these transforms.
 
 ## Laplace transforms of common waveforms
 
-We will work through a few of the following on the board in class
+We will work through a few of the following in class
 
 * Pulse
 * Linear segment
@@ -292,7 +260,7 @@ We will work through a few of the following on the board in class
 
 ## Using Matlab to Find Laplace Transforms
 
-The Matlab function `laplace` can be used to find laplace transforms of time
+The Matlab function `laplace` can be used to find Laplace transforms of time
 functions. The lab exercises will illustrate this.
 
 ## Homework

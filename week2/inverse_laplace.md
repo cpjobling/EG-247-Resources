@@ -26,6 +26,8 @@ j}\int_{\sigma-j\omega}^{\sigma+j\omega} f(t)e^{st}ds$$
 but this is difficult to use in practice because it requires contour integration
 using complex variable theory.
 
+----
+
 For most engineering problems we can instead refer to **Tables of Properties**
 and **Common Transform Pairs** to look up the *Inverse Laplace Transform*
 
@@ -42,7 +44,7 @@ $$F(s) = \frac{N(s)}{D(s)} = \frac{b_ms^m + b_{m-1}s^{m-1}+b_{m-2}s^{m-2}+
 
 The coefficients $a_k$ and $b_k$ are real for $k = 1, 2, 3, \ldots$
 
-### Proper and Improper Rational Functions
+## Proper and Improper Rational Functions
 
 * If $m <n$ $F(s)$ is said to be a *proper rational function*.
 * If $m \ge n$ $F(s)$ is said to be an *improper rational function*
@@ -50,13 +52,13 @@ The coefficients $a_k$ and $b_k$ are real for $k = 1, 2, 3, \ldots$
 (Think [proper fractions](http://www.mathsisfun.com/proper-fractions.html) and
 [improper fractions](http://www.mathsisfun.com/improper-fractions.html).)
 
-### Zeros
+## Zeros
 
 * The *roots* of the numerator polymonial $N(s)$ are found by setting $N(s)=0$
 * When $s$ equals one of the $m$ roots of $N(s)$ then $F(s)$ will be zero.
 * Thus the roots of $N(s)$ are the **zeros** of $F(s)$.
 
-### Poles
+## Poles
 
 * The *roots* (*zeros*) of the denominator polynomial are found by setting $D(s)
 = 0$.
@@ -67,9 +69,9 @@ $F(s_r) = N(s_r)/0=\infty$).
 (Imagine telegraph poles planted at the points on the $s$-plane where $D(s)$ is
 zero.)
 
-### A Further Simplifying Assumption
+## A Further Simplifying Assumption
 
-If $F(s)$ is proper then it is conventional to make the coefficient $s_n$ unity
+If $F(s)$ is *proper* then it is conventional to make the coefficient $s_n$ unity
 thus:
 
 $$F(s) = \frac{{N(s)}}{{D(s)}} = \frac{{1/{a_n}\left( {{b_m}{s^m} + {b_{m -
@@ -82,7 +84,9 @@ $$F(s) = \frac{{N(s)}}{{D(s)}} = \frac{{1/{a_n}\left( {{b_m}{s^m} + {b_{m -
 in practice!)
 
 
-## Inverse Laplace Transform by Partial Fraction Expansion (PFE)
+# Inverse Laplace Transform by Partial Fraction Expansion (PFE)
+
+## PFE Cases
 
 The poles of $F(s)$ can be real and distinct, real and repeated, complex
 conjugate pairs, or a combination.
@@ -118,7 +122,7 @@ To evaluate the *residue* $r_k$, we multiply both sides by $(s-p_k)$ then let $s
 
 $$r_k = \lim_{s\to p_k}(s-p_k)F(s) = \left.(s-p_k)F(s)\right|_{s=p_k}$$
 
-### Example 1
+## Example 1
 
 Use the PFE method to simplify $F_1(s)$ below and find the time domain function
 $f_1(t)$ corresponding to $F_1(s)$
@@ -128,47 +132,29 @@ $$F_1(s) = \frac{2s+5}{s^2 + 5s + 6}$$
 (Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
 place+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29))
 
-### Matlab Solution - Numerical
+## Matlab Solution - Numerical
+
+````matlab
+Ns = [2, 5]; Ds = [1, 5, 6];
+[r,p,k] = residue(Ns, Ds)
+
+r =
+
+    1.0000
+    1.0000
+
+p =
+
+    -3.0000
+    -2.0000
 
 
-    # Set up in iPython
-    from pymatbridge import Matlab
-    mlab = Matlab()
-    mlab.start()
-    import pymatbridge as pymat
-    ip = get_ipython()
-    pymat.load_ipython_extension(ip)
+  k =
 
-    Starting MATLAB on http://localhost:49705
-     visit http://localhost:49705/exit.m to shut down same
-    ........MATLAB started and connected!
+   []
 
-
-
-    %%matlab
-    Ns = [2, 5]; Ds = [1, 5, 6];
-    [r,p,k] = residue(Ns, Ds)
-
-
-
-    r =
-
-        1.0000
-        1.0000
-
-
-    p =
-
-       -3.0000
-       -2.0000
-
-
-    k =
-
-         []
-
-
-
+````
+----
 
 Interpreted as:
 
@@ -179,51 +165,47 @@ tables results in the *Inverse Laplace Transform*
 
 $$f_1(t) = e^{-3t} + e^{-2t}$$
 
-### Matlab solution - symbolic
+## Matlab solution - symbolic
 
 
-    %%matlab
-    syms s t;
-    Fs = (2*s + 5)/(s^2 + 5*s + 6);
-    ft = ilaplace(Fs);
-    pretty(ft)
+````matlab
+syms s t;
+Fs = (2*s + 5)/(s^2 + 5*s + 6);
+ft = ilaplace(Fs);
+pretty(ft)
+
+  exp(-2 t) + exp(-3 t)
+````
 
 
-
-      exp(-2 t) + exp(-3 t)
-
-
-
-### Example 2
+## Example 2
 
 Determine the Inverse Laplace Transform of
 
 $$F_2(s) = \frac{3s^2+2s+5}{s^3 + 9s^s + 23s + 15}$$
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
-place+transform+%283s%5E2+%2B+2s+%2B+5%29%2F%28s%5E3+%2B+9s%5E2+%2B+23s+%2B+15%2
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%283s%5E2+%2B+2s+%2B+5%29%2F%28s%5E3+%2B+9s%5E2+%2B+23s+%2B+15%2
 9))
 
-### Solution 2
+## Solution 2
 
 Because the denominator of $F_2(s)$ is a cubic, it will be difficult to
 factorise without computer assistance so we use Matlab to factorise $D(s)$
 
+````matlab
+syms s;
+factor(s^3 + 9*s^2 + 23*s + 15)
 
-    %%matlab
-    syms s;
-    factor(s^3 + 9*s^2 + 23*s + 15)
+ans =
 
+  (s + 3)*(s + 5)*(s + 1)
+````
 
-
-    ans =
-
-    (s + 3)*(s + 5)*(s + 1)
-
-
-
-
+<div class="notes">
 In an exam you'd be given the factors
+</div>
+
+----
 
 We can now use the previous technique to find the solution which according to
 Matlab should be
@@ -248,7 +230,7 @@ $$\frac{s}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\sin\;\omega t$$
 $$\frac{s + a}{(s - a)^2 + \omega^2} \Leftrightarrow e^{at}\cos\;\omega t$$
 
 
-### Example 3
+## Example 3
 
 Rework Example 3-2 from the text book using quadratic factors.
 
@@ -256,11 +238,10 @@ Find the Inverse Laplace Transform of
 
 $$F_3(s) = \frac{s + 3}{(s+1)(s^2 + 4s + 8)}$$
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
-place+transform+%28s%2B3%29%2F%28%28s+%2B+1%29%28s%5E2+%2B+4s+%2B+8%29%29)
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s+%2B+1%29%28s%5E2+%2B+4s+%2B+8%29%29)
 &ndash; Shows that the computer is not always best!)
 
-### Solution
+## Solution
 
 We complete the square
 
@@ -268,6 +249,8 @@ $$s^2 + 4s + 8 = (s + 2)^2 + 4$$
 
 Then comparing this with the desired form $(s - a)^2 + \omega^2$, we have $a =
 -2$ and $\omega^2 = 4 \to \omega = \sqrt{4} = 2$.
+
+----
 
 To solve this, we need to find the PFE for the assumed solution:
 
@@ -300,6 +283,8 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p_1})}^m}}} + \frac{{{r_{12}}}}{{{{(s -
 
 The ordinary residues $r_k$ can be found using the rule used for distinct roots.
 
+----
+
 To find the residuals for the repeated term $r_{1k}$ we need to multiply both
 sides of the expression by $(s+p_1)^m$ and take repeated derivatives as
 described in detail in Pages 3-7&mdash;3-9 of the text book. This yields the
@@ -310,7 +295,7 @@ p_1}\frac{1}{(k-1)!}\frac{d^{k-1}}{ds^{k-1}}\left[(s-p_1)^mF(s)\right]$$
 
 which in the age of computers is rarely needed.
 
-### Example 4
+## Example 4
 
 Find the inverse Laplace Transform of
 
@@ -322,12 +307,11 @@ $$te^{at} \Leftrightarrow \frac{1}{(s - a)^2}$$
 
 will be useful.
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
-place+transform+%28s%2B3%29%2F%28%28s%2B2%29%28s+%2B+1%29%5E2%29))
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%2B3%29%2F%28%28s%2B2%29%28s+%2B+1%29%5E2%29))
 
 ## Solution
 
-We will leave the solution that makes use of the residude of repeated poles
+We will leave the solution that makes use of the residue of repeated poles
 formula for you to study from the text book. In class we will illustrate the
 slightly simpler approach also presented in the text.
 
@@ -344,12 +328,13 @@ $$F(s) = k_0 + k_1s + k_2s^2 + \cdots + k_{m-n}s^{m-n} + \frac{N(s)}{D(s)}$$
 
 and then $N(s)/D(s)$ will be a proper rational polynomial.
 
-### Example 5 - and some new transform pairs.
+## Example 5 - and some new transform pairs.
 
 $$F_6(s)= \frac{s^2 + 2s + 2}{s+1}$$
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
-place+transform+%28s%5E2+%2B+2s+%2B+2%29%2F%28s+%2B+1%29))
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%28s%5E2+%2B+2s+%2B+2%29%2F%28s+%2B+1%29))
+
+----
 
 Dividing $s^2 + 2s + 2$ by $s + 1$ gives
 
@@ -361,9 +346,9 @@ $$1 \Leftrightarrow \delta(t)$$
 
 $$s \Leftrightarrow ?$$
 
-### What function of *t* has Laplace transform *s*?
+## What function of *t* has Laplace transform *s*?
 
-Recall from Session 2:
+Recall from Lesson 2:
 
 $$\frac{d}{dt}u_0(t)=u_0'(t)=\delta(t)$$
 
@@ -376,7 +361,7 @@ Also, by the time differentiation property
 $$u_0''(t)=\delta'(t)\Leftrightarrow s^2\mathcal{L}u_0(t) - su_0(0) -
 \left.\frac{d}{dt}u_0(t)\right|_{t=0} =  s^2\frac{1}{s} = s$$
 
-### New Transform Pairs
+## New Transform Pairs
 
 $$s\Leftrightarrow \delta'(t)$$
 
@@ -384,46 +369,39 @@ $$\frac{d^n}{dt^n}\delta(t)\Leftrightarrow s^n$$
 
 $$f_6(t) = e^{-t}+\delta(t)+\delta'(t)$$
 
-### Matlab verification
+## Matlab verification
 
 
-    %%matlab
-    Ns = [1, 2, 2]; Ds = [1 1];
-    [r, p, k] = residue(Ns, Ds)
+````matlab
+Ns = [1, 2, 2]; Ds = [1 1];
+[r, p, k] = residue(Ns, Ds)
+
+r =
+
+    1
 
 
+p =
 
-    r =
-
-         1
-
-
-    p =
-
-        -1
+    -1
 
 
-    k =
+k =
 
-         1     1
+    1     1
+````
 
+----
 
+````matlab
+syms s;
+F6 = (s^2 + 2*s + 2)/(s + 1);
+f6 = ilaplace(F6)
 
+f6 =
 
-
-    %%matlab
-    syms s;
-    F6 = (s^2 + 2*s + 2)/(s + 1);
-    f6 = ilaplace(F6)
-
-
-
-    f6 =
-
-    exp(-t) + dirac(t) + dirac(t, 1)
-
-
-
+  exp(-t) + dirac(t) + dirac(t, 1)
+````
 
 ## Homework
 
@@ -434,4 +412,4 @@ at the answers until you have attempted the problems.
 
 In the lab, a week on Friday, we will explore the tools provided by Matlab for taking
 Laplace transforms, representing polynomials, finding roots and factorizing
-polynomials and solution of inverse laplace transform problems.
+polynomials and solution of inverse Laplace transform problems.
