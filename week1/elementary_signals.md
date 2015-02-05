@@ -336,7 +336,7 @@ $$f(t)\delta'(t-a)=f(a)\delta'(t-a)-f'(t)\delta(t-a)$$
 
 Also, derivation of the sifting property can be extended to show that
 
-$$\int_{-\infty}^{infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
+$$\int_{-\infty}^{\infty}f(t)\delta^n(t-\alpha)dt = {\left. {{{( -
 1)}^n}\frac{{{d^n}}}{{d{t^n}}}[f(t)]} \right|_{t = \alpha }}$$
 
 # Examples
