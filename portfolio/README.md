@@ -2,7 +2,7 @@
 
 ## Lab Portfolio
 
-This part of the repository contains a template for the iEG-247 lab portfolio.
+This part of the repository contains a template for the EG-247 lab portfolio.
 
 The directory structure follows the structure recommended in the [marking
 scheme](https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&usp=sharing) and the folders contain copies of the starter files needed for
