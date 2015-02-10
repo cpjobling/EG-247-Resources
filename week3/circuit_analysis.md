@@ -1,17 +1,20 @@
 
 # Using Laplace Transforms for Circuit Analysis
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.i
-pynb) and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
+
+Office Hours: 12:00-13:00 Mondays
+
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.pdf).
+
+  The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week3/circuit_analysis.md).
+
+  The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+  also contains the source code for all the Matlab/Simulink
+  examples and the Laboratory Exercises.
 
 ## This Week
 
@@ -30,59 +33,61 @@ We look at applications of the Laplace Transform for
 * Complex admittance
 
 
-## Circuit Transformation from Time to Complex Frequency 
+# Circuit Transformation from Time to Complex Frequency
 
-### Resistive Network - Time Domain
+## Resistive Network - Time Domain
 
-<img src="files/pictures/resistive_time.png" width="50%">
+![Resistive Network - Time Domain](pictures/resistive_time.png)
 
-### Resistive Network - Complex Frequency Domain
+## Resistive Network - Complex Frequency Domain
 
-<img src="files/pictures/resistive_freq.png" width="50%">
+![Resistive Network - Complex Frequency Domain](pictures/resistive_freq.png)
 
-### Inductive Network - Time Domain
+## Inductive Network - Time Domain
 
-<img src="files/pictures/inductive_time.png" width="50%">
+![Inductive Network - Time Domain](pictures/inductive_time.png)
 
-### Inductive Network - Complex Frequency Domain
+## Inductive Network - Complex Frequency Domain
 
-<img src="files/pictures/inductive_freq.png" width="50%">
+![Inductive Network - Complex Frequency Domain](pictures/inductive_freq.png)
 
-### Capacitive Network - Time Domain
+## Capacitive Network - Time Domain
 
-<img src="files/pictures/capacitive_time.png" width="50%">
+![Capacitive Network - Time Domain](pictures/capacitive_time.png)
 
-### Capacitive Network - Complex Frequency Domain
+## Capacitive Network - Complex Frequency Domain
 
-<img src="files/pictures/capacitive_freq.png" width="50%">
+![Capacitive Network - Complex Frequency Domain](pictures/capacitive_freq.png)
 
-### Examples
+# Examples
 
-#### Example 1
+## Example 1
 
 Use the Laplace transform method and apply Kichoff's Current Law (KCL) to find
 the voltage $v_c(t)$ across the capacitor for the circuit below given that
 $v_c(0^-) = 6$ V.
 
-<img src="files/pictures/example1_2.png" width="40%">
+![Circuit for Example 1](pictures/example1_2.png)
 
-#### Example 2
+## Example 2
 
 Use the Laplace transform method and apply Kichoff's Voltage Law (KVL) to find
 the voltage $v_c(t)$ across the capacitor for the circuit below given that
 $v_c(0^-) = 6$ V.
 
-<img src="files/pictures/example1_2.png" width="40%">
+![Circuit for Example 2](pictures/example1_2.png)
 
-#### Example 3
+## Example 3
 
 In the circuit below, switch $S_1$ closes at $t=0$, while at the same time,
 switch $S_2$ opens. Use the Laplace transform method to find
 $v_{\mathrm{out}}(t)$ for $t > 0$.
 
-<img src="files/pictures/example3.png" width="100%">
+![Circuit for Example 3](pictures/example3.png)
 
-Show with the assistance of MATLAB (See [solution3.m](files/matlab/solution3.m))
+----
+
+Show with the assistance of MATLAB (See [solution3.m](matlab/solution3.m))
 that the solution is
 
 $$V_{\mathrm{out}}=\left(1.36e^{-6.57t}+0.64e^{-0.715t}\cos 0.316t -
@@ -90,16 +95,18 @@ $$V_{\mathrm{out}}=\left(1.36e^{-6.57t}+0.64e^{-0.715t}\cos 0.316t -
 
 and plot the result.
 
-### Plot of time response
+## Plot of time response
 
-<img src="files/pictures/response.png">
+![Plot of time response](pictures/response.png)
 
 ## Complex Impedance Z(s)
 
 Consider the $s$-domain RLC series circuit, wehere the initial conditions are
 assumed to be zero.
 
-<img src="files/pictures/impedence.png" width="50%">
+![Complex Impedance $Z(s)$](pictures/impedence.png)
+
+----
 
 For this circuit, the sum
 
@@ -113,6 +120,8 @@ and defining the ratio $V_s(s)/I(s)$ as $Z(s)$, we obtain
 
 $$Z(s) = \frac{V_s(s)}{I(s)} = R + sL + \frac{1}{sC}$$
 
+----
+
 The $s$-domain current $I(s)$ can be found from
 
 $$I(s) = \frac{V_s(s)}{Z(s)}$$
@@ -124,14 +133,18 @@ $$Z(s) = R + sL + \frac{1}{sC}.$$
 Since $s = \sigma + j\omega$ is a complex number, $Z(s)$ is also complex and is
 known as the *complex input impedance* of this RLC series circuit.
 
-**Exercise**: Use the previous result to give an expression for $V_c(s)$
+## Exercise
 
-### Example 4
+Use the previous result to give an expression for $V_c(s)$
+
+## Example 4
 
 For the network shown below, all the complex impedence values are given in
 $\Omega$ (ohms).
 
-<img src="files/pictures/example4.png" width="50%">
+![Circuit for example 4](pictures/example4.png)
+
+----
 
 Find $Z(s)$ using:
 
@@ -143,7 +156,9 @@ Find $Z(s)$ using:
 Consider the $s$-domain GLC parallel circuit shown below where the initial
 conditions are zero.
 
-<img src="files/pictures/admittance.png" width="50%">
+![Complex admittance $Y(s)$](pictures/admittance.png)
+
+----
 
 For this circuit
 
@@ -154,6 +169,8 @@ $$\left(G+ \frac{1}{sL} + sC\right)V(s) = I_s(s)$$
 Defining the ratio $I_s(s)/V(s)$ as $Y(s)$ we obtain
 
 $$Y(s)=\frac{I_s(s)}{V(s)} = G+ \frac{1}{sL} + sC = \frac{1}{Z(s)}$$
+
+----
 
 The $s$-domain voltage $V(s)$ can be found from
 
@@ -166,14 +183,14 @@ $$Y(s) = G + \frac{1}{sL} + sC.$$
 $Y(s)$ is complex and is known as the *complex input admittance* of this GLC
 parallel circuit.
 
-### Example 5 - Do It Yourself
+## Example 5 - Do It Yourself
 
 Compute $Z(s)$ and $Y(s)$ for the circuit shown below. All impedence values are
 in $\Omega$ (ohms). Verify your answers with MATLAB.
 
-<img src="files/pictures/example5.png" width="50%">
+![Circuit for Example 5](pictures/example5.png)
 
-### Answer 5
+## Answer 5
 
 $$Z(s) = \frac{65s^4 + 490s^3 + 528s^2 + 400s + 128}{s(5s^2 + 30s + 16)}$$
 
@@ -182,11 +199,9 @@ $$Y(s) = \frac{1}{s} = \frac{s(5s^2 + 30s + 16)}{65s^4 + 490s^3 + 528s^2 + 400s
 
 Matlab verification: [solution5.m](files/matlab/solution5.m)
 
-## Tomorrow 
+## Next Lesson
 
-* [Transfer Functions of Circuits](http://nbviewer.ipython.org/github/cpjobling/
-EG-247-Resources/blob/master/week3/transfer_functions.ipynb) ([Slides](http://cp
-jobling.github.io/EG-247-Resources/week3/transfer_functions.slides.html))
+* [Transfer Functions of Circuits](week3/transfer_functions.html) ([Notes PDF](week3/transfer_functions.pdf), [Slides PDF](week3/transfer_functions.slides.pdf))
 
 ## Homework
 
@@ -195,5 +210,5 @@ textbook. Don't look at the answers until you have attempted the problems.
 
 ## Lab Work
 
-In the lab, on Monday, we will see the use of Matlab and Simulink in the
+In the lab, week on Friday, we will see the use of Matlab and Simulink in the
 solution of circuit problems.
