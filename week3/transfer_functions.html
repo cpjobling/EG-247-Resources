@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="transfer-functions">Transfer Functions</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week3/transfer_functions.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week3/transfer_functions.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week3/transfer_functions.md">Introduction.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="this-week">This Week</h2>
+<p>This week's sessions are based on Chapter 4 <strong>Circuit Analysis with Laplace Transforms</strong> from Steven T. Karris <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems: with MATLAB Computing and Simulink Modelling (5th Edition)</a> [You need University Login to access]</p>
+<h2 id="last-time">Last Time</h2>
+<p>Last time we showed how Laplace and Inverse-Laplace Transforms could be used to model circuits and to analyse their responses to simple signals. We also introduced the idea of <em>complex impedence</em> and <em>complex admittance</em>.</p>
+<h2 id="this-time">This Time</h2>
+<p>This time we will examine the idea of a <em>Transfer Function</em> which opens up signals and systems analysis to a whole range of additional possibilities including</p>
+<ul>
+<li>block diagram modelling</li>
+<li>numerical simulation</li>
+<li>numerical analysis and the</li>
+<li>fundamental ideas of <em>Signal Processing</em>.</li>
+</ul>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Transfer Functions</li>
+<li>A Couple of Examples</li>
+<li>Circuit Analysis Using MATLAB LTI Transfer Function Block</li>
+<li>Circuit Simulatiom Using Simulink Transfer Function Block</li>
+</ul>
+<h2 id="transfer-functions-for-circuits">Transfer Functions for Circuits</h2>
+<p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage <span class="math">\(V_{\mathrm{out}}(s)\)</span> ro the input voltage <span class="math">\(V_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em> is of great interest. This ratio is known as the <em>voltage transfer function</em> denoted <span class="math">\(G_v(s)\)</span>:</p>
+<p><span class="math">\[G_v(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</span></p>
+<p>Similarly, the ratio of the output current <span class="math">\(I_{\mathrm{out}}(s)\)</span> to the input current <span class="math">\(I_{\mathrm{in}}(s)\)</span> <em>under zero initial conditions</em>, is called the <em>cuurent transfer function</em> denoted <span class="math">\(G_i(s)\)</span>:</p>
+<p><span class="math">\[G_i(s) = \frac{I_{\mathrm{out}}(s)}{I_{\mathrm{in}}(s)}\]</span></p>
+<hr />
+<p>In practice, the current transfer function is rarely used, so we will use the voltage transfer function denoted:</p>
+<p><span class="math">\[G(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}\]</span></p>
+<h2 id="example-6">Example 6</h2>
+<p>Derive an expression for the transfer function <span class="math">\(G(s)\)</span> for the circuit below. In this circuit <span class="math">\(R_g\)</span> represents the internal resisteance of the applied (voltage) source <span class="math">\(v_s\)</span>, and <span class="math">\(R_L\)</span> represents the resistance of the load that consists of <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span>.</p>
+<hr />
+<div class="figure">
+<img src="pictures/example6.png" alt="Circuit for Example 6" /><p class="caption">Circuit for Example 6</p>
+</div>
+<h2 id="sketch-of-solution">Sketch of Solution</h2>
+<ul>
+<li>Replace <span class="math">\(v_s(t)\)</span>, <span class="math">\(R_g\)</span>, <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span> by their transformed (<em>complex frequency</em>) equivalents: <span class="math">\(V_s(s)\)</span>, <span class="math">\(R_g\)</span>, <span class="math">\(R_L\)</span>, <span class="math">\(sL\)</span> and <span class="math">\(1/(sC)\)</span></li>
+<li>Use the <em>Voltage Divider Rule</em> to determine <span class="math">\(V_\mathrm{out}(s)\)</span> as a function of <span class="math">\(V_s(s)\)</span></li>
+<li>Form <span class="math">\(G(s)\)</span> by writing down the ratio <span class="math">\(V_\mathrm{out}(s)/V_s(s)\)</span></li>
+</ul>
+<h2 id="example-7">Example 7</h2>
+<p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants <span class="math">\(R_1\)</span>, <span class="math">\(R_2\)</span>, <span class="math">\(R_3\)</span>, <span class="math">\(C_1\)</span> and <span class="math">\(C_2\)</span>. Then replace the complex variable <span class="math">\(s\)</span> with <span class="math">\(j\omega\)</span>, and the circuit constants with their numerical values and plot the magnitude <span class="math">\(\left|G(s)\right| = \left|V_\mathrm{out}(s)/V_\mathrm{in}(s)\right|\)</span> versus radian frequency <span class="math">\(\omega\)</span>.</p>
+<hr />
+<div class="figure">
+<img src="pictures/example7.png" alt="Circuit for Example 7" /><p class="caption">Circuit for Example 7</p>
+</div>
+<h2 id="sketch-of-solution-1">Sketch of Solution</h2>
+<ul>
+<li>Replace the components and voltages in the circuit diagram with their complex frequency equivalents</li>
+<li>Use nodal analysis to determine the voltages at the nodes either side of the 50K resistor <span class="math">\(R_3\)</span></li>
+<li>Note that the voltage at the input to the op-amp is a virtual ground</li>
+<li>Solve for <span class="math">\(V_\mathrm{out}(s)\)</span> as a function of <span class="math">\(V_\mathrm{in}(s)\)</span></li>
+<li>Form the reciprocal <span class="math">\(G(s) = V_\mathrm{out}(s)/V_\mathrm{in}(s)\)</span></li>
+<li>Use MATLAB to calculate the component values, then replace <span class="math">\(s\)</span> by <span class="math">\(j\omega\)</span>.</li>
+<li>Plot <span class="math">\(\left|G(j\omega)\right|\)</span> on log-linear &quot;paper&quot;</li>
+</ul>
+<h2 id="the-matlab-bit">The Matlab Bit</h2>
+<p>See attached script: <a href="matlab/solution7.m">solution7.m</a>.</p>
+<div class="figure">
+<img src="pictures/solution7.png" alt="Solution to Example 7" /><p class="caption">Solution to Example 7</p>
+</div>
+<h2 id="using-transfer-functions-in-matlab-for-system-analysis">Using Transfer Functions in Matlab for System Analysis</h2>
+<p>Please use the file <a href="matlab/tf_matlab.m">tf_matlab.m</a> to explore the Transfer Function features provide by Matlab. Use the <em>publish</em> option to generate a nicely formatted document.</p>
+<h2 id="using-transfer-functions-in-simulink-for-system-simulation">Using Transfer Functions in Simulink for System Simulation</h2>
+<div class="figure">
+<img src="pictures/sim_tf.png" alt="Using Transfer Functions in Simulink for System Simulation" /><p class="caption">Using Transfer Functions in Simulink for System Simulation</p>
+</div>
+<hr />
+<p>The Simulink transfer function (<strong><code>Transfer Fcn</code></strong>) block shown above implements a transfer function representing a general input output function</p>
+<p><span class="math">\[G(s) = \frac{N(s)}{D(s)}\]</span></p>
+<p>that it is not specific nor restricted to circuit analysis. It can, however be used in modelling and simulation studies.</p>
+<h2 id="example">Example</h2>
+<p>Recast Example 7 as a Matlab problem using the LTI Transfer Function block. For simplicity use parameters <span class="math">\(R_1 = R_2 = R_3 = 1\; \Omega\)</span>, and <span class="math">\(C_1 = C_2 = 1\;\mathrm{F}\)</span>. Calculate the step response using the LTI functions.</p>
+<p>The Matlab solution: <a href="matlab/example8.m">example8.m</a></p>
+<p>Verify the result with Simulink.</p>
+<h2 id="homework">Homework</h2>
+<p>Do the end of the chapter exercises (Questions 5-7 from Section 4.7) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab, a week on Friday, we will get you to play with using Matlab to solve circuit problems, build transfer functions, use transfer functions with the system analysis tools and the Simulink simulation tools. At the end of this exercise, you should be able to do Question 9 from the End of Chapter Problems Section 4.7).</p>
+</body>
+</html>

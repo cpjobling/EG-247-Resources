@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="using-laplace-transforms-for-circuit-analysis">Using Laplace Transforms for Circuit Analysis</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week3/circuit_analysis.md">Introduction.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="this-week">This Week</h2>
+<p>This week's sessions are based on Chapter 4 <strong>Circuit Analysis with Laplace Transforms</strong> from Steven T. Karris <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Signals and Systems: with MATLAB Computing and Simulink Modelling (5th Edition)</a> [You need University Login to access]</p>
+<h2 id="todays-agenda">Today's Agenda</h2>
+<p>We look at applications of the Laplace Transform for</p>
+<ul>
+<li>Circuit transformation from Time to Complex Frequency</li>
+<li>Complex impedance</li>
+<li>Complex admittance</li>
+</ul>
+<h1 id="circuit-transformation-from-time-to-complex-frequency">Circuit Transformation from Time to Complex Frequency</h1>
+<h2 id="resistive-network---time-domain">Resistive Network - Time Domain</h2>
+<div class="figure">
+<img src="pictures/resistive_time.png" alt="Resistive Network - Time Domain" /><p class="caption">Resistive Network - Time Domain</p>
+</div>
+<h2 id="resistive-network---complex-frequency-domain">Resistive Network - Complex Frequency Domain</h2>
+<div class="figure">
+<img src="pictures/resistive_freq.png" alt="Resistive Network - Complex Frequency Domain" /><p class="caption">Resistive Network - Complex Frequency Domain</p>
+</div>
+<h2 id="inductive-network---time-domain">Inductive Network - Time Domain</h2>
+<div class="figure">
+<img src="pictures/inductive_time.png" alt="Inductive Network - Time Domain" /><p class="caption">Inductive Network - Time Domain</p>
+</div>
+<h2 id="inductive-network---complex-frequency-domain">Inductive Network - Complex Frequency Domain</h2>
+<div class="figure">
+<img src="pictures/inductive_freq.png" alt="Inductive Network - Complex Frequency Domain" /><p class="caption">Inductive Network - Complex Frequency Domain</p>
+</div>
+<h2 id="capacitive-network---time-domain">Capacitive Network - Time Domain</h2>
+<div class="figure">
+<img src="pictures/capacitive_time.png" alt="Capacitive Network - Time Domain" /><p class="caption">Capacitive Network - Time Domain</p>
+</div>
+<h2 id="capacitive-network---complex-frequency-domain">Capacitive Network - Complex Frequency Domain</h2>
+<div class="figure">
+<img src="pictures/capacitive_freq.png" alt="Capacitive Network - Complex Frequency Domain" /><p class="caption">Capacitive Network - Complex Frequency Domain</p>
+</div>
+<h1 id="examples">Examples</h1>
+<h2 id="example-1">Example 1</h2>
+<p>Use the Laplace transform method and apply Kichoff's Current Law (KCL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
+<div class="figure">
+<img src="pictures/example1_2.png" alt="Circuit for Example 1" /><p class="caption">Circuit for Example 1</p>
+</div>
+<h2 id="example-2">Example 2</h2>
+<p>Use the Laplace transform method and apply Kichoff's Voltage Law (KVL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
+<div class="figure">
+<img src="pictures/example1_2.png" alt="Circuit for Example 2" /><p class="caption">Circuit for Example 2</p>
+</div>
+<h2 id="example-3">Example 3</h2>
+<p>In the circuit below, switch <span class="math">\(S_1\)</span> closes at <span class="math">\(t=0\)</span>, while at the same time, switch <span class="math">\(S_2\)</span> opens. Use the Laplace transform method to find <span class="math">\(v_{\mathrm{out}}(t)\)</span> for <span class="math">\(t &gt; 0\)</span>.</p>
+<div class="figure">
+<img src="pictures/example3.png" alt="Circuit for Example 3" /><p class="caption">Circuit for Example 3</p>
+</div>
+<hr />
+<p>Show with the assistance of MATLAB (See <a href="matlab/solution3.m">solution3.m</a>) that the solution is</p>
+<p><span class="math">\[V_{\mathrm{out}}=\left(1.36e^{-6.57t}+0.64e^{-0.715t}\cos 0.316t -
+1.84e^{-0.715t}\sin 0.316t\right)u_0(t)\]</span></p>
+<p>and plot the result.</p>
+<h2 id="plot-of-time-response">Plot of time response</h2>
+<div class="figure">
+<img src="pictures/response.png" alt="Plot of time response" /><p class="caption">Plot of time response</p>
+</div>
+<h2 id="complex-impedance-zs">Complex Impedance Z(s)</h2>
+<p>Consider the <span class="math">\(s\)</span>-domain RLC series circuit, wehere the initial conditions are assumed to be zero.</p>
+<div class="figure">
+<img src="pictures/impedence.png" alt="Complex Impedance Z(s)" /><p class="caption">Complex Impedance <span class="math">\(Z(s)\)</span></p>
+</div>
+<hr />
+<p>For this circuit, the sum</p>
+<p><span class="math">\[R + sL + \frac{1}{sC}\]</span></p>
+<p>respresents that total opposition to current flow. Then,</p>
+<p><span class="math">\[I(s) = \frac{V_s(s)}{R + sL + 1/(sC)}\]</span></p>
+<p>and defining the ratio <span class="math">\(V_s(s)/I(s)\)</span> as <span class="math">\(Z(s)\)</span>, we obtain</p>
+<p><span class="math">\[Z(s) = \frac{V_s(s)}{I(s)} = R + sL + \frac{1}{sC}\]</span></p>
+<hr />
+<p>The <span class="math">\(s\)</span>-domain current <span class="math">\(I(s)\)</span> can be found from</p>
+<p><span class="math">\[I(s) = \frac{V_s(s)}{Z(s)}\]</span></p>
+<p>where</p>
+<p><span class="math">\[Z(s) = R + sL + \frac{1}{sC}.\]</span></p>
+<p>Since <span class="math">\(s = \sigma + j\omega\)</span> is a complex number, <span class="math">\(Z(s)\)</span> is also complex and is known as the <em>complex input impedance</em> of this RLC series circuit.</p>
+<h2 id="exercise">Exercise</h2>
+<p>Use the previous result to give an expression for <span class="math">\(V_c(s)\)</span></p>
+<h2 id="example-4">Example 4</h2>
+<p>For the network shown below, all the complex impedence values are given in <span class="math">\(\Omega\)</span> (ohms).</p>
+<div class="figure">
+<img src="pictures/example4.png" alt="Circuit for example 4" /><p class="caption">Circuit for example 4</p>
+</div>
+<hr />
+<p>Find <span class="math">\(Z(s)\)</span> using:</p>
+<ol style="list-style-type: decimal">
+<li>nodal analysis</li>
+<li>successive combinations of series and parallel impendences</li>
+</ol>
+<h2 id="complex-admittance-ys">Complex Admittance Y(s)</h2>
+<p>Consider the <span class="math">\(s\)</span>-domain GLC parallel circuit shown below where the initial conditions are zero.</p>
+<div class="figure">
+<img src="pictures/admittance.png" alt="Complex admittance Y(s)" /><p class="caption">Complex admittance <span class="math">\(Y(s)\)</span></p>
+</div>
+<hr />
+<p>For this circuit</p>
+<p><span class="math">\[GV(s)+ \frac{1}{sL}V(s) + sCV(s) = I_s(s)\]</span></p>
+<p><span class="math">\[\left(G+ \frac{1}{sL} + sC\right)V(s) = I_s(s)\]</span></p>
+<p>Defining the ratio <span class="math">\(I_s(s)/V(s)\)</span> as <span class="math">\(Y(s)\)</span> we obtain</p>
+<p><span class="math">\[Y(s)=\frac{I_s(s)}{V(s)} = G+ \frac{1}{sL} + sC = \frac{1}{Z(s)}\]</span></p>
+<hr />
+<p>The <span class="math">\(s\)</span>-domain voltage <span class="math">\(V(s)\)</span> can be found from</p>
+<p><span class="math">\[V(s) = \frac{I_s(s)}{Y(s)}\]</span></p>
+<p>where</p>
+<p><span class="math">\[Y(s) = G + \frac{1}{sL} + sC.\]</span></p>
+<p><span class="math">\(Y(s)\)</span> is complex and is known as the <em>complex input admittance</em> of this GLC parallel circuit.</p>
+<h2 id="example-5---do-it-yourself">Example 5 - Do It Yourself</h2>
+<p>Compute <span class="math">\(Z(s)\)</span> and <span class="math">\(Y(s)\)</span> for the circuit shown below. All impedence values are in <span class="math">\(\Omega\)</span> (ohms). Verify your answers with MATLAB.</p>
+<div class="figure">
+<img src="pictures/example5.png" alt="Circuit for Example 5" /><p class="caption">Circuit for Example 5</p>
+</div>
+<h2 id="answer-5">Answer 5</h2>
+<p><span class="math">\[Z(s) = \frac{65s^4 + 490s^3 + 528s^2 + 400s + 128}{s(5s^2 + 30s + 16)}\]</span></p>
+<p><span class="math">\[Y(s) = \frac{1}{s} = \frac{s(5s^2 + 30s + 16)}{65s^4 + 490s^3 + 528s^2 + 400s
++ 128}\]</span></p>
+<p>Matlab verification: <a href="files/matlab/solution5.m">solution5.m</a></p>
+<h2 id="next-lesson">Next Lesson</h2>
+<ul>
+<li><a href="week3/transfer_functions.html">Transfer Functions of Circuits</a> (<a href="week3/transfer_functions.pdf">Notes PDF</a>, <a href="week3/transfer_functions.slides.pdf">Slides PDF</a>)</li>
+</ul>
+<h2 id="homework">Homework</h2>
+<p>Do the end of the chapter exercises (Section 4.7 - questions 1 to 4) from the textbook. Don't look at the answers until you have attempted the problems.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab, week on Friday, we will see the use of Matlab and Simulink in the solution of circuit problems.</p>
+</body>
+</html>
