@@ -51,7 +51,7 @@ ezplot(ft,[0,4.5])
 % Matlab provides two ways to do this using |roots| and |factor|.
 % 
 % The first is a numerical root finder, it needs the polynomial to have
-% be defined as a row vector of the numerical coefficients in descending
+% been defined as a row vector of the numerical coefficients in descending
 % powers of s:
 Ds1 = [1, 12, 44, 48];
 roots(Ds)
