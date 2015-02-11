@@ -6,7 +6,7 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="using-laplace-transforms-for-circuit-analysis">Using Laplace Transforms for Circuit Analysis</h1>
@@ -33,43 +33,52 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h1 id="circuit-transformation-from-time-to-complex-frequency">Circuit Transformation from Time to Complex Frequency</h1>
 <h2 id="resistive-network---time-domain">Resistive Network - Time Domain</h2>
 <div class="figure">
-<img src="pictures/resistive_time.png" alt="Resistive Network - Time Domain" /><p class="caption">Resistive Network - Time Domain</p>
+<img src="pictures/resistive_time.png" alt="Resistive Network - Time Domain" />
+<p class="caption">Resistive Network - Time Domain</p>
 </div>
 <h2 id="resistive-network---complex-frequency-domain">Resistive Network - Complex Frequency Domain</h2>
 <div class="figure">
-<img src="pictures/resistive_freq.png" alt="Resistive Network - Complex Frequency Domain" /><p class="caption">Resistive Network - Complex Frequency Domain</p>
+<img src="pictures/resistive_freq.png" alt="Resistive Network - Complex Frequency Domain" />
+<p class="caption">Resistive Network - Complex Frequency Domain</p>
 </div>
 <h2 id="inductive-network---time-domain">Inductive Network - Time Domain</h2>
 <div class="figure">
-<img src="pictures/inductive_time.png" alt="Inductive Network - Time Domain" /><p class="caption">Inductive Network - Time Domain</p>
+<img src="pictures/inductive_time.png" alt="Inductive Network - Time Domain" />
+<p class="caption">Inductive Network - Time Domain</p>
 </div>
 <h2 id="inductive-network---complex-frequency-domain">Inductive Network - Complex Frequency Domain</h2>
 <div class="figure">
-<img src="pictures/inductive_freq.png" alt="Inductive Network - Complex Frequency Domain" /><p class="caption">Inductive Network - Complex Frequency Domain</p>
+<img src="pictures/inductive_freq.png" alt="Inductive Network - Complex Frequency Domain" />
+<p class="caption">Inductive Network - Complex Frequency Domain</p>
 </div>
 <h2 id="capacitive-network---time-domain">Capacitive Network - Time Domain</h2>
 <div class="figure">
-<img src="pictures/capacitive_time.png" alt="Capacitive Network - Time Domain" /><p class="caption">Capacitive Network - Time Domain</p>
+<img src="pictures/capacitive_time.png" alt="Capacitive Network - Time Domain" />
+<p class="caption">Capacitive Network - Time Domain</p>
 </div>
 <h2 id="capacitive-network---complex-frequency-domain">Capacitive Network - Complex Frequency Domain</h2>
 <div class="figure">
-<img src="pictures/capacitive_freq.png" alt="Capacitive Network - Complex Frequency Domain" /><p class="caption">Capacitive Network - Complex Frequency Domain</p>
+<img src="pictures/capacitive_freq.png" alt="Capacitive Network - Complex Frequency Domain" />
+<p class="caption">Capacitive Network - Complex Frequency Domain</p>
 </div>
 <h1 id="examples">Examples</h1>
 <h2 id="example-1">Example 1</h2>
 <p>Use the Laplace transform method and apply Kichoff's Current Law (KCL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
 <div class="figure">
-<img src="pictures/example1_2.png" alt="Circuit for Example 1" /><p class="caption">Circuit for Example 1</p>
+<img src="pictures/example1_2.png" alt="Circuit for Example 1" />
+<p class="caption">Circuit for Example 1</p>
 </div>
 <h2 id="example-2">Example 2</h2>
 <p>Use the Laplace transform method and apply Kichoff's Voltage Law (KVL) to find the voltage <span class="math">\(v_c(t)\)</span> across the capacitor for the circuit below given that <span class="math">\(v_c(0^-) = 6\)</span> V.</p>
 <div class="figure">
-<img src="pictures/example1_2.png" alt="Circuit for Example 2" /><p class="caption">Circuit for Example 2</p>
+<img src="pictures/example1_2.png" alt="Circuit for Example 2" />
+<p class="caption">Circuit for Example 2</p>
 </div>
 <h2 id="example-3">Example 3</h2>
 <p>In the circuit below, switch <span class="math">\(S_1\)</span> closes at <span class="math">\(t=0\)</span>, while at the same time, switch <span class="math">\(S_2\)</span> opens. Use the Laplace transform method to find <span class="math">\(v_{\mathrm{out}}(t)\)</span> for <span class="math">\(t &gt; 0\)</span>.</p>
 <div class="figure">
-<img src="pictures/example3.png" alt="Circuit for Example 3" /><p class="caption">Circuit for Example 3</p>
+<img src="pictures/example3.png" alt="Circuit for Example 3" />
+<p class="caption">Circuit for Example 3</p>
 </div>
 <hr />
 <p>Show with the assistance of MATLAB (See <a href="matlab/solution3.m">solution3.m</a>) that the solution is</p>
@@ -78,12 +87,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>and plot the result.</p>
 <h2 id="plot-of-time-response">Plot of time response</h2>
 <div class="figure">
-<img src="pictures/response.png" alt="Plot of time response" /><p class="caption">Plot of time response</p>
+<img src="pictures/response.png" alt="Plot of time response" />
+<p class="caption">Plot of time response</p>
 </div>
 <h2 id="complex-impedance-zs">Complex Impedance Z(s)</h2>
 <p>Consider the <span class="math">\(s\)</span>-domain RLC series circuit, wehere the initial conditions are assumed to be zero.</p>
 <div class="figure">
-<img src="pictures/impedence.png" alt="Complex Impedance Z(s)" /><p class="caption">Complex Impedance <span class="math">\(Z(s)\)</span></p>
+<img src="pictures/impedence.png" alt="Complex Impedance Z(s)" />
+<p class="caption">Complex Impedance <span class="math">\(Z(s)\)</span></p>
 </div>
 <hr />
 <p>For this circuit, the sum</p>
@@ -103,7 +114,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="example-4">Example 4</h2>
 <p>For the network shown below, all the complex impedence values are given in <span class="math">\(\Omega\)</span> (ohms).</p>
 <div class="figure">
-<img src="pictures/example4.png" alt="Circuit for example 4" /><p class="caption">Circuit for example 4</p>
+<img src="pictures/example4.png" alt="Circuit for example 4" />
+<p class="caption">Circuit for example 4</p>
 </div>
 <hr />
 <p>Find <span class="math">\(Z(s)\)</span> using:</p>
@@ -114,7 +126,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="complex-admittance-ys">Complex Admittance Y(s)</h2>
 <p>Consider the <span class="math">\(s\)</span>-domain GLC parallel circuit shown below where the initial conditions are zero.</p>
 <div class="figure">
-<img src="pictures/admittance.png" alt="Complex admittance Y(s)" /><p class="caption">Complex admittance <span class="math">\(Y(s)\)</span></p>
+<img src="pictures/admittance.png" alt="Complex admittance Y(s)" />
+<p class="caption">Complex admittance <span class="math">\(Y(s)\)</span></p>
 </div>
 <hr />
 <p>For this circuit</p>
@@ -131,7 +144,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="example-5---do-it-yourself">Example 5 - Do It Yourself</h2>
 <p>Compute <span class="math">\(Z(s)\)</span> and <span class="math">\(Y(s)\)</span> for the circuit shown below. All impedence values are in <span class="math">\(\Omega\)</span> (ohms). Verify your answers with MATLAB.</p>
 <div class="figure">
-<img src="pictures/example5.png" alt="Circuit for Example 5" /><p class="caption">Circuit for Example 5</p>
+<img src="pictures/example5.png" alt="Circuit for Example 5" />
+<p class="caption">Circuit for Example 5</p>
 </div>
 <h2 id="answer-5">Answer 5</h2>
 <p><span class="math">\[Z(s) = \frac{65s^4 + 490s^3 + 528s^2 + 400s + 128}{s(5s^2 + 30s + 16)}\]</span></p>

@@ -6,7 +6,7 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="transfer-functions">Transfer Functions</h1>
@@ -52,7 +52,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>Derive an expression for the transfer function <span class="math">\(G(s)\)</span> for the circuit below. In this circuit <span class="math">\(R_g\)</span> represents the internal resisteance of the applied (voltage) source <span class="math">\(v_s\)</span>, and <span class="math">\(R_L\)</span> represents the resistance of the load that consists of <span class="math">\(R_L\)</span>, <span class="math">\(L\)</span> and <span class="math">\(C\)</span>.</p>
 <hr />
 <div class="figure">
-<img src="pictures/example6.png" alt="Circuit for Example 6" /><p class="caption">Circuit for Example 6</p>
+<img src="pictures/example6.png" alt="Circuit for Example 6" />
+<p class="caption">Circuit for Example 6</p>
 </div>
 <h2 id="sketch-of-solution">Sketch of Solution</h2>
 <ul>
@@ -64,7 +65,8 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants <span class="math">\(R_1\)</span>, <span class="math">\(R_2\)</span>, <span class="math">\(R_3\)</span>, <span class="math">\(C_1\)</span> and <span class="math">\(C_2\)</span>. Then replace the complex variable <span class="math">\(s\)</span> with <span class="math">\(j\omega\)</span>, and the circuit constants with their numerical values and plot the magnitude <span class="math">\(\left|G(s)\right| = \left|V_\mathrm{out}(s)/V_\mathrm{in}(s)\right|\)</span> versus radian frequency <span class="math">\(\omega\)</span>.</p>
 <hr />
 <div class="figure">
-<img src="pictures/example7.png" alt="Circuit for Example 7" /><p class="caption">Circuit for Example 7</p>
+<img src="pictures/example7.png" alt="Circuit for Example 7" />
+<p class="caption">Circuit for Example 7</p>
 </div>
 <h2 id="sketch-of-solution-1">Sketch of Solution</h2>
 <ul>
@@ -79,13 +81,15 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="the-matlab-bit">The Matlab Bit</h2>
 <p>See attached script: <a href="matlab/solution7.m">solution7.m</a>.</p>
 <div class="figure">
-<img src="pictures/solution7.png" alt="Solution to Example 7" /><p class="caption">Solution to Example 7</p>
+<img src="pictures/solution7.png" alt="Solution to Example 7" />
+<p class="caption">Solution to Example 7</p>
 </div>
 <h2 id="using-transfer-functions-in-matlab-for-system-analysis">Using Transfer Functions in Matlab for System Analysis</h2>
 <p>Please use the file <a href="matlab/tf_matlab.m">tf_matlab.m</a> to explore the Transfer Function features provide by Matlab. Use the <em>publish</em> option to generate a nicely formatted document.</p>
 <h2 id="using-transfer-functions-in-simulink-for-system-simulation">Using Transfer Functions in Simulink for System Simulation</h2>
 <div class="figure">
-<img src="pictures/sim_tf.png" alt="Using Transfer Functions in Simulink for System Simulation" /><p class="caption">Using Transfer Functions in Simulink for System Simulation</p>
+<img src="pictures/sim_tf.png" alt="Using Transfer Functions in Simulink for System Simulation" />
+<p class="caption">Using Transfer Functions in Simulink for System Simulation</p>
 </div>
 <hr />
 <p>The Simulink transfer function (<strong><code>Transfer Fcn</code></strong>) block shown above implements a transfer function representing a general input output function</p>
