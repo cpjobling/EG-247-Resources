@@ -33,7 +33,7 @@ You will find it easiest to audit your completion of Exercise 1 by publishing th
 
 ## Doing More
 
-f you have time remaining, you may wish to work through Appendix A of the textbook. This chapters introduce Matlab in a way that matches the presentation in the rest of the book. There are also additional tutorial and video introductions to *Matlab*, *Simulink* and the *Signal Processing Toolbox* in the **Getting Started with Matlab** folder in the Labs section of the Blackboard site for EG-247.
+If you have time remaining, you may wish to work through Appendix A of the textbook. This chapters introduce Matlab in a way that matches the presentation in the rest of the book. There are also additional tutorial and video introductions to *Matlab*, *Simulink* and the *Signal Processing Toolbox* in the **Getting Started with Matlab** folder in the Labs section of the Blackboard site for EG-247.
 
 ----
 
