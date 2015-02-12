@@ -129,8 +129,7 @@ $f_1(t)$ corresponding to $F_1(s)$
 
 $$F_1(s) = \frac{2s+5}{s^2 + 5s + 6}$$
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+la
-place+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29))
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%282s+%2B+5%29%2F%28s%5E2+%2B+5s+%2B+6%29))
 
 ## Matlab Solution - Numerical
 
@@ -184,8 +183,7 @@ Determine the Inverse Laplace Transform of
 
 $$F_2(s) = \frac{3s^2+2s+5}{s^3 + 9s^s + 23s + 15}$$
 
-(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%283s%5E2+%2B+2s+%2B+5%29%2F%28s%5E3+%2B+9s%5E2+%2B+23s+%2B+15%2
-9))
+(Quick solution: [Wolfram|Alpha](http://www.wolframalpha.com/input/?i=inverse+laplace+transform+%283*s%5E2+%2B+4*s+%2B+5%29%2F%28s%5E3+%2B+12*s%5E2+%2B+44*s+%2B+48%29%3B)
 
 ## Solution 2
 
