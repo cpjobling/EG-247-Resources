@@ -1,4 +1,4 @@
-% Example 3.1 - Real distinct roots
+% Example 1 - Real distinct roots
 
 Ns = [3, 2];
 Ds = [1, 3, 2];

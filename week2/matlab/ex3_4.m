@@ -1,4 +1,4 @@
-%% Example 3.4 - Repeated Poles
+%% Example 4 - Repeated Poles
 
 syms s;
 
@@ -6,7 +6,7 @@ syms s;
 Ns = [1 3];
 % Expands $(s + 1)^2$ to $(s^2 + 2s + 1)$
 expand((s + 1)^2)
-%% 
+%%
 
 % Coefficients of $(s^2 + 2s + 1)$ in $D(s)$
 d1 = [1 2 1];
