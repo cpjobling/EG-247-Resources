@@ -1,25 +1,21 @@
 
 # Modelling Systems in State Space
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.ipynb)
-and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
 
+Office Hours: 12:00-13:00 Mondays
 
-    from pymatbridge import Matlab
-    mlab = Matlab()
-    mlab.start()
-    import pymatbridge as pymat
-    ip = get_ipython()
-    pymat.load_ipython_extension(ip)
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week4/state_space.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week4/state_space.pdf).
+
+The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week4/state_space.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+  also contains the source code for all the Matlab/Simulink
+  examples and the Laboratory Exercises.
+
 
 ## Scope and Background Reading
 
@@ -307,12 +303,12 @@ $${\bf{A}} = \left[ {\begin{array}{*{20}{c}}
     phi = expm(A*t)
 
 
-     
+
     phi =
-     
+
     [ exp(-2*t), exp(-t) - exp(-2*t)]
     [         0,             exp(-t)]
-     
+
 
 
 
@@ -363,7 +359,7 @@ $$\left[ {\begin{array}{*{20}{c}}
     pretty(phi)
 
 
-    
+
       +-                                                  -+
       |   3 exp(-3 t)   exp(-t)                            |
       |   ----------- - -------,  2 exp(-3 t) - 2 exp(-t)  |
@@ -405,7 +401,7 @@ $${{\bf{x}}_u}(t) = {e^{{\bf{A}}t}}\left[ {\begin{array}{*{20}{c}}
     pretty(xu)
 
 
-    
+
       +-                       -+
       |   exp(-3 t) - exp(-t)   |
       |                         |
@@ -438,12 +434,12 @@ but is easy with Matlab
     xf = int(expm(A*(t-tau))*B*heaviside(tau),tau,0,t)
 
 
-     
+
     xf =
-     
+
              2*exp(-t) - 2*exp(-3*t)
      exp(-3*t)/2 - (3*exp(-t))/2 + 1
-     
+
 
 
 
@@ -463,12 +459,12 @@ $${\bf{x}}(t) = {{\bf{x}}_u}(t) + {{\bf{x}}_f}(t)$$
     x = xu + xf
 
 
-     
+
     x =
-     
+
                  exp(-t) - exp(-3*t)
      exp(-3*t)/4 - (3*exp(-t))/4 + 1
-     
+
 
 
 
@@ -501,16 +497,16 @@ As a four-liner
     il = x(1), vc = x(2)
 
 
-     
+
     il =
-     
+
     exp(-t) - exp(-3*t)
-     
-     
+
+
     vc =
-     
+
     exp(-3*t)/4 - (3*exp(-t))/4 + 1
-     
+
 
 
 
@@ -554,11 +550,11 @@ $$d = 0$$
     G = C*inv(s*eye(2)-A)*B + d
 
 
-     
+
     G =
-     
+
     3/(s^2 + 4*s + 3)
-     
+
 
 
 
@@ -568,11 +564,11 @@ $$d = 0$$
     vc = ilaplace(G*U)
 
 
-     
+
     vc =
-     
+
     exp(-3*t)/2 - (3*exp(-t))/2 + 1
-     
+
 
 
 
@@ -598,18 +594,18 @@ Use Laplace transforms to find the state transition matrix for Example 6.
     phi_t = ilaplace(phi_s)
 
 
-     
+
     phi_s =
-     
+
     [     s/(s^2 + 4*s + 3),      -4/(s^2 + 4*s + 3)]
     [ 3/(4*(s^2 + 4*s + 3)), (s + 4)/(s^2 + 4*s + 3)]
-     
-     
+
+
     phi_t =
-     
+
     [     (3*exp(-3*t))/2 - exp(-t)/2,     2*exp(-3*t) - 2*exp(-t)]
     [ (3*exp(-t))/8 - (3*exp(-3*t))/8, (3*exp(-t))/2 - exp(-3*t)/2]
-     
+
 
 
 

@@ -16,7 +16,7 @@ and
 [PDF](http://cpjobling.github.io/EG-247-Resources/week1/elementary_signals.pdf).
 
 The source code of this presentation is available in Markdown format from GitHub:
-[Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week1/elementary_signals.md).
+[elementary_signals.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week1/elementary_signals.md).
 
 The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
 also contains the source code for all the Matlab/Simulink
