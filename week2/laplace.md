@@ -10,7 +10,7 @@ Office Hours: 12:00-13:00 Mondays
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week2/laplace.html
   ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week2/laplace.pdf).
 
-The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week2/laplace.md).
+The source code of this presentation is available in Markdown format from GitHub: [laplace.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week2/laplace.md).
 
 The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
 also contains the source code for all the Matlab/Simulink

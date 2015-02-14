@@ -10,11 +10,11 @@ Office Hours: 12:00-13:00 Mondays
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.html
   ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week3/circuit_analysis.pdf).
 
-  The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week3/circuit_analysis.md).
+  The source code of this presentation is available in Markdown format from GitHub: [circuit_analysis.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week3/circuit_analysis.md).
 
-  The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
-  also contains the source code for all the Matlab/Simulink
-  examples and the Laboratory Exercises.
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
 
 ## This Week
 

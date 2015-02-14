@@ -10,11 +10,11 @@ Office Hours: 12:00-13:00 Mondays
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week3/transfer_functions.html
   ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week3/transfer_functions.pdf).
 
-  The source code of this presentation is available in Markdown format from GitHub: [Introduction.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week3/transfer_functions.md).
+  The source code of this presentation is available in Markdown format from GitHub: [transfer_functions.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week3/transfer_functions.md).
 
-  The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
-  also contains the source code for all the Matlab/Simulink
-  examples and the Laboratory Exercises.
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
 
 ## This Week
 
