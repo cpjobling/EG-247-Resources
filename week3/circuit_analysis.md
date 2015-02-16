@@ -87,6 +87,10 @@ $v_{\mathrm{out}}(t)$ for $t > 0$.
 
 ----
 
+See Blackboard for worked solution.
+
+----
+
 Show with the assistance of MATLAB (See [solution3.m](matlab/solution3.m))
 that the solution is
 
