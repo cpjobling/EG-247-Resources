@@ -50,6 +50,8 @@ The material to be presented will need two sessions.
 * System Response by Convolution
 * System Response by Laplace
 
+# The Impulse Response of a System in Time Domain
+
 ## The Impulse Response of a System in Time Domain
 
 In the last session we showed that if the state-space model of a SISO system
@@ -70,7 +72,7 @@ which for our later convenience can be rewritten
 $${\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + {e^{{\bf{At}}}}\int_0^t {{e^{ -
 {\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } $$
 
-### Impulse response (1)
+## Impulse response (1)
 
 If we assume zero initial conditions $\bf{x}_0 = \bf{0}$ and $u(t) = \delta(t)$
 (Matlab `dirac`), then the state-reponse to an impulse input is:
@@ -90,7 +92,7 @@ so, the impulse response is:
 
 $$y(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}} + d\delta (t)$$
 
-### Impulse response (2)
+## Impulse response (2)
 
 In most systems that you will encounter on this course the scalar quantity $d =
 0$ so the impulse response, which we donate as $h(t)$, is
@@ -100,7 +102,9 @@ $$h(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}}u_0(t)$$
 where the unit step function $u_0(t)$ has been included to indicate that the
 impulse response is only defined for $t>0$.
 
-### Note
+<div class="notes">
+
+## Note
 
 In the text book, Karris presents the impulse response as
 
@@ -110,7 +114,7 @@ but this is the impulse response of the state variables and is a vector
 quantity.
 
 You need to introduce the output equation to find the actual scalar impulse
-response $h(t)$ which for a SISO system.
+response $h(t)$ which is for a SISO system.
 
 Karris gets away with this in his book because he uses voltages and currents as
 *physical state variables* and the coefficient of the corresponding $\bf{C}$
@@ -119,23 +123,25 @@ matrix will be unity.
 In general, we cannot assume that this will be true so I prefer to be a little
 more careful in my presentation.
 
-### Example 1
+</div>
+
+## Example 1
 
 Compute the impulse response of the series RC circuit shown below in terms of
 the constants $R$ and $C$, where the response is considered to be the voltage
 across the capicitor, and $v_c(0^-)=0$. Then, compute the current through the
 capacitor.
 
-<img src="files/pictures/c_example1.png">
+![Example 1](pictures/c_example1.png)
 
-### Example 2
+## Example 2
 
 In the RLC circuit shown below, compute the impulse response $h(t)=v_c(t)$ given
 that the initial conditions are zero, that is $i_L(0^-)=0$ and $V_c(0^-)=0$.
 
-<img src="files/pictures/c_example2.png">
+![Example 2](pictures/c_example2.png)
 
-### Solution
+## Solution
 
 We tackled this problem as Example 6 in the previous session and found that:
 
@@ -154,56 +160,59 @@ $$\begin{array}{l}
 
 so the impulse response of the state variables is:
 
-$${\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[
-{\begin{array}{*{20}{c}}
-{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&{ - 2{e^{ - t}} + 2{e^{ -
-3t}}}\\
-{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&{\frac{3}{2}{e^{ - t}} -
-\frac{1}{2}{e^{ - 3t}}}
+$$\begin{array}{c}
+{\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
+{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
 \end{array}} \right]\left[ {\begin{array}{*{20}{c}}
 4\\
 0
-\end{array}} \right]{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+\end{array}} \right]{u_0}(t)\\
+ = \left[ {\begin{array}{*{20}{c}}
 { - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
 {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
-\end{array}} \right]{u_0}(t)$$
+\end{array}} \right]{u_0}(t
+\end{array}$$
 
-### Impulse response
+## Impulse response
 
 In Example 6 in the previous session, we defined $x_1 = i_L$ and $x_2 = v_c$ so
-if we want the capacitor voltage to be the circuit output, the output vector
+if we want the circuit output to be the capacitor voltage, the output vector
 $\bf{C}$ will be
 
-$${\bf{C}} = {\rm{ }}\left[ {\begin{array}{*{20}{c}}
+$${\bf{C}} = \left[ {\begin{array}{*{20}{c}}
 0&1
 \end{array}} \right]$$
 
 so
 
-$$\begin{array}{l}
-h(t) = y(t) = {v_c}(t) & = & {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)\\
- & = & \left[ {\begin{array}{*{20}{c}}
+$$\begin{array}{*{20}{l}}
+{h(t) = y(t) = {v_c}(t)}& = &{{\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)}\\
+{}& = &{\left[ {\begin{array}{*{20}{c}}
 0&1
 \end{array}} \right]\left[ {\begin{array}{*{20}{c}}
 { - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
 {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
-\end{array}} \right]{u_0}(t)\\
- & = & \left( {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}} \right){u_0}(t) =
-\frac{3}{2}\left( {{e^{ - t}} + {e^{ - 3t}}} \right){u_0}(t)
+\end{array}} \right]{u_0}(t)}\\
+{}& = &{\left( {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}} \right){u_0}(t) = \frac{3}{2}\left( {{e^{ - t}} + {e^{ - 3t}}} \right){u_0}(t)}
 \end{array}$$
+
+# Even and Odd Functions of Time
 
 ## Even and Odd Functions of Time
 
-(**This should be revision!**)
+(** This should be revision! **)
+
+## Why do we care?
 
 We need to be reminded of *even* and *odd* functions so that we can develop the
-idea of time convolution which is a means of determining the time response of
-any system for which we know its *impulse response* to any signal.
+idea of *time convolution* which is a means of determining the time response
+of any system for which we know its *impulse response* to any signal.
 
 The development requires us to find out if the Dirac delta function
 ($\delta(t)$) is an *even* or an *odd* function of time.
 
-### Even Functions of Time
+## Even Functions of Time
 
 A function $f(t)$ is said to be an *even function* of time if the following
 relation holds
@@ -219,11 +228,11 @@ $$\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \ldots$$
 
 is even.
 
-### Other Examples of Even Functions
+## Other Examples of Even Functions
 
-<img src="files/pictures/even_funcs.png" width="75%">
+![Even functions](pictures/even_funcs.png)
 
-### Odd Functions of Time
+## Odd Functions of Time
 
 A function $f(t)$ is said to be an *odd function* of time if the following
 relation holds
@@ -240,11 +249,11 @@ $$\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \ldots$$
 
 is odd.
 
-### Other Examples of Odd Functions
+## Other Examples of Odd Functions
 
-<img src="files/pictures/odd_funcs.png" width="75%">
+![Examples of odd functions](pictures/odd_funcs.png)
 
-### Observations
+## Observations
 
 * For odd functions $f(0) = 0$.
 * If $f(0) = 0$ we should not conclude that $f(t)$ is an odd function. *c.f.*
@@ -255,7 +264,7 @@ $f(t) = t^2$ is even, not odd.
 In the following $f_e(t)$ will donate an even function and $f_o(t)$ an odd
 function.
 
-### Time integrals of even and odd functions
+## Time integrals of even and odd functions
 
 For an even function $f_e(t)$
 
@@ -265,7 +274,7 @@ For an odd function $f_o(t)$
 
 $$\int_{-T}^{T}f_o(t) dt = 0$$
 
-### Even/Odd Representation of an Arbitrary Function
+## Even/Odd Representation of an Arbitrary Function
 
 A function $f(t)$ that is neither even nor odd can be represented as an even
 function by use of:
@@ -283,11 +292,11 @@ $$f(t) = f_e(t) + f_o(t)$$
 That is, any function of time can be expressed as the sum of an even and an odd
 function.
 
-### Example 3
+## Example 3
 
 Is the Dirac delta $\delta(t)$ an even or an odd function of time?
 
-### Solution
+## Solution
 
 Let $f(t)$ be an arbitrary function of time that is continous at $t=t_0$. Then
 by the sifting property of the delta function
@@ -298,6 +307,8 @@ and for $t_0 = 0$
 
 $$\int_{-\infty}^{\infty} f(t)\delta(t) dt = f(0)$$
 
+----
+
 Also for an even function $f_e(t)$
 
 $$\int_{-\infty}^{\infty} f_e(t)\delta(t) dt = f_e(0)$$
@@ -306,7 +317,7 @@ and for an odd function $f_o(t)$
 
 $$\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0)$$
 
-### Even or odd?
+## Even or odd?
 
 An odd function $f_o(t)$ evaluated at $t=0$ is zero, that is $f_o(0) = 0$.
 
@@ -316,10 +327,18 @@ $$\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0) = 0$$
 
 Hence the product $f_o(t)\delta(t)$ is odd function of $t$.
 
+----
+
 Since $f_o(t)$ is odd, $\delta(t)$ must be even because only an *even* function
 multiplied by an *odd* function can result in an *odd* function.
 
 (Even times even or odd times odd produces an even function. See earlier slide)
+
+## Is the Dirac delta $\delta(t)$ an even or an odd function of time?
+
+$\delta(t)$ is an *even* function.
+
+This will be useful to us later.
 
 ## Next Time
 
@@ -342,5 +361,5 @@ example see Solved Problems 1.5&ndash;1.8 and Supplementary Problems
 
 ## Lab Work
 
-In the lab, on Monday, we will demostrate the solution of Examples 1 and 2 in
+In the lab, a week on Friday, we will demostrate the solution of Examples 1 and 2 in
 Matlab.
