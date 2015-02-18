@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="the-impulse-response-and-convolution-part-1">The Impulse Response and Convolution (Part 1)</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week4/convolution.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week4/convolution.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week4/convolution.md">convolution.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="scope-and-background-reading">Scope and Background Reading</h2>
+<p>This session is an introduction to the impulse response of a system and time convolution. Together, these can be used to determine a Linear Time Invariant (LTI) system's time response to any signal.</p>
+<p>As we shall see, in the determination of a system's response to a signal input, time convolution involves integration by parts and is a tricky operation. But time convolution becomes multiplication in the Laplace Transform domain, and is much easier to apply.</p>
+<p>The material in this presentation and notes is based on Chapter 6 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> and builds on the time response of a state-space model that was developed in the <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources%20/blob/master/week4/state_space.ipynb">previous session</a>.</p>
+<h2 id="agenda">Agenda</h2>
+<p>The material to be presented will need two sessions.</p>
+<p><em>Today</em></p>
+<ul>
+<li>The Impulse Response of a System in Time Domain</li>
+<li>Even and Odd Functions of Time</li>
+</ul>
+<p><em>Next Session</em></p>
+<ul>
+<li>Time Convolution</li>
+<li>Graphical Evaluation of the Convolution Integral</li>
+<li>System Response by Convolution</li>
+<li>System Response by Laplace</li>
+</ul>
+<h1 id="the-impulse-response-of-a-system-in-time-domain">The Impulse Response of a System in Time Domain</h1>
+<h2 id="the-impulse-response-of-a-system-in-time-domain-1">The Impulse Response of a System in Time Domain</h2>
+<p>In the last session we showed that if the state-space model of a SISO system was:</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{\dot x}} = {\bf{Ax}} + {\bf{B}}u\\
+y = {\bf{Cx}} + du
+\end{array}\]</span></p>
+<p>the state response would be</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + \int_0^t {{e^{{\bf{A}}(t - \tau
+)}}{\bf{B}}u(\tau )d\tau } \]</span></p>
+<p>which for our later convenience can be rewritten</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{A}}t}}{{\bf{x}}_0} + {e^{{\bf{At}}}}\int_0^t {{e^{ -
+{\bf{A}}\tau }}{\bf{B}}u(\tau )d\tau } \]</span></p>
+<h2 id="impulse-response-1">Impulse response (1)</h2>
+<p>If we assume zero initial conditions <span class="math">\(\bf{x}_0 = \bf{0}\)</span> and <span class="math">\(u(t) = \delta(t)\)</span> (Matlab <code>dirac</code>), then the state-reponse to an impulse input is:</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}\int_0^t {{e^{ - {\bf{A}}\tau
+}}{\bf{B}}\delta(\tau )d\tau } \]</span></p>
+<p>Using the <em>sifting property</em> of the delta function</p>
+<p><span class="math">\[\int_{-\infty}^{\infty}f(t)\delta(\tau)d\tau = f(0)\]</span></p>
+<p>then</p>
+<p><span class="math">\[{\bf{x}}(t) = {e^{{\bf{At}}}}{\bf{B}}\]</span></p>
+<p>so, the impulse response is:</p>
+<p><span class="math">\[y(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}} + d\delta (t)\]</span></p>
+<h2 id="impulse-response-2">Impulse response (2)</h2>
+<p>In most systems that you will encounter on this course the scalar quantity <span class="math">\(d = 0\)</span> so the impulse response, which we donate as <span class="math">\(h(t)\)</span>, is</p>
+<p><span class="math">\[h(t) = {\bf{C}}{e^{{\bf{At}}}}{\bf{B}}u_0(t)\]</span></p>
+<p>where the unit step function <span class="math">\(u_0(t)\)</span> has been included to indicate that the impulse response is only defined for <span class="math">\(t&gt;0\)</span>.</p>
+<div class="notes">
+<h2 id="note">Note</h2>
+<p>In the text book, Karris presents the impulse response as</p>
+<p><span class="math">\[{\mathbf{x}}(t) = {\mathbf{h}}(t) = {e^{{\mathbf{A}}t}}{\mathbf{B}}{u_0}(t)\]</span></p>
+<p>but this is the impulse response of the state variables and is a vector quantity.</p>
+<p>You need to introduce the output equation to find the actual scalar impulse response <span class="math">\(h(t)\)</span> which is for a SISO system.</p>
+<p>Karris gets away with this in his book because he uses voltages and currents as <em>physical state variables</em> and the coefficient of the corresponding <span class="math">\(\bf{C}\)</span> matrix will be unity.</p>
+<p>In general, we cannot assume that this will be true so I prefer to be a little more careful in my presentation.</p>
+</div>
+<h2 id="example-1">Example 1</h2>
+<p>Compute the impulse response of the series RC circuit shown below in terms of the constants <span class="math">\(R\)</span> and <span class="math">\(C\)</span>, where the response is considered to be the voltage across the capicitor, and <span class="math">\(v_c(0^-)=0\)</span>. Then, compute the current through the capacitor.</p>
+<div class="figure">
+<img src="pictures/c_example1.png" alt="Example 1" />
+<p class="caption">Example 1</p>
+</div>
+<h2 id="example-2">Example 2</h2>
+<p>In the RLC circuit shown below, compute the impulse response <span class="math">\(h(t)=v_c(t)\)</span> given that the initial conditions are zero, that is <span class="math">\(i_L(0^-)=0\)</span> and <span class="math">\(V_c(0^-)=0\)</span>.</p>
+<div class="figure">
+<img src="pictures/c_example2.png" alt="Example 2" />
+<p class="caption">Example 2</p>
+</div>
+<h2 id="solution">Solution</h2>
+<p>We tackled this problem as Example 6 in the previous session and found that:</p>
+<p><span class="math">\[\begin{array}{l}
+{\bf{B}} = \left[ {\begin{array}{*{20}{c}}
+4\\
+0
+\end{array}} \right]\\
+{e^{{\bf{A}}t}} = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ -
+3t}}}\\
+{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} -
+\frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]
+\end{array}\]</span></p>
+<p>so the impulse response of the state variables is:</p>
+<p><span class="math">\[\begin{array}{c}
+{\bf{x}}(t) = {e^{{\bf{A}}t}}{\bf{B}}{u_0}(t) = \left[ {\begin{array}{*{20}{c}}
+{ - \frac{1}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}&amp;{ - 2{e^{ - t}} + 2{e^{ - 3t}}}\\
+{\frac{3}{8}{e^{ - t}} + \frac{3}{8}{e^{ - 3t}}}&amp;{\frac{3}{2}{e^{ - t}} - \frac{1}{2}{e^{ - 3t}}}
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+4\\
+0
+\end{array}} \right]{u_0}(t)\\
+ = \left[ {\begin{array}{*{20}{c}}
+{ - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
+{\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
+\end{array}} \right]{u_0}(t
+\end{array}\]</span></p>
+<h2 id="impulse-response">Impulse response</h2>
+<p>In Example 6 in the previous session, we defined <span class="math">\(x_1 = i_L\)</span> and <span class="math">\(x_2 = v_c\)</span> so if we want the circuit output to be the capacitor voltage, the output vector <span class="math">\(\bf{C}\)</span> will be</p>
+<p><span class="math">\[{\bf{C}} = \left[ {\begin{array}{*{20}{c}}
+0&amp;1
+\end{array}} \right]\]</span></p>
+<p>so</p>
+<p><span class="math">\[\begin{array}{*{20}{l}}
+{h(t) = y(t) = {v_c}(t)}&amp; = &amp;{{\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}{u_0}(t)}\\
+{}&amp; = &amp;{\left[ {\begin{array}{*{20}{c}}
+0&amp;1
+\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+{ - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
+{\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
+\end{array}} \right]{u_0}(t)}\\
+{}&amp; = &amp;{\left( {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}} \right){u_0}(t) = \frac{3}{2}\left( {{e^{ - t}} + {e^{ - 3t}}} \right){u_0}(t)}
+\end{array}\]</span></p>
+<h1 id="even-and-odd-functions-of-time">Even and Odd Functions of Time</h1>
+<h2 id="even-and-odd-functions-of-time-1">Even and Odd Functions of Time</h2>
+<p>(** This should be revision! **)</p>
+<h2 id="why-do-we-care">Why do we care?</h2>
+<p>We need to be reminded of <em>even</em> and <em>odd</em> functions so that we can develop the idea of <em>time convolution</em> which is a means of determining the time response of any system for which we know its <em>impulse response</em> to any signal.</p>
+<p>The development requires us to find out if the Dirac delta function (<span class="math">\(\delta(t)\)</span>) is an <em>even</em> or an <em>odd</em> function of time.</p>
+<h2 id="even-functions-of-time">Even Functions of Time</h2>
+<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>even function</em> of time if the following relation holds</p>
+<p><span class="math">\[f(-t) = f(t)\]</span></p>
+<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span> the function <span class="math">\(f(t)\)</span> does not change.</p>
+<p>Polynomials with even exponents only, and with or without constants, are even functions. For example:</p>
+<p><span class="math">\[\cos t = 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \ldots\]</span></p>
+<p>is even.</p>
+<h2 id="other-examples-of-even-functions">Other Examples of Even Functions</h2>
+<div class="figure">
+<img src="pictures/even_funcs.png" alt="Even functions" />
+<p class="caption">Even functions</p>
+</div>
+<h2 id="odd-functions-of-time">Odd Functions of Time</h2>
+<p>A function <span class="math">\(f(t)\)</span> is said to be an <em>odd function</em> of time if the following relation holds</p>
+<p><span class="math">\[-f(-t) = f(t)\]</span></p>
+<p>that is, if we relace <span class="math">\(t\)</span> with <span class="math">\(-t\)</span>, we obtain the negative of the function <span class="math">\(f(t)\)</span>.</p>
+<p>Polynomials with odd exponents only, and no constants, are odd functions. For example:</p>
+<p><span class="math">\[\sin t = t - \frac{t^3}{3!} + \frac{t^5}{5!} - \frac{t^7}{7!} + \ldots\]</span></p>
+<p>is odd.</p>
+<h2 id="other-examples-of-odd-functions">Other Examples of Odd Functions</h2>
+<div class="figure">
+<img src="pictures/odd_funcs.png" alt="Examples of odd functions" />
+<p class="caption">Examples of odd functions</p>
+</div>
+<h2 id="observations">Observations</h2>
+<ul>
+<li>For odd functions <span class="math">\(f(0) = 0\)</span>.</li>
+<li>If <span class="math">\(f(0) = 0\)</span> we should not conclude that <span class="math">\(f(t)\)</span> is an odd function. <em>c.f.</em> <span class="math">\(f(t) = t^2\)</span> is even, not odd.</li>
+<li>The product of <em>two even</em> or <em>two odd</em> functions is an even function.</li>
+<li>The product of an even and an odd function, is an odd function.</li>
+</ul>
+<p>In the following <span class="math">\(f_e(t)\)</span> will donate an even function and <span class="math">\(f_o(t)\)</span> an odd function.</p>
+<h2 id="time-integrals-of-even-and-odd-functions">Time integrals of even and odd functions</h2>
+<p>For an even function <span class="math">\(f_e(t)\)</span></p>
+<p><span class="math">\[\int_{-T}^{T}f_e(t) dt = 2 \int_{0}^{T}f_e(t) dt\]</span></p>
+<p>For an odd function <span class="math">\(f_o(t)\)</span></p>
+<p><span class="math">\[\int_{-T}^{T}f_o(t) dt = 0\]</span></p>
+<h2 id="evenodd-representation-of-an-arbitrary-function">Even/Odd Representation of an Arbitrary Function</h2>
+<p>A function <span class="math">\(f(t)\)</span> that is neither even nor odd can be represented as an even function by use of:</p>
+<p><span class="math">\[f_e(t) = \frac{1}{2}\left[f(t)+f(-t)\right]\]</span></p>
+<p>or as an odd function by use of:</p>
+<p><span class="math">\[f_o(t) = \frac{1}{2}\left[f(t)-f(-t)\right]\]</span></p>
+<p>Adding these together, an abitrary signal can be represented as</p>
+<p><span class="math">\[f(t) = f_e(t) + f_o(t)\]</span></p>
+<p>That is, any function of time can be expressed as the sum of an even and an odd function.</p>
+<h2 id="example-3">Example 3</h2>
+<p>Is the Dirac delta <span class="math">\(\delta(t)\)</span> an even or an odd function of time?</p>
+<h2 id="solution-1">Solution</h2>
+<p>Let <span class="math">\(f(t)\)</span> be an arbitrary function of time that is continous at <span class="math">\(t=t_0\)</span>. Then by the sifting property of the delta function</p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t-t_0) dt = f(t_0)\]</span></p>
+<p>and for <span class="math">\(t_0 = 0\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f(t)\delta(t) dt = f(0)\]</span></p>
+<hr />
+<p>Also for an even function <span class="math">\(f_e(t)\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_e(t)\delta(t) dt = f_e(0)\]</span></p>
+<p>and for an odd function <span class="math">\(f_o(t)\)</span></p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0)\]</span></p>
+<h2 id="even-or-odd">Even or odd?</h2>
+<p>An odd function <span class="math">\(f_o(t)\)</span> evaluated at <span class="math">\(t=0\)</span> is zero, that is <span class="math">\(f_o(0) = 0\)</span>.</p>
+<p>Hence</p>
+<p><span class="math">\[\int_{-\infty}^{\infty} f_o(t)\delta(t) dt = f_o(0) = 0\]</span></p>
+<p>Hence the product <span class="math">\(f_o(t)\delta(t)\)</span> is odd function of <span class="math">\(t\)</span>.</p>
+<hr />
+<p>Since <span class="math">\(f_o(t)\)</span> is odd, <span class="math">\(\delta(t)\)</span> must be even because only an <em>even</em> function multiplied by an <em>odd</em> function can result in an <em>odd</em> function.</p>
+<p>(Even times even or odd times odd produces an even function. See earlier slide)</p>
+<h2 id="is-the-dirac-delta-deltat-an-even-or-an-odd-function-of-time">Is the Dirac delta <span class="math">\(\delta(t)\)</span> an even or an odd function of time?</h2>
+<p><span class="math">\(\delta(t)\)</span> is an <em>even</em> function.</p>
+<p>This will be useful to us later.</p>
+<h2 id="next-time">Next Time</h2>
+<p>We will conclude our discussion of <em>Time Convolution</em> by presenting:</p>
+<ul>
+<li>Time Convolution</li>
+<li>Graphical Evaluation of the Convolution Integral</li>
+<li>System Response by Convolution</li>
+<li>System Response by Laplace</li>
+</ul>
+<h2 id="homework">Homework</h2>
+<p>You should be able to do Question 1 from Section 6.7 of the textbook.</p>
+<p>If you want to refresh your knowledge of even and odd functions, Chapter 1 of <a href="https://www.dawsonera.com/abstract/9780071634731">Schaum's Outline on Signals and Systems (Hsu, 2nd Ed.)</a> has some examples. For example see Solved Problems 1.5–1.8 and Supplementary Problems 1.48–1.50$.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab, a week on Friday, we will demostrate the solution of Examples 1 and 2 in Matlab.</p>
+</body>
+</html>
