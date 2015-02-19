@@ -17,7 +17,7 @@ a = [1, 4, 5, 6];
 % $r(s) = s^4 +s^2 + 1$ are entered as
 q = [1, 2, 0];
 r = [1, 0, 2, 0, 1];
-%% Polynomials - Factorised form�
+%% Polynomials - Factorised form¶
 % 
 % $$G(s) = \frac{(s+1)(s+3)}{s(s+2)(s+4)}$$
 %
@@ -50,7 +50,7 @@ K = 1;
 G = zpk(z,p,K)
 %%
 % The expanded numerator and denominator form of the transfer function is readily 
-% obtained by using a “data extraction” function.
+% obtained by using a â€œdata extractionâ€ function.
 [num,den]=tfdata(G,'v')
 %%
 % LTI system objects can also be created from the expanded form of a transfer function 
@@ -83,7 +83,7 @@ G3=zpk(z,p,K,'InputName','Armature Voltage (V)',...
 % commands like:
 get(G3,'notes')
 %%
-% One can also access the documentation using an “object reference” notation
+% One can also access the documentation using an â€œobject referenceâ€ notation
 in=G3.InputName, out=G3.OutputName
 %%
 % All the documentation available on an LTI system object may be extracted with a 
@@ -124,7 +124,7 @@ G5 = tf(G)
 %
 % $$G_s(s) = G_1(s)G_2(s)$$ 
 % 
-% is obtained using the “|*|” (multiplication) operator:
+% is obtained using the |*| (multiplication) operator:
 G1=tf([1 1],[1 3]);
 G2=tf(10,conv([1 0],[1 2])); % conv is polynomial multiplication
 Gs=G1*G2 % series connection of two LTI objects
