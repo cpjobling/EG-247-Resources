@@ -102,7 +102,7 @@ Ds = conv(d1,d2); % Polynomial multiplication: gives expanded D(s)
 %
 % $$F_5(s) \frac{s^2 + 3s + 1}{(s + 1)^3(s + 2)^2}$$
 %% Example 2
-% use the function |collect| to expand (s + 1)^3 * (s + 2)^2 to
+% use the function |collect| to expand |(s + 1)^3 * (s + 2)^2| to
 % a polynomial. Use this result and |residue| to verify the result of
 % example 1.
 %% Non-proper rational polynomials

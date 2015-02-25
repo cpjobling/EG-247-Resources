@@ -13,55 +13,68 @@ doc laplace
 %% Tranform Tables
 % Let's start our exploration by verifying some simple transforms from the
 % tables
-syms s t f(t) a b n;
+syms s t f(t) a b n omega;
 %% 
 % Dirac Delta
+% 
 % $$\delta(t)$$
+% 
 delta(t) = dirac(t);
 laplace(delta(t))
 %%
 % Unit Step
+%
 % $$u_0(t)$$
 u0(t) = heaviside(t);
 laplace(u0(t))
 %% Unit Ramp 
+%
 % $$u_1(t)$$
 u1(t) = t*u0(t);
 laplace(u1(t))
 %% Parabolic function
+%
 % $$u_2(t)$$
 u2(t) = t^2*u0(t);
 laplace(u2(t))
 %% General power of t 
+%
 % $$u_n(t)$$
 un(t) = (t^n)*u0(t);
 laplace(un(t))
 %% What is gamma?
 % See the development in Section 2.3.3 of the textbook
+%
 % $$\Gamma (n + 1) = n!$$
 %
 factorial(5) == gamma(5 + 1) % In MATLAB 1 == TRUE
 %%
 laplace((t^5)*u0(t))
 %% Delayed delta
+%
 % $$\delta(t - a)$$
 laplace(delta(t-a))
 %% Example 1
 % 
-% Use MATLAB to find the laplace transforms of exp(-a*t)*u0(t), t*exp(a*t),
-% t^3*exp(b*t)*u0(t), cos(b*t)*u0(t), sin(b*t)*u0(t)
+% Use MATLAB to find the laplace transforms of |exp(-a*t)*u0(t)|, |t*exp(a*t)|,
+% |t^3*exp(b*t)*u0(t)|, |cos(b*t)*u0(t)|, |sin(b*t)*u0(t)|
+%% 
+% Here's the first example done for you
+laplace(exp(-a*t)*u0(t))
 %% Example 2
 %
-% Find the Laplace Transform of (t^n)*exp(-b*t)*u0(t)
+% Find the Laplace Transform of |(t^n)*exp(-b*t)*u0(t)|
 %% Example 3
 %
 % Use matlab to compute the Laplace Transfrom of
-% exp(-a*t)*sin(omega*t)*u0(t) and exp(-a*t)*cos(omega*t)*u0(t)
+% |exp(-a*t)*sin(omega*t)*u0(t)| and |exp(-a*t)*cos(omega*t)*u0(t)|
 %% Laplace Transform Properties
 % Give examples to prove each of the following:
+% 
 % # The Linearity Property
-% # The Time Shifting Property
-% # The Frequency Shifting Property
+% # The Time Shifting Property (use |syms T positive| to give Matlab a
+% hint!)
+% # The Frequency Shifting Property 
 % # The Scaling Property
 % # The Transform of First, Second and nth-Order Time Derviatives
 % # The Integration in Time Domain Property
@@ -80,7 +93,7 @@ laplace(delta(t-a))
 % repeats every 3 seconds.
 %% Example 7
 %
-% Use MATLAB to plot a fully rectified sinusoidal signal abs(sin wt) over
+% Use MATLAB to plot a fully rectified sinusoidal signal |abs(sin(omega*t))| over
 % 3 full cycles. Find the Laplace Transform of this Signal.
 %% Homework
 %
