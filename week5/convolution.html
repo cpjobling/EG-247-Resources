@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="the-impulse-response-and-convolution-part-2">The Impulse Response and Convolution (Part 2)</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week5/convolution.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week5/convolution.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week5/convolution.md">convolution.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="scope-and-background-reading">Scope and Background Reading</h2>
+<p>This session continues our introduction to time convolution.</p>
+<p>As we shall see, in the determination of a system's response to a signal input, time convolution involves integration by parts and is a tricky operation. But time convolution becomes <em>multiplication</em> in the Laplace Transform domain, and is much easier to apply.</p>
+<p>The material in this presentation and notes is based on Chapter 6 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> and builds on the time response of a state-space model that was developed in the <a href="http://cpjobling.github.io/EG-247-Resources/week4/convolution.html">previous session</a>.</p>
+<h2 id="agenda">Agenda</h2>
+<p>The material to be presented will need two sessions.</p>
+<p><em>Last Session</em></p>
+<ul>
+<li>The Impulse Response of a System in Time Domain</li>
+<li>Even and Odd Functions of Time</li>
+</ul>
+<p><em>This Session</em></p>
+<ul>
+<li>Time Convolution</li>
+<li>Graphical Evaluation of the Convolution Integral</li>
+<li>System Response by Convolution</li>
+<li>System Response by Laplace</li>
+</ul>
+<h1 id="time-convolution">Time Convolution</h1>
+<h2 id="time-convolution-1">Time Convolution</h2>
+<p>Consider a system whose input is the Dirac delta (<span class="math">\(\delta(t)\)</span>), and its output is the impulse response <span class="math">\(h(t)\)</span>. We can represent the inpt-output relationship as a block diagram</p>
+<div class="figure">
+<img src="pictures/conv1.png" alt="Impulse response" />
+<p class="caption">Impulse response</p>
+</div>
+<h2 id="in-general">In general</h2>
+<div class="figure">
+<img src="pictures/conv2.png" alt="General impulse response" />
+<p class="caption">General impulse response</p>
+</div>
+<h2 id="add-an-arbitrary-input">Add an arbitrary input</h2>
+<p>Let <span class="math">\(u(t)\)</span> be any input whose value at <span class="math">\(t=\tau\)</span> is <span class="math">\(u(\tau)\)</span>, Then because of the sampling property of the delta function</p>
+<div class="figure">
+<img src="pictures/conv3.png" alt="Response to an arbitrary input (1)" />
+<p class="caption">Response to an arbitrary input (1)</p>
+</div>
+<p>(output is <span class="math">\(u(\tau)h(t-\tau)\)</span>)</p>
+<h2 id="integrate-both-sides">Integrate both sides</h2>
+<p>Integrating both sides over all values of <span class="math">\(\tau\)</span> (<span class="math">\(-\infty &lt; \tau &lt; \infty\)</span>) and making use of the fact that the delta function is even, i.e.</p>
+<p><span class="math">\[\delta(t-\tau)=\delta(\tau-t)\]</span></p>
+<hr />
+<p>We have:</p>
+<div class="figure">
+<img src="pictures/conv4.png" alt="Response to an arbitrary input (2)" />
+<p class="caption">Response to an arbitrary input (2)</p>
+</div>
+<h2 id="use-the-sifting-property-of-delta">Use the sifting property of delta</h2>
+<p>The second integral on the left side reduces to <span class="math">\(u(t)\)</span></p>
+<div class="figure">
+<img src="pictures/conv5.png" alt="Response to an arbitrary input (3)" />
+<p class="caption">Response to an arbitrary input (3)</p>
+</div>
+<h2 id="the-convolution-integral">The Convolution Integral</h2>
+<p>The integral</p>
+<p><span class="math">\[{\int_{-\infty}^{\infty} u(\tau)h(t-\tau)d\tau}\]</span></p>
+<p>or</p>
+<p><span class="math">\[{\int_{-\infty}^{\infty} u(t-\tau)h(\tau)d\tau}\]</span></p>
+<p>is known as the <em>convolution integral</em>; it states that if we know the impulse response of a system, we can compute its time response to any input by using either of the integrals.</p>
+<p>The convolution integral is usually written <span class="math">\(u(t)*h(t)\)</span> or <span class="math">\(h(t)*u(t)\)</span> where the asterisk (<span class="math">\(*\)</span>) denotes convolution.</p>
+<h2 id="convolution-and-state-space-models">Convolution and State-Space Models</h2>
+<p>In the previous session, we found that the impulse response of a SISO system (with <span class="math">\(d=0\)</span>) was</p>
+<p><span class="math">\[h(t) = {\bf{C}}{e^{{\bf{A}}t}}{\bf{B}}\]</span></p>
+<p>Therefore, if we know <span class="math">\(h(t)\)</span>, we can use the convolution integral to compute the response <span class="math">\(y(t)\)</span> to any input <span class="math">\(u(t)\)</span> using the relation</p>
+<p><span class="math">\[\begin{array}{l}
+h(t) = \int_{ - \infty }^\infty  {{\bf{C}}{e^{{\bf{A}}(t - \tau
+)}}{\bf{B}}u(\tau )d\tau } \\
+h(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_{ - \infty }^\infty  {{e^{ - {\bf{A}}\tau
+}}{\bf{B}}u(\tau )d\tau }
+\end{array}\]</span></p>
+<h1 id="graphical-evaluation-of-the-convolution-integral">Graphical Evaluation of the Convolution Integral</h1>
+<h2 id="graphical-evaluation-of-the-convolution-integral-1">Graphical Evaluation of the Convolution Integral</h2>
+<p>The convolution integral is most conveniently evaluated by a graphical evaluation. The text book gives three examples (6.4-6.6) which we will demonstrate using a <a href="http://www.mathworks.co.uk/matlabcentral/fileexchange/25199-graphical-demonstration-of-convolution">graphical visualization tool</a> developed by Teja Muppirala of the Mathworks.</p>
+<p>The tool: <a href="files/matlab/convolutiondemo.m">convolutiondemo.m</a> (see <a href="files/matlab/license.txt">license.txt</a>).</p>
+<h2 id="convolution-by-graphical-method---summary-of-steps">Convolution by Graphical Method - Summary of Steps</h2>
+<p>For simplicity, we give the rules for <span class="math">\(u(t)\)</span>, but the procedure is the same if we reflect and slide <span class="math">\(h(t)\)</span></p>
+<ol style="list-style-type: decimal">
+<li>Substitute <span class="math">\(u(t)\)</span> with <span class="math">\(u(\tau)\)</span> – this is a simple change of variable. It doesn't change the definition of <span class="math">\(u(t)\)</span>.</li>
+<li>Reflect <span class="math">\(u(\tau)\)</span> about the vertical axis to form <span class="math">\(u(-\tau)\)</span></li>
+<li>Slide <span class="math">\(u(-\tau)\)</span> to the right a distance <span class="math">\(t\)</span> to obtain <span class="math">\(u(t-\tau)\)</span></li>
+<li>Multiply the two signals to obtain the product <span class="math">\(u(t-\tau)h(\tau)\)</span></li>
+<li>Integrate the product over all <span class="math">\(t\)</span> from <span class="math">\(-\infty\)</span> to <span class="math">\(\infty\)</span>.</li>
+</ol>
+<h2 id="example-1">Example 1</h2>
+<p>(This is example 6.4 in the textbook)</p>
+<p>The signals <span class="math">\(h(t)\)</span> and <span class="math">\(u(t)\)</span> are shown below. Compute <span class="math">\(h(t)*u(t)\)</span> using the graphical technique.</p>
+<p><img src="pictures/conv_ex1.png" alt="Example 1" />_</p>
+<h2 id="prepare-for-convolutiondemo">Prepare for convolutiondemo</h2>
+<p>To prepare this problem for evaluation in the <code>convolutiondemo</code> tool, we need to determine the Laplace Transforms of <span class="math">\(h(t)\)</span> and <span class="math">\(u(t)\)</span>.</p>
+<h2 id="ht">h(t)</h2>
+<p>The signal <span class="math">\(h(t)\)</span> is the straight line <span class="math">\(f(t)=-t+1\)</span> but this is defined only between <span class="math">\(t = 0\)</span> and <span class="math">\(t = 1\)</span>. We thus need to gate the function by multiplying it by <span class="math">\(u_0(t)-u_0(t-1)\)</span> as illustrated below:</p>
+<div class="figure">
+<img src="pictures/gate_h.png" alt="Gating f(t) with u_0(t)-u_0(t-1) to get h(t)" />
+<p class="caption">Gating <span class="math">\(f(t)\)</span> with <span class="math">\(u_0(t)-u_0(t-1)\)</span> to get <span class="math">\(h(t)\)</span></p>
+</div>
+<hr />
+<p>Thus</p>
+<p><span class="math">\[\begin{array}{c}
+(t) = ( - t + 1)({u_0}(t) - {u_0}(t - 1))\\
+ = ( - t + 1){u_0}(t) - ( - (t - 1){u_0}(t - 1))\\
+ =  - t{u_0}(t) + {u_0}(t) + (t - 1){u_0}(t - 1) \Leftrightarrow H(s) = - \frac{1}{{{s^2}}} + \frac{1}{s} + \frac{{{e^{ - s}}}}{{{s^2}}}
+\end{array}\]</span></p>
+<p><span class="math">\[H(s) = \frac{s^2 + e^{-s} - 1}{s^2}\]</span></p>
+<h2 id="ut">u(t)</h2>
+<p>The input <span class="math">\(u(t)\)</span> is the gating function:</p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-1)\]</span></p>
+<p>so</p>
+<p><span class="math">\[U(s) = \frac{1}{s}-\frac{e^{-s}}{s} = \frac{1 - e^{-s}}{s}\]</span></p>
+<h2 id="convolutiondemo-settings">convolutiondemo settings</h2>
+<ul>
+<li>Let <code>g = (1 - exp(-s))/s</code></li>
+<li>Let <code>h = (s + exp(-s) - 1)/s^2</code></li>
+<li>Set range <span class="math">\(-2 &lt; \tau &lt; -2\)</span></li>
+</ul>
+<h2 id="summary-of-result">Summary of result</h2>
+<ol style="list-style-type: decimal">
+<li>For <span class="math">\(t &lt; 0\)</span>: <span class="math">\(u(t-\tau)h(\tau) = 0\)</span></li>
+<li>For <span class="math">\(t = 0\)</span>: <span class="math">\(u(t-\tau) = u(-\tau)\)</span> and <span class="math">\(u(-\tau)h(\tau) = 0\)</span></li>
+<li>For <span class="math">\(0 &lt; t \le 1\)</span>: <span class="math">\(h*u = \int_0^t (1)(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_0^t = t-t^2/2\)</span></li>
+<li>For <span class="math">\(1 &lt; t \le 2\)</span>: <span class="math">\(h*u = \int_{t-1}^1(-\tau + 1)d\tau = \left.\tau - \tau^2/2\right|_{t-1}^{1} = t^2/2-2t+2\)</span></li>
+<li>For <span class="math">\(2 \le t\)</span>: <span class="math">\(u(t-\tau)h(\tau) = 0\)</span></li>
+</ol>
+<h2 id="example-2">Example 2</h2>
+<p>This is example 6.5 from the text book.</p>
+<p><span class="math">\[h(t) = e^{-t}\]</span></p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-1)\]</span></p>
+<p><span class="math">\[y(t) = \left\{ {\begin{array}{*{20}{l}}
+{0:t \le 0}\\
+{1 - {e^{ - t}}:\;0 &lt; t \le 1}\\
+{{e^{ - t}}\left( {e - 1} \right):\;1 &lt; t \le 2}\\
+{0:\;2 \le t}
+\end{array}} \right.\]</span></p>
+<h2 id="example-3">Example 3</h2>
+<p>This is example 6.6 from the text book.</p>
+<p><span class="math">\[h(t) = 2(u_0(t)-u_0(t-1))\]</span></p>
+<p><span class="math">\[u(t) = u_0(t)-u_0(t-2)\]</span></p>
+<p><span class="math">\[y(t) = \left\{ {\begin{array}{*{20}{l}}
+{0:t \le 0}\\
+{2t:\;0 &lt; t \le 1}\\
+{2:\;1 &lt; t \le 2}\\
+{-2t+6:\;2 &lt; t \le 3}\\
+{0:\;3 \le t}\\
+\end{array}} \right.\]</span></p>
+<h1 id="system-response-by-convolution">System Response by Convolution</h1>
+<h2 id="example-4">Example 4</h2>
+<p>This is example 6.7 from the textbook.</p>
+<p>For the circuit shown below, use the convolution integral to find the capacitor voltage when the input is the unit step function <span class="math">\(u_0(t)\)</span> and <span class="math">\(v_c(0^-)=0\)</span></p>
+<div class="figure">
+<img src="pictures/example4.jpg" alt="Example 4" />
+<p class="caption">Example 4</p>
+</div>
+<h2 id="solution">Solution</h2>
+<p><span class="math">\[h(t)=\frac{1}{RC}e^{-t/RC}u_0(t)\]</span></p>
+<p>which when <span class="math">\(C=1\; \mathrm{F}\)</span> and <span class="math">\(R=1\;\Omega\)</span> reduces to</p>
+<p><span class="math">\[h(t)=e^{-t}u_0(t)\]</span></p>
+<p>It is relatively straight forward to show that</p>
+<p><span class="math">\[y(t)=\left(1-e^{-t}\right)u_0(t)\]</span></p>
+<h1 id="system-response-by-laplace">System Response by Laplace</h1>
+<h2 id="system-response-by-laplace-1">System Response by Laplace</h2>
+<p>In the discussion of Laplace, we stated that</p>
+<p><span class="math">\[\mathcal{L} \left\{ f(t)*g(t)\right\} = F(s)G(s)\]</span></p>
+<p>We can use this property to make the solution of convolution problems even simpler.</p>
+<h2 id="example-5">Example 5</h2>
+<p>Solve Example 4 using Laplace.</p>
+<h2 id="solution-1">Solution</h2>
+<p><span class="math">\[h(t) = e^{−t}u_0(t) \Leftrightarrow H(s) = \frac{1}{s+1}\]</span></p>
+<p><span class="math">\[u(t) = u_0(t) \Leftrightarrow U(s) = \frac{1}{s}\]</span></p>
+<p><span class="math">\[y(t) = h(t)*u(t) \Leftrightarrow Y(s) = H(s)U(s) =
+\left(\frac{1}{s}\right)\times\left(\frac{1}{s+1}\right)\]</span></p>
+<hr />
+<p>By PFE</p>
+<p><span class="math">\[Y(s) = \frac{r_1}{s} + \frac{r_2}{s+1}\]</span></p>
+<p>The residues are <span class="math">\(r_1=1\)</span>, <span class="math">\(r_2=-1\)</span>, so</p>
+<p><span class="math">\[Y(s) = \frac{1}{s} - \frac{1}{s+1} \Leftrightarrow y(t) =
+\left(1-e^{-t}\right)u_0(t)\]</span></p>
+<h2 id="impulse-response-and-transfer-functions">Impulse Response and Transfer Functions</h2>
+<p>A consequence of Laplace is that the transform of the impulse response of a transfer function <span class="math">\(G(s)\)</span> is given by the transfer function itself.</p>
+<p><span class="math">\[y(t) = g(t)*\delta(t) \Leftrightarrow Y(s) = G(s).1 = G(s)\]</span></p>
+<p>Thus the Laplace transform of any system subject to an input <span class="math">\(u(t)\)</span> is simply</p>
+<p><span class="math">\[Y(s) = G(s)U(s)\]</span></p>
+<p>and</p>
+<p><span class="math">\[y(t) = \mathcal{L}^{-1} \left\{ G(s) U(s) \right\}\]</span></p>
+<hr />
+<p>Using partial fraction expansion (See lecture on the Inverse-Laplace transform) and transform tables, solution of a convolution problem by Laplace is usually simpler than using the convolution integral directly.</p>
+<p>And if the system is particularly complex we can always fall back on the State-Space solution:</p>
+<p><span class="math">\[y(t) = {\bf{C}}{e^{{\bf{A}}t}}\int_0^t {{e^{ - {\bf{A}}\tau }}{\bf{B}}u(\tau
+)d\tau } \]</span></p>
+<h2 id="homework">Homework</h2>
+<p>You should be able to do any of the questions from Section 6.7 of the textbook.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab we will get you to play with <code>convolutiondemo</code>. We will also demonstrate that the solution of the examples in this presentation can readily be solved using Laplace.</p>
+</body>
+</html>
