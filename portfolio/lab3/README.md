@@ -1,4 +1,4 @@
-# EG-247 Signals and Systems Week 4: Lab 3
+# Week 4: Lab 3: Laplace Transforms for Circuit Analysis
 
 These examples have been adapted from Chapter 4 of <a href="" target="_blank">[Stephen Karris, Signals and Systems : With MATLAB Computing and Simulink Modeling (5th Edition)](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416).
 
