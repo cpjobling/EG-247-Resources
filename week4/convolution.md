@@ -171,7 +171,7 @@ $$\begin{array}{c}
  = \left[ {\begin{array}{*{20}{c}}
 { - 2{e^{ - t}} + 6{e^{ - 3t}}}\\
 {\frac{3}{2}{e^{ - t}} + \frac{3}{2}{e^{ - 3t}}}
-\end{array}} \right]{u_0}(t
+\end{array}} \right]{u_0}(t)
 \end{array}$$
 
 ## Impulse response
