@@ -198,9 +198,9 @@ $$U(s) = \frac{1}{s}-\frac{e^{-s}}{s} = \frac{1 - e^{-s}}{s}$$
 
 ## convolutiondemo settings
 
-* Let `g = (1 - exp(-s))/s`
 * Let `h = (s + exp(-s) - 1)/s^2`
-* Set range $-2 < \tau < -2$
+* Let `g = (1 - exp(-s))/s`
+* Set range $-2 < \tau < 2$
 
 
 ## Summary of result

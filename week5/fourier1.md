@@ -10,7 +10,7 @@ Office Hours: 12:00-13:00 Mondays
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week5/fourier1.html
   ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week5/fourier1.pdf).
 
-  The source code of this presentation is available in Markdown format from GitHub: [convolution.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week5/fourier1.md).
+  The source code of this presentation is available in Markdown format from GitHub: [fourier1.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week5/fourier1.md).
 
 The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
 also contains the source code for all the Matlab/Simulink
@@ -411,4 +411,4 @@ This concludes our introduction to Fourier series.
 
 ## Lab Work
 
-In the lab, a week on Friday, we will compute more Trigonometric Fourier series
+In the lab in week 7 we will compute some Trigonometric Fourier series
