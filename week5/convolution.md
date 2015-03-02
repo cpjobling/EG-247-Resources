@@ -178,7 +178,7 @@ by $u_0(t)-u_0(t-1)$ as illustrated below:
 Thus
 
 $$\begin{array}{c}
-(t) = ( - t + 1)({u_0}(t) - {u_0}(t - 1))\\
+h(t) = ( - t + 1)({u_0}(t) - {u_0}(t - 1))\\
  = ( - t + 1){u_0}(t) - ( - (t - 1){u_0}(t - 1))\\
  =  - t{u_0}(t) + {u_0}(t) + (t - 1){u_0}(t - 1) \Leftrightarrow H(s) = - \frac{1}{{{s^2}}} + \frac{1}{s} + \frac{{{e^{ - s}}}}{{{s^2}}}
 \end{array}$$
