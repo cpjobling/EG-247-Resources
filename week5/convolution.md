@@ -183,7 +183,7 @@ h(t) = ( - t + 1)({u_0}(t) - {u_0}(t - 1))\\
  =  - t{u_0}(t) + {u_0}(t) + (t - 1){u_0}(t - 1) \Leftrightarrow H(s) = - \frac{1}{{{s^2}}} + \frac{1}{s} + \frac{{{e^{ - s}}}}{{{s^2}}}
 \end{array}$$
 
-$$H(s) = \frac{s^2 + e^{-s} - 1}{s^2}$$
+$$H(s) = \frac{s + e^{-s} - 1}{s^2}$$
 
 ## u(t)
 
