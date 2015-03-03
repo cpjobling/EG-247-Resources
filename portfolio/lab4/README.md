@@ -35,3 +35,11 @@ Starting from the circuit (Fig. 5.7 from Karris, 2012: p5-22):
 5. Compare your simulation results with the responses produced by the script.
 
 Save and add your copy of the modified `rlc.m` file plus the Simulink model (suggested name `rlc.slx`) to your lab4 portfolio.
+
+## Lab Exercise 12: The Laplace Transform of the Transition Matrix
+
+![Figure 5.10](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_10.png)
+
+Adapt the script used in Lab Exercise 11 to determine the state-space model of the circuit shown in Figure 5.10. Use Matlab to show that the Laplace transform of the transition matrix <em>e</em><strong><sup>A</sup></strong><sup><strong></strong><em>t</em></sup> is defined by the inverse laplace transform of (s<strong>I</strong>-<strong>A</strong>)<sup>-1</sup>.</p>
+
+Save and add the resulting script as `ex12.m` to your lab4 portfolio.
