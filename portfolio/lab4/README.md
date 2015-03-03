@@ -43,3 +43,37 @@ Save and add your copy of the modified `rlc.m` file plus the Simulink model (sug
 Adapt the script used in Lab Exercise 11 to determine the state-space model of the circuit shown in Figure 5.10. Use Matlab to show that the Laplace transform of the transition matrix <em>e</em><strong><sup>A</sup></strong><sup><strong></strong><em>t</em></sup> is defined by the inverse laplace transform of (s<strong>I</strong>-<strong>A</strong>)<sup>-1</sup>.</p>
 
 Save and add the resulting script as `ex12.m` to your lab4 portfolio.
+
+## Lab Exercise 13: State-space and Transfer Functions
+
+In the circuit of Figure 5.11, all initial conditions are zero.
+
+![Fig 5.11](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_11.png)
+
+* Adapt the scripts from Lab Exercises 11 and 12 to determine the State Matrices <strong>A</strong>, <strong>B</strong>, <strong>C</strong> and <strong>D</strong> for Fig. 5.11.
+* Derive the transfer function using Y(s) = (<strong>C</strong>(s<strong>I</strong> - <strong>A</strong>)<sup>-1</sup><strong>B</strong> + <strong>D</strong>)U(s)
+* Use inverse Laplace transforms to determine the step response.
+* Compare with the result obtained by the state-space time-response method.
+* Put the state-space model and the transfer function model together in a model in Simulink, as shown in Figure 5.13 in the textbook. Verify that the two representations are equivalent.
+
+In Matlab we can define a state-space model using the LTI function `ss` as in:
+````matlab
+sys_ss = ss(A,B,C,D)
+````
+we can then convert it to a transfer function using
+
+````matlab
+sys_tf = tf(sys_ss)
+````
+Once we have the model in either of these forms, we can compute the step response using:
+
+````matlab
+step(sys)
+````
+
+* Complete Exercise 13 by creating a state-space LTI model from the calculated <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, and <strong>D</strong> matrices
+* Convert it into an LTI transfer function
+* Plot the step response for both forms
+* Compare the results with those of Simulink.
+
+Store the resulting script as a file `ex13.m` in your week4 portfolio.
