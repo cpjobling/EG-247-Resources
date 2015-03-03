@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="fourier-series-part-2">Fourier Series (Part 2)</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week6/fourier2.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week6/fourier2.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week6/fourier2.md">fourier2.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="agenda">Agenda</h2>
+<p><em>Last time</em></p>
+<ul>
+<li>Trigonometric Fourier Series</li>
+</ul>
+<p><em>This Time</em></p>
+<ul>
+<li>Exponents and Euler's Equation</li>
+<li>The Exponential Fourier series</li>
+<li>Symmetry in Exponential Fourier Series</li>
+<li>Examples</li>
+</ul>
+<p><em>Next Time</em></p>
+<ul>
+<li>Line spectra</li>
+<li>Power in periodic signals</li>
+<li>Steady-State Response of an LTI System to a Periodic Signals</li>
+</ul>
+<h2 id="scope-and-background-reading">Scope and Background Reading</h2>
+<p>This session continues our introduction to Fourier Series.</p>
+<p>Trigonometric Fourier series uses integration of a periodic signal multiplied by sines and cosines at the fundamental and harmonic frequencies. If performed by hand, this can a painstaking process. Even with the simplifications made possible by exploiting waveform symmetries, there is still a need to integrate cosine and sine terms, be aware of and able to exploit the tigonometrc identities, and the properties of <em>orthogonal functions</em> before we can arrive at the simplified solutions. This is why I concentrated on the properties and left the computation to a computer.</p>
+<hr />
+<p>However, by exploiting the exponential function <span class="math">\(e^{at}\)</span>, we can derive a method for calculating the coefficients of the harmonics that is much easier to calculate by hand and convert into an algorithm that can be executed by computer.</p>
+<p>The result is called the <em>Exponential Fourier Series</em> and we will develop it in this session.</p>
+<hr />
+<p>The material in this presentation and notes is based on Chapter 7 (Starting at Section 7.8) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the Required Reading List. Some clarificattion was needed and I used Chapter 4 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the Recommended Reading List for this.</p>
+<h1 id="exponents-and-eulers-equation">Exponents and Euler's Equation</h1>
+<h2 id="the-exponential-function-eat">The Exponential Function <span class="math">\(e^{at}\)</span></h2>
+<ul>
+<li>You should already be familiar with <span class="math">\(e^{at}\)</span> because it appears in the solution of differential equations; the transition matrix <span class="math">\(\phi(t)\)</span> used in the solution of state-space models; and the definition of the impulse response of a system.</li>
+<li>It's also a function that appears in the definition of the Laplace and Inverse Laplace Transform</li>
+<li>It's pops up again and again in tables and properties of the Laplace Transform.</li>
+</ul>
+<h2 id="case-when-a-is-real.">Case when a is real.</h2>
+<p>When <span class="math">\(a\)</span> is real the function <span class="math">\(e^{at}\)</span> will take one of the two forms illustrated below:</p>
+<div class="figure">
+<img src="pictures/expon.png" alt="Case when a is real." />
+<p class="caption">Case when <span class="math">\(a\)</span> is real.</p>
+</div>
+<div class="notes" *="" when="" $a="" <="" 0$="" the="" response="" is="" a="" decaying="" exponential="" (green="" line="" in="" plot)="" *="" when="" $a="0$" $e^{at}="1$" --="" essentially="" a="" model="" of="" dc="" *="" when="" $a="">
+<p>0$ the response is an <em>unbounded</em> increasing exponential (blue line in plot)</p>
+<p>Image generated with this Matlab script: <a href="matlab/expon.m">expon.m</a></p>
+</div>
+<h2 id="case-when-a-is-imaginary">Case when a is imaginary</h2>
+<p>This is the case that helps us simplify the computation of <em>sinusoidal Fourier series</em>.</p>
+<p>It was <a href="http://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> who discovered the <a href="http://en.wikipedia.org/wiki/Euler%27s_formula">formula</a> <span class="math">\[exp(j\omega t) = cos(\omega t) + jsin(\omega t)\]</span> visualized on the next slide.</p>
+<h2 id="case-when-a-is-imaginary-1">Case when a is imaginary</h2>
+<div class="figure">
+<img src="pictures/euler.png" alt="Case when a is imaginary" />
+<p class="caption">Case when <span class="math">\(a\)</span> is imaginary</p>
+</div>
+<h2 id="some-important-values-of-omega-t">Some important values of <span class="math">\(\omega t\)</span></h2>
+<p>These are useful when simplifying expressions that result from integrating functions that involve the imaginary exponential</p>
+<p>Give the following:</p>
+<ul>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 0\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = \pi/2\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = \pi\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 3\pi/2\)</span></li>
+<li><span class="math">\(e^{j\omega t}\)</span> when <span class="math">\(\omega t = 2\pi\)</span></li>
+</ul>
+<h2 id="solution">Solution</h2>
+<ul>
+<li>When <span class="math">\(\omega t = 0\)</span>: <span class="math">\(e^{j\omega t} = e^{j0} = 1\)</span></li>
+<li>When <span class="math">\(\omega t = \pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi/2} = j\)</span></li>
+<li>When <span class="math">\(\omega t = \pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi} = -1\)</span></li>
+<li>When <span class="math">\(\omega t = 3\pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j3\pi/2} = -j\)</span></li>
+<li>When <span class="math">\(\omega t = 2\pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j2\pi} e^{j0}= 1\)</span></li>
+</ul>
+<div class="notes">
+<p>It is also worth being aware that <span class="math">\(n\omega t\)</span>, when <span class="math">\(n\)</span> is an integer, produces rotations that often map back to the simpler cases given above. For example see <span class="math">\(e^{j2\pi}\)</span> above.</p>
+</div>
+<h2 id="case-where-a-is-complex">Case where a is complex</h2>
+<p>We shall not say much about this case except to note that the Laplace transform equation includes such a number. The variable <span class="math">\(s\)</span> in the Laplace Transform</p>
+<p><span class="math">\[\int_{0}^{\infty} f(t)e^{-st} dt\]</span></p>
+<p>is a <em>complex exponential</em>.</p>
+<p>The consequences of a complex <span class="math">\(s\)</span> have particular significance in the development of system stabilty theories and in control systems analysis and design. Look out for them in EG-243.</p>
+<h2 id="two-other-important-properties">Two Other Important Properties</h2>
+<p>By use of trig. identities, it is relatively straight forward to show that:</p>
+<p><span class="math">\[\cos \omega t = \frac{e^{j\omega t} + e^{-j\omega t}}{2}\]</span></p>
+<p>and</p>
+<p><span class="math">\[\sin \omega t = \frac{e^{j\omega t} - e^{-j\omega t}}{j2}\]</span></p>
+<p>We can use this result to convert the <em>Trigonometric Fourier Series</em> into an <em>Exponential Fourier Series</em> which has only one integral term to solve per harmonic.</p>
+<h1 id="the-exponential-fourier-series">The Exponential Fourier Series</h1>
+<h2 id="the-exponential-fourier-series-1">The Exponential Fourier Series</h2>
+<p>As we saw last time any periodic waveform <span class="math">\(f(t)\)</span> can be represented as</p>
+<p><span class="math">\[\begin{gathered}
+  f(t) = \frac{1}{2}{a_0} + {a_1}\cos \omega t + {a_2}\cos 2\omega t +  \cdots
+\\
+   + {b_1}\sin \omega t + {b_2}\sin 2\omega t +  \cdots  \\
+\end{gathered} \]</span></p>
+<p>If we replace the cos and sin terms with their imaginary exponential equivalents:</p>
+<p><span class="math">\[\begin{gathered}
+  f(t) = \frac{1}{2}{a_0} + {a_1}\left(\frac{e^{j\omega t} + e^{-j\omega
+t}}{2}\right) + {a_2}\left(\frac{e^{j2\omega t} + e^{-j2\omega t}}{2}\right) +
+\cdots  \\
+   + {b_1}\left(\frac{e^{j\omega t} - e^{-j\omega t}}{j2}\right) +
+{b_2}\left(\frac{e^{j2\omega t} - e^{-j2\omega t}}{j2}\right) +  \cdots  \\
+\end{gathered} \]</span></p>
+<h2 id="gouping-terms-with-same-exponents">Gouping terms with same exponents</h2>
+<p><span class="math">\[\begin{array}{l}
+f(t) =  \cdots  + \left( {\frac{{{a_2}}}{2} - \frac{{{b_2}}}{{j2}}} \right){e^{ - j2\omega t}} + \left( {\frac{{{a_1}}}{2} - \frac{{{b_1}}}{{j2}}} \right){e^{ - j\omega t}} + \frac{1}{2}{a_0}\\
+\quad  + \left( {\frac{{{a_1}}}{2} + \frac{{{b_1}}}{{j2}}} \right){e^{j\omega t}} + \left( {\frac{{{a_2}}}{2} + \frac{{{b_2}}}{{j2}}} \right){e^{j2\omega t}} +  \cdots
+\end{array}\]</span></p>
+<h2 id="new-coefficents">New coefficents</h2>
+<p>The terms in parentheses are usually denoted as</p>
+<p><span class="math">\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k+j
+b_k\right)\]</span></p>
+<p><span class="math">\[C_{k} = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-j
+b_k\right)\]</span></p>
+<p><span class="math">\[C_0 = \frac{1}{2}a_0\]</span></p>
+<h2 id="the-exponential-fourier-series-2">The Exponential Fourier Series</h2>
+<p><span class="math">\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_0 +
+C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} +\cdots \]</span></p>
+<p>or more compactly</p>
+<p><span class="math">\[f(t) = \sum_{k=-n}^{n}C_{k}e^{-jk \omega  t}\]</span></p>
+<p><strong>Important</strong></p>
+<p>The <span class="math">\(C_k\)</span> coefficents, except for <span class="math">\(C_0\)</span> are <em>complex</em> and appear in conjugate pairs so</p>
+<p><span class="math">\[C_{-k} = C_k^*\]</span></p>
+<h2 id="evaluation-of-the-complex-coefficients">Evaluation of the complex coefficients</h2>
+<p>The coefficients are obtained from the following expressions<sup>*</sup>:</p>
+<p><span class="math">\[C_k = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)e^{-jk(\omega t)}\,d(\omega t)\]</span></p>
+<p>or</p>
+<p><span class="math">\[C_k = \frac{1}{T}\int_{0}^{T}f(t)e^{-jk\omega t}\,dt\]</span></p>
+<p>These are much easier to derive and compute than the equivalent Trigonometric Fourier Series coefficients.</p>
+<div class="notes">
+<p><sup>*</sup> The analysis that leads to this result is provided between pages 7-31 and 7-32 of the text book. It is not a difficult proof, but we are more interested in the result.</p>
+</div>
+<h2 id="trigonometric-fourier-series-from-exponential-fourier-series">Trigonometric Fourier Series from Exponential Fourier Series</h2>
+<p>By substituting <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_{k}\)</span> back into the original expansion</p>
+<p><span class="math">\[C_k+C_{-k} = \frac{1}{2}\left(a_k-jb_k + a_k+jb_k\right)\]</span></p>
+<p>so</p>
+<p><span class="math">\[a_k = C_k + C_{-k}\]</span></p>
+<hr />
+<p>Similarly</p>
+<p><span class="math">\[C_k-C_{-k} = \frac{1}{2}\left(a_k-jb_k - a_k-jb_k\right)\]</span></p>
+<p>so</p>
+<p><span class="math">\[b_k = j\left(C_k - C_{-k}\right)\]</span></p>
+<p>Thus we can easily go back to the Trig. Fourier series if we want to.</p>
+<h1 id="symmetry-in-exponential-fourier-series">Symmetry in Exponential Fourier Series</h1>
+<h2 id="symmetry-in-exponential-fourier-series-1">Symmetry in Exponential Fourier Series</h2>
+<p>Since the coefficients of the Exponential Fourier Series are complex numbers, we can use symmetry to determine the form of the coefficients and thereby simplify the computation series for wave forms that have symmetry.</p>
+<h2 id="even-functions">Even Functions</h2>
+<p>For even functions, all coefficients <span class="math">\(C_k\)</span> are real.</p>
+<div class="notes">
+<p><strong>Proof</strong></p>
+<p>Recall</p>
+<p><span class="math">\[C_{-k} = \frac{1}{2}\left(a_k-\frac{b_k}{j}\right) =
+\frac{1}{2}\left(a_k+jb_k\right)\]</span></p>
+<p>and</p>
+<p><span class="math">\[C_k = \frac{1}{2}\left(a_k+\frac{b_k}{j}\right) = \frac{1}{2}\left(a_k-
+jb_k\right)\]</span></p>
+<p>From last session, even functions have no sine terms so the <span class="math">\(b_k\)</span> coefficients are 0. Therefore both <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are real.</p>
+</div>
+<h2 id="odd-functions">Odd Functions</h2>
+<p>For odd functions, all coefficients <span class="math">\(C_k\)</span> are imaginary.</p>
+<p>By a similar argument, all odd functions have no cosine terms so the <span class="math">\(a_k\)</span> coefficients are 0. Therefore both <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are imaginary.</p>
+<h2 id="half-wave-symmetry">Half-wave symmetry</h2>
+<p>If there is <em>half-wave symmetry</em>, <span class="math">\(C_k = 0\)</span> for <span class="math">\(n\)</span> even.</p>
+<div class="notes">
+<p><strong>Proof</strong></p>
+<p>From trigonometric Fourier Series, if there is half-wave symmetry, all even harnonics are zero, thus both <span class="math">\(a_k\)</span> and <span class="math">\(b_k\)</span> are zero for <span class="math">\(k\)</span> even. Hence <span class="math">\(C_{-k}\)</span> and <span class="math">\(C_k\)</span> are also zero when <span class="math">\(k\)</span> is even.</p>
+</div>
+<h2 id="no-symmetry">No symmetry</h2>
+<p>If there is no symmetry the Exponential Fourier Series of <span class="math">\(f(t)\)</span> is complex.</p>
+<h2 id="relation-of-c_-k-to-c_k">Relation of <span class="math">\(C_{-k}\)</span> to <span class="math">\(C_{k}\)</span></h2>
+<p><span class="math">\(C_{-k}\)</span> is <strong>always</strong> the complex conjugate of <span class="math">\(C_{k}\)</span></p>
+<p>So</p>
+<p><span class="math">\[C_{-k} = C_{k}^*\]</span></p>
+<h1 id="examples">Examples</h1>
+<h2 id="example-1">Example 1</h2>
+<p>Compute the Exponential Fourier Series for the square wave shown below assuming that <span class="math">\(\omega = 1\)</span></p>
+<div class="figure">
+<img src="pictures/sqw.png" alt="Example 1" />
+<p class="caption">Example 1</p>
+</div>
+<h2 id="some-questions-for-you">Some questions for you</h2>
+<ul>
+<li>Square wave is an [<strong>odd/even/neither</strong>] function?</li>
+<li>DC component is [<strong>zero/non-zero</strong>]?</li>
+<li>Square wave [<strong>has/does not have</strong>] half-wave symmetry?</li>
+</ul>
+<p>Hence</p>
+<ul>
+<li>$C_0 = $ [<strong>?</strong>]</li>
+<li>Coefficients <span class="math">\(C_k\)</span> are [<strong>real/imaginary/complex</strong>]?</li>
+<li>Subscripts <span class="math">\(k\)</span> are [<strong>odd only/even only/both odd and even</strong>]?</li>
+<li>What is the integral that needs to be solved for <span class="math">\(C_k\)</span>?</li>
+</ul>
+<h2 id="some-answers-for-you">Some answers for you</h2>
+<ul>
+<li>Square wave is an <strong>odd</strong> function!</li>
+<li>DC component is <strong>zero</strong>!</li>
+<li>Square wave <strong>has</strong> half-wave symmetry!</li>
+</ul>
+<p>Hence</p>
+<ul>
+<li><span class="math">\(C_0 = 0\)</span></li>
+<li>Coefficients <span class="math">\(C_k\)</span> are <strong>imaginary</strong>!</li>
+<li>Subscripts <span class="math">\(k\)</span> are <strong>odd only</strong>!</li>
+<li>What is the integral that needs to be solved for <span class="math">\(C_k\)</span>?</li>
+</ul>
+<hr />
+<p><span class="math">\[{C_k} = \frac{1}{{2\pi }}\int_0^{2\pi } f (t){e^{ - jk(\omega t)}}\,d(\omega t)\]</span></p>
+<p><span class="math">\[{C_k} = \frac{1}{{2\pi }}\left[ {\int_0^\pi  A {e^{ - jk(\omega t)}}\,d(\omega t) + \int_\pi ^{2\pi } {( - A)} {e^{ - jk(\omega t)}}\,d(\omega t)} \right]\]</span></p>
+<h2 id="solution-1">Solution</h2>
+<p>See notes for detailed evaluation of the integral that leads to this result</p>
+<div class="notes">
+<p><span class="math">\[\frac{1}{2\pi}\left[\int_{0}^{\pi} Ae^{-jk(\omega t)}\, d(\omega t) +
+\int_{\pi}^{2\pi} (-A)e^{-jk(\omega t)}\, d(\omega t)\right] =
+\frac{1}{2\pi}\left[\left.\frac{A}{-jk}e^{-jk(\omega
+t)}\right|_0^\pi+\left.\frac{-A}{-jk}e^{-jk(\omega
+t)}\right|_\pi^{2\pi}\right]\]</span></p>
+<p><span class="math">\[ = \frac{1}{2\pi}\left[\frac{A}{-jk}\left(e^{-jk\pi} -
+1\right)+\frac{A}{jk}\left(e^{-j2k \pi}-e^{-jk\pi}\right)\right] =
+\frac{A}{2j\pi k}\left(1 - e^{-jk\pi}+ e^{-j2k \pi}-e^{-jk\pi}\right)\]</span></p>
+<p><span class="math">\[\frac{A}{2j\pi k}\left(e^{-j2k \pi} - 2e^{-jk\pi} -1 \right) = \frac{A}{2j\pi
+k}\left(e^{-jk\pi}-1\right)^2\]</span></p>
+<p>For <span class="math">\(n\)</span> odd<sup>*</sup>, <span class="math">\(e^{-jk\pi} = -1\)</span>. Therefore</p>
+</div>
+<p><span class="math">\[\begin{array}{c}
+\begin{array}{*{20}{c}}
+{{C_k}}\\
+{k = {\rm{odd}}}
+\end{array} = \frac{A}{{2j\pi k}}{\left( {{e^{ - jk\pi }} - 1} \right)^2}\\
+ = \frac{A}{{2j\pi k}}{\left( { - 1 - 1} \right)^2}\\
+ = \frac{A}{{2j\pi k}}{\left( { - 2} \right)^2}\\
+ = \frac{{2A}}{{j\pi k}}
+\end{array}\]</span></p>
+<div class="notes">
+<p><sup>*</sup> You may want to verify that <span class="math">\(C_0 = 0\)</span> and</p>
+<p><span class="math">\[{C_n \atop {n=\mathrm{even}}} = 0.\]</span></p>
+</div>
+<h2 id="exponential-fourier-series-for-the-square-wave-with-odd-symmetry">exponential Fourier series for the square wave with odd symmetry</h2>
+<p>From the definition of the exponential Fourier series</p>
+<p><span class="math">\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_{0} +
+C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} + \cdots\]</span></p>
+<p>the <em>exponential Fourier series for the square wave with odd symmetry</em> is</p>
+<p><span class="math">\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega
+t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right)\]</span> <span class="math">\[f(t) = \frac{2A}{j\pi}\sum_{k = \mathrm{odd}} \frac{1}{k}e^{jk\omega t}\]</span></p>
+<div class="notes">
+<p>Note sign change in first two terms. This is due to the fact that <span class="math">\(C_{-k} = C_k^*\)</span>.</p>
+<p>E.g. since <span class="math">\(C_3 = 2A/j3\pi\)</span>, <span class="math">\(C_{-3} = C_3^* = -2A/j3\pi\)</span></p>
+</div>
+<h2 id="trig.-fourier-series-from-exponential-fourier-series">Trig. Fourier Series from Exponential Fourier Series</h2>
+<p>Since</p>
+<p><span class="math">\[f(t) = \frac{2A}{j\pi}\left(\cdots - \frac{1}{3}e^{-j3\omega t} - e^{-j\omega
+t} + e^{j\omega t} + \frac{1}{3}e^{j3\omega t} + \cdots\right) \]</span></p>
+<p>gathering terms at each harmonic frequency gives</p>
+<p><span class="math">\[f(t) = \frac{4A}{\pi}\left(\cdots + \left(\frac{e^{j\omega t} - e^{-j\omega
+t}}{2j}\right)  + \frac{1}{3}\left(\frac{e^{j3\omega t} - e^{-j3\omega
+t}}{2j}\right)  +  \cdots\right)\]</span> <span class="math">\[f(t) = \frac{4A}{\pi}\left(\sin \omega t +
+\frac{1}{3}\sin 3\omega t + \cdots\right) = \frac{4A}{\pi} \sum_{k=\mathrm{odd}}
+\frac{1}{k}\sin k\omega t\]</span></p>
+<h2 id="example-2">Example 2</h2>
+<p>Verify the result of Example 1 using Matlab.</p>
+<h2 id="solution-2">Solution</h2>
+<p>Solution: See <a href="matlab/efs_sqw.m">efs_sqw.m</a>.</p>
+<p>Script confirms that:</p>
+<ul>
+<li><span class="math">\(C_0 = 0\)</span></li>
+<li><span class="math">\(C_k\)</span> is imaginary: function is odd</li>
+<li><span class="math">\(C_k = 0\)</span>: for <span class="math">\(i\)</span> even -- half-wave symmetry</li>
+</ul>
+<hr />
+<pre><code>X =
+
+[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0, -(A*2*i)/pi, 0,
+-(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
+
+
+w =
+
+    -5    -4    -3    -2    -1     0     1     2     3     4     5</code></pre>
+<h2 id="plot-of-result">Plot of Result</h2>
+<div class="figure">
+<img src="pictures/efs_sqw.png" alt="Result of example 2" />
+<p class="caption">Result of example 2</p>
+</div>
+<h2 id="end-of-part-2">End of Part 2</h2>
+<p><em>Summary</em></p>
+<ul>
+<li>Exponents and Euler's Equation</li>
+<li>The exponential Fourier series</li>
+<li>Symmetry in Exponential Fourier Series</li>
+<li>Examples</li>
+</ul>
+<p><em>Next Time</em></p>
+<ul>
+<li>Line spectra</li>
+<li>Power in periodic signals</li>
+<li>Steady-State Response of an LTI System to a Periodic Signals</li>
+</ul>
+<h2 id="home-work">Home work</h2>
+<p>Compute the exponential Fourier series for the wave forms shown in the last lecture.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>In the lab, in week 7, we will explore Fourier Series and their applications</p>
+</body>
+</html>
