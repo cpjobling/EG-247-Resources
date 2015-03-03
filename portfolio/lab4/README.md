@@ -77,3 +77,15 @@ step(sys)
 * Compare the results with those of Simulink.
 
 Store the resulting script as a file `ex13.m` in your week4 portfolio.
+
+## Lab Exercise 14: The Impulse Response
+
+Adapt the script used in Lab Exercise 11 to compute and plot the impulse response of the circuit shown below (Figure 6.3 from Example 6.2 in the text book).
+
+![Figure 6.2](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig6_2.png)
+
+From the result of this analysis:
+
+* If the impulse response of the circuit is <em>h</em>(<em>t</em>), use Matlab to Laplace transform <em>h</em>(<em>t</em>) to demonstrate that <em>H</em>(<em>s</em>) is equal to the transfer function <em>V</em>c(<em>s</em>)/<em>U</em>(<em>s</em>) of the circuit.
+* Find and plot the impulse response by inverse-Laplace transforming the transfer function <em>H</em>(<em>s</em>)
+* Use the state-space and transfer function LTI blocks (see Lab Exercise 13) and the `impulse` function to plot the impulse response of the circuit using Matlab.
