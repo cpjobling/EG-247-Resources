@@ -89,3 +89,11 @@ From the result of this analysis:
 * If the impulse response of the circuit is <em>h</em>(<em>t</em>), use Matlab to Laplace transform <em>h</em>(<em>t</em>) to demonstrate that <em>H</em>(<em>s</em>) is equal to the transfer function <em>V</em>c(<em>s</em>)/<em>U</em>(<em>s</em>) of the circuit.
 * Find and plot the impulse response by inverse-Laplace transforming the transfer function <em>H</em>(<em>s</em>)
 * Use the state-space and transfer function LTI blocks (see Lab Exercise 13) and the `impulse` function to plot the impulse response of the circuit using Matlab.
+
+## What to hand in
+
+You should add your modified version of the file `rlc.m` in folder `lab4` of your EG-247 portfolio along with the simulink model `rlc.slx`. Additional marks will be awarded according to how many of exercises 12-14 have been completed. Name each solution according to the exercise: e.g. Exercise 12 scripts and models should be named `ex12.m` and `ex12.slx` etc.
+
+See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
+
+You will find it easiest to audit your completion of these exercises by publishing the script files using the <strong>Publish</strong> option in the m-file editor. I do not require you to add the published documents in your portfolio as I will regenerate these when I validate your claim.
