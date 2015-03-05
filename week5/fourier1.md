@@ -117,10 +117,12 @@ produce the waveform $f(t)$.
 In general, the sum of two or more sinusoids does not produce a sinusoid as
 shown below.
 
-<img src="files/pictures/7_1.png">
+![Sums of sinusoids](pictures/7_1.png)
 
+<div class="notes">
 To generate this picture use
 [fourier_series1.m](files/matlab/fourier_series1.m).
+</div>
 
 ## Evaluation of the Fourier series coefficients
 
@@ -175,14 +177,14 @@ To reproduce the following waveforms (without annotation) publish the script
 ---
 
 * Average value over period $T$ is ...?
-* It is an **odd**/**even**function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It is an **odd**/**even** function?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It has half-wave symmetry $f(t)=-f(t+T/2)$
+* It *has* half-wave symmetry $f(t)=-f(t+T/2)$
 
 ## Shifted Squarewave
 
@@ -192,7 +194,7 @@ To reproduce the following waveforms (without annotation) publish the script
 
 * Average value over period $T$ is ...?
 * It is an **odd**/**even** function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
@@ -208,13 +210,13 @@ To reproduce the following waveforms (without annotation) publish the script
 
 * Average value over period $T$ is ...?
 * It is an **odd**/**even** function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It doesn't have *half-wave symmetry* $f(t) \ne -f(t+T/2)$
+* It *doesn't have* half-wave symmetry $f(t) \ne -f(t+T/2)$
 
 ## Triangle
 
@@ -223,19 +225,19 @@ To reproduce the following waveforms (without annotation) publish the script
 ----
 
 * Average value over period $T$ is ...?
-* It is an **odd**/**even**function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It is an **odd**/**even** function?
+* It **has/hdoesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It has *half-wave symmetry* $f(t) = -f(t+T/2)$
+* It *has* half-wave symmetry $f(t) = -f(t+T/2)$
 
 ## Symmetry in fundamental, second and third Harmonics
 
 In the following, $T/2$ is taken to be the half-period of the fundamental
-sinewave.
+sine-wave.
 
 ## Fundamental
 
@@ -244,14 +246,14 @@ sinewave.
 ----
 
 * Average value over period $T$ is ...?
-* It is an **odd**/**even**function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It is an **odd**/**even** function?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It has *half-wave symmetry* $f(t) = -f(t+T/2)$
+* It *has* half-wave symmetry $f(t) = -f(t+T/2)$
 
 ## Second Harmonic
 
@@ -262,13 +264,13 @@ sinewave.
 
 * Average value over period $T$ is ...?
 * It is an **odd**/**even** function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It doesn't have *half-wave symmetry* $f(t) \ne -f(t+T/2)$
+* It *doesn't have* half-wave symmetry $f(t) \ne -f(t+T/2)$
 
 ## Third Harmonic
 
@@ -278,17 +280,17 @@ sinewave.
 
 * Average value over period $T$ is ...?
 * It is an **odd**/**even** function?
-* It **has/has not** half-wave symmetry $f(t)=-f(t+T/2)$?
+* It **has/doesn't have** half-wave symmetry $f(t)=-f(t+T/2)$?
 
 ----
 
 * Average value over period $T$ is zero.
 * It is an *odd* function $f(t) = - f(-t)$
-* It has *half-wave symmetry* $f(t) = -f(t+T/2)$
+* It *doesn't have* half-wave symmetry $f(t) = -f(t+T/2)$
 
 ## Some simplifications that result from symmetry
 
-* The limits of the integrals used to compute the coefficents $a_n$ and $b_n$ of
+* The limits of the integrals used to compute the coefficients $a_n$ and $b_n$ of
 the Fourier series are given as $0\to 2\pi$ which is one period $T$
 * We could also choose to integrate from $-\pi \to \pi$
 * If the function is *odd*, or *even* or has *half-wave symmetry* we can compute
@@ -303,7 +305,9 @@ from $0\to \pi/2$ and multiplying by 4.
 
 As an example let's take a square wave with amplitude $\pm A$ and period $T$.
 
-<img src="files/pictures/square_wave.png">
+----
+
+![Matlab example](pictures/square_wave.png)
 
 ## Solution
 
