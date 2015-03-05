@@ -69,8 +69,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>Since any periodic function <span class="math">\(f(t)\)</span> can be expressed as a Fourier series, it follows that the sum of the DC, fundamental, second harmonic and so on must produce the waveform <span class="math">\(f(t)\)</span>.</p>
 <h2 id="sums-of-sinusoids">Sums of sinusoids</h2>
 <p>In general, the sum of two or more sinusoids does not produce a sinusoid as shown below.</p>
-<p><img src="files/pictures/7_1.png"></p>
+<div class="figure">
+<img src="pictures/7_1.png" alt="Sums of sinusoids" />
+<p class="caption">Sums of sinusoids</p>
+</div>
+<div class="notes">
 <p>To generate this picture use <a href="files/matlab/fourier_series1.m">fourier_series1.m</a>.</p>
+</div>
 <h2 id="evaluation-of-the-fourier-series-coefficients">Evaluation of the Fourier series coefficients</h2>
 <p>The coefficients are obtained from the following expressions (valid for any periodic waveform with fundamental frequency <span class="math">\(\omega_0\)</span> so long as we integrate over one period <span class="math">\(0\to T_0\)</span> where <span class="math">\(T_0 = 2\pi/\omega_0\)</span>):</p>
 <p><span class="math">\[\frac{1}{2}a_0 = \frac{1}{2\pi}\int_{0}^{2\pi}f(t)dt\]</span></p>
@@ -105,14 +110,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
-<li>It is an <strong>odd</strong>/<strong>even</strong>function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span></li>
+<li>It <em>has</em> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span></li>
 </ul>
 <h2 id="shifted-squarewave">Shifted Squarewave</h2>
 <div class="figure">
@@ -123,7 +128,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
 <li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
@@ -140,13 +145,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
 <li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It doesn't have <em>half-wave symmetry</em> <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
+<li>It <em>doesn't have</em> half-wave symmetry <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
 </ul>
 <h2 id="triangle">Triangle</h2>
 <div class="figure">
@@ -156,17 +161,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
-<li>It is an <strong>odd</strong>/<strong>even</strong>function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
+<li>It <strong>has/hdoesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>It <em>has</em> half-wave symmetry <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
 </ul>
 <h2 id="symmetry-in-fundamental-second-and-third-harmonics">Symmetry in fundamental, second and third Harmonics</h2>
-<p>In the following, <span class="math">\(T/2\)</span> is taken to be the half-period of the fundamental sinewave.</p>
+<p>In the following, <span class="math">\(T/2\)</span> is taken to be the half-period of the fundamental sine-wave.</p>
 <h2 id="fundamental">Fundamental</h2>
 <div class="figure">
 <img src="pictures/fundamental.png" alt="Fundamental" />
@@ -175,14 +180,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
-<li>It is an <strong>odd</strong>/<strong>even</strong>function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>It <em>has</em> half-wave symmetry <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
 </ul>
 <h2 id="second-harmonic">Second Harmonic</h2>
 <div class="figure">
@@ -193,13 +198,13 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
 <li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It doesn't have <em>half-wave symmetry</em> <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
+<li>It <em>doesn't have</em> half-wave symmetry <span class="math">\(f(t) \ne -f(t+T/2)\)</span></li>
 </ul>
 <h2 id="third-harmonic">Third Harmonic</h2>
 <div class="figure">
@@ -210,17 +215,17 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is ...?</li>
 <li>It is an <strong>odd</strong>/<strong>even</strong> function?</li>
-<li>It <strong>has/has not</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
+<li>It <strong>has/doesn't have</strong> half-wave symmetry <span class="math">\(f(t)=-f(t+T/2)\)</span>?</li>
 </ul>
 <hr />
 <ul>
 <li>Average value over period <span class="math">\(T\)</span> is zero.</li>
 <li>It is an <em>odd</em> function <span class="math">\(f(t) = - f(-t)\)</span></li>
-<li>It has <em>half-wave symmetry</em> <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
+<li>It <em>doesn't have</em> half-wave symmetry <span class="math">\(f(t) = -f(t+T/2)\)</span></li>
 </ul>
 <h2 id="some-simplifications-that-result-from-symmetry">Some simplifications that result from symmetry</h2>
 <ul>
-<li>The limits of the integrals used to compute the coefficents <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> of the Fourier series are given as <span class="math">\(0\to 2\pi\)</span> which is one period <span class="math">\(T\)</span></li>
+<li>The limits of the integrals used to compute the coefficients <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> of the Fourier series are given as <span class="math">\(0\to 2\pi\)</span> which is one period <span class="math">\(T\)</span></li>
 <li>We could also choose to integrate from <span class="math">\(-\pi \to \pi\)</span></li>
 <li>If the function is <em>odd</em>, or <em>even</em> or has <em>half-wave symmetry</em> we can compute <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> by integrating from <span class="math">\(0\to \pi\)</span> and multiplying by 2.</li>
 <li>If we have <em>half-wave symmetry</em> we can compute <span class="math">\(a_n\)</span> and <span class="math">\(b_n\)</span> by integrating from <span class="math">\(0\to \pi/2\)</span> and multiplying by 4.</li>
@@ -229,7 +234,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h1 id="computing-coefficients-of-trig.-fourier-series-in-matlab">Computing coefficients of Trig. Fourier Series in Matlab</h1>
 <h2 id="computing-coefficients-of-trig.-fourier-series-in-matlab-1">Computing coefficients of Trig. Fourier Series in Matlab</h2>
 <p>As an example let's take a square wave with amplitude <span class="math">\(\pm A\)</span> and period <span class="math">\(T\)</span>.</p>
-<p><img src="files/pictures/square_wave.png"></p>
+<hr />
+<div class="figure">
+<img src="pictures/square_wave.png" alt="Matlab example" />
+<p class="caption">Matlab example</p>
+</div>
 <h2 id="solution">Solution</h2>
 <p>Solution: See <a href="files/matlab/square_ftrig.m">square_ftrig.m</a>. Script confirms that:</p>
 <ul>
