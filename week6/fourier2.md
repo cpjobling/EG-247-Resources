@@ -134,7 +134,7 @@ Give the following:
 * When $\omega t = \pi/2$: $e^{j\omega t} = e^{j\pi/2} = j$
 * When $\omega t = \pi$: $e^{j\omega t} = e^{j\pi} = -1$
 * When $\omega t = 3\pi/2$: $e^{j\omega t} = e^{j3\pi/2} = -j$
-* When $\omega t = 2\pi$: $e^{j\omega t} = e^{j2\pi} e^{j0}= 1$
+* When $\omega t = 2\pi$: $e^{j\omega t} = e^{j2\pi} = e^{j0}= 1$
 
 <div class="notes">
 It is also worth being aware that $n\omega t$, when $n$ is an integer, produces
@@ -345,7 +345,7 @@ that $\omega = 1$
 
 Hence
 
-* $C_0 = $ [**?**]
+* $C_0 = ?$
 * Coefficients $C_k$ are [**real/imaginary/complex**]?
 * Subscripts $k$ are [**odd only/even only/both odd and even**]?
 * What is the integral that needs to be solved for $C_k$?
@@ -406,7 +406,7 @@ $$\begin{array}{c}
 $${C_n \atop {n=\mathrm{even}}} = 0.$$
 </div>
 
-## exponential Fourier series for the square wave with odd symmetry
+## Exponential Fourier series for the square wave with odd symmetry
 
 From the definition of the exponential Fourier series
 
@@ -461,8 +461,8 @@ Script confirms that:
 ```
 X =
 
-[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0, -(A*2*i)/pi, 0,
--(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
+[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0,
+-(A*2*i)/pi, 0, -(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
 
 
 w =
