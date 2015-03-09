@@ -41,7 +41,7 @@ in so doing we eliminate one integration and at the same time simplify the
 calculation of the coefficients of the Fourier series.
 
 In this session we show how the Exponential form of the Fourier Series leads us
-to the ability to present wavefoms as line spectra, simplifies the calculation
+to the ability to present waveforms as line spectra, simplifies the calculation
 of power for systems with harmonics and leads in the limit as the $T$ approaches
 infinity to the Fourier Transform.
 
@@ -51,7 +51,7 @@ The material in this presentation and notes is based on Chapter 7 (Starting at
 Section 7.10) of [Steven T. Karris, Signals and Systems: with Matlab Computation
 and Simulink Modelling, 5th
 Edition.](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
-from the Required Reading List. Some clarificattion was needed and I used
+from the Required Reading List. Some clarification was needed and I used
 Chapter 4 of [Benoit Boulet, Fundamentals of Signals and
 Systems](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195)
 from the Recommended Reading List for this.
@@ -66,7 +66,6 @@ and phase of the harmonics on a frequency scale.
 The next slide shows the spectrum of the Exponential Fourier Series calculated for the square wave.
 
 ----
-
 
 ![Spectrum of the Exponential Fourier Series for a Square Wave](pictures/efs_sqw.png)
 
@@ -173,7 +172,6 @@ $$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
 ## Exponential Fourier Series!
 
 $$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
-
 </div>
 ## Results
 
@@ -245,8 +243,6 @@ Try it!
 
 <div class="notes">
 
-### Proof!
-
 From the previous result,
 
 $$C_n = \frac{A}{w}.\frac{\sin(k\pi/w)}{k\pi/w}$$
@@ -267,6 +263,8 @@ $$\frac{2\pi}{w}\times\frac{w}{2\pi} = 1$$
 
 and the pulse train is as shown on the next slide:
 
+----
+
 ![Pulses with unit area](pictures/unit_area_pulses.png)
 
 #### New coefficients
@@ -278,6 +276,8 @@ $$C_n = \frac{w/2\pi}{w}\frac{\sin(k\pi/w)}{k\pi/w} =
 
 and as $\pi/w \to 0$ each recurrent pulse becomes a unit impulse, and the pulse
 train reduces to a unit impulse train.
+
+----
 
 Also, recalling that
 
@@ -440,6 +440,7 @@ Suppose that a signal that is supposed to be a pure sine wave of amplitude A is
 distorted as shown below
 
 ![Total harmonic distortion](pictures/thd.png)
+
 
 This can occur in the line voltages of an industrial plant that makes heavy use
 of nonlinear loads such as electric arc furnaces, solid state relays, motor
