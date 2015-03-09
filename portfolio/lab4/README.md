@@ -34,7 +34,7 @@ Starting from the circuit (Fig. 5.7 from Karris, 2012: p5-22):
 4. Use the state-space block in Simulink to implement and simulate the step response of the circuit (assuming that the output is the voltage across the capacitor).
 5. Compare your simulation results with the responses produced by the script.
 
-Save and add your copy of the modified `rlc.m` file plus the Simulink model (suggested name `rlc.slx`) to your lab4 portfolio.
+Save and add your copy of the modified `rlc.m` file plus the Simulink model (suggested name `rlc_sim.slx`) to your lab4 portfolio.
 
 ## Lab Exercise 12: The Laplace Transform of the Transition Matrix
 
