@@ -38,9 +38,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="scope-and-background-reading">Scope and Background Reading</h2>
 <p>This session concludes our introduction to Fourier Series.</p>
 <p>Last time we saw that we could exploit the complex exponential <span class="math">\(e^{j\omega t}\)</span> to redefine trigonometric Fourier Series into the Exponential Fourier Series and in so doing we eliminate one integration and at the same time simplify the calculation of the coefficients of the Fourier series.</p>
-<p>In this session we show how the Exponential form of the Fourier Series leads us to the ability to present wavefoms as line spectra, simplifies the calculation of power for systems with harmonics and leads in the limit as the <span class="math">\(T\)</span> approaches infinity to the Fourier Transform.</p>
+<p>In this session we show how the Exponential form of the Fourier Series leads us to the ability to present waveforms as line spectra, simplifies the calculation of power for systems with harmonics and leads in the limit as the <span class="math">\(T\)</span> approaches infinity to the Fourier Transform.</p>
 <hr />
-<p>The material in this presentation and notes is based on Chapter 7 (Starting at Section 7.10) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the Required Reading List. Some clarificattion was needed and I used Chapter 4 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the Recommended Reading List for this.</p>
+<p>The material in this presentation and notes is based on Chapter 7 (Starting at Section 7.10) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the Required Reading List. Some clarification was needed and I used Chapter 4 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the Recommended Reading List for this.</p>
 <h1 id="line-spectra">Line Spectra</h1>
 <h2 id="line-spectra-1">Line Spectra</h2>
 <p>When the Exponential Fourier series are known is is useful to plot the amplitude and phase of the harmonics on a frequency scale.</p>
@@ -81,7 +81,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Is the function <strong>even</strong> or <strong>odd</strong>?</li>
 <li>Does the signal have <strong>half-wave symmetry</strong>?</li>
-<li>What are the cosequencies of symmetry on the form of the coefficients <span class="math">\(C_k\)</span>?</li>
+<li>What are the consequences of symmetry on the form of the coefficients <span class="math">\(C_k\)</span>?</li>
 <li>What function do we actually need to integrate to compute <span class="math">\(C_k\)</span>?</li>
 </ul>
 <h2 id="answers">Answers</h2>
@@ -90,7 +90,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <ul>
 <li>Is the function <strong>even</strong> or <strong>odd</strong>? <strong>even</strong> <span class="math">\(f(t) = f(-t)\)</span>!</li>
 <li>Does the signal have <strong>half-wave symmetry</strong>? No!</li>
-<li>What are the cosequencies of symmetry on the form of the coefficients <span class="math">\(C_k\)</span>? <span class="math">\(C_k\)</span> will be real values. Trig. equivalent no sine terms.</li>
+<li>What are the consequences of symmetry on the form of the coefficients <span class="math">\(C_k\)</span>? <strong><span class="math">\(C_k\)</span> will be real values. Trig. equivalent no sine terms.</strong></li>
 <li>What function do we actually need to integrate to compute <span class="math">\(C_k\)</span>?</li>
 </ul>
 <hr />
@@ -99,20 +99,30 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 \frac{A}{2\pi}\int_{-\pi/w}^{\pi/w} e^{-jk(\omega t)}\,d(\omega t) \]</span></p>
 <h2 id="dc-component">DC Component?</h2>
 <p>Let <span class="math">\(k = 0\)</span> then perform the integral</p>
+<div class="notes">
 <h2 id="dc-component-1">DC component!</h2>
 <p><span class="math">\[C_0 = \left.\frac{A}{2\pi}\,t\,\right|_{-\pi/w}^{\pi/w} =
 \frac{A}{2\pi}\left(\frac{\pi}{w}+\frac{\pi}{w}\right)\]</span></p>
 <p>or</p>
 <p><span class="math">\[C_0 = \frac{A}{w}\]</span></p>
+</div>
 <h2 id="harmonic-coefficients">Harmonic coefficients?</h2>
 <p>Integrate for <span class="math">\(k\ne 0\)</span></p>
+<div class="notes">
 <h2 id="harmonic-coefficients-1">Harmonic coefficients!</h2>
 <p><span class="math">\[C_k = \left.\frac{A}{-jk2\pi}\,e^{-jk(\omega t)}\,\right|_{-\pi/w}^{\pi/w} =
 \frac{A}{k\pi}\left(\frac{e^{jk\pi/w}-e^{-jk\pi/w}}{j2}\right) =
 \frac{A}{k\pi}\sin\left(\frac{k\pi}{w}\right)\]</span></p>
 <p><span class="math">\[C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}\]</span></p>
+</div>
 <h2 id="exponential-fourier-series">Exponential Fourier Series?</h2>
+<div class="notes">
 <h2 id="exponential-fourier-series-1">Exponential Fourier Series!</h2>
+<p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}\]</span></p>
+</div>
+<h2 id="results">Results</h2>
+<p><span class="math">\[C_0 = \frac{A}{w}\]</span></p>
+<p><span class="math">\[C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}\]</span></p>
 <p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}\]</span></p>
 <h2 id="effect-of-pulse-width-on-frequency-spectra">Effect of pulse width on frequency spectra</h2>
 <ul>
@@ -158,14 +168,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>and, therefore</p>
 <p><span class="math">\[f(t) = \frac{1}{2\pi}\sum_{k=-\infty}^{\infty} e^{jk\omega t}\]</span></p>
 <p>Try it!</p>
-<h2 id="proof">Proof!</h2>
+<div class="notes">
 <p>From the previous result,</p>
 <p><span class="math">\[C_n = \frac{A}{w}.\frac{\sin(k\pi/w)}{k\pi/w}\]</span></p>
 <p>and the pulse width was defined as <span class="math">\(T/w\)</span>, that is</p>
 <p><span class="math">\[\frac{T}{w}=\frac{2\pi}{w}\]</span></p>
 <p>Let us take the previous impulse train as a recurrent pulse with amplitude</p>
 <p><span class="math">\[A = \frac{1}{T/w} = \frac{1}{2\pi/w} = \frac{w}{2\pi}.\]</span></p>
-<h2 id="pulse-with-unit-area">Pulse with unit area</h2>
+<h4 id="pulse-with-unit-area">Pulse with unit area</h4>
 <p>The area of each pulse is then</p>
 <p><span class="math">\[\frac{2\pi}{w}\times\frac{w}{2\pi} = 1\]</span></p>
 <p>and the pulse train is as shown on the next slide:</p>
@@ -174,7 +184,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <img src="pictures/unit_area_pulses.png" alt="Pulses with unit area" />
 <p class="caption">Pulses with unit area</p>
 </div>
-<h2 id="new-coefficents">New coefficents</h2>
+<h4 id="new-coefficients">New coefficients</h4>
 <p>The coefficients of the Exponential Fourier Series are now:</p>
 <p><span class="math">\[C_n = \frac{w/2\pi}{w}\frac{\sin(k\pi/w)}{k\pi/w} =
 \frac{1}{2\pi}\frac{\sin(k\pi/w)}{k\pi/w}\]</span></p>
@@ -182,10 +192,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <hr />
 <p>Also, recalling that</p>
 <p><span class="math">\[\lim_{x\to 0} \frac{sin x}{x} = 1\]</span></p>
-<p>the coefficents reduce to</p>
+<p>the coefficients reduce to</p>
 <p><span class="math">\[C_n = \frac{1}{2\pi}\]</span></p>
 <p>That is all coefficients have the same amplitude and thus</p>
 <p><span class="math">\[f(t) = \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} e^{jk\omega t}\]</span></p>
+</div>
 <h2 id="spectrum-of-unit-impulse-train">Spectrum of Unit Impulse Train</h2>
 <p>The line spectrum of a sequence of unit impulses <span class="math">\(\delta(t \pm kT)\)</span> is shown below:</p>
 <div class="figure">
@@ -204,7 +215,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <li>As <span class="math">\(T\to \infty\)</span> the fundamental frequency <span class="math">\(\omega \to 0\)</span></li>
 <li>We are then left with just one pulse centred around <span class="math">\(t=0\)</span>.</li>
 <li>The frequency difference between harmonics also becomes smaller.</li>
-<li>Line spectrum becomes a continous function.</li>
+<li>Line spectrum becomes a continuous function.</li>
 </ul>
 <p>This result is the basis of the <em>Fourier Transform</em> which is coming next.</p>
 <h1 id="power-in-periodic-signals">Power in Periodic Signals</h1>
@@ -219,7 +230,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>The power in the <span class="math">\(k\)</span>th harmonic <span class="math">\(C_ke^{jk\omega t}\)</span> is given by</p>
 <p><span class="math">\[P_k = \frac{1}{T}\int_0^T\left|C_ke^{jk\omega t}\right|^2\,dt =
 \frac{1}{T}\int_0^T\left|C_k\right|^2\,dt=\left|C_k\right|^2\]</span></p>
-<p>Since <span class="math">\(P_k = P_{-k}\)</span>, the total power of the <span class="math">\(k\)</span>th harmomic is <span class="math">\(2P_k\)</span>.</p>
+<p>Since <span class="math">\(P_k = P_{-k}\)</span>, the total power of the <span class="math">\(k\)</span>th harmonic is <span class="math">\(2P_k\)</span>.</p>
 <p>Parseval's theorem states that</p>
 <p><span class="math">\[P = \frac{1}{T}\int_0^T \left|f(t)\right|^2\,dt =
 \sum_{k=-\infty}^{\infty}\left|C_k\right|^2.\]</span></p>
@@ -231,36 +242,38 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>Compute the average power of a pulse train for which the pulse width is <span class="math">\(T/2\)</span> (duty cycle 50%). Use the previous result:</p>
 <p><span class="math">\[C_n = \frac{A}{w}.\frac{\sin(k\pi/w)}{k\pi/w}\]</span></p>
 <p>as your starting point.</p>
-<h2 id="solution-3">Solution 3</h2>
+<div class="notes">
+<h3 id="solution-3">Solution 3</h3>
 <p><span class="math">\(w = 2\)</span> so:</p>
 <p><span class="math">\[C_n = \frac{A}{2}.\frac{\sin(k\pi/2)}{k\pi/2}\]</span></p>
 <p>Write down an expression for <span class="math">\(P\)</span> using Parseval's Theorem</p>
-<h2 id="p">P</h2>
+<h4 id="p">P</h4>
 <p><span class="math">\[P = \sum\limits_{k =  - \infty }^\infty  {{{\left| {{C_k}} \right|}^2}}  =
 \sum\limits_{k =  - \infty }^\infty  {{{\left| {\frac{A}{2}{\mathop{\rm
 sinc}\nolimits} \frac{{k\pi }}{2}} \right|}^2}}  = {A^2}\left( {\frac{1}{4} +
 2\sum\limits_{k = 1}^\infty  {{{\left| \frac{1}{4}{{\mathop{\rm sinc}\nolimits}
 \frac{{k\pi }}{2}} \right|}^2}} } \right)\]</span></p>
 <p>sinc<span class="math">\((k\pi/2) = 0\)</span> for <span class="math">\(k\)</span> even (<span class="math">\(k=0,2,4,6,\ldots\)</span>) so...?</p>
-<h2 id="p-for-k-odd">P for k odd</h2>
+<h4 id="p-for-k-odd">P for k odd</h4>
 <p><span class="math">\[P = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k = 1,3,5, \ldots
 }^\infty  {{{\left| {{\mathop{\rm sinc}\nolimits} \frac{{k\pi }}{2}}
 \right|}^2}} } \right) = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k =
 1,3,5, \ldots }^\infty  {{{\left| {\frac{{\sin \frac{{k\pi }}{2}}}{{\frac{{k\pi
 }}{2}}}} \right|}^2}} } \right)\]</span></p>
 <p><span class="math">\(\sin(k\pi/2) = 1\)</span> for <span class="math">\(k\)</span> odd (<span class="math">\(k=1,3,5,7,\ldots\)</span>) so...?</p>
-<h2 id="p-after-eliminating-sine">P after eliminating sine</h2>
+<h4 id="p-after-eliminating-sine">P after eliminating sine</h4>
 <p><span class="math">\[P = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\sum\limits_{k = 1,3,5,
 \ldots }^\infty  {\left[ {1 + \frac{1}{9} + \frac{1}{{25}} +  \ldots } \right]}
 } \right) = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\left[ {\frac{{{\pi
 ^2}}}{8}} \right]} \right)\]</span></p>
 <p><span class="math">\[P = \frac{A^2}{2}\]</span></p>
-<h2 id="check-p-from-ft">Check P from f(t)</h2>
+<h4 id="check-p-from-ft">Check P from f(t)</h4>
 <p><span class="math">\[P = \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|f(t)|^2\,d\omega t =
 \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|A|^2\,d\omega t =
 \frac{A^2}{2\pi}\left(\frac{\pi}{2}+\frac{\pi}{2}\right) = \frac{A^2}{2}.\]</span></p>
+</div>
 <h2 id="power-spectrum">Power Spectrum</h2>
-<p>The <em>power spectrum</em> of signal is the sequence of average powers in each complex harmonic: <span class="math">\(|C_k|^2\)</span>. For real perodic signals the power spectrum is a real even sequence as <span class="math">\(|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2\)</span>.</p>
+<p>The <em>power spectrum</em> of signal is the sequence of average powers in each complex harmonic: <span class="math">\(|C_k|^2\)</span>. For real periodic signals the power spectrum is a real even sequence as <span class="math">\(|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2\)</span>.</p>
 <hr />
 <p>This is the power spectrum for a pulse with width <span class="math">\(T/8\)</span>.</p>
 <div class="figure">
@@ -273,14 +286,14 @@ sinc}\nolimits} \frac{{k\pi }}{2}} \right|}^2}}  = {A^2}\left( {\frac{1}{4} +
 <h2 id="total-harmonic-distortion">Total Harmonic Distortion</h2>
 <p>Suppose that a signal that is supposed to be a pure sine wave of amplitude A is distorted as shown below</p>
 <div class="figure">
-<img src="pictures/thd.png" alt="Total hamromic distortion" />
-<p class="caption">Total hamromic distortion</p>
+<img src="pictures/thd.png" alt="Total harmonic distortion" />
+<p class="caption">Total harmonic distortion</p>
 </div>
-<p>This can occur in the line voltages of an industrial plant that makes heavy use of nonlineear loads such as electric arc furnaces, solid state relays, motor drives, etc (E.g. Tata Steel!)</p>
+<p>This can occur in the line voltages of an industrial plant that makes heavy use of nonlinear loads such as electric arc furnaces, solid state relays, motor drives, etc (E.g. Tata Steel!)</p>
 <h2 id="thd-defined">THD Defined</h2>
 <p>Clearly, some of the harmonics for <span class="math">\(k\ne \pm 1\)</span> are nonzero. One way to characterize the distortion is to compute the ratio of average power in all the harmonics that &quot;should not be present&quot;, that is for <span class="math">\(k &gt; 1\)</span>, to the total average power of the distorted sine wave. The square-root of this ratio is called the <em>total harmonic distortion</em> (THD) of the signal.</p>
 <hr />
-<p>If the signal is real and based on a sine wave (that is <em>odd</em>), then <span class="math">\(C_k=0\)</span> and</p>
+<p>If the signal is real and based on a sine wave (that is <em>odd</em>), then <span class="math">\(C_0=0\)</span> and</p>
 <p><span class="math">\[f_{\mathrm{RMS}}=\sqrt{\sum_{k=1}^{\infty}2|C_k|^2}\]</span></p>
 <p>and we can define the THD as the ratio of the RMS value for all the harmonics for <span class="math">\(K&gt;1\)</span> (the distortion) to the RMS of the fundamental which is <span class="math">\(\sqrt{2\left|C_1\right|^2}:\)</span></p>
 <p><span class="math">\[{\text{THD}} = 100\sqrt {\frac{{\sum\limits_{k = 2}^\infty  {{{\left| {{C_k}}
@@ -301,9 +314,9 @@ sinc}\nolimits} \frac{{k\pi }}{2}} \right|}^2}}  = {A^2}\left( {\frac{1}{4} +
 <p><span class="math">\[y(t)=\sum_{k=-\infty}^{\infty} C_kH(jk\omega_0)e^{jk\omega_0 t}\]</span></p>
 <p>where <span class="math">\(\omega_0 = T/2\pi\)</span> is the fundamental frequency.</p>
 <p>Thus <span class="math">\(y(t)\)</span> is a Fourier series itself with coefficients <span class="math">\(D_k\)</span>:</p>
-<p><span class="math">\[D_k = C_kH(jk\omega_0)\]</span></p>
+<p><span class="math">\[D_k = C_k H(jk\omega_0)\]</span></p>
 <h2 id="implications-of-this-important-result">Implications of this important result</h2>
-<p>The effect of an LTI sustem on a periodic input signal is to modify its Fourier series through a multiplication by its frequency response evaluated at the harmonic frquencies.</p>
+<p>The effect of an LTI system on a periodic input signal is to modify its Fourier series through a multiplication by its frequency response evaluated at the harmonic frequencies.</p>
 <h2 id="illustration">Illustration</h2>
 <p>This picture below shows the effect of an LTI system on a periodic input in the frequency domain.</p>
 <div class="figure">
