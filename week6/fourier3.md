@@ -41,7 +41,7 @@ in so doing we eliminate one integration and at the same time simplify the
 calculation of the coefficients of the Fourier series.
 
 In this session we show how the Exponential form of the Fourier Series leads us
-to the ability to present wavefoms as line spectra, simplifies the calculation
+to the ability to present waveforms as line spectra, simplifies the calculation
 of power for systems with harmonics and leads in the limit as the $T$ approaches
 infinity to the Fourier Transform.
 
@@ -51,7 +51,7 @@ The material in this presentation and notes is based on Chapter 7 (Starting at
 Section 7.10) of [Steven T. Karris, Signals and Systems: with Matlab Computation
 and Simulink Modelling, 5th
 Edition.](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
-from the Required Reading List. Some clarificattion was needed and I used
+from the Required Reading List. Some clarification was needed and I used
 Chapter 4 of [Benoit Boulet, Fundamentals of Signals and
 Systems](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195)
 from the Recommended Reading List for this.
@@ -66,7 +66,6 @@ and phase of the harmonics on a frequency scale.
 The next slide shows the spectrum of the Exponential Fourier Series calculated for the square wave.
 
 ----
-
 
 ![Spectrum of the Exponential Fourier Series for a Square Wave](pictures/efs_sqw.png)
 
@@ -115,7 +114,7 @@ $$C_k = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)e^{-jk(\omega t)}\,d(\omega t)$$
 
 * Is the function **even** or **odd**?
 * Does the signal have **half-wave symmetry**?
-* What are the cosequencies of symmetry on the form of the coefficients $C_k$?
+* What are the consequences of symmetry on the form of the coefficients $C_k$?
 * What function do we actually need to integrate to compute $C_k$?
 
 ## Answers
@@ -126,8 +125,8 @@ $$C_k = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)e^{-jk(\omega t)}\,d(\omega t)$$
 
 * Is the function **even** or **odd**? **even** $f(t) = f(-t)$!
 * Does the signal have **half-wave symmetry**? No!
-* What are the cosequencies of symmetry on the form of the coefficients $C_k$?
-$C_k$ will be real values. Trig. equivalent no sine terms.
+* What are the consequences of symmetry on the form of the coefficients $C_k$?
+**$C_k$ will be real values. Trig. equivalent no sine terms.**
 * What function do we actually need to integrate to compute $C_k$?
 
 ----
@@ -142,6 +141,7 @@ $$C_k = \frac{1}{2\pi}\int_{-\pi/w}^{\pi/w} Ae^{-jk(\omega t)}\,d(\omega t) =
 
 Let $k = 0$ then perform the integral
 
+<div class="notes">
 ## DC component!
 
 $$C_0 = \left.\frac{A}{2\pi}\,t\,\right|_{-\pi/w}^{\pi/w} =
@@ -150,11 +150,13 @@ $$C_0 = \left.\frac{A}{2\pi}\,t\,\right|_{-\pi/w}^{\pi/w} =
 or
 
 $$C_0 = \frac{A}{w}$$
+</div>
 
 ## Harmonic coefficients?
 
 Integrate for $k\ne 0$
 
+<div class="notes">
 ## Harmonic coefficients!
 
 $$C_k = \left.\frac{A}{-jk2\pi}\,e^{-jk(\omega t)}\,\right|_{-\pi/w}^{\pi/w} =
@@ -162,12 +164,23 @@ $$C_k = \left.\frac{A}{-jk2\pi}\,e^{-jk(\omega t)}\,\right|_{-\pi/w}^{\pi/w} =
 \frac{A}{k\pi}\sin\left(\frac{k\pi}{w}\right)$$
 
 $$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
+</div>
 
 ## Exponential Fourier Series?
 
+<div class="notes">
 ## Exponential Fourier Series!
 
 $$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
+</div>
+## Results
+
+$$C_0 = \frac{A}{w}$$
+
+$$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
+
+$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
+
 
 ## Effect of pulse width on frequency spectra
 
@@ -228,7 +241,7 @@ $$f(t) = \frac{1}{2\pi}\sum_{k=-\infty}^{\infty} e^{jk\omega t}$$
 
 Try it!
 
-## Proof!
+<div class="notes">
 
 From the previous result,
 
@@ -242,7 +255,7 @@ Let us take the previous impulse train as a recurrent pulse with amplitude
 
 $$A = \frac{1}{T/w} = \frac{1}{2\pi/w} = \frac{w}{2\pi}.$$
 
-## Pulse with unit area
+#### Pulse with unit area
 
 The area of each pulse is then
 
@@ -254,7 +267,7 @@ and the pulse train is as shown on the next slide:
 
 ![Pulses with unit area](pictures/unit_area_pulses.png)
 
-## New coefficents
+#### New coefficients
 
 The coefficients of the Exponential Fourier Series are now:
 
@@ -270,13 +283,15 @@ Also, recalling that
 
 $$\lim_{x\to 0} \frac{sin x}{x} = 1$$
 
-the coefficents reduce to
+the coefficients reduce to
 
 $$C_n = \frac{1}{2\pi}$$
 
 That is all coefficients have the same amplitude and thus
 
 $$f(t) = \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} e^{jk\omega t}$$
+
+</div>
 
 ## Spectrum of Unit Impulse Train
 
@@ -299,7 +314,7 @@ less and less frequent? That is what happens when $T \to \infty$?
 * As $T\to \infty$ the fundamental frequency $\omega \to 0$
 * We are then left with just one pulse centred around $t=0$.
 * The frequency difference between harmonics also becomes smaller.
-* Line spectrum becomes a continous function.
+* Line spectrum becomes a continuous function.
 
 This result is the basis of the *Fourier Transform* which is coming next.
 
@@ -329,7 +344,7 @@ The power in the $k$th harmonic $C_ke^{jk\omega t}$ is given by
 $$P_k = \frac{1}{T}\int_0^T\left|C_ke^{jk\omega t}\right|^2\,dt =
 \frac{1}{T}\int_0^T\left|C_k\right|^2\,dt=\left|C_k\right|^2$$
 
-Since $P_k = P_{-k}$, the total power of the $k$th harmomic is $2P_k$.
+Since $P_k = P_{-k}$, the total power of the $k$th harmonic is $2P_k$.
 
 Parseval's theorem states that
 
@@ -353,7 +368,9 @@ $$C_n = \frac{A}{w}.\frac{\sin(k\pi/w)}{k\pi/w}$$
 
 as your starting point.
 
-## Solution 3
+<div class="notes">
+
+### Solution 3
 
 $w = 2$ so:
 
@@ -362,7 +379,7 @@ $$C_n = \frac{A}{2}.\frac{\sin(k\pi/2)}{k\pi/2}$$
 Write down an expression for $P$ using Parseval's Theorem
 
 
-## P
+#### P
 
 $$P = \sum\limits_{k =  - \infty }^\infty  {{{\left| {{C_k}} \right|}^2}}  =
 \sum\limits_{k =  - \infty }^\infty  {{{\left| {\frac{A}{2}{\mathop{\rm
@@ -372,7 +389,7 @@ sinc}\nolimits} \frac{{k\pi }}{2}} \right|}^2}}  = {A^2}\left( {\frac{1}{4} +
 
 sinc$(k\pi/2) = 0$ for $k$ even ($k=0,2,4,6,\ldots$) so...?
 
-## P for k odd
+#### P for k odd
 
 $$P = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k = 1,3,5, \ldots
 }^\infty  {{{\left| {{\mathop{\rm sinc}\nolimits} \frac{{k\pi }}{2}}
@@ -382,7 +399,7 @@ $$P = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k = 1,3,5, \ldots
 
 $\sin(k\pi/2) = 1$ for $k$ odd ($k=1,3,5,7,\ldots$) so...?
 
-## P after eliminating sine
+#### P after eliminating sine
 
 $$P = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\sum\limits_{k = 1,3,5,
 \ldots }^\infty  {\left[ {1 + \frac{1}{9} + \frac{1}{{25}} +  \ldots } \right]}
@@ -391,16 +408,18 @@ $$P = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\sum\limits_{k = 1,3,5,
 
 $$P = \frac{A^2}{2}$$
 
-## Check P from f(t)
+#### Check P from f(t)
 
 $$P = \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|f(t)|^2\,d\omega t =
 \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|A|^2\,d\omega t =
 \frac{A^2}{2\pi}\left(\frac{\pi}{2}+\frac{\pi}{2}\right) = \frac{A^2}{2}.$$
 
+</div>
+
 ## Power Spectrum
 
 The *power spectrum* of signal is the sequence of average powers in each complex
-harmonic: $|C_k|^2$. For real perodic signals
+harmonic: $|C_k|^2$. For real periodic signals
 the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 =
 |C_k|^2$.
 
@@ -420,10 +439,11 @@ harmonic components. That is in the frequency range $[-14\pi/T,+14\pi/T]$ rad/s.
 Suppose that a signal that is supposed to be a pure sine wave of amplitude A is
 distorted as shown below
 
-![Total hamromic distortion](pictures/thd.png)
+![Total harmonic distortion](pictures/thd.png)
+
 
 This can occur in the line voltages of an industrial plant that makes heavy use
-of nonlineear loads such as electric arc furnaces, solid state relays, motor
+of nonlinear loads such as electric arc furnaces, solid state relays, motor
 drives, etc (E.g. Tata Steel!)
 
 ## THD Defined
@@ -436,7 +456,7 @@ called the *total harmonic distortion* (THD) of the signal.
 
 ----
 
-If the signal is real and based on a sine wave (that is *odd*), then $C_k=0$ and
+If the signal is real and based on a sine wave (that is *odd*), then $C_0=0$ and
 
 $$f_{\mathrm{RMS}}=\sqrt{\sum_{k=1}^{\infty}2|C_k|^2}$$
 
@@ -478,13 +498,13 @@ where $\omega_0 = T/2\pi$ is the fundamental frequency.
 
 Thus $y(t)$ is a Fourier series itself with coefficients $D_k$:
 
-$$D_k = C_kH(jk\omega_0)$$
+$$D_k = C_k H(jk\omega_0)$$
 
 ## Implications of this important result
 
-The effect of an LTI sustem on a periodic input signal is to modify its Fourier
+The effect of an LTI system on a periodic input signal is to modify its Fourier
 series through a multiplication by its frequency response evaluated at the
-harmonic frquencies.
+harmonic frequencies.
 
 ## Illustration
 
