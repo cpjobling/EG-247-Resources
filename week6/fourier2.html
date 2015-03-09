@@ -88,7 +88,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <li>When <span class="math">\(\omega t = \pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi/2} = j\)</span></li>
 <li>When <span class="math">\(\omega t = \pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j\pi} = -1\)</span></li>
 <li>When <span class="math">\(\omega t = 3\pi/2\)</span>: <span class="math">\(e^{j\omega t} = e^{j3\pi/2} = -j\)</span></li>
-<li>When <span class="math">\(\omega t = 2\pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j2\pi} e^{j0}= 1\)</span></li>
+<li>When <span class="math">\(\omega t = 2\pi\)</span>: <span class="math">\(e^{j\omega t} = e^{j2\pi} = e^{j0}= 1\)</span></li>
 </ul>
 <div class="notes">
 <p>It is also worth being aware that <span class="math">\(n\omega t\)</span>, when <span class="math">\(n\)</span> is an integer, produces rotations that often map back to the simpler cases given above. For example see <span class="math">\(e^{j2\pi}\)</span> above.</p>
@@ -205,7 +205,7 @@ jb_k\right)\]</span></p>
 </ul>
 <p>Hence</p>
 <ul>
-<li>$C_0 = $ [<strong>?</strong>]</li>
+<li><span class="math">\(C_0 = ?\)</span></li>
 <li>Coefficients <span class="math">\(C_k\)</span> are [<strong>real/imaginary/complex</strong>]?</li>
 <li>Subscripts <span class="math">\(k\)</span> are [<strong>odd only/even only/both odd and even</strong>]?</li>
 <li>What is the integral that needs to be solved for <span class="math">\(C_k\)</span>?</li>
@@ -254,7 +254,7 @@ k}\left(e^{-jk\pi}-1\right)^2\]</span></p>
 <p><sup>*</sup> You may want to verify that <span class="math">\(C_0 = 0\)</span> and</p>
 <p><span class="math">\[{C_n \atop {n=\mathrm{even}}} = 0.\]</span></p>
 </div>
-<h2 id="exponential-fourier-series-for-the-square-wave-with-odd-symmetry">exponential Fourier series for the square wave with odd symmetry</h2>
+<h2 id="exponential-fourier-series-for-the-square-wave-with-odd-symmetry">Exponential Fourier series for the square wave with odd symmetry</h2>
 <p>From the definition of the exponential Fourier series</p>
 <p><span class="math">\[f(t) = \cdots + C_{-2}e^{-j2\omega t} + C_{-1}e^{-j\omega t} + C_{0} +
 C_{1}e^{j\omega t} + C_{2}e^{j2\omega t} + \cdots\]</span></p>
@@ -288,8 +288,8 @@ t}}{2j}\right)  +  \cdots\right)\]</span> <span class="math">\[f(t) = \frac{4A}{
 <hr />
 <pre><code>X =
 
-[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0, -(A*2*i)/pi, 0,
--(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
+[ (A*2*i)/(5*pi), 0, (A*2*i)/(3*pi), 0, (A*2*i)/pi, 0,
+-(A*2*i)/pi, 0, -(A*2*i)/(3*pi), 0, -(A*2*i)/(5*pi)]
 
 
 w =
