@@ -15,6 +15,7 @@ You can view the notes for this presentation in [HTML](http://cpjobling.github.i
 The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
 also contains the source code for all the Matlab/Simulink
 examples and the Laboratory Exercises.
+
 ## Agenda
 
 *Last time*
@@ -44,6 +45,8 @@ to the ability to present wavefoms as line spectra, simplifies the calculation
 of power for systems with harmonics and leads in the limit as the $T$ approaches
 infinity to the Fourier Transform.
 
+----
+
 The material in this presentation and notes is based on Chapter 7 (Starting at
 Section 7.10) of [Steven T. Karris, Signals and Systems: with Matlab Computation
 and Simulink Modelling, 5th
@@ -53,16 +56,21 @@ Chapter 4 of [Benoit Boulet, Fundamentals of Signals and
 Systems](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195)
 from the Recommended Reading List for this.
 
+# Line Spectra
+
 ## Line Spectra
 
 When the Exponential Fourier series are known is is useful to plot the amplitude
 and phase of the harmonics on a frequency scale.
 
-This is the spectrum of the Exponential Fourier Series calculated last time
+The next slide shows the spectrum of the Exponential Fourier Series calculated for the square wave.
 
-<img src="files/pictures/efs_sqw.png">
+----
 
-### Line Spectra for Trig. FS
+
+![Spectrum of the Exponential Fourier Series for a Square Wave](pictures/efs_sqw.png)
+
+## Line Spectra for Trig. FS
 
 If we take the results for the Exponential Fourier Series and gather terms, the
 amplitudes for the Trig. Fourier Series are given by:
@@ -73,18 +81,20 @@ $$a_1 = (C_k + C_{-k})$$
 
 $$b_k = j(C_k - C_{-k})$$
 
-Applying this to the previous result we get
+Applying this to the previous result we get the next slide
 
-<img src="files/pictures/line-spec.png">
+----
 
-### Example 1
+![Line spectra for trig. FS](pictures/line-spec.png)
+
+## Example 1
 
 Compute the exponential Fourier series for the waveform shown below and plot its
 line spectra.
 
-<img src="files/pictures/pulse_train.png">
+![Example 1](pictures/pulse_train.png)
 
-### Solution
+## Solution
 
 The recurrent rectangular pulse is used extensively in digital communication
 systems. To determine how faithfully such pulses will be transmitted, it is
@@ -97,7 +107,7 @@ necessary to know the frequency components.
 * $w$ is the ratio of pulse repetition time to the pulse duration &ndash;
 normally called the *duty cycle*.
 
-### Coefficients of the Exponential Fourier Series?
+## Coefficients of the Exponential Fourier Series?
 
 Given
 
@@ -105,10 +115,10 @@ $$C_k = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)e^{-jk(\omega t)}\,d(\omega t)$$
 
 * Is the function **even** or **odd**?
 * Does the signal have **half-wave symmetry**?
-* What are the cosequencies of symmetry on the form of the coefficients $C_k$?
+* What are the consequences of symmetry on the form of the coefficients $C_k$?
 * What function do we actually need to integrate to compute $C_k$?
 
-### Answers
+## Answers
 
 Given
 
@@ -116,19 +126,24 @@ $$C_k = \frac{1}{2\pi}\int_{-\pi}^{\pi} f(t)e^{-jk(\omega t)}\,d(\omega t)$$
 
 * Is the function **even** or **odd**? **even** $f(t) = f(-t)$!
 * Does the signal have **half-wave symmetry**? No!
-* What are the cosequencies of symmetry on the form of the coefficients $C_k$?
-$C_k$ will be real values. Trig. equivalent no sine terms.
-* What function do we actually need to integrate to compute $C_k$? We only need
+* What are the consequences of symmetry on the form of the coefficients $C_k$?
+**$C_k$ will be real values. Trig. equivalent no sine terms.**
+* What function do we actually need to integrate to compute $C_k$?
+
+----
+
+We only need
 to integrate between the limits $-\pi/w \to \pi/w$
 
 $$C_k = \frac{1}{2\pi}\int_{-\pi/w}^{\pi/w} Ae^{-jk(\omega t)}\,d(\omega t) =
 \frac{A}{2\pi}\int_{-\pi/w}^{\pi/w} e^{-jk(\omega t)}\,d(\omega t) $$
 
-### DC Component?
+## DC Component?
 
 Let $k = 0$ then perform the integral
 
-### DC component!
+<div class="notes">
+## DC component!
 
 $$C_0 = \left.\frac{A}{2\pi}\,t\,\right|_{-\pi/w}^{\pi/w} =
 \frac{A}{2\pi}\left(\frac{\pi}{w}+\frac{\pi}{w}\right)$$
@@ -136,70 +151,85 @@ $$C_0 = \left.\frac{A}{2\pi}\,t\,\right|_{-\pi/w}^{\pi/w} =
 or
 
 $$C_0 = \frac{A}{w}$$
+</div>
 
-### Harmonic coefficients?
+## Harmonic coefficients?
 
 Integrate for $k\ne 0$
 
-### Harmonic coefficients!
+<div class="notes">
+## Harmonic coefficients!
 
 $$C_k = \left.\frac{A}{-jk2\pi}\,e^{-jk(\omega t)}\,\right|_{-\pi/w}^{\pi/w} =
 \frac{A}{k\pi}\left(\frac{e^{jk\pi/w}-e^{-jk\pi/w}}{j2}\right) =
 \frac{A}{k\pi}\sin\left(\frac{k\pi}{w}\right)$$
 
 $$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
+</div>
 
-### Exponential Fourier Series?
+## Exponential Fourier Series?
 
-### Exponential Fourier Series!
+<div class="notes">
+## Exponential Fourier Series!
 
-$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\
-pi/w} e^{-k\omega t}$$
+$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
 
-### Effect of pulse width on frequency spectra
+</div>
+## Results
+
+$$C_0 = \frac{A}{w}$$
+
+$$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
+
+$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
+
+
+## Effect of pulse width on frequency spectra
 
 * Recall pulse width = $T/w$
 
-### w = 2
+## w = 2
 
 $\omega = 1$ rad/s; $w = 2$; $T = 2\pi$ s; $T/w = \pi$ s.
 
-<img src="files/pictures/sinc2.png">
+![Sinc function for $w=5$](pictures/sinc2.png)
 
-### w = 5
+## w = 5
 
 $\omega = 1$ rad/s; $w = 5$; $T = 2\pi$ s; $T/w = 2\pi/5$ s.
 
-<img src="files/pictures/sinc5.png">
+![Sinc function for $w=5$](pictures/sinc5.png)
 
-### w = 10
+## w = 10
 
 $\omega = 1$ rad/s; $w = 10$; $T = 2\pi$ s; $T/w = \pi/5$ s.
 
-<img src="files/pictures/sinc10.png">
+![Sinc function for $w=10$](pictures/sinc10.png)
 
-### Implications
+## Observations
 
-* As the width of the pulse **reduces** the width of the freqency spectra needed
+* As the width of the pulse **reduces** the width of the frequency spectra needed
 to fully describe the signal **increases**
 * more bandwidth is needed to transmit the pulse.
 
+<div class="notes">
 **Note**
 
 Text book seems to get the wrong results. Karris plots $\sin(wx)/(wx)$ rather
 than $\sin(x/w)/(x/w)$ in producing the diagrams shown in Figs. 7.36&mdash;7-38.
 
 However, if you view $\sin(wx)/wx$ as in indication of the bandwidth needed to
-trasmit a pulse of width $T/w$ the plots Karris gives make more sense.
+transmit a pulse of width $T/w$ the plots Karris gives make more sense.
+</div>
 
-### Example 2
+## Example 2
 
 Use the result of Example 1 to compute the exponential Fourier series of the
 impulse train $\delta(t\pm 2\pi k)$ shown below
 
-<img src="files/pictures/impulse_train.png">
+![Example 2](pictures/impulse_train.png)
 
-### Solution
+## Solution
 
 To solve this we take the previous result and choose amplitude (height) $A$ so
 that area of pulse is unity. Then we let width go to zero while maintaining the
@@ -212,6 +242,8 @@ and, therefore
 $$f(t) = \frac{1}{2\pi}\sum_{k=-\infty}^{\infty} e^{jk\omega t}$$
 
 Try it!
+
+<div class="notes">
 
 ### Proof!
 
@@ -227,17 +259,17 @@ Let us take the previous impulse train as a recurrent pulse with amplitude
 
 $$A = \frac{1}{T/w} = \frac{1}{2\pi/w} = \frac{w}{2\pi}.$$
 
-### Pulse with unit area
+#### Pulse with unit area
 
 The area of each pulse is then
 
 $$\frac{2\pi}{w}\times\frac{w}{2\pi} = 1$$
 
-and the pulse train is as shown below:
+and the pulse train is as shown on the next slide:
 
-<img src="files/pictures/unit_area_pulses.png">
+![Pulses with unit area](pictures/unit_area_pulses.png)
 
-### New coefficents
+#### New coefficients
 
 The coefficients of the Exponential Fourier Series are now:
 
@@ -251,7 +283,7 @@ Also, recalling that
 
 $$\lim_{x\to 0} \frac{sin x}{x} = 1$$
 
-the coefficents reduce to
+the coefficients reduce to
 
 $$C_n = \frac{1}{2\pi}$$
 
@@ -259,30 +291,34 @@ That is all coefficients have the same amplitude and thus
 
 $$f(t) = \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} e^{jk\omega t}$$
 
-### Spectrum of Unit Impulse Train
+</div>
+
+## Spectrum of Unit Impulse Train
 
 The line spectrum of a sequence of unit impulses $\delta(t \pm kT)$ is shown
 below:
 
-<img src="files/pictures/impulse_spectrum.png">
+![Spectrum of unit pulse train](pictures/impulse_spectrum.png)
 
-### Another Interesting Result
+## Another Interesting Result
 
 Consider the pulse train agin:
 
-<img src="files/pictures/pulse_train.png">
+![Another interesting result](pictures/pulse_train.png)
 
 What happens when the pulses to the left and right of the centre pulse become
 less and less frequent? That is what happens when $T \to \infty$?
 
-### Well?
+## Well?
 
 * As $T\to \infty$ the fundamental frequency $\omega \to 0$
 * We are then left with just one pulse centred around $t=0$.
 * The frequency difference between harmonics also becomes smaller.
-* Line spectrum becomes a continous function.
+* Line spectrum becomes a continuous function.
 
 This result is the basis of the *Fourier Transform* which is coming next.
+
+# Power in Periodic Signals
 
 ## Power in Periodic Signals
 
@@ -295,25 +331,27 @@ $$P_{\mathrm{av}} = \frac{1}{T}\int_0^T |f(t)|^2 dt$$
 
 $$P_{\mathrm{RMS}} = \sqrt{\frac{1}{T}\int_0^T |f(t)|^2 dt}$$
 
-### Parseval's Theorem
+## Parseval's Theorem
 
 [Parseval's Theorem](http://en.wikipedia.org/wiki/Parseval's_theorem) states
-that the total average power of a a periodic signal $f(t)$ is equal to the sum
+that the total average power of a periodic signal $f(t)$ is equal to the sum
 of the average powers of all its harmonic components.
+
+----
 
 The power in the $k$th harmonic $C_ke^{jk\omega t}$ is given by
 
 $$P_k = \frac{1}{T}\int_0^T\left|C_ke^{jk\omega t}\right|^2\,dt =
 \frac{1}{T}\int_0^T\left|C_k\right|^2\,dt=\left|C_k\right|^2$$
 
-Since $P_k = P_{-k}$, the total power of the $k$th harmomic is $2P_k$.
+Since $P_k = P_{-k}$, the total power of the $k$th harmonic is $2P_k$.
 
 Parseval's theorem states that
 
 $$P = \frac{1}{T}\int_0^T \left|f(t)\right|^2\,dt =
 \sum_{k=-\infty}^{\infty}\left|C_k\right|^2.$$
 
-### RMS Power
+## RMS Power
 
 By a similar argument:
 
@@ -321,7 +359,7 @@ $$P_{\mathrm{RMS}} = \sqrt{\frac{1}{T}\int_0^T \left|f(t)\right|^2\,dt} =
 \sqrt{\sum_{k=-\infty}^{\infty}\left|C_k\right|^2}.$$
 
 
-### Example 3
+## Example 3
 
 Compute the average power of a pulse train for which the pulse width is $T/2$
 (duty cycle 50%). Use the previous result:
@@ -329,6 +367,8 @@ Compute the average power of a pulse train for which the pulse width is $T/2$
 $$C_n = \frac{A}{w}.\frac{\sin(k\pi/w)}{k\pi/w}$$
 
 as your starting point.
+
+<div class="notes">
 
 ### Solution 3
 
@@ -339,7 +379,7 @@ $$C_n = \frac{A}{2}.\frac{\sin(k\pi/2)}{k\pi/2}$$
 Write down an expression for $P$ using Parseval's Theorem
 
 
-### P
+#### P
 
 $$P = \sum\limits_{k =  - \infty }^\infty  {{{\left| {{C_k}} \right|}^2}}  =
 \sum\limits_{k =  - \infty }^\infty  {{{\left| {\frac{A}{2}{\mathop{\rm
@@ -349,7 +389,7 @@ sinc}\nolimits} \frac{{k\pi }}{2}} \right|}^2}}  = {A^2}\left( {\frac{1}{4} +
 
 sinc$(k\pi/2) = 0$ for $k$ even ($k=0,2,4,6,\ldots$) so...?
 
-### P for k odd
+#### P for k odd
 
 $$P = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k = 1,3,5, \ldots
 }^\infty  {{{\left| {{\mathop{\rm sinc}\nolimits} \frac{{k\pi }}{2}}
@@ -359,7 +399,7 @@ $$P = {A^2}\left( {\frac{1}{4} + \frac{1}{2}\sum\limits_{k = 1,3,5, \ldots
 
 $\sin(k\pi/2) = 1$ for $k$ odd ($k=1,3,5,7,\ldots$) so...?
 
-### P after eliminating sine
+#### P after eliminating sine
 
 $$P = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\sum\limits_{k = 1,3,5,
 \ldots }^\infty  {\left[ {1 + \frac{1}{9} + \frac{1}{{25}} +  \ldots } \right]}
@@ -368,46 +408,54 @@ $$P = {A^2}\left( {\frac{1}{4} + \frac{2}{{{\pi ^2}}}\sum\limits_{k = 1,3,5,
 
 $$P = \frac{A^2}{2}$$
 
-### Check P from f(t)
+#### Check P from f(t)
 
 $$P = \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|f(t)|^2\,d\omega t =
 \frac{1}{2\pi}\int_{-\pi/2}^{\pi/2}|A|^2\,d\omega t =
 \frac{A^2}{2\pi}\left(\frac{\pi}{2}+\frac{\pi}{2}\right) = \frac{A^2}{2}.$$
 
-### Power Spectrum
+</div>
+
+## Power Spectrum
 
 The *power spectrum* of signal is the sequence of average powers in each complex
-harmonic: $|C_k|^2$. For real perodic signals
+harmonic: $|C_k|^2$. For real periodic signals
 the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 =
 |C_k|^2$.
 
+----
+
 This is the power spectrum for a pulse with width $T/8$.
 
-<img src="files/pictures/power.png">
+![Power spectrum](pictures/power.png)
 
+<div class="notes">
 Note that most of the power is concentrated at DC and in the first seven
 harmonic components. That is in the frequency range $[-14\pi/T,+14\pi/T]$ rad/s.
+</div>
 
-### Total Harmonic Distortion
+## Total Harmonic Distortion
 
 Suppose that a signal that is supposed to be a pure sine wave of amplitude A is
 distorted as shown below
 
-<img src="files/pictures/thd.png">
+![Total harmonic distortion](pictures/thd.png)
 
 This can occur in the line voltages of an industrial plant that makes heavy use
-of nonlineear loads such as electric arc furnaces, solid state relays, motor
+of nonlinear loads such as electric arc furnaces, solid state relays, motor
 drives, etc (E.g. Tata Steel!)
 
-### THD Defined
+## THD Defined
 
 Clearly, some of the harmonics for $k\ne \pm 1$ are nonzero. One way to
-characterie the distortion is to compute the ratio of average power in all the
+characterize the distortion is to compute the ratio of average power in all the
 harmonics that "should not be present", that is for $k > 1$, to the total
 average power of the distorted sine wave. The square-root of this ratio is
 called the *total harmonic distortion* (THD) of the signal.
 
-If the signal is real and based on a sine wave (that is *odd*), then $C_k=0$ and
+----
+
+If the signal is real and based on a sine wave (that is *odd*), then $C_0=0$ and
 
 $$f_{\mathrm{RMS}}=\sqrt{\sum_{k=1}^{\infty}2|C_k|^2}$$
 
@@ -418,11 +466,11 @@ $\sqrt{2\left|C_1\right|^2}:$
 $${\text{THD}} = 100\sqrt {\frac{{\sum\limits_{k = 2}^\infty  {{{\left| {{C_k}}
 \right|}^2}} }}{{{{\left| {{C_1}} \right|}^2}}}}\% $$
 
-### Computation of THD
+## Computation of THD
 
-<img src="files/pictures/thd_ps.png">
+![Computation of THD](pictures/thd_ps.png)
 
-### Filtering
+# Steady-State Response of an LTI System to a Periodic Signal
 
 ## Steady-State Response of an LTI System to a Periodic Signal
 
@@ -438,7 +486,7 @@ $y(t)=H(j\omega)e^{j\omega t}$.
 The complex functions $H(s)$ and $H(j\omega)$ are called the system's *transfer
 function* and *frequency response*, respectively.
 
-### By superposition
+## By superposition
 
 The output of an LTI system to a periodic function with period $T$ represented
 by a Fourier series is given by:
@@ -449,22 +497,22 @@ where $\omega_0 = T/2\pi$ is the fundamental frequency.
 
 Thus $y(t)$ is a Fourier series itself with coefficients $D_k$:
 
-$$D_k = C_kH(jk\omega_0)$$
+$$D_k = C_k H(jk\omega_0)$$
 
-### Implications of this important result
+## Implications of this important result
 
-The effect of an LTI sustem on a periodic input signal is to modify its Fourier
+The effect of an LTI system on a periodic input signal is to modify its Fourier
 series through a multiplication by its frequency response evaluated at the
-harmonic frquencies.
+harmonic frequencies.
 
-### Illustration
+## Illustration
 
 This picture below shows the effect of an LTI system on a periodic input in the
 frequency domain.
 
-<img src="files/pictures/filter.png">
+![Illustration - system operating as a filter](pictures/filter.png)
 
-### Filtering
+## Filtering
 
 A consequence of the previous result is that we can design a system that has a
 desirable frequency spectrum $H(jk\omega_0)$ that retains certain frequencies
@@ -492,5 +540,5 @@ for the first 7 harmonics.
 
 ## Lab Work
 
-In the lab, on Monday, we will continue to explore Fourier Series and their
+In the lab we will continue to explore Fourier Series and their
 applications
