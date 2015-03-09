@@ -171,7 +171,7 @@ Then the normalized coefficients $T C_k$ of the rectangular wave a is a sinc env
 with constant amplitude at the origin equal to $2t_0$, and a zero crossing at
 fixed frequency $\pi/t_0$ rad/s, both independent of T.
 
-Plots follow (use [duty_cycle.m](files/matlab/duty_cycle.m) to reproduce).
+Plots follow (use [duty_cycle.m](matlab/duty_cycle.m) to reproduce).
 
 ## Duty cycle 50%
 
