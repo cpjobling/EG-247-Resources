@@ -16,7 +16,8 @@ The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Res
 also contains the source code for all the Matlab/Simulink
 examples and the Laboratory Exercises.
 
-## Note on Notation
+<div class="notes">
+### Note on Notation
 
 If you have been reading both Karris and Boulet you may have noticed a
 difference in the notation used in the definition of Fourier Transform:
@@ -48,25 +49,8 @@ the notation used to *represent* the transform, we are still dealing with real
 and imaginary parts or magnitudes and phases when we use the *actual transforms*
 in analysis.
 
+</div>
 
-
-
-## Agenda
-
-*Last time*
-
-* Fourier Transform as the Limit of a Fourier Series
-* Doing the Maths
-* Special forms of the Fourier Transform
-* Properties of the Fourier Transform
-* Computing Fourier Transforms in Matlab
-
-*This Time*
-
-* Tables of Transform Pairs
-* Examples of Selected Transforms
-* Relationship between Laplace and Fourier
-* Fourier Transforms of Common Signals
 
 
 ## Scope and Background Reading
@@ -83,12 +67,33 @@ Fundamentals of Signals and
 Systems](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195)
 from the Recommended Reading List.
 
-## Reminder of the Definitions
+
+## Agenda
+
+*Last time*
+
+* Fourier Transform as the Limit of a Fourier Series
+* Doing the Maths
+* The Fourier Transform
+* Properties of the Fourier Transform
+* Some Examples
+* Computing Fourier Transforms in Matlab
+
+*This Time*
+
+* Tables of Transform Pairs
+* Examples of Selected Transforms
+* Relationship between Laplace and Fourier
+* Fourier Transforms of Common Signals
+
+
+
+# Reminder of the Definitions
 
 Last time we derived the Fourier Transform by evaluating what would happen when
 a periodic signal was made periodic. Let us restate the definitions.
 
-### The Fourier Transform
+## The Fourier Transform
 
 In the signals and systems context, the Fourier Transform is used to convert a
 function of time $f(t)$ to a function of radian frequency $F(\omega)$:
@@ -96,7 +101,7 @@ function of time $f(t)$ to a function of radian frequency $F(\omega)$:
 $$\mathcal{F}\left\{f(t)\right\} = \int_{-\infty}^{\infty} f(e)e^{-j\omega
 t}\,dt = F(\omega).$$
 
-### The Inverse Fourier Transform
+## The Inverse Fourier Transform
 
 In the signals and systems context, the *Inverse Fourier Transform* is used to
 convert a function of frequency $F(\omega)$ to a function of time $f(t)$:
@@ -107,56 +112,17 @@ $$\mathcal{F}^{-1}\left\{F(\omega)\right\} =
 Note, the factor $2\pi$ is introduced because we are changing units from
 radians/second to seconds.
 
-### Duality of the transform
+## Duality of the transform
 
 Note the similarity of the Fourier and its Inverse. This has important
 condequences in filter design and later when we consider sampled data systems.
 
 ## Table of Common Fourier Transform Pairs
 
-This table is adapted from Table 8.9 of Karris. See also: [Wikibooks:
+[This table](ft_table.html) is adapted from Table 8.9 of Karris. See also: [Wikibooks:
 Engineering Tables/Fourier Transform
 Table](http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Table)
-and [Fourier Transfom&mdash;WolframMathworld](http://mathworld.wolfram.com/Fouri
-erTransform.html) for more complete references.
-
-<table>
-<thead>
-<tr><td></td><td>**Name**</td><td>$f(t)$</td><td>$F(\omega)$</td><td>**Remarks**
-</td></tr>
-<thead>
-<tbody>
-<tr><td>1</td><td>Dirac delta</td><td>$\delta(t)$</td><td>1</td><td>Constant
-energy at *all* frequencies.</td></tr>
-<tr><td>2</td><td>Time sample</td><td>$\delta(t-t_0)$</td><td>$e^{j\omega
-t_0}$</td><td></td></tr>
-<tr><td>3.</td><td>Phase shift</td><td>$e^{j\omega
-t_0}$</td><td>$2\pi\delta(\omega - \omega_0)$</td><td></td></tr>
-<tr><td>4.</td><td>*Signum* </td><td>$\operatorname{sgn}
-(x)$</td><td>$$\frac{2}{j\omega}$$</td><td>also known as sign function</td></tr>
-<tr><td>5.</td><td>Unit step</td><td>$u_0(t)$</td><td>$$\frac{1}{j\omega}+\pi\de
-lta(\omega)$$</td><td></td></tr>
-<tr><td>6.</td><td>Cosine</td><td>$\cos \omega_0 t$</td><td>$\pi\left[\delta(\om
-ega-\omega_0)+\delta(\omega+\omega_0)\right]$</td><td></td></tr>
-<tr><td>7.</td><td>Sine</td><td>$\sin \omega_0 t$</td><td>$j\pi\left[\delta(\ome
-ga-\omega_0)-\delta(\omega+\omega_0)\right]$</td><td></td></tr>
-<tr><td>8.</td><td>Single
-pole</td><td>$e^{-at}u_0(t)$</td><td>$$\frac{1}{j\omega + a}$$</td><td>$a \gt
-0$</td></tr>
-<tr><td>9.</td><td>Double
-pole</td><td>$te^{-at}u_0(t)$</td><td>$$\frac{1}{(j\omega + a)^2}$$</td><td>$a
-\gt 0$</td></tr>
-<tr><td>10.</td><td>Complex pole (cosine component)</td><td>$e^{-at}\cos
-\omega_0 t\;u_0(t)$</td><td>$$\frac{j\omega + a}{((j\omega +
-a)^2+\omega^2}$$</td><td>$a\gt 0$</td></tr>
-<tr><td>11.</td><td>Complex pole (sine component)</td><td>$e^{-at}\sin \omega_0
-t\;u_0(t)$</td><td>$$\frac{\omega}{((j\omega + a)^2+\omega^2}$$</td><td>$a\gt
-0$</td></tr>
-<tr><td>12.</td><td>Gating function (*aka* $\operatorname{rect}
-(T)$)</td><td>$A\left[u_0(t + T)-u_0(t -
-T)\right]$</td><td>$$2AT\frac{\sin\omega T}{\omega T}$$</td><td></td></tr>
-</tbody>
-</table>
+and [Fourier Transfom&mdash;WolframMathworld](http://mathworld.wolfram.com/FourierTransform.html) for more complete references.
 
 ## Some Selected Fourier Transforms
 
