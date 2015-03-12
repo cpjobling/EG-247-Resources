@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="table-of-common-fourier-transform-pairs">Table of Common Fourier Transform Pairs</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="right">No.</th>
+<th align="left"><strong>Name</strong></th>
+<th align="left"><span class="math">\(f(t)\)</span></th>
+<th align="left"><span class="math">\(F(\omega)\)</span></th>
+<th align="left"><strong>Remarks</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1.</td>
+<td align="left">Dirac delta</td>
+<td align="left"><span class="math">\(\delta(t)\)</span></td>
+<td align="left">1</td>
+<td align="left">Constant energy at <em>all</em> frequencies.</td>
+</tr>
+<tr class="even">
+<td align="right">2.</td>
+<td align="left">Time sample</td>
+<td align="left"><span class="math">\(\delta(t-t_0)\)</span></td>
+<td align="left"><span class="math">\(e^{j\omega t_0}\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">3.</td>
+<td align="left">Phase shift</td>
+<td align="left"><span class="math">\(e^{j\omega t_0}\)</span></td>
+<td align="left"><span class="math">\(2\pi\delta(\omega - \omega_0)\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">4.</td>
+<td align="left"><em>Signum</em></td>
+<td align="left"><span class="math">\(\operatorname{sgn}(x)\)</span></td>
+<td align="left"><span class="math">\[\frac{2}{j\omega}\]</span></td>
+<td align="left">also known as sign function</td>
+</tr>
+<tr class="odd">
+<td align="right">5.</td>
+<td align="left">Unit step</td>
+<td align="left"><span class="math">\(u_0(t)\)</span></td>
+<td align="left"><span class="math">\[\frac{1}{j\omega}+\pi\delta(\omega)\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">6.</td>
+<td align="left">Cosine</td>
+<td align="left"><span class="math">\(\cos \omega_0 t\)</span></td>
+<td align="left"><span class="math">\(\pi\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right]\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">7.</td>
+<td align="left">Sine</td>
+<td align="left"><span class="math">\(\sin \omega_0 t\)</span></td>
+<td align="left"><span class="math">\(j\pi\left[\delta(\omega-\omega_0)-\delta(\omega+\omega_0)\right]\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">8.</td>
+<td align="left">Single pole</td>
+<td align="left"><span class="math">\(e^{-at}u_0(t)\)</span></td>
+<td align="left"><span class="math">\[\frac{1}{j\omega + a}\]</span></td>
+<td align="left"><span class="math">\(a \gt 0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">9.</td>
+<td align="left">Double pole</td>
+<td align="left"><span class="math">\(te^{-at}u_0(t)\)</span></td>
+<td align="left"><span class="math">\[\frac{1}{(j\omega + a)^2}\]</span></td>
+<td align="left"><span class="math">\(a\gt 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="right">10.</td>
+<td align="left">Complex pole (cosine component)</td>
+<td align="left"><span class="math">\(e^{-at}\cos\omega_0 t\;u_0(t)\)</span></td>
+<td align="left"><span class="math">\[\frac{j\omega + a}{((j\omega + a)^2+\omega^2}\]</span></td>
+<td align="left"><span class="math">\(a\gt 0\)</span></td>
+</tr>
+<tr class="odd">
+<td align="right">11.</td>
+<td align="left">Complex pole (sine component)</td>
+<td align="left"><span class="math">\(e^{-at}\sin \omega_0 t\;u_0(t)\)</span></td>
+<td align="left"><span class="math">\[\frac{\omega}{((j\omega + a)^2+\omega^2}\]</span></td>
+<td align="left"><span class="math">\(a\gt 0\)</span></td>
+</tr>
+<tr class="even">
+<td align="right">12.</td>
+<td align="left">Gating function (<em>aka</em> <span class="math">\(\operatorname{rect}(T)\)</span>)</td>
+<td align="left"><span class="math">\(A\left[u_0(t + T)-u_0(t -T)\right]\)</span></td>
+<td align="left"><span class="math">\[2AT\frac{\sin\omega T}{\omega T}\]</span></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
