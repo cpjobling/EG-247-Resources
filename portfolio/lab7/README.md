@@ -1,4 +1,4 @@
-# Week 7: Lab 6: Convolution
+# Week 8: Lab 7: Fourier Series
 
 ## Acknowledgements
 
