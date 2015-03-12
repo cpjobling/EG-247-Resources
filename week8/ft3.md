@@ -166,3 +166,36 @@ And here's a plot:
 ----
 
 ![Solution of example 3](pictures/ft3_ex3.png)
+
+## Example 4
+
+Karris example 8.11: the voltage across a 1 $\Omega$ resistor is known to be
+$V_{R}(t)=3e^{-2t} u_0(t)$. Compute the energy dissipated in the resistor for
+$0<t < \infty$, and verify the result using Parseval's theorem. Verify the
+result with Matlab.
+
+![Example 4](pictures/example4.png)
+
+Note from [tables of integrals](http://en.wikipedia.org/wiki/Lists_of_integrals)
+
+$$\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.$$
+
+## Matlab verification
+
+See [ft3_ex4.m](files/matlab/ft3_ex4.m)
+
+````matlab
+Result:
+
+    Wr = (51607450253003931*pi)/72057594037927936 = 2.25
+````
+
+## Homework
+
+Attempt the end of the chapter exercises 7-11 (Section 8.10) from Karris. Don't
+look at the answers until you have attempted the problems.
+
+## Lab Work
+
+We will verify the results and examine the frequency responses of selected
+examples from this session.
