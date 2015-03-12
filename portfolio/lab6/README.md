@@ -33,15 +33,23 @@ Set up the `convolutiondemo` app as described in the notes for the computation o
 
 ![Example 6.4](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1228.png)
 
-Use the tool to confirm the convolution result given by this Matlab script: <a href="https://raw.github.com/cpjobling/EG-247-Resources/portfolio/lab6/exercise15.m" target="_blank">exercise15.m</a></p>
+Use the tool to confirm the convolution result given by this Matlab script: <a href="https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/exercise15.m" target="_blank">exercise15.m</a></p>
 
 ### Part 2
 
-<p>Taking the script <a href="https://raw.github.com/cpjobling/EG-247-Resources/master/week6/lab5/exercise15.m" target="_blank">exercise15.m</a> as a model. Use the <em>convolutiondemo</em> tool as an aid to defining the integration limits needed to find and plot the convolution integral for the example shown below (Example 6.5 from the textbook).</p>
-<p><br /> <img src="https://blackboard.swan.ac.uk/bbcswebdav/pid-1479689-dt-content-rid-1424257_2/xid-1424257_2" alt="Example 6.5" width="50%" /></p>
-<p><strong>Part 3</strong></p>
-<p>Repeat the procedure for example 6.6 from the textbook</p>
-<p><img src="https://blackboard.swan.ac.uk/bbcswebdav/pid-1479689-dt-content-rid-1424258_2/xid-1424258_2" alt="Example 6.6" width="50%" /></p>
-<p><strong>Part 4</strong></p>
-<p>Adapt your procedure to determine the step response of the RC circuit given as Example 6.7 in the textbook</p>
-<p><img src="https://blackboard.swan.ac.uk/bbcswebdav/pid-1479689-dt-content-rid-1424259_2/xid-1424259_2" alt="Example 6.7" width="50%" /></p>
+Taking the script <a href="https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/exercise15.m" target="_blank">exercise15.m</a> as a model. Use the `convolutiondemo` tool as an aid to defining the integration limits needed to find and plot the convolution integral for the example shown below (Example 6.5 from the textbook).
+
+![Example 6.5](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1240.png)
+
+### Part 3
+
+Repeat the procedure for example 6.6 from the textbook.
+
+![Example 6.6](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1246.png)
+
+
+### Part 4
+
+Adapt your procedure to determine the step response of the RC circuit given as Example 6.7 in the textbook.
+
+![Example 6.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1248.png)
