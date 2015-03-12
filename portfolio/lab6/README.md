@@ -53,3 +53,19 @@ Repeat the procedure for example 6.6 from the textbook.
 Adapt your procedure to determine the step response of the RC circuit given as Example 6.7 in the textbook.
 
 ![Example 6.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1248.png)
+
+## Lab Exercise 16: Using Laplace to Solve Convolution Problems
+
+In this lab exercise will demonstrate that time-convolution of a system response can be solved in the complex frequency domain using Laplace and Inverse Laplace transforms.
+
+* Use the inverse Laplace transform function `ilaplace` to solve the step response of the RC circuit given in exercise 15 without convolution. You will need the laplace transform of the circuit's impulse resonse *h*(*t*) and the unit step *u*<sub>0</sub>(*t*) (Matlab `heaviside`).
+* Plot the result using `ezplot`
+* Confirm the result with a simulink simulation
+
+## What to hand in
+
+You should add your modified version of the file `example15.m` in folder `lab6` of your EG-247 portfolio as `ex15_1.m<`. Additional marks will be awarded according to how many of Exercises 15 (Parts 2-4) and 16 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 15 scripts should be named `ex15_2.m<`, `ex15_3.m<` etc. Use the same naming scheme for any Similink models submitted for assessment.
+
+See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
+
+You will find it easiest to audit your completion of these exercises by publishing the script files using the <strong>Publish</strong> option in the m-file editor. I do not require you to add the published documents in your portfolio as I will regenerate these when I validate your claim.
