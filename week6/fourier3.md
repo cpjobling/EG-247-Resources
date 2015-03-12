@@ -171,7 +171,7 @@ $$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
 <div class="notes">
 ## Exponential Fourier Series!
 
-$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
+$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{k\omega t}$$
 </div>
 ## Results
 
@@ -179,7 +179,7 @@ $$C_0 = \frac{A}{w}$$
 
 $$C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}$$
 
-$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}$$
+$$f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{k\omega t}$$
 
 
 ## Effect of pulse width on frequency spectra
@@ -255,6 +255,8 @@ Let us take the previous impulse train as a recurrent pulse with amplitude
 
 $$A = \frac{1}{T/w} = \frac{1}{2\pi/w} = \frac{w}{2\pi}.$$
 
+</div>
+
 #### Pulse with unit area
 
 The area of each pulse is then
@@ -267,6 +269,8 @@ and the pulse train is as shown on the next slide:
 
 ![Pulses with unit area](pictures/unit_area_pulses.png)
 
+
+<div class="notes">
 #### New coefficients
 
 The coefficients of the Exponential Fourier Series are now:

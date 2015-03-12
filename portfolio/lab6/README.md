@@ -1,3 +1,1 @@
-# EG-247 Week 6 Lab 5
-
-No new lab exercises this week.
+# Week 7: Lab 6: Convolution
