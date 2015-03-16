@@ -85,7 +85,7 @@ t_0}}{2j}\right) = 2\frac{\sin(k\omega_0 t_0)}{k\omega_0 T}\]</span></p>
 <div class="notes">
 <p>Matlab code to reproduce this plot: <a href="matlab/sinc_plot.m">sinc_plot.m</a>.</p>
 <p><span class="math">\(^*\)</span>Note <span class="math">\(sin(\pi u)/(\pi u)\)</span> is undefined at <span class="math">\(u = 0\)</span>. To compute its value we need to take the limit</p>
-<p><span class="math">\[\lim_{u\to 0} \frac{\sin(\pi u)}{u}\]</span></p>
+<p><span class="math">\[\lim_{u\to 0} \frac{\sin(\pi u)}{\pi u}\]</span></p>
 <p>which can be shown to be 1. I leave the discovery of the proof to you and the internet.</p>
 </div>
 <h2 id="duty-cycle">Duty cycle</h2>
