@@ -4,7 +4,7 @@
 %
 % Prepared for EG-247 by 
 % C.P. Jobling
-%% The decaying exponentail
+%% The decaying exponential
 t=linspace(0,4*pi,1000);
 figure
 plot(t,cos(t),t,sin(t))
