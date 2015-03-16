@@ -136,7 +136,7 @@ Matlab code to reproduce this plot: [sinc_plot.m](matlab/sinc_plot.m).
 $^*$Note $sin(\pi u)/(\pi u)$ is undefined at $u = 0$. To compute its value we need
 to take the limit
 
-$$\lim_{u\to 0} \frac{\sin(\pi u)}{u}$$
+$$\lim_{u\to 0} \frac{\sin(\pi u)}{\pi u}$$
 
 which can be shown to be 1. I leave the discovery of the proof to you and the
 internet.
