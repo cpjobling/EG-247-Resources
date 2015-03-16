@@ -331,7 +331,7 @@ usually summarized in Tables of Fourier Transform properties. For example this
 one: [Properties of the Fourier Transform (Wikpedia)](http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform) and Table 8.8 in
 Karris (page 8-17).
 
-Some of the more important properties are summarized on [this table of properties](ft_props.html)
+Some of the more important properties are summarized on [this table of properties](http://cpjobling.github.io/EG-247-Resources/week7/ft_props.html)
 and there is some additional commentary in the notes.
 
 <div class="notes">

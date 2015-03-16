@@ -119,7 +119,7 @@ consequences in filter design and later when we consider sampled data systems.
 
 ## Table of Common Fourier Transform Pairs
 
-[This table](ft_table.html) is adapted from Table 8.9 of Karris. See also: [Wikibooks:
+[This table](http://cpjobling.github.io/EG-247-Resources/week7/ft_table.html) is adapted from Table 8.9 of Karris. See also: [Wikibooks:
 Engineering Tables/Fourier Transform
 Table](http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Table)
 and [Fourier Transfom&mdash;WolframMathworld](http://mathworld.wolfram.com/FourierTransform.html) for more complete references.
