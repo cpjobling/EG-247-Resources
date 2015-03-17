@@ -94,3 +94,11 @@ Examine the code for the `FourierSeries` function that is defined in `FourierSer
 Examine the code that is defined in `TrigFourierSeries`. Note that it calls `FourierSeries` then computes `ak` and `bk` from the `Ck` coefficents. Why did I do that do you think? 
 
 If you made the suggested change to `FourierSeries`, provide compatible changes to your copy of `TrigFourierSeries`. Test it on the half-wave rectified sinewave. Save the resulting calling script as `ex20_2.m`.
+
+## What to Hand In
+
+You should add your modified version of the provided files `trig_fseries.m` named as `ex17_1.m`, `ex17_2.m`, and `exp_fseries.m` named as `ex19_1.m` and `ex19_2.m` in folder `lab7` of your EG-247 portfolio. Additional marks will be awarded according to how many of Exercises 18 and 20 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 18 models should be named `ex18_1.slx`, `ex18_2.slx` etc. Use the same naming scheme for any other Matlab m-files or Simulink models submitted for assessment.
+
+See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong></strong></a> for a detailed marking scheme.
+
+You will find it easiest to audit your completion of these exercises by publishing the script files using the Publish option in the m-file editor. I do not require you to add the published documents in your portfolio as I will regenerate these when I validate your claim.
