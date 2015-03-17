@@ -82,3 +82,15 @@ Compare the computed spectrum with the simulated spectrum.
 ### Part 8
 
 Copy the script `exp_fseries.m` and save it as `ex19_2.m`. Change the copy so that it computes and plots the exponential Fourier series for the full-wave rectified sinusoidal waveform (**Note**: f(t) = abs(sin(t)) (Section 7.4.5 in the textbook).
+
+## Lab Exercise 20: Review and Change the Code.
+
+### Part 9
+
+Examine the code for the `FourierSeries` function that is defined in `FourierSeries.m`. Can you adapt it so that the user can define the range of the Fourier Series integral? If you succeed, use the modified function to compute the Fourier series of the triangular wave form by exploiting half-wave symmetry. Save the script that does this as `ex20_1.m`.
+
+### Part 10
+
+Examine the code that is defined in `TrigFourierSeries`. Note that it calls `FourierSeries` then computes `ak` and `bk` from the `Ck` coefficents. Why did I do that do you think? 
+
+If you made the suggested change to `FourierSeries`, provide compatible changes to your copy of `TrigFourierSeries`. Test it on the half-wave rectified sinewave. Save the resulting calling script as `ex20_2.m`.
