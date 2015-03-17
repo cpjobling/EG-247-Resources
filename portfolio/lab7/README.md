@@ -17,3 +17,29 @@ Open and run `fseriesdemo/fseriesdemo.m`.
 
 If Matlab issues a message about the need to change the working directory or add a folder to the Matlab path. Accept the choice given.
 
+## Lab Exercise 17: Computation of the coefficients of Trig. Fourier Series
+
+In this lab exercise we will review the Fourier series for a square wave with odd and even symmetry before going on to compute and plot the Fourier series for the *triangular* waveform.
+
+We will also explore and confirm the stated results of even-, odd- and half-wave symmetries.
+
+### Before you Start
+
+Download attached files:
+
+* [FourierSeries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/FourierSeries.m)
+* [trig_fseries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/trig_fseries.m)
+
+and store them in your `lab7` folder.
+
+### Part 1
+
+Examine and run the script `trig_fseries.m` (which calls the `TrigFourierSeries` function defined in `TrigFourierSeries.m)` to calculate the trigonometric Fourier series for the square wave with odd-symmetry.
+
+### Part 2
+
+Copy the script `trig_fseries.m` and save it as `ex17_1.m`. Change the copy so that it computes and plots the trig. Fourier series for the square-wave waveform with even symmetry (Section 7.4.1 in the textbook).
+
+### Part 3
+
+Copy the script `trig_fseries.m` and save it as `ex17_2.m`. Change the copy so that it computes and plots the trig. Fourier series for the Triangular waveform (Section 7.4.3 in the textbook).
