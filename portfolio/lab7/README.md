@@ -46,7 +46,7 @@ Copy the script `trig_fseries.m` and save it as `ex17_2.m`. Change the copy so t
 
 ## Exercise 18: Simulating Wave Anaysis
 
-Downoad and open the Simulink model [fourier_example.slx]https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/fourier_example.slx?raw=true). Examine the settings for the sine terms and compare the amplitudes and frequencies of the settings with the results of running `trig_fseries.m`. Run the simulation and view the reconstructed signal and the spectrum.
+Downoad and open the Simulink model [fourier_example.slx](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/fourier_example.slx?raw=true). Examine the settings for the sine terms and compare the amplitudes and frequencies of the settings with the results of running `trig_fseries.m`. Run the simulation and view the reconstructed signal and the spectrum.
 
 ### Part 4
 
