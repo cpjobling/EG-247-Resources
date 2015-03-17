@@ -27,7 +27,7 @@ We will also explore and confirm the stated results of even-, odd- and half-wave
 
 Download attached files:
 
-* [FourierSeries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/FourierSeries.m)
+* [TrigFourierSeries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/TrigFourierSeries.m)
 * [trig_fseries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/trig_fseries.m)
 
 and store them in your `lab7` folder.
@@ -52,6 +52,33 @@ Downoad and open the Simulink model [fourier_example.slx](https://github.com/cpj
 
 Change the settings so that the simulink model uses the coefficients from the square-wave even-symmetry result. Simulate and capture the time and spectrum plots. Save your model as `ex18_1.slx`.
 
-## Part 5
+### Part 5
 
 Change the settings so so that the simulink model uses the coeffiecents from the triangular wave result. Simulate and capture the time and spectrum plots. Save your model as `ex18_2.slx`.
+
+## Lab Exercise 17: Computation of the coefficients of Exponential Fourier Series
+
+In this lab exercise we will review the Fourier series for a square wave with odd and even symmetry before going on to compute and plot the Fourier series for the `triangular` waveform.
+
+We will also explore and confirm the stated results of even-, odd- and half-wave symmetries.
+
+### Before you Start
+
+Download the attached files:
+
+* [FourierSeries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/FourierSeries.m)
+* [exp_fseries.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/exp_fseries.m)
+
+### Part 6
+
+Examine and run the script `exp_fseries.m` (which calls the `FourierSeries` function defined in `TrigFourierSeries.m`) to calculate the exponential Fourier series for the square wave with odd-symmetry.
+
+### Part 7
+
+Copy the script `exp_fseries.m` and save it as `ex19_1.m`. Change the copy so that it computes and plots the exponential Fourier series for the square-wave waveform with even symetry (Section 7.4.1 in the textbook). *Hint*: Use the same definition of f(t) that you used in Exercise 17.
+
+Compare the computed spectrum with the simulated spectrum.
+
+### Part 8
+
+Copy the script `exp_fseries.m` and save it as `ex19_2.m`. Change the copy so that it computes and plots the exponential Fourier series for the full-wave rectified sinusoidal waveform (**Note**: f(t) = abs(sin(t)) (Section 7.4.5 in the textbook).
