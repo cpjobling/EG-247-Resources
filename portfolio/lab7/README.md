@@ -43,3 +43,15 @@ Copy the script `trig_fseries.m` and save it as `ex17_1.m`. Change the copy so t
 ### Part 3
 
 Copy the script `trig_fseries.m` and save it as `ex17_2.m`. Change the copy so that it computes and plots the trig. Fourier series for the Triangular waveform (Section 7.4.3 in the textbook).
+
+## Exercise 18: Simulating Wave Anaysis
+
+Downoad and open the Simulink model [fourier_example.slx]https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab7/fourier_example.slx?raw=true). Examine the settings for the sine terms and compare the amplitudes and frequencies of the settings with the results of running `trig_fseries.m`. Run the simulation and view the reconstructed signal and the spectrum.
+
+### Part 4
+
+Change the settings so that the simulink model uses the coefficients from the square-wave even-symmetry result. Simulate and capture the time and spectrum plots. Save your model as `ex18_1.slx`.
+
+## Part 5
+
+Change the settings so so that the simulink model uses the coeffiecents from the triangular wave result. Simulate and capture the time and spectrum plots. Save your model as `ex18_2.slx`.
