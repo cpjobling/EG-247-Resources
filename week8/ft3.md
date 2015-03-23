@@ -56,8 +56,8 @@ $$h(t)*u(t) = g(t) \Leftrightarrow G(\omega) = H(\omega).U(\omega)$$
 
 We call $H(\omega)$ the *system function*.
 
-We note that the system function $H(\omega)$ and the impulse response $h(t) form
-the Fourier transform pair
+We note that the system function $H(\omega)$ and the impulse response $h(t)$
+form the Fourier transform pair
 
 $$h(t) \Leftrightarrow H(\omega)$$
 
@@ -88,12 +88,13 @@ Verify the result with Matlab.
 
 See [ft3_ex1.m](matlab/ft3_ex1.m)
 
-````matlab
+```matlab
 Result:
 
-    y = 3*heaviside(t) - 3*heaviside(t - 3) + 3*heaviside(t - 3)*exp(6 - 2*t)
-     - 3*exp(-2*t)*heaviside(t)
-````
+    y = 3*heaviside(t) - 3*heaviside(t - 3) + ...
+    3*heaviside(t - 3)*exp(6 - 2*t) ...
+    - 3*exp(-2*t)*heaviside(t)
+```
 
 Which after gathering terms gives
 
@@ -118,11 +119,11 @@ $i_L(0^-)=0$. Verify the result with Matlab.
 
 See [ft3_ex2.m](matlab/ft3_ex2.m)
 
-````matlab
+```matlab
 Result:
 
     vout = -5*exp(-3*t)*heaviside(t)*(2*exp(t) - 3)
-````
+```
 
 Which after gathering terms gives
 
@@ -155,11 +156,11 @@ See [ft3_ex3.m](files/matlab/ft3_ex3.m)
 Result:
 
     15*exp(-4*t)*heaviside(t)*(exp(2*t) - 1)
-````
+```
 
 Which after gathering terms gives
 
-$$v_{\mathrm{out}}(t) = 15\left(e^{-2t}) - e^{-4t}\right)u_0(t)$$
+$$v_{\mathrm{out}}(t) = 15\left(e^{-2t} - e^{-4t}\right)u_0(t)$$
 
 And here's a plot:
 
@@ -176,6 +177,8 @@ result with Matlab.
 
 ![Example 4](pictures/example4.png)
 
+----
+
 Note from [tables of integrals](http://en.wikipedia.org/wiki/Lists_of_integrals)
 
 $$\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.$$
@@ -184,11 +187,11 @@ $$\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.$$
 
 See [ft3_ex4.m](files/matlab/ft3_ex4.m)
 
-````matlab
+```matlab
 Result:
 
     Wr = (51607450253003931*pi)/72057594037927936 = 2.25
-````
+```
 
 ## Homework
 
