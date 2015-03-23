@@ -6,7 +6,26 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="the-fourier-transform-part-2">The Fourier Transform (Part 2)</h1>
@@ -22,7 +41,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week7/ft2.md">ft1.md</a>.</p>
 <p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
 <div class="notes">
-<h3 id="note-on-notation">Note on Notation</h3>
+<h3>Note on Notation</h3>
 <p>If you have been reading both Karris and Boulet you may have noticed a difference in the notation used in the definition of Fourier Transform:</p>
 <ul>
 <li>Karris uses <span class="math">\(F(\omega)\)</span></li>
@@ -72,58 +91,56 @@ t}\,dt = F(\omega).\]</span></p>
 <p><a href="http://cpjobling.github.io/EG-247-Resources/week7/ft_table.html">This table</a> is adapted from Table 8.9 of Karris. See also: <a href="http://en.wikibooks.org/wiki/Engineering_Tables/Fourier_Transform_Table">Wikibooks: Engineering Tables/Fourier Transform Table</a> and <a href="http://mathworld.wolfram.com/FourierTransform.html">Fourier Transfom—WolframMathworld</a> for more complete references.</p>
 <h1 id="examples-of-selected-transforms">Examples of Selected Transforms</h1>
 <div class="notes">
-<h3 id="relationship-between-ft-and-fomega">Relationship between f(t) and F(omega)</h3>
+<h3>Relationship between f(t) and F(omega)</h3>
 <p>In most of the work we will do in this course, and in practice, the <em>signals</em> that we use with the Fourier transform will be a real continuous aperiodic functions of time that are zero when <span class="math">\(t = 0\)</span>.</p>
 <p>The Fourier transforms of such a signals will be complex continuous function of frequency which have real and imaginary parts and will exist at both positive and negative values of <span class="math">\(\omega\)</span>.</p>
 <p>It is often most convenient to deal with the transformed &quot;spectrum&quot; by considering the magnitude and phase and we will therefore often plot <span class="math">\(F(\omega)\)</span> on two separate graphs as <em>magnitude</em> <span class="math">\(|F(\omega)|\)</span> and <em>phase</em> <span class="math">\(\angle F(\omega)\)</span> (where phase is measured in radians) plotted against frequency <span class="math">\(\omega \in [-\infty,\infty]\)</span> (in radians/second).</p>
 <p>We most often represent the <em>system</em> by its so-called <em>frequency response</em> and we will be interested in what effect the system has on the signal <span class="math">\(f(t)\)</span>.</p>
 <p>As for the Laplace transform, this is more conveniently determined by exploiting the <em>time convolution property</em>. That is by performing a Fourier transform of the signal, multiplying it by the system's frequency response and then inverse Fourier transforming the result.</p>
-<p>Have these ideas in mind as we go through the examples in the rest of this session.</p>
+Have these ideas in mind as we go through the examples in the rest of this session.
 </div>
 <h2 id="the-dirac-delta">The Dirac Delta</h2>
 <p><span class="math">\[\delta(t) \Leftrightarrow 1\]</span></p>
 <div class="figure">
-<img src="pictures/ft_delta.png" alt="Fourier transform of \delta(t))" />
-<p class="caption">Fourier transform of <span class="math">\(\delta(t)\)</span>)</p>
+<img src="pictures/ft_delta.png" alt="Fourier transform of \delta(t))" /><p class="caption">Fourier transform of <span class="math">\(\delta(t)\)</span>)</p>
 </div>
 <div class="notes">
 <p><em>Proof</em>: uses sampling and sifting properties of <span class="math">\(\delta(t)\)</span>.</p>
 <p><em>Matlab</em>:</p>
-<p>`<code>matlab syms t; fourier(dirac(t))</code></p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">syms t;
+fourier(dirac(t))</code></pre>
 <p>Related:</p>
-<p><span class="math">\[\delta(t-t_0) \Leftrightarrow e^{-j\omega t_0}\]</span></p>
+<span class="math">\[\delta(t-t_0) \Leftrightarrow e^{-j\omega t_0}\]</span>
 </div>
 <h2 id="dc">DC</h2>
 <p><span class="math">\[1 \Leftrightarrow 2\pi\delta(\omega)\]</span></p>
 <div class="figure">
-<img src="pictures/ft_dc.png" alt="Fourier transform of DC" />
-<p class="caption">Fourier transform of DC</p>
+<img src="pictures/ft_dc.png" alt="Fourier transform of DC" /><p class="caption">Fourier transform of DC</p>
 </div>
 <div class="notes">
 <p><em>Matlab</em>:</p>
-<p>`<code>matlab syms A t; fourier(1)</code></p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">syms A t;
+fourier(<span class="fl">1</span>)</code></pre>
 <p>Related by frequency shifting property:</p>
-<p><span class="math">\[e^{j\omega_0 t} \Leftrightarrow 2\pi\delta(\omega-\omega_0)\]</span></p>
+<span class="math">\[e^{j\omega_0 t} \Leftrightarrow 2\pi\delta(\omega-\omega_0)\]</span>
 </div>
 <h2 id="cosine-wave-sinewave-with-even-symmetry">Cosine wave (Sinewave with even symmetry)</h2>
 <p><span class="math">\[\cos(t) = \frac{1}{2}\left(e^{j\omega_0 t}+e^{-j\omega_0 t}\right)
 \Leftrightarrow \pi\delta(\omega - \omega_0) + \pi\delta(\omega + \omega_0)\]</span></p>
 <div class="figure">
-<img src="pictures/ft_cos.png" alt="Fourier transform of cosine wave" />
-<p class="caption">Fourier transform of cosine wave</p>
+<img src="pictures/ft_cos.png" alt="Fourier transform of cosine wave" /><p class="caption">Fourier transform of cosine wave</p>
 </div>
 <div class="notes">
-<p>Note: <span class="math">\(f(t)\)</span> is real and even. <span class="math">\(F(\omega)\)</span> is also real and even.</p>
+Note: <span class="math">\(f(t)\)</span> is real and even. <span class="math">\(F(\omega)\)</span> is also real and even.
 </div>
 <h2 id="sine-wave">Sine wave</h2>
 <p><span class="math">\[\sin(t) = \frac{1}{j2}\left(e^{j\omega_0 t}-e^{-j\omega_0 t}\right)
 \Leftrightarrow j\pi\delta(\omega - \omega_0) - j\pi\delta(\omega + \omega_0)\]</span></p>
 <div class="figure">
-<img src="pictures/ft_sin.png" alt="Fourier transform of sine wave" />
-<p class="caption">Fourier transform of sine wave</p>
+<img src="pictures/ft_sin.png" alt="Fourier transform of sine wave" /><p class="caption">Fourier transform of sine wave</p>
 </div>
 <div class="notes">
-<p>Note: <span class="math">\(f(t)\)</span> is real and odd. <span class="math">\(F(\omega)\)</span> is imaginary and odd.</p>
+Note: <span class="math">\(f(t)\)</span> is real and odd. <span class="math">\(F(\omega)\)</span> is imaginary and odd.
 </div>
 <h2 id="signum-sign">Signum (Sign)</h2>
 <p>The signum function is a function whose value is equal to</p>
@@ -137,8 +154,7 @@ t}\,dt = F(\omega).\]</span></p>
 <p>The transform is:</p>
 <p><span class="math">\[\operatorname{sgn} x = u_0(t) - u_0(-t) = \frac{2}{j\omega}\]</span></p>
 <div class="figure">
-<img src="pictures/ft_sgn.png" alt="Signum function" />
-<p class="caption">Signum function</p>
+<img src="pictures/ft_sgn.png" alt="Signum function" /><p class="caption">Signum function</p>
 </div>
 <h2 id="example-1-unit-step">Example 1: Unit Step</h2>
 <p>Use the signum function to show that <span class="math">\[\mathcal{F}\left\{u_0(t))\right\} = \pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
@@ -148,11 +164,10 @@ t}\,dt = F(\omega).\]</span></p>
 <p><em>Does that help?</em></p>
 <hr />
 <div class="figure">
-<img src="pictures/u_as_sign.png" alt="Unit step defined using signum" />
-<p class="caption">Unit step defined using signum</p>
+<img src="pictures/u_as_sign.png" alt="Unit step defined using signum" /><p class="caption">Unit step defined using signum</p>
 </div>
 <div class="notes">
-<h3 id="proof">Proof</h3>
+<h3>Proof</h3>
 <p><span class="math">\[\operatorname{sgn} x = 2u_0(t) - 1\]</span></p>
 <p>so</p>
 <p><span class="math">\[u_0(t) = \frac{1}{2}\left[1 + \operatorname{sgn} x\right]\]</span></p>
@@ -163,11 +178,10 @@ t}\,dt = F(\omega).\]</span></p>
 <h2 id="graph-of-unit-step">Graph of unit step</h2>
 <p><span class="math">\[u_0(t) \Leftrightarrow \pi\delta(\omega)+\frac{1}{j\omega}\]</span></p>
 <div class="figure">
-<img src="pictures/ft_step.png" alt="FT of unit step" />
-<p class="caption">FT of unit step</p>
+<img src="pictures/ft_step.png" alt="FT of unit step" /><p class="caption">FT of unit step</p>
 </div>
 <div class="notes">
-<p>Unit step is neither even nor odd so the Fourier transform is complex with real part <span class="math">\(F_\mathrm{Re}(\omega) = \pi\delta(\omega)\)</span> and imaginary part <span class="math">\(F_\mathrm{Im}(\omega) = 1/(j\omega)\)</span>. The real part is even, and the imaginary part is odd.</p>
+Unit step is neither even nor odd so the Fourier transform is complex with real part <span class="math">\(F_\mathrm{Re}(\omega) = \pi\delta(\omega)\)</span> and imaginary part <span class="math">\(F_\mathrm{Im}(\omega) = 1/(j\omega)\)</span>. The real part is even, and the imaginary part is odd.
 </div>
 <h2 id="example-2">Example 2</h2>
 <p>Use the results derived so far to show that</p>
@@ -182,12 +196,12 @@ t}\,dt = F(\omega).\]</span></p>
 <p>Hint: Euler's formula plus solution to example 2.</p>
 <div class="notes">
 <p><strong>Important note</strong>: the equivalent example in Karris (Section 8.4.9 Eq. 8.75 pp 8-23—8-24) is wrong!</p>
-<p>See worked solution on Blackboard for the corrected proof.</p>
+See worked solution on Blackboard for the corrected proof.
 </div>
 <h2 id="example-4">Example 4</h2>
 <p>Use the result of Example 3 to determine the Fourier transform of <span class="math">\(\cos\omega_0 t\; u_0(t)\)</span>.</p>
 <div class="notes">
-<h3 id="answer">Answer</h3>
+<h3>Answer</h3>
 <p><span class="math">\[\cos\omega_0 t\; u_0(t)\Leftrightarrow
 \frac{\pi}{2}\left[\delta(\omega-\omega_0)+\delta(\omega+\omega_0)\right] +
 \frac{j\omega}{\omega_0^2 - \omega^2}\]</span></p>

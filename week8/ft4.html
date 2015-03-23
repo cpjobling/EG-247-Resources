@@ -25,7 +25,7 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="introduction-to-filters">Introduction to Filters</h1>
@@ -69,28 +69,23 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </ul>
 <h2 id="typical-filtering-problem">Typical filtering problem</h2>
 <div class="figure">
-<img src="pictures/filter1.png" alt="Typical filtering problem" />
-<p class="caption">Typical filtering problem</p>
+<img src="pictures/filter1.png" alt="Typical filtering problem" /><p class="caption">Typical filtering problem</p>
 </div>
 <h2 id="signal">Signal</h2>
 <div class="figure">
-<img src="pictures/filter2.png" alt="Signal" />
-<p class="caption">Signal</p>
+<img src="pictures/filter2.png" alt="Signal" /><p class="caption">Signal</p>
 </div>
 <h2 id="out-of-bandwidth-noise">Out-of Bandwidth Noise</h2>
 <div class="figure">
-<img src="pictures/filter3.png" alt="Noise" />
-<p class="caption">Noise</p>
+<img src="pictures/filter3.png" alt="Noise" /><p class="caption">Noise</p>
 </div>
 <h2 id="signal-plus-noise">Signal plus Noise</h2>
 <div class="figure">
-<img src="pictures/filter4.png" alt="Signal plus noise" />
-<p class="caption">Signal plus noise</p>
+<img src="pictures/filter4.png" alt="Signal plus noise" /><p class="caption">Signal plus noise</p>
 </div>
 <h2 id="filtering">Filtering</h2>
 <div class="figure">
-<img src="pictures/filter5.png" alt="filtering" />
-<p class="caption">filtering</p>
+<img src="pictures/filter5.png" alt="filtering" /><p class="caption">filtering</p>
 </div>
 <h2 id="motivating-example">Motivating example</h2>
 <p>Filtering in Matlab using 'built-in' filter design techniques by David Dorran</p>
@@ -105,16 +100,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 \end{array}} \right.\]</span></p>
 <h2 id="frequency-response">Frequency response</h2>
 <div class="figure">
-<img src="pictures/ideal_lpf.png" alt="Ideal low-pass filter" />
-<p class="caption">Ideal low-pass filter</p>
+<img src="pictures/ideal_lpf.png" alt="Ideal low-pass filter" /><p class="caption">Ideal low-pass filter</p>
 </div>
 <h2 id="impulse-response">Impulse response</h2>
 <p><span class="math">\[{h_{{\rm{lp}}}}(t) = \frac{{{\omega _c}}}{\pi }{\mathop{\rm sinc}\nolimits}
 \left( {\frac{{{\omega _c}}}{\pi }t} \right)\]</span></p>
 <hr />
 <div class="figure">
-<img src="pictures/sinc.png" alt="Impulse response of ideal low-pass filter" />
-<p class="caption">Impulse response of ideal low-pass filter</p>
+<img src="pictures/sinc.png" alt="Impulse response of ideal low-pass filter" /><p class="caption">Impulse response of ideal low-pass filter</p>
 </div>
 <h2 id="filtering-is-convolution">Filtering is Convolution</h2>
 <p>The output of an LTI system with impulse response</p>
@@ -126,12 +119,11 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="issues-with-the-ideal-filter">Issues with the &quot;ideal&quot; filter</h2>
 <p>This is the step response:</p>
 <div class="figure">
-<img src="pictures/step_r.png" alt="Step response of ideal filter" />
-<p class="caption">Step response of ideal filter</p>
+<img src="pictures/step_r.png" alt="Step response of ideal filter" /><p class="caption">Step response of ideal filter</p>
 </div>
 <p>(reproduced from Boulet Fig. 5.23 p. 205)</p>
 <div class="notes">
-<p>Ripples in the impulse response would be undesirable, and because the impulse response is non-causal it cannot actually be implemented.</p>
+Ripples in the impulse response would be undesirable, and because the impulse response is non-causal it cannot actually be implemented.
 </div>
 <h1 id="butterworth-low-pass-filter">Butterworth low-pass filter</h1>
 <h2 id="butterworth-low-pass-filter-1">Butterworth low-pass filter</h2>
@@ -149,7 +141,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p><span class="math">\[p(s) = s^2 + \omega_c\sqrt{2}s+\omega_c^2 = 0^*\]</span></p>
 <p>Calculate the roots of <span class="math">\(p(s)\)</span> (the poles of the filter transfer function) in both Cartesian and polar form.</p>
 <div class="notes">
-<p><strong>Note</strong>: This has the same characteristic as a control system with damping ratio <span class="math">\(\zeta = 1/\sqrt{2}\)</span> and <span class="math">\(\omega_n = \omega_c\)</span>!</p>
+<strong>Note</strong>: This has the same characteristic as a control system with damping ratio <span class="math">\(\zeta = 1/\sqrt{2}\)</span> and <span class="math">\(\omega_n = \omega_c\)</span>!
 </div>
 <h2 id="example-2">Example 2</h2>
 <p>Derive the differential equation relating the input <span class="math">\(x(t)\)</span> to output <span class="math">\(y(t)\)</span> of the 2nd-Order Butterworth low-pass filter with cutoff frequency <span class="math">\(\omega_c\)</span>.</p>
@@ -157,14 +149,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>Determine the frequency response <span class="math">\(H_B(\omega)=Y(\omega)/X(\omega)\)</span></p>
 <h2 id="magnitude-of-frequency-response-of-a-2nd-order-butterworth-filter">Magnitude of frequency response of a 2nd-order Butterworth Filter</h2>
 <div class="figure">
-<img src="pictures/blpmfr.png" alt="Magnitude response of Butterworth filter" />
-<p class="caption">Magnitude response of Butterworth filter</p>
+<img src="pictures/blpmfr.png" alt="Magnitude response of Butterworth filter" /><p class="caption">Magnitude response of Butterworth filter</p>
 </div>
 <p>Generated with <a href="files/matlab/butter2_ex.m">butter2_ex.m</a></p>
 <h2 id="bode-plot-of-a-2nd-order-butterworth-filter">Bode-plot of a 2nd-order Butterworth Filter</h2>
 <div class="figure">
-<img src="pictures/butter_bode.png" alt="Bode plot of Butterworth filter" />
-<p class="caption">Bode plot of Butterworth filter</p>
+<img src="pictures/butter_bode.png" alt="Bode plot of Butterworth filter" /><p class="caption">Bode plot of Butterworth filter</p>
 </div>
 <p>Matlab:</p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">100</span>;
@@ -178,16 +168,14 @@ bode(H)</code></pre>
 a)^2+\omega_0^2}\]</span></p>
 <h2 id="impulse-response-1">Impulse response</h2>
 <div class="figure">
-<img src="pictures/butter_imp.png" alt="Impulse response of Butterworth filter" />
-<p class="caption">Impulse response of Butterworth filter</p>
+<img src="pictures/butter_imp.png" alt="Impulse response of Butterworth filter" /><p class="caption">Impulse response of Butterworth filter</p>
 </div>
 <p>Matlab:</p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">impulse(H)</code></pre>
 <p>Generated with <a href="files/matlab/butter2_ex.m">butter2_ex.m</a></p>
 <h2 id="step-response-of-of-a-2nd-order-butterworth-filter">Step response of of a 2nd-order Butterworth Filter</h2>
 <div class="figure">
-<img src="pictures/butter_step.png" alt="Step response of Butterworth filter" />
-<p class="caption">Step response of Butterworth filter</p>
+<img src="pictures/butter_step.png" alt="Step response of Butterworth filter" /><p class="caption">Step response of Butterworth filter</p>
 </div>
 <p>Matlab:</p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">step(H)</code></pre>
@@ -201,8 +189,7 @@ a)^2+\omega_0^2}\]</span></p>
 \end{array}} \right.\]</span></p>
 <h2 id="frequency-response-1">Frequency response</h2>
 <div class="figure">
-<img src="pictures/ideal_hpf.png" alt="Frequency respons of a high-pass filter" />
-<p class="caption">Frequency respons of a high-pass filter</p>
+<img src="pictures/ideal_hpf.png" alt="Frequency respons of a high-pass filter" /><p class="caption">Frequency respons of a high-pass filter</p>
 </div>
 <h2 id="responses">Responses</h2>
 <p><strong>Frequency response</strong></p>
@@ -213,8 +200,7 @@ a)^2+\omega_0^2}\]</span></p>
 <p>Determine the frequency response and impulse response of a 2nd-order butterworth highpass filter</p>
 <h2 id="magnitude-of-frequency-response-of-a-2nd-order-butterworth-high-pass-filter">Magnitude of frequency response of a 2nd-order Butterworth High-Pass Filter</h2>
 <div class="figure">
-<img src="pictures/bhpmfr.png" alt="Magnitude of frequency response of a 2nd-order Butterworth high-pass filter" />
-<p class="caption">Magnitude of frequency response of a 2nd-order Butterworth high-pass filter</p>
+<img src="pictures/bhpmfr.png" alt="Magnitude of frequency response of a 2nd-order Butterworth high-pass filter" /><p class="caption">Magnitude of frequency response of a 2nd-order Butterworth high-pass filter</p>
 </div>
 <p>Generated with <a href="files/matlab/butter2_ex.m">butter2_ex.m</a></p>
 <h1 id="bandpass-filter">Bandpass filter</h1>
@@ -226,8 +212,7 @@ a)^2+\omega_0^2}\]</span></p>
 \end{array}} \right.\]</span></p>
 <hr />
 <div class="figure">
-<img src="pictures/bbpmfr.png" alt="Bandpass filter" />
-<p class="caption">Bandpass filter</p>
+<img src="pictures/bbpmfr.png" alt="Bandpass filter" /><p class="caption">Bandpass filter</p>
 </div>
 <h2 id="bandpass-filter-design">Bandpass filter design</h2>
 <p>A bandpass filter can be obtained by multiplying the frequency responses of a low-pass filter by a high-pass filter.</p>

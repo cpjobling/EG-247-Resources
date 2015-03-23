@@ -6,7 +6,7 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="the-fourier-transform-part-1">The Fourier Transform (Part 1)</h1>
@@ -49,8 +49,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <hr />
 <p>Let <span class="math">\(\tilde x(t)\)</span> be the Fourier series of the rectangular pulse train shown below:</p>
 <div class="figure">
-<img src="pictures/pulse_train.png" alt="Rectangular pulse train" />
-<p class="caption">Rectangular pulse train</p>
+<img src="pictures/pulse_train.png" alt="Rectangular pulse train" /><p class="caption">Rectangular pulse train</p>
 </div>
 <h2 id="fourier-series">Fourier Series</h2>
 <p>In the previous lecture we used</p>
@@ -79,8 +78,7 @@ t_0}}{2j}\right) = 2\frac{\sin(k\omega_0 t_0)}{k\omega_0 T}\]</span></p>
 <p>The function is equal to 1 at <span class="math">\(u=0\)</span><sup>*</sup> and has zero crossings at <span class="math">\(u=\pm n,\; n=1,2,3,\ldots\)</span> as shown on the next slide.</p>
 <hr />
 <div class="figure">
-<img src="pictures/sinc.png" alt="The sinc function" />
-<p class="caption">The sinc function</p>
+<img src="pictures/sinc.png" alt="The sinc function" /><p class="caption">The sinc function</p>
 </div>
 <div class="notes">
 <p>Matlab code to reproduce this plot: <a href="matlab/sinc_plot.m">sinc_plot.m</a>.</p>
@@ -105,16 +103,14 @@ k2t_0}{T}}=\frac{2t_0}{T}\operatorname{sinc}\left(\frac{k2t_0}{T}\right)\]</span
 <p>Plots follow (use <a href="matlab/duty_cycle.m">duty_cycle.m</a> to reproduce).</p>
 <h2 id="duty-cycle-50">Duty cycle 50%</h2>
 <div class="figure">
-<img src="pictures/dc_point5.png" alt="Duty cycle of 50%" />
-<p class="caption">Duty cycle of 50%</p>
+<img src="pictures/dc_point5.png" alt="Duty cycle of 50%" /><p class="caption">Duty cycle of 50%</p>
 </div>
 <h2 id="duty-cycle-12.5">Duty cycle 12.5%</h2>
 <div class="figure">
-<img src="pictures/dc_12point5.png" alt="Duty cycle of 12.5%" />
-<p class="caption">Duty cycle of 12.5%</p>
+<img src="pictures/dc_12point5.png" alt="Duty cycle of 12.5%" /><p class="caption">Duty cycle of 12.5%</p>
 </div>
 <div class="notes">
-<h2 id="comments">Comments</h2>
+<h2>Comments</h2>
 <ul>
 <li>As the fundamental period increases, we get more spectral lines packed into the lobes of the sinc envelope.</li>
 <li>These normalized spectral coefficients turn out to be samples of the continuous sinc function on the spectrum of <span class="math">\(\tilde{x}(t)\)</span></li>
@@ -138,8 +134,7 @@ k2t_0}{T}}=\frac{2t_0}{T}\operatorname{sinc}\left(\frac{k2t_0}{T}\right)\]</span
 <p>Now define a signal <span class="math">\(x(t)\)</span> as a signal equal to <span class="math">\(\tilde{x}(t)\)</span> over one period and zero elsewhere.</p>
 <hr />
 <div class="figure">
-<img src="pictures/pulse.png" alt="The rectangular pulse" />
-<p class="caption">The rectangular pulse</p>
+<img src="pictures/pulse.png" alt="The rectangular pulse" /><p class="caption">The rectangular pulse</p>
 </div>
 <h2 id="a-rectangular-pulse">A rectangular pulse</h2>
 <p>The aperiodic signal, a single rectangular pulse, can be thought of as being periodic with an infinite fundamental period (we will let <span class="math">\(T\to +\infty\)</span> later).</p>
@@ -197,63 +192,63 @@ X(jk\omega_0)e^{jk\omega_0 t}\omega_0.\]</span></p>
 <p>As was the case of the Laplace Transform, properties of Fourier transforms are usually summarized in Tables of Fourier Transform properties. For example this one: <a href="http://en.wikipedia.org/wiki/Fourier_transform#Properties_of_the_Fourier_transform">Properties of the Fourier Transform (Wikpedia)</a> and Table 8.8 in Karris (page 8-17).</p>
 <p>Some of the more important properties are summarized on <a href="http://cpjobling.github.io/EG-247-Resources/week7/ft_props.html">this table of properties</a> and there is some additional commentary in the notes.</p>
 <div class="notes">
-<h3 id="linearity">Linearity</h3>
+<h3>Linearity</h3>
 <p>The Fourier transform is a linear operation:</p>
 <p><span class="math">\[a_1f_1(t)+a_2f_2(t)+\cdots+a_nf_n(t)\Leftrightarrow
 a_1F_1(j\omega)+a_2F_2(j\omega)+\cdots+a_nF_n(j\omega)\]</span></p>
-<h3 id="symmetry">Symmetry</h3>
+<h3>Symmetry</h3>
 <p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span>, the <em>symmetry property of the Fourier transform</em> states that</p>
 <p><span class="math">\[F(t)\Leftrightarrow2\pi f(-j\omega)\]</span></p>
 <p>That is if in <span class="math">\(F(j\omega)\)</span> we replace <span class="math">\(j\omega\)</span> with <span class="math">\(t\)</span>, we obtain this pair.</p>
-<h3 id="timefrequency-scaling">Time/Frequency Scaling</h3>
+<h3>Time/Frequency Scaling</h3>
 <p>Scaling the time variable with <span class="math">\(\alpha \in \mathbb{R}\)</span> either expands or compresses the Fourier transform:</p>
 <p><span class="math">\[f(\alpha t)\Leftrightarrow \frac{1}{|\alpha|}F\left(j\frac{\omega}{\alpha}\right)\]</span></p>
 <ul>
 <li>For <span class="math">\(\alpha &gt; 0\)</span>, the signal <span class="math">\(f(\alpha t)\)</span> is sped up (or compressed in time), so its frequency components will be expanded to higher frequencies.</li>
 <li>For <span class="math">\(\alpha &lt; 0\)</span>, the signal <span class="math">\(f(\alpha t)\)</span> is slowed down (or expanded in time), so its frequency components will be compressed to lower frequencies.</li>
 </ul>
-<h3 id="time-shifting">Time Shifting</h3>
+<h3>Time Shifting</h3>
 <p>A time shift results in a phase shift in the Fourier transform</p>
 <p><span class="math">\[f(t-t_0) \Leftrightarrow e^{-j\omega_0}F(j\omega)\]</span></p>
 <p>where <span class="math">\(\omega_0 = 2\pi/t_0\)</span></p>
-<h3 id="frequency-shifting">Frequency Shifting</h3>
+<h3>Frequency Shifting</h3>
 <p>Multiplying a time function by a complex exponential results in a frequency shift</p>
 <p><span class="math">\[e^{j\omega 0}f(t) \Leftrightarrow X(j\omega-j\omega_0)\]</span></p>
-<h3 id="time-differentiation">Time Differentiation</h3>
+<h3>Time Differentiation</h3>
 <p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
 <p><span class="math">\[\frac{d^n}{dt^n}\,f(t)\Leftrightarrow (j\omega)^nF(j\omega)\]</span></p>
-<h3 id="frequency-differentiation">Frequency Differentiation</h3>
+<h3>Frequency Differentiation</h3>
 <p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
 <p><span class="math">\[(-jt)^n f(t)\Leftrightarrow \frac{d^n}{d\omega^n}F(j\omega)\]</span></p>
-<h3 id="time-integration">Time Integration</h3>
+<h3>Time Integration</h3>
 <p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of <span class="math">\(f(t)\)</span></p>
 <p><span class="math">\[\int_{-\infty}^{t}f(\tau)d\tau \Leftrightarrow \frac{F(j\omega)}{j\omega}+\pi
 F(0)\delta(\omega)\]</span></p>
-<h3 id="conjugate-time-and-frequency-functions">Conjugate Time and Frequency Functions</h3>
+<h3>Conjugate Time and Frequency Functions</h3>
 <p>If <span class="math">\(F(j\omega)\)</span> is the Fourier transform of the complex function <span class="math">\(f(t)\)</span></p>
 <p><span class="math">\[f^*(t)\Leftrightarrow F^*(-j\omega)\]</span></p>
-<h3 id="time-convolution">Time Convolution</h3>
+<h3>Time Convolution</h3>
 <p><span class="math">\[f_1(t)*f_2(t) \Leftrightarrow F_1(j\omega) F_2(j\omega)\]</span></p>
 <p>That is convolution in the time domain corresponds to multiplication in the frequency domain.</p>
 <p>(Compare with Laplace Transform)</p>
-<h3 id="frequency-convolution">Frequency Convolution</h3>
+<h3>Frequency Convolution</h3>
 <p><span class="math">\[f_1(t)f_2(t) \Leftrightarrow \frac{1}{2\pi} F_1(j\omega)*F_2(j\omega)\]</span></p>
 <p>That is, multiplication in the time domain corresponds to convolution in the frequency domain.</p>
 <p>This also has application to amplitude modulation as shown in Boulet pp 182—183.</p>
-<h3 id="area-under-ft">Area under f(t)</h3>
+<h3>Area under f(t)</h3>
 <p><span class="math">\[\int_{-\infty}^{\infty} f(t)\,dt = F(0)\]</span></p>
 <p>That is, the area under a time function <span class="math">\(f(t)\)</span> is equal to the value of the Fourier transform of <span class="math">\(f(t)\)</span> evaluated at <span class="math">\(\omega = 0\)</span> rad/s.</p>
-<h3 id="area-under-fjomega">Area under F(jomega)</h3>
+<h3>Area under F(jomega)</h3>
 <p><span class="math">\[f(0) = \frac{1}{2\pi}\int_{-\infty}^{\infty} F(j\omega)\,d\omega\]</span></p>
 <p>That is, the value of a time function, <span class="math">\(f(t)\)</span>, evaluated at <span class="math">\(t=0\)</span> is equal to the area under its Fourier transform <span class="math">\(F(j\omega)\)</span> times <span class="math">\(1/2\pi\)</span>.</p>
-<h3 id="energy-density-spectrum">Energy-Density Spectrum</h3>
+<h3>Energy-Density Spectrum</h3>
 <p>Recalling that the power spectrum of a periodic signal is defined as the squared magnitudes of its Fourier series coefficients. A plot of the power spectrum of a signal gives us an idea of the power at different frequencies (harmonics).</p>
 <p>By analogy, the <em>energy-density spectrum</em> of an aperiodic signal is defined as the magnitude squared of its spectrum; that is <span class="math">\(|F(j\omega)|^2\)</span> is the energy- density spectrum of <span class="math">\(f(t)\)</span>.</p>
 <p>For example</p>
 <p><span class="math">\[E_{[\omega_1,\omega_2]}:=\frac{1}{2\pi}\int_{\omega_1}^{\omega_2}|F(j\omega)|^
 2\,d\omega.\]</span></p>
 <p>Note that for real signals, it is customary to include the negative frequency band as well.</p>
-<h3 id="parsevals-theorem">Parseval's Theorem</h3>
+<h3>Parseval's Theorem</h3>
 <p>Just like the total average power of a periodic signal is equal to the sume of the powers of all the harmonics, the total energy in an aperiodic signal is equal to the total energy in its spectrum.</p>
 <p>This is the Parseval equality for Fourier transforms:</p>
 <p><span class="math">\[\int_{-\infty}^{\infty}|f(t)|^2\,dt=\frac{1}{2\pi}\int_{-\infty}^{\infty}|F(j\
@@ -270,7 +265,7 @@ omega)|^2\,d\omega.\]</span></p>
 <p>Compute the result of multiplying a signal <span class="math">\(f(t)\)</span> by a carrier waveform <span class="math">\(\cos\omega_c t\)</span>.</p>
 <p><em>Hint</em> use Euler's identity and the frequency shift property.</p>
 <div class="notes">
-<h3 id="solution-1">Solution 1</h3>
+<h3>Solution 1</h3>
 <p><span class="math">\[\cos\omega_c t = \frac{e^{j\omega_c t}+e^{-j\omega_c t}}{2}\]</span></p>
 <p>it follows from the <em>frequency shifting</em> property that</p>
 <p><span class="math">\[f(t)\cos\omega_c t \Leftrightarrow \frac{F(j\omega-j\omega_c)+F(j\omega +
@@ -278,13 +273,13 @@ j\omega_c)}{2}.\]</span></p>
 <p>Similarly</p>
 <p><span class="math">\[f(t)\sin\omega_c t \Leftrightarrow \frac{F(j\omega-j\omega_c)-F(j\omega +
 j\omega_c)}{j2}.\]</span></p>
-<h4 id="remarks">Remarks</h4>
+<h4>Remarks</h4>
 <p>We can also tackle this using the Frequency Convolution property. See Boulet pp 182—183.</p>
 </div>
 <h2 id="example-2-impulse-response">Example 2: Impulse response</h2>
 <p>A system has impulse response <span class="math">\(f(t) = e^{-t}u_0(t)\)</span>. Compute the frequency spectrum of this system.</p>
 <div class="notes">
-<h3 id="solution-2">Solution 2</h3>
+<h3>Solution 2</h3>
 <p><span class="math">\[\begin{gathered}
   \mathcal{F}\left\{ {{e^{ - t}}{u_0}(t)} \right\} = \int_0^\infty  {{e^{ - t}}} {e^{ - j\omega t}}\;{\kern 1pt} dt \\
    = \int_0^\infty  {{e^{ - (1 + j\omega )t}}} \;{\kern 1pt} dt \\
@@ -298,12 +293,12 @@ j\omega_c)}{j2}.\]</span></p>
 <h2 id="example-3-energy-computation">Example 3: Energy computation</h2>
 <p>An aperiodic real signal <span class="math">\(f(t)\)</span> has Fourier transform <span class="math">\(F(j\omega)\)</span>. Compute the energy contained in the signal between 5kHz and 10kHz.</p>
 <div class="notes">
-<h3 id="solution-3">Solution 3</h3>
+<h3>Solution 3</h3>
 <p>Use the Energy-Density function.</p>
-<p><span class="math">\[E_{[10,000\pi,20,000\pi]}^r=\frac{1}{2\pi}\left[\int_{10,000\pi}^{20,000\pi}|X
+<span class="math">\[E_{[10,000\pi,20,000\pi]}^r=\frac{1}{2\pi}\left[\int_{10,000\pi}^{20,000\pi}|X
 (j\omega)|^2\,d\omega +
 \frac{1}{2\pi}\int_{-20,000\pi}^{-10,000\pi}|X(j\omega)|^2\,d\omega\right] =
-\frac{1}{\pi}\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega.\]</span></p>
+\frac{1}{\pi}\int_{10,000\pi}^{20,000\pi}|X(j\omega)|^2\,d\omega.\]</span>
 </div>
 <h1 id="computing-fourier-transforms-in-matlab">Computing Fourier Transforms in Matlab</h1>
 <h2 id="computing-fourier-transforms-in-matlab-1">Computing Fourier Transforms in Matlab</h2>

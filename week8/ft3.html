@@ -25,7 +25,7 @@ code > span.al { color: #ff0000; font-weight: bold; }
 code > span.fu { color: #06287e; }
 code > span.er { color: #ff0000; font-weight: bold; }
   </style>
-  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="fourier-transforms-for-circuit-and-lti-systems-analysis">Fourier Transforms for Circuit and LTI Systems Analysis</h1>
@@ -58,7 +58,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p><span class="math">\[h(t)*u(t) = g(t) \Leftrightarrow G(\omega) = H(\omega).U(\omega)\]</span></p>
 <h2 id="the-system-function-1">The System Function</h2>
 <p>We call <span class="math">\(H(\omega)\)</span> the <em>system function</em>.</p>
-<p>We note that the system function <span class="math">\(H(\omega)\)</span> and the impulse response $h(t) form the Fourier transform pair</p>
+<p>We note that the system function <span class="math">\(H(\omega)\)</span> and the impulse response <span class="math">\(h(t)\)</span> form the Fourier transform pair</p>
 <p><span class="math">\[h(t) \Leftrightarrow H(\omega)\]</span></p>
 <h2 id="obtaining-system-response">Obtaining system response</h2>
 <p>If we know the impulse resonse <span class="math">\(h(t)\)</span>, we can compute the system response <span class="math">\(g(t)\)</span> of any input <span class="math">\(u(t)\)</span> by multiplying the Fourier transforms of <span class="math">\(H(\omega)\)</span> and <span class="math">\(U(\omega)\)</span> to obtain <span class="math">\(G(\omega)\)</span>. Then we take the inverse Fourier transform of <span class="math">\(G(\omega)\)</span> to obtain the response <span class="math">\(g(t)\)</span>.</p>
@@ -71,28 +71,26 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="example-1">Example 1</h2>
 <p>Karris example 8.8: for the linear network shown below, the impulse response is <span class="math">\(h(t)=3e^{-2t}\)</span>. Use the Fourier transform to compute the response <span class="math">\(y(t)\)</span> when the input <span class="math">\[u(t)=2[u_0(t)-u_0(t-3)].\]</span> Verify the result with Matlab.</p>
 <div class="figure">
-<img src="pictures/example1.png" alt="Example 1" />
-<p class="caption">Example 1</p>
+<img src="pictures/example1.png" alt="Example 1" /><p class="caption">Example 1</p>
 </div>
 <h2 id="matlab-verification">Matlab verification</h2>
 <p>See <a href="matlab/ft3_ex1.m">ft3_ex1.m</a></p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">Result:
 
-    y = <span class="fl">3</span>*heaviside(t) - <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>) + <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>)*exp(<span class="fl">6</span> - <span class="fl">2</span>*t)
-     - <span class="fl">3</span>*exp(-<span class="fl">2</span>*t)*heaviside(t)</code></pre>
+    y = <span class="fl">3</span>*heaviside(t) - <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>) + ...
+    <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>)*exp(<span class="fl">6</span> - <span class="fl">2</span>*t) ...
+    - <span class="fl">3</span>*exp(-<span class="fl">2</span>*t)*heaviside(t)</code></pre>
 <p>Which after gathering terms gives</p>
 <p><span class="math">\[y(t) = 3(1 - 3e^{-2t})u_0(t) - 3(1 - 3e^{-2(t-3)})u_0(t-3)\]</span></p>
 <p>And here's a plot:</p>
 <hr />
 <div class="figure">
-<img src="pictures/ft3_ex1.png" alt="Solution for example 1" />
-<p class="caption">Solution for example 1</p>
+<img src="pictures/ft3_ex1.png" alt="Solution for example 1" /><p class="caption">Solution for example 1</p>
 </div>
 <h2 id="example-2">Example 2</h2>
 <p>Karris example 8.9: for the circuit shown below, use the Fourier transfrom method, and the system function <span class="math">\(H(\omega)\)</span> to compute <span class="math">\(V_L(t)\)</span>. Assume <span class="math">\(i_L(0^-)=0\)</span>. Verify the result with Matlab.</p>
 <div class="figure">
-<img src="pictures/example2.png" alt="Example 2" />
-<p class="caption">Example 2</p>
+<img src="pictures/example2.png" alt="Example 2" /><p class="caption">Example 2</p>
 </div>
 <h2 id="matlab-verification-1">Matlab verification</h2>
 <p>See <a href="matlab/ft3_ex2.m">ft3_ex2.m</a></p>
@@ -104,16 +102,14 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>And here's a plot:</p>
 <hr />
 <div class="figure">
-<img src="pictures/ft3_ex2.png" alt="Solution for example 2" />
-<p class="caption">Solution for example 2</p>
+<img src="pictures/ft3_ex2.png" alt="Solution for example 2" /><p class="caption">Solution for example 2</p>
 </div>
 <h2 id="example-3">Example 3</h2>
 <p>Karris example 8.10: for the linear network shown below, the input-output relationship is:</p>
 <p><span class="math">\[\frac{d}{dt}v_{\mathrm{out}}+4v_{\mathrm{out}}=10v_{\mathrm{in}}\]</span></p>
 <p>where <span class="math">\(v_{\mathrm{in}}=3e^{-2t}\)</span>. Use the Fourier transform method, and the system function <span class="math">\(H(\omega)\)</span> to compute the output <span class="math">\(v_{\mathrm{out}}\)</span>. Verify the result with Matlab.</p>
 <div class="figure">
-<img src="pictures/example3.jpg" alt="Example 3" />
-<p class="caption">Example 3</p>
+<img src="pictures/example3.jpg" alt="Example 3" /><p class="caption">Example 3</p>
 </div>
 <h2 id="matlab-verification-2">Matlab verification</h2>
 <p>See <a href="files/matlab/ft3_ex3.m">ft3_ex3.m</a></p>
@@ -121,19 +117,18 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 
     <span class="fl">15</span>*exp(-<span class="fl">4</span>*t)*heaviside(t)*(exp(<span class="fl">2</span>*t) - <span class="fl">1</span>)</code></pre>
 <p>Which after gathering terms gives</p>
-<p><span class="math">\[v_{\mathrm{out}}(t) = 15\left(e^{-2t}) - e^{-4t}\right)u_0(t)\]</span></p>
+<p><span class="math">\[v_{\mathrm{out}}(t) = 15\left(e^{-2t} - e^{-4t}\right)u_0(t)\]</span></p>
 <p>And here's a plot:</p>
 <hr />
 <div class="figure">
-<img src="pictures/ft3_ex3.png" alt="Solution of example 3" />
-<p class="caption">Solution of example 3</p>
+<img src="pictures/ft3_ex3.png" alt="Solution of example 3" /><p class="caption">Solution of example 3</p>
 </div>
 <h2 id="example-4">Example 4</h2>
 <p>Karris example 8.11: the voltage across a 1 <span class="math">\(\Omega\)</span> resistor is known to be <span class="math">\(V_{R}(t)=3e^{-2t} u_0(t)\)</span>. Compute the energy dissipated in the resistor for <span class="math">\(0&lt;t &lt; \infty\)</span>, and verify the result using Parseval's theorem. Verify the result with Matlab.</p>
 <div class="figure">
-<img src="pictures/example4.png" alt="Example 4" />
-<p class="caption">Example 4</p>
+<img src="pictures/example4.png" alt="Example 4" /><p class="caption">Example 4</p>
 </div>
+<hr />
 <p>Note from <a href="http://en.wikipedia.org/wiki/Lists_of_integrals">tables of integrals</a></p>
 <p><span class="math">\[\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.\]</span></p>
 <h2 id="matlab-verification-3">Matlab verification</h2>
