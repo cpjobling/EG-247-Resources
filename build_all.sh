@@ -7,6 +7,7 @@
 (cd week6; ./build.sh)
 (cd week7; ./build.sh)
 (cd week8; ./build.sh)
+(cd week9; ./build.sh)
 git status
 git add --all .
 git commit -m "Regenerate slides and notes"
