@@ -168,7 +168,7 @@ $$\delta(t) \Leftrightarrow 1$$
 
 *Matlab*:
 
-````matlab
+```matlab
 syms t;
 fourier(dirac(t))
 ```
@@ -187,7 +187,7 @@ $$1 \Leftrightarrow 2\pi\delta(\omega)$$
 <div class="notes">
 *Matlab*:
 
-````matlab
+```matlab
 syms A t;
 fourier(1)
 ```
