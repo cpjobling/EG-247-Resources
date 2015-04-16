@@ -118,12 +118,12 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <h2 id="exponential-fourier-series">Exponential Fourier Series?</h2>
 <div class="notes">
 <h2 id="exponential-fourier-series-1">Exponential Fourier Series!</h2>
-<p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}\]</span></p>
+<p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{k\omega t}\]</span></p>
 </div>
 <h2 id="results">Results</h2>
 <p><span class="math">\[C_0 = \frac{A}{w}\]</span></p>
 <p><span class="math">\[C_k = \frac{A}{w}\frac{sin\left(k\pi/w\right)}{k\pi/w}\]</span></p>
-<p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{-k\omega t}\]</span></p>
+<p><span class="math">\[f(t)=\sum_{k=-\infty}^{\infty}\;\frac{A}{w}\,\frac{\sin\left(k\pi/w\right)}{k\pi/w} e^{k\omega t}\]</span></p>
 <h2 id="effect-of-pulse-width-on-frequency-spectra">Effect of pulse width on frequency spectra</h2>
 <ul>
 <li>Recall pulse width = <span class="math">\(T/w\)</span></li>
@@ -175,6 +175,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p><span class="math">\[\frac{T}{w}=\frac{2\pi}{w}\]</span></p>
 <p>Let us take the previous impulse train as a recurrent pulse with amplitude</p>
 <p><span class="math">\[A = \frac{1}{T/w} = \frac{1}{2\pi/w} = \frac{w}{2\pi}.\]</span></p>
+</div>
 <h4 id="pulse-with-unit-area">Pulse with unit area</h4>
 <p>The area of each pulse is then</p>
 <p><span class="math">\[\frac{2\pi}{w}\times\frac{w}{2\pi} = 1\]</span></p>
@@ -184,6 +185,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <img src="pictures/unit_area_pulses.png" alt="Pulses with unit area" />
 <p class="caption">Pulses with unit area</p>
 </div>
+<div class="notes">
 <h4 id="new-coefficients">New coefficients</h4>
 <p>The coefficients of the Exponential Fourier Series are now:</p>
 <p><span class="math">\[C_n = \frac{w/2\pi}{w}\frac{\sin(k\pi/w)}{k\pi/w} =
