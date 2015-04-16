@@ -29,7 +29,7 @@ In this lab exercise we will use the `convolutiondemo` app demonstrated in class
 
 ### Part 1
 
-Set up the `convolutiondemo` app as described in the notes for the computation of the Convolution Integral for Example 6.4 from the textbook illustrated below. (Refer to Example 1 in [Week 5: Contact Hour 9](href="http://cpjobling.github.io/EG-247-Resources/blob/week5/convolution.html) for the Matlab settings).
+Set up the `convolutiondemo` app as described in the notes for the computation of the Convolution Integral for Example 6.4 from the textbook illustrated below. (Refer to Example 1 in [Week 5: Contact Hour 9](http://cpjobling.github.io/EG-247-Resources/week5/convolution.html) for the Matlab settings).
 
 ![Example 6.4](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1228.png)
 

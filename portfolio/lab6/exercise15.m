@@ -3,7 +3,7 @@
 %
 % Prepared for EG-247 by Chris P. Jobling
 syms h tau t
-h(t) = (-t + 1)*(heaviside(t)-heaviside(t-1);
+h(t) = (-t + 1)*(heaviside(t)-heaviside(t-1));
 u(t) = heaviside(t)+heaviside(t-1);
 %% First segment
 % Integration from 0 to t:

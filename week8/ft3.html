@@ -58,7 +58,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p><span class="math">\[h(t)*u(t) = g(t) \Leftrightarrow G(\omega) = H(\omega).U(\omega)\]</span></p>
 <h2 id="the-system-function-1">The System Function</h2>
 <p>We call <span class="math">\(H(\omega)\)</span> the <em>system function</em>.</p>
-<p>We note that the system function <span class="math">\(H(\omega)\)</span> and the impulse response $h(t) form the Fourier transform pair</p>
+<p>We note that the system function <span class="math">\(H(\omega)\)</span> and the impulse response <span class="math">\(h(t)\)</span> form the Fourier transform pair</p>
 <p><span class="math">\[h(t) \Leftrightarrow H(\omega)\]</span></p>
 <h2 id="obtaining-system-response">Obtaining system response</h2>
 <p>If we know the impulse resonse <span class="math">\(h(t)\)</span>, we can compute the system response <span class="math">\(g(t)\)</span> of any input <span class="math">\(u(t)\)</span> by multiplying the Fourier transforms of <span class="math">\(H(\omega)\)</span> and <span class="math">\(U(\omega)\)</span> to obtain <span class="math">\(G(\omega)\)</span>. Then we take the inverse Fourier transform of <span class="math">\(G(\omega)\)</span> to obtain the response <span class="math">\(g(t)\)</span>.</p>
@@ -78,8 +78,9 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>See <a href="matlab/ft3_ex1.m">ft3_ex1.m</a></p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">Result:
 
-    y = <span class="fl">3</span>*heaviside(t) - <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>) + <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>)*exp(<span class="fl">6</span> - <span class="fl">2</span>*t)
-     - <span class="fl">3</span>*exp(-<span class="fl">2</span>*t)*heaviside(t)</code></pre>
+    y = <span class="fl">3</span>*heaviside(t) - <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>) + ...
+    <span class="fl">3</span>*heaviside(t - <span class="fl">3</span>)*exp(<span class="fl">6</span> - <span class="fl">2</span>*t) ...
+    - <span class="fl">3</span>*exp(-<span class="fl">2</span>*t)*heaviside(t)</code></pre>
 <p>Which after gathering terms gives</p>
 <p><span class="math">\[y(t) = 3(1 - 3e^{-2t})u_0(t) - 3(1 - 3e^{-2(t-3)})u_0(t-3)\]</span></p>
 <p>And here's a plot:</p>
@@ -121,7 +122,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 
     <span class="fl">15</span>*exp(-<span class="fl">4</span>*t)*heaviside(t)*(exp(<span class="fl">2</span>*t) - <span class="fl">1</span>)</code></pre>
 <p>Which after gathering terms gives</p>
-<p><span class="math">\[v_{\mathrm{out}}(t) = 15\left(e^{-2t}) - e^{-4t}\right)u_0(t)\]</span></p>
+<p><span class="math">\[v_{\mathrm{out}}(t) = 15\left(e^{-2t} - e^{-4t}\right)u_0(t)\]</span></p>
 <p>And here's a plot:</p>
 <hr />
 <div class="figure">
@@ -134,6 +135,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <img src="pictures/example4.png" alt="Example 4" />
 <p class="caption">Example 4</p>
 </div>
+<hr />
 <p>Note from <a href="http://en.wikipedia.org/wiki/Lists_of_integrals">tables of integrals</a></p>
 <p><span class="math">\[\int\frac{1}{a^2 + x^2}\,dx = \frac{1}{a}\arctan\frac{x}{a}+C.\]</span></p>
 <h2 id="matlab-verification-3">Matlab verification</h2>
