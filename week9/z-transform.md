@@ -117,5 +117,6 @@ $x[n]$:
 $$X(z) = \sum_{n=0}^{\infty}x[n]z^{-1}$$
 
 
-# Properties of the z-Transform
 ## Properties of the z-Transform
+
+See [Properties of the z-Transform](http://cpjobling.github.io/EG-247-Resources/week9/zt_props.html)
