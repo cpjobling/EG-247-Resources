@@ -12,8 +12,7 @@
 | 8.  | Multiplication by $n^2$ | $n^2f[n]$ | $$-z\frac{d}{dz}F(z)+z^2\frac{d^2}{dz^2}F(z)$$ |
 | 9.  | Summation in time | $$\sum_{m=0}^{n}f[m]$$ | $$\frac{z}{z-1}F(z)$$ |
 | 10. | Time convolution | $f_1[n]*f_2[n]$ | $F_1(z)F_2(z)$ |
-| 11. | Frequency convolution | $f_1[n]f_2[n]$ | $$\frac{1}{{j2\pi }}\oint
-{x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv$$ |
+| 11. | Frequency convolution | $f_1[n]f_2[n]$ | $$\frac{1}{{j2\pi }}\oint{x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv$$ |
 | 12. | Initial value theorem |  | $$f[0]=\lim_{z\to\infty}F(z)$$ |
 | 13. | Final value theorem |  | $$\lim_{n\to\infty}f[n]=\lim_{z\to 1}(z-1)F(z)$$ |
 
