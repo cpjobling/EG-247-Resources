@@ -20,5 +20,5 @@ echo Building $DOC.html
 pandoc --mathjax -s $DOC.md -o $DOC.html
 
 # Tables of transforms and properties
-pandoc --mathjax -s z_props.md -o z_props.html
-pandoc --mathjax -s z_table.md -o z_table.html
+pandoc --mathjax -s zt_props.md -o zt_props.html
+pandoc --mathjax -s zt_table.md -o zt_table.html
