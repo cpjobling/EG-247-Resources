@@ -1,17 +1,21 @@
 
 # Sampling Systems
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.ipynb)
-and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
+
+Office Hours: 12:00-13:00 Mondays
+
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week9/sampling.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week9/sampling.pdf).
+
+  The source code of this presentation is available in Markdown format from GitHub: [ft2.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/sampling.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
+
 
 ## Scope and Background Reading
 
@@ -52,16 +56,18 @@ discrete-time (DT) signals
 * Sampling opens up possibility of processing CT signals through *finite impulse
 response* (FIR) and *infinite impulse response* IIR filters.
 
-## A Real Example
+# A Real Example
+
+## Sound sampling
 
 I need a volunteer to provide a sound sample ....
 
-1. I will use this script [sampling_demo.m](files/matlab/sampling_demo.m) to
+1. I will use this script [sampling_demo.m](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/sampling_demo.m) to
 sample your voice.
 2. I will then playback the recording.
 3. I will the plot the data.
 
-### Technical Details
+## Technical Details
 
 * **Sampling rate**: 8000 samples per second (fs = 8 kHz)
 * **Resolution**: 8 bits per sample
@@ -69,11 +75,11 @@ sample your voice.
 * **Reconstruction**: Matlab plays the audio back at 8192 samples per second.
 
 
-### Question
+## Question
 
 What will the bit-rate be for playback?
 
-### Answer
+## Answer
 
 bit rate = [number of samples per second] x [number of bits per sample] x
 [number of channels]
@@ -82,30 +88,31 @@ bit rate = $8192 \times 8 \times 1$ bits/second [baud]
 
 bit rate = $65,536$ bits/second
 
+# Sampling CT Signals
+
 ## Sampling CT Signals
 
 What is going on here?
 
-### Time domain
+## Time domain
 
 Sampling can be modelled as the multiplication of a continuous-time signal by a
-sequence of periodic impulses as illustrated here.
+sequence of periodic impulses as illustrated here. $T_s$ is the period of the periodic sampling function.
 
-<img src="files/pictures/sampling.png">
+![Sampling](pictures/sampling.png)
 
 This is a form of **modulation**
 
-$T_s$ is the period of the periodic sampling function.
 
-### Frequency domain
+## Frequency domain
 
 Multiplication in time domain is *convolution* in the frequency domain
 
-<img src="files/pictures/sampling_fr.png">
+![Frequency domain](pictures/sampling_fr.png)
 
 $\omega_s$ is the frequency of the periodic sampling function = $2\pi/T_s$.
 
-### The Mathematics
+## The Mathematics
 
 **The Sampled signal**:
 
@@ -116,6 +123,8 @@ n{T_s})} $$
 $${X_s}(\omega ) = \frac{1}{{{T_s}}}\int_{ - \infty }^{ + \infty } {X(\upsilon
 )} \sum\limits_{n =  - \infty }^{ + \infty } {\delta (t - \upsilon  - k{\omega
 _s})} \,d\upsilon $$
+
+## The Mathematics (continued)
 
 **Sampling property**:
 
@@ -128,7 +137,7 @@ $${X_s}(\omega ) = \frac{1}{{{T_s}}}\int_{ - \infty }^{ + \infty }
 $${X_s}(\omega ) = \frac{1}{{{T_s}}}\sum\limits_{n =  - \infty }^{ + \infty }
 {X(\omega  - k{\omega _s})}$$
 
-### Nyquist-Shannon Sampling Theorem
+## Nyquist-Shannon Sampling Theorem
 
 Gives a sufficient condition to recover a continuous time signal from its
 samples $x(nT_s)$, $n$ is an integer.
@@ -145,43 +154,49 @@ $$\omega_s > 2\omega_M,$$
 
 where $\omega_s = 2\pi/T_s$ is the sampling frequency.
 
-### Recovery of signal by flitering
+## Recovery of signal by filtering
 
-<img src="files/pictures/recovery.png">
+![Signal recovery](pictures/recovery.png)
 
-<img src="files/pictures/recovered.png">
+----
 
-### Ideal Lowpass Filter for CT Recovery from DT Sampled Signal
+![Recovered signal](pictures/recovered.png)
 
-<img src="files/pictures/recover-lp.png">
+## Ideal Lowpass Filter for CT Recovery from DT Sampled Signal
+
+![Ideal low-pass filter](pictures/recover-lp.png)
 
 This is of course theoretical only!
 
 
-### Sample-and-hold
+## Sample-and-hold
 
-<img src="files/pictures/sandh.png">
+![Sample and hold](pictures/sandh.png)
 
-### Sample-and-hold operator
+## Sample-and-hold operator
 
-<img src="files/pictures/zoh.png">
+![Zero-order hold](pictures/zoh.png)
 
-<img src="files/pictures/sampling_01.png">
+<div class="notes">
+The following images where generated with the script
+[sampling.m](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/sampling.m)
+</div>
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
+## Example: CT Signal
 
-<img src="files/pictures/sampling_02.png">
+![CT Signal](pictures/sampling_01.png)
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
 
-<img src="files/pictures/sampling_03.png">
+## Example: After sampling
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
+![Sampled signal](pictures/sampling_02.png)
 
-### Notes
+## Example: Reconstructed with sample and hold
+
+![After sample-and-hold (E.G. ADC Output)](pictures/sampling_03.png)
+
+<div class="notes">
+## Notes
 
 The sampled signal $x_0(t)$ carries the same information as the samples
 themselves, so we should be able to recover the entire signal $x(t)$.
@@ -210,10 +225,14 @@ filter:
 
 $$H_r(\omega)=T_sH_{\mathrm{lp}}(\omega)H_1(\omega)$$
 
-<img src="files/pictures/reconstruction_filter.png">
+![Reconstruction filter](pictures/reconstruction_filter.png)
 
 The frequency response of this filter and additional notes are to be found on
 Page 546 of Boulet.
+
+</div>
+
+# Signal Reconstruction
 
 ## Signal Reconstruction
 
@@ -224,7 +243,7 @@ frequency $\omega_s = 2\pi/T_s$.
 * We therefore have a discrete-time (DT) signal $x(nT_s)$ from which we want to
 reconstruct the original signal.
 
-### Perfect Signal Interpolation Using sinc Functions
+## Perfect Signal Interpolation Using sinc Functions
 
 * In the *frequency domain*, the ideal way to reconstruct the signal would be to
 construct a chain of impulse $x_s(t)$ and then to filter this signal with an
@@ -233,17 +252,15 @@ ideal lowpass filter.
 * In the *time domain*, this is equivalent to interpolating the samples using
 time-shifted sinc functions with zeros at $nT_s$ for $\omega_c = \omega_s$.
 
+----
 
-<img src="files/pictures/sampling_05.png">
+![Perfect Signal Interpolation Using sinc Functions](pictures/sampling_05.png)
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
+----
 
-<img src="files/pictures/sampling_06.png">
+![fig](pictures/sampling_06.png)
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
-
+<div class="notes">
 Each impulse in $x_s(t)$ triggers the impulse reponse of the lowpass filter (the
 sinc signal), the the resulting signal $x(t)$ at the output of the filter is the
 sum of all thse time-shifted sinc signals with amplitudes equal to the samples
@@ -265,19 +282,20 @@ with a flat passband (such as the Butterworth filter discussed in the last
 lecture) would be used. In audio applications, for example, the low-pass nature
 of speakers and the human ear add additional smoothing and for non HiFi
 applications (e.g. an MP3 player) may be all that is actually used!
+</div>
 
-### Zero-Order-Hold
+## Zero-Order-Hold
 
-<img src="files/pictures/sampling_03.png">
+![Zero-Order-Hold](pictures/sampling_03.png)
 
-### First-order Hold
+## First-order Hold
 
-<img src="files/pictures/sampling_04.png">
+![First-order Hold](pictures/sampling_04.png)
 
-This image was generated by the Matlab script:
-[sampling.m](files/matlab/sampling.m)
+# Aliasing
 
-### Aliasing
+
+## Aliasing
 
 * Aliasing Occurs when the sampling frequency is too low to ovoid overlapping
 between the spectra.
@@ -288,34 +306,38 @@ between the spectra.
 * When aliasing occurs, the original signal cannot be recovered by lowpass
 filtering.
 
-### An Aliased Signal
+## An Aliased Signal
 
-<img src="files/pictures/aliasing.png">
+![An Aliased Signal](pictures/aliasing.png)
 
-### Example 1
+## Example 1
 
 We use the recording made at the start and run it through a script that
 effectively aliases the original signal be reducing the sampling frequency to
 less than half the original sampling frequency.
 
-Here's the script: [aliaseg1.m](files/matlab/aliaseg1.m) that I'll be using.
+Here's the script: [aliaseg1.m](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliaseg1.m) that I'll be using.
 
-### Example 2
+## Example 2
 
 Assume signal $x(t)=\cos(\omega_0 t)$ is sampled at a rate of $\omega_s =
 1.5\omega_s$, violating the sampling theorem.
 
 We can see the effect on the plot below:
 
-<img src="files/pictures/aliasing_ex.png">
+----
 
-Image generated by [aliasing.m](files/matlab/aliasing.m)
+![Aliasing](pictures/aliasing_ex.png)
 
+Image generated by [aliasing.m](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliasing.m)
+
+<div class="notes">
 You should confirm for yourself that after lowpass filtering the spectrum with a
-filter with cutofff frequency $\omega_c = \omega_s/2$ that the signal returned
+filter with cutoff frequency $\omega_c = \omega_s/2$ that the signal returned
 is the spectrum of $x(t)=\cos(\omega_0 t/2)$
+</div>
 
-### Antialising Filters
+## Antialising Filters
 
 * Most real signals are not band-limited so we have to artificially make them
 bandlimited  using an *anti-aliasing filter*.
@@ -329,24 +351,29 @@ to happen.
 
 * For more on this topic see Pages 551&mdash;552 of Boulet.
 
-### Example 3
+## Example 3
 
 This example uses anti-aliasing to downsample the audio. You should hear that
 the sound is less distorted as we sample below the sampling frequency of 8 kHz.
 
-Script: [aliaseg2.m](files/matlab/aliaseg2.m)
+<div class="notes">
+Script: [aliaseg2.m](https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliaseg2.m)
+</div>
 
-### Practical application - digital audio
+## Practical application - digital audio
 
 Human beings can hear sounds with frequencies up to around 20 kHz so when
 recording music in the modern sound studio (or phone or PC for that matter) the
 audio signal is antialiased with a 22 kHz filter. The signal is then sampled at
 44.1 kHz before being stored for later processing and/or playback.
 
+# DT Processing of CT Signals
+
 ## DT Processing of CT Signals
 
-<img src="files/pictures/ct-to-dt.png">
+![DT Processing of CT Signals](pictures/ct-to-dt.png)
 
+<div class="notes">
 The concepts presented in this session provide a model that allows us to cross
 the bridge between the theoretical concept of impulse chain sampling through to
 a representation of a signal as discrete sequence $x[n]$ (to be introduced next
@@ -362,7 +389,7 @@ length arithmetic inside the discrete-time system (usually a microprocessor,
 microcontroller or digital signal processor), followed by conversion back to a
 step-wise continuous signal via a digital to analogue converter (DAC) that
 operates like a zero-order-hold.
-
+</div>
 
 
 ## Sampling of DT Signals
@@ -372,7 +399,7 @@ that were once done in continuous time are now done entirely in discrete time.
 
 * For example, we can implement sampling and modulation in discrete time.
 
-* We can also upsample (interpolate between samples) or downsample (reduce the
+* We can also up-sample (interpolate between samples) or downs-ample (reduce the
 number of samples in a discrete-time signal)
 
 These topics are left to you for further study.
@@ -390,6 +417,8 @@ These topics are left to you for further study.
 
 ## Matlab Functions used
 
+See notes.
+<div class="notes">
 * The matlab recorder command is: `recorder =
 audiorecorder(Fs,nBits,nChannels);`
 * Sound is recorded using: `recordblocking(recObj, time);`
@@ -409,7 +438,7 @@ are supported for reading including `'.mp3'`.
 * Multiple graphs in one figure window is achieved using `subplot`.
 
 For more information use `doc` *command* from the command-line.
-
+</div>
 
 ## Homework
 
@@ -422,4 +451,4 @@ Try increasing the bits per sample: 8, 16, 24 are available.
 
 ## Lab Work
 
-We explore sound generation and maniupulation in the final lab session.
+We explore sound generation and manipulation in the final lab session.
