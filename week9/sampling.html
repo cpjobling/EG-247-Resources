@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="sampling-systems">Sampling Systems</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week9/sampling.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week9/sampling.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/sampling.md">ft2.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="scope-and-background-reading">Scope and Background Reading</h2>
+<p>This session is an introduction to sampling theory. It reviews the important ideas that pertain to sampling but leaves the detailed mathematics for your further study.</p>
+<p>The material in this presentation and notes is based on Chapter 15 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10228195">Benoit Boulet, Fundamentals of Signals and Systems</a> from the <strong>Recommended Reading List</strong> and you'll find the mathematical treatments there. There is much more detail in Chapter 9 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition</a> from the <strong>Required Reading List</strong>.</p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Sampling of Continuous-Time Signals</li>
+<li>Signal Reconstruction</li>
+<li>Discrete-time Processing of Continuous-Time Signals</li>
+<li>Sampling of Discrete-Time Systems</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We will be using an adaptation of a pair of demo scripts to illustrate <em>alialising</em>. These scripts were published by Prof. Charles A. Bouman, School of Electrical and Computer Engineering, Purdue University as part of the course materials for <a href="https://engineering.purdue.edu/VISE/ee438/demos/">ECE438: Digital Signal Processing</a>.</p>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>The <em>sampling process</em> provides the bridge between continuous-time (CT) and discrete-time (DT) signals</li>
+<li>Sampling records discrete values of a CT signal at periodic instants of time.</li>
+<li>Sampled data can be used in <em>real-time</em> or <em>off-line</em> processing</li>
+<li>Sampling opens up possibility of processing CT signals through <em>finite impulse response</em> (FIR) and <em>infinite impulse response</em> IIR filters.</li>
+</ul>
+<h1 id="a-real-example">A Real Example</h1>
+<h2 id="sound-sampling">Sound sampling</h2>
+<p>I need a volunteer to provide a sound sample ....</p>
+<ol style="list-style-type: decimal">
+<li>I will use this script <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/sampling_demo.m">sampling_demo.m</a> to sample your voice.</li>
+<li>I will then playback the recording.</li>
+<li>I will the plot the data.</li>
+</ol>
+<h2 id="technical-details">Technical Details</h2>
+<ul>
+<li><strong>Sampling rate</strong>: 8000 samples per second (fs = 8 kHz)</li>
+<li><strong>Resolution</strong>: 8 bits per sample</li>
+<li><strong>Channels</strong>: 1 channel.</li>
+<li><strong>Reconstruction</strong>: Matlab plays the audio back at 8192 samples per second.</li>
+</ul>
+<h2 id="question">Question</h2>
+<p>What will the bit-rate be for playback?</p>
+<h2 id="answer">Answer</h2>
+<p>bit rate = [number of samples per second] x [number of bits per sample] x [number of channels]</p>
+<p>bit rate = <span class="math">\(8192 \times 8 \times 1\)</span> bits/second [baud]</p>
+<p>bit rate = <span class="math">\(65,536\)</span> bits/second</p>
+<h1 id="sampling-ct-signals">Sampling CT Signals</h1>
+<h2 id="sampling-ct-signals-1">Sampling CT Signals</h2>
+<p>What is going on here?</p>
+<h2 id="time-domain">Time domain</h2>
+<p>Sampling can be modelled as the multiplication of a continuous-time signal by a sequence of periodic impulses as illustrated here. <span class="math">\(T_s\)</span> is the period of the periodic sampling function.</p>
+<div class="figure">
+<img src="pictures/sampling.png" alt="Sampling" />
+<p class="caption">Sampling</p>
+</div>
+<p>This is a form of <strong>modulation</strong></p>
+<h2 id="frequency-domain">Frequency domain</h2>
+<p>Multiplication in time domain is <em>convolution</em> in the frequency domain</p>
+<div class="figure">
+<img src="pictures/sampling_fr.png" alt="Frequency domain" />
+<p class="caption">Frequency domain</p>
+</div>
+<p><span class="math">\(\omega_s\)</span> is the frequency of the periodic sampling function = <span class="math">\(2\pi/T_s\)</span>.</p>
+<h2 id="the-mathematics">The Mathematics</h2>
+<p><strong>The Sampled signal</strong>:</p>
+<p><span class="math">\[{x_s}(t) = \sum\limits_{n =  - \infty }^{ + \infty } {x(n{T_s})\delta (t -
+n{T_s})} \]</span></p>
+<p><strong>Frequency convolution</strong>: <span class="math">\[{X_s}(\omega ) = \frac{1}{{{T_s}}}\int_{ - \infty }^{ + \infty } {X(\upsilon
+)} \sum\limits_{n =  - \infty }^{ + \infty } {\delta (t - \upsilon  - k{\omega
+_s})} \,d\upsilon \]</span></p>
+<h2 id="the-mathematics-continued">The Mathematics (continued)</h2>
+<p><strong>Sampling property</strong>:</p>
+<p><span class="math">\[{X_s}(\omega ) = \frac{1}{{{T_s}}}\int_{ - \infty }^{ + \infty }
+{\sum\limits_{n =  - \infty }^{ + \infty } {X(\omega  - k{\omega _s})} } \delta
+(t - \upsilon  - k{\omega _s})\,d\upsilon \]</span></p>
+<p><strong>Sifting property</strong>:</p>
+<p><span class="math">\[{X_s}(\omega ) = \frac{1}{{{T_s}}}\sum\limits_{n =  - \infty }^{ + \infty }
+{X(\omega  - k{\omega _s})}\]</span></p>
+<h2 id="nyquist-shannon-sampling-theorem">Nyquist-Shannon Sampling Theorem</h2>
+<p>Gives a sufficient condition to recover a continuous time signal from its samples <span class="math">\(x(nT_s)\)</span>, <span class="math">\(n\)</span> is an integer.</p>
+<p><strong>Sampling Theoreom</strong></p>
+<p>Let <span class="math">\(x(t)\)</span> be a band-limited signal with <span class="math">\(X(\omega) = 0\)</span> for <span class="math">\(|\omega|&gt;\omega_M\)</span>.</p>
+<p>Then <span class="math">\(x(t)\)</span> is uniquely determined by its samples <span class="math">\(x(nT_s)\)</span>, <span class="math">\(\infty &lt;n &lt; +\infty\)</span> if</p>
+<p><span class="math">\[\omega_s &gt; 2\omega_M,\]</span></p>
+<p>where <span class="math">\(\omega_s = 2\pi/T_s\)</span> is the sampling frequency.</p>
+<h2 id="recovery-of-signal-by-filtering">Recovery of signal by filtering</h2>
+<div class="figure">
+<img src="pictures/recovery.png" alt="Signal recovery" />
+<p class="caption">Signal recovery</p>
+</div>
+<hr />
+<div class="figure">
+<img src="pictures/recovered.png" alt="Recovered signal" />
+<p class="caption">Recovered signal</p>
+</div>
+<h2 id="ideal-lowpass-filter-for-ct-recovery-from-dt-sampled-signal">Ideal Lowpass Filter for CT Recovery from DT Sampled Signal</h2>
+<div class="figure">
+<img src="pictures/recover-lp.png" alt="Ideal low-pass filter" />
+<p class="caption">Ideal low-pass filter</p>
+</div>
+<p>This is of course theoretical only!</p>
+<h2 id="sample-and-hold">Sample-and-hold</h2>
+<div class="figure">
+<img src="pictures/sandh.png" alt="Sample and hold" />
+<p class="caption">Sample and hold</p>
+</div>
+<h2 id="sample-and-hold-operator">Sample-and-hold operator</h2>
+<div class="figure">
+<img src="pictures/zoh.png" alt="Zero-order hold" />
+<p class="caption">Zero-order hold</p>
+</div>
+<div class="notes">
+<p>The following images where generated with the script <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/sampling.m">sampling.m</a></p>
+</div>
+<h2 id="example-ct-signal">Example: CT Signal</h2>
+<div class="figure">
+<img src="pictures/sampling_01.png" alt="CT Signal" />
+<p class="caption">CT Signal</p>
+</div>
+<h2 id="example-after-sampling">Example: After sampling</h2>
+<div class="figure">
+<img src="pictures/sampling_02.png" alt="Sampled signal" />
+<p class="caption">Sampled signal</p>
+</div>
+<h2 id="example-reconstructed-with-sample-and-hold">Example: Reconstructed with sample and hold</h2>
+<div class="figure">
+<img src="pictures/sampling_03.png" alt="After sample-and-hold (E.G. ADC Output)" />
+<p class="caption">After sample-and-hold (E.G. ADC Output)</p>
+</div>
+<div class="notes">
+<h2 id="notes">Notes</h2>
+<p>The sampled signal <span class="math">\(x_0(t)\)</span> carries the same information as the samples themselves, so we should be able to recover the entire signal <span class="math">\(x(t)\)</span>.</p>
+<p>From the block diagram of the sample-and-hold operator, what we would need to do is find the inverse of the ZOH system with impulse response <span class="math">\(h_0(t)\)</span> and then use a perfect lowpass filter.</p>
+<p>The frequency response <span class="math">\(H_0(\omega)\)</span> is given by the usual sinc function for an even rectangular pulse signal, multiplied by <span class="math">\(e^{-j\omega T_s/2}\)</span> because we need a time delay of <span class="math">\(T_s/2\)</span> to make the signal causal:</p>
+<p><span class="math">\[{H_0}(\omega ) = {T_s}{e^{ - j\omega {T_s}/2}}\frac{{\sin \left( {\pi
+\frac{{{T_s}}}{{2\pi }}\omega } \right)}}{{\pi \frac{{{T_s}}}{{2\pi }}\omega }}
+= 2{e^{ - j\omega {T_s}/2}}\frac{{\sin \left( {\omega {T_s}/2} \right)}}{\omega
+}\]</span></p>
+<p>The inverse of <span class="math">\(H_0(\omega)\)</span> is given by</p>
+<p><span class="math">\[{H_1}(\omega ) = {H^{ - 1}}(\omega ) = \frac{1}{2}{e^{j\omega
+\frac{{{T_s}}}{2}}}\frac{\omega }{{\sin \left( {\frac{{{T_s}}}{2}\omega }
+\right)}}\]</span></p>
+<p>The <em>reconstruction filter</em> is the cascade of the inverse filter and the lowpass filter:</p>
+<p><span class="math">\[H_r(\omega)=T_sH_{\mathrm{lp}}(\omega)H_1(\omega)\]</span></p>
+<div class="figure">
+<img src="pictures/reconstruction_filter.png" alt="Reconstruction filter" />
+<p class="caption">Reconstruction filter</p>
+</div>
+<p>The frequency response of this filter and additional notes are to be found on Page 546 of Boulet.</p>
+</div>
+<h1 id="signal-reconstruction">Signal Reconstruction</h1>
+<h2 id="signal-reconstruction-1">Signal Reconstruction</h2>
+<p><strong>Problem</strong></p>
+<ul>
+<li>We have a bandlimited signal that is sampled at the Nyquist-Shannon sampling frequency <span class="math">\(\omega_s = 2\pi/T_s\)</span>.</li>
+<li>We therefore have a discrete-time (DT) signal <span class="math">\(x(nT_s)\)</span> from which we want to reconstruct the original signal.</li>
+</ul>
+<h2 id="perfect-signal-interpolation-using-sinc-functions">Perfect Signal Interpolation Using sinc Functions</h2>
+<ul>
+<li><p>In the <em>frequency domain</em>, the ideal way to reconstruct the signal would be to construct a chain of impulse <span class="math">\(x_s(t)\)</span> and then to filter this signal with an ideal lowpass filter.</p></li>
+<li><p>In the <em>time domain</em>, this is equivalent to interpolating the samples using time-shifted sinc functions with zeros at <span class="math">\(nT_s\)</span> for <span class="math">\(\omega_c = \omega_s\)</span>.</p></li>
+</ul>
+<hr />
+<div class="figure">
+<img src="pictures/sampling_05.png" alt="Perfect Signal Interpolation Using sinc Functions" />
+<p class="caption">Perfect Signal Interpolation Using sinc Functions</p>
+</div>
+<hr />
+<div class="figure">
+<img src="pictures/sampling_06.png" alt="fig" />
+<p class="caption">fig</p>
+</div>
+<div class="notes">
+<p>Each impulse in <span class="math">\(x_s(t)\)</span> triggers the impulse reponse of the lowpass filter (the sinc signal), the the resulting signal <span class="math">\(x(t)\)</span> at the output of the filter is the sum of all thse time-shifted sinc signals with amplitudes equal to the samples <span class="math">\(x(nT_s)\)</span>.</p>
+<p><span class="math">\[x(t) = \sum\limits_{k =  - \infty }^{ + \infty } {x(n{T_s}){\rm{sinc}}} \left(
+{\frac{{t - n{T_s}}}{{{T_s}}}} \right)\]</span></p>
+<p>(Note we have defined <span class="math">\({\rm{sinc}}(x)\)</span> as <span class="math">\(\sin(\pi x)/(\pi x)\)</span>.)</p>
+<p>This is clearly unfeasible, at least in real-time, so we have to resort to approximations of the ideal low-pass filter.</p>
+<p>A couple of examples are given below. Boulet gives more information including an evaluation of the quality of the approximation.</p>
+<p>In practice, the zero-order-hold is often used in practice and a low-pass filter with a flat passband (such as the Butterworth filter discussed in the last lecture) would be used. In audio applications, for example, the low-pass nature of speakers and the human ear add additional smoothing and for non HiFi applications (e.g. an MP3 player) may be all that is actually used!</p>
+</div>
+<h2 id="zero-order-hold">Zero-Order-Hold</h2>
+<div class="figure">
+<img src="pictures/sampling_03.png" alt="Zero-Order-Hold" />
+<p class="caption">Zero-Order-Hold</p>
+</div>
+<h2 id="first-order-hold">First-order Hold</h2>
+<div class="figure">
+<img src="pictures/sampling_04.png" alt="First-order Hold" />
+<p class="caption">First-order Hold</p>
+</div>
+<h1 id="aliasing">Aliasing</h1>
+<h2 id="aliasing-1">Aliasing</h2>
+<ul>
+<li><p>Aliasing Occurs when the sampling frequency is too low to ovoid overlapping between the spectra.</p></li>
+<li><p>When aliasing oucus, we have violated the sampling theorem that is <span class="math">\(\omega_s &lt; 2\omega_m\)</span>.</p></li>
+<li><p>When aliasing occurs, the original signal cannot be recovered by lowpass filtering.</p></li>
+</ul>
+<h2 id="an-aliased-signal">An Aliased Signal</h2>
+<div class="figure">
+<img src="pictures/aliasing.png" alt="An Aliased Signal" />
+<p class="caption">An Aliased Signal</p>
+</div>
+<h2 id="example-1">Example 1</h2>
+<p>We use the recording made at the start and run it through a script that effectively aliases the original signal be reducing the sampling frequency to less than half the original sampling frequency.</p>
+<p>Here's the script: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliaseg1.m">aliaseg1.m</a> that I'll be using.</p>
+<h2 id="example-2">Example 2</h2>
+<p>Assume signal <span class="math">\(x(t)=\cos(\omega_0 t)\)</span> is sampled at a rate of <span class="math">\(\omega_s = 1.5\omega_s\)</span>, violating the sampling theorem.</p>
+<p>We can see the effect on the plot below:</p>
+<hr />
+<div class="figure">
+<img src="pictures/aliasing_ex.png" alt="Aliasing" />
+<p class="caption">Aliasing</p>
+</div>
+<p>Image generated by <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliasing.m">aliasing.m</a></p>
+<div class="notes">
+<p>You should confirm for yourself that after lowpass filtering the spectrum with a filter with cutoff frequency <span class="math">\(\omega_c = \omega_s/2\)</span> that the signal returned is the spectrum of <span class="math">\(x(t)=\cos(\omega_0 t/2)\)</span></p>
+</div>
+<h2 id="antialising-filters">Antialising Filters</h2>
+<ul>
+<li><p>Most real signals are not band-limited so we have to artificially make them bandlimited using an <em>anti-aliasing filter</em>.</p></li>
+<li><p>An antialiasing filter is a low-pass filter whose cutoff frequency is lower than half the sampling frequency.</p></li>
+<li><p>This can produce some distortion at high-frequencies but this is often better than the distortion that would occus at low frequencies if aliasing was allowed to happen.</p></li>
+<li><p>For more on this topic see Pages 551—552 of Boulet.</p></li>
+</ul>
+<h2 id="example-3">Example 3</h2>
+<p>This example uses anti-aliasing to downsample the audio. You should hear that the sound is less distorted as we sample below the sampling frequency of 8 kHz.</p>
+<div class="notes">
+<p>Script: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab/aliaseg2.m">aliaseg2.m</a></p>
+</div>
+<h2 id="practical-application---digital-audio">Practical application - digital audio</h2>
+<p>Human beings can hear sounds with frequencies up to around 20 kHz so when recording music in the modern sound studio (or phone or PC for that matter) the audio signal is antialiased with a 22 kHz filter. The signal is then sampled at 44.1 kHz before being stored for later processing and/or playback.</p>
+<h1 id="dt-processing-of-ct-signals">DT Processing of CT Signals</h1>
+<h2 id="dt-processing-of-ct-signals-1">DT Processing of CT Signals</h2>
+<div class="figure">
+<img src="pictures/ct-to-dt.png" alt="DT Processing of CT Signals" />
+<p class="caption">DT Processing of CT Signals</p>
+</div>
+<div class="notes">
+<p>The concepts presented in this session provide a model that allows us to cross the bridge between the theoretical concept of impulse chain sampling through to a representation of a signal as discrete sequence <span class="math">\(x[n]\)</span> (to be introduced next lecture) and back to a continuous-time signal via reconstruction.</p>
+<p>The mathematics predicts the nature of the signals that are processed in the ideal case, but we will leave it with you to study these for yourself. (See Boulet pp 552—557).</p>
+<p>In practice, modern digital processing relies on the use of an analogue-to- digital converter (ADC) (which also introduces amplitude quantization), finite- length arithmetic inside the discrete-time system (usually a microprocessor, microcontroller or digital signal processor), followed by conversion back to a step-wise continuous signal via a digital to analogue converter (DAC) that operates like a zero-order-hold.</p>
+</div>
+<h2 id="sampling-of-dt-signals">Sampling of DT Signals</h2>
+<ul>
+<li><p>In modern signal processing and digital communications many of the operations that were once done in continuous time are now done entirely in discrete time.</p></li>
+<li><p>For example, we can implement sampling and modulation in discrete time.</p></li>
+<li><p>We can also up-sample (interpolate between samples) or downs-ample (reduce the number of samples in a discrete-time signal)</p></li>
+</ul>
+<p>These topics are left to you for further study.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Sampling of Continuous-Time Signals</li>
+<li>Signal Reconstruction</li>
+<li>Discrete-time Processing of Continuous-Time Signals</li>
+<li>Sampling of Discrete-Time Systems</li>
+</ul>
+<p><em>Next session</em></p>
+<ul>
+<li>The Z-Transform</li>
+</ul>
+<h2 id="matlab-functions-used">Matlab Functions used</h2>
+See notes.
+<div class="notes">
+<ul>
+<li>The matlab recorder command is: <code>recorder = audiorecorder(Fs,nBits,nChannels);</code></li>
+<li>Sound is recorded using: <code>recordblocking(recObj, time);</code></li>
+<li>Recorded sound is played back: <code>play(recorder);</code></li>
+<li>Sound is extracted as Matlab data using: <code>x = getaudiodata(recorder);</code></li>
+<li>Sound is plotted against sample number using: <code>plot(x)</code></li>
+<li>I extracted 50 points for the stem plot using <code>stem([1000:1049],myRecording(1000:1049))</code></li>
+<li>Sound is saved as an audio file using: <code>audiowrite(audioFile,myRecording,Fs);</code> where <code>audiofile</code> is a filename in form <code>name.extension</code>. Supported extensions are <code>'.wav'</code>, <code>'.ogg'</code>, and <code>'.flac'</code> on all platforms. Windows and Mac support <code>'.m4m'</code> and '<code>.mp4</code>'.</li>
+<li>Sound is loaded using <code>[x,Fs]=audioread(audioFile);</code>. Additional file formats are supported for reading including <code>'.mp3'</code>.</li>
+<li>Frequency response spectra were generated using the fast Fourier transform (<code>fft</code>) function.</li>
+<li>Multiple graphs in one figure window is achieved using <code>subplot</code>.</li>
+</ul>
+<p>For more information use <code>doc</code> <em>command</em> from the command-line.</p>
+</div>
+<h2 id="homework">Homework</h2>
+<p>You should take the scripts home and play with them.</p>
+<p>Try increasing the sampling frequency: 8000 Hz, 11025 Hz, 22050 Hz, 44100 Hz, 48000 Hz, and 96000 Hz are supported by most PC sound cards.</p>
+<p>Try increasing the bits per sample: 8, 16, 24 are available.</p>
+<h2 id="lab-work">Lab Work</h2>
+<p>We explore sound generation and manipulation in the final lab session.</p>
+</body>
+</html>

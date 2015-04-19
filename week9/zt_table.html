@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="z-transform-tables">z-Transform Tables</h1>
+<table>
+<thead>
+<tr class="header">
+<th align="right">No.</th>
+<th align="center"><strong>f[n]</strong></th>
+<th align="center"><strong>F(z)</strong></th>
+<th align="left"><strong>Region of Convergence</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="center"><span class="math">\[\delta[n]\]</span></td>
+<td align="center"><span class="math">\[1\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="center"><span class="math">\[\delta[n-m]\]</span></td>
+<td align="center"><span class="math">\[z^{-m}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="center"><span class="math">\[a^nu_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z}{z-a}\]</span></td>
+<td align="left"><span class="math">\[|z| &gt; a\]</span></td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="center"><span class="math">\[u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z}{z-1}\]</span></td>
+<td align="left"><span class="math">\[|z| &gt; 1\]</span></td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="center"><span class="math">\[(e^{-anT_s})u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z}{z-e^{-aT_s}}\]</span></td>
+<td align="left"><span class="math">\[e^{-aT_s}z^{-1} &lt; 1\]</span></td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="center"><span class="math">\[(\cos naT_s)u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z^2 - z\cos aT_s}{z^2 -2z\cos aT_s + 1}\]</span></td>
+<td align="left"><span class="math">\[z| &gt; 1\]</span></td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="center"><span class="math">\[(\sin naT_s)u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z\sin aT_s}{z^2 -2z\cos aT_s + 1}\]</span></td>
+<td align="left"><span class="math">\[|z| &gt; 1\]</span></td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="center"><span class="math">\[(a^n\cos naT_s)u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z^2 - az\cos aT_s}{z^2 -2az\cos aT_s + a^2}\]</span></td>
+<td align="left"><span class="math">\[|z| &gt; 1\]</span></td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="center"><span class="math">\[(a^n\sin naT_s)u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{az\sin aT_s}{z^2-2az\cos aT_s + a^2}\]</span></td>
+<td align="left"><span class="math">\[|z| &gt; 1\]</span></td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="center"><span class="math">\[u_0[n]-u_0[n-m]\]</span></td>
+<td align="center"><span class="math">\[\frac{z^m-1}{z^{m-1}(z-1)}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="center"><span class="math">\[nu_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z}{(z-1)^2}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="center"><span class="math">\[n^2u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z(z+1)}{(z-1)^3}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="center"><span class="math">\[[n+1]u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{z^2}{(z-1)^2}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="center"><span class="math">\[a^n n u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{az}{(z-a)^2}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="center"><span class="math">\[a^n n^2u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{az(z+a)}{(z-a)^3}\]</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="center"><span class="math">\[a^n n[n+1]u_0[n]\]</span></td>
+<td align="center"><span class="math">\[\frac{2az^2}{(z-a)^3}\]</span></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
