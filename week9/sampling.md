@@ -42,7 +42,7 @@ from the **Required Reading List**.
 ## Acknowledgements
 
 We will be using an adaptation of a pair of demo scripts to illustrate
-*alialising*. These scripts were published by Prof. Charles A. Bouman, School of
+*aliasing*. These scripts were published by Prof. Charles A. Bouman, School of
 Electrical and Computer Engineering, Purdue University as part of the course
 materials for [ECE438: Digital Signal
 Processing](https://engineering.purdue.edu/VISE/ee438/demos/).
@@ -300,10 +300,10 @@ applications (e.g. an MP3 player) may be all that is actually used!
 * Aliasing Occurs when the sampling frequency is too low to ovoid overlapping
 between the spectra.
 
-* When aliasing oucus, we have violated the sampling theorem that is $\omega_s <
+* When aliasing occurs, we have violated the sampling theorem that is $\omega_s <
 2\omega_m$.
 
-* When aliasing occurs, the original signal cannot be recovered by lowpass
+* When aliasing occurs, the original signal *cannot* be recovered by lowpass
 filtering.
 
 ## An Aliased Signal
