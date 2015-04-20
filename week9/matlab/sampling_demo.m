@@ -26,12 +26,16 @@ plot(myRecording);
 title('Time plot of sampled sound - zoom to see details')
 xlabel('Sample number [n]')
 ylabel('Sampled sound value')
+disp('Press any key when your are ready...')
+pause
 %%
 % Plot the samples
 stem([1000:1049],myRecording(1000:1049))
 title('Stem plot of small sample of waveform: n = 1000 to 1049')
 xlabel('Sample number [n]')
 ylabel('Sampled sound value')
+disp('Press any key when your are ready...')
+pause
 %% Save the result
 Fs = recObj.SampleRate;
 audioFile = 'eg-247-message.wav';
