@@ -146,7 +146,7 @@ b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p
 <p><span class="math">\[h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left(
 {\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)\]</span></p>
 <h2 id="matlab-solution">Matlab Solution</h2>
-<p>See <a href="files/matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
+<p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
 <div class="figure">
 <img src="pictures/dtm_ex1_2_1.png" />
 </div>
@@ -167,13 +167,13 @@ Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac
 \left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)}
 \right)\right) u_0[n]\]</span></p>
 <h2 id="matlab-solution-1">Matlab Solution</h2>
-<p>See <a href="files/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
 <div class="figure">
 <img src="pictures/dtm_ex1_3_1.png" />
 </div>
 <h1 id="modelling-dt-systems-in-matlab-and-simulink">Modelling DT systems in Matlab and Simulink</h1>
 <h2 id="matlab">Matlab</h2>
-<p>Code extracted from <a href="files/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<p>Code extracted from <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">Ts = <span class="fl">1</span>;
 z = tf(<span class="st">&#39;z&#39;</span>, Ts)
 Hz = (z^<span class="fl">2</span> + z)/(z^<span class="fl">2</span> - <span class="fl">0.5</span> * z + <span class="fl">0.125</span>)
@@ -188,7 +188,7 @@ axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</s
 <img src="pictures/dtm_ex1_3_2.png" alt="Example 1 - Part 3 - As Analogue Signal" /><p class="caption">Example 1 - Part 3 - As Analogue Signal</p>
 </div>
 <h2 id="simulink-model">Simulink Model</h2>
-<p>See <a href="files/matlab/dtm.slx">dtm.slx</a>:</p>
+<p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm.slx">dtm.slx</a>:</p>
 <div class="figure">
 <img src="pictures/simulink_model.png" alt="Simulink model" /><p class="caption">Simulink model</p>
 </div>
@@ -232,6 +232,17 @@ SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
 <li>The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band.</li>
 <li>Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></li>
 </ul>
+<h2 id="solution-3">Solution</h2>
+<p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_2.m/digi_butter.m">digi_butter.m</a>:</p>
+<p><span class="math">\[\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times
+10^3\;\mathrm{rad/s}\]</span></p>
+<p>From the lecture on filters, we know the 2nd-order butterworth filter has transfer function:</p>
+<p><span class="math">\[H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega
+_c}\sqrt 2 \,s + \omega _c^2}}\]</span></p>
+<p>Substituting for <span class="math">\(\omega_c = 125.6637\times 10^3\)</span> this is ...?</p>
+<hr />
+<p><span class="math">\[H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79
+\times {{10}^9}}}\]</span></p>
 <h2 id="bode-plot">Bode plot</h2>
 <p>Matlab:</p>
 <pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">2</span>*pi*<span class="fl">20e3</span>;

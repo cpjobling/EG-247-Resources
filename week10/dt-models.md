@@ -195,7 +195,7 @@ $$h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left(
 
 ## Matlab Solution
 
-See [dtm_ex1_2.m](files/matlab/dtm_ex1_2.m):
+See [dtm_ex1_2.m](https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_2.m):
 
 ![](pictures/dtm_ex1_2_1.png)
 
@@ -223,7 +223,7 @@ $$y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos
 
 ## Matlab Solution
 
-See [dtm_ex1_3.m](files/matlab/dtm_ex1_3.m):
+See [dtm_ex1_3.m](https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_3.m):
 
 ![](pictures/dtm_ex1_3_1.png)
 
@@ -231,7 +231,7 @@ See [dtm_ex1_3.m](files/matlab/dtm_ex1_3.m):
 
 ## Matlab
 
-Code extracted from [dtm_ex1_3.m](files/matlab/dtm_ex1_3.m):
+Code extracted from [dtm_ex1_3.m](https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_3.m):
 
 ```matlab
 Ts = 1;
@@ -251,7 +251,7 @@ axis([0,15,0,3.5])
 
 ## Simulink Model
 
-See [dtm.slx](files/matlab/dtm.slx):
+See [dtm.slx](https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm.slx):
 
 ![Simulink model](pictures/simulink_model.png)
 
@@ -311,6 +311,27 @@ $H(s)$ for use in sampling music.
 attenuation of at least $-80$&nbsp;dB in the stop band.
 * Choose a suitable sampling frequency for the audio signal and give the
 transfer function $H(z)$ and an algorithm to implement $h[n]$
+
+## Solution
+
+See [digi_butter.m](https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_2.m/digi_butter.m):
+
+$$\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times
+10^3\;\mathrm{rad/s}$$
+
+From the lecture on filters, we know the 2nd-order butterworth filter has
+transfer function:
+
+$$H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega
+_c}\sqrt 2 \,s + \omega _c^2}}$$
+
+Substituting for $\omega_c = 125.6637\times 10^3$ this is ...?
+
+----
+
+$$H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79
+\times {{10}^9}}}$$
+
 
 
 ## Bode plot
