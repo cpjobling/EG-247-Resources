@@ -186,9 +186,9 @@ Region of convergence is $|z| > 1$
 
 ## Exponential Decay Sequence
 
-$$f[n] = e^{naT_s}{u_0}[n]$$
+$$f[n] = e^{-naT_s}{u_0}[n]$$
 
-$$F(z) = \sum_{n=0}^{\infty}e^{-nasT_s}z^{-n}
+$$F(z) = \sum_{n=0}^{\infty}e^{-naT_s}z^{-n}
 =1+e^{-aT_s}z^{-1}+e^{-2aT_s}z^{-2}+e^{-a3T_s}z^{-3}+\cdots$$
 
 This is a geometric sequence with $a = e^{-aT_s}$, so
