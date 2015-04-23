@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+</head>
+<body>
+<h1 id="discrete-time-system-models">Discrete-Time System Models</h1>
+<p>Dr Chris Jobling (<script type="text/javascript">
+<!--
+h='&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#46;&#x61;&#x63;&#46;&#x75;&#x6b;';a='&#64;';n='&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x63;&#46;&#112;&#46;&#106;&#x6f;&#98;&#108;&#x69;&#110;&#x67;&#32;&#x61;&#116;&#32;&#x73;&#x77;&#x61;&#110;&#x73;&#x65;&#x61;&#32;&#100;&#x6f;&#116;&#32;&#x61;&#x63;&#32;&#100;&#x6f;&#116;&#32;&#x75;&#x6b;</noscript>)</p>
+<p>Digital Technium 123</p>
+<p>Office Hours: 12:00-13:00 Mondays</p>
+<p>You can view the notes for this presentation in <a href="http://cpjobling.github.io/EG-247-Resources/week10/dt-models.html">HTML</a> and <a href="http://cpjobling.github.io/EG-247-Resources/week10/dt-models.pdf">PDF</a>.</p>
+<p>The source code of this presentation is available in Markdown format from GitHub: <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week10/dt-models.md">dt-models.md</a>.</p>
+<p>The GitHub repository <a href="https://github.com/cpjobling/EG-247-Resources">EG-247 Resources</a> also contains the source code for all the Matlab/Simulink examples and the Laboratory Exercises.</p>
+<h2 id="scope-and-background-reading">Scope and Background Reading</h2>
+<p>This session we will explore digital systems and learn more about the z-transfer function model.</p>
+<p>The material in this presentation and notes is based on Chapter 9 (Starting at Section 9.7) of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416">Steven T. Karris, Signals and Systems: with Matlab Computation and Simulink Modelling, 5th Edition.</a> from the <strong>Required Reading List</strong>. I have skipped the section on digital state- space models.</p>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Discrete Time Systems</li>
+<li>Transfer Functions in the Z-Domain</li>
+<li>Modelling digital systems in Matlab/Simulink</li>
+<li>Continuous System Equivalents</li>
+<li>Example: Digital Butterworth Filter</li>
+</ul>
+<h2 id="discrete-time-systems">Discrete Time Systems</h2>
+<p>In the lecture that introduced the z-transform we talked about the representation of a discrete-time (DT) system by the model shown below:</p>
+<div class="figure">
+<img src="pictures/ct-to-dt.png" alt="Model of a DT System" /><p class="caption">Model of a DT System</p>
+</div>
+<p>In this session, we want to explore the contents of the central block.</p>
+<h2 id="dt-system-as-a-sequence-processor">DT System as a Sequence Processor</h2>
+<ul>
+<li>As noted in the previous slide, the discrete time system takes as an input the sequence <span class="math">\(x_d[n]\)</span><sup>1</sup>.</li>
+<li>It produces another sequence <span class="math">\(y_d[n]\)</span> by <em>processing</em> the input sequence in some way.</li>
+<li>The output sequence is converted into an analogue signal <span class="math">\(y(t)\)</span> by a digital to analogue converter.</li>
+</ul>
+<div class="figure">
+<img src="pictures/sigs.png" alt="DT System as a Sequence Processor" /><p class="caption">DT System as a Sequence Processor</p>
+</div>
+<h2 id="what-is-the-nature-of-the-dts">What is the nature of the DTS?</h2>
+<ul>
+<li>The discrete time system (DTS) is a block that converts a sequence <span class="math">\(x_d[n]\)</span> into another sequence <span class="math">\(y_d[n]\)</span></li>
+<li><p>The transformation will be a <em>difference equation</em> <span class="math">\(h[n]\)</span></p></li>
+<li><p>By analogy with CT systems, <span class="math">\(h[n]\)</span> is the impulse response of the DTS, and <span class="math">\(y[n]\)</span> can be obtained by <em>convolving</em> <span class="math">\(h[n]\)</span> with <span class="math">\(x_d[n]\)</span> so:</p></li>
+</ul>
+<p><span class="math">\[y_d[n] = h[n] * x_d[n]\]</span></p>
+<hr />
+<ul>
+<li>Taking the z-transform of <span class="math">\(h[n]\)</span> we get <span class="math">\(H(z)\)</span>, and from the transform properties, convolution of the signal <span class="math">\(x_d[n]\)</span> by system <span class="math">\(h[n]\)</span> will be <em>multiplication</em> of the z-transforms:</li>
+</ul>
+<p><span class="math">\[Y_d(z) = H(z) X_d(z)\]</span></p>
+<ul>
+<li>So, what does <span class="math">\(h[n]\)</span> and therefore <span class="math">\(H(z)\)</span> look like?</li>
+</ul>
+<h1 id="transfer-functions-in-the-z-domain">Transfer Functions in the z-Domain</h1>
+<h2 id="transfer-functions-in-the-z-domain-1">Transfer Functions in the z-Domain</h2>
+<p>Let us assume that the sequence transformation is a <em>difference equation</em> of the form[^2]:</p>
+<p><span class="math">\[\begin{array}{l}
+y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
+\quad  = {b_0}x[n] + {b_1}u[n - 1] + {b_2}u[n - 2] +  \cdots  + {b_k}u[n - k]
+\end{array}\]</span></p>
+<h2 id="take-z-transform-of-both-sides">Take Z-Transform of both sides</h2>
+<p>From the z-transform properties</p>
+<p><span class="math">\[f[n-m] \Leftrightarrow z^{-m}F(z)\]</span></p>
+<p>so....</p>
+<p><span class="math">\[Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...\]</span></p>
+<p><span class="math">\[b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)\]</span></p>
+<h2 id="gather-terms">Gather terms</h2>
+<p><span class="math">\[\begin{array}{l}
+\left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}}
+\right)Y(z) = \\
+\quad \left( {{b_0} + {b_1}{z^{ - 1}} + {b_2}{z^{ - 2}} +  \cdots {b_k}{z^{ -
+k}}} \right)U(z)
+\end{array}\]</span></p>
+<p>from which ...</p>
+<p><span class="math">\[Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 +
+a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\right) U(z)\]</span></p>
+<h2 id="define-transfer-function">Define transfer function</h2>
+<p>We define the <em>discrete time transfer function</em> <span class="math">\(H(z) := Y(z)/U(z)\)</span> so...</p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots
+b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
+}\]</span></p>
+<p>... or more conventionally<sup>3</sup>:</p>
+<p><span class="math">\[H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z +
+b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p>
+<h2 id="dt-impulse-response">DT impulse response</h2>
+<p>The <em>discrete-time impulse reponse</em> <span class="math">\(h[n]\)</span> is the response of the DT system to the input <span class="math">\(x[n] = \delta[n]\)</span></p>
+<p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair</p>
+<p><span class="math">\[\delta[n] \Leftrightarrow ?\]</span></p>
+<hr />
+<p><span class="math">\[\delta[n] \Leftrightarrow 1\]</span></p>
+<hr />
+<p>so</p>
+<p><span class="math">\[h[n] = ...\]</span></p>
+<hr />
+<p><span class="math">\[h[n] = \mathcal{Z}^{-1}\left\{H(z).1\right\} =
+\mathcal{Z}^{-1}\left\{H(z)\right\}\]</span></p>
+<h2 id="example-1">Example 1</h2>
+<p>Karris Example 9.10:</p>
+<p>The difference equation describing the input-output relationship of a DT system with zero initial conditions, is:</p>
+<p><span class="math">\[y[n] - 0.5 y[n-1] + 0.125 y[n-2] = x[n] + x[n -1]\]</span></p>
+<p>Compute:</p>
+<ol style="list-style-type: decimal">
+<li>The transfer function <span class="math">\(H(z)\)</span></li>
+<li>The DT impulse response <span class="math">\(h[n]\)</span></li>
+<li>The response <span class="math">\(y[n]\)</span> when the input <span class="math">\(x[n]\)</span> is the DT unit step <span class="math">\(u_0[n]\)</span></li>
+</ol>
+<h2 id="the-transfer-function">1. The transfer function</h2>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = ...?\]</span></p>
+<h2 id="solution">1. Solution</h2>
+<p><span class="math">\[H(z) = \frac{Y(z)}{X(z)} = \frac{z^2 + z}{z^2 - 0.5z + 0.125}\]</span></p>
+<h2 id="the-dt-impulse-response">2. The DT impulse response</h2>
+<p>Start with:</p>
+<p><span class="math">\[\frac{H(z)}{z} = \frac{z - 1}{z^2 + 0.5 z + 0.125}\]</span></p>
+<h2 id="solution-1">2. Solution</h2>
+<p><span class="math">\[h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left(
+{\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)\]</span></p>
+<h2 id="matlab-solution">Matlab Solution</h2>
+<p>See <a href="files/matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
+<div class="figure">
+<img src="pictures/dtm_ex1_2_1.png" />
+</div>
+<div class="figure">
+<img src="pictures/dtm_ex1_2_2.png" />
+</div>
+<h2 id="the-dt-step-response">3. The DT step response</h2>
+<p><span class="math">\[Y(z) = H(z)X(z)\]</span></p>
+<p><span class="math">\[u_0[n] \Leftrightarrow \frac{z}{z - 1}\]</span></p>
+<p><span class="math">\[\begin{array}{lcl}
+Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac{z}{{z -
+1}}\\
+ &amp; = &amp; \frac{{z({z^2} + z)}}{{({z^2} + 0.5z + 0.125)(z - 1)}}
+\end{array}\]</span></p>
+<p><span class="math">\[\frac{Y(z)}{z} = \frac{z^2 + z}{(z^2 + 0.5 z + 0.125)(z - 1)}\]</span></p>
+<h2 id="solution-2">3. Solution</h2>
+<p><span class="math">\[y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos
+\left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)}
+\right)\right) u_0[n]\]</span></p>
+<h2 id="matlab-solution-1">Matlab Solution</h2>
+<p>See <a href="files/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<div class="figure">
+<img src="pictures/dtm_ex1_3_1.png" />
+</div>
+<h1 id="modelling-dt-systems-in-matlab-and-simulink">Modelling DT systems in Matlab and Simulink</h1>
+<h2 id="matlab">Matlab</h2>
+<p>Code extracted from <a href="files/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">Ts = <span class="fl">1</span>;
+z = tf(<span class="st">&#39;z&#39;</span>, Ts)
+Hz = (z^<span class="fl">2</span> + z)/(z^<span class="fl">2</span> - <span class="fl">0.5</span> * z + <span class="fl">0.125</span>)
+step(Hz)
+grid
+title(<span class="st">&#39;Example 1 - Part 3 - As Analogue Signal&#39;</span>)
+xlabel(<span class="st">&#39;nTs [s]&#39;</span>)
+ylabel(<span class="st">&#39;Step response y(t)&#39;</span>)
+axis([<span class="fl">0</span>,<span class="fl">15</span>,<span class="fl">0</span>,<span class="fl">3.5</span>])</code></pre>
+<hr />
+<div class="figure">
+<img src="pictures/dtm_ex1_3_2.png" alt="Example 1 - Part 3 - As Analogue Signal" /><p class="caption">Example 1 - Part 3 - As Analogue Signal</p>
+</div>
+<h2 id="simulink-model">Simulink Model</h2>
+<p>See <a href="files/matlab/dtm.slx">dtm.slx</a>:</p>
+<div class="figure">
+<img src="pictures/simulink_model.png" alt="Simulink model" /><p class="caption">Simulink model</p>
+</div>
+<hr />
+<div class="figure">
+<img src="pictures/scope.png" alt="Simulated response" /><p class="caption">Simulated response</p>
+</div>
+<h1 id="converting-continuous-time-systems-to-discrete-time-systems">Converting Continuous Time Systems to Discrete Time Systems</h1>
+<h2 id="converting-continuous-time-systems-to-discrete-time-systems-1">Converting Continuous Time Systems to Discrete Time Systems</h2>
+<ul>
+<li>In analogue electronics, to implement a filter we would need to resort to op- amp circuits with resistors, capacitors and inductors acting as energy dissipation, storage and release devices.</li>
+<li>In modern digital electronics, it is often more convenient to take the original transfer function <span class="math">\(H(s)\)</span> and produce an equivalent <span class="math">\(H(z)\)</span>.</li>
+<li>We can then determine a <em>difference equation</em> that will respresent <span class="math">\(h[n]\)</span> and implement this as <em>computer algorithm</em>.</li>
+<li>Simple storage of past values in memory becomes the repository of past state rather than the integrators and derivative circuits that are needed in the analogue world.</li>
+<li>To achieve this, all we need is to be able to do is to <em>sample</em> and <em>process</em> the signals quickly enough to avoid violating Nyquist-Shannon's sampling theorem.</li>
+</ul>
+<h2 id="continuous-system-equivalents">Continuous System Equivalents</h2>
+<ul>
+<li>There is no digital system that uniquely represents a continuous system</li>
+<li>This is because as we are sampling, we only have knowledge of signals being processed at the sampling instants, and need to <em>reconstruct</em> the inter-sample behaviour.</li>
+<li>In practice, only a small number of transormations are used.</li>
+<li>The derivation of these is beyond the scope of this module, but we'll mention the ones that Matlab provides in a function called <code>c2d</code></li>
+</ul>
+<h2 id="matlab-c2d-function">Matlab c2d function</h2>
+<p>This is what the help function says:</p>
+<pre><code>&gt;&gt; help c2d
+SYSD = c2d(SYSC,TS,METHOD) computes a discrete-time model SYSD with
+    sampling time TS that approximates the continuous-time model SYSC.
+    The string METHOD selects the discretization method among the following:
+       &#39;zoh&#39;       Zero-order hold on the inputs
+       &#39;foh&#39;       Linear interpolation of inputs
+       &#39;impulse&#39;   Impulse-invariant discretization
+       &#39;tustin&#39;    Bilinear (Tustin) approximation.
+       &#39;matched&#39;   Matched pole-zero method (for SISO systems only).
+    The default is &#39;zoh&#39; when METHOD is omitted. The sampling time TS should
+    be specified in the time units of SYSC (see &quot;TimeUnit&quot; property).
+...</code></pre>
+<h2 id="example-2">Example 2</h2>
+<ul>
+<li>Design a 2nd-order butterworth anti-aliasing filter with transfer function <span class="math">\(H(s)\)</span> for use in sampling music.</li>
+<li>The cut-off frequency <span class="math">\(\omega_c = 20\)</span> kHz and the filter should have an attenuation of at least <span class="math">\(-80\)</span> dB in the stop band.</li>
+<li>Choose a suitable sampling frequency for the audio signal and give the transfer function <span class="math">\(H(z)\)</span> and an algorithm to implement <span class="math">\(h[n]\)</span></li>
+</ul>
+<h2 id="bode-plot">Bode plot</h2>
+<p>Matlab:</p>
+<pre class="sourceCode matlab"><code class="sourceCode matlab">wc = <span class="fl">2</span>*pi*<span class="fl">20e3</span>;
+Hs = tf(wc^<span class="fl">2</span>,[<span class="fl">1</span> wc*sqrt(<span class="fl">2</span>), wc^<span class="fl">2</span>]);
+bode(Hs,{<span class="fl">1e4</span>,<span class="fl">1e8</span>})
+grid</code></pre>
+<hr />
+<div class="figure">
+<img src="pictures/bode.png" alt="Bode plot" /><p class="caption">Bode plot</p>
+</div>
+<h2 id="sampling-frequency">Sampling Frequency</h2>
+<p>From the bode diagram, the frequency at which <span class="math">\(|H(j\omega)|\)</span> is <span class="math">\(-80\)</span> dB is approx <span class="math">\(12.6\times 10^6\)</span> rad/s.</p>
+<p>To avoid aliasing, we should choose a sampling frequency twice this = ?</p>
+<p>So sampling frequency <span class="math">\(\omega_s = 2\times 12.6\times 10^6 = 25.2\times 10^6\)</span> rad/s.</p>
+<p>Sampling frequency in Hz <span class="math">\(f_s\)</span> = ?</p>
+<hr />
+<p><span class="math">\[f_s = \omega_s/(2\pi) = 25.2\times 10^6/(2\times \pi) = 40.1\;\mathrm{Mhz}\]</span></p>
+<hr />
+<p>Sampling time <span class="math">\(T_s = ?\)</span></p>
+<hr />
+<p><span class="math">\[T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}\]</span></p>
+<h2 id="digital-butterworth">Digital Butterworth</h2>
+<pre><code>&gt;&gt; Hz = c2d(Hs, Ts) % zero-order-hold equivalent
+
+Hz =
+
+  0.0004836 z + 0.0004765
+  -----------------------
+  z^2 - 1.956 z + 0.9567
+
+Sample time: 2.4933e-07 seconds
+Discrete-time transfer function.</code></pre>
+<h2 id="step-response">Step response</h2>
+<div class="figure">
+<img src="pictures/b_step.png" />
+</div>
+<h2 id="algorithm">Algorithm</h2>
+<p>From previous result:</p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z +  476.5\times
+10^{-6}}{z^2 - 1.956z + 0.9567}\]</span></p>
+<p>Dividing top and bottom by <span class="math">\(z^2\)</span> ...</p>
+<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{486.6\times 10^{-6}z^{-1} +  476.5\times
+10^{-6}z^{-2}}{1 - 1.956z^{-1} + 0.9567z^{-2}}\]</span></p>
+<p>expanding out ...</p>
+<p><span class="math">\[\begin{array}{l}
+Y(z) - 1.956{z^{ - 1}}Y(z) + 0.9567{z^{ - 2}}Y(z) = \\
+\quad 486.6 \times {10^{ - 6}}{z^{ - 1}}U(z) + 476.5 \times {10^{ - 6}}{z^{ -
+2}}U(z)
+\end{array}\]</span></p>
+<h2 id="algorithm-...-continued">Algorithm ... continued</h2>
+<p>Inverse z-transform gives ...</p>
+<p><span class="math">\[\begin{array}{l}
+y[n] - 1.956y[n - 1] + 0.9567y[n - 2] = \\
+\quad 486.6 \times {10^{ - 6}}u[n - 1] + 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}\]</span></p>
+<p>in algorithmic form (compute <span class="math">\(y[n]\)</span> from past values of <span class="math">\(u\)</span> and <span class="math">\(y\)</span>) ...</p>
+<p><span class="math">\[\begin{array}{l}
+y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
+\quad 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}\]</span></p>
+<h2 id="convert-to-code">Convert to code</h2>
+<p>To implement: <span class="math">\[\begin{array}{l}
+y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
+\quad 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}\]</span></p>
+<pre class="sourceCode c"><code class="sourceCode c"><span class="co">/* Initialize */</span>
+ynm1 = <span class="dv">0</span>; ynm2 = <span class="dv">0</span>; unm1 = <span class="dv">0</span>; unm2 = <span class="dv">0</span>;
+<span class="kw">while</span> (true) {
+  un = read_adc;
+  yn = <span class="fl">1.956</span> * ynm1
+       - <span class="fl">0.9567</span> * ynm2
+       + <span class="fl">486.6e-6</span> * unm1
+       + <span class="fl">476.5e-6</span> * unm2;
+  write_dac(yn);
+  <span class="co">/* store past values */</span>
+  ynm2 = ynm1; ynm1 = yn;
+  unm2 = unm1; unm1 = un;
+}</code></pre>
+<h2 id="comments">Comments</h2>
+<p>PC soundcards can sample audio at 44.1 kHz so this implies that the anti- aliasing filter is much sharper than this one as <span class="math">\(f_s/2 = 22.05\)</span> kHz.</p>
+<p>You might wish to find out what order butterworth filter would be needed to have <span class="math">\(f_c = 20\)</span> kHz and <span class="math">\(f_{\mathrm{stop}}\)</span> of 22.05 kHz.</p>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>Discrete Time Systems</li>
+<li>Transfer Functions in the Z-Domain</li>
+<li>Modelling digital systems in Matlab/Simulink</li>
+<li>Continuous System Equivalents</li>
+<li>Example: Digital Butterworth Filter</li>
+</ul>
+<h2 id="the-end">The End?</h2>
+<ul>
+<li>This concludes this module.</li>
+<li>There is some material that I have not covered, most notably <strong>Discrete Fourier Transform</strong>.</li>
+<li>This is covered in Karris Chapter 10 and Boulet. It will not be examined this year!</li>
+<li>There is a significant amount of additional information about <strong>Filter Design</strong> (including the use of Matlab for this) in Chapter 11 of Karris.</li>
+</ul>
+<h2 id="homework">Homework</h2>
+<p>You should be able to tackle the remaining end of chapter exercises 8-11 (Section 9.10) from Karris. Don't look at the answers until you have attempted the problems.</p>
+</body>
+</html>
