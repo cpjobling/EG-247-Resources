@@ -1,21 +1,25 @@
 
 # Discrete-Time System Models
 
-Dr Chris Jobling
-([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))<br />Digital
-Technium 123<br />Office Hours: Thursdays 14:00-15:00
+Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-You can view the notes for this presentation in [HTML format](http://nbviewer.ip
-ython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.ipynb)
-and print using your Brower's print function. The source code of this
-presentation is available as an interactive [IPython
-notebook](http://ipython.org/notebook.html) from GitHub:
-<https://github.com/cpjobling/EG-247-Resources>. The GitHub repository also
-contains the source code for all the Matlab/Simulink examples.
+Digital Technium 123
+
+Office Hours: 12:00-13:00 Mondays
+
+You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/week10/dt-models.html
+  ) and [PDF](http://cpjobling.github.io/EG-247-Resources/week10/dt-models.pdf).
+
+  The source code of this presentation is available in Markdown format from GitHub: [dt-models.md](https://github.com/cpjobling/EG-247-Resources/tree/master/week10/dt-models.md).
+
+The GitHub repository [EG-247 Resources](https://github.com/cpjobling/EG-247-Resources)
+also contains the source code for all the Matlab/Simulink
+examples and the Laboratory Exercises.
+
 
 ## Scope and Background Reading
 
-This we will explore digital systems and learn more about the z-transfer
+This session we will explore digital systems and learn more about the z-transfer
 function model.
 
 The material in this presentation and notes is based on Chapter 9 (Starting at
@@ -38,11 +42,11 @@ space models.
 In the lecture that introduced the z-transform we talked about the
 representation of a discrete-time (DT) system by the model shown below:
 
-<img src="files/pictures/ct-to-dt.png">
+![Model of a DT System](pictures/ct-to-dt.png)
 
 In this session, we want to explore the contents of the central block.
 
-### DT System as a Sequence Processor
+## DT System as a Sequence Processor
 
 * As noted in the previous slide, the discrete time system takes as an input the
 sequence $x_d[n]$<sup>1</sup>.
@@ -51,9 +55,9 @@ some way.
 * The output sequence is converted into an analogue signal $y(t)$ by a digital
 to analogue converter.
 
-<img src="files/pictures/sigs.png">
+![DT System as a Sequence Processor](pictures/sigs.png)
 
-### What is the nature of the DTS?
+## What is the nature of the DTS?
 
 * The discrete time system (DTS) is a block that converts a sequence $x_d[n]$
 into another sequence $y_d[n]$
@@ -64,6 +68,8 @@ $y[n]$ can be obtained by *convolving* $h[n]$ with $x_d[n]$ so:
 
 $$y_d[n] = h[n] * x_d[n]$$
 
+----
+
 * Taking the z-transform of $h[n]$ we get $H(z)$, and from the transform
 properties, convolution of the signal $x_d[n]$ by system $h[n]$ will be
 *multiplication* of the z-transforms:
@@ -72,17 +78,18 @@ $$Y_d(z) = H(z) X_d(z)$$
 
 * So, what does $h[n]$ and therefore $H(z)$ look like?
 
+# Transfer Functions in the z-Domain
 ## Transfer Functions in the z-Domain
 
 Let us assume that the sequence transformation is a *difference equation* of the
-form<sup>2</sup>:
+form[^2]:
 
 $$\begin{array}{l}
 y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
 \quad  = {b_0}x[n] + {b_1}u[n - 1] + {b_2}u[n - 2] +  \cdots  + {b_k}u[n - k]
 \end{array}$$
 
-### Take Z-Transform of both sides
+## Take Z-Transform of both sides
 
 From the z-transform properties
 
@@ -94,7 +101,7 @@ $$Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...$$
 
 $$b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)$$
 
-### Gather terms
+## Gather terms
 
 $$\begin{array}{l}
 \left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}}
@@ -110,7 +117,7 @@ $$Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 +
 a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
 }\right) U(z)$$
 
-### Define transfer function
+## Define transfer function
 
 We define the *discrete time transfer function* $H(z) := Y(z)/U(z)$ so...
 
@@ -126,7 +133,7 @@ b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
 $$H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z +
 b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}$$
 
-### DT impulse response
+## DT impulse response
 
 The *discrete-time impulse reponse* $h[n]$ is the response of the DT system to
 the input $x[n] = \delta[n]$
@@ -136,18 +143,22 @@ the transform pair
 
 $$\delta[n] \Leftrightarrow ?$$
 
+----
+
 $$\delta[n] \Leftrightarrow 1$$
 
-
+----
 
 so
 
 $$h[n] = ...$$
 
+----
+
 $$h[n] = \mathcal{Z}^{-1}\left\{H(z).1\right\} =
 \mathcal{Z}^{-1}\left\{H(z)\right\}$$
 
-### Example 1
+## Example 1
 
 Karris Example 9.10:
 
@@ -162,35 +173,35 @@ Compute:
 2. The DT impulse response $h[n]$
 3. The response $y[n]$ when the input $x[n]$ is the DT unit step $u_0[n]$
 
-### 1. The transfer function
+## 1. The transfer function
 
 $$H(z) = \frac{Y(z)}{U(z)} = ...?$$
 
-### 1. Solution
+## 1. Solution
 
 $$H(z) = \frac{Y(z)}{X(z)} = \frac{z^2 + z}{z^2 - 0.5z + 0.125}$$
 
-### 2. The DT impulse response
+## 2. The DT impulse response
 
 Start with:
 
 $$\frac{H(z)}{z} = \frac{z - 1}{z^2 + 0.5 z + 0.125}$$
 
-### 2. Solution
+## 2. Solution
 
 $$h[n] = {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {\cos \left(
 {\frac{{n\pi }}{4}} \right) + 5\sin \left( {\frac{n\pi }{4}} \right)} \right)$$
 
 
-### Matlab Solution
+## Matlab Solution
 
 See [dtm_ex1_2.m](files/matlab/dtm_ex1_2.m):
 
-<img src="files/pictures/dtm_ex1_2_1.png">
+![](pictures/dtm_ex1_2_1.png)
 
-<img src="files/pictures/dtm_ex1_2_2.png">
+![](pictures/dtm_ex1_2_2.png)
 
-### 3. The DT step response
+## 3. The DT step response
 
 $$Y(z) = H(z)X(z)$$
 
@@ -204,44 +215,51 @@ Y(z) = H(z){U_0}(z) &=& \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac{z}{{z -
 
 $$\frac{Y(z)}{z} = \frac{z^2 + z}{(z^2 + 0.5 z + 0.125)(z - 1)}$$
 
-### 3. Solution
+## 3. Solution
 
 $$y[n] = \left(3.2 - {\left( {\frac{{\sqrt 2 }}{4}} \right)^n}\left( {2.2 \cos
 \left( {\frac{{n\pi }}{4}} \right) + 0.6\sin \left( {\frac{n\pi }{4}} \right)}
 \right)\right) u_0[n]$$
 
-### Matlab Solution
+## Matlab Solution
 
 See [dtm_ex1_3.m](files/matlab/dtm_ex1_3.m):
 
-<img src="files/pictures/dtm_ex1_3_1.png">
+![](pictures/dtm_ex1_3_1.png)
 
-## Modelling DT systems in Matlab and Simulink
+# Modelling DT systems in Matlab and Simulink
 
-### Matlab
+## Matlab
 
 Code extracted from [dtm_ex1_3.m](files/matlab/dtm_ex1_3.m):
 
-    Ts = 1;
-    z = tf('z', Ts)
-    Hz = (z^2 + z)/(z^2 - 0.5 * z + 0.125)
-    step(Hz)
-    grid
-    title('Example 1 - Part 3 - As Analogue Signal')
-    xlabel('nTs [s]')
-    ylabel('Step response y(t)')
-    axis([0,15,0,3.5])
+```matlab
+Ts = 1;
+z = tf('z', Ts)
+Hz = (z^2 + z)/(z^2 - 0.5 * z + 0.125)
+step(Hz)
+grid
+title('Example 1 - Part 3 - As Analogue Signal')
+xlabel('nTs [s]')
+ylabel('Step response y(t)')
+axis([0,15,0,3.5])
+```
 
-<img src="files/pictures/dtm_ex1_3_2.png">
+----
 
-### Simulink Model
+![Example 1 - Part 3 - As Analogue Signal](pictures/dtm_ex1_3_2.png)
+
+## Simulink Model
 
 See [dtm.slx](files/matlab/dtm.slx):
 
-<img src="files/pictures/simulink_model.png">
+![Simulink model](pictures/simulink_model.png)
 
-<img src="files/pictures/scope.png">
+----
 
+![Simulated response](pictures/scope.png)
+
+# Converting Continuous Time Systems to Discrete Time Systems
 ## Converting Continuous Time Systems to Discrete Time Systems
 
 * In analogue electronics, to implement a filter we would need to resort to op-
@@ -258,7 +276,7 @@ analogue world.
 the signals quickly enough to avoid violating Nyquist-Shannon's sampling
 theorem.
 
-### Continuous System Equivalents
+## Continuous System Equivalents
 
 * There is no digital system that uniquely represents a continuous system
 * This is because as we are sampling, we only have knowledge of signals being
@@ -268,7 +286,7 @@ behaviour.
 * The derivation of these is beyond the scope of this module, but we'll mention
 the ones that Matlab provides in a function called `c2d`
 
-### Matlab c2d function
+## Matlab c2d function
 
 This is what the help function says:
 
@@ -285,7 +303,7 @@ This is what the help function says:
         be specified in the time units of SYSC (see "TimeUnit" property).
     ...
 
-### Example 2
+## Example 2
 
 * Design a 2nd-order butterworth anti-aliasing filter with transfer function
 $H(s)$ for use in sampling music.
@@ -294,36 +312,23 @@ attenuation of at least $-80$&nbsp;dB in the stop band.
 * Choose a suitable sampling frequency for the audio signal and give the
 transfer function $H(z)$ and an algorithm to implement $h[n]$
 
-### Solution
 
-See [digi_butter.m](files/matlab/digi_butter.m):
-
-$$\omega_c = 2\pi f_c = 2\times \pi \times 20\times 10^3  = 125.6637\times
-10^3\;\mathrm{rad/s}$$
-
-From the lecture on filters, we know the 2nd-order butterworth filter has
-transfer function:
-
-$$H(s) = \frac{{Y(s)}}{{U(s)}} = {\rm{ }}\frac{{\omega _c^2}}{{{s^2} + {\omega
-_c}\sqrt 2 \,s + \omega _c^2}}$$
-
-Substituting for $\omega_c = 125.6637\times 10^3 $ this is ...?
-
-$$H(s) = \frac{{15.79 \times {{10}^9}}}{{{s^2} + 177.7 \times {{10}^3}s + 15.79
-\times {{10}^9}}}$$
-
-### Bode plot
+## Bode plot
 
 Matlab:
 
-    wc = 2*pi*20e3;
-    Hs = tf(wc^2,[1 wc*sqrt(2), wc^2]);
-    bode(Hs,{1e4,1e8})
-    grid
+```matlab
+wc = 2*pi*20e3;
+Hs = tf(wc^2,[1 wc*sqrt(2), wc^2]);
+bode(Hs,{1e4,1e8})
+grid
+```
 
-<img src="files/pictures/bode.png">
+----
 
-### Sampling Frequency
+![Bode plot](pictures/bode.png)
+
+## Sampling Frequency
 
 From the bode diagram, the frequency at which $|H(j\omega)|$ is $-80$&nbsp;dB is
 approx $12.6\times 10^6$&nbsp;rad/s.
@@ -335,13 +340,19 @@ So sampling frequency $\omega_s = 2\times 12.6\times 10^6 = 25.2\times
 
 Sampling frequency in Hz $f_s$ = ?
 
+----
+
 $$f_s = \omega_s/(2\pi) = 25.2\times 10^6/(2\times \pi) = 40.1\;\mathrm{Mhz}$$
+
+----
 
 Sampling time $T_s = ?$
 
+----
+
 $$T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}$$
 
-### Digital Butterworth
+## Digital Butterworth
 
 
     >> Hz = c2d(Hs, Ts) % zero-order-hold equivalent
@@ -355,11 +366,11 @@ $$T_s = 1/f_s \approx 0.25\;\mu\mathrm{s}$$
     Sample time: 2.4933e-07 seconds
     Discrete-time transfer function.
 
-### Step response
+## Step response
 
-<img src="files/pictures/b_step.png">
+![](pictures/b_step.png)
 
-### Algorithm
+## Algorithm
 
 From previous result:
 
@@ -379,9 +390,10 @@ Y(z) - 1.956{z^{ - 1}}Y(z) + 0.9567{z^{ - 2}}Y(z) = \\
 2}}U(z)
 \end{array}$$
 
+## Algorithm ... continued
+
 Inverse z-transform gives ...
 
-### Algorithm ... continued
 
 $$\begin{array}{l}
 y[n] - 1.956y[n - 1] + 0.9567y[n - 2] = \\
@@ -395,26 +407,31 @@ y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
 \quad 476.5 \times {10^{ - 6}}u[n - 2]
 \end{array}$$
 
-Now convert to code
-
-### Convert to code
+## Convert to code
 
 To implement:
-$$y[n] = 1.956 y[n-1] - 0.9567 y[n - 2] + 486.6\times 10^{-6} u[n-1] +
-476.5\times 10^{-6} u[n-2]$$
+$$\begin{array}{l}
+y[n] = 1.956y[n - 1] - 0.9567y[n - 2] + 486.6 \times {10^{ - 6}}u[n - 1] + ...\\
+\quad 476.5 \times {10^{ - 6}}u[n - 2]
+\end{array}$$
 
-    /* Initialize */
-    ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0;
-    while (true) {
-        un = read_adc;
-        yn = 1.956*ynm1 - 0.9567*ynm2 + 486.6e-6*unm1 + 476.5e-6*unm2;
-        write_dac(yn);
-        /* store past values */
-        ynm2 = ynm1; ynm1 = yn;
-        unm2 = unm1; unm1 = un;
-    }
+```c
+/* Initialize */
+ynm1 = 0; ynm2 = 0; unm1 = 0; unm2 = 0;
+while (true) {
+  un = read_adc;
+  yn = 1.956 * ynm1
+       - 0.9567 * ynm2
+       + 486.6e-6 * unm1
+       + 476.5e-6 * unm2;
+  write_dac(yn);
+  /* store past values */
+  ynm2 = ynm1; ynm1 = yn;
+  unm2 = unm1; unm1 = un;
+}
+```
 
-### Comments
+## Comments
 
 PC soundcards can sample audio at 44.1 kHz so this implies that the anti-
 aliasing filter is much sharper than this one as $f_s/2 = 22.05$ kHz.
@@ -430,12 +447,6 @@ $f_c = 20$ kHz and $f_{\mathrm{stop}}$ of 22.05 kHz.
 * Continuous System Equivalents
 * Example: Digital Butterworth Filter
 
-## Homework
-
-You should be able to tackle the remaining end of chapter exercises 8-11
-(Section 9.10) from Karris. Don't look at the answers until you have attempted
-the problems.
-
 ## The End?
 
 * This concludes this module.
@@ -445,3 +456,9 @@ Fourier Transform**.
 year!
 * There is a significant amount of additional information about **Filter
 Design** (including the use of Matlab for this) in Chapter 11 of Karris.
+
+## Homework
+
+You should be able to tackle the remaining end of chapter exercises 8-11
+(Section 9.10) from Karris. Don't look at the answers until you have attempted
+the problems.
