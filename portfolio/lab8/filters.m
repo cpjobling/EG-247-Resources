@@ -19,10 +19,10 @@ ws = 2*pi*fs; % sampling frequency in rad/s
 %% Signal with noise
 % generate the noisy signal which will be filtered
 f0 = 12;      % Hz
-t = 0:Ts:1.23; 
+t = 0:Ts:1.23;
 x = cos(2*pi*f0*t)
 x(end) = []; % removes last element
-%% 
+%%
 % Additive noise is simulated by band-passing a random signal between
 % $0.6\omega_s$ and $0.7\omega_s$
 [b a] = butter(2,[0.6 0.7],'bandpass');
@@ -38,14 +38,14 @@ ylabel('Amplitude')
 % In interpreting this plot note that the DFT bin number is
 % related to the number of samples in the original
 % signal which happens to be 1230 in this case.
-% 
+%
 % Also, the frequency range is normaized to 0-$\omega_s$.
 X_mags = abs(fft(x));
 figure(10)
 plot(X_mags)
 xlabel('DFT Bins')
 ylabel('Magnitude')
-%% 
+%%
 % We now plot the first half of DFT (normalised frequency)
 % after converting the bin number to its corresponding frequency.
 % Note 1 corresponds to half the sampling frequency.
@@ -54,7 +54,7 @@ num_bins = length(X_mags);
 plot([0:1/(num_bins/2 -1):1], X_mags(1:num_bins/2))
 xlabel('Normalised frequency (\pi rads/sample)')
 ylabel('Magnitude')
-%% 
+%%
 % If we prefer, we can also plot the DFT in Hz.
 %
 % Note I've plotted a line at f0 as a verification of this result.
@@ -129,7 +129,7 @@ plot(x_filtered_stop,'c')
 title('Filtered Signal - Using Stopband')
 xlabel('Samples');
 ylabel('Amplitude')
-%% Matlab's filter design 
+%% Matlab's filter design
 %Use matlabs built-in buttord function to get the optimum order to meet a specification
 [N Wn] = buttord(0.1, 0.5, 5, 40)
 %%
@@ -154,14 +154,14 @@ ylabel('Amplitude')
 % comparison with other filter design techniques (chebyshev and elliptical)
 [b_butter a_butter] = butter(4, 0.2, 'low');
 H_butter = freqz(b_butter, a_butter);
- 
+
 [b_cheby a_cheby] = cheby1(4, 0.5, 0.2, 'low');
 H_cheby = freqz(b_cheby, a_cheby);
- 
+
 [b_ellip a_ellip] = ellip(4, 0.5, 40, 0.2, 'low');
 H_ellip = freqz(b_ellip, a_ellip);
 %%
-%plot each filter to compare 
+%plot each filter to compare
 figure(11)
 norm_freq_axis = [0:1/(512 -1):1];
 plot(norm_freq_axis, abs(H_butter))
@@ -185,10 +185,10 @@ ylabel('Magnitude (dB)')
 % Matlab provides a filter design tool. Use it to design
 % and test a low-pass butterworth filter with sampling frequency equal to your
 % student number whose cut-off frequency (in Hz) is
-% equal to the nearest whole number to your student number times 0.2 and whose stop band 
-% the nearest whole number to your student number times 0.5. 
+% equal to the nearest whole number to your student number divided by 10 and whose stop band
+% is the nearest whole number to your student number divided by 5.
 % The filter should have 3dB in the pass band and 60 dB in the stop band.
 %
-% Save the result as lab9.mat and submit this for assessment along with a script lab9.m that demonstrates
+% Save the result as lab8.mat and submit this for assessment along with a script lab8.m that demonstrates
 % that the filter has the correct pass band, stop band and cut-off frequency behaviour.
 fdatool
