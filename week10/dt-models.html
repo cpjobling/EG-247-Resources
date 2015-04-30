@@ -59,7 +59,7 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 <p>In this session, we want to explore the contents of the central block.</p>
 <h2 id="dt-system-as-a-sequence-processor">DT System as a Sequence Processor</h2>
 <ul>
-<li>As noted in the previous slide, the discrete time system takes as an input the sequence <span class="math">\(x_d[n]\)</span><sup>1</sup>.</li>
+<li>As noted in the previous slide, the discrete time system takes as an input the sequence <span class="math">\(x_d[n]\)</span><a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></sup>.</li>
 <li>It produces another sequence <span class="math">\(y_d[n]\)</span> by <em>processing</em> the input sequence in some way.</li>
 <li>The output sequence is converted into an analogue signal <span class="math">\(y(t)\)</span> by a digital to analogue converter.</li>
 </ul>
@@ -83,36 +83,37 @@ document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'" clas'+'s="em' + 'ail">'+e+'<\
 </ul>
 <h1 id="transfer-functions-in-the-z-domain">Transfer Functions in the z-Domain</h1>
 <h2 id="transfer-functions-in-the-z-domain-1">Transfer Functions in the z-Domain</h2>
-<p>Let us assume that the sequence transformation is a <em>difference equation</em> of the form[^2]:</p>
+<p>Let us assume that the sequence transformation is a <em>difference equation</em> of the form<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>:</p>
 <p><span class="math">\[\begin{array}{l}
 y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
-\quad  = {b_0}x[n] + {b_1}u[n - 1] + {b_2}u[n - 2] +  \cdots  + {b_k}u[n - k]
+\quad  = {b_0}x[n] + {b_1}x[n - 1] + {b_2}x[n - 2] +  \cdots  + {b_k}x[n - k]
 \end{array}\]</span></p>
 <h2 id="take-z-transform-of-both-sides">Take Z-Transform of both sides</h2>
 <p>From the z-transform properties</p>
 <p><span class="math">\[f[n-m] \Leftrightarrow z^{-m}F(z)\]</span></p>
 <p>so....</p>
 <p><span class="math">\[Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...\]</span></p>
-<p><span class="math">\[b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)\]</span></p>
+<p><span class="math">\[b_0 X(z) + b_1z^{-1}X(z) + b_2z^{-2}X(z) + \cdots + b_kz^{-k}X(z)\]</span></p>
 <h2 id="gather-terms">Gather terms</h2>
 <p><span class="math">\[\begin{array}{l}
 \left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}}
 \right)Y(z) = \\
 \quad \left( {{b_0} + {b_1}{z^{ - 1}} + {b_2}{z^{ - 2}} +  \cdots {b_k}{z^{ -
-k}}} \right)U(z)
+k}}} \right)X(z)
 \end{array}\]</span></p>
 <p>from which ...</p>
 <p><span class="math">\[Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 +
 a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
-}\right) U(z)\]</span></p>
+}\right) X(z)\]</span></p>
 <h2 id="define-transfer-function">Define transfer function</h2>
 <p>We define the <em>discrete time transfer function</em> <span class="math">\(H(z) := Y(z)/U(z)\)</span> so...</p>
-<p><span class="math">\[H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots
+<p><span class="math">\[H(z) = \frac{Y(z)}{X(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots
 b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
 }\]</span></p>
-<p>... or more conventionally<sup>3</sup>:</p>
+<p>... or more conventionally<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>:</p>
 <p><span class="math">\[H(z) = \frac{b_0z^k + b_{1}z^{k-1} + b_{2}z^{k-2} + \cdots b_{k-1}z +
 b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p>
+<div class="notes">
 <h2 id="dt-impulse-response">DT impulse response</h2>
 <p>The <em>discrete-time impulse reponse</em> <span class="math">\(h[n]\)</span> is the response of the DT system to the input <span class="math">\(x[n] = \delta[n]\)</span></p>
 <p>Last week we showed that <span class="math">\(\mathcal{Z}\left\{\delta[n]\right\}\)</span> was defined by the transform pair</p>
@@ -148,10 +149,11 @@ b_{k}}{z^k + a_{1}z^{k-1} + a_{2}z^{k-2} + \cdots a_{k-1} z + a_{k}}\]</span></p
 <h2 id="matlab-solution">Matlab Solution</h2>
 <p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_2.m">dtm_ex1_2.m</a>:</p>
 <div class="figure">
-<img src="pictures/dtm_ex1_2_1.png" />
+<img src="pictures/dtm_ex1_2_1.png" alt="Lollypop plot" /><p class="caption">Lollypop plot</p>
 </div>
+<hr />
 <div class="figure">
-<img src="pictures/dtm_ex1_2_2.png" />
+<img src="pictures/dtm_ex1_2_2.png" alt="Output of DAC" /><p class="caption">Output of DAC</p>
 </div>
 <h2 id="the-dt-step-response">3. The DT step response</h2>
 <p><span class="math">\[Y(z) = H(z)X(z)\]</span></p>
@@ -169,7 +171,7 @@ Y(z) = H(z){U_0}(z) &amp;=&amp; \frac{{{z^2} + z}}{{{z^2} + 0.5z + 0.125}}.\frac
 <h2 id="matlab-solution-1">Matlab Solution</h2>
 <p>See <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/week10/matlab/dtm_ex1_3.m">dtm_ex1_3.m</a>:</p>
 <div class="figure">
-<img src="pictures/dtm_ex1_3_1.png" />
+<img src="pictures/dtm_ex1_3_1.png" alt="Step response as a sequence" /><p class="caption">Step response as a sequence</p>
 </div>
 <h1 id="modelling-dt-systems-in-matlab-and-simulink">Modelling DT systems in Matlab and Simulink</h1>
 <h2 id="matlab">Matlab</h2>
@@ -341,5 +343,15 @@ ynm1 = <span class="dv">0</span>; ynm2 = <span class="dv">0</span>; unm1 = <span
 </ul>
 <h2 id="homework">Homework</h2>
 <p>You should be able to tackle the remaining end of chapter exercises 8-11 (Section 9.10) from Karris. Don't look at the answers until you have attempted the problems.</p>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>In our context this will be the sequence of sampled values generated by the ADC.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p>A difference equation for a sequence based on regular sampling consists of a linear combination of the current and past values of the sequences of the dependent and independent variables and in this sense it is analogous to a linear differential equation.<a href="#fnref2">↩</a></p></li>
+<li id="fn3">We more conventially see transfer functions defined in positive powers of the transform variable.
+</div>
+<a href="#fnref3">↩</a></li>
+</ol>
+</div>
 </body>
 </html>
