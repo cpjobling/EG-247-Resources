@@ -86,7 +86,7 @@ form[^2]:
 
 $$\begin{array}{l}
 y[n] + {a_1}y[n - 1] + {a_2}y[n - 2] +  \cdots  + {a_k}y[n - k]\\
-\quad  = {b_0}x[n] + {b_1}u[n - 1] + {b_2}u[n - 2] +  \cdots  + {b_k}u[n - k]
+\quad  = {b_0}x[n] + {b_1}x[n - 1] + {b_2}x[n - 2] +  \cdots  + {b_k}x[n - k]
 \end{array}$$
 
 ## Take Z-Transform of both sides
@@ -99,7 +99,7 @@ so....
 
 $$Y(z) + a_1z^{-1}Y(z) + a_2z^{-2}Y(z) + \cdots + a_kz^{-k}Y(z) = ...$$
 
-$$b_0 U(z) + b_1z^{-1}U(z) + b_2z^{-2}U(z) + \cdots + b_kz^{-k}U(z)$$
+$$b_0 X(z) + b_1z^{-1}X(z) + b_2z^{-2}X(z) + \cdots + b_kz^{-k}X(z)$$
 
 ## Gather terms
 
@@ -107,7 +107,7 @@ $$\begin{array}{l}
 \left( {1 + {a_1}{z^{ - 1}} + {a_2}{z^{ - 2}} +  \cdots {a_k}{z^{ - k}}}
 \right)Y(z) = \\
 \quad \left( {{b_0} + {b_1}{z^{ - 1}} + {b_2}{z^{ - 2}} +  \cdots {b_k}{z^{ -
-k}}} \right)U(z)
+k}}} \right)X(z)
 \end{array}$$
 
 from which ...
@@ -115,13 +115,13 @@ from which ...
 
 $$Y(z) = \left(\frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots b_{k}z^{-k}}{1 +
 a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
-}\right) U(z)$$
+}\right) X(z)$$
 
 ## Define transfer function
 
 We define the *discrete time transfer function* $H(z) := Y(z)/U(z)$ so...
 
-$$H(z) = \frac{Y(z)}{U(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots
+$$H(z) = \frac{Y(z)}{X(z)} = \frac{b_0 + b_{1}z^{-1} + b_{2}z^{-2} + \cdots
 b_{k}z^{-k}}{1 + a_{1}z^{-1} + a_{2}z^{-2} + \cdots a_{k}z^{-k}
 }$$
 
