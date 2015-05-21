@@ -9,7 +9,7 @@ echo '# files submitted' >> audit.txt
 find . -type f | wc -l >> audit.txt
 echo 'Scripts (target 42):' >> audit.txt
 find . -type f -name '*.m' | wc -l >> audit.txt
-echo 'Simulink models (target 7):' >> audit.txt
+echo 'Simulink models (target 8):' >> audit.txt
 find . -type f -name '*.slx' | wc -l >> audit.txt
 
 echo "Diffs in diffs.txt" >> audit.txt
