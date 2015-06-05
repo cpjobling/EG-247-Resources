@@ -1,77 +1,117 @@
 Auditing /Users/eechris/dev/EG-247-Resources/portfolio
-.
-├── [ 660]  README.md
-├── [ 414]  audit
-├── [  55]  audit.txt
-├── [ 216]  audit_all
-├── [1.1K]  diffs.txt
-├── [ 102]  lab1
-│   └── [2.4K]  elem_sigs.m
-├── [ 170]  lab2
-│   ├── [3.6K]  ilaplace_lab.m
-│   ├── [2.5K]  laplace_lab.m
-│   └── [   0]  signal.slx
-├── [ 340]  lab3
-│   ├── [   0]  ex6.m
-│   ├── [   0]  ex7.m
-│   ├── [   0]  ex8.m
-│   ├── [ 675]  ex9.m
-│   ├── [ 754]  solution3.m
-│   ├── [ 161]  solution5.m
-│   ├── [ 675]  solution7.m
-│   └── [8.3K]  tf_matlab.m
-├── [ 306]  lab4
-│   ├── [ 731]  ex11.m
-│   ├── [ 731]  ex12.m
-│   ├── [ 731]  ex13.m
-│   ├── [   0]  ex13.slx
-│   ├── [ 731]  ex14.m
-│   ├── [ 731]  rlc.m
-│   └── [   0]  rlc.slx
-├── [ 306]  lab5
-│   ├── [ 503]  ex15_1.m
-│   ├── [ 503]  ex15_2.m
-│   ├── [ 503]  ex15_3.m
-│   ├── [ 503]  ex15_4.m
-│   ├── [   0]  ex16.m
-│   ├── [   0]  ex16.slx
-│   └── [ 503]  exercise15.m
-├── [ 510]  lab6
-│   ├── [ 580]  FourierSeries.m
-│   ├── [ 828]  TrigFourierSeries.m
-│   ├── [1.4K]  ex17_1.m
-│   ├── [1.4K]  ex17_2.m
-│   ├── [ 17K]  ex18_1.slx
-│   ├── [ 17K]  ex18_2.slx
-│   ├── [1.1K]  ex19_1.m
-│   ├── [1.1K]  ex19_2.m
-│   ├── [   0]  ex20_1.m
-│   ├── [   0]  ex20_2.m
-│   ├── [1.1K]  exp_fseries.m
-│   ├── [ 17K]  fourier_example.slx
-│   └── [1.4K]  trig_fseries.m
-├── [ 204]  lab8
-│   ├── [6.3K]  filters.m
-│   ├── [1.4K]  lab9.m
-│   ├── [   0]  lab9.mat
-│   └── [1.4K]  testfda.m
-├── [ 374]  lab9
-│   ├── [2.4K]  aliaseg1.m
-│   ├── [2.3K]  aliaseg2.m
-│   ├── [   0]  ex22.m
-│   ├── [2.4K]  ex23_1.m
-│   ├── [2.3K]  ex23_2.m
-│   ├── [   0]  ex24.m
-│   ├── [   0]  ex24.wav
-│   ├── [215K]  msmv2.wav
-│   └── [1.5K]  soundex.m
-└── [2.2K]  model_audit.txt
+README.md
+audit
+audit.txt
+audit_all
+diffs.txt
+lab1
+lab2
+lab3
+lab4
+lab5
+lab6
+lab7
+lab8
+lab9
 
-8 directories, 58 files
+./lab1:
+README.md
+elem_sigs.m
+signal.slx
+
+./lab2:
+README.md
+ilaplace_lab.m
+laplace_lab.m
+
+./lab3:
+4_16.png
+README.md
+ex6.m
+ex7.m
+ex8.m
+ex9.m
+fig4_21.png
+fig4_9.png
+solution3.m
+solution5.m
+solution7.m
+tf_matlab.m
+
+./lab4:
+README.md
+ex11.m
+ex12.m
+ex13.m
+ex13.slx
+ex14.m
+fig5_10.png
+fig5_11.png
+fig5_7.png
+fig6_2.png
+rlc.m
+rlc.slx
+rlc_sim.slx
+
+./lab5:
+README.md
+
+./lab6:
+2014-03-03_1228.png
+2014-03-03_1240.png
+2014-03-03_1246.png
+2014-03-03_1248.png
+README.md
+ex15_1.m
+ex15_2.m
+ex15_3.m
+ex15_4.m
+ex16.m
+ex16_sim.slx
+exercise15.m
+
+./lab7:
+FourierSeries.m
+README.md
+TrigFourierSeries.m
+ex17_1.m
+ex17_2.m
+ex18_1.slx
+ex18_2.slx
+ex19_1.m
+ex19_2.m
+ex20_1.m
+ex20_2.m
+exp_fseries.m
+fourier_example.slx
+trig_fseries.m
+
+./lab8:
+README.md
+filters.m
+lab9.m
+lab9.mat
+testfda.m
+
+./lab9:
+README.md
+aliaseg1.m
+aliaseg2.m
+ex22.m
+ex23_1.m
+ex23_2.m
+ex24.m
+ex24.wav
+msmv2.wav
+soundex.m
 # files submitted
-      59
+      68
 Scripts (target 42):
       42
-Simulink models (target 7):
-       7
-Diffs
+Simulink models (target 8):
+       8
+MAT files (target 1):
+       1
+Audio files (target 2):
+       2
+Diffs in diffs.txt
