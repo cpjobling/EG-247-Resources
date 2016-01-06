@@ -3,14 +3,18 @@
 PWD=`pwd`
 echo "Auditing $PWD" > audit.txt
 
-tree -h  >> audit.txt
+ls -R  >> audit.txt
 
 echo '# files submitted' >> audit.txt
-find . -type f | wc -l >> audit.txt
+find . -type f \! -size 0 | wc -l >> audit.txt
 echo 'Scripts (target 42):' >> audit.txt
-find . -type f -name '*.m' | wc -l >> audit.txt
-echo 'Simulink models (target 7):' >> audit.txt
-find . -type f -name '*.slx' | wc -l >> audit.txt
+find . -type f -name '*.m' \! -size 0 | wc -l >> audit.txt
+echo 'Simulink models (target 8):' >> audit.txt
+find . -type f -name '*.slx' \! -size 0 | wc -l >> audit.txt
+echo 'MAT files (target 1):' >> audit.txt
+find . -type f -name '*.mat' \! -size 0 | wc -l >> audit.txt
+echo 'Audio files (target 2):' >> audit.txt
+find . -type f -name '*.wav' \! -size 0 | wc -l >> audit.txt
 
 echo "Diffs in diffs.txt" >> audit.txt
 diff ../model_audit.txt audit.txt > diffs.txt

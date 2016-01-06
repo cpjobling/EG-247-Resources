@@ -7,7 +7,7 @@
 
 Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
-Digital Technium 123
+Room B206, Engineering East
 
 Office Hours: Mondays at 12:00 (noon)
 
@@ -27,7 +27,7 @@ examples and the Laboratory Exercises.
 
 * <h3>Introduction to the Module</h3>
 
-* <h3>The e-Learning System <b>Unio</b></h3>
+* <h3>The e-Learning System <b>OneNote Class Notebook</b></h3>
 
 * <h3>Activities Supporting Week 1</h3>
 
@@ -45,7 +45,7 @@ Refer to the Blackboard site
 * The Reading List
 * The Assessment
 
-## The e-Learning System <b>Unio</b>
+## The e-Learning System <b>OneNote Class Notebook</b>
 
 ## Activities Supporting Week 1
 
@@ -81,7 +81,8 @@ Take a moment to think about:
 * What is $\phi$?
 * What is the period $T_0$ of this signal?
 
-Write down your answer in the notes pane.
+<textarea cols=100 rows=20 placeholder="write your answers here"></textarea>
+
 
 ## Gaining insight using computers
 
@@ -89,7 +90,7 @@ To help us answer these questions, let's use our Mathematical tools to plot a
 signal like this and explore it. The example we will use is from *Signals and
 Systems for Dummies* (SS4D: page 12):
 
-$$3\cos(2\pi\cdot 2t - 3\pi/4)$$
+$$3\cos(2\pi\cdot 2 \cdot t - 3\pi/4)$$
 
 
 ## Wolfram|Alpha
@@ -115,12 +116,16 @@ ylabel('Amplitude')
 grid
 ```
 
-(I will run this code during the live session and we'll import the result into the lesson record.)
+(I will run this code during the live session and we'll import the result into the shared white board.)
 
 ## Returning to the Question
 
-Run the quiz!
+What were your answers?
 
+* What is $A$?
+* What is $f_0$?
+* What is $\phi$?
+* What is the period $T_0$ of this signal?
 
 <div class="notes">
 <h3>Notes</h3>
@@ -161,6 +166,12 @@ In this course, we will model such systems as block diagram models in Simulink.
 
 The Simulink code can be downloaded from this file
 [gain_level_shift.slx](https://github.com/cpjobling/EG-247-Resources/blob/master/introduction/matlab/gain_level_shift.slx).
+
+## Demonstration
+
+If the input to this system is replaced with a sinewave $x(t)=\sin(t)$ and the output with a scope, what do you think the output will be?
+
+<textarea cols=100 rows=20  placeholder="sketch the waveform here"></textarea>
 
 ## Discrete-time Signals
 
@@ -245,10 +256,13 @@ $x[n] = 0$ when $n < 7$, then $x[n] = 7$ for $7$ periods, then $x[n] = 6$ for
 the next 6 periods, $x[n] = 5$ for 5 periods, and so on. The signal should
 return to 0 when the last digit has been transmitted.
 
-To plot this on a computer you would need to transcribe $x[n]$ into an array and
-then use the "lollipop" plot to plot the data. You could just create the array
-by hand, but you could also create a Matlab or Python function if you would like
-a challenge.
+<textarea cols=100 rows=20  placeholder="sketch the waveform that represents your student number"></textarea>
+
+<div class="notes">To plot this on a computer you would need to transcribe $x[n]$
+into an array and then use the "lollipop" plot to plot the data. You could just
+create the array by hand, but you could also create a Matlab function if you would
+like a challenge.
+</div>
 
 ## Discrete-time Systems
 
@@ -324,9 +338,9 @@ See: [periodic.m](https://github.com/cpjobling/EG-247-Resources/blob/master/intr
 
 ## Question
 
-For the example we started with $x(t) = 2 \cos (2\pi . 2t + 3\pi/4)$. Say we
-sample the cosine wave at 20 times the frequency, what would the sampling period
-be and what would $N$ be for the sampled waveform?
+For the example we started with $x(t) = 2 \cos (2\pi \cdot 2 \cdot t + 3\pi/4)$.
+Say we sample the cosine wave at 20 times the frequency, what would the sampling
+period be and what would $N$ be for the sampled waveform?
 
 
 
@@ -454,7 +468,7 @@ $s_1$ from $s_1 + s_2$. The filter is designed to pass $s_1$ and block $s_2$.
 
 We use the *Fourier transform* to move away from the time domain and into the
 frequency domain. To get back to the time domain, use the *inverse Fourier
-transform*. We will found out more about these transforms in this module.
+transform*. We will find out more about these transforms in this module.
 
 ## Laplace and Z-Transform Domains
 
@@ -504,11 +518,11 @@ $$x = f(t) = \left\{ {\begin{array}{*{20}{c}}
 {0\;:\;t > 1}
 \end{array}} \right.$$
 
-Sketch this signal.
+<textarea cols=100 rows=20 placeholder="Sketch this signal"></textarea>
 
 ## Preparing for Second Session
 
-* Do the homework (post-class activity)
+* Do the homework
 
-* In the second lesson we will work through the hoemwork exercise then do some
+* In the second lesson we will work through the homework exercise then do some
 exercises based on Chapter 1 of Karris.
