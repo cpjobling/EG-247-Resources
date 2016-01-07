@@ -38,6 +38,6 @@ Once you have installed the necessary files, use this code to set yourself up fo
     git co master
     conda env create -f environment.yml
     source activate eg-247
-    jupyter notebooks   
+    jupyter notebook   
 
 The interactive Jupyter notebooks are those with _*.ipynb_ extensions.
