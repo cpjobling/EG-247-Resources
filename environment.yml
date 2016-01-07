@@ -62,4 +62,7 @@ dependencies:
   - jupyter-client==4.1.1
   - jupyter-console==4.0.3
   - jupyter-core==4.0.6
+  - matlab-kernel==0.6.9
+  - metakernel==0.11.8
+  - pymatbridge==0.5.2
 
