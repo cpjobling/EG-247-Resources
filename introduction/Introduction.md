@@ -9,7 +9,7 @@ Dr Chris Jobling ([c.p.jobling@swansea.ac.uk](mailto:c.p.jobling@swansea.ac.uk))
 
 Room B206, Engineering East
 
-Office Hours: Mondays at 12:00 (noon)
+Office Hours: To Be Confirmed
 
 You can view the notes for this presentation in [HTML](http://cpjobling.github.io/EG-247-Resources/introduction/Introduction.html
 ) and [PDF](http://cpjobling.github.io/EG-247-Resources/introduction/Introduction.pdf).
@@ -54,12 +54,12 @@ This Introduction based on Chapter 1 of Signals and Systems for Dummies (SS4D)
 by Mark Wickert [available as a free
 sample](http://www.dummies.com/store/product/Signals-and-Systems-For-Dummies
 .productCd-111847581X.html)
-* *Lesson 2*: Elementary Signals (Thursday 1:00 pm, Faraday J) based on Chapter
+* *Lesson 2*: Elementary Signals (Tuesday 12:00 pm, Great Hall GH014) based on Chapter
 1 of Required Text [Signals and Systems with Matlab Computing and Simulink
 Modeling](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416) by
 Stephen Karris (available as an e-Book)
-* *Lab 1*: Matlab for Signals and Systems (Week on Friday, 13th February, 9-11
-am, PC Lab 002 Digitial Technium)
+* *Lab 1*: Matlab for Signals and Systems (Week on Thursday, 11th February, 11-14
+am, Engineering Central C101)
 
 # Introducing Signals and Systems
 
@@ -342,9 +342,8 @@ For the example we started with $x(t) = 2 \cos (2\pi \cdot 2 \cdot t + 3\pi/4)$.
 Say we sample the cosine wave at 20 times the frequency, what would the sampling
 period be and what would $N$ be for the sampled waveform?
 
-
-
-## Write down your answer in the note area
+<textarea cols=100 rows=20 placehiolder="Write down your answer in the note area">
+</textarea>
 
 ## Aperiodic  
 
