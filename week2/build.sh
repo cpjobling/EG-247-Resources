@@ -2,21 +2,15 @@
 
 DOC=laplace
 
-echo Building $DOC.slides.pdf
-pandoc --latex-engine=xelatex -t beamer $DOC.md --slide-level=2 -o $DOC.slides.pdf
-echo Building $DOC.pdf
-pandoc --latex-engine=xelatex $DOC.md -o $DOC.pdf
-echo Building $DOC.html
-pandoc --mathjax -s $DOC.md -o $DOC.html
-echo Done
+
+echo Building $DOC.slides.html
+jupyter nbconvert $DOC.ipynb --to slides --reveal-prefix ../introduction/reveal.js
+
 
 DOC=inverse_laplace
 
-echo Building $DOC.slides.pdf
-pandoc --latex-engine=xelatex -t beamer $DOC.md --slide-level=2 -o $DOC.slides.pdf
-echo Building $DOC.pdf
-pandoc --latex-engine=xelatex $DOC.md -o $DOC.pdf
-echo Building $DOC.html
-pandoc --mathjax -s $DOC.md -o $DOC.html
+echo Building $DOC.slides.html
+jupyter nbconvert $DOC.ipynb --to slides --reveal-prefix ../introduction/reveal.js
 
-
+echo "Don't forget to export PDF for notebooks" *.ipynb
+echo done
