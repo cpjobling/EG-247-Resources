@@ -5,10 +5,18 @@
 % Ebook: <http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416 Karris, Signals and Systems>
 %
 %% The Laplace Transform
-% MATLAB provides functions for computing Laplace Transforms in the
-% Symbolic Toolbox. 
+% When the < http://uk.mathworks.com/products/symbolic/Symbolic Toolbox> is installed, 
+% MATLAB is able to compute *Laplace transforms* using the |laplace| function.
+%
+% In this lab exercise we will demonstrate the use of the |laplace| function by confirming some of the standard 
+% transforms and properties found in published tables and properties of the Laplace Transform. 
+% We will then use the laplace function to find the Laplace transform of some typical elementary signals. 
+% We will conclude this exercise by using the laplace function to solve a selection of exercises from 
+% <http://site.ebrary.com/lib/swansea/reader.action?docID=10547416&ppg=17 Chapter 2 of the textbook>.
+%
+% This next command opens the documentation for the |laplace| function. You may wish to leave this open for consulation
+% as you work through these exercises.
 % 
-% View (and read!) the documentation for |laplace|
 doc laplace
 %% Tranform Tables
 % Let's start our exploration by verifying some simple transforms from the
