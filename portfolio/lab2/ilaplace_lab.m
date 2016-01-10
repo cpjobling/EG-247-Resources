@@ -108,16 +108,16 @@ d1 = [1, 2, 1]; % Coefficients of (s + 1)^2 =  s^2 + 2*s + 1 term in D(s)
 d2 = [0, 1, 2]; % Coefficients of (s + 2) term in D(s)
 Ds = conv(d1,d2); % Polynomial multiplication: gives expanded D(s)
 [r,p,k] = residue(Ns,Ds)
-%% Exercise 1
+%% Example 1
 % Solve and plot the inverse Laplace Transform of
 %
 % $$F_5(s) \frac{s^2 + 3s + 1}{(s + 1)^3(s + 2)^2}$$
-%% Exercise 2
+%% Example 2
 % use the function |collect| to expand |(s + 1)^3 * (s + 2)^2| to
 % a polynomial. Use this result and |residue| to verify the result of
 % example 1.
 %% Non-proper rational polynomials
-%% Exercise 3
+%% Example 3
 % Compute and (if possible) plot the Inverse Laplace Transform of
 %
 % $$F_6(s) = \frac{s^2 + 2s + 2}{s + 1}$$
