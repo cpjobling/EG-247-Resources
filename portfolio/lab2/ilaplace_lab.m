@@ -4,6 +4,15 @@
 % Modelling, 5th Edition, Orchard Publications, 2012. 
 % Ebook: <http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416 Karris, Signals and Systems>
 %
+% In this lab exercise we will demonstrate the definition and use of rational polynomials for the representation of 
+% Laplace transforms, the use of the |residue| function to compute the residues of partial fraction expansions. 
+% We also demonstrate the use of the |ilaplace| function to solve inverse Laplace transform problems. 
+% We will conclude this exercise by asking you to use using the |ilaplace| function to find the inverse Laplace 
+% transform for two typical non-trivial problems. 
+%
+% This next command opens the documentation for the |ilaplace| function. You may wish to leave this open for consulation
+% as you work through these exercises.
+doc ilaplace
 %% Residues
 % If you need to find the residues of a partial fraction expansion of a
 % rational polynomial
