@@ -25,14 +25,14 @@ ezplot(ans,[-1,1]),grid
 % If we are only interested in the value of the function at a particular
 % instant of time we can pass a number as the argument:
 [heaviside(-1),heaviside(0),heaviside(1)]
-% Not that |heaviside(0)| returns the value $1/2$ which is not
+% Note that |heaviside(0)| returns the value $1/2$ which is not
 % mathematically correct. The unit step function $u_o(t)$ is undefined at
 % $t=0$.
 %% 
 % The basic signal operations work as you'd expect
 A = 2; T = 2;
-v1 = A*heaviside(t - T);
-ezplot(v1,[-1, 4]),grid
+v1 = A * heaviside(t - T);
+ezplot(v1, [-1, 4]), grid
 %% Part 1
 % To validate Figure 1.8 in the textbook Karris (page 1-4) use the |heaviside|
 % and |ezplot| functions to plot each of the following:
@@ -52,7 +52,7 @@ ezplot(v1,[-1, 4]),grid
 % Figure 1.9 of the textbook.
 %% Part 3
 % Use the |heaviside| and |ezplot| functions to validate equations
-% 1.13, 1.14, 1.17 and 1.18.
+% 1.13, 1.14, 1.17 and 1.18 in the textbook.
 %% The Ramp Function
 % The integral of the *unit step* function is the *ramp function*
 % 
@@ -70,12 +70,11 @@ syms tau
 int(heaviside(tau),-inf, t)
 %%
 % Plot the ramp function
-ezplot(t*heaviside(t),[-1,5]),grid
+ezplot(t * heaviside(t), [-1,5]), grid
 %
 %% Part 4
 % Use |ezplot| to plot $u_2(t)$ and $u_3(t)$ as defined on Page 1-10 of the
 % textbook.
-% Don't Forget to Save Your Work!
 %% The Dirac Delta Function
 % $\delta(t)$ is the derivative of $u_0(t)$
 diff(heaviside(t),t)
@@ -85,3 +84,4 @@ td = [-1,0,1]; delta = [0,1,0];
 stem(td,delta)
 %% Part 5
 % Use Matlab to solve Examples 1.8 and 1.9 from the textbook.
+% Don't Forget to Save Your Work!

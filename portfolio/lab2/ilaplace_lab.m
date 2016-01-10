@@ -4,6 +4,17 @@
 % Modelling, 5th Edition, Orchard Publications, 2012. 
 % Ebook: <http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416 Karris, Signals and Systems>
 %
+% In this lab exercise we will demonstrate the definition and use of rational polynomials for the representation of 
+% Laplace transforms, the use of the |residue| function to compute the residues of partial fraction expansions 
+% using a worked example from the notes. We also demonstrate the use of the |ilaplace| function to solve inverse 
+% Laplace transform problems. 
+%
+% We will conclude this exercise by asking you to use using the |ilaplace| function to find the inverse Laplace 
+% transform for two typical non-trivial problems. 
+%
+% This next command opens the documentation for the |ilaplace| function. You may wish to leave this open for consulation
+% as you work through these exercises.
+doc ilaplace
 %% Residues
 % If you need to find the residues of a partial fraction expansion of a
 % rational polynomial
@@ -97,16 +108,16 @@ d1 = [1, 2, 1]; % Coefficients of (s + 1)^2 =  s^2 + 2*s + 1 term in D(s)
 d2 = [0, 1, 2]; % Coefficients of (s + 2) term in D(s)
 Ds = conv(d1,d2); % Polynomial multiplication: gives expanded D(s)
 [r,p,k] = residue(Ns,Ds)
-%% Example 1
+%% Problem 1
 % Solve and plot the inverse Laplace Transform of
 %
 % $$F_5(s) \frac{s^2 + 3s + 1}{(s + 1)^3(s + 2)^2}$$
-%% Example 2
+%% Problem 2
 % use the function |collect| to expand |(s + 1)^3 * (s + 2)^2| to
 % a polynomial. Use this result and |residue| to verify the result of
-% example 1.
+% Problem 1.
 %% Non-proper rational polynomials
-%% Example 3
+%% Problem 3
 % Compute and (if possible) plot the Inverse Laplace Transform of
 %
 % $$F_6(s) = \frac{s^2 + 2s + 2}{s + 1}$$

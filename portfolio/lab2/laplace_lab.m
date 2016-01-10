@@ -5,10 +5,18 @@
 % Ebook: <http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416 Karris, Signals and Systems>
 %
 %% The Laplace Transform
-% MATLAB provides functions for computing Laplace Transforms in the
-% Symbolic Toolbox. 
+% When the < http://uk.mathworks.com/products/symbolic/Symbolic Toolbox> is installed, 
+% MATLAB is able to compute *Laplace transforms* using the |laplace| function.
+%
+% In this lab exercise we will demonstrate the use of the |laplace| function by confirming some of the standard 
+% transforms and properties found in published tables and properties of the Laplace Transform. 
+% We will then use the laplace function to find the Laplace transform of some typical elementary signals. 
+% We will conclude this exercise by using the laplace function to solve a selection of problems from 
+% <http://site.ebrary.com/lib/swansea/reader.action?docID=10547416&ppg=17 Chapter 2 of the textbook>.
+%
+% This next command opens the documentation for the |laplace| function. You may wish to leave this open for consulation
+% as you work through these exercises.
 % 
-% View (and read!) the documentation for |laplace|
 doc laplace
 %% Tranform Tables
 % Let's start our exploration by verifying some simple transforms from the
@@ -54,17 +62,18 @@ laplace((t^5)*u0(t))
 %
 % $$\delta(t - a)$$
 laplace(delta(t-a))
-%% Example 1
+%% Problem 1
 % 
 % Use MATLAB to find the laplace transforms of |exp(-a*t)*u0(t)|, |t*exp(a*t)|,
 % |t^3*exp(b*t)*u0(t)|, |cos(b*t)*u0(t)|, |sin(b*t)*u0(t)|
 %% 
 % Here's the first example done for you
 laplace(exp(-a*t)*u0(t))
-%% Example 2
+% Now do the other four!
+%% Problem 2
 %
 % Find the Laplace Transform of |(t^n)*exp(-b*t)*u0(t)|
-%% Example 3
+%% Problem 3
 %
 % Use matlab to compute the Laplace Transfrom of
 % |exp(-a*t)*sin(omega*t)*u0(t)| and |exp(-a*t)*cos(omega*t)*u0(t)|
@@ -78,23 +87,23 @@ laplace(exp(-a*t)*u0(t))
 % # The Scaling Property
 % # The Transform of First, Second and nth-Order Time Derviatives
 % # The Integration in Time Domain Property
-%% Example 4
+%% Problem 4
 %
 % Calculate the Laplace Transform of a rectangular pulse with a height 2
 % that starts at t = 1 seconds and ends at t = 3 seconds. Plot the pulse.
-%% Example 5
+%% Problem 5
 %
 % Plot a piecewise-linear signal that starts at 0
 % when t=0, goes to -1 at t = 1, +1 at t = 2, and returns to 0 at t = 3.
 % Calculate the Laplace Transform of the waveform.
-%% Example 6
+%% Problem 6
 %
 % Give the laplace transform of the waveform in Example 5 assuming that it
 % repeats every 3 seconds.
-%% Example 7
+%% Problem 7
 %
 % Use MATLAB to plot a fully rectified sinusoidal signal |abs(sin(omega*t))| over
-% 3 full cycles. Find the Laplace Transform of this Signal.
+% 3 full cycles. Find the Laplace Transform of this signal.
 %% Homework
 %
 % Chose one example from each of the End of Chapter Exercises 2.8 Q1-Q7

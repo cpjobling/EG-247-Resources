@@ -2,7 +2,7 @@
 
 These examples have been adapted from Chapter 1 of 
 [Stephen Karris, Signals and Systems : With MATLAB
-Computing and Simulink Modeling (5th Edition)a](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
+Computing and Simulink Modeling (5th Edition)](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
 
 ## Keeping Lab Records
 
