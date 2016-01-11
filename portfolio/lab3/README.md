@@ -77,7 +77,7 @@ Save your solution as `ex8.m`.
 
 ## What to hand in
 
-You should add your modified version of the file `ex9.m` in folder `lab3` of your EG-247 labwork portfolio. Additional marks will be awarded according to how many of exercises 6-8 have been completed. Name each solution according to the exercise: e.g. Exercise 6 should be named `ex6.m` etc.</p>
+You should add your modified version of the file `ex8.m` in folder `lab3` of your EG-247 labwork portfolio. Additional marks will be awarded according to how many of exercises 5-7 have been completed. Name each solution according to the exercise: e.g. Exercise 5 should be named `ex5.m` etc.</p>
 
 See [**Assessment and Feedback: Labwork Assessment**](https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0) for a detailed marking scheme.
 
