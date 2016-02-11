@@ -49,7 +49,7 @@ ezplot(v1, [-1, 4]), grid
 %% Part 2
 % Use the |heaviside| and |ezplot| functionshow that $u_0(t) - u_0(t - 1)$ 
 % represents the rectangular pulse shown in
-% Figure 1.9 of the textbook.
+% Figure 1.9 (a) in the textbook.
 %% Part 3
 % Use the |heaviside| and |ezplot| functions to validate equations
 % 1.13, 1.14, 1.17 and 1.18 in the textbook.
