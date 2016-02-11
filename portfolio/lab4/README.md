@@ -76,7 +76,7 @@ step(sys)
 * Plot the step response for both forms
 * Compare the results with those of Simulink.
 
-Store the resulting script as a file `ex13.m` in your week4 portfolio.
+Store the resulting script as a file `ex11.m` in your week4 portfolio.
 
 ## Lab Exercise 12: The Impulse Response
 
