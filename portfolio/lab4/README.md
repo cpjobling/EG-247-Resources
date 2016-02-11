@@ -92,7 +92,7 @@ From the result of this analysis:
 
 ## What to hand in
 
-You should add your modified version of the file `rlc.m` in folder `lab4` of your EG-247 portfolio along with the simulink model `rlc.slx`. Additional marks will be awarded according to how many of exercises 10-12 have been completed. Name each solution according to the exercise: e.g. Exercise 12 scripts and models should be named `ex12.m` and `ex12.slx` etc.
+You should add your modified version of the file `rlc.m` in folder `lab4` of your EG-247 portfolio along with the simulink model `rlc.slx`. Additional marks will be awarded according to how many of exercises 10-12 have been completed. Name each solution according to the exercise: e.g. Exercise 10 scripts and models should be named `ex10.m` and `ex10.slx` etc.
 
 See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
 
