@@ -14,11 +14,11 @@ n this lab you will:
 
 These examples have been adapted from Chapters 5 and 6 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416" target="_blank">Stephen Karris, Signals and Systems : With MATLAB Computing and Simulink Modeling (5th Edition)</a>.
 
-The script presented in Lab Exercise 11 is described in the notes accompanying the Week 4 Session (Lesson 7) on *Modelling Systems in the State Space* (<a href="http://cpjobling.github.io/EG-247-Resources/week4/state_space.html" title="Modelling Systems in State Space (Notes)" target="_blank">linked here for your convenience</a>). Those notes also describe the relationship between the state space model and the transfer function as well as the Laplace transform of the transition matrix which are explored in Exercises 12 and 13.
+The script presented in Lab Exercise 9 is described in the notes accompanying the Week 4 Session (Lesson 7) on *Modelling Systems in the State Space* (<a href="http://cpjobling.github.io/EG-247-Resources/week4/state_space.html" title="Modelling Systems in State Space (Notes)" target="_blank">linked here for your convenience</a>). Those notes also describe the relationship between the state space model and the transfer function as well as the Laplace transform of the transition matrix which are explored in Exercises 10 and 11.
 
 The impulse response of a system represented by a state-space model was explored in the Week 4 Session on <strong>Convolution</strong> (Lesson 8 - <a href="http://cpjobling.github.io/EG-247-Resources/week4/convolution.html" title="Convolution - Part 1 (Notes)" target="_blank">Notes</a>).</p>
 
-## Lab Exercise 11: State-Space Modelling of an RLC Circuit
+## Lab Exercise 9: State-Space Modelling of an RLC Circuit
 
 Download the linked script file for the Solution for Example 7 from Week 4 Contact Hour 7. This presents part of the solution to Textbook Example 5.10.
 
@@ -36,7 +36,7 @@ Starting from the circuit (Fig. 5.7 from Karris, 2012: p5-22):
 
 Save and add your copy of the modified `rlc.m` file plus the Simulink model (suggested name `rlc_sim.slx`) to your lab4 portfolio.
 
-## Lab Exercise 12: The Laplace Transform of the Transition Matrix
+## Lab Exercise 10: The Laplace Transform of the Transition Matrix
 
 ![Figure 5.10](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_10.png)
 
@@ -44,13 +44,13 @@ Adapt the script used in Lab Exercise 11 to determine the state-space model of t
 
 Save and add the resulting script as `ex12.m` to your lab4 portfolio.
 
-## Lab Exercise 13: State-space and Transfer Functions
+## Lab Exercise 11: State-space and Transfer Functions
 
 In the circuit of Figure 5.11, all initial conditions are zero.
 
 ![Fig 5.11](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_11.png)
 
-* Adapt the scripts from Lab Exercises 11 and 12 to determine the State Matrices <strong>A</strong>, <strong>B</strong>, <strong>C</strong> and <strong>D</strong> for Fig. 5.11.
+* Adapt the scripts from Lab Exercises 9 and 10 to determine the State Matrices <strong>A</strong>, <strong>B</strong>, <strong>C</strong> and <strong>D</strong> for Fig. 5.11.
 * Derive the transfer function using Y(s) = (<strong>C</strong>(s<strong>I</strong> - <strong>A</strong>)<sup>-1</sup><strong>B</strong> + <strong>D</strong>)U(s)
 * Use inverse Laplace transforms to determine the step response.
 * Compare with the result obtained by the state-space time-response method.
@@ -71,14 +71,14 @@ Once we have the model in either of these forms, we can compute the step respons
 step(sys)
 ````
 
-* Complete Exercise 13 by creating a state-space LTI model from the calculated <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, and <strong>D</strong> matrices
+* Complete Exercise 11 by creating a state-space LTI model from the calculated <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, and <strong>D</strong> matrices
 * Convert it into an LTI transfer function
 * Plot the step response for both forms
 * Compare the results with those of Simulink.
 
 Store the resulting script as a file `ex13.m` in your week4 portfolio.
 
-## Lab Exercise 14: The Impulse Response
+## Lab Exercise 12: The Impulse Response
 
 Adapt the script used in Lab Exercise 11 to compute and plot the impulse response of the circuit shown below (Figure 6.3 from Example 6.2 in the text book).
 
@@ -88,7 +88,7 @@ From the result of this analysis:
 
 * If the impulse response of the circuit is <em>h</em>(<em>t</em>), use Matlab to Laplace transform <em>h</em>(<em>t</em>) to demonstrate that <em>H</em>(<em>s</em>) is equal to the transfer function <em>V</em>c(<em>s</em>)/<em>U</em>(<em>s</em>) of the circuit.
 * Find and plot the impulse response by inverse-Laplace transforming the transfer function <em>H</em>(<em>s</em>)
-* Use the state-space and transfer function LTI blocks (see Lab Exercise 13) and the `impulse` function to plot the impulse response of the circuit using Matlab.
+* Use the state-space and transfer function LTI blocks (see Lab Exercise 11) and the `impulse` function to plot the impulse response of the circuit using Matlab.
 
 ## What to hand in
 
