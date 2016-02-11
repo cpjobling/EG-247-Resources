@@ -40,9 +40,9 @@ Save and add your copy of the modified `rlc.m` file plus the Simulink model (sug
 
 ![Figure 5.10](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_10.png)
 
-Adapt the script used in Lab Exercise 11 to determine the state-space model of the circuit shown in Figure 5.10. Use Matlab to show that the Laplace transform of the transition matrix <em>e</em><strong><sup>A</sup></strong><sup><strong></strong><em>t</em></sup> is defined by the inverse laplace transform of (s<strong>I</strong>-<strong>A</strong>)<sup>-1</sup>.</p>
+Adapt the script used in Lab Exercise 9 to determine the state-space model of the circuit shown in Figure 5.10. Use Matlab to show that the Laplace transform of the transition matrix <em>e</em><strong><sup>A</sup></strong><sup><strong></strong><em>t</em></sup> is defined by the inverse laplace transform of (s<strong>I</strong>-<strong>A</strong>)<sup>-1</sup>.</p>
 
-Save and add the resulting script as `ex12.m` to your lab4 portfolio.
+Save and add the resulting script as `ex10.m` to your lab4 portfolio.
 
 ## Lab Exercise 11: State-space and Transfer Functions
 
