@@ -1,11 +1,11 @@
-%% Lab Exercise 11
+%% Lab Exercise 12
 % State space model parameters
 %
 % Prepared for EG-247 by C.P. Jobling
 %
 %% RLC Model Parameters
 % Note: I use Cap to avoid conflict with Output matrix C defined later
-Cap = 4/3;   % F 
+Cap = 4/3;   % F
 R = 1;   % Ohm
 L = 1/4; % H
 
