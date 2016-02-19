@@ -1,6 +1,6 @@
-# Week 7: Lab 6: Convolution
+# Week 6: Lab 5: Convolution
 
-## Acknlowedgements
+## Acknowledgements
 
 These examples have been adapted from Chapter 6 of <a href="http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416" target="_blank">Stephen Karris, Signals and Systems : With MATLAB Computing and Simulink Modeling (5th Edition)</a>.
 
@@ -23,7 +23,7 @@ Open and run `convolutiondemo.m`.
 
 If Matlab issues a message about the need to change the working directory or add a folder to the Matlab path. Accept the choice given.
 
-## Lab Exercise 15: Graphical Demonstration of Convolution
+## Lab Exercise 13: Graphical Demonstration of Convolution
 
 In this lab exercise we will use the `convolutiondemo` app demonstrated in class as an aid to understanding and setting up the convolution integral for various systems including the step-response of an RL circuit.
 
@@ -54,17 +54,17 @@ Adapt your procedure to determine the step response of the RC circuit given as E
 
 ![Example 6.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1248.png)
 
-## Lab Exercise 16: Using Laplace to Solve Convolution Problems
+## Lab Exercise 14: Using Laplace to Solve Convolution Problems
 
 In this lab exercise will demonstrate that time-convolution of a system response can be solved in the complex frequency domain using Laplace and Inverse Laplace transforms.
 
-* Use the inverse Laplace transform function `ilaplace` to solve the step response of the RC circuit given in exercise 15 without convolution. You will need the Laplace transform of the circuit's impulse response *h*(*t*) and the unit step *u*<sub>0</sub>(*t*) (Matlab `heaviside`).
+* Use the inverse Laplace transform function `ilaplace` to solve the step response of the RC circuit given in exercise 13 without convolution. You will need the Laplace transform of the circuit's impulse response *h*(*t*) and the unit step *u*<sub>0</sub>(*t*) (Matlab `heaviside`).
 * Plot the result using `ezplot`
 * Confirm the result with a simulink simulation
 
 ## What to hand in
 
-You should add your modified version of the file `example13.m` in folder `lab6` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 15 (Parts 2-4) and 16 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 15 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
+You should add your modified version of the file `example13.m` in folder `lab6` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 13 (Parts 2-4) and 14 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 13 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
 
 See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
 
