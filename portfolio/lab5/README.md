@@ -64,7 +64,7 @@ In this lab exercise will demonstrate that time-convolution of a system response
 
 ## What to hand in
 
-You should add your modified version of the file `example13.m` in folder `lab6` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 13 (Parts 2-4) and 14 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 13 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
+You should add your modified version of the file `example13.m` in folder `lab5` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 13 (Parts 2-4) and 14 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 13 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
 
 See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
 
