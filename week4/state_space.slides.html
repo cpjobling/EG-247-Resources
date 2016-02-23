@@ -348,7 +348,7 @@ $$a_n\frac{d^n}{dt^n}y(t)+a_{n-1}\frac{d^{n-1}}{dt^{n-1}}y(t)+\cdots +a_1\frac{d
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Example-1">Example 1<a class="anchor-link" href="#Example-1">&#182;</a></h3><p>A series RLC circuit with excitation</p>
 $$v_s(t) = e^{j\omega t}$$<p>is described the the integro-differential equation</p>
-$$Ri(t) + L\frac{d}{dt}i(t)+\frac{1}{C}\int_{-\infty}^{t}i(t) dt = e^{j\omega t}$$<p>Convert the equation into a second-order differential form and from this derive a state-space model.</p>
+$$Ri(t) + L\frac{d}{dt}i(t)+\frac{1}{C}\int_{-\infty}^{t}i(\tau) d\tau = e^{j\omega t}$$<p>Convert the equation into a second-order differential form and from this derive a state-space model.</p>
 
 </div>
 </div>
@@ -797,7 +797,7 @@ $$\left[ {\begin{array}{*{20}{c}}
 {{x_1}}\\
 {{x_2}}
 \end{array}} \right] + \left[ {\begin{array}{*{20}{c}}
-1\\
+4\\
 0
 \end{array}} \right]{u_0}(t)$$
 </div>
