@@ -31,28 +31,28 @@ In this lab exercise we will use the `convolutiondemo` app demonstrated in class
 
 Set up the `convolutiondemo` app as described in the notes for the computation of the Convolution Integral for Example 6.4 from the textbook illustrated below. (Refer to Example 1 in [Week 5: Contact Hour 9](http://cpjobling.github.io/EG-247-Resources/week5/convolution.html) for the Matlab settings).
 
-![Example 6.4](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1228.png)
+![Example 6.4](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab5/2014-03-03_1228.png)
 
-Use the tool to confirm the convolution result given by this Matlab script: <a href="https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/exercise13.m" target="_blank">exercise13.m</a></p>
+Use the tool to confirm the convolution result given by this Matlab script: <a href="https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab5/exercise13.m" target="_blank">exercise13.m</a></p>
 
 ### Part 2
 
 Taking the script <a href="https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/exercise13.m" target="_blank">exercise13.m</a> as a model. Use the `convolutiondemo` tool as an aid to defining the integration limits needed to find and plot the convolution integral for the example shown below (Example 6.5 from the textbook).
 
-![Example 6.5](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1240.png)
+![Example 6.5](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab5/2014-03-03_1240.png)
 
 ### Part 3
 
 Repeat the procedure for example 6.6 from the textbook.
 
-![Example 6.6](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1246.png)
+![Example 6.6](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab5/2014-03-03_1246.png)
 
 
 ### Part 4
 
 Adapt your procedure to determine the step response of the RC circuit given as Example 6.7 in the textbook.
 
-![Example 6.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab6/2014-03-03_1248.png)
+![Example 6.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab5/2014-03-03_1248.png)
 
 ## Lab Exercise 14: Using Laplace to Solve Convolution Problems
 
@@ -64,7 +64,7 @@ In this lab exercise will demonstrate that time-convolution of a system response
 
 ## What to hand in
 
-You should add your modified version of the file `example13.m` in folder `lab6` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 13 (Parts 2-4) and 14 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 13 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
+You should add your modified version of the file `example13.m` in folder `lab5` of your EG-247 portfolio as `ex13_1.m<`. Additional marks will be awarded according to how many of Exercises 13 (Parts 2-4) and 14 have been completed. Name each solution according to the exercise and part number: e.g. Exercise 13 scripts should be named `ex13_2.m<`, `ex13_3.m<` etc. Use the same naming scheme for any Simulink models submitted for assessment.
 
 See <a href="https://docs.google.com/spreadsheet/ccc?key=0AljOJ7w63DbTdERaUkhYako2V3VEemdabnd6angxSEE&amp;usp=sharing#gid=0" target="_blank"><strong>Assessment and Feedback: Labwork Assessment</strong></a> for a detailed marking scheme.
 
