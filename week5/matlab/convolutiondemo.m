@@ -61,7 +61,7 @@ pushbutton2_Callback(hObject, eventdata, handles)
 pushbutton1_Callback(hObject, eventdata, handles)
 
 % --- Outputs from this function are returned to the command line.
-function varargout = convolutiondemo_OutputFcn(hObject, eventdata, handles) 
+function varargout = convolutiondemo_OutputFcn(~, eventdata, handles) 
 varargout{1} = handles.output;
 
 
@@ -103,7 +103,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function pushbutton1_Callback(hObject, eventdata, handles)
 %% Start Recalculate button callback. (To line 211)
-global t h_f f g h_prod tlloc tmax tmin dt h_line dt tzloc s gf
+global t h_f f g h_prod tlloc tmax tmin dt h_line tzloc s gf
 
 %% Read in values from the GUI
 set(handles.axes1,'visible','off');
@@ -113,7 +113,7 @@ dt = 1 / str2double(get(handles.edit5,'String'));
 t = -(tmax-tmin):dt:tmax-tmin; % The actual time vector is longer than just tmin:tmax
 axes(handles.axes1);
 cla;
-set(gca,'drawmode','fast');
+set(gca,'SortMethod','childorder');
 tlloc = find(t == tmin);
 tzloc = find(t == 0);
 inputisbad = 1;
@@ -217,7 +217,7 @@ xlim([tmin tmax]); ylim(maxmins);
 %% Switch over to axis 2 and draw f * g
 axes(handles.axes2);
 cla
-set(gca,'drawmode','fast');
+set(gca,'SortMethod','childorder');
 h_conv = plot([t(t<0) t(convloc)],gf,'k');
 xlim([tmin tmax]); 
 grid on; hold on;
@@ -233,7 +233,7 @@ set(gcf,'userdata',0); %Just saying that everything worked ok.
 %%% END OF RECALCULATE BUTTON CALLBACK (From line 85)
 
 
-function pushbutton2_Callback(hObject, eventdata, handles)
+function pushbutton2_Callback(~, eventdata, handles)
 %% Info Button Callback.
 usetext = {'Convolution Demo: '
             ''
@@ -270,7 +270,7 @@ uiwait(h);
 %% %%%% EVERYTHING BELOW IS JUST ADMINISTRATIVE STUFF %%%%%%%%
 
 %% Unused Callbacks List
-function edit1_Callback(hObject, eventdata, handles)
+function edit1_Callback(~, ~, handles)
 
 function edit1_CreateFcn(hObject, eventdata, handles)
     if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -1119,7 +1119,7 @@ if ~gui_Create
     designEval = false;
     if (numargin>1 && ishghandle(varargin{2}))
         fig = varargin{2};
-        while ~isempty(fig) && ~isa(handle(fig),'figure')
+        while ~isempty(fig) && ~isgraphics(fig,'figure')
             fig = get(fig,'parent');
         end
         
@@ -1341,7 +1341,7 @@ function result = local_isInvokeHGCallbak(gui_State, varargin)
 
 try
     fhandle = functions(gui_State.gui_Callback);
-    result = ~isempty(findstr(gui_State.gui_Name,fhandle.file)) || ...
+    result = ~isempty(strfind(gui_State.gui_Name,fhandle.file)) || ...
              (ischar(varargin{1}) ...
              && isequal(ishandle(varargin{2}), 1) ...
              && (~isempty(strfind(varargin{1},[get(varargin{2}, 'Tag'), '_'])) || ...
