@@ -28,7 +28,7 @@ Starting from the circuit (Fig. 5.7 from Karris, 2012: p5-22):
 
 ![Fig 5.7](https://raw.githubusercontent.com/cpjobling/EG-247-Resources/master/portfolio/lab4/fig5_7.png)
 
-1. Run the script to verify the solution matches equation 5.96.
+1. Run the script to verify the solution matches equation 5.97.
 2. Add comments to the script so that you can demonstrate that you understand what each step does.
 3. Determine and plot the step response of the current through the inductor. Use this result to determine and plot the voltage across the inductor.
 4. Use the state-space block in Simulink to implement and simulate the step response of the circuit (assuming that the output is the voltage across the capacitor).
