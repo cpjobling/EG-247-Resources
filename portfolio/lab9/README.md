@@ -102,7 +102,7 @@ soundsc(datar2,Fs/2)
 
 Modify your copy of the script so that it uses the correct parameters for your audio sample and add the spectrogram plots as you did for Part 5.
 
-Save both modified versions of the alias example scripts as `ex21_a.m` and `ex21_b.m` and include the original audio file in your folder for submission.
+Save both modified versions of the alias example scripts as `ex21_1.m` and `ex21_2.m` and include the original audio file in your folder for submission.
 
 ## Exercise 22: Sound Generation
 
