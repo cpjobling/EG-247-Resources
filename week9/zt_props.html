@@ -6,7 +6,7 @@
   <meta name="generator" content="pandoc" />
   <title></title>
   <style type="text/css">code{white-space: pre;}</style>
-  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 </head>
 <body>
 <h1 id="table-of-properties-of-the-z-transform">Table of Properties of the Z-Transform</h1>
@@ -15,88 +15,88 @@
 <tr class="header">
 <th align="right">No.</th>
 <th align="left"><strong>Property</strong></th>
-<th align="left"><span class="math">\(f[n]\)</span></th>
-<th align="left"><span class="math">\(F(z)\)</span></th>
+<th align="left"><span class="math inline">\(f[n]\)</span></th>
+<th align="left"><span class="math inline">\(F(z)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="right">1.</td>
 <td align="left">Linearity</td>
-<td align="left"><span class="math">\(af_1[n]+bf_2[n]+\cdots\)</span></td>
-<td align="left"><span class="math">\(aF_1(z)+bF_2(z)+\cdots\)</span></td>
+<td align="left"><span class="math inline">\(af_1[n]+bf_2[n]+\cdots\)</span></td>
+<td align="left"><span class="math inline">\(aF_1(z)+bF_2(z)+\cdots\)</span></td>
 </tr>
 <tr class="even">
 <td align="right">2.</td>
-<td align="left">Shift of <span class="math">\(x[n]u_0[n]\)</span></td>
-<td align="left"><span class="math">\(f[n-m]u_0[n-m]\)</span></td>
-<td align="left"><span class="math">\(z^{-m}F(z)\)</span></td>
+<td align="left">Shift of <span class="math inline">\(x[n]u_0[n]\)</span></td>
+<td align="left"><span class="math inline">\(f[n-m]u_0[n-m]\)</span></td>
+<td align="left"><span class="math inline">\(z^{-m}F(z)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="right">3.</td>
 <td align="left">Left shift</td>
-<td align="left"><span class="math">\(f[n-m]\)</span></td>
-<td align="left"><span class="math">\[z^{-m}F(z)+\sum_{n=0}^{m-1}f[n-m]z^{-n}\]</span></td>
+<td align="left"><span class="math inline">\(f[n-m]\)</span></td>
+<td align="left"><span class="math display">\[z^{-m}F(z)+\sum_{n=0}^{m-1}f[n-m]z^{-n}\]</span></td>
 </tr>
 <tr class="even">
 <td align="right">4.</td>
 <td align="left">Right shift</td>
-<td align="left"><span class="math">\(f[n+m]\)</span></td>
-<td align="left"><span class="math">\[z^{m}F(z)+\sum_{n=-m}^{-1}f[n+m]z^{-n}\]</span></td>
+<td align="left"><span class="math inline">\(f[n+m]\)</span></td>
+<td align="left"><span class="math display">\[z^{m}F(z)+\sum_{n=-m}^{-1}f[n+m]z^{-n}\]</span></td>
 </tr>
 <tr class="odd">
 <td align="right">5.</td>
-<td align="left">Multiplication by <span class="math">\(a^n\)</span></td>
-<td align="left"><span class="math">\(a^nf[n]\)</span></td>
-<td align="left"><span class="math">\[F\left(\frac{z}{a}\right)\]</span></td>
+<td align="left">Multiplication by <span class="math inline">\(a^n\)</span></td>
+<td align="left"><span class="math inline">\(a^nf[n]\)</span></td>
+<td align="left"><span class="math display">\[F\left(\frac{z}{a}\right)\]</span></td>
 </tr>
 <tr class="even">
 <td align="right">6.</td>
-<td align="left">Multiplication by <span class="math">\(e^{-nsT_s}\)</span></td>
-<td align="left"><span class="math">\(e^{-nsT_s}f[n]\)</span></td>
-<td align="left"><span class="math">\[F\left(e^{sT_s}z\right)\]</span></td>
+<td align="left">Multiplication by <span class="math inline">\(e^{-nsT_s}\)</span></td>
+<td align="left"><span class="math inline">\(e^{-nsT_s}f[n]\)</span></td>
+<td align="left"><span class="math display">\[F\left(e^{sT_s}z\right)\]</span></td>
 </tr>
 <tr class="odd">
 <td align="right">7.</td>
-<td align="left">Multiplication by <span class="math">\(n\)</span></td>
-<td align="left"><span class="math">\(nf[n]\)</span></td>
-<td align="left"><span class="math">\[-z\frac{d}{dz}F(z)\]</span></td>
+<td align="left">Multiplication by <span class="math inline">\(n\)</span></td>
+<td align="left"><span class="math inline">\(nf[n]\)</span></td>
+<td align="left"><span class="math display">\[-z\frac{d}{dz}F(z)\]</span></td>
 </tr>
 <tr class="even">
 <td align="right">8.</td>
-<td align="left">Multiplication by <span class="math">\(n^2\)</span></td>
-<td align="left"><span class="math">\(n^2f[n]\)</span></td>
-<td align="left"><span class="math">\[-z\frac{d}{dz}F(z)+z^2\frac{d^2}{dz^2}F(z)\]</span></td>
+<td align="left">Multiplication by <span class="math inline">\(n^2\)</span></td>
+<td align="left"><span class="math inline">\(n^2f[n]\)</span></td>
+<td align="left"><span class="math display">\[-z\frac{d}{dz}F(z)+z^2\frac{d^2}{dz^2}F(z)\]</span></td>
 </tr>
 <tr class="odd">
 <td align="right">9.</td>
 <td align="left">Summation in time</td>
-<td align="left"><span class="math">\[\sum_{m=0}^{n}f[m]\]</span></td>
-<td align="left"><span class="math">\[\frac{z}{z-1}F(z)\]</span></td>
+<td align="left"><span class="math display">\[\sum_{m=0}^{n}f[m]\]</span></td>
+<td align="left"><span class="math display">\[\frac{z}{z-1}F(z)\]</span></td>
 </tr>
 <tr class="even">
 <td align="right">10.</td>
 <td align="left">Time convolution</td>
-<td align="left"><span class="math">\(f_1[n]*f_2[n]\)</span></td>
-<td align="left"><span class="math">\(F_1(z)F_2(z)\)</span></td>
+<td align="left"><span class="math inline">\(f_1[n]*f_2[n]\)</span></td>
+<td align="left"><span class="math inline">\(F_1(z)F_2(z)\)</span></td>
 </tr>
 <tr class="odd">
 <td align="right">11.</td>
 <td align="left">Frequency convolution</td>
-<td align="left"><span class="math">\(f_1[n]f_2[n]\)</span></td>
-<td align="left"><span class="math">\[\frac{1}{{j2\pi }}\oint{x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv\]</span></td>
+<td align="left"><span class="math inline">\(f_1[n]f_2[n]\)</span></td>
+<td align="left"><span class="math display">\[\frac{1}{{j2\pi }}\oint{x{F_1}(v){F_2}\left( {\frac{z}{v}} \right)} {v^{ - 1}}dv\]</span></td>
 </tr>
 <tr class="even">
 <td align="right">12.</td>
 <td align="left">Initial value theorem</td>
 <td align="left"></td>
-<td align="left"><span class="math">\[f[0]=\lim_{z\to\infty}F(z)\]</span></td>
+<td align="left"><span class="math display">\[f[0]=\lim_{z\to\infty}F(z)\]</span></td>
 </tr>
 <tr class="odd">
 <td align="right">13.</td>
 <td align="left">Final value theorem</td>
 <td align="left"></td>
-<td align="left"><span class="math">\[\lim_{n\to\infty}f[n]=\lim_{z\to 1}(z-1)F(z)\]</span></td>
+<td align="left"><span class="math display">\[\lim_{n\to\infty}f[n]=\lim_{z\to 1}(z-1)F(z)\]</span></td>
 </tr>
 </tbody>
 </table>
