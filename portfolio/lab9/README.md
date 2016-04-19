@@ -18,7 +18,7 @@ You will need headphones to hear the sounds.
 
 The web link above points to a source of sound samples. Choose one of these or find some other files from the internet. I downloaded and used the file <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/msmv2.wav">Music (Vocals) Example 2</a> from <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/" target="_blank">this page</a> in my example script.
 
-## Lab Exercise 22: Playing With Sound
+## Lab Exercise 20: Playing With Sound
 
 ### Part 1: Read and Store an Audio File in Matlab
 
@@ -69,17 +69,17 @@ Comment on your observations.
 
 The command to reverse the order of the samples in a matrix is `flipud()`. Experiment with this command.
 
-Create a script called `ex22.m` that records your experiments in this part of the lab. Include your thoughts
+Create a script called `ex20.m` that records your experiments in this part of the lab. Include your thoughts
 in the comments.
 
-## Exercise 23: Aliasing and Antialiasing Filters
+## Exercise 21: Aliasing and Antialiasing Filters
 
 This Exercise is based on the demonstration we performed in the Week 9 Lecture on Sampling. The original scripts `aliaseg1.m` and `aliaseg2.m` are to be found in the <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab" target="_blank">week9/matlab</a> folder of the EG-247-Resources collection in GitHub.</p>
 
 
 ### Part 5: Aliasing
 
-Modify your copy of `aliaseg1.m` so that it works on the audio signal that you used in Exercise 22. You will need to adjust the settings so that the correct sampling frequencies are used. Run the script and note the results. Adapt the code that produces the spectra so that it outputs spectrograms as well. This allows you to see the effect of sampling and aliasing in both frequency and time.
+Modify your copy of `aliaseg1.m` so that it works on the audio signal that you used in Exercise 20. You will need to adjust the settings so that the correct sampling frequencies are used. Run the script and note the results. Adapt the code that produces the spectra so that it outputs spectrograms as well. This allows you to see the effect of sampling and aliasing in both frequency and time.
 
 Note that this script uses a down-sampling process called decimation to remove samples from the data and simulate the effect of reducing the sampling frequency. For example, to halve the sampling rate, the data is processed using:
 
@@ -91,7 +91,7 @@ Here, `dsize` is the length of the original data sequence, `Fs` is the sampling
 
 ### Part 6 Antialiasing
 
-The file `aliaseg2.m` performs downsampling using the matlab function `resample()`. This function also performs *decimation*, but it uses a lowpass *antialiasing* filter to band-limit the signal before it is resampled. This reduces the change of pitch errors (that is apparent reduction of the frequencies) that is a typical manifestation of aliasing on audio signals. 
+The file `aliaseg2.m` performs down-sampling using the Matlab function `resample()`. This function also performs *decimation*, but it uses a low-pass *antialiasing* filter to band-limit the signal before it is resampled. This reduces the change-of-pitch errors (that is apparent reduction of the frequencies) that is a typical manifestation of aliasing on audio signals.
 
 This is the code that reduces the sampling to half the original frequency:</span></span></p>
 
@@ -102,9 +102,9 @@ soundsc(datar2,Fs/2)
 
 Modify your copy of the script so that it uses the correct parameters for your audio sample and add the spectrogram plots as you did for Part 5.
 
-Save both modified versions of the alias example scripts as `ex23_a.m` and `ex23_b.m` and include the original audio file in your folder for submission.
+Save both modified versions of the alias example scripts as `ex21_1.m` and `ex21_2.m` and include the original audio file in your folder for submission.
 
-## Exercise 24: Sound Generation
+## Exercise 22: Sound Generation
 
 ### Part 7: Making Music with Matlab
 
@@ -235,7 +235,7 @@ wait = zeros(1,length(0:Ts:time));
 
 If you wish, you can create real tunes using the same method.
 
-Save the commands you used to create, play and save your musical student number as a script `ex24.m` and add this to your 
+Save the commands you used to create, play and save your musical student number as a script `ex22.m` and add this to your
 *lab9* folder.
 
 ## What to hand in

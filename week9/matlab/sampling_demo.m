@@ -8,7 +8,8 @@
 %% Set up audio recorder
 recObj = audiorecorder;
 %% Record so
-disp('Start speaking: say "EG-247 Signals and Systems"')
+disp('Start speaking: say "Hello, My name is [say your name]')
+disp('and this is EG-247 Signals and Systems"')
 disp('Press any key when you are ready...')
 pause
 recordblocking(recObj, 5);
