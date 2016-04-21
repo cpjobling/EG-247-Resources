@@ -20,7 +20,7 @@ ws = 2*pi*fs; % sampling frequency in rad/s
 % generate the noisy signal which will be filtered
 f0 = 12;      % Hz
 t = 0:Ts:1.23;
-x = cos(2*pi*f0*t)
+x = cos(2*pi*f0*t);
 x(end) = []; % removes last element
 %%
 % Additive noise is simulated by band-passing a random signal between
