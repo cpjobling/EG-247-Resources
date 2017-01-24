@@ -1,14 +1,14 @@
-%% EG-247 Signals and Systems: Lab 1: Part 1
-% 
+%% EG-247 Signals and Systems: Lab 2 Elementary Signals
+%
 % This script file demonstrates the use of the |heaviside| and |dirac|
 % functions. To run the code select the commands in the cells.
 %
 % This is also an example of the use of the publishing feature of MATLAB.
-% 
+%
 %% The Unit Step Function
 %
 % In the notes we define the unit step function as
-% 
+%
 % $${u_0}(t) = \left\{ {\begin{array}{*{20}{c}}
 % {0\quad t < 0}\\
 % {1\quad t > 0}
@@ -28,7 +28,7 @@ ezplot(ans,[-1,1]),grid
 % Note that |heaviside(0)| returns the value $1/2$ which is not
 % mathematically correct. The unit step function $u_o(t)$ is undefined at
 % $t=0$.
-%% 
+%%
 % The basic signal operations work as you'd expect
 A = 2; T = 2;
 v1 = A * heaviside(t - T);
@@ -37,17 +37,17 @@ ezplot(v1, [-1, 4]), grid
 % To validate Figure 1.8 in the textbook Karris (page 1-4) use the |heaviside|
 % and |ezplot| functions to plot each of the following:
 %
-% # $-Au_0(t)$ 
-% # $-Au_0(t-T)$ 
-% # $-Au_0(t+T)$ 
+% # $-Au_0(t)$
+% # $-Au_0(t-T)$
+% # $-Au_0(t+T)$
 % # $Au_0(-t)$
 % # $Au_0(-t+T)$
 % # $Au_0(-t-T)$
-% # $-Au_0(-t)$ 
-% # $-Au_0(-t+T)$ 
+% # $-Au_0(-t)$
+% # $-Au_0(-t+T)$
 % # $-Au_0(-t-T)$
 %% Part 2
-% Use the |heaviside| and |ezplot| functionshow that $u_0(t) - u_0(t - 1)$ 
+% Use the |heaviside| and |ezplot| functionshow that $u_0(t) - u_0(t - 1)$
 % represents the rectangular pulse shown in
 % Figure 1.9 (a) in the textbook.
 %% Part 3
@@ -55,7 +55,7 @@ ezplot(v1, [-1, 4]), grid
 % 1.13, 1.14, 1.17 and 1.18 in the textbook.
 %% The Ramp Function
 % The integral of the *unit step* function is the *ramp function*
-% 
+%
 % $$u_1(t) = \int_{-\infty}^{t} u_0(\tau)d\tau$$
 %
 % Gives
@@ -64,7 +64,7 @@ ezplot(v1, [-1, 4]), grid
 % {0\quad t < 0}\\
 % {t\quad t > 0}
 % \end{array}} \right. = t{u_0}(t)$$
-% 
+%
 % To verify this result:
 syms tau
 int(heaviside(tau),-inf, t)
@@ -78,7 +78,7 @@ ezplot(t * heaviside(t), [-1,5]), grid
 %% The Dirac Delta Function
 % $\delta(t)$ is the derivative of $u_0(t)$
 diff(heaviside(t),t)
-%% 
+%%
 % It's not easy to plot the dirac delta function. We have to cheat a little
 td = [-1,0,1]; delta = [0,1,0];
 stem(td,delta)
