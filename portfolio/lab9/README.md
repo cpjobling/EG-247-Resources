@@ -1,12 +1,14 @@
-# Lab 9: Sounds and Sampling  
+# Lab 1: Sounds and Sampling  
 
 ## Acknowledgments
 
-This lab has been adapted from <a href="http://class.ee.iastate.edu/mmina/ee186/labs/Audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University.
+This lab has been adapted from <a href="http://class.ee.iastate.edu/mmina/ee186/labs/Audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and Elementary Music Synthesis by Professor Virginia Stonick of Oregon State University.
 
-This lab is an introduction to audio processing with Matlab. This lab will help to familiarize you with some of the main functions to read in and play music files in Matlab.
+This lab is an introduction to signal processing with Matlab. This lab will help to familiarize you with some of the main functions to read in and play sound files in Matlab.
 
 It is an opportunity to try some basic digital signal processing.
+
+You may not understand all of the underlying theory, but we shall catch up in later classes and lab exercises.
 
 ## Preparation
 
@@ -18,7 +20,7 @@ You will need headphones to hear the sounds.
 
 The web link above points to a source of sound samples. Choose one of these or find some other files from the internet. I downloaded and used the file <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/msmv2.wav">Music (Vocals) Example 2</a> from <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/" target="_blank">this page</a> in my example script.
 
-## Lab Exercise 20: Playing With Sound
+## Lab Exercise 1: Playing With Sound
 
 ### Part 1: Read and Store an Audio File in Matlab
 
@@ -69,174 +71,80 @@ Comment on your observations.
 
 The command to reverse the order of the samples in a matrix is `flipud()`. Experiment with this command.
 
-Create a script called `ex20.m` that records your experiments in this part of the lab. Include your thoughts
+Create a script called `ex01.m` that records your experiments in this part of the lab. Include your thoughts
 in the comments.
 
-## Exercise 21: Aliasing and Antialiasing Filters
+### Part 5: Making Music with Matlab
 
-This Exercise is based on the demonstration we performed in the Week 9 Lecture on Sampling. The original scripts `aliaseg1.m` and `aliaseg2.m` are to be found in the <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/week9/matlab" target="_blank">week9/matlab</a> folder of the EG-247-Resources collection in GitHub.</p>
+#### Background
+
+In this lab, we explore how to use simple tones to compose a segment of music. By using tones of various frequencies, you will construct the first few bars of Beethoven's famous piece Symphony No. 5 in C-Minor. 
+
+**IMPORTANT**: Each musical note can be simply represented by a sinusoid whose frequency depends on the note pitch. Assume a sampling rate of 8KHz and that an eighth note = 0.125s (1000 samples). 
+
+Musical notes are arranged in groups of twelve notes called octaves. The notes that we'll be using for Beethoven's Fifth are in the octave containing frequencies from 220 Hz to 440 Hz. The twelve notes in each octave are logarithmically spaced in frequency, with each note being of a frequency $2 1/12$ times the frequency of the note of lower frequency. Thus, a 1-octave pitch shift corresponds to a doubling of the frequencies of the notes in the original octave. Table 1 shows the ordering of notes in the octave to be used to synthesize the opening of Beethoven's fifth, as well as the fundamental frequencies for these notes. Note the notes without subscripts, correspond to the white keys on a piano. The notes with subscripts - called respective sharp (♯) and flat (♭) - represent the black keys.
+
+<table>
+<thead>
+<tr><td>Number</td>	<td>Note</td>	<td>Frequency (Hz)</td>	<td>Actual frequency (Hz)</td></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>2</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>3</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>4</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>5</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>6</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>7</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>8</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>9</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>10</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>11</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>12</td><td>A</td><td>220</td><td>220</td></tr>
+<tr><td>13</td><td>A</td><td>220</td><td>220</td></tr></tbody>
+</table>
+2	A♯,B♭	220 * 2 1/12	458.333
+3	B	220 * 2 2/12	
+4	Middle C	220 * 2 3/12	
+5	C♯,D♭	220 * 2 4/12	
+6	D	220 * 2 5/12	
+7	D♯,E♭	220 * 2 6/12	
+8	E	220 * 2 7/12	
+9	F	220 * 2 8/12	
+10	F♯,G♭	220 * 2 9/12	
+11	G	220 * 2 10/12	
+12	G♯,A♭	220 * 2 11/12	
+Table 1: Notes in the 220-440 Hz Octave 
+You should use Matlab or a calculator to complete the table.
+A musical score is essentially a plot of frequencies (notes, on the vertical scale for you musician types) versus time (measures, on the horizontal scale). The musical sequence of notes to the piece you will synthesize is given in Figure 1. The following discussion identifies how musical scores can be mapped to tones of specific pitch and duration. 
+Note Frequency 
+In the simplest case, each note may be represented by a burst of a sinusoid followed by a shorter period of silence (a pause). The pauses allow us to distinguish between separate notes of the same pitch. The horizontal lines in Figure 1 represent the notes E,G,B,D,F from the bottom to the top. The spaces between the lines are used to represent the notes F, A, C, and E, again from the bottom to the top. Note that A-G only yields seven notes; the additional notes are due to changes in pitch called sharps (denoted by the symbol ♯) or flats (denoted by the symbol ♭) that follows a given note. A sharp increases the pitch by 2 1/12 and flat decreases the pitch by 2 1/12.
 
 
-### Part 5: Aliasing
-
-Modify your copy of `aliaseg1.m` so that it works on the audio signal that you used in Exercise 20. You will need to adjust the settings so that the correct sampling frequencies are used. Run the script and note the results. Adapt the code that produces the spectra so that it outputs spectrograms as well. This allows you to see the effect of sampling and aliasing in both frequency and time.
-
-Note that this script uses a down-sampling process called decimation to remove samples from the data and simulate the effect of reducing the sampling frequency. For example, to halve the sampling rate, the data is processed using:
-
-```matlab
-datar2=datar(1:2:dsize);
-soundsc(datar2,Fs/2)
-```
-Here, `dsize` is the length of the original data sequence, `Fs` is the sampling frequency and `datar(1:2:dsize)` extracts every other sample from the original sequence. The resampled sound is then played at half the sampling frequency.
-
-### Part 6 Antialiasing
-
-The file `aliaseg2.m` performs down-sampling using the Matlab function `resample()`. This function also performs *decimation*, but it uses a low-pass *antialiasing* filter to band-limit the signal before it is resampled. This reduces the change-of-pitch errors (that is apparent reduction of the frequencies) that is a typical manifestation of aliasing on audio signals.
-
-This is the code that reduces the sampling to half the original frequency:</span></span></p>
-
-```matlab
-datar2=resample(datar,1,2);
-soundsc(datar2,Fs/2)
-```
-
-Modify your copy of the script so that it uses the correct parameters for your audio sample and add the spectrogram plots as you did for Part 5.
-
-Save both modified versions of the alias example scripts as `ex21_1.m` and `ex21_2.m` and include the original audio file in your folder for submission.
-
-## Exercise 22: Sound Generation
-
-### Part 7: Making Music with Matlab
-
+Figure 1: Musical Score for Beethoven's Fifth
+In the musical score in Figure 1, the first three eighth notes are all note G. The first half note is an E♭ due to the inclusion of the three flat symbols at the left of the score, since we are in the key of C-minor. After the half note, the symbol is a rest of length equal to the duration of an eighth note. The next three eighth notes are all F, and the final half note is a D. You can get the fundamental frequencies for these notes from Table 1. 
+Note Durations 
+The duration of each note burst is determined by whether the note is a whole note, half note, quarter note, eight note, etc. Obviously, a quarter note has twice the duration of an eighth note, and so on. So your half notes should be four times the duration of your eighth notes. The short pause you use to follow each note should be of the same duration regardless of the length of the note. 
+Creating Music in Matlab
 This section of the lab will teach you how to create music using different tones created in Matlab.
-
-First we are going to code a sine wave of amplitude A = 1, with at an audio frequency of 26.62 Hz (which corresponds to Middle-C) which plays for 0.5 seconds.
-
-```matlab
+First we are going to code a sine wave of amplitude A = 1, with at an audio frequency of 220 * 7/12  Hz (which corresponds to E-flat) which plays for an eighth note (0.125 seconds).
 Fs = 8000;
 Ts = 1/Fs;
-middle_c = sin(2*pi*261.62*[0:Ts:0.5]);
-sound(middle_c);
-```
-This vector `middle_c` now contains samples of the sine wave from t = 0s to t = 0.5s, in samples that are spaced `Ts` seconds apart. Note that this sampling interval corresponds to a sampling frequency of 8 kHz (1/Ts = fs) and Ts will be 0.125 ms. This is standard for voice grade audio channels.
+Eflat = sin(2*pi*(220 * (2 + 6/12))*[0:Ts:0.125]);
+sound(Eflat);
+This vector Eflat now contains samples of the sine wave from t = 0s to t = 0.125s, in samples that are spaced Ts seconds apart. Note that this sampling interval corresponds to a sampling frequency of 8 kHz (1/Ts = fs) and Ts will be 0.125 ms. This is standard for voice grade audio channels.
+To create a pause use the zeros function:
+pause = zeros(1,length(0:Ts:time));
 
-Now to write this sound to a sound file we have the following command:
+For example to create an eighth note pause at the start of the tune:
+pause8th = zeros(1,length(0:Ts:0.125));
 
-```matlab
-audiowrite('middle_c.wav',middle_c,Fs);
-```
+Now to write this pause and first note sound to a sound file we use the following command:
+audiowrite('first_note.wav',[pause8th,Eflat],Fs);
 
-To play the sound, same as before use the `sound()` function. That is the single note that you just created. Now that you’ve got one down… only several more to go!!</p>
-
-I’ve done some of the easy work here for you. The following webpage gives the frequencies of different notes which are also shown on the table below. <a href="http://www.dolmetsch.com/musictheory27.htm" target="_blank_">http://www.dolmetsch.com/musictheory27.htm</a>.
-
-*Table 1: Notes and Frequencies in the Octave Containing Middle C*
-<table border="1" style="width: 200px;">
-<tbody>
-<tr>
-<td><strong>Number</strong></td>
-<td><strong>Note</strong></td>
-<td><strong>Frequency Hz</strong></td>
-</tr>
-<tr>
-<td>0 </td>
-<td>A</td>
-<td>440</td>
-</tr>
-<tr>
-<td>1</td>
-<td>A#</td>
-<td>466.1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>B </td>
-<td>493.88</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Middle C</td>
-<td>523.25 </td>
-</tr>
-<tr>
-<td>4</td>
-<td>C# </td>
-<td>554.36</td>
-</tr>
-<tr>
-<td>5</td>
-<td>D</td>
-<td>587.33</td>
-</tr>
-<tr>
-<td>6 </td>
-<td>D#</td>
-<td>622.25</td>
-</tr>
-<tr>
-<td>7 </td>
-<td>E</td>
-<td>659.25</td>
-</tr>
-<tr>
-<td>8 </td>
-<td>F</td>
-<td>698.45</td>
-</tr>
-<tr>
-<td>9 </td>
-<td>F#</td>
-<td>739.98</td>
-</tr>
-<tr>
-<td>10 </td>
-<td>G</td>
-<td>783.99</td>
-</tr>
-<tr>
-<td>11</td>
-<td>G#</td>
-<td>830.6</td>
-</tr>
-</tbody>
-</table>
-
-Using this information create tune that plays the musical equivalent of your student number.
-
-For example if your student number starts 605..., from the table 6 = D#, 0 = A, 5 = D, so
-
-```matlab
-d_sharp = sin(2*pi*622.25*(0:Ts:0.5));
-a = sin(2*pi*440*(0:Ts:0.5));
-d = sin(2*pi*587.33*(0:Ts:0.5))
-...
-```
-
-To "record" the sequence use:
-
-```matlab
-tune = [d_sharp,a,d,...];
-```
-
-To play the sequence use:
-
-```matlab
-sound(tune)
-```
-
-Store the sequence in a file called <em>your_student_number</em>.wav.
-
-
-You can experiment with different lengths of note and also insert silence between notes using
-
-```matlab
-wait = zeros(1,length(0:Ts:time));
-```
-
-If you wish, you can create real tunes using the same method.
-
-Save the commands you used to create, play and save your musical student number as a script `ex22.m` and add this to your
-*lab9* folder.
+To play the sound, use the sound() function. 
+Now you can complete the opening phrase of Beethoven's fifth by adding additional notes and pauses of the correct length. 
+Save the commands you use to create, play and save your version of Beethoven's Fifth in a Matlab m-file as ex02.m and add this to your copy of this lab script along with the sound file.
 
 ## What to hand in
 
