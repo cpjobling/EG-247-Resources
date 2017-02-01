@@ -10,7 +10,7 @@
 %
 % In this lab exercise we will demonstrate the use of the |laplace| function by confirming some of the standard 
 % transforms and properties found in published tables and properties of the Laplace Transform. 
-% We will then use the laplace function to find the Laplace transform of some typical elementary signals. 
+% We will then use the |laplace| function to find the Laplace transform of some typical elementary signals. 
 % We will conclude this exercise by using the laplace function to solve a selection of problems from 
 % <http://site.ebrary.com/lib/swansea/reader.action?docID=10547416&ppg=17 Chapter 2 of the textbook>.
 %
@@ -75,7 +75,7 @@ laplace(exp(-a*t)*u0(t))
 % Find the Laplace Transform of |(t^n)*exp(-b*t)*u0(t)|
 %% Problem 3
 %
-% Use matlab to compute the Laplace Transfrom of
+% Use MATLAB to compute the Laplace Transform of
 % |exp(-a*t)*sin(omega*t)*u0(t)| and |exp(-a*t)*cos(omega*t)*u0(t)|
 %% Laplace Transform Properties
 % Give examples to prove each of the following:
