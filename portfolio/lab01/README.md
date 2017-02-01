@@ -1,5 +1,13 @@
 # Lab 1: Sounds and Sampling  
 
+## Keeping Lab Records
+
+The lab component will be assessed based on a portfolio of the Matlab scripts, Simulink models and published Matlab sessions. You should therefore aim to keep all the files from each lab session in a suitable folder in your workspace on the h:\work drive. I would suggest a structure like **EG-247-Resources\portfolio\lab01** which matches the layout of the files on this GitHub repository.
+
+One elegant way to do this would be to fork this GitHub repository ([cpjobling/EG-247-Resources](https://github.com/cpjobling/EG-247-Resources)) and then build on from there, but that is not necessary.*
+
+If you do not use GitHub as the master repository of your portfolio, please ensure that you backup your work files regularly. You will be required to submit some or all of them for assessment.
+
 ## Acknowledgments
 
 This lab has been adapted from <a href="http://class.ee.iastate.edu/mmina/ee186/labs/Audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and Elementary Music Synthesis by Professor Virginia Stonick of Oregon State University.
@@ -20,7 +28,7 @@ You will need headphones to hear the sounds.
 
 The web link above points to a source of sound samples. Choose one of these or find some other files from the internet. I downloaded and used the file <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/msmv2.wav">Music (Vocals) Example 2</a> from <a href="http://www.ee.columbia.edu/~dpwe/sounds/musp/" target="_blank">this page</a> in my example script.
 
-## Lab Exercise 1: Playing With Sound
+## Lab Exercise 1: Playing With Sound (2 marks)
 
 ### Part 1: Read and Store an Audio File in Matlab
 
@@ -74,7 +82,7 @@ The command to reverse the order of the samples in a matrix is `flipud()`. Exper
 Create a script called `ex01.m` that records your experiments in this part of the lab. Include your thoughts
 in the comments.
 
-## Lab Exercise 2:  Composing Music in Matlab
+## Lab Exercise 2:  Composing Music in Matlab (2 marks)
 
 ### Background
 
@@ -158,7 +166,7 @@ Now you can complete the opening phrase of Beethoven's fifth by adding additiona
 
 Save the commands you use to create, play and save your version of Beethoven's Fifth in a Matlab m-file as `ex02.m` and add this to your copy of this lab script along with the sound file.
 
-## Miniproject 1: Playing a Musical Scale
+## Miniproject 1: Playing a Musical Scale (1 mark)
 
 To demonstrate your mastery of all that you have learnt in this lab, synthesize a scale in the key of C. This is simply eight notes in order starting with C. The notes are:
 
@@ -178,3 +186,7 @@ Save your scale in an m-file called `scale.m`. The m-file should play the scale 
 You should add all the scripts and audio files created or downloaded for this exercise to your portfolio.
 
 See <a href="https://docs.google.com/spreadsheets/d/17VCWrwHpfx0W_7FX3MYB2HhddwgdbblUVdUNoLSwECQ/edit?usp=sharing" target="_blank">**Assessment and Feedback: Labwork Assessment**</a> for a detailed marking scheme.
+
+----
+
+* If you fork my repo, you should add my master repository to your upstream so that you can regularly pull and merge my updates. There's still a lot of files to be added! This [GitHub help file](https://help.github.com/articles/fork-a-repo) explains the procedure you would need to follow.
