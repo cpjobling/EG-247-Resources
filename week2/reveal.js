@@ -1,1 +1,0 @@
-../javascripts/reveal.js
