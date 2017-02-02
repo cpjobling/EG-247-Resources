@@ -1,4 +1,4 @@
-%% Example 5: Verification of Solution
+%% solution5 - Verification of Solution for Example 5 from notes.
 syms s;
 
 z1 = 13*s + 8/s;
