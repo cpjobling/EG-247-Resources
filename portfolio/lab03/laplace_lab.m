@@ -1,4 +1,4 @@
-%% Using MATLAB to Solve Laplace Transforms
+%% LAPLACE_LAB - Using MATLAB to Solve Laplace Transforms
 %
 % Inspired by Steven Karris, Signals and Systems: With MATLAB Computing and Simulink 
 % Modelling, 5th Edition, Orchard Publications, 2012. 

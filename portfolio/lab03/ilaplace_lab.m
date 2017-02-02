@@ -1,4 +1,4 @@
-%% Using MATLAB to Solve Inverse Laplace Transform Problems
+%% ILAPLACE_LAB - Using MATLAB to Solve Inverse Laplace Transform Problems
 %
 % Inspired by Steven Karris, Signals and Systems: With MATLAB Computing and Simulink 
 % Modelling, 5th Edition, Orchard Publications, 2012. 
@@ -33,16 +33,23 @@ Ds = [1, 3, 2];
 % This is interpreted as
 % 
 % $$F(s) = \frac{4}{s + 2} - \frac{1}{s + 1}$$
+%
+%%
+% The corresponding time response is obtained symbolically as
+%
+syms t s
+Fs = 4/(s + 2) - 2/(s + 1)
+%%
+% As the function is symbolic, we can use |ilaplace| to find the inverse transform
+% and |ezplot| to plot it
+syms s t;
+ft = ilaplace(Fs)
+ezplot(ft,[0,4.5])
 %% Plotting Inverse Laplace Transforms
 % If we have the function in time domain we can plot it using a sequence like:
 t = linspace(0,4.5,1000);
 ft = 4.*exp(-2.*t)-exp(-1.*t);
 plot(t,ft)
-%%
-% If the function is symbolic, we can use |ezplot|
-syms s t;
-ft = ilaplace(4/(s + 2) - 1/(s + 1))
-ezplot(ft,[0,4.5])
 %% The Inverse Laplace Function
 % As illustrated above, the inverse laplace transform function
 % is |ilaplace|
@@ -125,6 +132,5 @@ Ds = conv(d1,d2); % Polynomial multiplication: gives expanded D(s)
 % Use the |residue| function to validate the result.
 %% Homework
 % Use the tools developed in this lab to solve and plot the Inverse Laplace
-% Transforms for your own selection of 
-% problems from each of Questions 1 to Question 5 in the End of Chapter
-% Exercises (Section 3.6 in the Text Book)
+% Transforms for your own selection of problems from each of Questions 1 to 
+% Question 5 in the End of Chapter Exercises (Section 3.6 in the Text Book)
