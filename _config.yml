@@ -1,0 +1,8 @@
+title: EG-247 Signals and Systems
+description: Notes and resources for EG-247 Signals and Systems
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-slate
+
+gems:
+  - jekyll-mentions
