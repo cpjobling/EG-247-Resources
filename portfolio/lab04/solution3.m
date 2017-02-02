@@ -1,4 +1,4 @@
-%% Solution for Week 3: Session 1: Example 3
+%% solution3 - Solution for Example 3 from Week 3 notes.
 % In the lecture we showed that after simplification for Example 3
 %
 % $$V_{\mathrm{out}}=\frac{2s(s+3)}{s^3 + 8s^2 + 10s + 4}$$

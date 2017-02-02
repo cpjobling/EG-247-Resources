@@ -1,4 +1,4 @@
-%% Defining Transfer Functions in Matlab
+%% tf_matlab - Defining Transfer Functions in Matlab
 %%
 % There are two forms of polynomial representation in Matlab. The most obvious is the 
 % *expanded polynomial form* where the numerator and denominator of a transfer 
@@ -50,7 +50,7 @@ K = 1;
 G = zpk(z,p,K)
 %%
 % The expanded numerator and denominator form of the transfer function is readily 
-% obtained by using a “data extraction” function.
+% obtained by using a "data extraction"� function.
 [num,den]=tfdata(G,'v')
 %%
 % LTI system objects can also be created from the expanded form of a transfer function 
