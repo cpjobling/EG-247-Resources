@@ -29,11 +29,8 @@
 </ul>
 <h4>Week 4</h4>
 <ul>
-<!--<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/state_space.html">Modelling Systems in State Space</a> (<a href="week4/state_space.pdf">Notes PDF</a>, <a href="week4/state_space.slides.html">Slides</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.html">The Impulse Response and Convolution (Part 1)</a> (<a href="week4/convolution.pdf">Notes PDF</a>, <a href="week4/convolution.slides.html">Slides</a>)</li>
--->
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb">The Impulse Response and Convolution</a> (<a href="week4/convolution.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 4: Laplace Transforms for Circuit Analysis</a> (on GitHub)</li>
 </ul>
 <!--<h4>Week 5</h4>
