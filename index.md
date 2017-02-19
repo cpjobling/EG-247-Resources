@@ -12,7 +12,7 @@
 <h4>Week 2</h4>
 <ul>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb">The Laplace Transform</a> (<a href="week2/laplace.pdf">Notes PDF</a>, <a href="week2/laplace.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb">The Laplace Transform</a> (<a href="week2/laplace.pdf">Notes PDF</a>)</li>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb">The Inverse Laplace Transform</a> (<a href="week2/inverse_laplace.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)</li>
@@ -22,7 +22,7 @@
 <ul>
 
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb">Circuit Analysis with the Laplace Transform</a> (<a href="week3/circuit_analysis.pdf">Notes PDF</a>, <a href="week3/circuit_analysis.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb">Circuit Analysis with the Laplace Transform</a> (<a href="week3/circuit_analysis.pdf">Notes PDF</a>)</li>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_functions.ipynb">Transfer Functions of Circuits</a> (<a href="week3/transfer_functions.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab03" target="_blank">Lab 3: Laplace and Inverse Laplace Transforms</a> (on GitHub)</li>
@@ -56,25 +56,25 @@
 <h4>Week 8</h4>
 <ul>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb">Fourier Transforms for Circuit and LTI Systems Analysis</a> (<a href="week8/ft3.pdf">Notes PDF</a>, <a href="week8/ft3.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb">Fourier Transforms for Circuit and LTI Systems Analysis</a> (<a href="week8/ft3.pdf">Notes PDF</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft4.ipynb">Introduction to Filters</a> (<a href="week8/ft4.pdf">Notes PDF</a>, <a href="week8/ft4.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft4.ipynb">Introduction to Filters</a> (<a href="week8/ft4.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab7" target="_blank">Lab 7: Fourier Series</a> (on GitHub)</li>
 </ul>
 
 <h4>Week 9</h4>
 <ul>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>, <a href="week9/sampling.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>,<a href="week9/z-transform.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab8" target="_blank">Lab 8: Filters</a> (on GitHub)</li>
 </ul>
 <h4>Week 10</h4>
 <ul>
   <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.html">The Inverse Z-Transform</a> (<a href="week10/i-z-transform.pdf">Notes PDF</a>, <a href="week10/i-z-transform.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.html">The Inverse Z-Transform</a> (<a href="week10/i-z-transform.pdf">Notes PDF</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.html">Discrete Time System Models</a> (<a href="week10/dt-models.pdf">Notes PDF</a>, <a href="week10/dt-models.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.html">Discrete Time System Models</a> (<a href="week10/dt-models.pdf">Notes PDF</a>)</li>
 </ul>
 -->
