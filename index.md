@@ -33,30 +33,24 @@
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb">The Impulse Response and Convolution</a> (<a href="week4/convolution.pdf">Notes PDF</a>)</li>
 <li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 4: Laplace Transforms for Circuit Analysis</a> (on GitHub)</li>
 </ul>
-<!--<h4>Week 5</h4>
+<h4>Week 5</h4>
 <ul>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/convolution.ipynb">The Impulse Response and Convolution (Part 2)</a>
-(<a href="week5/convolution.pdf">Notes PDF</a>, <a href="week5/convolution.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/fourier_series/trig_fseries.ipynb">The Trigonometric Fourier Series (Revision)</a> (<a href="fourier_series/trig_fseries.pdf">Notes PDF</a>).
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/fourier1.ipynb">Introducing Fourier Series</a> (<a href="week5/fourier1.pdf">Notes PDF</a>,
-<a href="week5/fourier1.slides.html">Slides</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab4" target="_blank">Lab 4: State-Space Modelling and the Impulse Response</a> (on GitHub)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs1.ipynb">Exponential Fourier Series</a>
+(<a href="week5/exp_fs1.pdf">Notes PDF</a>).</li>
+<li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb">Exponential Fourier Series (Part 2)</a> (<a href="week5/exp_fs2.pdf">Notes PDF</a>).</li>
+<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab4" target="_blank">Lab 5: To be confirmed.</a> (on GitHub)</li>
 </ul>
+<!--
 <h4>Week 6</h4>
 <ul>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/fourier2.ipynb">Fourier Series (Part 2)</a> (<a href="week6/fourier2.pdf">Notes PDF</a>, <a href="week6/fourier2.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft1.ipynb">The Fourier Transform (Part 1)</a> (<a href="week6/ft1.pdf">Notes PDF</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/fourier3.ipynb">Fourier Series (Part 3)</a> (<a href="week6/fourier3.pdf">Notes PDF</a>, <a href="week6/fourier3.slides.html">Slides</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab5" target="_blank">Lab 5: Convolution</a> (on GitHub)</li>
-</ul>
-<h4>Week 7</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft1.ipynb">The Fourier Transform (Part 1)</a> (<a href="week7/ft1.pdf">Notes PDF</a>, <a href="week7/ft1.slides.html">Slides</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft2.ipynb">The Fourier Transform (Part 2)</a> (<a href="week7/ft2.pdf">Nodes PDF</a>, <a href="week7/ft2.slides.html">Slides</a>)</li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb">The Fourier Transform (Part 2)</a> (<a href="week6/ft2.pdf">Nodes PDF</a>)</li>
 <li>Lab class: Catchup Session - no new Exercises!</li>
 </ul>
 <h4>Week 8</h4>
@@ -83,3 +77,4 @@
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.html">Discrete Time System Models</a> (<a href="week10/dt-models.pdf">Notes PDF</a>, <a href="week10/dt-models.slides.html">Slides</a>)</li>
 </ul>
+-->
