@@ -23,6 +23,6 @@ C_k = [conj(flipdim(C_k,2)),0,C_k];
 stem([-k:k],abs(C_k).^2)
 axis([-5,5,0.,0.3])
 title('Power Spectrum for Distorted Sine Wave')
-ylabel('Frequency \omega [rad/s]')
+ylabel('Frequency \Omega_0 [rad/s]')
 ylabel('|C_k|^2')
 hold off

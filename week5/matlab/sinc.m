@@ -20,7 +20,7 @@ stem(omega,f)
 title('Line Spectra for pulse with w=2')
 hold on
 om = linspace(-15,15,1000);
-xlabel('\omega [rad/s]')
+xlabel('\Omega_0 [rad/s]')
 % add continuous sinc(x)/x envelope
 xc = om.*pi./w;
 plot(om,(A/w)*sin(xc)./(xc),'r:')
@@ -31,4 +31,4 @@ figure
 stem(omega,f.^2)
 title('Power Spectrum for pulse with w=2')
 ylabel('|C_k|^2')
-xlabel('\omega [rad/s]')
+xlabel('\Omega_0 [rad/s]')
