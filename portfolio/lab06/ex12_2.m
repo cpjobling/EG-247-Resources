@@ -1,4 +1,5 @@
-%% Calculation of Fourier coefficients for Square Wave
+%% TRIG_FSERIES
+% Calculation of Fourier coefficients for Square Wave
 %
 % Note the Fourier Series coefficients are computed using the period and
 % fundamental frequency rather than the radian measures given in the
@@ -10,7 +11,10 @@
 clear all
 %
 %% Initialize problem
-syms t n A
+syms t n A u0
+%
+%% Redefine |heaviside| function to match mathematics
+u0(t) = heaviside(t);
 %% Set up problem
 f = 1000;         % Hz
 T0 = 1/f;          % s
@@ -19,9 +23,9 @@ omega_0 = 2*pi/T0; % rad/s
 k_max = 11;
 %% Define f(t)
 %
-% !!!IMPORTANT!!!: the signal definition must cover [0 to T0] 
+% !!!IMPORTANT!!!: the signal definition must cover [0 to T0]
 %
-ft = A*(heaviside(t)-heaviside(t-T0/2)) - A*(heaviside(t-T0/2)-heaviside(t-T0)); 
+ft = A*(u0(t)-u0(t-T0/2)) - A*(u0(t-T0/2)-u0(t-T0));
 %% Compute TFS
 %
 % Note that this can take considerable time (6 minutes or more) so be patient!
@@ -37,7 +41,7 @@ Ft
 a0_num = subs(a0,A,1.0);
 ak_num = subs(ak,A,1.0);
 bk_num = subs(bk,A,1.0);
-% print using 4 sig digits
+%% print using 4 sig digits
 a0_num = vpa(a0_num, 4)
 ak_num = vpa(ak_num, 4)
 bk_num = vpa(bk_num, 4)
@@ -53,4 +57,3 @@ plot(t,f,'r')
 grid
 title('Square Wave Reconstructed from Sinewaves')
 hold off
-
