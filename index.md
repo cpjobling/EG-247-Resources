@@ -42,18 +42,17 @@
 (<a href="week5/exp_fs1.pdf">Notes PDF</a>).</li>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb">Exponential Fourier Series (Part 2)</a> (<a href="week5/exp_fs2.pdf">Notes PDF</a>).</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab4" target="_blank">Lab 5: To be confirmed.</a> (on GitHub)</li>
+<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab06" target="_blank">Lab 6: To be confirmed.</a> (on GitHub)</li>
 </ul>
-<!--
 <h4>Week 6</h4>
 <ul>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft1.ipynb">The Fourier Transform (Part 1)</a> (<a href="week6/ft1.pdf">Notes PDF</a>)</li>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb">The Fourier Transform (Part 2)</a> (<a href="week6/ft2.pdf">Nodes PDF</a>)</li>
-<li>Lab class: Catchup Session - no new Exercises!</li>
+<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Fourier Series</a> (on GitHub)</li>
 </ul>
-<h4>Week 8</h4>
+<h4>Week 7</h4>
 <ul>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb">Fourier Transforms for Circuit and LTI Systems Analysis</a> (<a href="week8/ft3.pdf">Notes PDF</a>)</li>
