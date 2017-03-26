@@ -22,9 +22,9 @@ h  = fdesign.lowpass(Fpass, Fstop, Apass, Astop, Fs);
 Hd = design(h, 'butter', 'MatchExactly', match);
 
 %% Parameters needed to test filter: fs, ws and Ts
-Ts = 1/Fs;   
+Ts = 1/Fs;
 % sampling frequency in rad/s
-ws = 2*pi*Fs; 
+ws = 2*pi*Fs;
 %% Signal
 % generate the signals which will be filtered
 
@@ -33,7 +33,7 @@ ws = 2*pi*Fs;
 % and stop band -- initial setting has f0 = Fpass.
 f0 = Fpass;
 t0 = 1/f0; % Hz
-t = [0:200].*Ts; 
+t = [0:200].*Ts;
 x = cos(2*pi*f0*t);
 x(end) = []; % removes last element
 % filter signal
