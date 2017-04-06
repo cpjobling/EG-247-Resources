@@ -1,14 +1,14 @@
 %% Example 3 from Session on Inverse Z-Transform
 %
 % PFE for a z-transfer function when there are complex poles.
-% 
+%
 % Prepared for EG-247 Signals and Systems
 % by Dr Chris P. Jobling
 %
 %% Problem
 %
 % Use the partial fraction expansion to compute the inverse z-transform of
-% 
+%
 % $$F(z) = \frac{z + 1}{(z-1)(z^2 + 2z + 2)}$$
 %
 %% Solution
@@ -19,7 +19,7 @@ fn = iztrans(Fz)
 pretty(fn)
 %%
 iztrans(fn)
-Fz = simple(Fz)
+Fz = simplify(Fz)
 % inverse z-transform
 %% Plot Sequence
 den = sym2poly(collect((z - 1)*(z^2 + 2*z + 2)));
