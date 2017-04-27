@@ -11,5 +11,4 @@ k = [0:1:N-1];          % row vector for k
 WN = exp(-j*2*pi/N);    % Wn factor
 nk = n'*k;              % creates an N by N matrix of nk values
 WNnk = WN .^ (-nk);     % IDFS matrix
-xn = (Xk * WNnk)/N;         % row vector of DFS coefficients
-
+xn = (Xk * WNnk)/N;     % row vector of DFS coefficients
