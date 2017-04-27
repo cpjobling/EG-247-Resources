@@ -1,14 +1,14 @@
-function [ Xk ] = dft( xn, N )
+function [ Xm ] = dft( xn, N )
 % Computes Discrete Fourier Transform
 % -----------------------------------
-% [Xk]  = dft(xn, N)
-% Xk = DFT coeff. array over 0 <= k <= N-1
+% [Xm]  = dft(xn, N)
+% Xm = DFT coeff. array over 0 <= m <= N-1
 % xn = N-point finite-duration sequence
 %  N = length of DFT
 %
 n = [0:1:N-1];          % row vector for n
-k = [0:1:N-1];          % row vector for k
+m = [0:1:N-1];          % row vector for m
 WN = exp(-j*2*pi/N);    % Wn factor
-nk = n'*k;              % creates an N by N matrix of nk values
-WNnk = WN .^ nk;        % DFT matrix
-Xk = xn * WNnk;         % row vector of DFT coefficients
+nm = n'*m;              % creates an N by N matrix of nm values
+WNnm = WN .^ nm;        % DFT matrix
+Xm = xn * WNnm;         % row vector of DFT coefficients
