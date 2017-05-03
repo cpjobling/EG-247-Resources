@@ -1,14 +1,14 @@
 %% Example 2 from Session on Inverse Z-Transform
 %
 % PFE for a z-transfer function when there are repeated poles.
-% 
+%
 % Prepared for EG-247 Signals and Systems
 % by Dr Chris P. Jobling
 %
 %% Problem
 %
 % Use the partial fraction expansion to compute the inverse z-transform of
-% 
+%
 % $$F(z) = \frac{12z}{(z+1)(z - 1)^2}$$
 %
 %% Solution
@@ -18,7 +18,7 @@ Fz = 12*z/((z + 1)*(z - 1)^2)
 fn = iztrans(Fz)
 %%
 iztrans(fn)
-Fz = simple(Fz)
+Fz = simplify(Fz)
 % inverse z-transform
 %% Plot Sequence
 den = sym2poly(collect((z + 1)*(z - 1)^2));
