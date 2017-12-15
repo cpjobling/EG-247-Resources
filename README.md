@@ -36,7 +36,7 @@ Once you have installed the necessary files, use this code to set yourself up fo
 
     cd ~/dev/EG-247-Resources
     git co master
-    conda env create -f environment.yml eg-247
+    conda env create -f environment.yml
     source activate eg-247
     jupyter notebook   
 
