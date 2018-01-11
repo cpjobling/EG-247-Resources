@@ -8,7 +8,7 @@ Computing and Simulink Modeling (5th Edition)](http://site.ebrary.com/lib/swanse
 
 In this exercise we will explore the use of the ``heaviside`` and ``dirac`` functions and how they can be used in the synthesis of elementary signals.
 
-File: [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab1/elem_sigs.m)
+File: [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m)
 
 For Lab Exercise 6 you are required to complete parts 1 to 2 of the provided script (1 mark).
 
@@ -26,7 +26,7 @@ You should add your modified version of the file ``elem_signals.m`` in folder ``
 
 See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing) for a detailed marking scheme.
 
-You will find it easiest to audit your completion of Exercise 6 by publishing the result using the **Publish** option in the m-file editor. I do not require you to add the published document in your portfolio as I will regenerate this when I validate your claim.
+You will find it easiest to audit your completion of Exercise 6 by publishing the result by opening ``elem_signals.m`` as a Live Script file. If you do this, please submit the Live Script File.
 
 
 ## Doing More
