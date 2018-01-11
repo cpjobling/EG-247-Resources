@@ -178,7 +178,7 @@ To complete this mini-project you will have to define the frequencies for A, B, 
 
 * Q: What are the frequencies of the notes A, B, and the second occurrence of C?
 
-Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. Attach your m-file to the lab portfolio before claiming your marks.
+Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. (**Note**: Backwards does not mean flipped!). Attach your m-file to the lab portfolio before claiming your marks.
 
 
 ## What to hand in
