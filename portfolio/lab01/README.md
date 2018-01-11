@@ -20,7 +20,7 @@ You may not understand all of the underlying theory, but we shall catch up in la
 
 ## Preparation
 
-Download and run the <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfilio/lab9/soundex.m" target="_blank">linked script</a> to familiarise yourself with the basic tools that Matlab provides for manipulating and visualizing audio files. You will need to download a sound file and store it in the same folder then edit the script so that it loads your file. Music might be best for this initial exercise but you can use any audio file.
+Download and run the <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab9/soundex.m" target="_blank">linked script</a> to familiarise yourself with the basic tools that Matlab provides for manipulating and visualizing audio files. You will need to download a sound file and store it in the same folder then edit the script so that it loads your file. Music might be best for this initial exercise but you can use any audio file.
 
 You will need headphones to hear the sounds.
 
