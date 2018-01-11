@@ -24,7 +24,7 @@ Work through the procedures given between pages 1-18 and 1-19 of the text book t
 
 You should add your modified version of the file ``elem_signals.m`` in folder ``lab02`` of your EG-247 portfolio. Marks can be claimed according to how many of parts 1-5 in the script have been completed and for the Simulink model of the piecewise linear signal ``signal.slx``.
 
-See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/17VCWrwHpfx0W_7FX3MYB2HhddwgdbblUVdUNoLSwECQ/edit?usp=sharing) for a detailed marking scheme.
+See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing) for a detailed marking scheme.
 
 You will find it easiest to audit your completion of Exercise 6 by publishing the result using the **Publish** option in the m-file editor. I do not require you to add the published document in your portfolio as I will regenerate this when I validate your claim.
 
