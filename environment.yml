@@ -60,5 +60,9 @@ dependencies:
   - xz=5.2.3=h0278029_2
   - zeromq=4.2.2=ha360ad0_2
   - zlib=1.2.11=hf3cbc9b_2
+  - pip:
+    - matlab-kernel==0.15.0
+    - matlabengineforpython==R2017b
+    - metakernel==0.20.14
 prefix: /Users/eechris/anaconda3/envs/EG-247
 
