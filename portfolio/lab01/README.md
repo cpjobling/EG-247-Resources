@@ -20,7 +20,7 @@ You may not understand all of the underlying theory, but we shall catch up in la
 
 ## Preparation
 
-Download and run the <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfilio/lab9/soundex.m" target="_blank">linked script</a> to familiarise yourself with the basic tools that Matlab provides for manipulating and visualizing audio files. You will need to download a sound file and store it in the same folder then edit the script so that it loads your file. Music might be best for this initial exercise but you can use any audio file.
+Download and run the <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab01/soundex.m" target="_blank">linked script</a> to familiarise yourself with the basic tools that Matlab provides for manipulating and visualizing audio files. You will need to download a sound file and store it in the same folder then edit the script so that it loads your file. Music might be best for this initial exercise but you can use any audio file.
 
 You will need headphones to hear the sounds.
 
@@ -178,7 +178,7 @@ To complete this mini-project you will have to define the frequencies for A, B, 
 
 * Q: What are the frequencies of the notes A, B, and the second occurrence of C?
 
-Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. Attach your m-file to the lab portfolio before claiming your marks.
+Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. (**Note**: Backwards does not mean flipped!). Attach your m-file to the lab portfolio before claiming your marks.
 
 
 ## What to hand in
