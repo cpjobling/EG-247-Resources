@@ -1,14 +1,12 @@
 ### The Activities
 
 #### Week 1
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb">Introduction</a> (<a href="introduction/Introduction.pdf">Notes PDF</a>).</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb">Elementary Signals</a> (<a href="week1/elementary_signals.pdf">Notes PDF</a>).</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab01" target="_blank">Lab 1: Sounds and Sampling</a> (on GitHub)</li>
-<li><a href="introduction/Homework%201.pdf">Homework 1</a></li>
-</ul>
+1. [Introduction](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb) ([Notes PDF](introduction/Introduction.pdf), [Slides](introduction/Introduction.slides.html)).
+1. [Elementary Signals](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb) ([Notes PDF](week1/elementary_signals.pdf).
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab01" target="_blank">Lab 1: Sounds and Sampling</a> (on GitHub)</li>
+1. [Homework 1](introduction/Homework%201.pdf)
+
+<!--
 <h4>Week 2</h4>
 <ul>
 <li>
