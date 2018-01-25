@@ -1,6 +1,0 @@
-I couldn't get the Jupyter note book conversion to work for slides so
-I removed slides as a build option.
-
-You should use:
-
-jupyter nbconvert notebook.ipynb --to slides --post serve
