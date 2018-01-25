@@ -185,7 +185,7 @@ Save your scale in an m-file called `scale.m`. The m-file should play the scale 
 
 You should add all the scripts and audio files created or downloaded for this exercise to your portfolio.
 
-See <a href="https://docs.google.com/spreadsheets/d/17VCWrwHpfx0W_7FX3MYB2HhddwgdbblUVdUNoLSwECQ/edit?usp=sharing" target="_blank">**Assessment and Feedback: Labwork Assessment**</a> for a detailed marking scheme.
+See <a href="https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing" target="_blank">**Assessment and Feedback: Labwork Assessment**</a> for a detailed marking scheme.
 
 ----
 
