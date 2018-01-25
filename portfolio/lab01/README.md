@@ -90,7 +90,7 @@ In this lab exercise, we explore how to use simple tones to compose a segment of
 
 **IMPORTANT**: Each musical note can be simply represented by a sinusoid whose frequency depends on the note pitch. Assume a sampling rate of 8KHz and that an eighth note = 0.125s (1000 samples).
 
-Musical notes are arranged in groups of twelve notes called octaves. The notes that we'll be using for Beethoven's Fifth are in the octave containing frequencies from 220 Hz to 440 Hz. The twelve notes in each octave are logarithmically spaced in frequency, with each note being of a frequency $2 1/12$ times the frequency of the note of lower frequency. Thus, a 1-octave pitch shift corresponds to a doubling of the frequencies of the notes in the original octave. Table 1 shows the ordering of notes in the octave to be used to synthesize the opening of Beethoven's fifth, as well as the fundamental frequencies for these notes. Note the notes without subscripts, correspond to the white keys on a piano. The notes with subscripts - called respective sharp (♯) and flat (♭) - represent the black keys.
+Musical notes are arranged in groups of twelve notes called octaves. The notes that we'll be using for Beethoven's Fifth are in the octave containing frequencies from 220 Hz to 440 Hz. The twelve notes in each octave are logarithmically spaced in frequency, with each note being of a frequency 2 1/12 times the frequency of the note of lower frequency. Thus, a 1-octave pitch shift corresponds to a doubling of the frequencies of the notes in the original octave. Table 1 shows the ordering of notes in the octave to be used to synthesize the opening of Beethoven's fifth, as well as the fundamental frequencies for these notes. Note the notes without subscripts, correspond to the white keys on a piano. The notes with subscripts - called respective sharp (♯) and flat (♭) - represent the black keys.
 
 <table>
 <thead>
@@ -98,21 +98,21 @@ Musical notes are arranged in groups of twelve notes called octaves. The notes t
 </thead>
 <tbody>
 <tr><td>1</td><td>A</td><td>220</td><td>220</td></tr>
-<tr><td>2</td><td>A<sup>♯</sup>,B<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>3</td><td>B</td><td>220</td><td>220</td></tr>
-<tr><td>4</td><td>Middle C</td><td>220</td><td>220</td></tr>
-<tr><td>5</td><td>C<sup>♯</sup>,D<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>6</td><td>D</td><td>220</td><td>220</td></tr>
-<tr><td>7</td><td>D<sup>♯</sup>,E<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>8</td><td>E</td><td>220</td><td>220</td></tr>
-<tr><td>9</td><td>F</td><td>220</td><td>220</td></tr>
-<tr><td>10</td><td>F<sup>♯</sup>,G<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>11</td><td>G</td><td>220</td><td>220</td></tr>
-<tr><td>12</td><td>G<sup>♯</sup>,A<sup>♭</sup></td><td>220</td><td>220</td></tr>
+<tr><td>2</td><td>A<sup>♯</sup>,B<sup>♭</sup></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>B</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>Middle C</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>C<sup>♯</sup>,D<sup>♭</sup></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>D</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>D<sup>♯</sup>,E<sup>♭</sup></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>8</td><td>E</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>9</td><td>F</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>10</td><td>F<sup>♯</sup>,G<sup>♭</sup></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>11</td><td>G</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+<tr><td>12</td><td>G<sup>♯</sup>,A<sup>♭</sup></td><td>440</td><td>440</td></tr>
 </table>
 Table 1: Notes in the 220-440 Hz Octave
 
-You should use Matlab or a calculator to complete the table.
+You should copy this table into your lab portfolio and use Matlab or a calculator to complete the table entries.
 
 A musical score is essentially a plot of frequencies (notes, on the vertical scale for you musician types) versus time (measures, on the horizontal scale). The musical sequence of notes to the piece you will synthesize is given in Figure 1. The following discussion identifies how musical scores can be mapped to tones of specific pitch and duration.
 
