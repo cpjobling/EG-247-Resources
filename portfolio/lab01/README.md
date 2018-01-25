@@ -10,7 +10,7 @@ If you do not use GitHub as the master repository of your portfolio, please ensu
 
 ## Acknowledgments
 
-This lab has been adapted from <a href="http://class.ee.iastate.edu/mmina/ee186/labs/Audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and [Elementary Music Synthesis](https://class.ee.washington.edu/SST_textbook/musiclab.pdf) by Professor Virginia Stonick of Oregon State University.
+This lab has been adapted from <a href="http://class.ece.iastate.edu/mmina/ee186/labs/audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and [Elementary Music Synthesis](https://class.ee.washington.edu/SST_textbook/musiclab.pdf) by Professor Virginia Stonick of Oregon State University.
 
 This lab is an introduction to signal processing with Matlab. This lab will help to familiarize you with some of the main functions to read in and play sound files in Matlab.
 
@@ -102,7 +102,7 @@ Musical notes are arranged in groups of twelve notes called octaves. The notes t
 <tr><td>3</td><td>B</td><td>220 * 2<sup>2/12</sup></td><td>&nbsp;</td></tr>
 <tr><td>4</td><td>Middle C</td><td>220 * 2<sup>3/12</sup></td><td>&nbsp;</td></tr>
 <tr><td>5</td><td>C<sup>♯</sup>,D<sup>♭</sup></td><td>220 * 2<sup>4/12</sup></td><td>&nbsp;</td></tr>
-<tr><td>6</td><td>D</td><td>&nbsp;</td><td>220 * 2<sup>5/12</sup></td></tr>
+<tr><td>6</td><td>D</td><td>220 * 2<sup>5/12</sup></td><td>&nbsp;</td></tr>
 <tr><td>7</td><td>D<sup>♯</sup>,E<sup>♭</sup></td><td>220 * 2<sup>6/12</sup></td><td>&nbsp;</td></tr>
 <tr><td>8</td><td>E</td><td>220 * 2<sup>7/12</sup></td><td>&nbsp;</td></tr>
 <tr><td>9</td><td>F</td><td>220 * 2<sup>8/12</sup></td><td>&nbsp;</td></tr>
