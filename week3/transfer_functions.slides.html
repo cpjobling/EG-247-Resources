@@ -9,14 +9,14 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-<title>Introduction slides</title>
+<title>transfer_functions slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js/css/reveal.css">
-<link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.6.2/css/reveal.css">
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/2.6.2/css/theme/simple.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
 <script>
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/2.6.2/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js/lib/js/html5shiv.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Loading the mathjax macro -->
@@ -11905,55 +11905,18 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">&#182;</a></h2><p>For this notebook to work properly ensure that you change Matlab working directory to <code>../EG-247-Resources/introduction/matlab</code>.</p>
-
+<h1 id="Transfer-Functions">Transfer Functions<a class="anchor-link" href="#Transfer-Functions">&#182;</a></h1>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">pwd</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">cd</span> <span class="n">matlab</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">pwd</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Introducing-Signals-and-Systems">Introducing Signals and Systems<a class="anchor-link" href="#Introducing-Signals-and-Systems">&#182;</a></h1>
+<h2 id="Second-Hour's-Agenda">Second Hour's Agenda<a class="anchor-link" href="#Second-Hour's-Agenda">&#182;</a></h2><ul>
+<li>Transfer Functions</li>
+</ul>
+
 </div>
 </div>
 </div><div class="fragment">
@@ -11961,7 +11924,31 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>An annotatable copy of the full notes for this presentation are to be found in the <em>_Content Library</em> of the <strong>OneNote Class Notebook</strong> for this class. You can also view the notes for this presentation as a webpage (<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb">HTML</a>) and as a downloadable <a href="http://cpjobling.github.io/EG-247-Resources/introduction/Introduction.pdf">PDF file</a>.</p>
+<ul>
+<li>A Couple of Examples</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Circuit Analysis Using MATLAB LTI Transfer Function Block</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Circuit Simulation Using Simulink Transfer Function Block</li>
+</ul>
 
 </div>
 </div>
@@ -11970,8 +11957,10 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Signals-and-Systems-for-Dummies">Signals and Systems for Dummies<a class="anchor-link" href="#Signals-and-Systems-for-Dummies">&#182;</a></h2><p>Signals and Systems for Dummies (<strong>SS4D</strong>) provides a useful introduction to the topics that will be covered in this module and it is in the Reading List as a <em>recommended text</em>. I have based this presentation on Chapter 1 which is available as a <a href="http://eu.dummies.com/store/product/Signals-and-Systems-For-Dummies.productCd-111847581X.html">downloadable PDF</a> from the publishers.</p>
-<p>You should read Chapter 1 of SS4D in conjunction with the notes for this presentation.</p>
+<h2 id="Transfer-Functions-for-Circuits">Transfer Functions for Circuits<a class="anchor-link" href="#Transfer-Functions-for-Circuits">&#182;</a></h2><p>When doing circuit analysis with components defined in the complex frequency domain, the ratio of the output voltage $V_{\mathrm{out}}(s)$ ro the input voltage $V_{\mathrm{in}}(s)$ <em>under zero initial conditions</em> is of great interest. This ratio is known as the <em>voltage transfer function</em> denoted $G_v(s)$:</p>
+<p>$$G_v(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}$$</p>
+<p>Similarly, the ratio of the output current $I_{\mathrm{out}}(s)$ to the input current $I_{\mathrm{in}}(s)$ <em>under zero initial conditions</em>, is called the <em>cuurent transfer function</em> denoted $G_i(s)$:</p>
+<p>$$G_i(s) = \frac{I_{\mathrm{out}}(s)}{I_{\mathrm{in}}(s)}$$</p>
 
 </div>
 </div>
@@ -11981,306 +11970,8 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that Signals and Systems for Dummies is available as an e-book from the <a href="http://whel-primo.hosted.exlibrisgroup.com/44WHELF_SWA_VU1:LSCOP_44WHELF_SWA_ALMA_DS:44WHELF_SWA_ALMA_DS5156109590002417">Bay Library</a>.</p>
-
-</div>
-</div>
-</div>
-</aside></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Agenda">Agenda<a class="anchor-link" href="#Agenda">&#182;</a></h2><ul>
-<li>Continuous-time signals</li>
-<li>Continuous-time systems</li>
-<li>Discrete-time signals</li>
-<li>Discrete-time systems</li>
-<li>Signal Classifications</li>
-<li>Domains for Signals</li>
-<li>Systems Thinking and Systems Design</li>
-</ul>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>These will be illustrated with computation in <em>Wolfram|Alpha</em>, <em>Matlab</em>, <em>Simulink</em> and <em>Python</em>.</p>
-<p>We will use TurningPoint for audience participation.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Setup">Setup<a class="anchor-link" href="#Setup">&#182;</a></h2><p>We will be using TurningPoint mobile response system polling in this session.</p>
-<p>There are two ways to participate:</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1.-Use-a-web-browser">1. Use a web browser<a class="anchor-link" href="#1.-Use-a-web-browser">&#182;</a></h3><p>Browse to: <a href="https://responseware.turningtechnologies.com">responseware.turningtechnologies.com</a>.</p>
-<p><img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=300x300&amp;choe=UTF-8&amp;chld=H&amp;chl=https://goo.gl/rPE4Ls" alt="QR Code"></p>
-<p><a href="https://goo.gl/rPE4Ls">https://goo.gl/rPE4Ls</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2.-Install-and-open-the-TurningPoint-app">2. Install and open the TurningPoint app<a class="anchor-link" href="#2.-Install-and-open-the-TurningPoint-app">&#182;</a></h3><p>Browse to: <a href="https://www.turningtechnologies.com/response-options/mobile">TurningPoint
-Mobile Responding</a></p>
-<p><img src="https://chart.googleapis.com/chart?cht=qr&amp;chs=300x300&amp;choe=UTF-8&amp;chld=H&amp;chl=https://goo.gl/DmGeQv" alt="QR Code"></p>
-<p><a href="https://goo.gl/DmGeQv">https://goo.gl/DmGeQv</a></p>
-<p>Use the links to the App stores at the bottom of that page or follow these links: <a href="https://itunes.apple.com/gb/app/turningpoint/id300028504?mt=8">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.turningTech.Responseware&amp;feature=search_result#?t=W251bGwsMSwyLDEsImNvbS50dXJuaW5nVGVjaC5SZXNwb25zZXdhcmUiXQ..">Google Play</a>.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When prompted: enter the <strong>session ID</strong></p>
-<h2 id="Today's-Session-ID">Today's Session ID<a class="anchor-link" href="#Today's-Session-ID">&#182;</a></h2><pre>
-
-
-
-<p>&lt;/pre&gt;</p>
-<div style="font-size: 32pt; font-face: bold;">XXXXX</div>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Assign-yourself-to-a-group-by-table">Assign yourself to a group by table<a class="anchor-link" href="#Assign-yourself-to-a-group-by-table">&#182;</a></h3><p>There should be a post-it note with a <strong>group name</strong> on your table.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Please use your TurningPoint app or web login to assign yourself to your table's group name.</p>
-
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Launch-Poll">-&gt; Launch Poll<a class="anchor-link" href="#-&gt;-Launch-Poll">&#182;</a></h4>
-</div>
-</div>
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The rest of the session will be anonymous and scored by teams.</p>
-
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Icebreaker-Questions">Icebreaker Questions<a class="anchor-link" href="#Icebreaker-Questions">&#182;</a></h3>
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Launch-Poll">-&gt; Launch Poll<a class="anchor-link" href="#-&gt;-Launch-Poll">&#182;</a></h4>
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="End-of-setup">End of setup<a class="anchor-link" href="#End-of-setup">&#182;</a></h3>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Continuous-time-signals">Continuous-time signals<a class="anchor-link" href="#Continuous-time-signals">&#182;</a></h2><p>Continuous signals are represented mathematically by functions which vary continuously with time.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Sinusoidal signals (e.g. AC) are pretty fundamental in electrical engineering. The mathematical model of a sinusoidal signal is:</p>
-<p>$$x(t) = A \cos (2\pi f_0 t - \phi).$$</p>
-<p><strong>Without talking to your anyone</strong>, match each of the symbols to its definition</p>
-<table>
-<thead><tr>
-<th>Symbol</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$A$</td>
-<td>Phase in radians</td>
-</tr>
-<tr>
-<td>$f_0$</td>
-<td>Frequency in Hz</td>
-</tr>
-<tr>
-<td>$\phi$</td>
-<td>Amplitude</td>
-</tr>
-<tr>
-<td>$2\pi f_0$</td>
-<td>Frequency in rad/s</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Open-Poll">-&gt; Open Poll<a class="anchor-link" href="#-&gt;-Open-Poll">&#182;</a></h4>
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Gaining-insight-using-computers">Gaining insight using computers<a class="anchor-link" href="#Gaining-insight-using-computers">&#182;</a></h3><p>To help us answer these questions, let's use our Mathematical tools to plot a signal like this and explore it. The example we will use is from <em>Signals and Systems for Dummies</em> (SS4D: page 12):</p>
-<p>$$3\cos(2\pi\cdot 2t - 3\pi/4)$$</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Wolfram|Alpha">Wolfram|Alpha<a class="anchor-link" href="#Wolfram|Alpha">&#182;</a></h3><p>Here's the link: <a href="http://www.wolframalpha.com">http://www.wolframalpha.com</a></p>
-<p>Paste this into the search box</p>
-
-<pre><code>plot 3 cos(2 pi 2 t - 3 pi/4) </code></pre>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Matlab">Matlab<a class="anchor-link" href="#Matlab">&#182;</a></h3><p>In Matlab we would need to tackle this by breaking down the steps.</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Define <code>t</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">t</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Define <code>x</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">x</span> <span class="p">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="nb">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span> <span class="o">-</span> <span class="mi">3</span><span class="o">*</span><span class="nb">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Plot result and label plot</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;A Sinusoidal Signal&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time t (s)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">)</span>
-<span class="n">grid</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/sinewave.m">sinewave.m</a>.</p>
+<p>In practice, the current transfer function is rarely used, so we will use the voltage transfer function denoted:</p>
+<p>$$G(s) = \frac{V_{\mathrm{out}}(s)}{V_{\mathrm{in}}(s)}$$</p>
 
 </div>
 </div>
@@ -12290,35 +11981,8 @@ Mobile Responding</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Returning-to-the-Question">Returning to the Question<a class="anchor-link" href="#Returning-to-the-Question">&#182;</a></h3><p>Sinusoidal signals (e.g. AC) are pretty fundamental in electrical engineering. The mathematical model of a sinusoidal signal is:</p>
-<p>$$x(t) = A \cos (2\pi f_0 t - \phi).$$</p>
-<p>Using the insight just gained by exploring this function with a computer, try matching each of the symbols to its definition again.</p>
-<p><strong>This time you may confer!</strong>!</p>
-<table>
-<thead><tr>
-<th>Symbol</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>$A$</td>
-<td>Phase in radians</td>
-</tr>
-<tr>
-<td>$f_0$</td>
-<td>Frequency in Hz</td>
-</tr>
-<tr>
-<td>$\phi$</td>
-<td>Amplitude</td>
-</tr>
-<tr>
-<td>$2\pi f_0$</td>
-<td>Frequency in rad/s</td>
-</tr>
-</tbody>
-</table>
+<h3 id="Example-6">Example 6<a class="anchor-link" href="#Example-6">&#182;</a></h3><p>Derive an expression for the transfer function $G(s)$ for the circuit below. In this circuit $R_g$ represents the internal resistance of the applied (voltage) source $v_s$, and $R_L$ represents the resistance of the load that consists of $R_L$, $L$ and $C$.</p>
+<p><img src="pictures/example6.png" alt="Circuit for Example 6"></p>
 
 </div>
 </div>
@@ -12327,63 +11991,40 @@ Mobile Responding</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Supplementary-question">Supplementary question<a class="anchor-link" href="#Supplementary-question">&#182;</a></h3><p>What is the period of the waveform in seconds?</p>
-<ol>
-<li>$2\pi$</li>
-<li>$f_0$</li>
-<li>$t$</li>
-<li>$1/f_0$</li>
-<li>$2\pi/f_0$</li>
-</ol>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Open-poll">-&gt; Open poll<a class="anchor-link" href="#-&gt;-Open-poll">&#182;</a></h4>
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Notes">Notes<a class="anchor-link" href="#Notes">&#182;</a></h3><ul>
-<li>In communications and electronic signal processing, the frequency of sinusoidal signals us usually given in <em>cycles per second</em> or Hz. </li>
-<li>In mathematics, the frequency is always expressed in <em>radians per second</em>. </li>
-<li>In some courses, including later in this one and in EG-243 Control Systems, the frequency $2\pi f_0$ is often called the <em>natural frequency</em> and is usually written $\omega_n$.</li>
+<h3 id="Sketch-of-Solution">Sketch of Solution<a class="anchor-link" href="#Sketch-of-Solution">&#182;</a></h3><ul>
+<li>Replace $v_s(t)$, $R_g$, $R_L$, $L$ and $C$ by their transformed (<em>complex frequency</em>) equivalents: $V_s(s)$, $R_g$, $R_L$, $sL$ and $1/(sC)$</li>
+<li>Use the <em>Voltage Divider Rule</em> to determine $V_\mathrm{out}(s)$ as a function of $V_s(s)$ </li>
+<li>Form $G(s)$ by writing down the ratio $V_\mathrm{out}(s)/V_s(s)$</li>
 </ul>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>$$G(s) = \frac{V_\mathrm{out}(s)}{V_s(s)} = \frac{R_L + sL + 1/sC}{R_g + R_L + sL + 1/sC}.$$</p>
 
 </div>
 </div>
-</div>
-</aside><aside class="notes">
-
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Try-This-Yourself">Try This Yourself<a class="anchor-link" href="#Try-This-Yourself">&#182;</a></h3><ul>
-<li>Use any or all of computing tools that you have access to to explore other sinusoids. Change the values of the variables and explain what happens. </li>
-<li>Try adding sinusoids of different amplitudes and different frequencies together and see what happens.</li>
-<li>Change <code>cos</code> to <code>sin</code> and see what happens.</li>
+<h3 id="Example-7">Example 7<a class="anchor-link" href="#Example-7">&#182;</a></h3><p>Compute the transfer function for the op-amp circuit shown below in terms of the circuit constants $R_1$, $R_2$, $R_3$, $C_1$ and $C_2$. Then replace the complex variable $s$ with $j\omega$, and the circuit constants with their numerical values and plot the magnitude $\left|G(s)\right| = \left|V_\mathrm{out}(s)/V_\mathrm{in}(s)\right|$ versus radian frequency $\omega$.</p>
+<p><img src="pictures/example7.png" alt="Circuit for Example 7"></p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Sketch-of-Solution">Sketch of Solution<a class="anchor-link" href="#Sketch-of-Solution">&#182;</a></h3><ul>
+<li>Replace the components and voltages in the circuit diagram with their complex frequency equivalents</li>
+<li>Use nodal analysis to determine the voltages at the nodes either side of the 50K resistor $R_3$</li>
+<li>Note that the voltage at the input to the op-amp is a virtual ground</li>
+<li>Solve for $V_\mathrm{out}(s)$ as a function of $V_\mathrm{in}(s)$</li>
+<li>Form the reciprocal $G(s) = V_\mathrm{out}(s)/V_\mathrm{in}(s)$</li>
+<li>Use MATLAB to calculate the component values, then replace $s$ by $j\omega$.</li>
+<li>Plot $\left|G(j\omega)\right|$ on log-linear "paper" </li>
 </ul>
-
-</div>
-</div>
-</div>
-</aside></div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Continuous-time-Systems">Continuous-time Systems<a class="anchor-link" href="#Continuous-time-Systems">&#182;</a></h2><p>Systems operate on signals. In mathematical terms, a <em>system</em> is a function or an <em>operator</em>, $H\{\}$ that maps the input signal $x(t)$ to an output signal $y(t)$.</p>
-<p>Mathematically we would write this:</p>
-<p>$$y(t) = H\{x(t)\}.$$</p>
+<h3 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h3><p>$$G(s) = \frac{V_\mathrm{out}(s)}{V_\mathrm{in}(s)} = \frac{-1}{R_1\left(\left(1/R_1 + 1/R_2 + 1/R_3 + sC_1\right)\left(sC_2R_3\right)+1/R_2\right)}.$$</p>
 
 </div>
 </div>
@@ -12392,170 +12033,8 @@ Mobile Responding</a></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>An example of a continuous-time system is an electronic amplifier with a gain of 5 and level shift of 2: $y(t) = H\{x(t)\} = 5x(t) + 2$.</p>
-<p>In this course, we will model such systems as block diagram models in Simulink.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Block-diagram-model-in-Simulink">Block diagram model in Simulink<a class="anchor-link" href="#Block-diagram-model-in-Simulink">&#182;</a></h3><p><img src="pictures/css.png"></p>
-<p>The Similink code can be downloaded from this file <a href="matlab/gain_level_shift.slx">gain_level_shift.slx</a>.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Demonstration">Demonstration<a class="anchor-link" href="#Demonstration">&#182;</a></h2><p>If the input to this system is replaced with a sinewave $x(t)=\sin(t)$ and the output with a scope, what do you think the output will be?</p>
-<pre style="border: 2px solid blue">
-
-
-
-
-
-</pre><p>If you get a chance, try this in youself in Matlab and copy the result into your copy of these notes.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">open</span> <span class="n">gain_level_shift</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Discrete-time-Signals">Discrete-time Signals<a class="anchor-link" href="#Discrete-time-Signals">&#182;</a></h2><p>Disrete-time signals are a function of a time index $n$. A discrete-time signal $x[n]$, unlike a continuous-time signal $x(t)$, is only defined at integer values of the independent variable $n$. This means that the signal is only active at specific periods of time. Discrete-time signals can be stored in computer memory.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Consider the following simple signal, a pulse sequence:$$y[n] = \left\{ {\begin{array}{*{20}{c}}
-{5,\;0 \le n &lt; 10}\\
-{0,\;{\rm{otherwise}}\quad \;}
-\end{array}} \right.$$
-We can plot this in Matlab as a <em>stem plot</em></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Procedure">Procedure<a class="anchor-link" href="#Procedure">&#182;</a></h2><p>Define function and save as <a href="matlab/y.m">y.m</a>.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">open</span> <span class="n">y</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Define sample points</span>
-<span class="n">n</span> <span class="p">=</span> <span class="o">-</span><span class="mi">15</span><span class="p">:</span><span class="mi">18</span><span class="p">;</span>
-<span class="c">%% Make space for the signal</span>
-<span class="n">xn</span> <span class="p">=</span> <span class="nb">zeros</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">n</span><span class="p">));</span>
-
-<span class="c">%% Compute the signal x[n]</span>
-<span class="k">for</span> <span class="nb">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span>
-    <span class="n">xn</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="p">=</span> <span class="n">y</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="nb">i</span><span class="p">));</span>
-<span class="k">end</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Plot the result</span>
-<span class="n">stem</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">xn</span><span class="p">)</span>
-<span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Stem Plot for a Discrete Signal&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Sample n&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Signal x[n]&#39;</span><span class="p">)</span>
-<span class="n">grid</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>See <a href="matlab/discrete.m">discete.m</a></p>
-
-</div>
-</div>
-</div>
-</aside></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercise">Exercise<a class="anchor-link" href="#Exercise">&#182;</a></h3><p>Draw a digital signal that represents your student number in some way. For example if your number was 765443, then you could generate a signal for which $x[n] = 0$ when $n &lt; 7$, then $x[n] = 7$ for $7$ periods, then $x[n] = 6$ for the next 6 periods, $x[n] = 5$ for 5 periods, and so on. The signal should return to 0 when the last digit has been transmitted.</p>
-<pre style="border: 2px solid blue;">
-
-
-
-
-
-
-
-
-
-</pre>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To plot this on a computer you would need to transcribe $x[n]$ into an array and then use the stem plot to plot the data. You could just create the array by hand, but you could also create a Matlab function if you would like a challenge.</p>
+<h3 id="The-Matlab-Bit">The Matlab Bit<a class="anchor-link" href="#The-Matlab-Bit">&#182;</a></h3><p>See attached script: <a href="matlab/solution7.m">solution7.m</a>.</p>
+<p><img src="pictures/solution7.png" alt="Solution to Example 7"></p>
 
 </div>
 </div>
@@ -12564,370 +12043,7 @@ We can plot this in Matlab as a <em>stem plot</em></p>
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Discrete-time-Systems">Discrete-time Systems<a class="anchor-link" href="#Discrete-time-Systems">&#182;</a></h2><p>A discrete-time system, like its continuous-time counterpart, is a function, $H\{\}$, that maps the input $x[n]$￼ ￼to the output $y[n] = H\{x[n]\}$. An example of a discrete-time system is the <em>two-tap</em> filter:</p>
-<p>$$y[n] = H\{x[n]\} = \frac{3}{4}x[n] + \frac{1}{4}x[n-1]$$</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The term <em>tap</em> denotes that output at time instant $n$ is formed from two time instants of the input, $n$ and $n – 1$. Check out a block diagram of a two-tap filter system:</p>
-<p><img src="pictures/ds.png" width="50%" /></p>
-<p>This system is available as a Simulink model <a href="matlab/discrete_system.slx">discrete_system.slx</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">open</span> <span class="n">discrete_system</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In words, this system scales the present input by 3/4 and adds it to the past value of the input scaled by 1/4. The notion of the past input comes about because ￼$x[n - 1]$ is lagging one sample value behind ￼$x[n]$. The term <em>filter</em> describes the output as an <em>averaging</em> of the present input and the previous input. <em>Averaging</em> is a form of filtering.</p>
-
-</div>
-</div>
-</div>
-</aside></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Signal-Classifications">Signal Classifications<a class="anchor-link" href="#Signal-Classifications">&#182;</a></h2>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Periodic">Periodic<a class="anchor-link" href="#Periodic">&#182;</a></h3><p>Signals that repeat over and over are said to be <em>periodic</em>. In mathematical terms, a signal is periodic if:</p>
-<ul>
-<li><em>Continuous signal</em> $x(t + T) = x(t)$</li>
-<li><em>Discrete signal</em> $x[n + N] = x[n]$</li>
-</ul>
-<p>￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼The smallest $T$ or $N$ for which the equality holds is the <em>signal period</em>.</p>
-
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The sinusoidal signal we saw earlier is periodic because of the $\mod 2\pi$ property of cosines. The signal of the sinusoid has period 0.5 seconds (s), which turns out to be the reciprocal of the frequency ￼ $1/f_0$￼ ￼ Hz.</p>
-
-</div>
-</div>
-</div>
-</aside></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="pictures/squarew.png" alt="A square wave"></p>
-
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This Square wave is a 5 Hz waveform sampled at 500 Hz for 1 second</p>
-
-</div>
-</div>
-</div>
-</aside><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$T = $?</p>
-
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<pre style="border: 2px solid blue">
-
-
-
-
-</pre>
-</div>
-</div>
-</div>
-</aside></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question">Question<a class="anchor-link" href="#Question">&#182;</a></h3><p>For the example we started with $x(t) = 2 \cos (2\pi . 2t + 3\pi/4)$. Say we sample the cosine wave at 20 times the frequency of the sinusoid, what would the sampling period be and what would $N$ be for the sampled waveform?</p>
-
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Your-Answer">Your Answer<a class="anchor-link" href="#Your-Answer">&#182;</a></h4><pre style="border: 2px solid blue">
-
-
-
-
-
-
-
-
-
-
-</pre>
-</div>
-</div>
-</div>
-</aside></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Aperiodic">Aperiodic<a class="anchor-link" href="#Aperiodic">&#182;</a></h3><p>Signals that are <em>deterministic</em> (completely determined functions of time) but not periodic are known as <em>aperiodic</em>. Point of view matters. If a signal occurs infrequently, you may view it as aperiodic.</p>
-<p>This is how we generate an aperiodic rectangular pulse of duration $\tau$ in Matlab:</p>
-<p>See <a href="matlab/aperiodic.m">aperiodic.m</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% An aperiodic function</span>
-<span class="n">tau</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="n">x</span> <span class="p">=</span> <span class="nb">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span>
-<span class="n">y</span> <span class="p">=</span> <span class="n">rectangularPulse</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">tau</span><span class="p">,</span><span class="n">x</span><span class="p">);</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">1.2</span><span class="p">])</span>
-<span class="n">grid</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;An Aperiodic Signal&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time t (s)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Random">Random<a class="anchor-link" href="#Random">&#182;</a></h3><p>A signal is random if one or more signal attributes takes on unpredictable
-values in a probability sense.
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼
-Engineers working with communication receivers are concerned with random
-signals, especially noise.</p>
-<p>See: <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/introduction/matlab/random.m">random.m</a></p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="c">%% Plot a Random Signal</span>
-<span class="n">plot</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.25</span> <span class="o">*</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
-<span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">grid</span>
-<span class="n">title</span><span class="p">(</span><span class="s">&#39;Random Signal&#39;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s">&#39;Time t (s)&#39;</span><span class="p">)</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s">&#39;Amplitude&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Domains-for-Signals-and-Systems">Domains for Signals and Systems<a class="anchor-link" href="#Domains-for-Signals-and-Systems">&#182;</a></h2><p>Most of the signals we encounter on a daily basis reside in the time domain. They’re functions of independent variable $t$ or $n$. But sometimes when you’re working with continuous-time signals, you may need to transform away from the time domain ($t$) to another domain.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Domain-Quiz">Domain Quiz<a class="anchor-link" href="#Domain-Quiz">&#182;</a></h3><p>A domain which is used in the analysis of signals and the design of systems is represented by complex numbers of the form:</p>
-<p>$$\sigma + j\omega$$</p>
-<p><strong>Without conferring</strong>, tell me what domain is this?</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Open-Poll">-&gt; Open Poll<a class="anchor-link" href="#-&gt;-Open-Poll">&#182;</a></h4>
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Now-discuss-your-answer-with-your-peers">Now discuss your answer with your peers<a class="anchor-link" href="#Now-discuss-your-answer-with-your-peers">&#182;</a></h3>
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Domain-Quiz-(again)">Domain Quiz (again)<a class="anchor-link" href="#Domain-Quiz-(again)">&#182;</a></h3><p>A domain which is used in the analysis of signals and the design of systems is represented by complex numbers of the form:</p>
-<p>$$\sigma + j\omega$$</p>
-<p>Tell me what domain is this?</p>
-
-</div>
-</div>
-</div><div class="fragment">
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-&gt;-Open-Poll">-&gt; Open Poll<a class="anchor-link" href="#-&gt;-Open-Poll">&#182;</a></h4>
-</div>
-</div>
-</div></div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Other-Domains-you-will-encounter">Other Domains you will encounter<a class="anchor-link" href="#Other-Domains-you-will-encounter">&#182;</a></h3><p>The most commnly used domains used when analysing continuous time signals are the frequency domain ($f$ or $\omega$) or the Laplace $s$-domain ($s$).</p>
-<p>Similarly, for discrete-time signals, you may need to transform from the discrete-time domain ($n$) to the frequency domain ($\hat{\omega}$￼) or the z-domain ($z$).</p>
-<p>This section briefly introduces the world of signals and systems in the frequency, s-, and z-domains. More on these domains will follow.</p>
-
-</div>
-</div>
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Systems, continuous and discrete, can also be transformed to the frequency and s- and z-domains, respectively. Signals can, in fact, be passed through systems in these alternative domains. When a signal is passed through a system in the frequency domain, for example, the frequency domain output signal can later be returned to the time domain and appear just as if the time- domain version of the system operated on the signal in the time domain.</p>
-
-</div>
-</div>
-</div>
-</aside></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Consider the sum of a two-sinusoids signal
-$$x(t) = \underbrace {A_1\cos(2\pi f_1 t)}_{s_1} + \underbrace {A_2\cos(2\pi f_2 t)}_{s_2}$$</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">two_sines</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Matlab code: <a href="matlab/two_sines.m">two_sines.m</a></p>
-
-</div>
-</div>
-</div>
-</aside><aside class="notes">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Viewing-Signals-in-the-Frequency-Domain">Viewing Signals in the Frequency Domain<a class="anchor-link" href="#Viewing-Signals-in-the-Frequency-Domain">&#182;</a></h3><p>The top waveform plot, denoted $s_1$, is a single sinusoid at frequency $f_1$ and peak amplitude $A_1$. The waveform repeats every period $T_1 = 1/f_1$. The second waveform plot, denoted $s_2$, is a single sinusoid at frequency $f_2 &gt; f_1$ and peak amplitude $A_2 &lt; A_1$. The sum signal, $s_1 + s_2$, in the time domain is a squiggly line (third waveform plot), but the amplitudes and frequencies (periods) of the sinusoids aren’t clear here as they are in the first two plots. The frequency spectrum (bottom plot) reveals that $x(t)$ is composed of just two sinusoids, with both the frequencies and amplitudes discernible.</p>
-<p>Think about tuning in a radio station. Stations are located at different center frequencies. The stations don’t interfere with one another because they’re separated from each other in the frequency domain. In the frequency spectrum plot, imagine that $f_1$ and $f_2$ are the signals from two radio stations, viewed in the frequency domain. You can design a receiving system to filter $s_1$ from $s_1 + s_2$. The filter is designed to pass $s_1$ and block $s_2$.</p>
-
-</div>
-</div>
-</div>
-</aside></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Fourier-Transform">Fourier Transform<a class="anchor-link" href="#Fourier-Transform">&#182;</a></h3><p>We use the <em>Fourier transform</em> to move away from the time domain and into the frequency domain. To get back to the time domain, use the <em>inverse Fourier transform</em>. We will found out more about these transforms in this module.</p>
-
-</div>
-</div>
-</div></section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Laplace-and-Z-Transform-Domains">Laplace and Z-Transform Domains<a class="anchor-link" href="#Laplace-and-Z-Transform-Domains">&#182;</a></h3><p>From the time domain to the frequency domain, only one independent variable, $t \to f$, exists. When a signal is transformed to the <em>s</em>-domain, it becomes a function of a complex variable ￼$s=\sigma + j\omega$. The two variables (real and imaginary parts) describe a location in the <em>s</em>-plane.</p>
-<p>In addition to visualization properties, the <em>s</em>-domain reduces differential equation solving to algebraic manipulation. For discrete-time signals, the <em>z</em>-transform accomplishes the same thing, except differential equations are replaced by difference equations.</p>
+<h2 id="Using-Transfer-Functions-in-Matlab-for-System-Analysis">Using Transfer Functions in Matlab for System Analysis<a class="anchor-link" href="#Using-Transfer-Functions-in-Matlab-for-System-Analysis">&#182;</a></h2><p>Please use the file <a href="matlab/tf_matlab.m">tf_matlab.m</a> to explore the Transfer Function features provide by Matlab. Use the <em>publish</em> option to generate a nicely formatted document.</p>
 
 </div>
 </div>
@@ -12936,81 +12052,23 @@ $$x(t) = \underbrace {A_1\cos(2\pi f_1 t)}_{s_1} + \underbrace {A_2\cos(2\pi f_2
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Systems-Thinking-and-Systems-Design">Systems Thinking and Systems Design<a class="anchor-link" href="#Systems-Thinking-and-Systems-Design">&#182;</a></h2><p>See section <strong>Testing Product Concepts with Behavioral Level Modeling</strong> from Chapter 1 of <a href="http://www.dummies.com/store/product/Signals-and-Systems-For-Dummies.productCd-111847581X.html">SS4D</a> (pages 18--20) and add some notes to summarize this for yourself.</p>
-<ul>
-<li>We will use <em>behavioural modelling</em></li>
-<li>We will rely on <em>abstraction</em></li>
-<li>We work <em>top-down</em></li>
-<li>We make use of <em>mathematics</em> and <em>mathematical software</em>.</li>
-</ul>
+<h2 id="Using-Transfer-Functions-in-Simulink-for-System-Simulation">Using Transfer Functions in Simulink for System Simulation<a class="anchor-link" href="#Using-Transfer-Functions-in-Simulink-for-System-Simulation">&#182;</a></h2><p><img src="pictures/sim_tf.png" alt="Using Transfer Functions in Simulink for System Simulation"></p>
+<p>The Simulink transfer function (<strong><code>Transfer Fcn</code></strong>) block shown above implements a transfer function representing a general
+input output function</p>
+<p>$$G(s) = \frac{N(s)}{D(s)}$$</p>
+<p>that it is not specific nor restricted to circuit analysis. It can, however be used in modelling and simulation studies.</p>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Familiar-Signals-and-Systems">Familiar Signals and Systems<a class="anchor-link" href="#Familiar-Signals-and-Systems">&#182;</a></h2><p>See pages 21-23 of the free sample (Chapter 1) of <a href="http://www.dummies.com/store/product/Signals-and-Systems-For-Dummies.productCd-111847581X.html">SS4D</a> for notes and details.</p>
+<h3 id="Example">Example<a class="anchor-link" href="#Example">&#182;</a></h3><p>Recast Example 7 as a Matlab problem using the LTI Transfer Function block. For simplicity use parameters $R_1 = R_2 = R_3 = 1\; \Omega$, and $C_1 = C_2 = 1\;\mathrm{F}$. Calculate the step response using the LTI functions.</p>
+<p>The Matlab solution: <a href="matlab/example8.m">example8.m</a></p>
+<p>Verify the result with Simulink.</p>
 
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Concluding-Example:-Some-Basic-Signal-Operations">Concluding Example: Some Basic Signal Operations<a class="anchor-link" href="#Concluding-Example:-Some-Basic-Signal-Operations">&#182;</a></h2><p>Consider a signal</p>
-<p>$$x = f(t) = \left\{ {\begin{array}{*{20}{c}}
-{0\;:\;t &lt;  - 1}\\
-{t + 1\;:\; - 1 \le t \le 1}\\
-{0\;:\;t &gt; 1}
-\end{array}} \right.$$</p>
-<p>Sketch this signal.</p>
-<pre style="border: 2px solid blue">
-
-
-
-
-
-
-
-
-
-
-
-
-</pre>
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Problem">Problem<a class="anchor-link" href="#Problem">&#182;</a></h3><p>Think about the effect on this signal of applying the following basic signal operations:</p>
-<ul>
-<li>$2 f(t)$</li>
-<li>$0.5 f(t)$</li>
-<li>$f(2t)$</li>
-<li>$f(0.5 t)$</li>
-<li>$-f(t)$</li>
-<li>$f(-t)$</li>
-<li>$-f(-t)$</li>
-<li>$f(t - 1)$</li>
-<li>$f(t + 1)$</li>
-<li>$-2f(-t+2)$</li>
-</ul>
-<p>We will work through these after the break together then you will do some exercises based on <a href="http://site.ebrary.com/lib/swansea/reader.action?docID=10547416&amp;ppg=17">Chapter 1 of Karris</a>.</p>
-
-</div>
-</div>
-</div></section></section><section><section>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Break">Break<a class="anchor-link" href="#Break">&#182;</a></h2>
 </div>
 </div>
 </div></section></section>
@@ -13026,8 +12084,8 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js/lib/js/head.min.js",
-      "reveal.js/js/reveal.js"
+      "http://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/head.min.js",
+      "http://cdn.jsdelivr.net/reveal.js/2.6.2/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -13042,9 +12100,9 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "reveal.js/lib/js/classList.js",
+                { src: "http://cdn.jsdelivr.net/reveal.js/2.6.2/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js/plugin/notes/notes.js",
+                { src: "http://cdn.jsdelivr.net/reveal.js/2.6.2/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]

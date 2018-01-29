@@ -4,18 +4,14 @@
 1. [Introduction](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb) ([Notes PDF](introduction/Introduction.pdf), [Slides](introduction/Introduction.slides.html)).
 1. [Elementary Signals](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb) ([Notes PDF](week1/elementary_signals.pdf), [Slides](week1/elementary_signals.slides.html)).
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab01" target="_blank">Lab 1: Sounds and Sampling</a> (on GitHub).
-1. [Homework 1](introduction/Homework%201.pdf).
+1. [Homework 1](week1/Homework%201.pdf).
+
+#### Week 2
+1. [The Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb) ([Notes PDF](week2/laplace.pdf), [Slides](week2/laplace.slides.html))
+1. [The Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb) ([Notes PDF](week2/inverse_laplace.pdf), [Slides](week2/inverse_laplace.slides.html))
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)
 
 <!--
-<h4>Week 2</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb">The Laplace Transform</a> (<a href="week2/laplace.pdf">Notes PDF</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb">The Inverse Laplace Transform</a> (<a href="week2/inverse_laplace.pdf">Notes PDF</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)</li>
-</ul>
-
 <h4>Week 3</h4>
 <ul>
 
