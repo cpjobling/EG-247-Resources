@@ -10,11 +10,11 @@ In this exercise we will explore the use of the ``heaviside`` and ``dirac`` func
 
 File: [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m)
 
-For Lab Exercise 6 you are required to complete parts 1 to 2 of the provided script (1 mark).
+For Lab Exercise 3 you are required to complete parts 1 to 2 of the provided script (1 mark).
 
 ## Lab Exercise 4
 
-For Lab Exercise 7 you are required to complete parts 3 to 5 of the provided script (2 marks).
+For Lab Exercise 4 you are required to complete parts 3 to 5 of the provided script (2 marks).
 
 ## Mini Project 2
 
@@ -26,7 +26,7 @@ You should add your modified version of the file ``elem_signals.m`` in folder ``
 
 See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing) for a detailed marking scheme.
 
-You will find it easiest to audit your completion of Exercise 6 by publishing the result by opening ``elem_signals.m`` as a Live Script file. If you do this, please submit the Live Script File.
+You will find it easiest to audit your completion of Exercises 3 and 4 by publishing the result by opening ``elem_signals.m`` as a Live Script file. If you do this, please submit the Live Script File.
 
 
 ## Doing More
