@@ -10,7 +10,7 @@ If you do not use GitHub as the master repository of your portfolio, please ensu
 
 ## Acknowledgments
 
-This lab has been adapted from <a href="http://class.ee.iastate.edu/mmina/ee186/labs/Audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and Elementary Music Synthesis by Professor Virginia Stonick of Oregon State University.
+This lab has been adapted from <a href="http://class.ece.iastate.edu/mmina/ee186/labs/audio.htm" title="Audio Processing with MatLab An Introduction" target="_blank">**Audio Processing with Matlab: An Introduction**</a> by Rachel Hager from the Electrical and Computer Engineering Department at Iowa State University and [Elementary Music Synthesis](https://class.ee.washington.edu/SST_textbook/musiclab.pdf) by Professor Virginia Stonick of Oregon State University.
 
 This lab is an introduction to signal processing with Matlab. This lab will help to familiarize you with some of the main functions to read in and play sound files in Matlab.
 
@@ -90,7 +90,7 @@ In this lab exercise, we explore how to use simple tones to compose a segment of
 
 **IMPORTANT**: Each musical note can be simply represented by a sinusoid whose frequency depends on the note pitch. Assume a sampling rate of 8KHz and that an eighth note = 0.125s (1000 samples).
 
-Musical notes are arranged in groups of twelve notes called octaves. The notes that we'll be using for Beethoven's Fifth are in the octave containing frequencies from 220 Hz to 440 Hz. The twelve notes in each octave are logarithmically spaced in frequency, with each note being of a frequency $2 1/12$ times the frequency of the note of lower frequency. Thus, a 1-octave pitch shift corresponds to a doubling of the frequencies of the notes in the original octave. Table 1 shows the ordering of notes in the octave to be used to synthesize the opening of Beethoven's fifth, as well as the fundamental frequencies for these notes. Note the notes without subscripts, correspond to the white keys on a piano. The notes with subscripts - called respective sharp (♯) and flat (♭) - represent the black keys.
+Musical notes are arranged in groups of twelve notes called octaves. The notes that we'll be using for Beethoven's Fifth are in the octave containing frequencies from 220 Hz to 440 Hz. The twelve notes in each octave are logarithmically spaced in frequency, with each note being of a frequency 2<sup>1/12</sup> times the frequency of the note of lower frequency. Thus, a 1-octave pitch shift corresponds to a doubling of the frequencies of the notes in the original octave. Table 1 shows the ordering of notes in the octave to be used to synthesize the opening of Beethoven's fifth, as well as the fundamental frequencies for these notes. Note the notes without subscripts, correspond to the white keys on a piano. The notes with subscripts - called respective sharp (♯) and flat (♭) - represent the black keys.
 
 <table>
 <thead>
@@ -98,27 +98,27 @@ Musical notes are arranged in groups of twelve notes called octaves. The notes t
 </thead>
 <tbody>
 <tr><td>1</td><td>A</td><td>220</td><td>220</td></tr>
-<tr><td>2</td><td>A<sup>♯</sup>,B<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>3</td><td>B</td><td>220</td><td>220</td></tr>
-<tr><td>4</td><td>Middle C</td><td>220</td><td>220</td></tr>
-<tr><td>5</td><td>C<sup>♯</sup>,D<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>6</td><td>D</td><td>220</td><td>220</td></tr>
-<tr><td>7</td><td>D<sup>♯</sup>,E<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>8</td><td>E</td><td>220</td><td>220</td></tr>
-<tr><td>9</td><td>F</td><td>220</td><td>220</td></tr>
-<tr><td>10</td><td>F<sup>♯</sup>,G<sup>♭</sup></td><td>220</td><td>220</td></tr>
-<tr><td>11</td><td>G</td><td>220</td><td>220</td></tr>
-<tr><td>12</td><td>G<sup>♯</sup>,A<sup>♭</sup></td><td>220</td><td>220</td></tr>
+  <tr><td>2</td><td>A<sup>♯</sup>,B<sup>♭</sup></td><td>220 * 2<sup>1/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>3</td><td>B</td><td>220 * 2<sup>2/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>4</td><td>Middle C</td><td>220 * 2<sup>3/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>5</td><td>C<sup>♯</sup>,D<sup>♭</sup></td><td>220 * 2<sup>4/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>6</td><td>D</td><td>220 * 2<sup>5/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>7</td><td>D<sup>♯</sup>,E<sup>♭</sup></td><td>220 * 2<sup>6/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>8</td><td>E</td><td>220 * 2<sup>7/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>9</td><td>F</td><td>220 * 2<sup>8/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>10</td><td>F<sup>♯</sup>,G<sup>♭</sup></td><td>220 * 2<sup>9/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>11</td><td>G</td><td>220 * 2<sup>10/12</sup></td><td>&nbsp;</td></tr>
+<tr><td>12</td><td>G<sup>♯</sup>,A<sup>♭</sup></td><td>220 * 2<sup>11/12</sup></td><td>&nbsp;</td></tr>
 </table>
 Table 1: Notes in the 220-440 Hz Octave
 
-You should use Matlab or a calculator to complete the table.
+You should copy this table into your lab portfolio and use Matlab or a calculator to complete the table entries.
 
 A musical score is essentially a plot of frequencies (notes, on the vertical scale for you musician types) versus time (measures, on the horizontal scale). The musical sequence of notes to the piece you will synthesize is given in Figure 1. The following discussion identifies how musical scores can be mapped to tones of specific pitch and duration.
 
 ### Note Frequency
 
-In the simplest case, each note may be represented by a burst of a sinusoid followed by a shorter period of silence (a pause). The pauses allow us to distinguish between separate notes of the same pitch. The horizontal lines in Figure 1 represent the notes E, G, B, D, F from the bottom to the top. The spaces between the lines are used to represent the notes F, A, C, and E, again from the bottom to the top. Note that A-G only yields seven notes; the additional notes are due to changes in pitch called sharps (denoted by the symbol ♯) or flats (denoted by the symbol ♭) that follows a given note. A sharp increases the pitch by 2 1/12 and flat decreases the pitch by 2 1/12.
+In the simplest case, each note may be represented by a burst of a sinusoid followed by a shorter period of silence (a pause). The pauses allow us to distinguish between separate notes of the same pitch. The horizontal lines in Figure 1 represent the notes E, G, B, D, F from the bottom to the top. The spaces between the lines are used to represent the notes F, A, C, and E, again from the bottom to the top. Note that A-G only yields seven notes; the additional notes are due to changes in pitch called sharps (denoted by the symbol ♯) or flats (denoted by the symbol ♭) that follows a given note. A sharp increases the pitch by 2<sup>1/12</sup> and flat decreases the pitch by 2<sup>1/12</sup>.
 
 
 ![Musical Score for Beethoven's Fifth](music.png)
@@ -185,7 +185,7 @@ Save your scale in an m-file called `scale.m`. The m-file should play the scale 
 
 You should add all the scripts and audio files created or downloaded for this exercise to your portfolio.
 
-See <a href="https://docs.google.com/spreadsheets/d/17VCWrwHpfx0W_7FX3MYB2HhddwgdbblUVdUNoLSwECQ/edit?usp=sharing" target="_blank">**Assessment and Feedback: Labwork Assessment**</a> for a detailed marking scheme.
+See <a href="https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing" target="_blank">**Assessment and Feedback: Labwork Assessment**</a> for a detailed marking scheme.
 
 ----
 
