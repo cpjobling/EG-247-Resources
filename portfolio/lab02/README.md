@@ -10,9 +10,7 @@ In this exercise we will explore the use of the ``heaviside`` and ``dirac`` func
 
 Navigate to the file [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m) in this repository. Right-click on the `Raw` button and choose `Save link as` to save a copy of `elem_sigs.m` into your lab folder. Open the file from the file browser in MATLAB as a Live Script file.
 
-Here is a short video, illustrating how to do this.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xwrZAE0D6cY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+Here is a [short video](https://youtu.be/xwrZAE0D6cY), illustrating how to do this.
 
 ## Lab Exercise 3
 
