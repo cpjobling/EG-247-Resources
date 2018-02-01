@@ -35,12 +35,15 @@ Work through the procedures given between pages 1-18 and 1-19 of the text book t
 
 ## What to Hand In
 
-1. For the lab exercises, you should attach your completed version of the Live Script file ``elem_signals.mlx`.
-1. For the Miniproject the Simulink model of the piecewise linear signal ``signal.slx``.
+1. For the lab exercises, you should attach your completed version of the Live Script file `elem_signals.mlx`.
+1. For the Miniproject the Simulink model of the piecewise linear signal `signal.slx`.
 
 You should attach the files you wish to claim for to the Lab 2 page your EG-247 portfolio in OneNote.
 
-Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed. The miniproject is worth an additional 2 marks. 
+## Claim
+
+Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed. 
+The mini project is worth an additional 2 marks. 
 
 The deadline for claims and submission is **Midnight, 26th February**.
 
