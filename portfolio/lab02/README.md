@@ -1,12 +1,12 @@
 # Lab 2: Elementary Signals
 
+In this lab we will explore the use of the ``heaviside`` and ``dirac`` functions and how they can be used in the synthesis of elementary signals.
+
 These examples have been adapted from Chapter 1 of
 [Stephen Karris, Signals and Systems : With MATLAB
 Computing and Simulink Modeling (5th Edition)](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
 
 ## Set up
-
-In this exercise we will explore the use of the ``heaviside`` and ``dirac`` functions and how they can be used in the synthesis of elementary signals.
 
 Navigate to the file [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m) in this repository. Right-click on the `Raw` button and choose `Save link as` to save a copy of `elem_sigs.m` into your lab folder. Open the file from the file browser in MATLAB as a Live Script file.
 
