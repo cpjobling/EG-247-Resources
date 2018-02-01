@@ -1,6 +1,15 @@
 # Lab 2: Elementary Signals
 
-In this lab we will explore the use of the ``heaviside`` and ``dirac`` functions and how they can be used in the synthesis of elementary signals.
+## Aims
+
+The purposes of this laboratory are to 
+	
+  1. Explore the properties of the unit step and Dirac delta functions using the analysis and plotting tools  provided by Matlab.
+	2. Synthesize a generalized signal in Simulink and plot it and its derivative.
+
+This will introduce the symbolic toolbox and the `heaviside`, `delta` and `ezplot` functions provided by MATLAB  and the signal design block, multiplexor, scope and derivative blocks provided by Simulink for the simulation of continuous time signals and systems.
+
+We will also demonstrate the Live Script feature provided by Matlab that will be useful for recording lab results for this module.
 
 These examples have been adapted from Chapter 1 of
 [Stephen Karris, Signals and Systems : With MATLAB
@@ -26,11 +35,18 @@ Work through the procedures given between pages 1-18 and 1-19 of the text book t
 
 ## What to Hand In
 
-You should add your modified version of the file ``elem_signals.m`` in folder ``lab02`` of your EG-247 portfolio. Marks can be claimed according to how many of parts 1-5 in the script have been completed and for the Simulink model of the piecewise linear signal ``signal.slx``.
+1. For the lab exercises, you should attach your completed version of the Live Script file ``elem_signals.mlx`.
+1. For the Miniproject the Simulink model of the piecewise linear signal ``signal.slx``.
+
+You should attach the files you wish to claim for to the Lab 2 page your EG-247 portfolio in OneNote.
+
+Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed. The miniproject is worth an additional 2 marks. 
+
+The deadline for claims and submission is **Midnight, 26th February**.
 
 See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing) for a detailed marking scheme.
 
-You will find it easiest to audit your completion of Exercises 3 and 4 by publishing the result by opening ``elem_signals.m`` as a Live Script file. If you do this, please submit the Live Script File.
+
 
 
 ## Doing More
