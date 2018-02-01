@@ -12,6 +12,8 @@ Navigate to the file [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources
 
 Here is a short video, illustrating how to do this.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xwrZAE0D6cY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Lab Exercise 3
 
 For Lab Exercise 3 you are required to complete parts 1 to 2 of the provided script (1 mark).
