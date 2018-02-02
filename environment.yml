@@ -17,9 +17,9 @@ dependencies:
   - jedi=0.11.1=py36_0
   - jinja2=2.10=py36hd36f9c5_0
   - jsonschema=2.6.0=py36hb385e00_0
-  - jupyter_client=5.2.1=py36_0
+  - jupyter_client=5.2.2=py36_0
   - jupyter_core=4.4.0=py36h79cf704_0
-  - jupyterlab=0.31.1=py36_0
+  - jupyterlab=0.31.2=py36_0
   - jupyterlab_launcher=0.10.2=py36_0
   - libcxx=4.0.1=h579ed51_0
   - libcxxabi=4.0.1=hebd6815_0
@@ -51,7 +51,7 @@ dependencies:
   - setuptools=38.4.0=py36_0
   - simplegeneric=0.8.1=py36he5b5b09_0
   - six=1.11.0=py36h0e22d5e_1
-  - sqlite=3.21.0=h3efe00b_0
+  - sqlite=3.22.0=h3efe00b_0
   - terminado=0.8.1=py36_0
   - testpath=0.3.1=py36h625a49b_0
   - tk=8.6.7=h35a86e2_3
