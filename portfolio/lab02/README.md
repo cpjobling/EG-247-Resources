@@ -2,10 +2,10 @@
 
 ## Aims
 
-The purposes of this laboratory are to 
-	
-  1. Explore the properties of the unit step and Dirac delta functions using the analysis and plotting tools  provided by Matlab.
-	2. Synthesize a generalized signal in Simulink and plot it and its derivative.
+The purposes of this laboratory are to
+
+1. Explore the properties of the unit step and Dirac delta functions using the analysis and plotting tools  provided by Matlab.
+1. Synthesise a generalised signal in Simulink and plot it and its derivative.
 
 This will introduce the symbolic toolbox and the `heaviside`, `delta` and `ezplot` functions provided by MATLAB  and the signal design block, multiplexor, scope and derivative blocks provided by Simulink for the simulation of continuous time signals and systems.
 
@@ -42,8 +42,8 @@ You should attach the files you wish to claim for to the Lab 2 page your EG-247 
 
 ## Claim
 
-Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed. 
-The mini project is worth an additional 2 marks. 
+Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed.
+The mini project is worth an additional 2 marks.
 
 The deadline for claims and submission is **Midnight, 26th February**.
 
