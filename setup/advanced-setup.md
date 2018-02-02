@@ -1,6 +1,6 @@
 # Adanced Settings
 
-If you want to use the environments and the command line, please follow these instructions after installing Anaconda.
+If you want to use Python environments and the command line for installation, please follow these instructions after installing Anaconda.
 
 Not much explanation is given as if you are advanced enough to want to do this, you should be comfortable in following the steps.
 
@@ -84,5 +84,11 @@ should be able to copy the `environment.yml` file and execute:
 
 ```shell
 conda env create -f environment.yml
+```
+
+## Exit EG-247 Environment
+
+```shell
+deactivate # source deactivate on mac or linux
 ```
 
