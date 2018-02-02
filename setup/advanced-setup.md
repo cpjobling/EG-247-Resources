@@ -37,7 +37,7 @@ Run:
 python soton-test-python-installation.py
 ```
 
-Install rise for slides:
+Install [Rise](https://damianavila.github.io/RISE/index.html) for active slides:
 
 ```shell
 conda install -c damianavila82 rise
