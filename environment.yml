@@ -1,83 +1,71 @@
-name: EG-247
+name: eg-247
 channels:
   - damianavila82
   - defaults
 dependencies:
-  - rise=5.1.0=py36_1
-  - attrs=17.4.0=py36_0
+  - rise=5.1.0=py36_0
+  - appnope=0.1.0=py36hf537a9a_0
   - bleach=2.1.2=py36_0
-  - ca-certificates=2017.08.26=h94faf87_0
+  - ca-certificates=2017.08.26=ha1e5d58_0
   - certifi=2018.1.18=py36_0
-  - colorama=0.3.9=py36h029ae33_0
-  - cycler=0.10.0=py36h009560c_0
   - decorator=4.2.1=py36_0
-  - entrypoints=0.2.3=py36hfd66bb0_2
-  - fastcache=1.0.2=py36hffdae1b_0
-  - freetype=2.8=h51f8f2c_1
-  - html5lib=1.0.1=py36h047fa9f_0
-  - icc_rt=2017.0.4=h97af966_0
-  - icu=58.2=ha66f8fd_1
-  - intel-openmp=2018.0.0=hd92c6cd_8
+  - entrypoints=0.2.3=py36hd81d71f_2
+  - html5lib=1.0.1=py36h2f9c1c0_0
   - ipykernel=4.8.0=py36_0
-  - ipython=6.2.1=py36h9cf0123_1
-  - ipython_genutils=0.2.0=py36h3c5d0ee_0
+  - ipython=6.2.1=py36h3dda519_1
+  - ipython_genutils=0.2.0=py36h241746c_0
   - jedi=0.11.1=py36_0
-  - jinja2=2.10=py36h292fed1_0
-  - jpeg=9b=hb83a4c4_2
-  - jsonschema=2.6.0=py36h7636477_0
-  - jupyter_client=5.2.2=py36_0
-  - jupyter_core=4.4.0=py36h56e9d50_0
-  - libpng=1.6.34=h79bbb47_0
-  - markupsafe=1.0=py36h0e26971_1
-  - matplotlib=2.1.2=py36h016c42a_0
+  - jinja2=2.10=py36hd36f9c5_0
+  - jsonschema=2.6.0=py36hb385e00_0
+  - jupyter_client=5.2.1=py36_0
+  - jupyter_core=4.4.0=py36h79cf704_0
+  - jupyterlab=0.31.1=py36_0
+  - jupyterlab_launcher=0.10.2=py36_0
+  - libcxx=4.0.1=h579ed51_0
+  - libcxxabi=4.0.1=hebd6815_0
+  - libedit=3.1=hb4e282d_0
+  - libffi=3.2.1=h475c297_4
+  - libsodium=1.0.15=hd9e47c5_0
+  - markupsafe=1.0=py36h3a1e703_1
   - mistune=0.8.3=py36_0
-  - mkl=2018.0.1=h2108138_4
-  - mpmath=1.0.0=py36hacc8adf_2
-  - nbconvert=5.3.1=py36h8dc0fde_0
-  - nbformat=4.4.0=py36h3a5bc1b_0
-  - notebook=5.3.1=py36_2
-  - numpy=1.14.0=py36h4a99626_1
-  - openssl=1.0.2n=h74b6da3_0
-  - pandoc=1.19.2.1=hb2460c7_1
-  - pandocfilters=1.4.2=py36h3ef6317_1
-  - parso=0.1.1=py36hae3edee_0
-  - pickleshare=0.7.4=py36h9de030f_0
-  - pip=9.0.1=py36h226ae91_4
-  - pluggy=0.6.0=py36hc7daf1e_0
-  - prompt_toolkit=1.0.15=py36h60b8f86_0
-  - py=1.5.2=py36hbcfbabc_0
-  - pygments=2.2.0=py36hb010967_0
-  - pyparsing=2.2.0=py36h785a196_1
-  - pyqt=5.6.0=py36hb5ed885_5
-  - pytest=3.3.2=py36_0
-  - python=3.6.4=h6538335_1
-  - python-dateutil=2.6.1=py36h509ddcb_1
-  - pytz=2017.3=py36h1d3fa6b_0
-  - pyzmq=16.0.3=py36he714bf5_0
-  - qt=5.6.2=vc14h6f8c307_12
-  - scipy=1.0.0=py36h1260518_0
+  - nbconvert=5.3.1=py36h810822e_0
+  - nbformat=4.4.0=py36h827af21_0
+  - ncurses=6.0=hd04f020_2
+  - notebook=5.3.1=py36_0
+  - openssl=1.0.2n=hdbc3d79_0
+  - pandoc=1.19.2.1=ha5e8f32_1
+  - pandocfilters=1.4.2=py36h3b0b094_1
+  - parso=0.1.1=py36hc90e01c_0
+  - pexpect=4.3.1=py36_0
+  - pickleshare=0.7.4=py36hf512f8e_0
+  - pip=9.0.1=py36h1555ced_4
+  - prompt_toolkit=1.0.15=py36haeda067_0
+  - ptyprocess=0.5.2=py36he6521c3_0
+  - pygments=2.2.0=py36h240cd3f_0
+  - python=3.6.4=hc167b69_1
+  - python-dateutil=2.6.1=py36h86d2abb_1
+  - python.app=2=py36h54569d5_7
+  - pyzmq=16.0.3=py36he48b5ad_0
+  - readline=7.0=hc1231fa_4
   - send2trash=1.4.2=py36_0
   - setuptools=38.4.0=py36_0
-  - simplegeneric=0.8.1=py36heab741f_0
-  - sip=4.18.1=py36h9c25514_2
-  - six=1.11.0=py36h4db2310_1
-  - sqlite=3.22.0=h9d3ae62_0
-  - sympy=1.1.1=py36h96708e0_0
-  - testpath=0.3.1=py36h2698cfe_0
+  - simplegeneric=0.8.1=py36he5b5b09_0
+  - six=1.11.0=py36h0e22d5e_1
+  - sqlite=3.21.0=h3efe00b_0
+  - terminado=0.8.1=py36_0
+  - testpath=0.3.1=py36h625a49b_0
+  - tk=8.6.7=h35a86e2_3
   - tornado=4.5.3=py36_0
-  - traitlets=4.3.2=py36h096827d_0
-  - vc=14=h0510ff6_3
-  - vs2015_runtime=14.0.25420=0
-  - wcwidth=0.1.7=py36h3d5aa90_0
-  - webencodings=0.5.1=py36h67c50ae_1
-  - wheel=0.30.0=py36h6c3ec14_1
-  - wincertstore=0.2=py36h7fe50ca_0
-  - zlib=1.2.11=h8395fce_2
+  - traitlets=4.3.2=py36h65bd3ce_0
+  - wcwidth=0.1.7=py36h8c6ec74_0
+  - webencodings=0.5.1=py36h3b9701d_1
+  - wheel=0.30.0=py36h5eb2c71_1
+  - xz=5.2.3=h0278029_2
+  - zeromq=4.2.2=ha360ad0_2
+  - zlib=1.2.11=hf3cbc9b_2
   - pip:
     - matlab-kernel==0.15.0
     - matlabengineforpython==R2017b
     - metakernel==0.20.14
-    - pexpect==4.3.1
-    - ptyprocess==0.5.2
-prefix: C:\Users\Chris\Anaconda3\envs\EG-247
+prefix: /Users/eechris/anaconda3/envs/eg-247
 
