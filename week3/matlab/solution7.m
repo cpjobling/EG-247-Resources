@@ -13,14 +13,17 @@ simplify(den)
 % 
 % Result is: 100*s*((7555786372591433*s)/302231454903657293676544 + 1/20000) + 5
 %%
-% Simplify coefficient of s^2
-a = 100*7555786372591433/302231454903657293676544
-% Simplify coefficient of s
-b = 100/20000
-%
-denG = [a, b, 5];
+% Simplify coefficient of s in denominator
+format long
+denG = sym2poly(ans)
+%%
 numG = -1;
 %% Plot
+% 
+% For convenience, define coefficients $a$ and $b$:
+a = denG(1);
+b = denG(2);
+%%
 w = 1:10:10000;
 %
 % $$G(j\omega) = \frac{-1}{a\omega^2 - jb\omega + 5}$$
