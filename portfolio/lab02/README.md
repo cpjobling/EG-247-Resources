@@ -1,20 +1,33 @@
 # Lab 2: Elementary Signals
 
+## Aims
+
+The purposes of this laboratory are to
+
+1. Explore the properties of the unit step and Dirac delta functions using the analysis and plotting tools  provided by Matlab.
+1. Synthesise a generalised signal in Simulink and plot it and its derivative.
+
+This will introduce the symbolic toolbox and the `heaviside`, `delta` and `ezplot` functions provided by MATLAB  and the signal design block, multiplexor, scope and derivative blocks provided by Simulink for the simulation of continuous time signals and systems.
+
+We will also demonstrate the Live Script feature provided by Matlab that will be useful for recording lab results for this module.
+
 These examples have been adapted from Chapter 1 of
 [Stephen Karris, Signals and Systems : With MATLAB
 Computing and Simulink Modeling (5th Edition)](http://site.ebrary.com/lib/swansea/docDetail.action?docID=10547416)
 
+## Set up
+
+Navigate to the file [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m) in this repository. Right-click on the `Raw` button and choose `Save link as` to save a copy of `elem_sigs.m` into your lab folder. Open the file from the file browser in MATLAB as a Live Script file.
+
+Here is a [short video](https://youtu.be/xwrZAE0D6cY), illustrating how to do this.
+
 ## Lab Exercise 3
 
-In this exercise we will explore the use of the ``heaviside`` and ``dirac`` functions and how they can be used in the synthesis of elementary signals.
-
-File: [elem_sigs.m](https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab02/elem_sigs.m)
-
-For Lab Exercise 6 you are required to complete parts 1 to 2 of the provided script (1 mark).
+For Lab Exercise 3 you are required to complete parts 1 to 2 of the provided script (1 mark).
 
 ## Lab Exercise 4
 
-For Lab Exercise 7 you are required to complete parts 3 to 5 of the provided script (2 marks).
+For Lab Exercise 4 you are required to complete parts 3 to 5 of the provided script (2 marks).
 
 ## Mini Project 2
 
@@ -22,11 +35,21 @@ Work through the procedures given between pages 1-18 and 1-19 of the text book t
 
 ## What to Hand In
 
-You should add your modified version of the file ``elem_signals.m`` in folder ``lab02`` of your EG-247 portfolio. Marks can be claimed according to how many of parts 1-5 in the script have been completed and for the Simulink model of the piecewise linear signal ``signal.slx``.
+1. For the lab exercises, you should attach your completed version of the Live Script file `elem_signals.mlx`.
+1. For the Miniproject the Simulink model of the piecewise linear signal `signal.slx`.
+
+You should attach the files you wish to claim for to the Lab 2 page your EG-247 portfolio in OneNote.
+
+## Claim
+
+Up to three marks can be claimed according to how many of parts 1-5 in the lab exercises have been completed.
+The mini project is worth an additional 2 marks.
+
+The deadline for claims and submission is **Midnight, 26th February**.
 
 See [Assessment and Feedback: Labwork Assessment](https://docs.google.com/spreadsheets/d/1zBK_d1xMYvOQXlUZyGBjb9WrfZukVC6MbsXH-zSES8k/edit?usp=sharing) for a detailed marking scheme.
 
-You will find it easiest to audit your completion of Exercise 6 by publishing the result by opening ``elem_signals.m`` as a Live Script file. If you do this, please submit the Live Script File.
+
 
 
 ## Doing More
