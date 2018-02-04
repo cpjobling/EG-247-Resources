@@ -2,11 +2,12 @@
 %
 % (To read the Mathematics in the comments, *publish* this script.)
 % 
-% Recast Example 7 as a Simulink problem, but for simplicity use parameters 
+% Recast Example 7 as a MATLAB problem using the LTI Transfer Function block.
+% For simplicity use parameters 
 % $R_1 = R_2 = R_3 = 1\; \Omega$, and $C_1 = C_2 = 1\;\mathrm{F}$. 
 %
-% Calculate the step response using transfer functions and check with Simulink.
-%
+% Calculate the step response using LTI functions and check with Simulink.
+%%
 % From a previous analysis the transfer function is:
 %
 % $$G(s) = \frac{V_\mathrm{out}}{V_\mathrm{in}} = \frac{-1}{R_1\left[(1/R_1 + 1/R_2 + 1/R_3 + sC_1)(sR_3C_2) + 1/R_2\right]}$$
