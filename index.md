@@ -11,16 +11,13 @@
 1. [The Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb) ([Notes PDF](week2/inverse_laplace.pdf), [Slides](week2/inverse_laplace.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)
 
-<!--
-<h4>Week 3</h4>
-<ul>
 
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb">Circuit Analysis with the Laplace Transform</a> (<a href="week3/circuit_analysis.pdf">Notes PDF</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_functions.ipynb">Transfer Functions of Circuits</a> (<a href="week3/transfer_functions.pdf">Notes PDF</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab03" target="_blank">Lab 3: Laplace and Inverse Laplace Transforms</a> (on GitHub)</li>
-</ul>
+#### Week 3
+ 1. [Circuit Analysis with the Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb) ([Notes PDF](week3/circuit_analysis.pdf), [Slides](week3/circuit_analysis.slides.html))
+1. [Transfer Functions of Circuits](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_functions.ipynb) ([Notes PDF](week3/transfer_functions.pdf), [Slides](week3/transfer_functions.slides.html))
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab03" target="_blank">Lab 3: Laplace and Inverse Laplace Transforms</a> (on GitHub)
+
+<!--
 <h4>Week 4</h4>
 <ul>
 <li>
