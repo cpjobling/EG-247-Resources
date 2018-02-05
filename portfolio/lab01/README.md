@@ -79,8 +79,8 @@ Comment on your observations.
 
 The command to reverse the order of the samples in a matrix is `flipud()`. Experiment with this command.
 
-Create a script called `ex01.m` that records your experiments in this part of the lab. Include your thoughts
-in the comments.
+Create a Live Script called `ex01.mlx` that records your experiments in this part of the lab. Include your thoughts
+in text elements.
 
 ## Lab Exercise 2:  Composing Music in Matlab (2 marks)
 
