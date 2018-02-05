@@ -139,7 +139,7 @@ First we are going to code a sine wave of amplitude A = 1, at an audio frequency
 ```matlab
 Fs = 8000;
 Ts = 1/Fs;
-Eflat = sin(2*pi*(220 * (2 + 6/12))*[0:Ts:0.125]);
+Eflat = sin(2*pi*220 * 2^(6/12) .*[0:Ts:0.125]);
 sound(Eflat);
 ```
 
