@@ -30,6 +30,25 @@ The web link above points to a source of sound samples. Choose one of these or f
 
 ## Lab Exercise 1: Playing With Sound (2 marks)
 
+Before starting this lab, create a new Livescript File and save it as `ex01`.
+
+The LiveScript will open with a code cell highlighted.
+
+Copy the first instruction below into the LiveScript code cell.
+
+Press the **run section** button to execute the code.
+
+Using section breaks between code cells.
+
+Use **run section** or **run section and advance** buttons to step through the code.
+
+Allow each sound sample played in a section to complete before exercuting the next section that plays a sound sample.
+
+Use the **text** button to add comentary and your observations to your Live Script.
+
+Use the **text style** features to add a title to your Live Script and section headings as appropriate.
+
+
 ### Part 1: Read and Store an Audio File in Matlab
 
 To read and store an audio file, you can use one of two different commands. The following stores the file into variable x.
@@ -79,8 +98,7 @@ Comment on your observations.
 
 The command to reverse the order of the samples in a matrix is `flipud()`. Experiment with this command.
 
-Create a Live Script called `ex01.mlx` that records your experiments in this part of the lab. Include your thoughts
-in text elements.
+Record your experiments in this part of the lab by saving your Live Script file. Include your thoughts and observations as text elements.
 
 ## Lab Exercise 2:  Composing Music in Matlab (2 marks)
 
