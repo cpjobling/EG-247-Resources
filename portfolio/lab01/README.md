@@ -192,11 +192,14 @@ C D E F G A B C
 
 The key of C is simple because there are no sharps or flats.
 
-To complete this mini-project you will have to define the frequencies for A, B, and the second occurrence of C since they do not appear in Table 1 in Lab Exercise 2.
+To complete this mini-project you will have to define the frequencies for A, B, and the second occurrence of C since they do not appear in Table 1 in Lab Exercise 2. 
 
-* Q: What are the frequencies of the notes A, B, and the second occurrence of C?
+Please answer these questions.
 
-Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. (**Note**: Backwards does not mean flipped!). Attach your m-file to the lab portfolio before claiming your marks.
+* Q1: What are the frequencies of the notes A, B, and the second occurrence of C?
+* Q2: If I wanted to sythesize the sound of a piano playing this scale, what additional information would I need to add to a note vector? Provide links to any resources you find that help you to answer this question.
+
+Save your scale in an m-file called `scale.m`. The m-file should play the scale and then ALSO, PLAY IT BACKWARDS. (**Note**: Backwards does not mean flipped!). Attach your m-file to the lab portfolio and your answers tothe 2 questions above before claiming your marks.
 
 
 ## What to hand in
