@@ -31,7 +31,12 @@ For Lab Exercise 4 you are required to complete parts 3 to 5 of the provided scr
 
 ## Mini Project 2
 
-Work through the procedures given between pages 1-18 and 1-19 of the text book to construct the piecewise signal generator first shown in Figure 1.21 inside Simulink. Connect the signal up a derivative block and scope as shown in Figure 1.24 and simulate the system. Verify the result illustrated in Figures 1.23, 1.25 and 1.26. Store the Simulink model as ``signal.slx`` in your portfolio for later assessment. (2 marks)
+Work through the procedures given between pages 1-18 and 1-19 of the text book to construct the piecewise signal generator first shown in Figure 1.21 inside Simulink. 
+
+![Signal Synthesis Example](fig21.png)
+Signal to be synthesised (Reproduction of Fig 2.1 of Karris)
+
+Connect the signal up a derivative block and scope as shown in Figure 1.24 and simulate the system. Verify the result illustrated in Figures 1.23, 1.25 and 1.26. Store the Simulink model as ``signal.slx`` in your portfolio for later assessment. (2 marks)
 
 ## What to Hand In
 
