@@ -39,7 +39,7 @@ Work through the procedures given between pages 1-18 and 1-19 of the text book t
 
 Connect the signal up a derivative block and scope as shown in Figure 1.24 and simulate the system. Verify the result illustrated in Figures 1.23, 1.25 and 1.26. Store the Simulink model as ``signal.slx`` in your portfolio for later assessment. 
 
-**Note**: you will need to adjust the Simulation parameters in Simulink in orer to allow the simulation to run from atime earlier than $-1$ seconds.
+**Note**: you will need to adjust the Simulation parameters in Simulink in orer to allow the simulation to run from a time earlier than -1 seconds.
 
 (2 marks)
 
