@@ -25,7 +25,7 @@ ezplot(ans,[-1,1]),grid
 % If we are only interested in the value of the function at a particular
 % instant of time we can pass a number as the argument:
 [heaviside(-1),heaviside(0),heaviside(1)]
-% Note that |heaviside(0)| returns the value $1/2$ which is not
+%% Note that |heaviside(0)| returns the value $1/2$ which is not
 % mathematically correct. The unit step function $u_o(t)$ is undefined at
 % $t=0$.
 %%
