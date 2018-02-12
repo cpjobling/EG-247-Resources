@@ -7,7 +7,7 @@ The purposes of this laboratory are to
 1. Explore the properties of the unit step and Dirac delta functions using the analysis and plotting tools  provided by Matlab.
 1. Synthesise a generalised signal in Simulink and plot it and its derivative.
 
-This will introduce the symbolic toolbox and the `heaviside`, `delta` and `ezplot` functions provided by MATLAB  and the signal design block, multiplexor, scope and derivative blocks provided by Simulink for the simulation of continuous time signals and systems.
+This will introduce the symbolic toolbox and the `heaviside`, `delta` and `ezplot` functions provided by MATLAB  and the *signal design block*, *multiplexer*, *scope* and *derivative* blocks provided by Simulink for the simulation of continuous time signals and systems.
 
 We will also demonstrate the Live Script feature provided by Matlab that will be useful for recording lab results for this module.
 
@@ -31,7 +31,7 @@ For Lab Exercise 4 you are required to complete parts 3 to 5 of the provided scr
 
 ## Mini Project 2
 
-Work through the procedures given between pages 1-18 and 1-19 of the text book to construct the piecewise signal generator first shown in Figure 1.21 inside Simulink. 
+Work through the procedures given between [pages 1-18 and 1-19 of the text book](https://ebookcentral.proquest.com/lib/swansea-ebooks/reader.action?ppg=34&docID=3384197&tm=1518436444996) to construct the piecewise signal generator first shown in [Figure 1.21](https://ebookcentral.proquest.com/lib/swansea-ebooks/reader.action?ppg=31&docID=3384197&tm=1518436492450) inside Simulink. 
 
 ![Signal Synthesis Example](fig21.PNG)
 
