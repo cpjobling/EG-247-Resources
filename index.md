@@ -23,20 +23,18 @@
 #### Week 4
 
 1. [The Impulse Response and Convolution](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb) ([Notes PDF](week4/convolution.pdf), [Slides](week4/convolution.slides.html))
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 04: Laplace Transforms and Transfer Functions for Circuit Analysis</a> (on GitHub)
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 4: Laplace Transforms and Transfer Functions for Circuit Analysis</a> (on GitHub)
+
+#### Week 5
+
+1. Reading: [The Trigonometric Fourier Series (Revision)](http://nbviewer.ipython.org/github.com/cpjobling/EG-247-Resources/blob/master/fourier_series/trig_fseries.ipynb)
+([Notes PDF](fourier_series/trig_fseries.pdf)).
+1. [Exponential Fourier Series (Part 1)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs1.ipynb)
+([Notes PDF](week5/exp_fs1.pdf),[Slides](week5/exp_fs2.slides.html)).
+1. [Exponential Fourier Series (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb)  ([Notes PDF](week5/exp_fs2.pdf),[Slides](week5/exp_fs2.slides.html)).
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab05" target="_blank">Lab 5: Convolution.</a> (on GitHub)</li>
 
 <!--
-<h4>Week 5</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/fourier_series/trig_fseries.ipynb">The Trigonometric Fourier Series (Revision)</a> (<a href="fourier_series/trig_fseries.pdf">Notes PDF</a>).
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs1.ipynb">Exponential Fourier Series</a>
-(<a href="week5/exp_fs1.pdf">Notes PDF</a>).</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb">Exponential Fourier Series (Part 2)</a> (<a href="week5/exp_fs2.pdf">Notes PDF</a>).</li>
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab05" target="_blank">Lab 5: Convolution.</a> (on GitHub)</li>
-</ul>
 <h4>Week 6</h4>
 <ul>
 <li>
