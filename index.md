@@ -1,23 +1,27 @@
 ### The Activities
 
 #### Week 1
+
 1. [Introduction](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/introduction/Introduction.ipynb) ([Notes PDF](introduction/Introduction.pdf), [Slides](introduction/Introduction.slides.html)).
 1. [Elementary Signals](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week1/elementary_signals.ipynb) ([Notes PDF](week1/elementary_signals.pdf), [Slides](week1/elementary_signals.slides.html)).
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab01" target="_blank">Lab 1: Sounds and Sampling</a> (on GitHub).
 1. [Homework 1](week1/Homework%201.pdf).
 
 #### Week 2
+
 1. [The Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/laplace.ipynb) ([Notes PDF](week2/laplace.pdf), [Slides](week2/laplace.slides.html))
 1. [The Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week2/inverse_laplace.ipynb) ([Notes PDF](week2/inverse_laplace.pdf), [Slides](week2/inverse_laplace.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)
 
 
 #### Week 3
+
  1. [Circuit Analysis with the Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb) ([Notes PDF](week3/circuit_analysis.pdf), [Slides](week3/circuit_analysis.slides.html))
 1. [Transfer Functions of Circuits](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_functions.ipynb) ([Notes PDF](week3/transfer_functions.pdf), [Slides](week3/transfer_functions.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab03" target="_blank">Lab 3: Laplace and Inverse Laplace Transforms</a> (on GitHub)
 
 #### Week 4
+
 1. [The Impulse Response and Convolution](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb) ([Notes PDF](week4/convolution.pdf), [Slides](week4/convolution.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 04: Laplace Transforms and Transfer Functions for Circuit Analysis</a> (on GitHub)
 
