@@ -32,17 +32,15 @@
 1. [Exponential Fourier Series (Part 1)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs1.ipynb)
 ([Notes PDF](week5/exp_fs1.pdf),[Slides](week5/exp_fs2.slides.html)).
 1. [Exponential Fourier Series (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb)  ([Notes PDF](week5/exp_fs2.pdf),[Slides](week5/exp_fs2.slides.html)).
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab05" target="_blank">Lab 5: Convolution.</a> (on GitHub)</li>
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab05" target="_blank">Lab 5: Convolution</a> (on GitHub)</li>
+
+#### Week 6
+
+1. [The Fourier Transform (Part 1)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft1.ipynb) ([Notes PDF](week6/ft1.pdf), [Slides](week6/ft1.slides.html)),
+1. [The Fourier Transform (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb) ([Nodes PDF](week6/ft2.pdf), [Slides](week6/ft2.slides.html)),
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab06" target="_blank">Lab 6: Fourier Series</a> (on GitHub)</li>
 
 <!--
-<h4>Week 6</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft1.ipynb">The Fourier Transform (Part 1)</a> (<a href="week6/ft1.pdf">Notes PDF</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb">The Fourier Transform (Part 2)</a> (<a href="week6/ft2.pdf">Nodes PDF</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Fourier Series</a> (on GitHub)</li>
-</ul>
 <h4>Week 7</h4>
 <ul>
 <li>
