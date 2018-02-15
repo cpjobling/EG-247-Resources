@@ -14,7 +14,7 @@
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab02" target="_blank">Lab 2: Elementary Signals</a> (on GitHub)
 
 
-#### Week 3
+#### Week 3
 
  1. [Circuit Analysis with the Laplace Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/circuit_analysis.ipynb) ([Notes PDF](week3/circuit_analysis.pdf), [Slides](week3/circuit_analysis.slides.html))
 1. [Transfer Functions of Circuits](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week3/transfer_functions.ipynb) ([Notes PDF](week3/transfer_functions.pdf), [Slides](week3/transfer_functions.slides.html))
