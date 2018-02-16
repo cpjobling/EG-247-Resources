@@ -1,12 +1,12 @@
 #!/bin/bash
 
-DOC=ft1
+DOC=ft3
 
 echo Building $DOC.slides.html
 jupyter nbconvert $DOC.ipynb --to slides --reveal-prefix "http://cdn.jsdelivr.net/reveal.js/2.6.2"
 
 
-DOC=ft2
+DOC=ft4
 
 echo Building $DOC.slides.html
 jupyter nbconvert $DOC.ipynb --to slides --reveal-prefix "http://cdn.jsdelivr.net/reveal.js/2.6.2"
