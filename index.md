@@ -40,13 +40,12 @@
 1. [The Fourier Transform (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb) ([Nodes PDF](week6/ft2.pdf), [Slides](week6/ft2.slides.html)),
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab06" target="_blank">Lab 6: Fourier Series</a> (on GitHub)</li>
 
-#### Week 7</h4>
+#### Week 7
 
-1. [Fourier Transforms for Circuit and LTI Systems Analysis](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft3.ipynb) ([Notes PDF](week8/ft3.pdf), [Slides](week8/ft3.slides.html))
-1. [Introduction to Filters](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/ft4.ipynb) ([Notes PDF](week8/ft4.pdf), [Slides](week8/ft4.slides.pdf))
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab7" target="_blank">Lab 7: Fourier Series</a> (on GitHub)
+1. [Fourier Transforms for Circuit and LTI Systems Analysis](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft3.ipynb) ([Notes PDF](week8/ft3.pdf), [Slides](week8/ft3.slides.html))
+1. [Introduction to Filters](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft4.ipynb) ([Notes PDF](week8/ft4.pdf), [Slides](week8/ft4.slides.pdf))
+<!-- 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab7" target="_blank">Lab 7: Fourier Series</a> (on GitHub)
 
-<!--
 <h4>Week 9</h4>
 <ul>
 <li>
