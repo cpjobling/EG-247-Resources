@@ -11992,7 +11992,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12237,12 +12237,12 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h4><p>Use the result of Example 1 to compute the exponential Fourier series of the impulse train $\delta(t\pm 2\pi k)$ shown below</p>
+<h3 id="Example-4">Example 4<a class="anchor-link" href="#Example-4">&#182;</a></h3><p>Use the result of Example 1 to compute the exponential Fourier series of the impulse train $\delta(t\pm 2\pi k)$ shown below</p>
 <p><img src="pictures/impulse_train.png"></p>
 
 </div>
@@ -12389,8 +12389,8 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Parseval's-Theorem">Parseval's Theorem<a class="anchor-link" href="#Parseval's-Theorem">&#182;</a></h3><p><a href="http://en.wikipedia.org/wiki/Parseval&#39;s_theorem">Parseval's Theorem</a> states that the total average power of a a periodic signal $f(t)$ is equal to the sum of the average powers of all its harmonic components.</p>
-<p>The power in the $k$th harmonic $C_ke^{jk\omega t}$ is given by</p>
-<p>$$P_k = \frac{1}{T}\int_0^T\left|C_ke^{jk\omega t}\right|^2\,dt = \frac{1}{T}\int_0^T\left|C_k\right|^2\,dt=\left|C_k\right|^2$$</p>
+<p>The power in the $k$th harmonic $C_ke^{jk\Omega_0 t}$ is given by</p>
+<p>$$P_k = \frac{1}{T}\int_0^T\left|C_ke^{jk\Omega_0 t}\right|^2\,dt = \frac{1}{T}\int_0^T\left|C_k\right|^2\,dt=\left|C_k\right|^2$$</p>
 <p>Since $P_k = P_{-k}$, the total power of the $k$th harmomic is $2P_k$.</p>
 
 </div>
@@ -12415,7 +12415,7 @@ a.anchor-link {
 
 </div>
 </div>
-</div></section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12452,7 +12452,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12483,14 +12483,33 @@ the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2$
 </div>
 </div>
 </div>
-</aside></section><section>
+</aside></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Total-Harmonic-Distortion">Total Harmonic Distortion<a class="anchor-link" href="#Total-Harmonic-Distortion">&#182;</a></h3><p>Suppose that a signal that is supposed to be a pure sine wave of amplitude A is distorted as shown below</p>
 <p><img src="pictures/thd.png"></p>
+
+</div>
+</div>
+</div><aside class="notes">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>This can occur in the line voltages of an industrial plant that makes heavy use of nonlineear loads such as electric arc furnaces, solid state relays, motor drives, etc (E.g. Tata Steel!)</p>
+
+</div>
+</div>
+</div>
+</aside></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="THD-Defined">THD Defined<a class="anchor-link" href="#THD-Defined">&#182;</a></h3><p>Clearly, some of the harmonics for $k\ne \pm 1$ are nonzero. One way to characterie the distortion is to compute the ratio of average power in all the harmonics that "should not be present", that is for $k &gt; 1$, to the total average power of the distorted sine wave. The square-root of this ratio is called the <em>total harmonic distortion</em> (THD) of the signal.</p>
 
 </div>
 </div>
@@ -12499,7 +12518,6 @@ the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="THD-Defined">THD Defined<a class="anchor-link" href="#THD-Defined">&#182;</a></h3><p>Clearly, some of the harmonics for $k\ne \pm 1$ are nonzero. One way to characterie the distortion is to compute the ratio of average power in all the harmonics that "should not be present", that is for $k &gt; 1$, to the total average power of the distorted sine wave. The square-root of this ratio is called the <em>total harmonic distortion</em> (THD) of the signal.</p>
 <p>If the signal is real and based on a sine wave (that is <em>odd</em>), then $C_k=0$ and</p>
 <p>$$f_{\mathrm{RMS}}=\sqrt{\sum_{k=1}^{\infty}2|C_k|^2}$$</p>
 <p>and we can define the THD as the ratio of the RMS value for all the harmonics for $K&gt;1$ (the distortion) to the RMS of the fundamental which is $\sqrt{2\left|C_1\right|^2}:$</p>
@@ -12522,7 +12540,7 @@ the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2$
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Steady-State-Response-of-an-LTI-System-to-a-Periodic-Signal">Steady-State Response of an LTI System to a Periodic Signal<a class="anchor-link" href="#Steady-State-Response-of-an-LTI-System-to-a-Periodic-Signal">&#182;</a></h2><p>The response of an LTI system with impulse response $h(t)$ to a complex exponential signal $e^{st}$ is the same complex exponential multiplied by a complex gain: $y(t) = H(s)e^{st}$, where:</p>
-<p>$$H(s)=\int_{-\infty}^{\infty}h(\tau)e^{-st}\,d\tau.$$</p>
+<p>$$H(s)=\int_{-\infty}^{\infty}h(\tau)e^{-s\tau}\,d\tau.$$</p>
 
 </div>
 </div>
@@ -12581,7 +12599,7 @@ the power spectrum is a real even sequence as $|C_{-k}|^2 = |C_k^*|^2 = |C_k|^2$
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Filtering">Filtering<a class="anchor-link" href="#Filtering">&#182;</a></h3><p>A consequence of the previous result is that we can design a system that has a desirable frequency spectrum $H(jk\omega_0)$ that retains certain frequencies and cuts off others.</p>
+<h3 id="Filtering">Filtering<a class="anchor-link" href="#Filtering">&#182;</a></h3><p>A consequence of the previous result is that we can design a system that has a desirable frequency spectrum $H(jk\Omega_0)$ that retains certain frequencies and cuts off others.</p>
 <p>We will return to this idea later.</p>
 
 </div>
