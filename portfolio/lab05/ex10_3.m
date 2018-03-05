@@ -1,4 +1,4 @@
-%% Lab Exercise 11 - Convolution
+%% Lab Exercise 10 - Convolution
 % Plot convolution of a piecewise linear function.
 %
 % Prepared for EG-247 by Chris P. Jobling
