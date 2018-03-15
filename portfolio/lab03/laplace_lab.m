@@ -98,13 +98,15 @@ laplace(exp(-a*t)*u0(t))
 % Calculate the Laplace Transform of the waveform.
 %% Problem 6
 %
-% Give the laplace transform of the waveform in Example 5 assuming that it
+% Give the laplace transform of the waveform in Problem 5 assuming that it
 % repeats every 3 seconds.
 %% Problem 7
 %
 % Use MATLAB to plot a fully rectified sinusoidal signal |abs(sin(omega*t))| over
 % 3 full cycles. Find the Laplace Transform of this signal.
 %% Homework
+%
+% (Not assessed.)
 %
 % Chose one example from each of the End of Chapter Exercises 2.8 Q1-Q7
 % and validate the solution using MATLAB.
