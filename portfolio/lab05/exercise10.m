@@ -1,4 +1,4 @@
-%% Lab Exercise 11 - Convolution
+%% Lab Exercise 10 - Convolution
 % Plot convolution of a piecewise linear function.
 %
 % Prepared for EG-247 by Chris P. Jobling
@@ -13,7 +13,7 @@ u(t) = 1;
 conv1 = int(u(tau)*h(t - tau),tau,0,t)
 %% Second segment
 % Integration from t - 1 to 1:
-conv2 = int(u(tau)*(tau - 1),tau,t-1,1)
+conv2 = int(u(tau)*h(t - tau),tau,t-1,1)
 %% Plot
 % note we use the results of the computations as equations for the plots.
 t1 = linspace(0,1,100);

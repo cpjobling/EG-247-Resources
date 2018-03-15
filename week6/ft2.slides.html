@@ -12124,7 +12124,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">t</span><span class="p">;</span>
@@ -12132,6 +12132,28 @@ a.anchor-link {
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 
+ans =
+ 
+1
+ 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12167,12 +12189,12 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">t</span><span class="p">;</span>
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">t</span> <span class="n">omega</span><span class="p">;</span>
 <span class="n">A</span> <span class="p">=</span> <span class="n">sym</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">fourier</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="n">fourier</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">omega</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12191,6 +12213,8 @@ a.anchor-link {
 <div class="output_subarea output_stream output_stdout output_text">
 <pre> 
 ans =
+ 
+2*pi*dirac(omega)
  
 </pre>
 </div>
@@ -12273,7 +12297,7 @@ $$\mathcal{F}\left\{u_0(t))\right\} = \pi\delta(\omega)+\frac{1}{j\omega}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Clue">Clue<a class="anchor-link" href="#Clue">&#182;</a></h3><p>Define</p>
-<p>$$u_0(t) = 2\operatorname{sgn} x - 1$$</p>
+<p>$$\operatorname{sgn} t = 2 u_0(t) - 1$$</p>
 <p><img src="pictures/u_as_sign.png"></p>
 <p><em>Does that help?</em></p>
 

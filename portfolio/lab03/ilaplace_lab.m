@@ -131,6 +131,9 @@ Ds = conv(d1,d2); % Polynomial multiplication: gives expanded D(s)
 %
 % Use the |residue| function to validate the result.
 %% Homework
+%
+% (Note assessed.)
+%
 % Use the tools developed in this lab to solve and plot the Inverse Laplace
 % Transforms for your own selection of problems from each of Questions 1 to 
 % Question 5 in the End of Chapter Exercises (Section 3.6 in the Text Book)
