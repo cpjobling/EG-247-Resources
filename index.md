@@ -23,7 +23,7 @@
 #### Week 4
 
 1. [The Impulse Response and Convolution](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week4/convolution.ipynb) ([Notes PDF](week4/convolution.pdf), [Slides](week4/convolution.slides.html))
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab04" target="_blank">Lab 4: Laplace Transforms and Transfer Functions for Circuit Analysis</a> (on GitHub)
+1. <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab04/README.ipynb" target="_blank">Lab 4: Laplace Transforms and Transfer Functions for Circuit Analysis</a> (on GitHub)
 
 #### Week 5
 
@@ -32,27 +32,36 @@
 1. [Exponential Fourier Series (Part 1)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs1.ipynb)
 ([Notes PDF](week5/exp_fs1.pdf),[Slides](week5/exp_fs2.slides.html)).
 1. [Exponential Fourier Series (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week5/exp_fs2.ipynb)  ([Notes PDF](week5/exp_fs2.pdf),[Slides](week5/exp_fs2.slides.html)).
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab05" target="_blank">Lab 5: Convolution</a> (on GitHub)</li>
+1. <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab05/README.ipynb" target="_blank">Lab 5: Convolution</a> (on GitHub)
 
 #### Week 6
 
 1. [The Fourier Transform (Part 1)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft1.ipynb) ([Notes PDF](week6/ft1.pdf), [Slides](week6/ft1.slides.html)),
 1. [The Fourier Transform (Part 2)](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week6/ft2.ipynb) ([Nodes PDF](week6/ft2.pdf), [Slides](week6/ft2.slides.html)),
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab06" target="_blank">Lab 6: Fourier Series</a> (on GitHub)</li>
+1. <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/lab06/README.ipynb" target="_blank">Lab 6: Fourier Series</a> (on GitHub)
 
 #### Week 7
 
 1. [Fourier Transforms for Circuit and LTI Systems Analysis](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft3.ipynb) ([Notes PDF](week8/ft3.pdf), [Slides](week8/ft3.slides.html))
 1. [Introduction to Filters](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft4.ipynb) ([Notes PDF](week8/ft4.pdf), [Slides](week8/ft4.slides.pdf))
-<!-- 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab7" target="_blank">Lab 7: Fourier Series</a> (on GitHub)
+1. <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/project/README.ipynb" target="_blank">Project - Design and Implementation of a 10-band Graphic Equaliser</a> (on GitHub)
 
+<!--
+<h4>Week 8</h4>
+<ul>
+<li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>)</li>
+<li>
+<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>)</li>
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
+</ul>
 <h4>Week 9</h4>
 <ul>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>)</li>
 <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>)</li>
-<li><a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab8" target="_blank">Lab 8: Filters</a> (on GitHub)</li>
+1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
 </ul>
 <h4>Week 10</h4>
 <ul>
