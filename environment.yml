@@ -3,69 +3,112 @@ channels:
   - damianavila82
   - defaults
 dependencies:
-  - rise=5.1.0=py36_0
+  - rise=5.2.0=py36_0
+  - alabaster=0.7.10=py36h174008c_0
   - appnope=0.1.0=py36hf537a9a_0
-  - bleach=2.1.2=py36_0
+  - asn1crypto=0.24.0=py36_0
+  - attrs=17.4.0=py36_0
+  - babel=2.5.3=py36_0
+  - bleach=2.1.3=py36_0
   - ca-certificates=2017.08.26=ha1e5d58_0
   - certifi=2018.1.18=py36_0
+  - cffi=1.11.5=py36h342bebf_0
+  - chardet=3.0.4=py36h96c241c_1
+  - cryptography=2.1.4=py36h842514c_0
+  - cycler=0.10.0=py36hfc81398_0
   - decorator=4.2.1=py36_0
+  - docutils=0.14=py36hbfde631_0
   - entrypoints=0.2.3=py36hd81d71f_2
+  - fastcache=1.0.2=py36h1de35cc_2
+  - freetype=2.8=h12048fb_1
+  - gmp=6.1.2=hb37e062_1
+  - gmpy2=2.0.8=py36hf9c35bd_2
   - html5lib=1.0.1=py36h2f9c1c0_0
-  - ipykernel=4.8.0=py36_0
+  - idna=2.6=py36h8628d0a_1
+  - imagesize=1.0.0=py36_0
+  - intel-openmp=2018.0.0=8
+  - ipykernel=4.8.2=py36_0
   - ipython=6.2.1=py36h3dda519_1
   - ipython_genutils=0.2.0=py36h241746c_0
-  - jedi=0.11.1=py36_0
+  - jedi=0.11.1=py36_1
   - jinja2=2.10=py36hd36f9c5_0
   - jsonschema=2.6.0=py36hb385e00_0
-  - jupyter_client=5.2.2=py36_0
+  - jupyter_client=5.2.3=py36_0
   - jupyter_core=4.4.0=py36h79cf704_0
-  - jupyterlab=0.31.2=py36_0
-  - jupyterlab_launcher=0.10.2=py36_0
+  - jupyterlab=0.31.12=py36_0
+  - jupyterlab_launcher=0.10.5=py36_0
+  - kiwisolver=1.0.1=py36h792292d_0
   - libcxx=4.0.1=h579ed51_0
   - libcxxabi=4.0.1=hebd6815_0
   - libedit=3.1=hb4e282d_0
   - libffi=3.2.1=h475c297_4
+  - libgfortran=3.0.1=h93005f0_2
+  - libpng=1.6.34=he12f830_0
   - libsodium=1.0.15=hd9e47c5_0
   - markupsafe=1.0=py36h3a1e703_1
+  - matplotlib=2.2.2=py36ha7267d0_0
   - mistune=0.8.3=py36_0
+  - mkl=2018.0.2=1
+  - mpc=1.0.3=h7a72875_5
+  - mpfr=3.1.5=h711e7fd_2
+  - mpmath=1.0.0=py36hf1b8295_2
   - nbconvert=5.3.1=py36h810822e_0
   - nbformat=4.4.0=py36h827af21_0
   - ncurses=6.0=hd04f020_2
-  - notebook=5.3.1=py36_0
+  - notebook=5.4.1=py36_0
+  - numpy=1.14.2=py36ha9ae307_0
+  - numpydoc=0.7.0=py36he54d08e_0
   - openssl=1.0.2n=hdbc3d79_0
+  - packaging=17.1=py36_0
   - pandoc=1.19.2.1=ha5e8f32_1
   - pandocfilters=1.4.2=py36h3b0b094_1
   - parso=0.1.1=py36hc90e01c_0
-  - pexpect=4.3.1=py36_0
+  - pexpect=4.4.0=py36_0
   - pickleshare=0.7.4=py36hf512f8e_0
-  - pip=9.0.1=py36h1555ced_4
+  - pip=9.0.1=py36_5
+  - pluggy=0.6.0=py36hb1d0581_0
   - prompt_toolkit=1.0.15=py36haeda067_0
   - ptyprocess=0.5.2=py36he6521c3_0
+  - py=1.5.2=py36ha69170d_0
+  - pycparser=2.18=py36h724b2fc_1
   - pygments=2.2.0=py36h240cd3f_0
-  - python=3.6.4=hc167b69_1
-  - python-dateutil=2.6.1=py36h86d2abb_1
+  - pyopenssl=17.5.0=py36h51e4350_0
+  - pyparsing=2.2.0=py36hb281f35_0
+  - pysocks=1.6.8=py36_0
+  - pytest=3.4.2=py36_0
+  - python=3.6.4=hc167b69_3
+  - python-dateutil=2.7.0=py36_0
   - python.app=2=py36h54569d5_7
-  - pyzmq=16.0.3=py36he48b5ad_0
+  - pytz=2018.3=py36_0
+  - pyzmq=17.0.0=py36h1de35cc_0
   - readline=7.0=hc1231fa_4
-  - send2trash=1.4.2=py36_0
-  - setuptools=38.4.0=py36_0
-  - simplegeneric=0.8.1=py36he5b5b09_0
+  - requests=2.18.4=py36h4516966_1
+  - scipy=1.0.0=py36h1de22e9_0
+  - send2trash=1.5.0=py36_0
+  - setuptools=38.5.1=py36_0
+  - simplegeneric=0.8.1=py36_2
   - six=1.11.0=py36h0e22d5e_1
+  - snowballstemmer=1.2.1=py36h6c7b616_0
+  - sphinx=1.7.1=py36_0
+  - sphinxcontrib=1.0=py36h9364dc8_1
+  - sphinxcontrib-websupport=1.0.1=py36h92f4a7a_1
   - sqlite=3.22.0=h3efe00b_0
-  - terminado=0.8.1=py36_0
+  - sympy=1.1.1=py36h7f3cf04_0
+  - terminado=0.8.1=py36_1
   - testpath=0.3.1=py36h625a49b_0
   - tk=8.6.7=h35a86e2_3
-  - tornado=4.5.3=py36_0
+  - tornado=5.0=py36_0
   - traitlets=4.3.2=py36h65bd3ce_0
+  - typing=3.6.4=py36_0
+  - urllib3=1.22=py36h68b9469_0
   - wcwidth=0.1.7=py36h8c6ec74_0
   - webencodings=0.5.1=py36h3b9701d_1
   - wheel=0.30.0=py36h5eb2c71_1
   - xz=5.2.3=h0278029_2
-  - zeromq=4.2.2=ha360ad0_2
+  - zeromq=4.2.3=h378b8a2_3
   - zlib=1.2.11=hf3cbc9b_2
   - pip:
     - matlab-kernel==0.15.0
-    - matlabengineforpython==R2017b
+    - matlabengineforpython==R2018a
     - metakernel==0.20.14
 prefix: /Users/eechris/anaconda3/envs/eg-247
-
