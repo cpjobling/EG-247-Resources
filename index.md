@@ -48,6 +48,7 @@
 
 
 #### Week 8
+
 1. [Sampling Theory](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/sampling.ipynb) ([Notes PDF](week8/sampling.pdf), [Slides](week8/sampling.slides.html))
 1. [The Z-Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/z-transform.ipynb) ([Notes PDF](week8/z-transform.pdf), [Slides](week8/z-transform.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
