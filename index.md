@@ -42,19 +42,17 @@
 
 #### Week 7
 
-1. [Fourier Transforms for Circuit and LTI Systems Analysis](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft3.ipynb) ([Notes PDF](week8/ft3.pdf), [Slides](week8/ft3.slides.html))
-1. [Introduction to Filters](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft4.ipynb) ([Notes PDF](week8/ft4.pdf), [Slides](week8/ft4.slides.pdf))
+1. [Fourier Transforms for Circuit and LTI Systems Analysis](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft3.ipynb) ([Notes PDF](week7/ft3.pdf), [Slides](week7/ft3.slides.html))
+1. [Introduction to Filters](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week7/ft4.ipynb) ([Notes PDF](week7/ft4.pdf), [Slides](week7/ft4.slides.pdf))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/blob/master/portfolio/project/README.ipynb" target="_blank">Project - Design and Implementation of a 10-band Graphic Equaliser</a> (on GitHub)
 
-<!--
-<h4>Week 8</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>)</li>
+
+#### Week 8
+1. [Sampling Theory](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/sampling.ipynb) ([Notes PDF](week8/sampling.pdf), [Slides](week8/sampling.slides.html))
+1. [The Z-Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/z-transform.ipynb) ([Notes PDF](week8/z-transform.pdf), [Slides](week8/z-transform.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
-</ul>
+
+<!--
 <h4>Week 9</h4>
 <ul>
 <li>
