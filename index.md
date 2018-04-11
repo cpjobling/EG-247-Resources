@@ -53,20 +53,16 @@
 1. [The Z-Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week8/z-transform.ipynb) ([Notes PDF](week8/z-transform.pdf), [Slides](week8/z-transform.slides.html))
 1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
 
+#### Week 9
+
+1. [The Inverse Z-Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/i-z-transform.ipynb) ([Notes PDF](week9/i-z-transform.pdf), [Slides](week9/i-z-transform.slides.html))
+1. [Discrete Time System Models](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/dt-models.ipynb) ([Notes PDF](week9/dt-models.pdf), [Slides](week9/dt-models.slides.html))
+
 <!--
-<h4>Week 9</h4>
-<ul>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/sampling.html">Sampling Theory</a> (<a href="week9/sampling.pdf">Notes PDF</a>)</li>
-<li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week9/z-transform.html">The Z-Transform</a> (<a href="week9/z-transform.pdf">Notes PDF</a>)</li>
-1. <a href="https://github.com/cpjobling/EG-247-Resources/tree/master/portfolio/lab07" target="_blank">Lab 7: Filters (Project Support)</a> (on GitHub)
-</ul>
 <h4>Week 10</h4>
 <ul>
   <li>
 <a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/i-z-transform.html">The Inverse Z-Transform</a> (<a href="week10/i-z-transform.pdf">Notes PDF</a>)</li>
 <li>
-<a href="http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dt-models.html">Discrete Time System Models</a> (<a href="week10/dt-models.pdf">Notes PDF</a>)</li>
-</ul>
+
 -->
