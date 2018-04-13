@@ -60,5 +60,5 @@
 
 #### Week 10
 
-1. [The Discrete Fourier Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/dft.ipynb) ([Notes PDF](week10/dft.pdf), [Slides](week10/dft.slides.html))
-1. [The Fast Fourier Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/master/week10/fft.ipynb) ([Notes PDF](week10/fft.pdf), [Slides](week10/fft.slides.html))
+1. [The Discrete Fourier Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/gh-pages/week10/dft.ipynb) ([Notes PDF](week10/dft.pdf), [Slides](week10/dft.slides.html))
+1. [The Fast Fourier Transform](http://nbviewer.ipython.org/github/cpjobling/EG-247-Resources/blob/gh-pages/week10/fft.ipynb) ([Notes PDF](week10/fft.pdf), [Slides](week10/fft.slides.html))
