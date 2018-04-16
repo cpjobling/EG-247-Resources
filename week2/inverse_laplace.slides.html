@@ -11901,6 +11901,21 @@ a.anchor-link {
 <div class="reveal">
 <div class="slides">
 <section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">cd</span> <span class="n">matlab</span>
+<span class="n">pwd</span>
+<span class="n">clear</span> <span class="n">all</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12114,7 +12129,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">Ns</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span> <span class="n">Ds</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">];</span>
@@ -12122,6 +12137,40 @@ a.anchor-link {
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+r =
+
+    1.0000
+    1.0000
+
+
+p =
+
+   -3.0000
+   -2.0000
+
+
+k =
+
+     []
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12148,7 +12197,7 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">s</span> <span class="n">t</span><span class="p">;</span>
@@ -12158,6 +12207,25 @@ a.anchor-link {
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>exp(-2 t) + exp(-3 t)
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12192,7 +12260,7 @@ a.anchor-link {
 </div></div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">s</span><span class="p">;</span>
@@ -12200,6 +12268,28 @@ a.anchor-link {
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 
+ans =
+ 
+[ s + 3, s + 5, s + 1]
+ 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12525,7 +12615,7 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p<em>1})}^m}}} + \frac{{{r</em>{12}}}}{{{{(s -
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">Ns</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">];</span> <span class="n">Ds</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span><span class="p">];</span>
@@ -12536,10 +12626,42 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p<em>1})}^m}}} + \frac{{{r</em>{12}}}}{{{{(s -
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>
+r =
+
+     1
+
+
+p =
+
+    -1
+
+
+k =
+
+     1     1
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">s</span><span class="p">;</span>
@@ -12548,6 +12670,28 @@ F(s) = \frac{{{r_{11}}}}{{{{(s - {p<em>1})}^m}}} + \frac{{{r</em>{12}}}}{{{{(s -
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 
+f6 =
+ 
+exp(-t) + dirac(t) + dirac(1, t)
+ 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

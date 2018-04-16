@@ -12189,6 +12189,68 @@ a.anchor-link {
 </div>
 </div>
 </div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">convolutiondemo</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 398)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 449)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 500)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 551)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 621)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 672)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 723)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+Warning: The EraseMode property is no longer supported and will error in a future release.
+&gt; In convolutiondemo&gt;convolutiondemo_LayoutFcn (line 774)
+  In convolutiondemo&gt;gui_mainfcn (line 1188)
+  In convolutiondemo (line 44)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12199,7 +12261,7 @@ a.anchor-link {
 <li>Reflect $u(\tau)$ about the vertical axis to form $u(-\tau)$</li>
 <li>Slide $u(-\tau)$ to the right a distance $t$ to obtain $u(t-\tau)$</li>
 <li>Multiply the two signals to obtain the product $u(t-\tau)h(\tau)$</li>
-<li>Integrate the product over all $t$ from $-\infty$ to $\infty$.</li>
+<li>Integrate the product over all $\tau$ from $-\infty$ to $\infty$.</li>
 </ol>
 
 </div>
@@ -12327,6 +12389,85 @@ a.anchor-link {
 </div>
 </div>
 </aside></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Check-with-MATLAB">Check with MATLAB<a class="anchor-link" href="#Check-with-MATLAB">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">syms</span> <span class="n">t</span> <span class="n">tau</span>
+<span class="n">x1</span><span class="p">=</span><span class="n">int</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau</span><span class="p">),</span><span class="n">tau</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 
+x1 =
+ 
+1 - exp(-t)
+ 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-matlab"><pre><span></span><span class="n">x2</span><span class="p">=</span><span class="n">int</span><span class="p">(</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="n">tau</span><span class="p">),</span><span class="n">tau</span><span class="p">,</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre> 
+x2 =
+ 
+exp(-t)*(exp(1) - 1)
+ 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
