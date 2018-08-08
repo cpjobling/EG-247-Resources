@@ -52,7 +52,7 @@ This assumes windows.
 First install the Python-MATLAB bridge.
 
 ```shell
-set MATLAB_HOME="C:\Program Files\MATLAB\R2017b"
+set MATLAB_HOME="C:\Program Files\MATLAB\R2018a"
 cd %MATLAB_HOME%\extern\engines\python
 python setup.py install
 ```
